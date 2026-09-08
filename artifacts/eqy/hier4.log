@@ -1,0 +1,111 @@
+54 modules, leaf-first:
+  d0  alu
+  d0  alu_src_a_mux
+  d0  alu_src_b_mux
+  d0  arbiter
+  d0  axi_lite_dma_config
+  d0  axi_lite_master
+  d0  branch_comp_decoder
+  d0  branch_comprator
+  d0  branch_predictor
+  d0  clk_div_mux
+  d0  clk_gate
+  d0  control_unit
+  d0  csr_regfile
+  d0  data_clipper
+  d0  data_extender
+  d0  data_forwarding_unit
+  d0  dma_controller
+  d0  dmem
+  d0  fp4_mul
+  d0  fp8_adder
+  d0  gpio_controller
+  d0  hazard_detection_unit
+  d0  i_rom_32x256
+  d0  id_memory_256x64_wrap
+  d0  immediate_generator
+  d0  interrupt_control_unit
+  d0  l1_cache_axi_master
+  d0  mem_axi_slave
+  d0  memory_stage
+  d0  multiplier_pipelined
+  d0  pipeline_reg_ex_mem
+  d0  pipeline_reg_id_ex
+  d0  pipeline_reg_if_id
+  d0  pipeline_reg_mem_wb
+  d0  read_buffer_d_cache
+  d0  read_buffer_i_cache
+  d0  register_file
+  d0  tag_memory_92x64_wrap
+  d0  timer
+  d0  uart_controller
+  d1  axi_interconnect_2m_8s   <- arbiter
+  d1  axi_lite_gpio   <- gpio_controller
+  d1  axi_lite_timer   <- timer
+  d1  axi_lite_uart   <- uart_controller
+  d1  execution_stage   <- alu, data_clipper, multiplier_pipelined
+  d1  fp4_dot_unit   <- fp4_mul, fp8_adder
+  d1  instruction_decode_stage   <- branch_comp_decoder, control_unit, csr_regfile, immediate_generator, register_file
+  d1  l1_d_cache_8kb   <- id_memory_256x64_wrap, tag_memory_92x64_wrap
+  d1  l1_i_cache_8kb   <- id_memory_256x64_wrap, tag_memory_92x64_wrap
+  d1  write_back_stage   <- data_extender
+  d2  axi_lite_dot   <- fp4_dot_unit
+  d2  instruction_fetch_stage   <- branch_predictor, i_rom_32x256, l1_i_cache_8kb, read_buffer_i_cache
+  d3  processor_top   <- alu_src_a_mux, alu_src_b_mux, branch_comprator, data_extender, data_forwarding_unit, execution_stage, hazard_detection_unit, instruction_decode_stage, instruction_fetch_stage, memory_stage, pipeline_reg_ex_mem, pipeline_reg_id_ex, pipeline_reg_if_id, pipeline_reg_mem_wb, write_back_stage
+  d4  soc_top   <- axi_interconnect_2m_8s, axi_lite_dma_config, axi_lite_dot, axi_lite_gpio, axi_lite_master, axi_lite_timer, axi_lite_uart, clk_div_mux, clk_gate, dmem, interrupt_control_unit, l1_cache_axi_master, l1_d_cache_8kb, mem_axi_slave, processor_top, read_buffer_d_cache
+[1/54] PASS  alu                          PROVED_EQUIVALENT                5.9s
+[2/54] PASS  alu_src_a_mux                PROVED_EQUIVALENT                4.0s
+[3/54] PASS  alu_src_b_mux                PROVED_EQUIVALENT                4.1s
+[4/54] PASS  arbiter                      PROVED_EQUIVALENT                4.0s
+[5/54] FAIL  axi_lite_dma_config          UNPROVEN (234 cells) at depth 5    37.2s
+[6/54] PASS  axi_lite_master              PROVED_EQUIVALENT               11.8s
+[7/54] PASS  branch_comp_decoder          PROVED_EQUIVALENT                4.2s
+[8/54] PASS  branch_comprator             PROVED_EQUIVALENT                4.5s
+[9/54] FAIL  branch_predictor             TIMEOUT after 180s             200.2s
+[10/54] PASS  clk_div_mux                  PROVED_EQUIVALENT                8.5s
+[11/54] PASS  clk_gate                     PROVED_EQUIVALENT                4.0s
+[12/54] PASS  control_unit                 PROVED_EQUIVALENT                9.2s
+[13/54] PASS  csr_regfile                  PROVED_EQUIVALENT               20.5s
+[14/54] PASS  data_clipper                 PROVED_EQUIVALENT                4.0s
+[15/54] PASS  data_extender                PROVED_EQUIVALENT                4.0s
+[16/54] PASS  data_forwarding_unit         PROVED_EQUIVALENT                4.4s
+[17/54] FAIL  dma_controller               UNPROVEN (166 cells) at depth 5    46.8s
+[18/54] PASS  dmem                         PROVED_EQUIVALENT               38.2s
+[19/54] PASS  fp4_mul                      PROVED_EQUIVALENT               12.4s
+[20/54] PASS  fp8_adder                    PROVED_EQUIVALENT                5.8s
+[21/54] PASS  gpio_controller              PROVED_EQUIVALENT               22.9s
+[22/54] PASS  hazard_detection_unit        PROVED_EQUIVALENT                9.3s
+[23/54] PASS  i_rom_32x256                 PROVED_EQUIVALENT               12.5s
+[24/54] PASS  id_memory_256x64_wrap        PROVED_EQUIVALENT               71.3s
+[25/54] PASS  immediate_generator          PROVED_EQUIVALENT                4.6s
+[26/54] PASS  interrupt_control_unit       PROVED_EQUIVALENT                4.4s
+[27/54] PASS  l1_cache_axi_master          PROVED_EQUIVALENT               75.2s
+[28/54] PASS  mem_axi_slave                PROVED_EQUIVALENT               16.3s
+[29/54] PASS  memory_stage                 PROVED_EQUIVALENT                7.8s
+[30/54] FAIL  multiplier_pipelined         TIMEOUT after 180s             417.1s
+[31/54] PASS  pipeline_reg_ex_mem          PROVED_EQUIVALENT                5.2s
+[32/54] PASS  pipeline_reg_id_ex           PROVED_EQUIVALENT                6.7s
+[33/54] PASS  pipeline_reg_if_id           PROVED_EQUIVALENT                4.6s
+[34/54] PASS  pipeline_reg_mem_wb          PROVED_EQUIVALENT                4.5s
+[35/54] FAIL  read_buffer_d_cache          UNPROVEN (2 cells) at depth 5    26.2s
+[36/54] PASS  read_buffer_i_cache          PROVED_EQUIVALENT               31.6s
+[37/54] PASS  register_file                PROVED_EQUIVALENT               29.0s
+[38/54] PASS  tag_memory_92x64_wrap        PROVED_EQUIVALENT               21.3s
+[39/54] PASS  timer                        PROVED_EQUIVALENT                5.4s
+[40/54] FAIL  uart_controller              UNPROVEN (1 cells) at depth 5    31.4s
+[41/54] FAIL  axi_interconnect_2m_8s       UNPROVEN (882 cells) at depth 5    19.7s  boxed: 1
+[42/54] FAIL  axi_lite_gpio                TIMEOUT after 180s             286.4s  boxed: 1
+[43/54] FAIL  axi_lite_timer               UNPROVEN (22 cells) at depth 5   229.5s  boxed: 1
+[44/54] FAIL  axi_lite_uart                UNPROVEN (18 cells) at depth 5   177.4s
+[45/54] FAIL  execution_stage              TIMEOUT after 180s             402.6s  boxed: 2
+[46/54] FAIL  fp4_dot_unit                 TIMEOUT after 180s             217.1s  boxed: 2
+[47/54] PASS  instruction_decode_stage     PROVED_EQUIVALENT               94.8s  boxed: 5
+[48/54] FAIL  l1_d_cache_8kb               TIMEOUT after 180s             180.2s  boxed: 2
+[49/54] FAIL  l1_i_cache_8kb               TIMEOUT after 180s             180.1s  boxed: 2
+[50/54] PASS  write_back_stage             PROVED_EQUIVALENT                8.5s  boxed: 1
+[51/54] FAIL  axi_lite_dot                 TIMEOUT after 180s             194.2s
+[52/54] FAIL  instruction_fetch_stage      TIMEOUT after 180s             180.1s  boxed: 2
+[53/54] FAIL  processor_top                TIMEOUT after 180s             180.2s  boxed: 13
+[54/54] FAIL  soc_top                      YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.    45.3s  boxed: 7
+
+36/54 proved equivalent in 3637.3s -> artifacts/eqy/soc_top_hier4.json

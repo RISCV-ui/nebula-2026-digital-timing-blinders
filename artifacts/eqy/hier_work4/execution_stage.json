@@ -1,0 +1,35 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "execution_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 180s",
+      "seconds": 368.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "TIMEOUT after 180s",
+          "seconds": 180.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work4/ex",
+          "seconds": 8.1
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 180s",
+          "seconds": 180.0
+        }
+      ]
+    }
+  ]
+}

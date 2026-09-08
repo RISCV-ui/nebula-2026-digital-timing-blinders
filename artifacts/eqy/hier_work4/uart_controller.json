@@ -1,0 +1,47 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "uart_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (1 cells) at depth 5",
+      "seconds": 31.3,
+      "failed_partitions": [],
+      "log_tail": [
+        "Proved 174 previously unproven $equiv cells.",
+        "",
+        "70. Executing EQUIV_STATUS pass.",
+        "Found 179 $equiv cells in equiv:",
+        "  Of those cells 178 are proven and 1 are unproven.",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12668: \\uart_tx_gold \\uart_tx_gate",
+        "Found a total of 1 unproven $equiv cells.",
+        "ERROR: Found 1 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 11.5
+        },
+        {
+          "pass": "merged",
+          "status": "UNPROVEN_EQY (equivalence unknown) at depth 5",
+          "seconds": 14.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (1 cells) at depth 5",
+          "seconds": 5.8
+        }
+      ],
+      "counterexample_claimed_by": [
+        "partitioned"
+      ]
+    }
+  ]
+}

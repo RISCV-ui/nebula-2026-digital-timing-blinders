@@ -596,12 +596,150 @@ with no SAT model and never had one. That is what a fix to a measurement
 instrument is supposed to look like: the instrument stops lying, and the number
 it reports gets slightly worse.
 
+**The third sweep, and the two bugs it found in the sweep itself.** We had
+written the 19 `UNPROVEN` modules off as a synthesis name-policy problem and
+moved on. Re-reading one module's logs closely enough turned up two defects
+above that, and neither of them was in the design.
+
+*The solver was never there.* EQY's `sby` strategy shells out to an SMT engine
+by name. `bitwuzla` ships inside `oss-cad-suite/bin`, which is not on `PATH`
+unless the environment is sourced, and when the binary is missing the engine
+dies without a status, EQY reports the partition unproven, and the run degrades
+silently to the yosys fallback. No line anywhere says "no solver." A full
+54-module sweep was spent that way. `eqy_netlist.py` now puts that directory on
+`PATH` itself and refuses to start if the engine is still absent.
+
+*A cut-point file that was leaking.* `cutpoints.v` carried a stub for every
+module proved so far, not only the children of the module under test, on the
+reasoning that a stub for a module the check never instantiates is inert. It is
+not: the stubs are read with `read_verilog -lib`, and `prep -top` prunes unused
+*real* modules while keeping unused blackboxes. Gold therefore reached EQY
+carrying nineteen modules it does not instantiate — `alu`, `arbiter`,
+`fp4_mul`, `clk_gate` — and gate, where those were real modules and got pruned,
+carried none of them:
+
+```
+combine: ERROR: Unmatched module exists in gold that does not exist in gate.
+         This should not happen. Please report this bug.
+```
+
+Both EQY passes died there, on every module, before a single solver call. The
+wrapper then fell through to the plain Yosys miter — which closes combinational
+logic and does not close sequential logic. That is the whole shape of the
+previous results, and it is a very clean shape once you look for it:
+
+| | proved | unproven |
+|---|---|---|
+| combinational modules | 15 | **0** |
+| sequential modules | 8 | 21 |
+
+The split is on state, not on size and not on clocked-block count: eleven of the
+failures have a single `always @(posedge)` block, exactly like the eight that
+passed. A result that clean is rarely a solver limit. It was a module-list
+mismatch three steps upstream.
+
+The same file also made every module's verdict a function of the entire
+pass/fail history above it, since the stub set grew as the sweep went. Two
+modules that passed one sweep failed the next for exactly that reason —
+`i_rom_32x256` and `id_memory_256x64_wrap`, same pass, same depth, different
+accumulated stub file. Boxing only children makes a module's check depend on
+its own subtree and nothing else, which is what the compositional soundness
+argument claimed in the first place.
+
+**Confirming the name-policy diagnosis instead of asserting it.** With EQY
+actually running, `mem_axi_slave` still would not close, and its logs now say
+something precise. The merged pass reduces the module to exactly one partition,
+`mem_axi_slave.addr`, and returns `equivalence unknown` at depth 5 and again at
+depth 20. The identifier dumps say why:
+
+```
+GOLD:  mem_axi_slave  addr_reg  w=31:0                       <- a wire
+GATE:  mem_axi_slave  addr_reg[9]$_SDFFE_PP0P_  c=$scopeinfo <- a scope marker
+matched.ids: addr_reg -> 0 occurrences
+```
+
+The ORFS netlist has no wire named `addr_reg` at all. Flattening and ABC
+renamed every flop output, and the RTL name survives only as `$scopeinfo`
+metadata. EQY pairs gold to gate by wire name, finds no internal match point,
+and is left proving the module as a single partition with all of its state
+unmatched — and `addr_reg <= addr_reg + (1<<burst_size)` is an accumulator, so
+k-induction from an arbitrary initial state cannot close it at any depth. That
+is why depth 20 reads the same as depth 5.
+
+So we tested the claim rather than repeating it: same RTL, same EQY, same
+depth, same solver, one netlist resynthesised with hierarchy and net names
+kept (`scripts/synth_named.ys`).
+
+| gate netlist | `addr_reg` matched | verdict |
+|---|---|---|
+| ORFS `1_2_yosys.v` | 0 | `UNPROVEN (36 cells)` at depth 5 **and** at depth 20 |
+| name-preserving resynth | 1 | **`PROVED_EQUIVALENT` in 9.0 s** |
+
+The diagnosis holds, and it is a statement about the netlist's name policy, not
+about the design or the checker. The ORFS netlist remains the PPA source of
+truth for §5; it is simply not usable as an equivalence-checking target, and
+the sweep now runs against a netlist built for that job.
+
+That experiment settles one more thing. The partitioned pass reported
+`NOT_EQUIVALENT` on `mem_axi_slave` while the merged pass proved the same
+module equivalent — a worked example of the false counterexample that
+partitioning introduces and that the multi-pass ordering exists to absorb. A
+claimed counterexample is now recorded in `counterexample_claimed_by` rather
+than being promoted to the verdict or buried: it is a lead, not a disproof, and
+the field name says so.
+
+**The result.** 36 of 54 modules proved equivalent in 3637 s, against 27 of 54
+before tonight's two fixes. Nine modules moved from unproven to proved, and
+they are exactly the ones the diagnosis predicted: `mem_axi_slave`,
+`csr_regfile`, `dmem`, `gpio_controller`, `l1_cache_axi_master`,
+`read_buffer_i_cache`, `tag_memory_92x64_wrap`, plus the two that the leaking
+cut-point file had regressed between sweeps, `i_rom_32x256` and
+`id_memory_256x64_wrap`.
+
+| class | sweep 2 (900 s) | sweep 4 (180 s) |
+|---|---|---|
+| `PROVED_EQUIVALENT` | 27 | **36** |
+| `TIMEOUT` | 6 | 10 |
+| `UNPROVEN (n cells) at depth 5` | 19 | 7 |
+| `No SAT model available for cell …` | 1 | 0 |
+| yosys internal assert (`soc_top`) | 1 | 1 |
+
+The timeout was cut from 900 s to 180 s for this sweep, which needs justifying
+rather than assuming: against a name-preserving netlist a provable module
+proves in single-digit seconds — `alu` in 6.1 s, `mem_axi_slave` in 16.3 s,
+`l1_cache_axi_master`, the largest of them, in 75.2 s — so a long budget buys
+nothing on the modules that close and costs three full timeouts on each one
+that does not. The check is whether it cost any proof, and it did not: **every
+module that times out at 180 s also failed at 900 s**, as a `TIMEOUT` or as
+`UNPROVEN`. Three of them (`axi_lite_dot`, `branch_predictor`,
+`axi_lite_gpio`) changed which failure they report, which is a label moving,
+not a proof lost.
+
+The 18 that remain fall into three classes, and none of them is a claim about
+the design:
+
+- **10 `TIMEOUT`** — the top of the tree (`processor_top`, `execution_stage`,
+  `instruction_fetch_stage`, both L1 caches) plus the arithmetic-heavy leaves
+  (`fp4_dot_unit`, `multiplier_pipelined`). These are the modules whose cones
+  stay large because a child below them is unproven and therefore not boxed —
+  the soundness constraint stated above, doing exactly what it says it will.
+- **7 `UNPROVEN` at depth 5** — five of them (`axi_lite_dma_config`,
+  `dma_controller`, `axi_lite_timer`, `axi_lite_uart`,
+  `axi_interconnect_2m_8s`) hit `ERROR: conflicting matches for gold bit
+  \addr[0]: \addr[0] vs \_0683_.A`, where a gold bit is reachable in the gate
+  both as a named wire and as a cell pin, so EQY declines to partition and the
+  flat miter takes over. `gate-nomatch _*` and `opt_clean -purge` both fail to
+  clear it; we report it as its own class rather than guess.
+- **1 yosys internal assert** on `soc_top` — `Assert 'count_id(wire->name) ==
+  0' failed in kernel/rtlil.cc:2888`, a tool bug, not a verdict.
+
 **Nothing in the sweep is `NOT_EQUIVALENT`.** Every failure is `UNPROVEN`,
 `TIMEOUT`, or a tool error, and the difference matters: the checker never found
 a netlist that behaves differently from its RTL, it ran out of resources or
-anchors on half the tree. Reporting 27/54 as "half the design is verified" is
-the accurate claim; reporting it as "half the design is wrong" would be false,
-and reporting 54/54 by loosening the checker would be worse than either.
+anchors on half the tree. Reporting 36/54 as "two thirds of the design is
+verified" is the accurate claim; reporting it as "a third of the design is
+wrong" would be false, and reporting 54/54 by loosening the checker would be
+worse than either.
 
 ---
 

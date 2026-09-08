@@ -1,0 +1,44 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "axi_lite_dma_config",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (234 cells) at depth 5",
+      "seconds": 37.0,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$14408: \\addr_dest_dma_gold [5] \\addr_dest_dma_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$14407: \\addr_dest_dma_gold [4] \\addr_dest_dma_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$14406: \\addr_dest_dma_gold [3] \\addr_dest_dma_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$14405: \\addr_dest_dma_gold [2] \\addr_dest_dma_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$14404: \\addr_dest_dma_gold [1] \\addr_dest_dma_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$14403: \\addr_dest_dma_gold [0] \\addr_dest_dma_gate [0]",
+        "Found a total of 234 unproven $equiv cells.",
+        "ERROR: Found 234 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work4/ax",
+          "seconds": 4.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work4/ax",
+          "seconds": 4.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (234 cells) at depth 5",
+          "seconds": 27.4
+        }
+      ]
+    }
+  ]
+}

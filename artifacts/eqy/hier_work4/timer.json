@@ -1,0 +1,25 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+  "modules_checked": 1,
+  "modules_equivalent": 1,
+  "all_equivalent": true,
+  "skipped": [],
+  "results": [
+    {
+      "module": "timer",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.4
+        }
+      ]
+    }
+  ]
+}

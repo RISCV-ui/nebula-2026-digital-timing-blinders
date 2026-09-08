@@ -1,0 +1,35 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "modules_checked": 1,
+  "modules_equivalent": 1,
+  "all_equivalent": true,
+  "skipped": [],
+  "results": [
+    {
+      "module": "arbiter",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 13.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work3/arb",
+          "seconds": 4.7
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work3/arb",
+          "seconds": 4.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 4.5
+        }
+      ]
+    }
+  ]
+}

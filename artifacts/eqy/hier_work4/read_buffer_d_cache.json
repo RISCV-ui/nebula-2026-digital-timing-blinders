@@ -1,0 +1,47 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "read_buffer_d_cache",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (2 cells) at depth 5",
+      "seconds": 26.2,
+      "failed_partitions": [],
+      "log_tail": [
+        "",
+        "70. Executing EQUIV_STATUS pass.",
+        "Found 678 $equiv cells in equiv:",
+        "  Of those cells 676 are proven and 2 are unproven.",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$15077: \\pr_state_gold [2] \\pr_state_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$15076: \\pr_state_gold [1] \\pr_state_gate [1]",
+        "Found a total of 2 unproven $equiv cells.",
+        "ERROR: Found 2 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 8.1
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 5.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (2 cells) at depth 5",
+          "seconds": 12.9
+        }
+      ],
+      "counterexample_claimed_by": [
+        "partitioned"
+      ]
+    }
+  ]
+}

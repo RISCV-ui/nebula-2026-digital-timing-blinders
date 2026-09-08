@@ -1,0 +1,66 @@
+54 modules, leaf-first:
+  d0  alu
+  d0  alu_src_a_mux
+  d0  alu_src_b_mux
+  d0  arbiter
+  d0  axi_lite_dma_config
+  d0  axi_lite_master
+  d0  branch_comp_decoder
+  d0  branch_comprator
+  d0  branch_predictor
+  d0  clk_div_mux
+  d0  clk_gate
+  d0  control_unit
+  d0  csr_regfile
+  d0  data_clipper
+  d0  data_extender
+  d0  data_forwarding_unit
+  d0  dma_controller
+  d0  dmem
+  d0  fp4_mul
+  d0  fp8_adder
+  d0  gpio_controller
+  d0  hazard_detection_unit
+  d0  i_rom_32x256
+  d0  id_memory_256x64_wrap
+  d0  immediate_generator
+  d0  interrupt_control_unit
+  d0  l1_cache_axi_master
+  d0  mem_axi_slave
+  d0  memory_stage
+  d0  multiplier_pipelined
+  d0  pipeline_reg_ex_mem
+  d0  pipeline_reg_id_ex
+  d0  pipeline_reg_if_id
+  d0  pipeline_reg_mem_wb
+  d0  read_buffer_d_cache
+  d0  read_buffer_i_cache
+  d0  register_file
+  d0  tag_memory_92x64_wrap
+  d0  timer
+  d0  uart_controller
+  d1  axi_interconnect_2m_8s   <- arbiter
+  d1  axi_lite_gpio   <- gpio_controller
+  d1  axi_lite_timer   <- timer
+  d1  axi_lite_uart   <- uart_controller
+  d1  execution_stage   <- alu, data_clipper, multiplier_pipelined
+  d1  fp4_dot_unit   <- fp4_mul, fp8_adder
+  d1  instruction_decode_stage   <- branch_comp_decoder, control_unit, csr_regfile, immediate_generator, register_file
+  d1  l1_d_cache_8kb   <- id_memory_256x64_wrap, tag_memory_92x64_wrap
+  d1  l1_i_cache_8kb   <- id_memory_256x64_wrap, tag_memory_92x64_wrap
+  d1  write_back_stage   <- data_extender
+  d2  axi_lite_dot   <- fp4_dot_unit
+  d2  instruction_fetch_stage   <- branch_predictor, i_rom_32x256, l1_i_cache_8kb, read_buffer_i_cache
+  d3  processor_top   <- alu_src_a_mux, alu_src_b_mux, branch_comprator, data_extender, data_forwarding_unit, execution_stage, hazard_detection_unit, instruction_decode_stage, instruction_fetch_stage, memory_stage, pipeline_reg_ex_mem, pipeline_reg_id_ex, pipeline_reg_if_id, pipeline_reg_mem_wb, write_back_stage
+  d4  soc_top   <- axi_interconnect_2m_8s, axi_lite_dma_config, axi_lite_dot, axi_lite_gpio, axi_lite_master, axi_lite_timer, axi_lite_uart, clk_div_mux, clk_gate, dmem, interrupt_control_unit, l1_cache_axi_master, l1_d_cache_8kb, mem_axi_slave, processor_top, read_buffer_d_cache
+[1/54] PASS  alu                          PROVED_EQUIVALENT                6.1s
+[2/54] PASS  alu_src_a_mux                PROVED_EQUIVALENT                4.2s
+[3/54] PASS  alu_src_b_mux                PROVED_EQUIVALENT                4.0s
+[4/54] PASS  arbiter                      PROVED_EQUIVALENT                4.0s
+[5/54] FAIL  axi_lite_dma_config          UNPROVEN (234 cells) at depth 5    36.3s
+[6/54] PASS  axi_lite_master              PROVED_EQUIVALENT               11.6s
+[7/54] PASS  branch_comp_decoder          PROVED_EQUIVALENT                3.9s
+[8/54] PASS  branch_comprator             PROVED_EQUIVALENT                4.2s
+[9/54] PASS  branch_predictor             PROVED_EQUIVALENT              221.0s
+[10/54] PASS  clk_div_mux                  PROVED_EQUIVALENT                8.8s
+[11/54] PASS  clk_gate                     PROVED_EQUIVALENT                3.9s

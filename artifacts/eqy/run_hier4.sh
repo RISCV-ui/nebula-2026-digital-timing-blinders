@@ -19,6 +19,12 @@ exec python3 scripts/eqy_hier.py \
   --netlist artifacts/synth/soc_top_named.v \
   --liberty sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib \
   --macro-stub macros/macro_blackbox_stubs.v \
-  --depth 5 --timeout 600 \
+  --depth 5 --timeout 180 \
   --workdir artifacts/eqy/hier_work4 \
   --out artifacts/eqy/soc_top_hier4.json
+# Timeout is 180s, not the 900s the earlier sweeps used. Against a
+# name-preserving netlist a provable module proves in single-digit seconds --
+# mem_axi_slave in 9.0s, alu in 6.1s -- so a long budget buys nothing on the
+# modules that close and costs three full timeouts on each one that does not.
+# The first attempt at 600s was spending half an hour per failing module and
+# would not have finished overnight.

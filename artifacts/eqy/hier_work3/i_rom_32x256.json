@@ -1,0 +1,44 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "i_rom_32x256",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (94 cells) at depth 5",
+      "seconds": 16.5,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11357: \\data_l2_gold [10] \\data_l2_gate [10]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11356: \\data_l2_gold [9] \\data_l2_gate [9]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11355: \\data_l2_gold [8] \\data_l2_gate [8]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11354: \\data_l2_gold [7] \\data_l2_gate [7]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11353: \\data_l2_gold [6] \\data_l2_gate [6]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11352: \\data_l2_gold [5] \\data_l2_gate [5]",
+        "Found a total of 94 unproven $equiv cells.",
+        "ERROR: Found 94 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work3/i_r",
+          "seconds": 5.2
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work3/i_r",
+          "seconds": 5.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (94 cells) at depth 5",
+          "seconds": 5.7
+        }
+      ]
+    }
+  ]
+}

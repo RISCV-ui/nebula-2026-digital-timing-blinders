@@ -1,0 +1,44 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "gpio_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (65 cells) at depth 5",
+      "seconds": 16.5,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12316: \\data_out_gold [5] \\data_out_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12315: \\data_out_gold [4] \\data_out_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12314: \\data_out_gold [3] \\data_out_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12313: \\data_out_gold [2] \\data_out_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12312: \\data_out_gold [1] \\data_out_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12311: \\data_out_gold [0] \\data_out_gate [0]",
+        "Found a total of 65 unproven $equiv cells.",
+        "ERROR: Found 65 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work3/gpi",
+          "seconds": 4.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work3/gpi",
+          "seconds": 4.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (65 cells) at depth 5",
+          "seconds": 6.7
+        }
+      ]
+    }
+  ]
+}

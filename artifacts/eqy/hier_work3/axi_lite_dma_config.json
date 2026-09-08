@@ -1,0 +1,44 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "axi_lite_dma_config",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (130 cells) at depth 5",
+      "seconds": 24.4,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$13226: \\dma_0.addr_dest_dma_gold [4] \\dma_0.addr_dest_dma_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$13225: \\dma_0.addr_dest_dma_gold [3] \\dma_0.addr_dest_dma_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$13224: \\dma_0.addr_dest_dma_gold [2] \\dma_0.addr_dest_dma_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$13223: \\dma_0.addr_dest_dma_gold [1] \\dma_0.addr_dest_dma_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$13222: \\dma_0.addr_dest_dma_gold [0] \\dma_0.addr_dest_dma_gate [0]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$13211: \\addr_valid_src_dma_gold \\addr_valid_src_dma_gate",
+        "Found a total of 130 unproven $equiv cells.",
+        "ERROR: Found 130 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work3/axi",
+          "seconds": 4.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work3/axi",
+          "seconds": 4.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (130 cells) at depth 5",
+          "seconds": 14.6
+        }
+      ]
+    }
+  ]
+}

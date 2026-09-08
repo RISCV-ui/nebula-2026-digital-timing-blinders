@@ -1,0 +1,44 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "axi_lite_uart",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (18 cells) at depth 5",
+      "seconds": 177.3,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17184: \\fifo_uart_w.data_in_clk1_gold [35] \\fifo_uart_w.data_in_clk1_gate [35]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17183: \\fifo_uart_w.data_in_clk1_gold [34] \\fifo_uart_w.data_in_clk1_gate [34]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17182: \\fifo_uart_w.data_in_clk1_gold [33] \\fifo_uart_w.data_in_clk1_gate [33]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17181: \\fifo_uart_w.data_in_clk1_gold [32] \\fifo_uart_w.data_in_clk1_gate [32]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$17592: \\uart_tx_gold \\uart_tx_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17591: \\uart_0.uart_tx_gold \\uart_0.uart_tx_gate",
+        "Found a total of 18 unproven $equiv cells.",
+        "ERROR: Found 18 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work4/ax",
+          "seconds": 6.1
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work4/ax",
+          "seconds": 5.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (18 cells) at depth 5",
+          "seconds": 165.5
+        }
+      ]
+    }
+  ]
+}

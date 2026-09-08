@@ -1,0 +1,35 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+  "modules_checked": 1,
+  "modules_equivalent": 1,
+  "all_equivalent": true,
+  "skipped": [],
+  "results": [
+    {
+      "module": "fp4_mul",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 12.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 4.8
+        },
+        {
+          "pass": "merged",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 3.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 3.6
+        }
+      ]
+    }
+  ]
+}
