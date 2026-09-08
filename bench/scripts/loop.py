@@ -25,6 +25,7 @@ import transforms as T
 import g2_cdc
 import g1b_contract
 import g1c_stream
+import g1_equiv as G1
 import clockcheck
 import llm as LLM
 
@@ -210,7 +211,8 @@ def stateless(rtl_dir, module):
     return not re.search(r"\$(dff|dffe|adff|sdff|dlatch|dffsr|mem|sr)\b", stat)
 
 
-def gate1(golden, cand, module, latency, clock, feed_forward, timeout):
+def gate1(golden, cand, module, latency, clock, feed_forward, timeout,
+          transform=None):
     """
     Depth follows DECISIONS D12: latency + 2 is complete for a feed-forward
     register insertion, so paying for depth 12 there buys nothing. Anything
@@ -238,6 +240,44 @@ def gate1(golden, cand, module, latency, clock, feed_forward, timeout):
            "--timeout", str(timeout), "--json"]
     if clock:
         cmd += ["--clock", clock]
+    # Only the bounded branch needs the observability probe. The other two
+    # depths are complete proofs: depth 1 on a stateless module is the whole
+    # theorem, and latency+2 on a feed-forward insertion is derived from the
+    # latency itself, so the window is known to reach the outputs. The bounded
+    # depth 12 is a constant that knows nothing about the module, and a module
+    # deeper than 11 flops would pass it without the miter ever comparing a
+    # value that depends on an input. Measured on fp4_dot_unit, whose output
+    # is four flops behind its inputs: a deliberately mis-wired retime passed
+    # at depth 4 in 2.6s and was rejected at depth 5 with a cycle-5
+    # counterexample.
+    if depth == 12:
+        cmd += ["--observe"]
+
+    # A re-encoded FSM cannot be proven from an all-zero start state: all-zeros
+    # is a different state under a different encoding, so the two halves
+    # disagree on cycle 0 for a reason that has nothing to do with the edit.
+    # Holding reset for one cycle on both halves is what makes the encodings
+    # correspond. The port names come from the module, not from --clock: that
+    # flag carries an SDC clock name like clk_s5, which is not a port on
+    # anything.
+    if transform == "fsm_encode":
+        _, gsrc = T.module_source(module, golden)
+        pins = T.ports(gsrc or "")
+        ck = next((c for c in G1.CLOCK_NAMES if c in pins), None)
+        rs = next((r for r in G1.RESET_NAMES if r in pins), None)
+        if not (ck and rs):
+            return {"verdict": "ERROR", "depth": depth, "complete": False,
+                    "proof": "bounded",
+                    "detail": f"fsm_encode needs an active-high synchronous "
+                              f"reset and a clock on {module}; its ports are "
+                              f"{sorted(pins)}"}
+        cmd = [c for c in cmd]
+        if "--clock" in cmd:
+            cmd[cmd.index("--clock") + 1] = ck
+        else:
+            cmd += ["--clock", ck]
+        cmd += ["--reset-align", rs]
+
     r = subprocess.run(cmd, capture_output=True, text=True)
     d = LLM.extract_json(r.stdout) or {}
     d.setdefault("verdict", "ERROR")
@@ -508,7 +548,7 @@ def run(args):
             else:
                 ff = feed_forward(p["rtl"])
                 g1 = gate1(work, cand, p["module"], lat, args.clock, ff,
-                           args.g1_timeout)
+                           args.g1_timeout, p.get("transform"))
                 rec["g1"] = g1
                 if g1["verdict"] != "EQUIVALENT":
                     rec.update(stage="g1", verdict="REJECTED")

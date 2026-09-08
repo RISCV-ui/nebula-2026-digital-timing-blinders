@@ -2,3 +2,8 @@
    clk_s5     slack  -19.677  fp8_adder
    clk_s5     slack  -19.677  fp4_dot_unit   [instantiates fp8_adder]
    clk_s5     slack  -19.677  fp4_dot_stage   [instantiates fp4_dot_unit]
+backend mock, 6 calls
+accepted 1: fp8_adder/logic_restructure/+0
+  rejected fp4_dot_unit: no canned proposal for fp4_dot_unit
+history -> artifacts/wns/dryrun/history.jsonl
+candidate RTL -> artifacts/wns/dryrun/rtl

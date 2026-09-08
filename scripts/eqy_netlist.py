@@ -68,6 +68,7 @@ Exit code: 0 only if every checked module proved equivalent.
 
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -76,6 +77,29 @@ import time
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# The `sby` strategy shells out to an SMT solver by name, and when that name is
+# not on PATH the engine dies without a status, EQY reports the partition
+# unproven, and the whole run degrades to the depth-5 yosys fallback -- silently
+# and with no line anywhere saying "no solver". A full 54-module run was spent
+# that way before the log was read closely enough to notice. The solvers ship
+# inside oss-cad-suite, so put its bin on PATH here rather than depending on
+# whoever launched the script having sourced the right environment, and refuse
+# to start if the engine still is not there.
+SUITE_BIN = REPO_ROOT / "oss-cad-suite" / "bin"
+if SUITE_BIN.is_dir():
+    os.environ["PATH"] = f"{SUITE_BIN}:{os.environ.get('PATH', '')}"
+
+SMT_ENGINE = "bitwuzla"
+
+
+def require_solver():
+    if shutil.which(SMT_ENGINE) is None:
+        raise SystemExit(
+            f"{SMT_ENGINE} is not on PATH and is not in {SUITE_BIN}. EQY's sby "
+            f"strategy needs it; without it every sequential partition comes "
+            f"back unproven for a reason that has nothing to do with the "
+            f"design. Install it, or source oss-cad-suite/environment.")
 
 CFG = """\
 [gold]
@@ -94,7 +118,7 @@ depth {depth}
 [strategy sby]
 use sby
 depth {depth}
-engine smtbmc bitwuzla
+engine smtbmc {engine}
 timeout 600
 """
 
@@ -244,6 +268,7 @@ def run_one(module, rtl, netlist, liberty, stub, depth, timeout, workroot, label
         module=module,
         depth=depth,
         partition=partition,
+        engine=SMT_ENGINE,
     )
     cfg_path = workroot / f"{module}.{label}.eqy"
     cfg_path.write_text(cfg)
@@ -270,8 +295,25 @@ def run_one(module, rtl, netlist, liberty, stub, depth, timeout, workroot, label
             "log_tail": [],
         }
 
+    # EQY gives a reason for every partition it could not close, and the three
+    # reasons are not the same claim. "partitions not equivalent" is a
+    # counterexample: the designs really do differ. "equivalence unknown" and
+    # "timeout" are the solver running out of depth or clock, which says
+    # nothing about the design. Collapsing all three into NOT_EQUIVALENT
+    # reports a disproof the tool never made -- and on this benchmark it did:
+    # `timer` was labelled NOT_EQUIVALENT on the strength of a partition whose
+    # own log line read "equivalence unknown".
+    reasons = set(re.findall(
+        r"Could not prove equivalence of partition '[^']+' using strategy "
+        r"'[^']+': (partitions not equivalent|equivalence unknown|timeout)",
+        log))
     if re.search(r"Successfully proved designs? equivalent", log):
         status, ok = "PROVED_EQUIVALENT", True
+    elif "partitions not equivalent" in reasons:
+        status, ok = "NOT_EQUIVALENT", False
+    elif reasons:
+        why = "timeout" if "timeout" in reasons else "equivalence unknown"
+        status, ok = f"UNPROVEN_EQY ({why}) at depth {depth}", False
     elif re.search(r"Failed to prove equivalence", log):
         status, ok = "NOT_EQUIVALENT", False
     else:
@@ -325,6 +367,7 @@ def check_module(module, rtl, netlist, liberty, stub, depth, timeout, workroot,
 
 
 def main():
+    require_solver()
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--rtl", nargs="+", required=True, help="RTL files, or a directory of them")
     ap.add_argument("--netlist", required=True)

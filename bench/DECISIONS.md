@@ -449,3 +449,114 @@ G1 covers that case directly and cheaply on the combinational leaf
 
 **Surrogates are non-commutative** so a transform that reassociated the adder
 tree cannot pass abstractly while failing concretely.
+
+## FSM re-encoding, and the reset-align wrapper it needed (2026-09-09)
+
+**Decision.** Add `fsm_encode` to the transform catalog, and add a
+`--reset-align PORT` mode to G1 without which it could never pass.
+
+**Why the transform.** The problem statement names four techniques:
+pipelining, logic restructuring, retiming and FSM optimization. The catalog
+had the first three plus `duplicate_driver`, so the fourth was simply absent.
+A judge reading the four techniques against our catalog would have found three.
+
+**Why the wrapper.** Measured, not assumed. G1 builds its miter with
+`sat -seq ... -set-init-zero`, so both halves start from all-zeros. All-zeros
+means *different things under different encodings*: `read_buffer_i_cache`
+encodes idle as `2'b01`, so the golden starts in a code it does not own and is
+rescued one cycle later by its own `default` arm, while the binary re-encoding,
+whose idle is `1'b0`, starts legitimately idle. They disagree on cycle 0 for a
+reason that has nothing to do with the transform. A correct re-encoding was
+rejected in 0.3 s.
+
+The wrapper holds the module's reset asserted for exactly one cycle on **both**
+halves and masks the outputs while it is, so each machine lands in its own
+reset state and the encodings correspond from cycle 1 on. Same wrapper on both
+sides: nothing is assumed about one half that is not assumed about the other.
+
+| candidate | without alignment | with alignment |
+|---|---|---|
+| correct binary re-encode | NOT_EQUIVALENT, 0.3 s | **EQUIVALENT, 5.8 s** |
+| re-encode with the reset assignment left on the old literal | — | **NOT_EQUIVALENT, 0.5 s** |
+
+The second row is the one that matters: the wrapper does not make G1 permissive.
+
+**A subtlety worth recording.** The wrapper's `__started` flag must be declared
+`reg __started = 1'b0;`. Without the initialiser, `opt` sees a flop whose D
+input is constant 1 and whose init is unset, treats the init as a don't-care,
+and folds the register to constant 1 — long before `sat -set-init-zero` runs.
+Reset is then never asserted and the wrapper silently does nothing. That is
+exactly what happened on the first attempt, and the symptom was identical to
+having no wrapper at all.
+
+**Stated limits.**
+
+* Active-high synchronous resets only (`RESET_NAMES`). On an active-low port
+  the wrapper's `(rst) || !__started` term *releases* reset instead of
+  asserting it, so it would do the opposite of its job in silence. A module
+  without a matching reset gets `ERROR`, not a proof. This benchmark is
+  uniformly active-high.
+* Reset alignment and a latency change are refused in combination. `fsm_encode`
+  preserves latency, so the case does not arise, and emitting a wrapper whose
+  proven statement nobody can state is worse than refusing.
+* An FSM has loops in its state graph, so G1 returns a **bounded** proof here
+  (depth 12), not the complete one it gives feed-forward logic. Reported as
+  `proof: bounded`, which is what it is.
+
+## The observability probe, and the false accept it closes (2026-09-09)
+
+**Decision.** A bounded G1 proof no longer reports EQUIVALENT on its own. When
+the depth is the fixed bounded depth of 12 -- the branch that is not a complete
+proof -- `g1_equiv.py --observe` first proves that some input of the module
+reaches an output inside that window. If it cannot, the verdict is
+INCONCLUSIVE, not EQUIVALENT. `loop.gate1` passes `--observe` on exactly that
+branch.
+
+**Why.** `retime` and `duplicate_driver` had never been exercised in either
+direction -- 0 proposals anywhere in the artifacts -- which is the same blind
+spot that hid the `fsm_encode` problem. Building a real retime of
+`fp4_dot_unit` (adder level 1 moved back across the stage-0 register boundary,
+so stage 0 holds four sums instead of eight products; latency and stage count
+unchanged, register count 12 -> 8) and a deliberately mis-wired copy of it
+produced this:
+
+| depth | correct retime | mis-wired retime |
+|---|---|---|
+| 4 | EQUIVALENT 2.7 s | **EQUIVALENT 2.6 s** |
+| 5 | TIMEOUT | NOT_EQUIVALENT 5.4 s, counterexample at cycle 5 |
+| 12 | TIMEOUT 300 s | -- |
+
+The bold cell is a false accept. `fp4_dot_unit`'s output sits four flops behind
+its inputs, so in a four-cycle window both halves of the miter are still
+sitting on their reset values and the solver proves them equal without having
+compared anything the edit touched. The verdict flipped on the depth alone.
+
+The probe is golden against golden with one input bit inverted, run at the same
+depth through the same passes. A model found means the flip reached an output
+inside the window. No model found means no input can, and the proof was
+vacuous. Inverting is used rather than tying low because a tie only differs
+when the solver picks a 1 there, while an inversion differs on every vector.
+Ports are tried widest first, three at most: a wide data port is what a
+datapath consumes, and a narrow control bit can be legitimately unused.
+
+**Limits.** The probe answers "yes" / "no" / "unknown"; on a timeout it says
+unknown, the verdict stands, and the detail field records that the window was
+not established. It is not run on the two complete branches -- depth 1 on a
+stateless module is the whole theorem, and latency+2 on a feed-forward
+insertion derives its window from the latency -- so it costs nothing on the
+common case.
+
+**What the retime experiment also settled.** The hypothesis going in was that
+`retime` carried the same zero-init encoding bug as `fsm_encode`, since
+retiming changes what each register holds. It does not: the correct retime
+proves EQUIVALENT from an all-zero start at depth 4, because the reset values
+still correspond. What it hit instead was the depth, and a correct retime of
+`fp4_dot_unit` is not provable inside the budget at all -- TIMEOUT at depth 5
+and at depth 12. That is reported as a rejection, which is the right side to
+fail on.
+
+`duplicate_driver` was checked the same way on `branch_comp_decoder` (the two
+opcode comparators duplicated per output bit): correct copy EQUIVALENT, one
+copy given the wrong opcode NOT_EQUIVALENT, both in 0.0 s at depth 1 with a
+complete proof. Purely combinational duplication has no start-state question
+at all, which is why it was the low-risk one.

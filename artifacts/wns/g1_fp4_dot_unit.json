@@ -1,8 +1,6 @@
 {
-  "seconds": 1196.4,
+  "verdict": "TIMEOUT",
+  "seconds": 7200.2,
   "depth": 12,
-  "latency_delta": 4,
-  "module": "fp4_dot_unit",
-  "verdict": "ERROR",
-  "detail": "port proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 4:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 5:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 6:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 7:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 8:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 9:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 10:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 11:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\n\nSetting up time step 12:\nFinal constraint equation: { } = { }\nImported 7707 cells to SAT database.\nImport proof for assert: $auto$miter.cc:241:create_miter_equiv$7412 when 1'1.\nImport show expression: \\in_clk\nImport show expression: \\in_rst\nImport show expression: \\in_va\nImport show expression: \\in_vb\nImport show expression: \\in_en\nImport show expression: \\trigger\nImport show expression: \\gate_dot_out\nImport show expression: \\gold_dot_out\n\nSolving problem with 2998910 variables and 8115169 clauses..\n"
+  "latency_delta": 4
 }

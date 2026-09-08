@@ -175,7 +175,7 @@ chained adders. The structure — not the cells — is the violation.
 
 ## 4. Deliverable 4 — Optimized RTL implementation
 
-*(status: complete; one accepted edit, one instructive rejection)*
+*(status: complete; two accepted edits, three instructive rejections)*
 
 **Accepted — `fp8_adder`, logic restructure, latency +0.**
 The model removed the `sticky_a`/`sticky_b` computation, replaced signed
@@ -187,6 +187,32 @@ multiplexer tree and a fast priority encoder.
 
 **Rejected by G1b — `fp4_dot_unit`, pipeline, latency +4.** See §6.1. This is
 the most interesting result in the project and it is a *rejection*.
+
+**Accepted — `fp4_dot_stage`, pipeline, latency +4.** This is the edit that
+produces every number in §5, and it only exists because the G1b rejection above
+sent the loop one level up. `fp4_dot_unit` sits inside a rigid parent contract
+that four extra cycles break; `fp4_dot_stage`, the module that *instantiates*
+it, talks to the rest of the design over a valid/ready stream, where added
+latency is legal as long as no beat is invented, lost or reordered. So the same
+transform that is unprovable one level down is provable one level up — under a
+different theorem. `fp4_dot_stage` is checked by G1c, not G1: cycle-by-cycle
+equivalence is the wrong contract for an elastic interface, and G1 and G1b are
+skipped with that reason recorded in the history record rather than silently.
+
+| attempt | transform | latency | gate that spoke | result |
+|---|---|---|---|---|
+| 0 | pipeline | +4 | G1c, 0.8 s, depth 16 | REJECTED — property violated, counterexample trace returned |
+| 1 | pipeline | +4 | G1c 15.2 s, G2 PASS, G2c PASS | ACCEPTED |
+
+Attempt 0 cut the 31.66 ns multiply-add chain into four stages and tracked
+occupancy with a valid shift register, and G1c found a trace it could not
+satisfy in 0.8 s. Attempt 1 kept the same four-stage cut and changed one thing:
+the pipeline now advances while *any* stage is still occupied, so the tail of a
+burst drains instead of stalling in the last stages. That is the model's own
+stated fix, written against the returned counterexample. The +4 cycles are the
+"adding four stages of registers to the dot-product datapath" that §5 then
+measures — the −19.677 ns WNS on `clk_s5`, the 29.8 → 126.2 MHz Fmax, and the
+−1.55% area all trace back to this one accepted edit.
 
 **A second, independent run with the full gate stack armed.** Everything above
 came from a loop in which G1b and the clock gate did not yet exist. To check
@@ -725,6 +751,62 @@ elastic returns `NOT_APPLICABLE` and falls through to G1, exactly as
 `clockcheck.py` reports `UNRECOGNISED` rather than guessing at a clock
 structure it does not know. Recognising a shape is worth what the pattern is
 worth; failing to recognise one is a prompt to look, never a pass.
+
+### 6.5 The gate's own bug — a bounded proof that proved nothing
+
+Two of the five transforms in the catalog, `retime` and `duplicate_driver`, had
+never been exercised in either direction: zero proposals anywhere in the
+artifacts. That is the same blind spot that had already hidden one structural
+defect, so both were tested deliberately rather than assumed.
+
+`retime` was tested on a real edit, not a mock: adder level 1 of `fp4_dot_unit`
+moved backwards across the stage-0 register boundary, so stage 0 holds four
+sums instead of eight products. Latency unchanged, stage count unchanged,
+register count 12 → 8 — the definition of retiming. A second copy was
+deliberately mis-wired, pairing `y_2` with `y_4` instead of `y_3`.
+
+| depth | correct retime | mis-wired retime |
+|---|---|---|
+| 4 | EQUIVALENT, 2.7 s | **EQUIVALENT, 2.6 s** |
+| 5 | TIMEOUT | NOT_EQUIVALENT, 5.4 s, counterexample at cycle 5 |
+| 12 | TIMEOUT, 300 s | — |
+
+The bold cell is the finding: **G1 accepted broken RTL.** `fp4_dot_unit`'s
+output sits four flops behind its inputs, so inside a four-cycle window both
+halves of the miter are still on their reset values. The solver proves them
+equal, truthfully, without ever having compared a value that depends on an
+input. The verdict flipped on the depth alone, and nothing in the record said
+so — it read `EQUIVALENT, complete: false, proof: bounded`, which is exactly
+what a real bounded proof reads like.
+
+The fix is an observability probe, run before any bounded pass is reported.
+Golden is mitered against golden with one input bit inverted, at the same depth
+through the same passes. A model found means the flip reached an output inside
+the window, so the window sees the inputs. No model found means no input can,
+the bounded proof compared reset values only, and the verdict becomes
+`INCONCLUSIVE` rather than `EQUIVALENT`. Inversion is used rather than tying a
+bit low because a tie only differs when the solver happens to pick a 1 there,
+while an inversion differs on every vector. The probe runs on the bounded
+branch alone: depth 1 on a stateless module is a complete theorem already, and
+`latency + 2` on a feed-forward insertion derives its window from the latency
+it was given, so neither can be vacuous and neither pays for the check.
+
+Two honest consequences follow. First, a correct retime of `fp4_dot_unit` is
+**not provable inside the budget** — TIMEOUT at depth 5 and at depth 12 — so
+the loop would reject it. That is the right side to fail on, and it is a real
+limit of this gate on this module, stated rather than hidden. Second,
+`duplicate_driver` was checked the same way on `branch_comp_decoder`, with the
+two opcode comparators duplicated per output bit: the correct copy
+`EQUIVALENT`, a copy given the wrong opcode `NOT_EQUIVALENT`, both in 0.0 s at
+depth 1 with a complete proof. Combinational duplication has no start-state and
+no window question at all, which is why it was the safe one — and why testing
+it was still the only way to know.
+
+The general point is the one worth taking from this section. A formal gate is
+itself a piece of engineering that can be wrong, and the failure mode that
+matters is not the one that rejects good edits loudly — it is the one that
+accepts bad edits quietly, with a verdict string that looks exactly like a
+proof.
 
 ## 7. Deliverable 7 — Interactive demo
 

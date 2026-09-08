@@ -82,6 +82,55 @@ CATALOG = {
         ],
         "latency_delta": 0,
     },
+    # The fourth technique the problem statement names. It is the only one
+    # whose correctness argument is not obvious from the diff: re-encoding
+    # changes the bits the state register holds, so the candidate and the
+    # golden module disagree about their own state on every cycle and still
+    # have to agree about every output. That is exactly what a miter asks --
+    # G1 compares outputs, never state bits -- so an encoding change is
+    # provable by the gate already in place, with one caveat recorded in
+    # bench/DECISIONS.md: an FSM has loops in its state graph, so G1 returns a
+    # bounded proof here rather than the complete one it gives feed-forward
+    # logic.
+    "fsm_encode": {
+        "latency": "preserving",
+        "summary": "Re-encode a state machine's states -- binary, one-hot or "
+                   "gray -- so the next-state and output logic get shallower. "
+                   "The set of states, the transitions between them and the "
+                   "cycle every output changes on all stay exactly as they "
+                   "are; only the bit pattern each state is stored as "
+                   "changes.",
+        "examples": [
+            "a binary-encoded state register whose next-state logic needs a "
+            "decoder, re-encoded one-hot so each next-state term becomes a "
+            "flat OR of a few state bits with no decode in front of it",
+            "a deep output mux selected by a binary state, re-encoded one-hot "
+            "so the outputs are driven by an AND-OR of state bits directly",
+            "a wide one-hot register that is not on the critical path, "
+            "re-encoded binary to give the area back",
+            "a state sequence that advances one step at a time, gray-encoded "
+            "so one bit toggles per transition",
+        ],
+        "rules": [
+            "The state register's own width may change. Nothing in the port "
+            "list may change, including a state output if the module has one.",
+            "Do not add, remove, merge or rename a state, and do not change "
+            "any transition. This transform re-encodes an FSM; it does not "
+            "redesign one.",
+            "Every output must be identical on every cycle, starting from "
+            "reset. Re-encoding changes how the state is stored, never when "
+            "an output moves.",
+            "The reset state must still be the reset state, written in the "
+            "new encoding.",
+            "Do not add an always @(posedge ...) block. A re-encoded FSM has "
+            "the same number of clocked blocks as the original.",
+            "State the encoding you moved from and to in `reason`, because "
+            "one-hot is not automatically faster -- it trades register bits "
+            "for logic depth, and that is only a win when the depth is what "
+            "is failing.",
+        ],
+        "latency_delta": 0,
+    },
     "pipeline": {
         "latency": "changing",
         "summary": "Insert N register stages inside a long combinational path, "
