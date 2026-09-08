@@ -205,13 +205,25 @@ class ChatBackend(Backend):
                 return d["choices"][0]["message"]["content"]
             except (urllib.error.URLError, KeyError, TimeoutError) as e:
                 last = e
-                # 429 and 503 are the provider saying "later", not "no". A
-                # free tier hits both routinely, and 1+2+4s of backoff is far
-                # too short to ride one out -- the first run to meet a 503
-                # exhausted its retries in seven seconds and took the whole
-                # loop down with it.
                 code = getattr(e, "code", None)
-                time.sleep(min(60, (8 if code in (429, 503) else 2) * 2 ** attempt))
+                # A 4xx other than 429 is the provider saying "no", not
+                # "later", and retrying it is worse than useless: it turns a
+                # bad key or a mistyped model id into a 62-second wait whose
+                # error message reads "failed after 5 tries", which sends
+                # whoever is debugging it towards the network. Fail on the
+                # first one and say what it was.
+                if code is not None and 400 <= code < 500 and code != 429:
+                    raise BackendUnavailable(
+                        f"{self.name}: HTTP {code} on the first attempt, not "
+                        f"retried -- this is a request the provider rejected "
+                        f"outright ({'check ' + PROVIDERS[self.provider]['key'] if code in (401, 403) else 'check the model id and request body'}): {e}")
+                # 429, 503 and Anthropic's 529 are the provider saying
+                # "later". A free tier hits them routinely, and 1+2+4s of
+                # backoff is far too short to ride one out -- the first run to
+                # meet a 503 exhausted its retries in seven seconds and took
+                # the whole loop down with it.
+                time.sleep(min(60, (8 if code in (429, 503, 529) else 2)
+                               * 2 ** attempt))
         raise BackendUnavailable(
             f"{self.name} failed after {retries} tries: {last}")
 

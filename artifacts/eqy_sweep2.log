@@ -104,3 +104,8 @@
 [49/54] FAIL  l1_i_cache_8kb               YOSYS_ERROR: ERROR: No SAT model available for cell i_mem_0.u_macro_gate (id_memory_256x64).   734.4s  boxed: 2
 [50/54] PASS  write_back_stage             PROVED_EQUIVALENT               20.6s  boxed: 1
 [51/54] FAIL  axi_lite_dot                 UNPROVEN (577 cells) at depth 5  2081.2s
+[52/54] FAIL  instruction_fetch_stage      TIMEOUT after 900s            1772.7s  boxed: 1
+[53/54] FAIL  processor_top                TIMEOUT after 900s             900.2s  boxed: 12
+[54/54] FAIL  soc_top                      YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.    52.8s  boxed: 4
+
+27/54 proved equivalent in 10760.0s -> artifacts/eqy/soc_top_hier2.json

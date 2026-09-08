@@ -1,0 +1,43 @@
+OPENROAD: /Users/shubhanshu/Desktop/Nebula/digital/orfs/tools/OpenROAD
+=== base ===
+clock           constrained   min period        Fmax
+-----------------------------------------------------
+clk1               10.00 ns     9.439 ns   105.9 MHz
+clk2               20.00 ns            -           -
+clk3               12.50 ns            -           -
+clk4               25.00 ns            -           -
+clk5               40.00 ns            -           -
+clk_s1             25.00 ns     4.562 ns   219.2 MHz
+clk_s1_gate        25.00 ns     1.250 ns   800.0 MHz
+clk_s2             20.00 ns     4.920 ns   203.2 MHz
+clk_s2_gate        20.00 ns     1.104 ns   905.8 MHz
+clk_s3             10.00 ns     7.001 ns   142.8 MHz
+clk_s4             40.00 ns     4.664 ns   214.4 MHz
+clk_s4_gate        40.00 ns     2.000 ns   500.0 MHz
+clk_s5             12.50 ns    33.571 ns    29.8 MHz
+clk_s5_gate        12.50 ns     1.081 ns   924.9 MHz
+clk_s8             10.00 ns     7.734 ns   129.3 MHz
+
+36 probes
+wrote artifacts/metrics/fmax_base_lo05.json
+=== opt ===
+clock           constrained   min period        Fmax
+-----------------------------------------------------
+clk1               10.00 ns     8.980 ns   111.4 MHz
+clk2               20.00 ns            -           -
+clk3               12.50 ns            -           -
+clk4               25.00 ns            -           -
+clk5               40.00 ns            -           -
+clk_s1             25.00 ns     4.562 ns   219.2 MHz
+clk_s1_gate        25.00 ns     1.250 ns   800.0 MHz
+clk_s2             20.00 ns     4.920 ns   203.2 MHz
+clk_s2_gate        20.00 ns     1.104 ns   905.8 MHz
+clk_s3             10.00 ns     7.358 ns   135.9 MHz
+clk_s4             40.00 ns     4.664 ns   214.4 MHz
+clk_s4_gate        40.00 ns     2.000 ns   500.0 MHz
+clk_s5             12.50 ns     7.923 ns   126.2 MHz
+clk_s5_gate        12.50 ns     1.081 ns   924.9 MHz
+clk_s8             10.00 ns     7.734 ns   129.3 MHz
+
+35 probes
+wrote artifacts/metrics/fmax_opt_lo05.json

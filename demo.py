@@ -234,8 +234,8 @@ def act4(live):
         "system's correct output for this path -- not an edit.")
 
 
-def act5(live):
-    act(5, "G2 -- did the rewrite damage a clock-domain crossing?",
+def act6(live):
+    act(6, "G2 -- did the rewrite damage a clock-domain crossing?",
         "A duplicated synchronizer sampler is logically identical by "
         "construction, so no equivalence checker can see it lose its second "
         "flop. G2 compares crossings structurally, and holds the model to "
@@ -265,8 +265,64 @@ def act5(live):
         print("  (no G2 record: every candidate was rejected before it)")
 
 
-def act6(live):
-    act(6, "G2c -- is every generated clock glitch-free?",
+def act5(live):
+    act(5, "G1c -- when equivalence is the wrong question",
+        "The refusal in Act 4 was right about the module and wrong as a final "
+        "answer. G1b told the model to preserve latency; on a 31.66 ns path "
+        "against a 12.5 ns period, that is advice to give up. So the flow "
+        "asks a different question one level up, where the interface is a "
+        "FIFO handshake and cycle-exact timing was never the contract.")
+    say("Behind a FIFO, nothing downstream can observe which cycle a result "
+        "was written on. What it can observe is the stream: the values, in "
+        "order, none invented, none lost. That is provable, and it is what "
+        "the design actually promises.")
+    print()
+    print(textwrap.indent(
+        "P1   no overflow      never write while the sink is full\n"
+        "P2a  no invention     never write a result that was not computed\n"
+        "P2b  no loss          pending results never exceed the pipeline depth\n"
+        "P3   data and order   the value written is the next one owed\n"
+        "P4   drain            a filled pipeline empties when operands stop",
+        "    "))
+    print()
+    say("Which obligation applies is decided by the shape of the interface, "
+        "not by a flag. A module presenting empty/full/r_en/w_en is elastic, "
+        "so G1 and G1b are skipped and G1c is the gate. A rigid module gets "
+        "G1 and G1b, exactly as in Act 4.")
+    print()
+
+    h = os.path.join(HERE, "artifacts/wns/dryrun2/history.jsonl")
+    if not os.path.exists(h):
+        return
+    recs = [json.loads(l) for l in open(h)]
+    stage = [r for r in recs if r.get("module") == "fp4_dot_stage"]
+    if not stage:
+        return
+    for r in stage:
+        g = r.get("g1c") or {}
+        ok = g.get("verdict") == "STREAM_EQUIVALENT"
+        verdict(ok, f'{r.get("transform")} latency +{r.get("latency_delta")}'
+                    f'  ->  G1c {g.get("verdict")}  {g.get("seconds")}s')
+    print()
+    print(textwrap.indent(
+        "wire adv = room && src;            // rejected on P4\n"
+        "wire adv = room && (src || |vld);  // accepted", "    "))
+    print()
+    say("One term. The rejected version passes every other gate in this flow "
+        "-- G1, G2, G2c all clear it -- and it silently drops the last four "
+        "results of every burst, because when the operand stream stops "
+        "nothing advances what is still in flight. P4 is the only check in "
+        "the system that can see that.")
+    print()
+    say("Honest note on this act: the two candidates are recorded fixtures "
+        "replayed through the loop, not a live model call, so what is being "
+        "demonstrated here is the gate and the repair path rather than the "
+        "model's inventiveness. The verdicts, the timings and the "
+        "counterexample are real.")
+
+
+def act7(live):
+    act(7, "G2c -- is every generated clock glitch-free?",
         "The third blind spot, and the one neither guard covers. Equivalence "
         "cannot see a runt pulse: a combinational clock mux and a flop-based "
         "one compute the same function of sel. STA cannot either: OpenSTA is "
@@ -291,8 +347,8 @@ def act6(live):
         "path share, so the optimizer reaches it.")
 
 
-def act7(live):
-    act(7, "G3 -- measure what survived",
+def act8(live):
+    act(8, "G3 -- measure what survived",
         "One accepted edit, re-run through the identical ORFS flow, PDK, SDC "
         "and floorplan. FLOW_VARIANT isolates the candidate; NEBULA_RTL is "
         "the only thing that differs between the two runs.")
@@ -317,9 +373,71 @@ def act7(live):
         say("Candidate PnR has not been recorded yet. Re-run: make "
             "DESIGN_CONFIG=./designs/sky130hd/nebula_bench/config.mk "
             "FLOW_VARIANT=opt NEBULA_RTL=artifacts/loop/rtl_frozen")
+        return
+
+    # Design-wide WNS is the worst endpoint anywhere in five asynchronous
+    # domains, so it reports whichever clock happens to be tightest and hides
+    # the one the loop actually worked on. Per clock is the honest view, and it
+    # is also the view that shows nothing was traded away.
+    print()
+    print(f'  {"clock":<16}{"period":>10}{"baseline":>12}{"candidate":>12}'
+          f'{"delta":>10}')
+    for name in sorted(set(base.get("clocks", {})) | set(opt.get("clocks", {}))):
+        b = base["clocks"].get(name, {})
+        o = opt["clocks"].get(name, {})
+        bw, ow = b.get("wns_ns"), o.get("wns_ns")
+        if bw is None and ow is None:
+            continue                       # no path in this domain
+        d = (f"{ow - bw:+.3f}" if isinstance(bw, (int, float))
+             and isinstance(ow, (int, float)) else "-")
+        mark = "  <--" if name == "clk_s5" else ""
+        print(f'  {name:<16}{b.get("period_ns", o.get("period_ns")):>10}'
+              f'{"-" if bw is None else f"{bw:+.3f}":>12}'
+              f'{"-" if ow is None else f"{ow:+.3f}":>12}{d:>10}{mark}')
+    print()
+    say("clk_s5 is the domain the loop was pointed at: -19.677 ns to +4.776, "
+        "a 24.45 ns swing that turns a hard violation into margin. Every other "
+        "domain moves by less than a third of a nanosecond, and the largest "
+        "regression -- clk_s8 at -0.319 -- still leaves +2.303 ns against a "
+        "10 ns period. The violation was closed, not relocated, and design TNS "
+        "going to exactly zero is the number that proves it.")
+
+    # Slack answers "does it close at the specified period". Fmax answers "how
+    # fast can it actually run", which is the question deliverable 5 asks and
+    # the one a slack number alone never answers. Both sides were swept with
+    # the same probe schedule and the same lower bound, so the columns compare.
+    fb = load("artifacts/metrics/fmax_base_lo05.json", "baseline Fmax")
+    fo = load("artifacts/metrics/fmax_opt_lo05.json", "candidate Fmax")
+    if not (fb and fo):
+        return
+    fb, fo = fb.get("fmax", {}), fo.get("fmax", {})
+    say("Slack says the design closes. Fmax says how fast it can actually be "
+        "run -- binary search over the SDC period, one full STA per probe, on "
+        "the routed database. Both runs used the same lower bound so the two "
+        "columns are comparable.")
+    print()
+    print(f"  {'clock':<14}{'baseline':>12}{'candidate':>12}{'change':>10}")
+    for k in ("clk_s5", "clk1", "clk_s3", "clk_s1", "clk_s2", "clk_s4",
+              "clk_s8"):
+        b, o = fb.get(k, {}).get("fmax_mhz"), fo.get(k, {}).get("fmax_mhz")
+        if not (b and o):
+            continue
+        mark = "  <--" if k == "clk_s5" else ""
+        print(f"  {k:<14}{b:>10.1f} M{o:>10.1f} M{(o - b) / b * 100:>9.1f}%"
+              f"{mark}")
+    print()
+    say("29.8 MHz to 126.2 MHz on clk_s5. The baseline figure is the honest "
+        "comparison: at its nominal 80 MHz the baseline does not close at all, "
+        "so 29.8 MHz was the real ceiling for the whole design -- a chip runs "
+        "at the speed of its worst path, not its average one. clk1 and clk_s3 "
+        "move a few percent in opposite directions; neither was touched by the "
+        "edit, and that is placement noise from a re-run, not a result. Two "
+        "gated domains still closed at the smallest period probed, so their "
+        "Fmax is a lower bound and is left out of this table rather than "
+        "reported as a number.")
 
 
-ACTS = [act1, act2, act3, act4, act5, act6, act7]
+ACTS = [act1, act2, act3, act4, act5, act6, act7, act8]
 
 
 def main():
@@ -340,7 +458,7 @@ def main():
     print(C["dim"] + "Timing Blinders -- IIT Bombay".center(W) + C["x"])
     print()
     say("Equivalence is necessary and it is not sufficient. That claim is the "
-        "whole project, and the next seven acts are the evidence for it.")
+        "whole project, and the next eight acts are the evidence for it.")
 
     for i, fn in enumerate(ACTS, 1):
         if a.act and i not in a.act:

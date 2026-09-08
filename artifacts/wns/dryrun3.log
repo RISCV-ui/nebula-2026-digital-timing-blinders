@@ -1,0 +1,9 @@
+7 slicer targets -> 3 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -19.677  fp8_adder
+   clk_s5     slack  -19.677  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -19.677  fp4_dot_stage   [instantiates fp4_dot_unit]
+backend mock, 5 calls
+accepted 2: fp8_adder/logic_restructure/+0, fp4_dot_stage/pipeline/+4
+  rejected fp4_dot_unit: no canned proposal for fp4_dot_unit
+history -> artifacts/wns/dryrun3/history.jsonl
+candidate RTL -> artifacts/wns/dryrun3/rtl

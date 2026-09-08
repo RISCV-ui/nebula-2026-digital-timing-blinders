@@ -422,3 +422,30 @@ advisory classification to be read as a verdict.
 Matching is against the driver of the signal in question, not against any gray
 conversion anywhere in the module: a FIFO holds two pointers and crediting the
 wrong one is precisely the mistake the check is meant to prevent.
+
+## G1c datapath abstraction (2026-09-09)
+
+**Decision.** G1c proves the stream contract against surrogate arithmetic
+leaves (`fp4_mul`, `fp8_adder`) rather than the real ones, and the loop's
+default bound moved from 10 to 16.
+
+**Why.** Measured, the gate did not work before this. The correct candidate
+proved in 5.6 s at bound 4, 362 s at bound 6, and not at all in 2400 s at
+bound 10. The buggy candidate -- a pipeline missing its drain term -- was not
+reachable at bounds 4 or 5 and was only caught at bound 10. There was no bound
+at which G1c both accepted what it should and rejected what it should. Tuning
+the bound down for speed would have produced a gate that reports a proof and
+passes the bug.
+
+The five stream properties are control properties; none of them mentions
+floating-point arithmetic. Abstracting the leaves identically on both sides
+preserves what P3 asserts and removes what the solver was spending its time
+on. With it: bound 16 proves the correct candidate in 22.5 s and rejects the
+buggy one in 1.2 s.
+
+**Cost, stated.** A candidate that changes the arithmetic itself passes G1c.
+G1 covers that case directly and cheaply on the combinational leaf
+(`fp8_adder`, 1.0 s). The argument is the pair of gates, not either one.
+
+**Surrogates are non-commutative** so a transform that reassociated the adder
+tree cannot pass abstractly while failing concretely.

@@ -90,6 +90,37 @@ def prompt_for(target, rtl_dir):
                    if len(parents) == 1 else
                    "\nThey sit under: " + "; ".join(parents) if parents else "")
 
+    inst = tgt.get("instances") or []
+    where = (f"{mod} appears on this path {len(inst)} "
+             f"{'time' if len(inst) == 1 else 'times'}, as\n"
+             f"{', '.join(inst)}.{parent_note}\n" if inst else
+             f"{mod} is on this path as the module containing it.\n")
+
+    # A derived target is a module the walk reached by going UP from the one
+    # the slicer named, and it is only worth calling because the fix spans
+    # levels. So the chain below it ships with the prompt: without the child's
+    # source the model is being asked to pipeline something it cannot see, and
+    # the `submodules` field it was told about has nothing to be filled from.
+    chain = [c for c in (target.get("chain") or []) if c != mod]
+    below = ""
+    if chain:
+        # chain is ordered bottom-up, so each entry's instantiator is the
+        # next one along, and `mod` instantiates the last. Naming the wrong
+        # one is the same mistake as copying the child's instance paths: a
+        # detail the model will try to reconcile instead of ignoring.
+        parts = []
+        for i, name in enumerate(chain):
+            _, csrc = T.module_source(name, rtl_dir)
+            if csrc:
+                by = chain[i + 1] if i + 1 < len(chain) else mod
+                parts.append(f"SOURCE OF {name}, which {by} instantiates:\n"
+                             f"{csrc}\n")
+        if parts:
+            below = ("\nThis target was reached by walking up from "
+                     f"{chain[0]}. A transform here may rewrite the modules "
+                     "below it as well, using `submodules` -- their sources "
+                     "follow.\n\n" + "\n".join(parts))
+
     return f"""TARGET MODULE: {mod}
 
 Clock {target['clock']}. Slack {target['slack_ns']} ns.
@@ -100,16 +131,14 @@ End   {target.get('endpoint')}
 This path's delay by RTL module:
 {breakdown}
 
-{mod} appears {len(tgt.get('instances', []))} times on this path, as
-{', '.join(tgt.get('instances', []))}.{parent_note}
-
+{where}
 This module is blamed for {target.get('paths_covered', 1)} distinct critical
 paths covering {target.get('endpoint_count', 1)} endpoints, so a fix here is
 worth more than its own slack suggests.
 
 CURRENT SOURCE OF {mod}:
 {src}
-"""
+{below}"""
 
 
 def feed_forward(src):
@@ -282,11 +311,28 @@ def select(targets, rtl_dir, max_slack, with_parents, depth=2):
                 break
             have.add(parent)
             p = json.loads(json.dumps(t))
+            # The parent's instance paths are the child's with one segment
+            # dropped: `fp8_adder` at dot_0/fp4_dot_0/add2 is instantiated by
+            # `fp4_dot_unit` at dot_0/fp4_dot_0. Copying the child's paths
+            # verbatim -- which is what this used to do -- told the model that
+            # fp4_dot_stage appears three times on the path as add2, add5 and
+            # add6, which is false and is exactly the kind of wrong detail a
+            # model will try to reconcile rather than ignore.
+            below = (out[-1]["target"].get("instances") or [])
+            up = sorted({"/".join(i.split("/")[:-1])
+                         for i in below if "/" in i})
             p["target"] = {"module": parent,
                            "delay_ns": t["target"].get("delay_ns"),
                            "share_pct": t["target"].get("share_pct"),
-                           "instances": t["target"].get("instances") or []}
+                           "instances": up}
             p["derived"] = f"instantiates {cur}"
+            # Every module between the original slicer pick and this one. The
+            # fix for an elastic parent puts stage registers in the child and
+            # the control that tracks them in the parent, so the model has to
+            # see the child's source to write either half.
+            p["chain"] = (t.get("chain") or [t["target"]["module"]])
+            if cur not in p["chain"]:
+                p["chain"] = p["chain"] + [cur]
             out.append(p)
             cur = parent
     return out
@@ -576,8 +622,13 @@ def main():
     ap.add_argument("--retries", type=int, default=2,
                     help="repair attempts per target after a gate rejection")
     ap.add_argument("--g1-timeout", type=int, default=1800)
-    ap.add_argument("--g1c-depth", type=int, default=10,
-                    help="bounded depth for the stream proof")
+    ap.add_argument("--g1c-depth", type=int, default=16,
+                    help="bounded depth for the stream proof. 16 with the "
+                         "datapath abstracted costs single-digit seconds and "
+                         "is deep enough to fill and then starve a 4-stage "
+                         "pipeline, which is what the drain property needs; "
+                         "against the real arithmetic the same bound does not "
+                         "finish in 40 minutes")
     sys.exit(run(ap.parse_args()))
 
 

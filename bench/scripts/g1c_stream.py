@@ -58,7 +58,7 @@ Usage:
     g1c_stream.py --golden bench/rtl --candidate artifacts/wns/rtl
     g1c_stream.py --golden bench/rtl --candidate artifacts/wns/rtl --depth 20
 """
-import argparse, glob, json, os, re, subprocess, sys, tempfile, time
+import argparse, shutil, glob, json, os, re, subprocess, sys, tempfile, time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import transforms as T                                     # noqa: E402
@@ -187,14 +187,82 @@ sat -seq {depth} -prove-asserts -set-init-zero -verify -show-inputs -show-output
 """
 
 
-def run(golden, candidate, lat, qw, depth, timeout, module="fp4_dot_stage"):
+# ---------------------------------------------------------------------------
+# Datapath abstraction
+#
+# The stream contract is a statement about *control*: nothing is written when
+# the sink is full, nothing is written that was never computed, nothing
+# computed is lost, results leave in the order they entered, and the pipeline
+# drains. Not one of those five sentences mentions floating-point arithmetic.
+# The arithmetic is nevertheless what the solver spends its time on -- eight
+# fp4 multipliers and a three-level fp8 adder tree, unrolled once per cycle of
+# the bound -- and it is why the proof cost grows the way it does: 5.6 s at
+# depth 4, 362 s at depth 6, no answer at depth 10 inside 40 minutes. The bug
+# this gate exists to catch is a missing drain term, and a missing drain term
+# is not reachable until the pipeline has been filled and then starved, which
+# takes more cycles than that budget buys.
+#
+# So the leaves are replaced by surrogates: same ports, same widths, a cheap
+# function instead of the real one. Both the device and the reference model
+# resolve `fp4_mul` and `fp8_adder` from the same file set, so a single
+# substitution abstracts both sides identically and the properties keep
+# meaning exactly what they meant -- P3 still says the value written is the
+# value the reference produced from those operands, for whatever function the
+# leaves compute.
+#
+# What this cannot see, stated plainly: a candidate that changes the
+# arithmetic itself passes here. That is not a hole, it is a division of
+# labour. The leaves are unchanged by construction in a pipelining transform,
+# and G1 proves the leaves equivalent directly and cheaply -- fp8_adder in
+# 1.0 s -- because a leaf is combinational and small. G1c proves the control
+# that surrounds them. Neither gate alone is the argument; the pair is.
+#
+# The surrogates are deliberately non-commutative. A commutative one would let
+# a transform that reassociated the adder tree pass abstractly when it does
+# not pass concretely, and picking `^` because it is the cheapest gate would
+# have quietly weakened the property.
+SURROGATES = {
+    "fp4_mul": """module fp4_mul(a, b, y);
+input [3:0] a, b;
+output [7:0] y;
+assign y = {a, b} ^ 8'h5A;
+endmodule
+""",
+    "fp8_adder": """module fp8_adder(a, b, y);
+input [7:0] a, b;
+output [7:0] y;
+assign y = {a[6:0], 1'b0} ^ b;
+endmodule
+""",
+}
+
+
+def abstract_tree(candidate, tmp):
+    """A copy of `candidate` with the arithmetic leaves swapped for surrogates.
+
+    Returns the new directory. Every module that is not a surrogate target is
+    copied byte for byte, so the control logic under proof is untouched.
+    """
+    out = os.path.join(tmp, "abs_rtl")
+    shutil.copytree(candidate, out)
+    for name, text in SURROGATES.items():
+        path, _ = T.module_source(name, out)
+        if path is None:
+            continue
+        open(path, "w").write(text)
+    return out
+
+
+def run(golden, candidate, lat, qw, depth, timeout, module="fp4_dot_stage",
+        abstract=True):
     tmp = tempfile.mkdtemp(prefix="g1c_")
+    rtl = abstract_tree(candidate, tmp) if abstract else candidate
     ref_file = os.path.join(tmp, "__ref.v")
     chk_file = os.path.join(tmp, "__chk.v")
     open(ref_file, "w").write(reference_model(golden, "fp4_dot_unit"))
     open(chk_file, "w").write(checker(lat, qw, module))
     ys = os.path.join(tmp, "chk.ys")
-    open(ys, "w").write(script(candidate, ref_file, chk_file, depth))
+    open(ys, "w").write(script(rtl, ref_file, chk_file, depth))
 
     t0 = time.time()
     try:
@@ -204,10 +272,10 @@ def run(golden, candidate, lat, qw, depth, timeout, module="fp4_dot_stage"):
         rc = r.returncode
     except subprocess.TimeoutExpired:
         return {"verdict": "TIMEOUT", "seconds": round(time.time() - t0, 1),
-                "depth": depth}
+                "depth": depth, "abstract": abstract}
 
     res = {"seconds": round(time.time() - t0, 1), "depth": depth,
-           "latency": lat, "module": module,
+           "latency": lat, "module": module, "abstract": abstract,
            "properties": ["P1 no overflow", "P2a no invention",
                           "P2b no loss", "P3 data and order",
                           "P4 drain", "r_en_1 == r_en_2"]}
@@ -257,14 +325,15 @@ def applies(rtl_dir, module):
             and all(n in p and p[n].startswith("output") for n in ELASTIC_OUT))
 
 
-def check(golden, candidate, module, lat, qw=3, depth=16, timeout=3600):
+def check(golden, candidate, module, lat, qw=3, depth=16, timeout=3600,
+          abstract=True):
     """Loop-facing entry point, shaped like g1b_contract.check."""
     if not applies(candidate, module):
         return {"verdict": "NOT_APPLICABLE", "module": module,
                 "detail": "module does not present the elastic interface this "
                           "harness models; there is no stream contract here "
                           "for it to speak about"}
-    res = run(golden, candidate, lat, qw, depth, timeout, module)
+    res = run(golden, candidate, lat, qw, depth, timeout, module, abstract)
     res["module"] = module
     return res
 
@@ -276,12 +345,16 @@ def main():
     ap.add_argument("--latency", type=int, default=4)
     ap.add_argument("--qw", type=int, default=3, help="log2 of shadow queue depth")
     ap.add_argument("--depth", type=int, default=16)
+    ap.add_argument("--module", default="fp4_dot_stage")
+    ap.add_argument("--no-abstract", action="store_true",
+                    help="prove against the real arithmetic; far slower")
     ap.add_argument("--timeout", type=int, default=3600)
     ap.add_argument("--out", default=None)
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
 
-    res = run(a.golden, a.candidate, a.latency, a.qw, a.depth, a.timeout)
+    res = run(a.golden, a.candidate, a.latency, a.qw, a.depth, a.timeout,
+              a.module, not a.no_abstract)
     if a.out:
         os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
         open(a.out, "w").write(json.dumps(res, indent=2) + "\n")

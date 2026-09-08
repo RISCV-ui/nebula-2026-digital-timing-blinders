@@ -1,0 +1,82 @@
+OPENROAD: /Users/shubhanshu/Desktop/Nebula/digital/orfs/tools/OpenROAD
+wrote artifacts/metrics/opt_final.json
+{
+  "antenna_violations": null,
+  "area_um2": 1718957.0,
+  "clocks": {
+    "clk1": {
+      "period_ns": 10.0,
+      "wns_ns": 1.1795
+    },
+    "clk2": {
+      "period_ns": 20.0,
+      "wns_ns": null
+    },
+    "clk3": {
+      "period_ns": 12.5,
+      "wns_ns": null
+    },
+    "clk4": {
+      "period_ns": 25.0,
+      "wns_ns": null
+    },
+    "clk5": {
+      "period_ns": 40.0,
+      "wns_ns": null
+    },
+    "clk_s1": {
+      "period_ns": 25.0,
+      "wns_ns": 20.5607
+    },
+    "clk_s1_gate": {
+      "period_ns": 25.0,
+      "wns_ns": 23.9485
+    },
+    "clk_s2": {
+      "period_ns": 20.0,
+      "wns_ns": 15.2264
+    },
+    "clk_s2_gate": {
+      "period_ns": 20.0,
+      "wns_ns": 18.9472
+    },
+    "clk_s3": {
+      "period_ns": 10.0,
+      "wns_ns": 2.9159
+    },
+    "clk_s4": {
+      "period_ns": 40.0,
+      "wns_ns": 35.4818
+    },
+    "clk_s4_gate": {
+      "period_ns": 40.0,
+      "wns_ns": 38.9427
+    },
+    "clk_s5": {
+      "period_ns": 12.5,
+      "wns_ns": 4.7758
+    },
+    "clk_s5_gate": {
+      "period_ns": 12.5,
+      "wns_ns": 11.4469
+    },
+    "clk_s8": {
+      "period_ns": 10.0,
+      "wns_ns": 2.303
+    }
+  },
+  "drc_violations": 0,
+  "instances": 476324,
+  "nets": 115964,
+  "odb": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/nebula_bench/opt/6_final.odb",
+  "power_total_w": null,
+  "sdc": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/nebula_bench/opt/6_final.sdc",
+  "tag": "opt_final",
+  "timestamp": "2026-09-09T00:26:07",
+  "tns": 0.0,
+  "tns_hold": 0.0,
+  "utilization_pct": 49.0,
+  "wirelength_um": 6676996,
+  "wns": 1.1795,
+  "wns_hold": 0.0955
+}

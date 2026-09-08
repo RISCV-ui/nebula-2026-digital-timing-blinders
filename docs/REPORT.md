@@ -221,7 +221,7 @@ keeps it usable on a design that is already dirty.
 
 ## 5. Deliverable 5 — Timing, frequency and PPA comparison
 
-*(status: baseline complete; candidate run in progress at time of writing)*
+*(status: complete. Baseline and optimised runs both routed to `6_final`.)*
 
 Both runs use the identical ORFS flow, PDK, SDC and floorplan; `FLOW_VARIANT`
 isolates the candidate's results, and `NEBULA_RTL` is the only thing that
@@ -237,18 +237,131 @@ differs between them.
 | Nets | 121,589 |
 | Wirelength | 6,901,284 µm |
 | WNS / TNS | −19.677 / −2406.61 ns |
-| Fmax (`clk1`) | 108.42 MHz (min period 9.223 ns) |
+| Fmax (`clk_s5`, the limiter) | 29.8 MHz (min period 33.6 ns) |
+| Fmax (`clk1`) | 105.9 MHz (min period 9.439 ns) |
 
-Fmax is measured by binary search over the SDC period, re-running STA at each
-probe — 37 probes for the baseline — not by adding slack to the nominal
-period, which overstates it. Domains other than `clk1` report no Fmax because
-`clk_s5` does not close at its nominal period, so there is no period at which
-the design is timing-clean to search downward from. **Closing `clk_s5` is
-therefore the precondition for the whole design having an Fmax at all**, which
-is exactly why the loop spends its one call there.
+Fmax is measured by binary search over the SDC period, re-running STA on the
+routed database at each probe, not by adding slack to the nominal period, which
+overstates it. It is measured per clock: each probe scales one domain and asks
+whether that domain closes, so a design with a failing domain still yields a
+number for every other one. The full per-clock sweep and the baseline-vs-
+optimised comparison are in §5.4.
 
-*(Candidate numbers and the before/after delta table land here when the
-candidate PnR completes.)*
+The row that matters here is `clk_s5` at **29.8 MHz against a nominal 80 MHz**.
+That is the same violation as the −19.68 ns WNS stated in one-clock-cycle terms:
+the design as delivered cannot be run at its specified frequency, and 29.8 MHz
+is the rate the slowest path actually supports. Every other domain in the table
+has headroom it cannot use, because a chip runs at the speed of its worst path,
+not its average one. **`clk_s5` is the binding constraint on the whole design**,
+which is exactly why the loop spends its one call there. `clk2`–`clk5` report no
+Fmax in either run: no probed period closes for them at all, so there is nothing
+to bisect.
+
+**Candidate (`opt` variant), post-route, same flow:**
+
+| Metric | Baseline | Optimised | Delta |
+|---|---|---|---|
+| `clk_s5` WNS | −19.677 ns | **+4.776 ns** | **+24.453 ns** |
+| Design TNS | −2406.61 ns | **0.0 ns** | +2406.61 ns |
+| Hold WNS | +0.167 ns | +0.096 ns | −0.072 ns (still met) |
+| Area | 1,746,071 µm² | 1,718,957 µm² | **−1.55%** |
+| Instances | 480,545 | 476,324 | −4,221 (−0.88%) |
+| Nets | 121,589 | 115,964 | −5,625 (−4.63%) |
+| Wirelength | 6,901,284 µm | 6,676,996 µm | −3.25% |
+| DRC violations | 0 | 0 | — |
+
+Three things in that table deserve comment, because two of them are the ones a
+reader should be suspicious of.
+
+**The violation is closed, not moved.** Design TNS goes to exactly zero. That
+is the number to watch rather than WNS: a transform that buys `clk_s5` its
+slack by pushing the shortfall into some other endpoint leaves TNS roughly
+where it was, and this one does not.
+
+**No other domain paid for it.** Per-clock WNS, baseline → optimised:
+
+| Clock | Period | Baseline | Optimised | Delta |
+|---|---|---|---|---|
+| `clk1` | 10.0 ns | +0.935 | +1.180 | +0.245 |
+| `clk_s1` | 25.0 ns | +20.471 | +20.561 | +0.090 |
+| `clk_s2` | 20.0 ns | +15.157 | +15.226 | +0.069 |
+| `clk_s3` | 10.0 ns | +3.021 | +2.916 | −0.105 |
+| `clk_s4` | 40.0 ns | +35.458 | +35.482 | +0.024 |
+| **`clk_s5`** | **12.5 ns** | **−19.677** | **+4.776** | **+24.453** |
+| `clk_s8` | 10.0 ns | +2.622 | +2.303 | −0.319 |
+
+The largest regression anywhere in the design is `clk_s8` at −0.319 ns, on a
+domain that still holds +2.303 ns of margin against a 10 ns period. Gate
+domains (`clk_s1_gate`, `clk_s2_gate`, `clk_s4_gate`, `clk_s5_gate`) move by
+less than 0.03 ns and are omitted for space.
+
+**Area went down, which is the opposite of what pipelining usually costs.**
+Adding four stages of registers to the dot-product datapath should add area,
+and locally it does. It is more than repaid at the design level: with the
+combinational cone broken up, the placer and the resizer no longer have to
+fight a 31.66 ns path, so the upsized cells and buffer trees ORFS had inserted
+along it to chase an unreachable target are no longer needed. −4,221 instances
+net, and −4.63% on net count, is that repair work disappearing. This is a real
+effect and not a measurement artefact — both runs are the same flow, same PDK,
+same SDC and same floorplan, with `NEBULA_RTL` the only difference — but it is
+a second-order consequence of closing timing, not a goal the loop optimised
+for, and it should not be read as a general claim that pipelining reduces area.
+
+### 5.4 Maximum frequency
+
+Fmax is measured per clock by binary search over the SDC period: each probe
+scales one clock's period, re-runs STA on the routed database, and asks whether
+that domain closes. The number reported is the shortest period that still
+closes. Both designs were swept with the same probe schedule and the same lower
+bound (`--lo 0.05`, i.e. down to 5% of the nominal period) so the two columns
+are comparable.
+
+| Clock | Baseline Fmax | Optimised Fmax | Change |
+|---|---|---|---|
+| `clk_s5` | **29.8 MHz** | **126.2 MHz** | **+323.7%** |
+| `clk1` | 105.9 MHz | 111.4 MHz | +5.1% |
+| `clk_s3` | 142.8 MHz | 135.9 MHz | −4.9% |
+| `clk_s1` | 219.2 MHz | 219.2 MHz | 0.0% |
+| `clk_s2` | 203.2 MHz | 203.2 MHz | 0.0% |
+| `clk_s4` | 214.4 MHz | 214.4 MHz | 0.0% |
+| `clk_s8` | 129.3 MHz | 129.3 MHz | 0.0% |
+| `clk_s2_gate` | 905.8 MHz | 905.8 MHz | 0.0% |
+| `clk_s5_gate` | 924.9 MHz | 924.9 MHz | 0.0% |
+| `clk_s1_gate` | ≥800 MHz *(floor)* | ≥800 MHz *(floor)* | not resolved |
+| `clk_s4_gate` | ≥500 MHz *(floor)* | ≥500 MHz *(floor)* | not resolved |
+| `clk2`–`clk5` | not measured | not measured | — |
+
+**The headline number is `clk_s5`: 29.8 → 126.2 MHz.** That domain is the one
+the loop targeted, and it is the only one that moves materially. The baseline
+figure is the honest one to compare against: at nominal 80 MHz the baseline
+does not close at all (WNS −19.68 ns), so its true maximum operating frequency
+was 29.8 MHz — the whole design was rate-limited by this one path. After the
+fix `clk_s5` closes at nominal with 4.78 ns to spare and does not become the
+limiter again until 126.2 MHz.
+
+**Two entries are floors, not measurements.** `clk_s1_gate` and `clk_s4_gate`
+still closed at the smallest period the sweep probed, so the search never
+bracketed their true minimum; the figures are lower bounds on Fmax, reported as
+`≥`. They are identical in both runs, so nothing is being claimed either way
+about them. An earlier sweep used the tool's default `--lo 0.4`, where three
+more domains bottomed out on the floor — read naively that would have shown
+`clk_s4` "regressing" from 216 to 62.5 MHz, which is an artefact of the search
+bound and not a property of the design. Re-running both sides at `--lo 0.05`
+removed it. `clk2`–`clk5` report no Fmax in either run for the reason given in
+§5.1: no probed period closes for them, so there is nothing to bisect.
+
+**The two small movers are noise, not signal.** `clk1` gains 5.1% and `clk_s3`
+loses 4.9%. Neither domain was touched by the RTL edit; both sit within the
+resolution of a placement-and-routing re-run, where the optimised netlist's
+different instance count perturbs placement globally. Reporting them is more
+honest than suppressing the one that went the wrong way, but neither should be
+attributed to the transform.
+
+**What is still missing here.** Power is null in both records rather than zero;
+the flow's power step was not run, and reporting a zero would look like a
+result. The two floor entries above are the other open item — resolving them
+needs a sweep with a lower bound below 5% of nominal, which costs one full STA
+per additional probe on a 476K-instance routed database.
 
 ---
 
@@ -437,6 +550,33 @@ specialises it to `$paramod$<hash>\asynchronous_fifo_gen` and it never appears
 under its plain name. It is currently reported as not-found rather than proved,
 and we say so rather than counting it as a pass.
 
+**The second sweep, after the `keep_hierarchy` fix.** 27 of 54 proved. The
+count went *down* by one, and that is the honest result rather than a
+disappointing one:
+
+| class | first sweep | second sweep |
+|---|---|---|
+| `PROVED_EQUIVALENT` | 28 | 27 |
+| `UNPROVEN (n cells) at depth 5` | 12 | 19 |
+| `TIMEOUT after 900 s` | 1 | 6 |
+| `No SAT model available for cell …` | 12 | 1 |
+| yosys internal assert | 1 | 1 |
+
+Fixing our own bug did not buy proofs. It converted twelve tool errors into
+eleven honest verdicts — modules that now get as far as a real proof attempt
+and either run out of induction depth or run out of time — and left one, the
+`id_memory_256x64` macro inside `l1_i_cache_8kb`, which is a genuine blackbox
+with no SAT model and never had one. That is what a fix to a measurement
+instrument is supposed to look like: the instrument stops lying, and the number
+it reports gets slightly worse.
+
+**Nothing in the sweep is `NOT_EQUIVALENT`.** Every failure is `UNPROVEN`,
+`TIMEOUT`, or a tool error, and the difference matters: the checker never found
+a netlist that behaves differently from its RTL, it ran out of resources or
+anchors on half the tree. Reporting 27/54 as "half the design is verified" is
+the accurate claim; reporting it as "half the design is wrong" would be false,
+and reporting 54/54 by loosening the checker would be worse than either.
+
 ---
 
 ### 6.4 G1c — when equivalence itself is the wrong question
@@ -490,9 +630,75 @@ The first passes every other gate in this flow. It is a correct pipeline of a
 correct function; nothing about it is unsound at module scope; G2 and G2c pass
 it. It also silently drops the last four results of every burst, because when
 the operand stream stops, nothing advances the results still in flight. G1c
-rejected it on P4 in **34.3 s**.
+rejects it on P4.
 
-<!-- PENDING: accept-path seconds for the second candidate -->
+#### 6.4.1 The gate did not work, and why
+
+The first version of G1c could reject but could not accept, and the reason is
+worth reporting because it is the kind of failure that is easy to hide.
+
+`sat -seq N` unrolls the design N times and hands the result to a SAT solver.
+Finding a counterexample is a satisfiability question and often lands early;
+proving there is none is an unsatisfiability question over the whole unrolled
+cone. That cone contained eight `fp4_mul` instances and a three-level
+`fp8_adder` tree, once per cycle of the bound. Measured, on the correct
+candidate:
+
+| Bound | Proof time, real arithmetic |
+|---|---|
+| 4 | 5.6 s |
+| 6 | 362.2 s |
+| 10 | no answer in 2400 s |
+
+And on the buggy candidate, the bound needed to *see* the bug:
+
+| Bound | Verdict, real arithmetic |
+|---|---|
+| 4 | STREAM_EQUIVALENT — bug not reachable |
+| 5 | STREAM_EQUIVALENT — bug not reachable |
+| 10 | PROPERTY_VIOLATED (P4), 34.3 s |
+
+Read those two tables together and the gate is broken. A missing drain term is
+not reachable until the pipeline has been filled and then starved, which takes
+more cycles than depth 5 provides — so shallow bounds accept the buggy
+candidate. Deep bounds catch it, but at a depth where the correct candidate
+cannot be proved at all. **There was no bound at which the gate both rejected
+what it should and accepted what it should.** A gate tuned to depth 4 because
+depth 4 is fast would have passed the bug and reported a proof.
+
+#### 6.4.2 Datapath abstraction
+
+Re-read the five properties: nothing is written when the sink is full, nothing
+is written that was never computed, nothing computed is lost, results leave in
+the order they entered, the pipeline drains. Not one of them mentions
+floating-point arithmetic. The arithmetic is what the solver spends its time
+on and none of it is what the properties are about.
+
+So the leaves are replaced by surrogates — same ports, same widths, a cheap
+function instead of the real one. The device and the reference model resolve
+`fp4_mul` and `fp8_adder` from the same file set, so one substitution abstracts
+both sides identically and P3 keeps meaning what it meant: the value written is
+the value the reference produced from those operands, for whatever function the
+leaves compute. The surrogates are non-commutative on purpose — a commutative
+one would let a transform that reassociated the adder tree pass abstractly when
+it does not pass concretely.
+
+| Bound | Correct candidate | Buggy candidate |
+|---|---|---|
+| 8 | STREAM_EQUIVALENT, **0.7 s** | PROPERTY_VIOLATED, **0.6 s** |
+| 12 | STREAM_EQUIVALENT, **3.1 s** | PROPERTY_VIOLATED, **0.9 s** |
+| 16 | STREAM_EQUIVALENT, **22.5 s** | PROPERTY_VIOLATED, **1.2 s** |
+
+Accept and reject now work at the same bound, and the loop's default moved to
+16 — deep enough to fill and then starve a four-stage pipeline, at a cost of
+seconds rather than an answer that never arrives.
+
+**What this cannot see, stated plainly.** A candidate that changes the
+arithmetic itself passes G1c. That is a division of labour rather than a hole.
+A leaf is combinational and small, so G1 proves it directly and cheaply —
+`fp8_adder` in 1.0 s — while G1c proves the control that surrounds it. Neither
+gate alone is the argument; the pair is, and the same compositional stance is
+what §6.3 applies to RTL against netlist.
 
 **A second measured result, which surprised us.** Run G1 — the cycle-exact
 miter, the gate this whole flow is built around — against the *correct*

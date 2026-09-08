@@ -1,0 +1,21 @@
+OPENROAD: /Users/shubhanshu/Desktop/Nebula/digital/orfs/tools/OpenROAD
+clock           constrained   min period        Fmax
+-----------------------------------------------------
+clk1               10.00 ns     9.002 ns   111.1 MHz
+clk2               20.00 ns            -           -
+clk3               12.50 ns            -           -
+clk4               25.00 ns            -           -
+clk5               40.00 ns            -           -
+clk_s1             25.00 ns    10.000 ns   100.0 MHz
+clk_s1_gate        25.00 ns    10.000 ns   100.0 MHz
+clk_s2             20.00 ns     8.000 ns   125.0 MHz
+clk_s2_gate        20.00 ns     8.000 ns   125.0 MHz
+clk_s3             10.00 ns     7.113 ns   140.6 MHz
+clk_s4             40.00 ns    16.000 ns    62.5 MHz
+clk_s4_gate        40.00 ns    16.000 ns    62.5 MHz
+clk_s5             12.50 ns     7.801 ns   128.2 MHz
+clk_s5_gate        12.50 ns     5.000 ns   200.0 MHz
+clk_s8             10.00 ns     7.898 ns   126.6 MHz
+
+22 probes
+wrote artifacts/metrics/fmax_opt.json
