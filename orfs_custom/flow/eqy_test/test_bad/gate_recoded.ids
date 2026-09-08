@@ -1,0 +1,4 @@
+adder . A:src="gate_bad.v:1.1-3.10" A:top=1
+adder y w=3:0 A:src="gate_bad.v:1.45-1.46" P=O
+adder b w=3:0 A:src="gate_bad.v:1.29-1.30" P=I
+adder a w=3:0 A:src="gate_bad.v:1.26-1.27" P=I

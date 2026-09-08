@@ -1,0 +1,106 @@
+54 modules, leaf-first:
+  d0  alu
+  d0  alu_src_a_mux
+  d0  alu_src_b_mux
+  d0  arbiter
+  d0  axi_lite_dma_config
+  d0  axi_lite_master
+  d0  branch_comp_decoder
+  d0  branch_comprator
+  d0  branch_predictor
+  d0  clk_div_mux
+  d0  clk_gate
+  d0  control_unit
+  d0  csr_regfile
+  d0  data_clipper
+  d0  data_extender
+  d0  data_forwarding_unit
+  d0  dma_controller
+  d0  dmem
+  d0  fp4_mul
+  d0  fp8_adder
+  d0  gpio_controller
+  d0  hazard_detection_unit
+  d0  i_rom_32x256
+  d0  id_memory_256x64_wrap
+  d0  immediate_generator
+  d0  interrupt_control_unit
+  d0  l1_cache_axi_master
+  d0  mem_axi_slave
+  d0  memory_stage
+  d0  multiplier_pipelined
+  d0  pipeline_reg_ex_mem
+  d0  pipeline_reg_id_ex
+  d0  pipeline_reg_if_id
+  d0  pipeline_reg_mem_wb
+  d0  read_buffer_d_cache
+  d0  read_buffer_i_cache
+  d0  register_file
+  d0  tag_memory_92x64_wrap
+  d0  timer
+  d0  uart_controller
+  d1  axi_interconnect_2m_8s   <- arbiter
+  d1  axi_lite_gpio   <- gpio_controller
+  d1  axi_lite_timer   <- timer
+  d1  axi_lite_uart   <- uart_controller
+  d1  execution_stage   <- alu, data_clipper, multiplier_pipelined
+  d1  fp4_dot_unit   <- fp4_mul, fp8_adder
+  d1  instruction_decode_stage   <- branch_comp_decoder, control_unit, csr_regfile, immediate_generator, register_file
+  d1  l1_d_cache_8kb   <- id_memory_256x64_wrap, tag_memory_92x64_wrap
+  d1  l1_i_cache_8kb   <- id_memory_256x64_wrap, tag_memory_92x64_wrap
+  d1  write_back_stage   <- data_extender
+  d2  axi_lite_dot   <- fp4_dot_unit
+  d2  instruction_fetch_stage   <- branch_predictor, i_rom_32x256, l1_i_cache_8kb, read_buffer_i_cache
+  d3  processor_top   <- alu_src_a_mux, alu_src_b_mux, branch_comprator, data_extender, data_forwarding_unit, execution_stage, hazard_detection_unit, instruction_decode_stage, instruction_fetch_stage, memory_stage, pipeline_reg_ex_mem, pipeline_reg_id_ex, pipeline_reg_if_id, pipeline_reg_mem_wb, write_back_stage
+  d4  soc_top   <- axi_interconnect_2m_8s, axi_lite_dma_config, axi_lite_dot, axi_lite_gpio, axi_lite_master, axi_lite_timer, axi_lite_uart, clk_div_mux, clk_gate, dmem, interrupt_control_unit, l1_cache_axi_master, l1_d_cache_8kb, mem_axi_slave, processor_top, read_buffer_d_cache
+[1/54] PASS  alu                          PROVED_EQUIVALENT               24.7s
+[2/54] PASS  alu_src_a_mux                PROVED_EQUIVALENT               20.3s
+[3/54] PASS  alu_src_b_mux                PROVED_EQUIVALENT               22.8s
+[4/54] PASS  arbiter                      PROVED_EQUIVALENT               15.9s
+[5/54] FAIL  axi_lite_dma_config          UNPROVEN (130 cells) at depth 5    26.6s
+[6/54] PASS  axi_lite_master              PROVED_EQUIVALENT               16.2s
+[7/54] PASS  branch_comp_decoder          PROVED_EQUIVALENT               15.7s
+[8/54] PASS  branch_comprator             PROVED_EQUIVALENT               15.7s
+[9/54] FAIL  branch_predictor             UNPROVEN (50 cells) at depth 5    36.0s
+[10/54] PASS  clk_div_mux                  PROVED_EQUIVALENT               15.7s
+[11/54] PASS  clk_gate                     PROVED_EQUIVALENT               15.5s
+[12/54] PASS  control_unit                 PROVED_EQUIVALENT               15.8s
+[13/54] FAIL  csr_regfile                  UNPROVEN (33 cells) at depth 5    18.1s
+[14/54] PASS  data_clipper                 PROVED_EQUIVALENT               15.5s
+[15/54] PASS  data_extender                PROVED_EQUIVALENT               15.7s
+[16/54] PASS  data_forwarding_unit         PROVED_EQUIVALENT               15.8s
+[17/54] FAIL  dma_controller               UNPROVEN (100 cells) at depth 5    20.9s
+[18/54] FAIL  dmem                         UNPROVEN (32 cells) at depth 5    46.6s
+[19/54] PASS  fp4_mul                      PROVED_EQUIVALENT               15.6s
+[20/54] PASS  fp8_adder                    PROVED_EQUIVALENT               16.4s
+[21/54] FAIL  gpio_controller              UNPROVEN (65 cells) at depth 5    17.8s
+[22/54] PASS  hazard_detection_unit        PROVED_EQUIVALENT               15.6s
+[23/54] PASS  i_rom_32x256                 PROVED_EQUIVALENT               16.1s
+[24/54] PASS  id_memory_256x64_wrap        PROVED_EQUIVALENT               15.4s
+[25/54] PASS  immediate_generator          PROVED_EQUIVALENT               15.4s
+[26/54] PASS  interrupt_control_unit       PROVED_EQUIVALENT               15.5s
+[27/54] FAIL  l1_cache_axi_master          UNPROVEN (354 cells) at depth 5    27.8s
+[28/54] FAIL  mem_axi_slave                UNPROVEN (36 cells) at depth 5    17.7s
+[29/54] PASS  memory_stage                 PROVED_EQUIVALENT               15.4s
+[30/54] FAIL  multiplier_pipelined         TIMEOUT after 900s             912.2s
+[31/54] PASS  pipeline_reg_ex_mem          PROVED_EQUIVALENT               15.6s
+[32/54] PASS  pipeline_reg_id_ex           PROVED_EQUIVALENT               15.7s
+[33/54] PASS  pipeline_reg_if_id           PROVED_EQUIVALENT               15.6s
+[34/54] PASS  pipeline_reg_mem_wb          PROVED_EQUIVALENT               15.4s
+[35/54] FAIL  read_buffer_d_cache          UNPROVEN (294 cells) at depth 5    23.1s
+[36/54] FAIL  read_buffer_i_cache          UNPROVEN (67 cells) at depth 5    17.8s
+[37/54] FAIL  register_file                UNPROVEN (64 cells) at depth 5    22.0s
+[38/54] PASS  tag_memory_92x64_wrap        PROVED_EQUIVALENT               15.5s
+[39/54] FAIL  timer                        UNPROVEN (33 cells) at depth 5    16.3s
+[40/54] FAIL  uart_controller              UNPROVEN (39 cells) at depth 5    17.2s
+[41/54] FAIL  axi_interconnect_2m_8s       UNPROVEN (882 cells) at depth 5    18.5s  boxed: 1
+[42/54] FAIL  axi_lite_gpio                UNPROVEN (337 cells) at depth 5    46.0s
+[43/54] FAIL  axi_lite_timer               UNPROVEN (273 cells) at depth 5    37.3s
+[44/54] FAIL  axi_lite_uart                UNPROVEN (280 cells) at depth 5    41.1s
+[45/54] FAIL  execution_stage              TIMEOUT after 900s             973.8s  boxed: 2
+[46/54] FAIL  fp4_dot_unit                 TIMEOUT after 900s             930.6s  boxed: 2
+[47/54] FAIL  instruction_decode_stage     UNPROVEN (226 cells) at depth 5   162.9s  boxed: 3
+[48/54] FAIL  l1_d_cache_8kb               TIMEOUT after 900s            1337.0s  boxed: 2
+[49/54] FAIL  l1_i_cache_8kb               YOSYS_ERROR: ERROR: No SAT model available for cell i_mem_0.u_macro_gate (id_memory_256x64).   734.4s  boxed: 2
+[50/54] PASS  write_back_stage             PROVED_EQUIVALENT               20.6s  boxed: 1
+[51/54] FAIL  axi_lite_dot                 UNPROVEN (577 cells) at depth 5  2081.2s

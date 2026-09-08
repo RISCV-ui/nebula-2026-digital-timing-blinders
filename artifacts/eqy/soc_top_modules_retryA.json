@@ -1,0 +1,219 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_macro.v",
+  "modules_checked": 6,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "dma_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (4 cells) at depth 20",
+      "seconds": 168.7,
+      "failed_partitions": [],
+      "log_tail": [
+        "Found 462 $equiv cells in equiv:",
+        "  Of those cells 458 are proven and 4 are unproven.",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14486: \\int_out_dma_gold \\int_out_dma_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14357: \\data_out_gold [2] \\data_out_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14356: \\data_out_gold [1] \\data_out_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14355: \\data_out_gold [0] \\data_out_gate [0]",
+        "Found a total of 4 unproven $equiv cells.",
+        "ERROR: Found 4 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 10.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 64.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (4 cells) at depth 20",
+          "seconds": 94.2
+        }
+      ]
+    },
+    {
+      "module": "uart_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (1 cells) at depth 20",
+      "seconds": 62.0,
+      "failed_partitions": [],
+      "log_tail": [
+        "Proved 174 previously unproven $equiv cells.",
+        "",
+        "70. Executing EQUIV_STATUS pass.",
+        "Found 179 $equiv cells in equiv:",
+        "  Of those cells 178 are proven and 1 are unproven.",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13344: \\uart_tx_gold \\uart_tx_gate",
+        "Found a total of 1 unproven $equiv cells.",
+        "ERROR: Found 1 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 11.7
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 29.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (1 cells) at depth 20",
+          "seconds": 21.1
+        }
+      ]
+    },
+    {
+      "module": "l1_cache_axi_master",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (60 cells) at depth 20",
+      "seconds": 470.9,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16011: \\m_ar_addr_gold [7] \\m_ar_addr_gate [7]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16010: \\m_ar_addr_gold [6] \\m_ar_addr_gate [6]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16009: \\m_ar_addr_gold [5] \\m_ar_addr_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16008: \\m_ar_addr_gold [4] \\m_ar_addr_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16007: \\m_ar_addr_gold [3] \\m_ar_addr_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16006: \\m_ar_addr_gold [2] \\m_ar_addr_gate [2]",
+        "Found a total of 60 unproven $equiv cells.",
+        "ERROR: Found 60 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 29.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 134.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (60 cells) at depth 20",
+          "seconds": 306.6
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_timer",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (16 cells) at depth 20",
+      "seconds": 1592.2,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17537: \\fifo_timer_w.data_in_clk1_gold [37] \\fifo_timer_w.data_in_clk1_gate [37]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17536: \\fifo_timer_w.data_in_clk1_gold [36] \\fifo_timer_w.data_in_clk1_gate [36]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17535: \\fifo_timer_w.data_in_clk1_gold [35] \\fifo_timer_w.data_in_clk1_gate [35]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17534: \\fifo_timer_w.data_in_clk1_gold [34] \\fifo_timer_w.data_in_clk1_gate [34]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17533: \\fifo_timer_w.data_in_clk1_gold [33] \\fifo_timer_w.data_in_clk1_gate [33]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17532: \\fifo_timer_w.data_in_clk1_gold [32] \\fifo_timer_w.data_in_clk1_gate [32]",
+        "Found a total of 16 unproven $equiv cells.",
+        "ERROR: Found 16 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_retryA/axi_lite_timer.partitioned/partition.log",
+          "seconds": 6.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_retryA/axi_lite_timer.merged/partition.log'.",
+          "seconds": 6.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (16 cells) at depth 20",
+          "seconds": 1579.0
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_gpio",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (16 cells) at depth 20",
+      "seconds": 2411.3,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19161: \\fifo_timer_w.data_in_clk1_gold [37] \\fifo_timer_w.data_in_clk1_gate [37]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19160: \\fifo_timer_w.data_in_clk1_gold [36] \\fifo_timer_w.data_in_clk1_gate [36]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19159: \\fifo_timer_w.data_in_clk1_gold [35] \\fifo_timer_w.data_in_clk1_gate [35]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19158: \\fifo_timer_w.data_in_clk1_gold [34] \\fifo_timer_w.data_in_clk1_gate [34]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19157: \\fifo_timer_w.data_in_clk1_gold [33] \\fifo_timer_w.data_in_clk1_gate [33]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19156: \\fifo_timer_w.data_in_clk1_gold [32] \\fifo_timer_w.data_in_clk1_gate [32]",
+        "Found a total of 16 unproven $equiv cells.",
+        "ERROR: Found 16 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_retryA/axi_lite_gpio.partitioned/partition.log'",
+          "seconds": 7.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_retryA/axi_lite_gpio.merged/partition.log'.",
+          "seconds": 7.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (16 cells) at depth 20",
+          "seconds": 2396.1
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_uart",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (16 cells) at depth 20",
+      "seconds": 1807.5,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17969: \\fifo_uart_w.data_in_clk1_gold [37] \\fifo_uart_w.data_in_clk1_gate [37]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17968: \\fifo_uart_w.data_in_clk1_gold [36] \\fifo_uart_w.data_in_clk1_gate [36]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17967: \\fifo_uart_w.data_in_clk1_gold [35] \\fifo_uart_w.data_in_clk1_gate [35]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17966: \\fifo_uart_w.data_in_clk1_gold [34] \\fifo_uart_w.data_in_clk1_gate [34]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17965: \\fifo_uart_w.data_in_clk1_gold [33] \\fifo_uart_w.data_in_clk1_gate [33]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17964: \\fifo_uart_w.data_in_clk1_gold [32] \\fifo_uart_w.data_in_clk1_gate [32]",
+        "Found a total of 16 unproven $equiv cells.",
+        "ERROR: Found 16 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_retryA/axi_lite_uart.partitioned/partition.log'",
+          "seconds": 6.8
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_retryA/axi_lite_uart.merged/partition.log'.",
+          "seconds": 6.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (16 cells) at depth 20",
+          "seconds": 1794.1
+        }
+      ]
+    }
+  ]
+}

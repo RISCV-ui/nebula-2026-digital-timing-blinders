@@ -1,0 +1,35 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "l1_d_cache_8kb",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 936.7,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work2/l1",
+          "seconds": 17.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work2/l1",
+          "seconds": 18.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    }
+  ]
+}

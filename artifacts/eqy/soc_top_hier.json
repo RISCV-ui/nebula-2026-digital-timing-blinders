@@ -1,0 +1,1676 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "method": "compositional: a module proved equivalent is boxed identically on both sides of every later check",
+  "modules_checked": 54,
+  "modules_equivalent": 28,
+  "all_equivalent": false,
+  "total_seconds": 2417.6,
+  "order": [
+    "alu",
+    "alu_src_a_mux",
+    "alu_src_b_mux",
+    "arbiter",
+    "axi_lite_dma_config",
+    "axi_lite_master",
+    "branch_comp_decoder",
+    "branch_comprator",
+    "branch_predictor",
+    "clk_div_mux",
+    "clk_gate",
+    "control_unit",
+    "csr_regfile",
+    "data_clipper",
+    "data_extender",
+    "data_forwarding_unit",
+    "dma_controller",
+    "dmem",
+    "fp4_mul",
+    "fp8_adder",
+    "gpio_controller",
+    "hazard_detection_unit",
+    "i_rom_32x256",
+    "id_memory_256x64_wrap",
+    "immediate_generator",
+    "interrupt_control_unit",
+    "l1_cache_axi_master",
+    "mem_axi_slave",
+    "memory_stage",
+    "multiplier_pipelined",
+    "pipeline_reg_ex_mem",
+    "pipeline_reg_id_ex",
+    "pipeline_reg_if_id",
+    "pipeline_reg_mem_wb",
+    "read_buffer_d_cache",
+    "read_buffer_i_cache",
+    "register_file",
+    "tag_memory_92x64_wrap",
+    "timer",
+    "uart_controller",
+    "axi_interconnect_2m_8s",
+    "axi_lite_gpio",
+    "axi_lite_timer",
+    "axi_lite_uart",
+    "execution_stage",
+    "fp4_dot_unit",
+    "instruction_decode_stage",
+    "l1_d_cache_8kb",
+    "l1_i_cache_8kb",
+    "write_back_stage",
+    "axi_lite_dot",
+    "instruction_fetch_stage",
+    "processor_top",
+    "soc_top"
+  ],
+  "results": [
+    {
+      "module": "alu",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 24.7,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 12.8
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 11.8
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "alu_src_a_mux",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/alu_",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/alu_",
+          "seconds": 7.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.2
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "alu_src_b_mux",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/alu_",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/alu_",
+          "seconds": 7.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.1
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "arbiter",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/arbi",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/arbi",
+          "seconds": 7.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.1
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "axi_lite_dma_config",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell dma_0_gate (dma_controller).",
+      "seconds": 23.7,
+      "failed_partitions": [],
+      "log_tail": [
+        "ezsat",
+        "ezsat",
+        " failed.",
+        "Proved 8 previously unproven $equiv cells.",
+        "",
+        "65. Executing EQUIV_INDUCT pass.",
+        "Found 147 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell dma_0_gate (dma_controller)."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 7.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 7.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell dma_0_gate (dma_controller).",
+          "seconds": 8.3
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "axi_lite_master",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 7.4
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 7.4
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.6
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "branch_comp_decoder",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.7,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/bran",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/bran",
+          "seconds": 7.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.0
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "branch_comprator",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.7,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/bran",
+          "seconds": 7.2
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/bran",
+          "seconds": 7.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.1
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "branch_predictor",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (50 cells) at depth 5",
+      "seconds": 48.7,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$23874: \\valid_table[5]_gold \\valid_table[5]_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$23873: \\valid_table[4]_gold \\valid_table[4]_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$23872: \\valid_table[3]_gold \\valid_table[3]_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$23871: \\valid_table[2]_gold \\valid_table[2]_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$23870: \\valid_table[1]_gold \\valid_table[1]_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$23869: \\valid_table[0]_gold \\valid_table[0]_gate",
+        "Found a total of 50 unproven $equiv cells.",
+        "ERROR: Found 50 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/bran",
+          "seconds": 8.1
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/bran",
+          "seconds": 8.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (50 cells) at depth 5",
+          "seconds": 32.2
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "clk_div_mux",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/clk_",
+          "seconds": 7.2
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/clk_",
+          "seconds": 7.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.0
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "clk_gate",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/clk_",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/clk_",
+          "seconds": 7.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.1
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "control_unit",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/cont",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/cont",
+          "seconds": 7.4
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.2
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "csr_regfile",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (33 cells) at depth 5",
+      "seconds": 33.3,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12329: \\csr_rdata_gold [5] \\csr_rdata_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12328: \\csr_rdata_gold [4] \\csr_rdata_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12327: \\csr_rdata_gold [3] \\csr_rdata_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12326: \\csr_rdata_gold [2] \\csr_rdata_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12325: \\csr_rdata_gold [1] \\csr_rdata_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12324: \\csr_rdata_gold [0] \\csr_rdata_gate [0]",
+        "Found a total of 33 unproven $equiv cells.",
+        "ERROR: Found 33 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/csr_",
+          "seconds": 8.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/csr_",
+          "seconds": 9.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (33 cells) at depth 5",
+          "seconds": 15.5
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "data_clipper",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 22.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/data",
+          "seconds": 7.8
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/data",
+          "seconds": 7.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.7
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "data_extender",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.6,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/data",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/data",
+          "seconds": 7.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.9
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "data_forwarding_unit",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/data",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/data",
+          "seconds": 7.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.3
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "dma_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (100 cells) at depth 5",
+      "seconds": 28.3,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12686: \\addr_dest_dma_gold [5] \\addr_dest_dma_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12685: \\addr_dest_dma_gold [4] \\addr_dest_dma_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12684: \\addr_dest_dma_gold [3] \\addr_dest_dma_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12683: \\addr_dest_dma_gold [2] \\addr_dest_dma_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12682: \\addr_dest_dma_gold [1] \\addr_dest_dma_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12681: \\addr_dest_dma_gold [0] \\addr_dest_dma_gate [0]",
+        "Found a total of 100 unproven $equiv cells.",
+        "ERROR: Found 100 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/dma_",
+          "seconds": 7.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/dma_",
+          "seconds": 7.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (100 cells) at depth 5",
+          "seconds": 12.9
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "dmem",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (32 cells) at depth 5",
+      "seconds": 62.5,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26380: \\rdata_gold [5] \\rdata_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26379: \\rdata_gold [4] \\rdata_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26378: \\rdata_gold [3] \\rdata_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26377: \\rdata_gold [2] \\rdata_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26376: \\rdata_gold [1] \\rdata_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26375: \\rdata_gold [0] \\rdata_gate [0]",
+        "Found a total of 32 unproven $equiv cells.",
+        "ERROR: Found 32 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/dmem",
+          "seconds": 9.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/dmem",
+          "seconds": 9.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (32 cells) at depth 5",
+          "seconds": 44.1
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "fp4_mul",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/fp4_",
+          "seconds": 7.1
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/fp4_",
+          "seconds": 7.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.0
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "fp8_adder",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 23.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/fp8_",
+          "seconds": 7.7
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/fp8_",
+          "seconds": 8.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 8.0
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "gpio_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (65 cells) at depth 5",
+      "seconds": 25.2,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12874: \\data_out_gold [5] \\data_out_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12873: \\data_out_gold [4] \\data_out_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12872: \\data_out_gold [3] \\data_out_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12871: \\data_out_gold [2] \\data_out_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12870: \\data_out_gold [1] \\data_out_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12869: \\data_out_gold [0] \\data_out_gate [0]",
+        "Found a total of 65 unproven $equiv cells.",
+        "ERROR: Found 65 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/gpio",
+          "seconds": 7.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/gpio",
+          "seconds": 8.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (65 cells) at depth 5",
+          "seconds": 9.2
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "hazard_detection_unit",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 22.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/haza",
+          "seconds": 7.8
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/haza",
+          "seconds": 7.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.5
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "i_rom_32x256",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/i_ro",
+          "seconds": 7.5
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/i_ro",
+          "seconds": 7.1
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.6
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "id_memory_256x64_wrap",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 19.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/id_m",
+          "seconds": 6.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/id_m",
+          "seconds": 7.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.8
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "immediate_generator",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/imme",
+          "seconds": 7.1
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/imme",
+          "seconds": 7.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.9
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "interrupt_control_unit",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.7,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/inte",
+          "seconds": 7.2
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/inte",
+          "seconds": 7.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.9
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "l1_cache_axi_master",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (354 cells) at depth 5",
+      "seconds": 37.5,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12316: \\data_in_l2_gold [5] \\data_in_l2_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12315: \\data_in_l2_gold [4] \\data_in_l2_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12314: \\data_in_l2_gold [3] \\data_in_l2_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12313: \\data_in_l2_gold [2] \\data_in_l2_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12312: \\data_in_l2_gold [1] \\data_in_l2_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12311: \\data_in_l2_gold [0] \\data_in_l2_gate [0]",
+        "Found a total of 354 unproven $equiv cells.",
+        "ERROR: Found 354 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/l1_c",
+          "seconds": 7.4
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/l1_c",
+          "seconds": 7.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (354 cells) at depth 5",
+          "seconds": 22.6
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "mem_axi_slave",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (36 cells) at depth 5",
+      "seconds": 22.9,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10089: \\addr_gold [5] \\addr_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10088: \\addr_gold [4] \\addr_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10087: \\addr_gold [3] \\addr_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10086: \\addr_gold [2] \\addr_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10085: \\addr_gold [1] \\addr_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10084: \\addr_gold [0] \\addr_gate [0]",
+        "Found a total of 36 unproven $equiv cells.",
+        "ERROR: Found 36 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/mem_",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/mem_",
+          "seconds": 7.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (36 cells) at depth 5",
+          "seconds": 8.3
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "memory_stage",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/memo",
+          "seconds": 7.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/memo",
+          "seconds": 7.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.6
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "multiplier_pipelined",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 917.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/mult",
+          "seconds": 8.8
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/mult",
+          "seconds": 9.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "pipeline_reg_ex_mem",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/pipe",
+          "seconds": 7.8
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/pipe",
+          "seconds": 7.4
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.2
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "pipeline_reg_id_ex",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/pipe",
+          "seconds": 7.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/pipe",
+          "seconds": 7.1
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.6
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "pipeline_reg_if_id",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/pipe",
+          "seconds": 7.5
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/pipe",
+          "seconds": 7.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.0
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "pipeline_reg_mem_wb",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/pipe",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/pipe",
+          "seconds": 7.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.8
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "read_buffer_d_cache",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (294 cells) at depth 5",
+      "seconds": 31.5,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12138: \\addr_l1_gold [5] \\addr_l1_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12137: \\addr_l1_gold [4] \\addr_l1_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12136: \\addr_l1_gold [3] \\addr_l1_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12135: \\addr_l1_gold [2] \\addr_l1_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12134: \\addr_l1_gold [1] \\addr_l1_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12133: \\addr_l1_gold [0] \\addr_l1_gate [0]",
+        "Found a total of 294 unproven $equiv cells.",
+        "ERROR: Found 294 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/read",
+          "seconds": 7.1
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/read",
+          "seconds": 7.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (294 cells) at depth 5",
+          "seconds": 16.4
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "read_buffer_i_cache",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (67 cells) at depth 5",
+      "seconds": 24.4,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11191: \\addr_l1_gold [5] \\addr_l1_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11190: \\addr_l1_gold [4] \\addr_l1_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11189: \\addr_l1_gold [3] \\addr_l1_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11188: \\addr_l1_gold [2] \\addr_l1_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11187: \\addr_l1_gold [1] \\addr_l1_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11186: \\addr_l1_gold [0] \\addr_l1_gate [0]",
+        "Found a total of 67 unproven $equiv cells.",
+        "ERROR: Found 67 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/read",
+          "seconds": 7.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/read",
+          "seconds": 7.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (67 cells) at depth 5",
+          "seconds": 8.8
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "register_file",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (64 cells) at depth 5",
+      "seconds": 29.5,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12430: \\RD1_gold [5] \\RD1_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12429: \\RD1_gold [4] \\RD1_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12428: \\RD1_gold [3] \\RD1_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12427: \\RD1_gold [2] \\RD1_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12426: \\RD1_gold [1] \\RD1_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$12425: \\RD1_gold [0] \\RD1_gate [0]",
+        "Found a total of 64 unproven $equiv cells.",
+        "ERROR: Found 64 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/regi",
+          "seconds": 7.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/regi",
+          "seconds": 7.4
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (64 cells) at depth 5",
+          "seconds": 14.7
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "tag_memory_92x64_wrap",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/tag_",
+          "seconds": 7.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/tag_",
+          "seconds": 7.1
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.1
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "timer",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (33 cells) at depth 5",
+      "seconds": 22.1,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$9980: \\data_out_gold [5] \\data_out_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$9979: \\data_out_gold [4] \\data_out_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$9978: \\data_out_gold [3] \\data_out_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$9977: \\data_out_gold [2] \\data_out_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$9976: \\data_out_gold [1] \\data_out_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$9975: \\data_out_gold [0] \\data_out_gate [0]",
+        "Found a total of 33 unproven $equiv cells.",
+        "ERROR: Found 33 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/time",
+          "seconds": 7.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/time",
+          "seconds": 7.4
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (33 cells) at depth 5",
+          "seconds": 7.0
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "uart_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (39 cells) at depth 5",
+      "seconds": 24.4,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10395: \\data_out_gold [5] \\data_out_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10394: \\data_out_gold [4] \\data_out_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10393: \\data_out_gold [3] \\data_out_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10392: \\data_out_gold [2] \\data_out_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10391: \\data_out_gold [1] \\data_out_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$10390: \\data_out_gold [0] \\data_out_gate [0]",
+        "Found a total of 39 unproven $equiv cells.",
+        "ERROR: Found 39 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/uart",
+          "seconds": 7.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/uart",
+          "seconds": 8.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (39 cells) at depth 5",
+          "seconds": 8.4
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "axi_interconnect_2m_8s",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell arbt_1_gate (arbiter).",
+      "seconds": 11.4,
+      "failed_partitions": [],
+      "log_tail": [
+        "ezsat",
+        "ezsat",
+        " failed.",
+        "Proved 4 previously unproven $equiv cells.",
+        "",
+        "43. Executing EQUIV_INDUCT pass.",
+        "Found 882 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell arbt_1_gate (arbiter)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell arbt_1_gate (arbiter).",
+          "seconds": 11.3
+        }
+      ],
+      "cut_points": [
+        "arbiter"
+      ]
+    },
+    {
+      "module": "axi_lite_gpio",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronou",
+      "seconds": 26.0,
+      "failed_partitions": [],
+      "log_tail": [
+        "ezsat",
+        "ezsat",
+        " failed.",
+        "Proved 4 previously unproven $equiv cells.",
+        "",
+        "43. Executing EQUIV_INDUCT pass.",
+        "Found 113 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen)."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 8.4
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 8.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronou",
+          "seconds": 8.7
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "axi_lite_timer",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronou",
+      "seconds": 24.6,
+      "failed_partitions": [],
+      "log_tail": [
+        " failed.",
+        "  Trying to prove $equiv for \\int_out_timer:ezsat",
+        " failed.",
+        "Proved 4 previously unproven $equiv cells.",
+        "",
+        "43. Executing EQUIV_INDUCT pass.",
+        "Found 49 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen)."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 8.5
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 8.1
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronou",
+          "seconds": 7.9
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "axi_lite_uart",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_uart_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous",
+      "seconds": 25.3,
+      "failed_partitions": [],
+      "log_tail": [
+        " failed.",
+        "  Trying to prove $equiv for \\uart_tx:ezsat",
+        " failed.",
+        "Proved 4 previously unproven $equiv cells.",
+        "",
+        "43. Executing EQUIV_INDUCT pass.",
+        "Found 50 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell fifo_uart_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen)."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 8.2
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 8.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_uart_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous",
+          "seconds": 8.4
+        }
+      ],
+      "cut_points": []
+    },
+    {
+      "module": "execution_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell alu_ex_gate (alu).",
+      "seconds": 9.4,
+      "failed_partitions": [],
+      "log_tail": [
+        " failed.",
+        "  Trying to prove $equiv for \\alu_output_forwd [31]:ezsat",
+        " failed.",
+        "Proved 104 previously unproven $equiv cells.",
+        "",
+        "43. Executing EQUIV_INDUCT pass.",
+        "Found 34 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell alu_ex_gate (alu)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell alu_ex_gate (alu).",
+          "seconds": 9.3
+        }
+      ],
+      "cut_points": [
+        "alu",
+        "data_clipper"
+      ]
+    },
+    {
+      "module": "fp4_dot_unit",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 6.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.7
+        }
+      ],
+      "cut_points": [
+        "fp4_mul",
+        "fp8_adder"
+      ]
+    },
+    {
+      "module": "instruction_decode_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell branch_decoder_gate (branch_comp_decoder).",
+      "seconds": 8.4,
+      "failed_partitions": [],
+      "log_tail": [
+        " success!",
+        "  Trying to prove $equiv for \\csr_we_q:ezsat",
+        " failed.",
+        "Proved 133 previously unproven $equiv cells.",
+        "",
+        "42. Executing EQUIV_INDUCT pass.",
+        "Found 163 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell branch_decoder_gate (branch_comp_decoder)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell branch_decoder_gate (branch_comp_decoder).",
+          "seconds": 8.3
+        }
+      ],
+      "cut_points": [
+        "branch_comp_decoder",
+        "control_unit",
+        "immediate_generator"
+      ]
+    },
+    {
+      "module": "l1_d_cache_8kb",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap).",
+      "seconds": 271.0,
+      "failed_partitions": [],
+      "log_tail": [
+        " failed.",
+        "  Trying to prove $equiv for \\data_valid_mem_3:ezsat",
+        " failed.",
+        "Proved 9 previously unproven $equiv cells.",
+        "",
+        "42. Executing EQUIV_INDUCT pass.",
+        "Found 554 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap).",
+          "seconds": 270.9
+        }
+      ],
+      "cut_points": [
+        "id_memory_256x64_wrap",
+        "tag_memory_92x64_wrap"
+      ]
+    },
+    {
+      "module": "l1_i_cache_8kb",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap).",
+      "seconds": 61.7,
+      "failed_partitions": [],
+      "log_tail": [
+        "ezsat",
+        "ezsat",
+        " failed.",
+        "Proved 249 previously unproven $equiv cells.",
+        "",
+        "42. Executing EQUIV_INDUCT pass.",
+        "Found 57 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap).",
+          "seconds": 61.6
+        }
+      ],
+      "cut_points": [
+        "id_memory_256x64_wrap",
+        "tag_memory_92x64_wrap"
+      ]
+    },
+    {
+      "module": "write_back_stage",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 6.6,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.5
+        }
+      ],
+      "cut_points": [
+        "data_extender"
+      ]
+    },
+    {
+      "module": "axi_lite_dot",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronou",
+      "seconds": 7.8,
+      "failed_partitions": [],
+      "log_tail": [
+        "ezsat",
+        "ezsat",
+        " failed.",
+        "Proved 4 previously unproven $equiv cells.",
+        "",
+        "41. Executing EQUIV_INDUCT pass.",
+        "Found 50 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_timer_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronou",
+          "seconds": 7.7
+        }
+      ],
+      "cut_points": [
+        "fp4_dot_unit"
+      ]
+    },
+    {
+      "module": "instruction_fetch_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell branch_pred_if_gate (branch_predictor).",
+      "seconds": 15.9,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Trying to prove $equiv for \\redirect_pend:ezsat",
+        "ezsat",
+        " failed.",
+        "Proved 31 previously unproven $equiv cells.",
+        "",
+        "41. Executing EQUIV_INDUCT pass.",
+        "Found 77 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell branch_pred_if_gate (branch_predictor)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell branch_pred_if_gate (branch_predictor).",
+          "seconds": 15.8
+        }
+      ],
+      "cut_points": [
+        "i_rom_32x256"
+      ]
+    },
+    {
+      "module": "processor_top",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell branch_comp_id_gate (branch_comprator).",
+      "seconds": 18.7,
+      "failed_partitions": [],
+      "log_tail": [
+        " failed.",
+        "  Trying to prove $equiv for \\inst_complete_id_mm_gated:ezsat",
+        " failed.",
+        "Proved 134 previously unproven $equiv cells.",
+        "",
+        "41. Executing EQUIV_INDUCT pass.",
+        "Found 87 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell branch_comp_id_gate (branch_comprator)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell branch_comp_id_gate (branch_comprator).",
+          "seconds": 18.6
+        }
+      ],
+      "cut_points": [
+        "alu_src_a_mux",
+        "alu_src_b_mux",
+        "branch_comprator",
+        "data_extender",
+        "data_forwarding_unit",
+        "hazard_detection_unit",
+        "memory_stage",
+        "pipeline_reg_ex_mem",
+        "pipeline_reg_id_ex",
+        "pipeline_reg_if_id",
+        "pipeline_reg_mem_wb",
+        "write_back_stage"
+      ]
+    },
+    {
+      "module": "soc_top",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.",
+      "seconds": 38.7,
+      "failed_partitions": [],
+      "log_tail": [
+        "Presumably equivalent wires: clk1_gold (\\clk1_gold), clk1_gate (\\clk1_gate) -> clk1",
+        "Presumably equivalent wires: clk2_gold (\\clk2_gold), clk2_gate (\\clk2_gate) -> clk2",
+        "Presumably equivalent wires: clk3_gold (\\clk3_gold), clk3_gate (\\clk3_gate) -> clk3",
+        "Presumably equivalent wires: clk4_gold (\\clk4_gold), clk4_gate (\\clk4_gate) -> clk4",
+        "Presumably equivalent wires: clk5_gold (\\clk5_gold), clk5_gate (\\clk5_gate) -> clk5",
+        "Presumably equivalent wires: clk_s1_gold (\\clk_s1_gold), clk_s1_gate (\\clk_s1_gate) -> clk_s1",
+        "Presumably equivalent wires: clk_s1_gate_gold (\\clk_s1_gate_gold), clk_s1_gate_gate (\\clk_s1_gate_gate) -> clk_s1_gate",
+        "ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.",
+          "seconds": 38.6
+        }
+      ],
+      "cut_points": [
+        "axi_lite_master",
+        "clk_div_mux",
+        "clk_gate",
+        "interrupt_control_unit"
+      ]
+    }
+  ]
+}

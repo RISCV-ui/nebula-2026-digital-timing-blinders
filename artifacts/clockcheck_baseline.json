@@ -1,0 +1,54 @@
+{
+  "rtl": "bench/rtl",
+  "findings": [
+    {
+      "module": "clk_div_mux",
+      "net": "clk_div2",
+      "verdict": "UNRECOGNISED",
+      "sources": [],
+      "driver": "clk_div[0]",
+      "reason": "clk_div2 is driven by combinational logic in a shape this checker does not classify"
+    },
+    {
+      "module": "clk_div_mux",
+      "net": "clk_div4",
+      "verdict": "UNRECOGNISED",
+      "sources": [],
+      "driver": "clk_div[1]",
+      "reason": "clk_div4 is driven by combinational logic in a shape this checker does not classify"
+    },
+    {
+      "module": "clk_div_mux",
+      "net": "clk_div8",
+      "verdict": "UNRECOGNISED",
+      "sources": [],
+      "driver": "clk_div[2]",
+      "reason": "clk_div8 is driven by combinational logic in a shape this checker does not classify"
+    },
+    {
+      "module": "clk_div_mux",
+      "net": "clk_out",
+      "verdict": "GLITCHY_MUX",
+      "sources": [
+        "clk",
+        "clk_div2",
+        "clk_div4",
+        "clk_div8"
+      ],
+      "driver": "clk; clk_div2; clk_div4; clk_div8",
+      "reason": "clk_out is selected combinationally among clk, clk_div2, clk_div4, clk_div8; a select change mid-pulse truncates it"
+    },
+    {
+      "module": "clk_gate",
+      "net": "clk_out",
+      "verdict": "GLITCHY_GATE",
+      "sources": [
+        "clk_in"
+      ],
+      "driver": "clk_in&clk_en",
+      "reason": "clk_out = clk_in & clk_en with no low-phase latch on the enable; an enable change while clk_in is high chops the pulse"
+    }
+  ],
+  "glitchy": 2,
+  "verdict": "GLITCH_RISK"
+}

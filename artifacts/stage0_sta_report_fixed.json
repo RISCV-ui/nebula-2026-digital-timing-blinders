@@ -1,0 +1,184 @@
+{
+  "top": "traffic_light",
+  "num_paths_reported": 22,
+  "num_violations": 11,
+  "wns": -0.33,
+  "paths": [
+    {
+      "startpoint": "rst_n",
+      "endpoint": "_48_",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.33,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "rst_n",
+      "endpoint": "_49_",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.33,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "rst_n",
+      "endpoint": "_47_",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.3,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "_48_",
+      "endpoint": "_46_",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.29,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "_45_",
+      "endpoint": "green",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.26,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "_46_",
+      "endpoint": "red",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.26,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "_44_",
+      "endpoint": "yellow",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.26,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "rst_n",
+      "endpoint": "_45_",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.19,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "rst_n",
+      "endpoint": "_50_",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.19,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "rst_n",
+      "endpoint": "_44_",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.19,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "rst_n",
+      "endpoint": "_51_",
+      "path_group": "clk",
+      "path_type": "max",
+      "slack": -0.19,
+      "status": "VIOLATED"
+    },
+    {
+      "startpoint": "_47_",
+      "endpoint": "_47_",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 0.5,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_47_",
+      "endpoint": "_48_",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 0.54,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_49_",
+      "endpoint": "_49_",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 0.54,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_50_",
+      "endpoint": "_45_",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 0.6,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_50_",
+      "endpoint": "_50_",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 0.6,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_50_",
+      "endpoint": "_46_",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 0.61,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_51_",
+      "endpoint": "_44_",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 0.63,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_51_",
+      "endpoint": "_51_",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 0.63,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_45_",
+      "endpoint": "green",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 1.26,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_46_",
+      "endpoint": "red",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 1.26,
+      "status": "MET"
+    },
+    {
+      "startpoint": "_44_",
+      "endpoint": "yellow",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack": 1.26,
+      "status": "MET"
+    }
+  ]
+}

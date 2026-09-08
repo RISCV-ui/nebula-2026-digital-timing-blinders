@@ -1,0 +1,11 @@
+plugin -i /Users/shubhanshu/Desktop/Nebula/orfs/tools/install/eqy/bin/../share/yosys/plugins/eqy_combine.so
+read_rtlil test/gold.il
+uniquify
+hierarchy
+design -stash gold
+read_rtlil test/gate_recoded.il
+uniquify
+hierarchy
+design -stash gate
+eqy_combine -gold_ids test/gold.ids -gate_ids test/gate_recoded.ids
+write_rtlil test/combined.il

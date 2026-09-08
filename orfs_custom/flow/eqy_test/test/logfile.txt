@@ -1,0 +1,18 @@
+EQY  1:32:50 [test] read_gold: starting process "yosys -ql test/gold.log test/gold.ys"
+EQY  1:32:51 [test] read_gold: finished (returncode=0)
+EQY  1:32:51 [test] read_gate: starting process "yosys -ql test/gate.log test/gate.ys"
+EQY  1:32:51 [test] read_gate: finished (returncode=0)
+EQY  1:32:51 [test] combine: starting process "yosys -ql test/combine.log test/combine.ys"
+EQY  1:32:51 [test] combine: finished (returncode=0)
+EQY  1:32:51 [test] partition: starting process "cd test; yosys -ql partition.log partition.ys"
+EQY  1:32:51 [test] partition: finished (returncode=0)
+EQY  1:32:51 [test] run: starting process "make -C test -f strategies.mk"
+EQY  1:32:52 [test] run: Running strategy 'sat' on 'adder.y'..
+EQY  1:32:52 [test] run: Proved equivalence of partition 'adder.y' using strategy 'sat'
+EQY  1:32:52 [test] run: /Library/Developer/CommandLineTools/usr/bin/make -f strategies.mk summary
+EQY  1:32:52 [test] run: finished (returncode=0)
+EQY  1:32:52 [test] Successfully proved equivalence of partition adder.y
+EQY  1:32:52 [test] Successfully proved designs equivalent
+EQY  1:32:52 [test] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:01 (1)
+EQY  1:32:52 [test] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+EQY  1:32:52 [test] DONE (PASS, rc=0)

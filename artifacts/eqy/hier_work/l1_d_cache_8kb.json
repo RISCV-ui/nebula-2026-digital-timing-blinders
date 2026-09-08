@@ -1,0 +1,34 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "l1_d_cache_8kb",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap).",
+      "seconds": 270.9,
+      "failed_partitions": [],
+      "log_tail": [
+        " failed.",
+        "  Trying to prove $equiv for \\data_valid_mem_3:ezsat",
+        " failed.",
+        "Proved 9 previously unproven $equiv cells.",
+        "",
+        "42. Executing EQUIV_INDUCT pass.",
+        "Found 554 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap)."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell i_mem_0_gate (id_memory_256x64_wrap).",
+          "seconds": 270.9
+        }
+      ]
+    }
+  ]
+}

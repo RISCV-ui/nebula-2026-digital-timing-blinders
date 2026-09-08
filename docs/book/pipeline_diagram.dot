@@ -1,0 +1,61 @@
+digraph pipeline {
+  rankdir=TB;
+  bgcolor="white";
+  fontname="Helvetica";
+  node [fontname="Helvetica", fontsize=12, style="filled,rounded", shape=box];
+  edge [fontname="Helvetica", fontsize=11];
+
+  labelloc="t";
+  label="Timing Blinders — Canonical GenAI-in-the-loop RTL Timing-Closure Pipeline";
+  fontsize=18;
+
+  RTL [label="RTL (.v files)", fillcolor="#a5d8ff", color="#1971c2"];
+  LINT [label="LINT", shape=diamond, fillcolor="#ffd8a8", color="#e8590c"];
+  RULEMATCH [label="Rule matched?", shape=diamond, fillcolor="#ffd8a8", color="#e8590c"];
+  AUTOFIX [label="Deterministic\nauto-fix\n(0 tokens)", fillcolor="#b2f2bb", color="#2f9e44"];
+  GENAI_LINT [label="GenAI\n(LINT fallback)", shape=ellipse, fillcolor="#eebefa", color="#9c36b5"];
+
+  SYNTH [label="Synthesis (Yosys)\n<- RTL, SDC, Tech, LIB, LEF", fillcolor="#a5d8ff", color="#1971c2"];
+  TAP [label="Timing / Area / Power\ncheck (OpenSTA)", shape=diamond, fillcolor="#ffd8a8", color="#e8590c"];
+  JSON [label="Critical-path JSON\n(ranked slack, from OpenSTA)", fillcolor="#99e9f2", color="#0c8599"];
+  GENAI_TIMING [label="GenAI: pipeline / restructure /\nretime / FSM-recode", shape=ellipse, fillcolor="#eebefa", color="#9c36b5"];
+  EQY_EDIT [label="EQY: edited RTL ==\npre-edit RTL?", shape=diamond, fillcolor="#ffc9c9", color="#e03131"];
+  REJECT [label="Reject edit; retry other\ntechnique / next path", fillcolor="#ffc9c9", color="#e03131"];
+  ACCEPT [label="Accept edit;\nRTL updated", fillcolor="#b2f2bb", color="#2f9e44"];
+
+  EQFINAL [label="Equivalence Check\n(EQY/SymbiYosys):\nfinal RTL vs final Netlist", fillcolor="#ffc9c9", color="#e03131"];
+  HALT [label="Mismatch: halt + report\n(treat as bug, do not retry)", fillcolor="#ffc9c9", color="#e03131"];
+  PPA [label="ORFS PPA flow:\nfloorplan / place / CTS /\nroute -> final report", fillcolor="#a5d8ff", color="#1971c2"];
+
+  RTL -> LINT;
+  LINT -> RULEMATCH [label="Fail", color="#e03131", fontcolor="#e03131"];
+  RULEMATCH -> AUTOFIX [label="Yes", color="#2f9e44", fontcolor="#2f9e44"];
+  RULEMATCH -> GENAI_LINT [label="No", color="#9c36b5", fontcolor="#9c36b5"];
+  AUTOFIX -> RTL [label="retry (capped)", style=dashed, color="#868e96", fontcolor="#868e96"];
+  GENAI_LINT -> RTL [label="retry (capped)", style=dashed, color="#868e96", fontcolor="#868e96"];
+
+  LINT -> SYNTH [label="Pass", color="#2f9e44", fontcolor="#2f9e44"];
+  SYNTH -> TAP;
+  TAP -> JSON [label="No", color="#e03131", fontcolor="#e03131"];
+  JSON -> GENAI_TIMING;
+  GENAI_TIMING -> EQY_EDIT;
+  EQY_EDIT -> REJECT [label="Fail", color="#e03131", fontcolor="#e03131"];
+  REJECT -> JSON [label="retry (capped)", style=dashed, color="#868e96", fontcolor="#868e96"];
+  EQY_EDIT -> ACCEPT [label="Pass", color="#2f9e44", fontcolor="#2f9e44"];
+  ACCEPT -> SYNTH [label="re-synthesize", style=dashed, color="#868e96", fontcolor="#868e96"];
+
+  TAP -> EQFINAL [label="Yes", color="#2f9e44", fontcolor="#2f9e44"];
+  EQFINAL -> HALT [label="Mismatch", color="#e03131", fontcolor="#e03131"];
+  EQFINAL -> PPA [label="Match", color="#2f9e44", fontcolor="#2f9e44"];
+
+  { rank=same; RULEMATCH; }
+  { rank=same; AUTOFIX; GENAI_LINT; }
+  { rank=same; TAP; }
+  { rank=same; JSON; }
+  { rank=same; GENAI_TIMING; }
+  { rank=same; EQY_EDIT; }
+  { rank=same; EQFINAL; }
+  { rank=same; REJECT; }
+  { rank=same; ACCEPT; }
+  { rank=same; HALT; PPA; }
+}

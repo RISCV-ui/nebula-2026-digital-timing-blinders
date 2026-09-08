@@ -1,0 +1,3 @@
+{
+ "refused": "the critical path through this module is inside the booth partial-product tree; splitting it needs a retime across stage boundaries that changes the module's handshake, which is out of catalogue scope"
+}

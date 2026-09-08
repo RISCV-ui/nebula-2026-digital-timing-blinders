@@ -1,0 +1,44 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "axi_lite_uart",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_uart_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous",
+      "seconds": 25.1,
+      "failed_partitions": [],
+      "log_tail": [
+        " failed.",
+        "  Trying to prove $equiv for \\uart_tx:ezsat",
+        " failed.",
+        "Proved 4 previously unproven $equiv cells.",
+        "",
+        "43. Executing EQUIV_INDUCT pass.",
+        "Found 50 unproven $equiv cells in module equiv:",
+        "ERROR: No SAT model available for cell fifo_uart_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen)."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 8.2
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/axi_",
+          "seconds": 8.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: No SAT model available for cell fifo_uart_r_gate (\\$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous",
+          "seconds": 8.4
+        }
+      ]
+    }
+  ]
+}

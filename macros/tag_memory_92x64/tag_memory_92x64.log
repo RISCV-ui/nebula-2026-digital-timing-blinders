@@ -1,0 +1,63 @@
+[2026-08-15 08:06:32.101965] |==============================================================================|
+[2026-08-15 08:06:32.102432] |=========                      OpenRAM v1.2.49                       =========|
+[2026-08-15 08:06:32.102600] |=========                                                            =========|
+[2026-08-15 08:06:32.102683] |=========               VLSI Design and Automation Lab               =========|
+[2026-08-15 08:06:32.102761] |=========        Computer Science and Engineering Department         =========|
+[2026-08-15 08:06:32.102932] |=========            University of California Santa Cruz             =========|
+[2026-08-15 08:06:32.103026] |=========                                                            =========|
+[2026-08-15 08:06:32.103149] |=========          Usage help: openram-user-group@ucsc.edu           =========|
+[2026-08-15 08:06:32.103286] |=========        Development help: openram-dev-group@ucsc.edu        =========|
+[2026-08-15 08:06:32.103387] |=========                See LICENSE for license info                =========|
+[2026-08-15 08:06:32.103484] |==============================================================================|
+[2026-08-15 08:06:32.103623] ** Start: 08/15/2026 08:06:32
+[2026-08-15 08:06:32.103724] Technology: sky130
+[2026-08-15 08:06:32.103834] Total size: 5888 bits
+[2026-08-15 08:06:32.103941] Word size: 92
+Words: 64
+Banks: 1
+[2026-08-15 08:06:32.104042] RW ports: 1
+R-only ports: 1
+W-only ports: 0
+[2026-08-15 08:06:32.104151] DRC/LVS/PEX is only run on the top-level design to save run-time (inline_lvsdrc=True to do inline checking).
+[2026-08-15 08:06:32.104252] Characterization is disabled (using analytical delay models) (analytical_delay=False to simulate).
+[2026-08-15 08:06:32.104418] Only generating nominal corner timing.
+[2026-08-15 08:06:32.104572] Words per row: 4
+[2026-08-15 08:06:32.104715] Output files are: 
+[2026-08-15 08:06:32.104835] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.lvs
+[2026-08-15 08:06:32.104923] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.sp
+[2026-08-15 08:06:32.105048] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.v
+[2026-08-15 08:06:32.105144] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.lib
+[2026-08-15 08:06:32.105258] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.py
+[2026-08-15 08:06:32.105382] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.html
+[2026-08-15 08:06:32.105469] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.log
+[2026-08-15 08:06:32.105563] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.lef
+[2026-08-15 08:06:32.105689] /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.gds
+[2026-08-15 08:06:36.582474] [openram.modules.replica_column/__init__]: DIAG replica_column: rows=18 left_rbl=1 right_rbl=1 replica_bit=0 rbl_param=[1, 1]
+[2026-08-15 08:06:36.622627] [openram.modules.replica_column/__init__]: DIAG replica_column: rows=18 left_rbl=1 right_rbl=1 replica_bit=19 rbl_param=[1, 1]
+[2026-08-15 08:06:43.752456] ** Submodules: 11.6 seconds
+[2026-08-15 08:06:43.964029] ** Placement: 0.2 seconds
+[2026-08-15 08:38:49.989286] ** Routing: 1926.0 seconds
+[2026-08-15 09:12:41.172878] WARNING: file magic.py: line 254: DRC Errors tag_memory_92x64	2581
+
+[2026-08-15 09:17:37.785498] ** Verification: 2327.7 seconds
+[2026-08-15 09:17:37.792939] ** SRAM creation: 4265.7 seconds
+[2026-08-15 09:17:37.802948] SP: Writing to /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.sp
+[2026-08-15 09:17:40.238599] ** Spice writing: 2.4 seconds
+[2026-08-15 09:17:40.238944] DELAY: Writing stimulus...
+[2026-08-15 09:17:42.027958] ** DELAY: 1.8 seconds
+[2026-08-15 09:17:42.232409] GDS: Writing to /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.gds
+[2026-08-15 09:17:47.017385] ** GDS: 4.8 seconds
+[2026-08-15 09:17:47.017708] LEF: Writing to /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.lef
+[2026-08-15 09:17:47.183930] ** LEF: 0.2 seconds
+[2026-08-15 09:17:47.184144] LVS: Writing to /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.lvs.sp
+[2026-08-15 09:17:47.438031] ** LVS writing: 0.3 seconds
+[2026-08-15 09:17:47.438269] LIB: Characterizing... 
+[2026-08-15 09:17:48.896108] ** Characterization: 1.5 seconds
+[2026-08-15 09:17:48.899406] Config: Writing to /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.py
+[2026-08-15 09:17:48.899578] ** Config: 0.0 seconds
+[2026-08-15 09:17:48.999587] Datasheet: Writing to /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.html
+[2026-08-15 09:17:49.008521] ** Datasheet: 0.1 seconds
+[2026-08-15 09:17:49.008687] Verilog: Writing to /home/shubhanshu/eda/OpenRAM/nebula_sram_configs/openram_output/tag_memory_92x64/tag_memory_92x64.v
+[2026-08-15 09:17:49.011580] ** Verilog: 0.0 seconds
+[2026-08-15 09:17:49.019754] [openram.globals/cleanup_paths]: Preserving temp directory: /tmp/openram_shubhanshu_17438_temp/
+[2026-08-15 09:17:49.020557] ** End: 4276.9 seconds

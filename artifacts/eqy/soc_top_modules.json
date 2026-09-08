@@ -1,0 +1,1246 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_macro.v",
+  "modules_checked": 54,
+  "modules_equivalent": 39,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "alu",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 14.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 7.6
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 7.3
+        }
+      ]
+    },
+    {
+      "module": "alu_src_a_mux",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.2
+        }
+      ]
+    },
+    {
+      "module": "alu_src_b_mux",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.1
+        }
+      ]
+    },
+    {
+      "module": "arbiter",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.1
+        }
+      ]
+    },
+    {
+      "module": "axi_interconnect_2m_8s",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 71.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_interconnect_2m_8s.partitioned/partiti",
+          "seconds": 5.5
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_interconnect_2m_8s.merged/partition.lo",
+          "seconds": 5.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 60.4
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_dma_config",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 75.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_dma_config.partitioned/partition.",
+          "seconds": 5.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_dma_config.merged/partition.log'.",
+          "seconds": 5.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 63.8
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_dot",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 916.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_dot.partitioned/partition.log'.",
+          "seconds": 8.5
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_dot.merged/partition.log'.",
+          "seconds": 7.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_gpio",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (16 cells) at depth 10",
+      "seconds": 751.0,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19161: \\fifo_timer_w.data_in_clk1_gold [37] \\fifo_timer_w.data_in_clk1_gate [37]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19160: \\fifo_timer_w.data_in_clk1_gold [36] \\fifo_timer_w.data_in_clk1_gate [36]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19159: \\fifo_timer_w.data_in_clk1_gold [35] \\fifo_timer_w.data_in_clk1_gate [35]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19158: \\fifo_timer_w.data_in_clk1_gold [34] \\fifo_timer_w.data_in_clk1_gate [34]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19157: \\fifo_timer_w.data_in_clk1_gold [33] \\fifo_timer_w.data_in_clk1_gate [33]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$19156: \\fifo_timer_w.data_in_clk1_gold [32] \\fifo_timer_w.data_in_clk1_gate [32]",
+        "Found a total of 16 unproven $equiv cells.",
+        "ERROR: Found 16 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_gpio.partitioned/partition.log'.",
+          "seconds": 7.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_gpio.merged/partition.log'.",
+          "seconds": 7.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (16 cells) at depth 10",
+          "seconds": 736.2
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_master",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 14.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 8.6
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.9
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_timer",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (16 cells) at depth 10",
+      "seconds": 426.2,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17537: \\fifo_timer_w.data_in_clk1_gold [37] \\fifo_timer_w.data_in_clk1_gate [37]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17536: \\fifo_timer_w.data_in_clk1_gold [36] \\fifo_timer_w.data_in_clk1_gate [36]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17535: \\fifo_timer_w.data_in_clk1_gold [35] \\fifo_timer_w.data_in_clk1_gate [35]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17534: \\fifo_timer_w.data_in_clk1_gold [34] \\fifo_timer_w.data_in_clk1_gate [34]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17533: \\fifo_timer_w.data_in_clk1_gold [33] \\fifo_timer_w.data_in_clk1_gate [33]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17532: \\fifo_timer_w.data_in_clk1_gold [32] \\fifo_timer_w.data_in_clk1_gate [32]",
+        "Found a total of 16 unproven $equiv cells.",
+        "ERROR: Found 16 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_timer.partitioned/partition.log'.",
+          "seconds": 6.5
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_timer.merged/partition.log'.",
+          "seconds": 6.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (16 cells) at depth 10",
+          "seconds": 413.2
+        }
+      ]
+    },
+    {
+      "module": "axi_lite_uart",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (16 cells) at depth 10",
+      "seconds": 474.4,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17969: \\fifo_uart_w.data_in_clk1_gold [37] \\fifo_uart_w.data_in_clk1_gate [37]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17968: \\fifo_uart_w.data_in_clk1_gold [36] \\fifo_uart_w.data_in_clk1_gate [36]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17967: \\fifo_uart_w.data_in_clk1_gold [35] \\fifo_uart_w.data_in_clk1_gate [35]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17966: \\fifo_uart_w.data_in_clk1_gold [34] \\fifo_uart_w.data_in_clk1_gate [34]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17965: \\fifo_uart_w.data_in_clk1_gold [33] \\fifo_uart_w.data_in_clk1_gate [33]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$17964: \\fifo_uart_w.data_in_clk1_gold [32] \\fifo_uart_w.data_in_clk1_gate [32]",
+        "Found a total of 16 unproven $equiv cells.",
+        "ERROR: Found 16 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_uart.partitioned/partition.log'.",
+          "seconds": 6.8
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/axi_lite_uart.merged/partition.log'.",
+          "seconds": 6.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (16 cells) at depth 10",
+          "seconds": 461.0
+        }
+      ]
+    },
+    {
+      "module": "branch_comp_decoder",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.1
+        }
+      ]
+    },
+    {
+      "module": "branch_comprator",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.4
+        }
+      ]
+    },
+    {
+      "module": "branch_predictor",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 351.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 10.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 8.1
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 333.5
+        }
+      ]
+    },
+    {
+      "module": "clk_div_mux",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 10.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 5.3
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.0
+        }
+      ]
+    },
+    {
+      "module": "clk_gate",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.0
+        }
+      ]
+    },
+    {
+      "module": "control_unit",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 11.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 6.0
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.2
+        }
+      ]
+    },
+    {
+      "module": "csr_regfile",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 12.2
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 7.9
+        }
+      ]
+    },
+    {
+      "module": "data_clipper",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.0
+        }
+      ]
+    },
+    {
+      "module": "data_extender",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.1
+        }
+      ]
+    },
+    {
+      "module": "data_forwarding_unit",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.5
+        }
+      ]
+    },
+    {
+      "module": "dma_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (4 cells) at depth 10",
+      "seconds": 66.6,
+      "failed_partitions": [],
+      "log_tail": [
+        "Found 462 $equiv cells in equiv:",
+        "  Of those cells 458 are proven and 4 are unproven.",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14486: \\int_out_dma_gold \\int_out_dma_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14357: \\data_out_gold [2] \\data_out_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14356: \\data_out_gold [1] \\data_out_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14355: \\data_out_gold [0] \\data_out_gate [0]",
+        "Found a total of 4 unproven $equiv cells.",
+        "ERROR: Found 4 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 7.8
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 26.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (4 cells) at depth 10",
+          "seconds": 32.1
+        }
+      ]
+    },
+    {
+      "module": "dmem",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 348.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/dmem.partitioned/partition.log'.",
+          "seconds": 9.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/dmem.merged/partition.log'.",
+          "seconds": 9.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 329.7
+        }
+      ]
+    },
+    {
+      "module": "execution_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 1105.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 196.5
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/execution_stage.merged/partition.log'.",
+          "seconds": 8.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ]
+    },
+    {
+      "module": "fp4_dot_unit",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 924.6,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 18.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/fp4_dot_unit.merged/partition.log'.",
+          "seconds": 6.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ]
+    },
+    {
+      "module": "fp4_mul",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 14.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 5.6
+        },
+        {
+          "pass": "merged",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 5.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 4.2
+        }
+      ]
+    },
+    {
+      "module": "fp8_adder",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 16.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 5.9
+        },
+        {
+          "pass": "merged",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 5.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 4.7
+        }
+      ]
+    },
+    {
+      "module": "gpio_controller",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 24.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 14.5
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 10.0
+        }
+      ]
+    },
+    {
+      "module": "hazard_detection_unit",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 11.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 6.0
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.2
+        }
+      ]
+    },
+    {
+      "module": "i_rom_32x256",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 16.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 5.4
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 5.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.6
+        }
+      ]
+    },
+    {
+      "module": "id_memory_256x64_wrap",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 13.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/id_memory_256x64_wrap.partitioned/partitio",
+          "seconds": 4.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/id_memory_256x64_wrap.merged/partition.log",
+          "seconds": 4.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 4.1
+        }
+      ]
+    },
+    {
+      "module": "immediate_generator",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.5
+        }
+      ]
+    },
+    {
+      "module": "instruction_decode_stage",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 134.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 17.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/instruction_decode_stage.merged/partition.",
+          "seconds": 7.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 109.4
+        }
+      ]
+    },
+    {
+      "module": "instruction_fetch_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 920.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/instruction_fetch_stage.partitioned/partit",
+          "seconds": 10.1
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/instruction_fetch_stage.merged/partition.l",
+          "seconds": 9.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    },
+    {
+      "module": "interrupt_control_unit",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.5
+        }
+      ]
+    },
+    {
+      "module": "l1_cache_axi_master",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (60 cells) at depth 10",
+      "seconds": 170.6,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16011: \\m_ar_addr_gold [7] \\m_ar_addr_gate [7]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16010: \\m_ar_addr_gold [6] \\m_ar_addr_gate [6]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16009: \\m_ar_addr_gold [5] \\m_ar_addr_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16008: \\m_ar_addr_gold [4] \\m_ar_addr_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16007: \\m_ar_addr_gold [3] \\m_ar_addr_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16006: \\m_ar_addr_gold [2] \\m_ar_addr_gate [2]",
+        "Found a total of 60 unproven $equiv cells.",
+        "ERROR: Found 60 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 26.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 55.3
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (60 cells) at depth 10",
+          "seconds": 88.7
+        }
+      ]
+    },
+    {
+      "module": "l1_d_cache_8kb",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 915.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/l1_d_cache_8kb.partitioned/partition.log'.",
+          "seconds": 7.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/l1_d_cache_8kb.merged/partition.log'.",
+          "seconds": 7.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    },
+    {
+      "module": "l1_i_cache_8kb",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 913.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/l1_i_cache_8kb.partitioned/partition.log'.",
+          "seconds": 6.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/l1_i_cache_8kb.merged/partition.log'.",
+          "seconds": 6.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ]
+    },
+    {
+      "module": "mem_axi_slave",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 17.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 11.1
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.3
+        }
+      ]
+    },
+    {
+      "module": "memory_stage",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 7.8,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 7.8
+        }
+      ]
+    },
+    {
+      "module": "multiplier_pipelined",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 1174.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 190.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 84.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ]
+    },
+    {
+      "module": "pipeline_reg_ex_mem",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 6.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.0
+        }
+      ]
+    },
+    {
+      "module": "pipeline_reg_id_ex",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 7.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 7.4
+        }
+      ]
+    },
+    {
+      "module": "pipeline_reg_if_id",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.5
+        }
+      ]
+    },
+    {
+      "module": "pipeline_reg_mem_wb",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.4
+        }
+      ]
+    },
+    {
+      "module": "processor_top",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 929.6,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/processor_top.partitioned/partition.log'.",
+          "seconds": 14.7
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/processor_top.merged/partition.log'.",
+          "seconds": 14.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    },
+    {
+      "module": "read_buffer_d_cache",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 39.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 9.1
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 5.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 24.2
+        }
+      ]
+    },
+    {
+      "module": "read_buffer_i_cache",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 11.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 11.5
+        }
+      ]
+    },
+    {
+      "module": "register_file",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 39.6,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 7.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 7.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 25.6
+        }
+      ]
+    },
+    {
+      "module": "soc_top",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.",
+      "seconds": 103.2,
+      "failed_partitions": [],
+      "log_tail": [
+        "Presumably equivalent wires: clk3_gold (\\clk3_gold), clk3_gate (\\clk3_gate) -> clk3",
+        "Presumably equivalent wires: clk4_gold (\\clk4_gold), clk4_gate (\\clk4_gate) -> clk4",
+        "Presumably equivalent wires: clk5_gold (\\clk5_gold), clk5_gate (\\clk5_gate) -> clk5",
+        "Presumably equivalent wires: clk_config_reg_gold (\\clk_config_reg_gold), clk_config_reg_gate ({ \\_2677_.IQ_gate \\_2676_.IQ_gate \\_2675_.IQ_gate \\_2674_.IQ_gate \\_2673_.IQ_gate \\_2672_.IQ_gate \\_2671_.IQ_gate \\_2670_.IQ_gate \\_2669_.IQ_gate \\_2668_.IQ_gate \\_2667_.IQ_gate \\_2666_.IQ_gate \\_2665_.IQ_gate \\_2664_.IQ_gate \\_2663_.IQ_gate \\_2662_.IQ_gate \\_2661_.IQ_gate \\_2660_.IQ_gate \\_2659_.IQ_gate \\_2658_.IQ_gate \\_2657_.IQ_gate \\_2656_.IQ_gate \\_2655_.IQ_gate \\_2654_.IQ_gate \\_2653_.IQ_gate \\_2652_.IQ_gate \\_2651_.IQ_gate \\_2650_.IQ_gate \\_2649_.IQ_gate \\_2648_.IQ_gate \\_2647_.IQ_gate \\_2646_.IQ_gate }) -> clk_config_reg",
+        "Presumably equivalent wires: clk_en_reg_gold (\\clk_en_reg_gold), clk_en_reg_gate ({ \\_2645_.IQ_gate \\_2644_.IQ_gate \\_2643_.IQ_gate \\_2642_.IQ_gate \\_2641_.IQ_gate \\_2640_.IQ_gate \\_2639_.IQ_gate \\_2638_.IQ_gate \\_2637_.IQ_gate \\_2636_.IQ_gate \\_2635_.IQ_gate \\_2634_.IQ_gate \\_2633_.IQ_gate \\_2632_.IQ_gate \\_2631_.IQ_gate \\_2630_.IQ_gate \\_2629_.IQ_gate \\_2628_.IQ_gate \\_2627_.IQ_gate \\_2626_.IQ_gate \\_2625_.IQ_gate \\_2624_.IQ_gate \\_2623_.IQ_gate \\_2622_.IQ_gate \\_2621_.IQ_gate \\_2620_.IQ_gate \\_2619_.IQ_gate \\_2618_.IQ_gate \\_2617_.IQ_gate \\_2616_.IQ_gate \\_2615_.IQ_gate \\_2614_.IQ_gate }) -> clk_en_reg",
+        "Presumably equivalent wires: clk_s1_gold (\\timer_0.fifo_timer_r.clk_1_gold), clk_s1_gate (\\timer_0.fifo_timer_r._0927_.CLK_gate) -> clk_s1",
+        "Presumably equivalent wires: clk_s1_gate_gold (\\timer_clk_div.clk_gold), clk_s1_gate_gate (\\timer_clk_div._12_.A0_gate) -> clk_s1_gate",
+        "ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/soc_top.partitioned/partition.log'.",
+          "seconds": 33.7
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/soc_top.merged/partition.log'.",
+          "seconds": 33.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.",
+          "seconds": 35.7
+        }
+      ]
+    },
+    {
+      "module": "tag_memory_92x64_wrap",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 13.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/tag_memory_92x64_wrap.partitioned/partitio",
+          "seconds": 4.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/private/tmp/eqywork_full/tag_memory_92x64_wrap.merged/partition.log",
+          "seconds": 4.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 4.1
+        }
+      ]
+    },
+    {
+      "module": "timer",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 6.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 6.4
+        }
+      ]
+    },
+    {
+      "module": "uart_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (1 cells) at depth 10",
+      "seconds": 31.2,
+      "failed_partitions": [],
+      "log_tail": [
+        "Proved 174 previously unproven $equiv cells.",
+        "",
+        "70. Executing EQUIV_STATUS pass.",
+        "Found 179 $equiv cells in equiv:",
+        "  Of those cells 178 are proven and 1 are unproven.",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13344: \\uart_tx_gold \\uart_tx_gate",
+        "Found a total of 1 unproven $equiv cells.",
+        "ERROR: Found 1 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 7.7
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 14.1
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (1 cells) at depth 10",
+          "seconds": 9.4
+        }
+      ]
+    },
+    {
+      "module": "write_back_stage",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 5.4
+        }
+      ]
+    }
+  ]
+}

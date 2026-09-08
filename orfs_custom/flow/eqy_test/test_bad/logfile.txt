@@ -1,0 +1,18 @@
+EQY  1:32:57 [test_bad] read_gold: starting process "yosys -ql test_bad/gold.log test_bad/gold.ys"
+EQY  1:32:57 [test_bad] read_gold: finished (returncode=0)
+EQY  1:32:57 [test_bad] read_gate: starting process "yosys -ql test_bad/gate.log test_bad/gate.ys"
+EQY  1:32:57 [test_bad] read_gate: finished (returncode=0)
+EQY  1:32:57 [test_bad] combine: starting process "yosys -ql test_bad/combine.log test_bad/combine.ys"
+EQY  1:32:57 [test_bad] combine: finished (returncode=0)
+EQY  1:32:57 [test_bad] partition: starting process "cd test_bad; yosys -ql partition.log partition.ys"
+EQY  1:32:57 [test_bad] partition: finished (returncode=0)
+EQY  1:32:57 [test_bad] run: starting process "make -C test_bad -f strategies.mk"
+EQY  1:32:57 [test_bad] run: Running strategy 'sat' on 'adder.y'..
+EQY  1:32:57 [test_bad] run: Could not prove equivalence of partition 'adder.y' using strategy 'sat'
+EQY  1:32:57 [test_bad] run: /Library/Developer/CommandLineTools/usr/bin/make -f strategies.mk summary
+EQY  1:32:57 [test_bad] run: finished (returncode=0)
+EQY  1:32:57 [test_bad] Warning: Failed to prove equivalence for 1/1 partitions:
+EQY  1:32:57 [test_bad] Failed to prove equivalence of partition adder.y
+EQY  1:32:57 [test_bad] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+EQY  1:32:57 [test_bad] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+EQY  1:32:57 [test_bad] DONE (FAIL, rc=2)

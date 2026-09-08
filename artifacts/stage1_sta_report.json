@@ -1,0 +1,308 @@
+{
+  "top": "clkdiv_mcp",
+  "num_paths_reported": 30,
+  "num_violations": 0,
+  "wns": 0.1405,
+  "paths": [
+    {
+      "startpoint": "_528_/Q",
+      "endpoint": "_528_/D",
+      "path_group": "clk",
+      "path_type": "min",
+      "slack_ns": 0.1405,
+      "arrival_ns": 0.0839,
+      "required_ns": -0.0566,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_498_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_499_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_500_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_501_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_502_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_503_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_504_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_505_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_506_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_507_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_508_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_509_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_510_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_511_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_513_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_514_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_515_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_517_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_520_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_521_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_523_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_525_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_526_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.3894,
+      "arrival_ns": 0.3332,
+      "required_ns": -0.0561,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_519_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.4002,
+      "arrival_ns": 0.344,
+      "required_ns": -0.0562,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_527_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.4002,
+      "arrival_ns": 0.344,
+      "required_ns": -0.0562,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_529_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.4349,
+      "arrival_ns": 0.3947,
+      "required_ns": -0.0402,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_512_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.456,
+      "arrival_ns": 0.4213,
+      "required_ns": -0.0347,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_518_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.456,
+      "arrival_ns": 0.4213,
+      "required_ns": -0.0348,
+      "status": "MET"
+    },
+    {
+      "startpoint": "accept",
+      "endpoint": "_516_/D",
+      "path_group": "clk_div2",
+      "path_type": "min",
+      "slack_ns": 0.463,
+      "arrival_ns": 0.4227,
+      "required_ns": -0.0402,
+      "status": "MET"
+    }
+  ]
+}

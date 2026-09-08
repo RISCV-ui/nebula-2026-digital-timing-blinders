@@ -1,0 +1,33 @@
+{
+  "rtl": "bench/rtl",
+  "multibit_crossings": 2,
+  "crossings": [
+    {
+      "module": "asynchronous_fifo_gen",
+      "signal": "counter_2_gray",
+      "src": [
+        "clk_2"
+      ],
+      "dst": "clk_1",
+      "sync_depth": 2,
+      "scheme": "gray",
+      "basis": "structural",
+      "evidence": "counter_2_gray = counter_2^{1'b0,counter_2[logofdepth:1]} -- value XORed with itself shifted right one, which is the binary-to-gray encoding",
+      "confidence": "high"
+    },
+    {
+      "module": "asynchronous_fifo_gen",
+      "signal": "counter_1_gray",
+      "src": [
+        "clk_1"
+      ],
+      "dst": "clk_2",
+      "sync_depth": 2,
+      "scheme": "gray",
+      "basis": "structural",
+      "evidence": "counter_1_gray = counter_1^{1'b0,counter_1[logofdepth:1]} -- value XORed with itself shifted right one, which is the binary-to-gray encoding",
+      "confidence": "high"
+    }
+  ],
+  "note": "Advisory. A model classification is a hypothesis for a human to check, never a proof, and nothing here gates the optimisation loop."
+}

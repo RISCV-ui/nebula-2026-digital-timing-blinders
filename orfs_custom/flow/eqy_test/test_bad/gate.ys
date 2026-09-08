@@ -1,0 +1,6 @@
+read_verilog gate_bad.v
+prep -top adder
+opt_clean
+check -initdrv
+setundef -undriven -undef
+write_rtlil test_bad/gate.il

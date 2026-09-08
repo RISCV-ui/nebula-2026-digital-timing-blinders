@@ -1,0 +1,50 @@
+{
+  "partition": {
+    "index": 1,
+    "name": "adder",
+    "inbits": {
+      "a": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "b": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "outbits": {
+      "y": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "crossbits": {}
+  },
+  "gold_module": {
+    "name": "gold.adder",
+    "internal": {},
+    "unused": {},
+    "cellcount": 1,
+    "bitcount": 12
+  },
+  "gate_module": {
+    "name": "gold.adder",
+    "internal": {
+      "tmp": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "unused": {},
+    "cellcount": 5,
+    "bitcount": 16
+  }
+}

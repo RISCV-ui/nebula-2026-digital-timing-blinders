@@ -1,0 +1,2 @@
+/Users/shubhanshu/Desktop/Nebula/digital/bench/scripts/g1c_stream.py:74: DeprecationWarning: 'count' is passed as positional argument
+  return re.sub(rf"\bmodule\s+{re.escape(module)}\b", f"module {REF}", src, 1)

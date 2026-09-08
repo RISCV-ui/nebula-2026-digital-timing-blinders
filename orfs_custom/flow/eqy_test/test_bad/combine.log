@@ -1,0 +1,51 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+
+-- Executing script file `test_bad/combine.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: test_bad/gold.il
+
+2. Executing UNIQUIFY pass (creating unique copies of modules).
+Created 0 unique modules.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `adder'. Setting top module to adder.
+
+3.1. Analyzing design hierarchy..
+Top module:  \adder
+
+3.2. Analyzing design hierarchy..
+Top module:  \adder
+Removed 0 unused modules.
+
+4. Executing RTLIL frontend.
+Input filename: test_bad/gate_recoded.il
+
+5. Executing UNIQUIFY pass (creating unique copies of modules).
+Created 0 unique modules.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `adder'. Setting top module to adder.
+
+6.1. Analyzing design hierarchy..
+Top module:  \adder
+
+6.2. Analyzing design hierarchy..
+Top module:  \adder
+Removed 0 unused modules.
+
+7. Executing MITER pass (creating miter circuit).
+Creating miter cell "miter" with gold cell "gold.adder" and gate cell "gate.adder".
+
+8. Executing RTLIL backend.
+Output filename: test_bad/combined.il
+
+End of script. Logfile hash: 73f006fc22, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 15.50 MB peak
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 53% 1x plugin (0 sec), 12% 1x eqy_combine (0 sec), ...

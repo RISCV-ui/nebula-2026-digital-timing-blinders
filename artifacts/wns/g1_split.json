@@ -1,0 +1,7 @@
+{
+  "seconds": 16.3,
+  "depth": 6,
+  "latency_delta": 0,
+  "module": "axi_lite_dot",
+  "verdict": "EQUIVALENT"
+}

@@ -1,0 +1,16 @@
+{
+  "seconds": 541.2,
+  "depth": 10,
+  "latency": 4,
+  "module": "fp4_dot_stage",
+  "properties": [
+    "P1 no overflow",
+    "P2a no invention",
+    "P2b no loss",
+    "P3 data and order",
+    "P4 drain",
+    "r_en_1 == r_en_2"
+  ],
+  "verdict": "ERROR",
+  "detail": "16:execute$6157 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: 1'1 when $auto$async2sync.cc:107:execute$6153.\n\nSetting up time step 8:\nFinal constraint equation: { } = { }\nImported 8834 cells to SAT database.\nImport proof for assert: $auto$async2sync.cc:116:execute$6133 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6139 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6145 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6151 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6157 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: 1'1 when $auto$async2sync.cc:107:execute$6153.\n\nSetting up time step 9:\nFinal constraint equation: { } = { }\nImported 8834 cells to SAT database.\nImport proof for assert: $auto$async2sync.cc:116:execute$6133 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6139 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6145 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6151 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6157 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: 1'1 when $auto$async2sync.cc:107:execute$6153.\n\nSetting up time step 10:\nFinal constraint equation: { } = { }\nImported 8834 cells to SAT database.\nImport proof for assert: $auto$async2sync.cc:116:execute$6133 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6139 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6145 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6151 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: $auto$async2sync.cc:116:execute$6157 when $auto$async2sync.cc:107:execute$6153.\nImport proof for assert: 1'1 when $auto$async2sync.cc:107:execute$6153.\nImport show expression: \\data_2\nImport show expression: \\data_1\nImport show expression: \\full\nImport show expression: \\empty_2\nImport show expression: \\empty_1\nImport show expression: \\rst\nImport show expression: \\clk\n\nSolving problem with 2597533 variables and 7025354 clauses..\n"
+}

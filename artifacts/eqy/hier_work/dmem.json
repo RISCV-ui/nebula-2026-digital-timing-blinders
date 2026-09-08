@@ -1,0 +1,44 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/soc_top/base/1_2_yosys.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "dmem",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (32 cells) at depth 5",
+      "seconds": 62.3,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26380: \\rdata_gold [5] \\rdata_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26379: \\rdata_gold [4] \\rdata_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26378: \\rdata_gold [3] \\rdata_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26377: \\rdata_gold [2] \\rdata_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26376: \\rdata_gold [1] \\rdata_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$26375: \\rdata_gold [0] \\rdata_gate [0]",
+        "Found a total of 32 unproven $equiv cells.",
+        "ERROR: Found 32 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/dmem",
+          "seconds": 9.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to combine designs. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier_work/dmem",
+          "seconds": 9.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (32 cells) at depth 5",
+          "seconds": 44.1
+        }
+      ]
+    }
+  ]
+}
