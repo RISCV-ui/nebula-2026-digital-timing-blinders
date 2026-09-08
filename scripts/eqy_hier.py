@@ -122,9 +122,30 @@ def main():
     t_start = time.time()
 
     for i, m in enumerate(seq, 1):
-        stub_path.write_text(base_stub + "\n" +
-                             "\n".join(stub_for(x, a.rtl) or "" for x in proved))
+        # Box this module's own proved children and nothing else.
+        #
+        # The file used to carry a stub for every module proved so far, on the
+        # reasoning that a stub for a module the check never instantiates is
+        # inert. It is not. The stubs are read with `read_verilog -lib`, which
+        # declares the name on both sides before the RTL is read, so a stub for
+        # an unrelated module still shadows that module wherever the flattener
+        # later reaches it -- through a path the `children` map, which only
+        # matches direct textual instantiations, never saw. equiv_induct then
+        # meets a cell with no SAT model and stops.
+        #
+        # It also made the sweep order-dependent in a way nothing in the method
+        # justifies: the stub file was a function of the whole pass/fail
+        # history above a module, so an unrelated module flipping verdict
+        # changed the file every later module was checked against. Two modules
+        # that passed the previous sweep failed this one for exactly that
+        # reason -- i_rom_32x256 and id_memory_256x64_wrap, same pass, same
+        # depth, different accumulated stub file.
+        #
+        # Only a child needs to be a cut point, and only a child is what the
+        # soundness argument covers, so only a child is written.
         boxed = [c for c in children[m] if c in proved]
+        stub_path.write_text(base_stub + "\n" +
+                             "\n".join(stub_for(x, a.rtl) or "" for x in boxed))
         cmd = [sys.executable, str(HERE / "eqy_netlist.py"),
                "--rtl", a.rtl, "--netlist", a.netlist, "--liberty", a.liberty,
                "--macro-stub", str(stub_path), "--modules", m,

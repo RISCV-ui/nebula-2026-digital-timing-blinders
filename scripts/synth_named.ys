@@ -1,0 +1,22 @@
+# A gate-level netlist of soc_top that keeps the RTL's net names.
+#
+# The ORFS netlist cannot be used for module-level equivalence checking. Its
+# synthesis flattens and then lets ABC rename, so a register the RTL calls
+# `addr_reg` survives only as a `$scopeinfo` annotation and not as a wire.
+# EQY matches gold to gate by wire name, finds no internal match point, and is
+# left proving a whole module as one partition with all of its state unmatched
+# -- which for anything holding an accumulator is unprovable by induction at
+# any depth. Measured on mem_axi_slave: UNPROVEN against the ORFS netlist at
+# depth 5 and again at depth 20, PROVED_EQUIVALENT in 9.0s against this one.
+#
+# Hierarchy is kept on purpose. The sweep proves one module at a time, so a
+# flat netlist would be both slower to produce and useless to it.
+read_verilog -lib macros/macro_blackbox_stubs.v
+read_verilog bench/rtl/*.v
+hierarchy -top soc_top
+synth -top soc_top
+dfflibmap -liberty sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib
+opt_clean
+stat
+write_verilog -noattr artifacts/synth/soc_top_named.v

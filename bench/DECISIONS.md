@@ -560,3 +560,58 @@ opcode comparators duplicated per output bit): correct copy EQUIVALENT, one
 copy given the wrong opcode NOT_EQUIVALENT, both in 0.0 s at depth 1 with a
 complete proof. Purely combinational duplication has no start-state question
 at all, which is why it was the low-risk one.
+
+## The cut-point file that failed EQY before it started (2026-09-09)
+
+**Decision.** `scripts/eqy_hier.py` writes into `cutpoints.v` only the proved
+*children* of the module about to be checked, not every module proved so far.
+
+**What it fixed.** The accumulated file was read on both sides with
+`read_verilog -lib`, which turns each entry into a blackbox declaration. `prep
+-top <module>` then removes unused *real* modules but keeps unused blackboxes,
+so the gold design for a leaf module arrived at EQY carrying nineteen modules
+it does not instantiate — `alu`, `arbiter`, `fp4_mul`, `clk_gate` and the rest
+of the proved list. The gate design, built from the netlist, had none of them,
+because there they were real modules and `prep` pruned them. EQY compared the
+two module lists and stopped:
+
+```
+combine: ERROR: Unmatched module exists in gold that does not exist in gate.
+         This should not happen. Please report this bug.
+```
+
+Both EQY passes died there, on every module, and the wrapper fell through to
+the plain Yosys `equiv_induct` miter — which closes combinational logic and
+does not close sequential logic. That is the whole shape of the sweep's
+results, over the 44 modules the sweep reached before it was stopped: **15 of
+15 combinational modules proved, 8 of 29 sequential ones, and not one
+combinational module failed.** The split is on state, not on size or on
+clocked-block count -- eleven of the failures have a single `always
+@(posedge)` block, exactly like the eight that passed. It read like a solver
+limit and was a module-list mismatch three steps upstream.
+
+Measured on `mem_axi_slave` (36 unproven cells) with the file cut back to the
+macro stubs alone, EQY combines and runs for the first time:
+
+| pass | before | after |
+|---|---|---|
+| partitioned | `Failed to combine designs` | `NOT_EQUIVALENT` (partition cut point — see the false-counterexample note above) |
+| merged | `Failed to combine designs` | `UNPROVEN_EQY (equivalence unknown) at depth 5` |
+| yosys-equiv | `UNPROVEN (36 cells)` | `UNPROVEN (36 cells)` |
+
+The verdict is still not a proof, but the reason has moved from "the tool
+refused to start" to "the bound is too shallow", which is a question depth can
+answer and the previous one was not.
+
+**Second thing it fixed.** The file was a function of the entire pass/fail
+history above a module, so an unrelated module changing verdict changed the
+design every later module was checked against. Two modules that passed the
+previous sweep failed the next one for exactly that reason —
+`i_rom_32x256` and `id_memory_256x64_wrap`, same pass, same depth, different
+accumulated stub file. Boxing only children makes a module's check depend on
+its own subtree and nothing else, which is what the compositional soundness
+argument claims in the first place.
+
+**Cost.** A module now sees fewer cut points, so parents of unproven children
+stay expensive. That was already true by design; the change only stops the
+saving from being taken where it was never justified.

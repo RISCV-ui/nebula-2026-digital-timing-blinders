@@ -362,6 +362,18 @@ def check_module(module, rtl, netlist, liberty, stub, depth, timeout, workroot,
     final["attempts"] = [
         {"pass": a["pass"], "status": a["status"], "seconds": a["seconds"]} for a in attempts
     ]
+    # The reported verdict is the last attempt's, because a later pass is
+    # strictly stronger than the one before it -- partitioning invents failures
+    # that merging and the flat miter do not have. But a partitioned pass
+    # claiming NOT_EQUIVALENT is still the only signal in the whole wrapper
+    # that points at a genuine difference, and burying it inside `attempts`
+    # means a real broken edit would be reported under whatever the flat miter
+    # happened to say. Surface the claim without promoting it to the verdict:
+    # it is a lead to chase, not a disproof, and the field name says so.
+    claimed = [a["pass"] for a in attempts
+               if not a["equivalent"] and a["status"] == "NOT_EQUIVALENT"]
+    if claimed and not final["equivalent"]:
+        final["counterexample_claimed_by"] = claimed
     final["seconds"] = round(sum(a["seconds"] for a in attempts), 1)
     return final
 
