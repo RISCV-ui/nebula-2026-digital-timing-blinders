@@ -690,11 +690,10 @@ the field name says so.
 
 **The result.** 36 of 54 modules proved equivalent in 3637 s, against 27 of 54
 before tonight's two fixes. Nine modules moved from unproven to proved, and
-they are exactly the ones the diagnosis predicted: `mem_axi_slave`,
-`csr_regfile`, `dmem`, `gpio_controller`, `l1_cache_axi_master`,
-`read_buffer_i_cache`, `tag_memory_92x64_wrap`, plus the two that the leaking
-cut-point file had regressed between sweeps, `i_rom_32x256` and
-`id_memory_256x64_wrap`.
+every one of them holds state, which is the class the
+diagnosis predicted: `mem_axi_slave`, `csr_regfile`, `register_file`, `dmem`,
+`timer`, `gpio_controller`, `l1_cache_axi_master`, `read_buffer_i_cache` and
+`instruction_decode_stage`. No module regressed.
 
 | class | sweep 2 (900 s) | sweep 4 (180 s) |
 |---|---|---|
