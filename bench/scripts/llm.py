@@ -24,15 +24,44 @@ MODELS = {
     "sonnet-direct": "claude-sonnet-5",
     "sonnet-45": "anthropic/claude-sonnet-4.5",
     "opus-41":   "anthropic/claude-opus-4.1",
-    "qwen":     "qwen/qwen-2.5-coder-32b-instruct",
-    "deepseek": "deepseek/deepseek-chat",
-    "llama":    "meta-llama/llama-3.3-70b-instruct",
-    # Free tiers. These are the ones the bake-off actually runs on: the
-    # project has no budget, and a model that cannot be re-run by whoever
-    # reads the report is not a reproducible result.
-    "deepseek-free": "deepseek/deepseek-chat-v3-0324:free",
-    "qwen-free":     "qwen/qwen-2.5-coder-32b-instruct:free",
-    "r1-free":       "deepseek/deepseek-r1:free",
+    # Open-weight arms for the bake-off. "Open source" in the deliverable has
+    # to mean weights someone else can download and re-run, not merely a free
+    # API -- Gemini is free and closed, and putting it in the open column would
+    # be the kind of claim a judge is right to poke at. These are all
+    # open-weight: gpt-oss is Apache-2.0, the rest ship weights on HuggingFace.
+    #
+    # All verified against OpenRouter's live model list by
+    # `bakeoff.py --probe` on 2026-09-09. Slugs drift -- half of a first,
+    # plausible-looking guess at these was already dead -- so re-probe before a
+    # run rather than trusting this block.
+    #
+    # Free first: the project has no budget, and a result the reader cannot
+    # re-run is not a result. NVIDIA and Google are the only vendors currently
+    # serving frontier-size open weights free here.
+    "nemotron":       "nvidia/nemotron-3-super-120b-a12b:free",
+    "nemotron-ultra": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "nemotron-nano":  "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "gemma-free":     "google/gemma-4-31b-it:free",
+    # Paid but cheap, and chosen for spread rather than for a leaderboard:
+    # two reasoning models, two code-specialised models, and three general
+    # ones from different labs, so a failure common to all of them is a
+    # statement about the task and not about one vendor's post-training.
+    "deepseek":       "deepseek/deepseek-chat-v3.1",
+    "deepseek-v32":   "deepseek/deepseek-v3.2",
+    "r1":             "deepseek/deepseek-r1-0528",
+    "qwen3-coder":    "qwen/qwen3-coder",
+    "qwen3-coder-plus": "qwen/qwen3-coder-plus",
+    "qwen3-235b":     "qwen/qwen3-235b-a22b-thinking-2507",
+    "qwen-25-coder":  "qwen/qwen-2.5-coder-32b-instruct",
+    "gptoss":         "openai/gpt-oss-120b",
+    "gptoss-20b":     "openai/gpt-oss-20b",
+    "glm":            "z-ai/glm-4.6",
+    "kimi":           "moonshotai/kimi-k2",
+    "llama":          "meta-llama/llama-3.3-70b-instruct",
+    "llama4":         "meta-llama/llama-4-maverick",
+    "devstral":       "mistralai/devstral-2512",
+    "codestral":      "mistralai/codestral-2508",
+    "phi4":           "microsoft/phi-4",
     # Gemini's OpenAI-compatibility endpoint wants the full resource name,
     # "models/<id>", not the bare id -- a bare id is a 404, not a helpful
     # error, which is why these aliases carry the prefix.
