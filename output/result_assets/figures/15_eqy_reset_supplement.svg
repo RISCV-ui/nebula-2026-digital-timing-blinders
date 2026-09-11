@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Reset-aware formal supplement</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Nine former gaps now prove after declared reset; every inverted-output control is rejected.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: artifacts/eqy/reset_aware_20260911/report.json</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="55" y="175" width="1490" height="60.0" rx="4" fill="#12263A" stroke="#12263A" stroke-width="0"/>
+<text x="67" y="214.6" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Module</text>
+<text x="514.0" y="214.6" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Depth</text>
+<text x="648.1" y="214.6" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Real design</text>
+<text x="871.6" y="214.6" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Seconds</text>
+<text x="1065.3" y="214.6" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Negative control</text>
+<rect x="55" y="235.0" width="1490" height="60.0" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="273.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">uart_controller</text>
+<text x="514.0" y="273.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="273.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="273.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">4.2</text>
+<text x="1065.3" y="273.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+<rect x="55" y="295.0" width="1490" height="60.0" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="333.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">read_buffer_d_cache</text>
+<text x="514.0" y="333.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="333.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="333.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">5.8</text>
+<text x="1065.3" y="333.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+<rect x="55" y="355.0" width="1490" height="60.0" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="393.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">dma_controller</text>
+<text x="514.0" y="393.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="393.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="393.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5.2</text>
+<text x="1065.3" y="393.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+<rect x="55" y="415.0" width="1490" height="60.0" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="453.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">branch_predictor</text>
+<text x="514.0" y="453.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="453.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="453.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">8.0</text>
+<text x="1065.3" y="453.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+<rect x="55" y="475.0" width="1490" height="60.0" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="513.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">axi_lite_uart</text>
+<text x="514.0" y="513.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="513.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="513.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">6.4</text>
+<text x="1065.3" y="513.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+<rect x="55" y="535.0" width="1490" height="60.0" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="573.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">axi_lite_timer</text>
+<text x="514.0" y="573.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="573.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="573.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">6.2</text>
+<text x="1065.3" y="573.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+<rect x="55" y="595.0" width="1490" height="60.0" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="633.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">axi_lite_gpio</text>
+<text x="514.0" y="633.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="633.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="633.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">6.9</text>
+<text x="1065.3" y="633.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+<rect x="55" y="655.0" width="1490" height="60.0" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="693.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">axi_lite_dma_config</text>
+<text x="514.0" y="693.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="693.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="693.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">4.9</text>
+<text x="1065.3" y="693.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+<rect x="55" y="715.0" width="1490" height="60.0" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="753.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">instruction_fetch_stage</text>
+<text x="514.0" y="753.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="648.1" y="753.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<text x="871.6" y="753.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">33.7</text>
+<text x="1065.3" y="753.4" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">COUNTEREXAMPLE</text>
+</svg>

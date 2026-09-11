@@ -2,8 +2,8 @@
 <rect width="1600" height="900" fill="#F5F7FB"/>
 <rect width="1600" height="16" fill="#2563EB"/>
 <text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Formal verification evidence</text>
-<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Compositional EQY sweep plus latency-aware proof for the changed FP4 stream.</text>
-<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Sources: EQY clean report and final top-level equivalence artifact</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Unrestricted EQY, reset-aware supplement, and the changed FP4 stream contract.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Sources: EQY clean report, reset supplement, and final top-level artifact</text>
 <text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
 <rect x="70" y="220" width="973.3333333333334" height="92" rx="2" fill="#059669" stroke="#059669" stroke-width="0"/>
 <text x="556.6666666666667" y="262" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="middle">36</text>
@@ -27,8 +27,9 @@
 <text x="1300" y="372" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#172033" text-anchor="start">COUNTEREXAMPLE: 0</text>
 <rect x="70" y="450" width="710" height="285" rx="18" fill="#FFFFFF" stroke="#2563EB" stroke-width="3"/>
 <text x="425" y="505" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#2563EB" text-anchor="middle">EQY sweep</text>
-<text x="425" y="585" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" fill="#12263A" text-anchor="middle">36 / 54</text>
-<text x="425" y="630" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#5B6678" text-anchor="middle">proved equivalent</text>
+<text x="425" y="570" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="700" fill="#12263A" text-anchor="middle">36 unrestricted</text>
+<text x="425" y="620" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" fill="#7C3AED" text-anchor="middle">45 / 54 total</text>
+<text x="425" y="655" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#5B6678" text-anchor="middle">9 add reset-constrained evidence</text>
 <text x="425" y="684" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#059669" text-anchor="middle">0 counterexamples</text>
 <rect x="820" y="450" width="710" height="285" rx="18" fill="#FFFFFF" stroke="#7C3AED" stroke-width="3"/>
 <text x="1175" y="505" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#7C3AED" text-anchor="middle">Changed cone contract</text>

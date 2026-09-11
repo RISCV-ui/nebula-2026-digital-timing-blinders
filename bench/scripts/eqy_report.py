@@ -81,7 +81,7 @@ def validate(source, log_path=None):
     return results
 
 
-def make_report(source_path, log_path=None):
+def make_report(source_path, log_path=None, supplement_path=None):
     source = json.load(open(source_path))
     results = validate(source, log_path)
     rows = []
@@ -100,6 +100,43 @@ def make_report(source_path, log_path=None):
     for key in ("proved", "timeout", "unproven", "tool_error",
                 "not_equivalent", "other"):
         counts.setdefault(key, 0)
+    supplement = None
+    if supplement_path:
+        supplement_source = json.load(open(supplement_path))
+        supplement_results = supplement_source.get("results", [])
+        proved_names = {
+            row["module"] for row in supplement_results
+            if row.get("proved") and row.get("status") == "PROVED_RESET_CONSTRAINED"
+        }
+        invalid = [
+            row.get("module") for row in supplement_results
+            if not row.get("proved")
+            or not all(
+                attempt.get("proof_success") if attempt.get("kind") == "positive"
+                else attempt.get("counterexample_found")
+                for attempt in row.get("attempts", [])
+            )
+        ]
+        if invalid:
+            raise ValueError(f"supplement has invalid proof rows: {invalid}")
+        base_names = {row["module"] for row in rows if row["category"] == "proved"}
+        overlap = proved_names & base_names
+        if overlap:
+            raise ValueError(f"supplement duplicates unrestricted proofs: {sorted(overlap)}")
+        expected_base = supplement_source.get("inputs", {}).get("base_report", {}).get("sha256")
+        if expected_base and expected_base != digest(source_path):
+            raise ValueError("supplement was built against a different base EQY report")
+        for row in rows:
+            row["reset_constrained_proof"] = row["module"] in proved_names
+        supplement = {
+            "proved": len(proved_names),
+            "depth": supplement_source.get("depth"),
+            "modules": sorted(proved_names),
+            "method": supplement_source.get("method"),
+            "reset_contract": supplement_source.get("reset_contract"),
+            "negative_control": supplement_source.get("negative_control"),
+        }
+
     return {
         "verdict": ("COUNTEREXAMPLE_FOUND" if counts["not_equivalent"]
                     else "NO_COUNTEREXAMPLES"),
@@ -110,11 +147,15 @@ def make_report(source_path, log_path=None):
         "modules_checked": len(rows),
         "total_seconds": source.get("total_seconds"),
         "method": source.get("method"),
+        "supplement": supplement,
+        "combined_modules_with_formal_evidence": counts["proved"] + (supplement or {}).get("proved", 0),
         "evidence": {
             "json": os.path.abspath(source_path),
             "json_sha256": digest(source_path),
             "log": os.path.abspath(log_path) if log_path else None,
             "log_sha256": digest(log_path) if log_path else None,
+            "supplement": os.path.abspath(supplement_path) if supplement_path else None,
+            "supplement_sha256": digest(supplement_path) if supplement_path else None,
         },
         "results": rows,
     }
@@ -122,7 +163,10 @@ def make_report(source_path, log_path=None):
 
 def markdown(report):
     c = report["counts"]
-    unresolved = [r for r in report["results"] if r["category"] != "proved"]
+    unresolved = [
+        r for r in report["results"]
+        if r["category"] != "proved" and not r.get("reset_constrained_proof")
+    ]
     claims = [r for r in report["results"]
               if r["intermediate_counterexample_claims"]]
     lines = [
@@ -140,6 +184,23 @@ def markdown(report):
         "`TIMEOUT`, `UNPROVEN`, and tool errors are incomplete checks. They are "
         "not proofs and they are not counterexamples.",
         "",
+    ]
+    if report.get("supplement"):
+        supplement = report["supplement"]
+        lines += [
+            "## Reset-constrained supplement",
+            "",
+            f"**{report['combined_modules_with_formal_evidence']}/{report['modules_checked']} modules now have formal evidence:** "
+            f"{c['proved']} unrestricted proofs plus {supplement['proved']} bounded proofs at depth {supplement['depth']} under the declared reset contract.",
+            "",
+            "This does not relabel the unrestricted result. Synthesis removed unreachable state encodings in these modules, so the supplemental proof asserts every reset in the initial formal step and compares outputs after every clock domain has observed reset.",
+            "",
+            "Every supplemental proof has a negative control that inverts one output; all negative controls produced a counterexample.",
+            "",
+            ", ".join(f"`{name}`" for name in supplement["modules"]),
+            "",
+        ]
+    lines += [
         "## Why incomplete parents cost more",
         "",
         "The sweep is compositional. A child is boxed identically on the RTL "
@@ -186,6 +247,8 @@ def markdown(report):
     ]
     if report["evidence"]["log_sha256"]:
         lines.append(f"- log SHA-256: `{report['evidence']['log_sha256']}`")
+    if report["evidence"].get("supplement_sha256"):
+        lines.append(f"- reset supplement SHA-256: `{report['evidence']['supplement_sha256']}`")
     return "\n".join(lines)
 
 
@@ -193,12 +256,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", required=True, help="existing EQY sweep JSON")
     ap.add_argument("--log", help="captured sweep log to cross-check")
+    ap.add_argument("--supplement", help="reset-constrained proof report JSON")
     ap.add_argument("--out", default="artifacts/eqy/report",
                     help="output basename; .md and .json are added")
     args = ap.parse_args()
 
     try:
-        report = make_report(args.input, args.log)
+        report = make_report(args.input, args.log, args.supplement)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"EQY report error: {exc}", file=sys.stderr)
         return 2

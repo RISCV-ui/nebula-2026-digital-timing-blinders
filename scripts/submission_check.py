@@ -37,12 +37,14 @@ def main():
         "artifacts/submission_20260911/toplevel_equiv.json",
         "artifacts/bakeoff_all_20260911/bakeoff_all.json",
         "artifacts/eqy/retry_summary_20260911.json",
+        "artifacts/eqy/reset_aware_20260911/report.json",
         "artifacts/submission_20260911/raw/final_6_finish.rpt",
         "artifacts/submission_20260911/raw/baseline_6_finish.rpt",
         "output/result_assets/data/all_results.json",
         "output/result_assets/figures/03_model_gate_outcomes.png",
         "output/result_assets/figures/08_physical_ppa.png",
         "output/result_assets/figures/09_formal_verification.png",
+        "output/result_assets/figures/15_eqy_reset_supplement.png",
         "output/pdf/Nebula_Digital_Final_Report.pdf",
     ]
     missing = [p for p in required if not os.path.isfile(path(p))]
@@ -57,6 +59,7 @@ def main():
     top = load("artifacts/submission_20260911/toplevel_equiv.json")
     bake = load("artifacts/bakeoff_all_20260911/bakeoff_all.json")
     retry = load("artifacts/eqy/retry_summary_20260911.json")
+    reset = load("artifacts/eqy/reset_aware_20260911/report.json")
 
     checks = {
         "lint_final_tree": (lint.get("verdict") == "NO_NEW_WARNINGS" and
@@ -81,6 +84,16 @@ def main():
         "eqy_retry_recorded": (retry.get("verdict") == "NO_IMPROVEMENT" and
                                retry.get("new_proofs") == 0 and
                                retry.get("final_proved") == 36),
+        "eqy_reset_supplement": (
+            reset.get("modules_proved") == 9 and
+            reset.get("combined_modules_with_formal_evidence") == 45 and
+            all(
+                row.get("proved") and
+                any(a.get("kind") == "negative_control" and a.get("counterexample_found")
+                    for a in row.get("attempts", []))
+                for row in reset.get("results", [])
+            )
+        ),
     }
 
     arms = {a["arm"]: a for a in bake.get("arms", [])}
@@ -106,8 +119,8 @@ def main():
 
     print("\nRecorded negative results:")
     print("  PPA regressions: " + ", ".join(ppa["clock_summary"]["regressed"]))
-    print("  EQY incomplete: 10 timeout, 7 unproven, 1 tool error")
-    print("  EQY deeper retry: 0 new proofs; 36/54 remains")
+    print("  EQY unrestricted: 36/54; 10 timeout, 7 unproven, 1 tool error")
+    print("  Reset-aware supplement: 9 proofs; combined formal coverage 45/54")
     print("  Ordinary top-level cycle equivalence: NOT_EQUIVALENT (+4-cycle contract)")
     print("  Gemma free: NOT TESTED (HTTP 429 before a gate)")
     print("  Paid Claude: PENDING")

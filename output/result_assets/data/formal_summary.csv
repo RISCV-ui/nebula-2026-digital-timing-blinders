@@ -1,5 +1,6 @@
 check,result,scope
 EQY modules,"36/54 proved, 0 counterexamples",54-module compositional sweep
+reset-constrained supplement,45/54 total coverage,"9 bounded depth-5 proofs, each with a failing negative control"
 fp8_adder,EQUIVALENT,"complete combinational proof, depth 1"
 FP4 stream,STREAM_EQUIVALENT,"six-property contract, depth 16, +4 cycles"
 ordinary top cycle equivalence,NOT_EQUIVALENT,expected after declared latency change

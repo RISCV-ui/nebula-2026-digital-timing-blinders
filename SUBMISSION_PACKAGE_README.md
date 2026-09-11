@@ -25,7 +25,7 @@ Start with:
 - 9 of 11 timed clocks close. `clk1` and `clk_s8` retain small violations.
 - Four clocks (`clk2` through `clk5`) have no timing paths; they are not counted as passing.
 - Top result: equivalent modulo one declared four-cycle stream latency change. Ordinary cycle-by-cycle top-level equivalence is not claimed.
-- EQY sweep: 36/54 proved, 10 timeout, 7 unproven, 1 tool error, 0 counterexamples.
+- Formal coverage: 45/54 modules — 36 unrestricted EQY proofs plus 9 reset-constrained bounded proofs; 0 real-design counterexamples. Each supplemental proof rejects an inverted-output negative control.
 - Final lint: no new warnings.
 
 ## Model comparison

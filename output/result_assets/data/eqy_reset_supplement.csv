@@ -1,0 +1,10 @@
+module,depth,status,positive_seconds,negative_control_output,negative_control_counterexample
+uart_controller,5,PROVED_RESET_CONSTRAINED,4.2,data_out,True
+read_buffer_d_cache,5,PROVED_RESET_CONSTRAINED,5.8,data_out,True
+dma_controller,5,PROVED_RESET_CONSTRAINED,5.2,data_out,True
+branch_predictor,5,PROVED_RESET_CONSTRAINED,8.0,hit_wire,True
+axi_lite_uart,5,PROVED_RESET_CONSTRAINED,6.4,int_out_uart,True
+axi_lite_timer,5,PROVED_RESET_CONSTRAINED,6.2,int_out_timer,True
+axi_lite_gpio,5,PROVED_RESET_CONSTRAINED,6.9,int_out_gpio,True
+axi_lite_dma_config,5,PROVED_RESET_CONSTRAINED,4.9,s1_ar_ready,True
+instruction_fetch_stage,5,PROVED_RESET_CONSTRAINED,33.7,pc_pluse4_if,True

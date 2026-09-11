@@ -2,11 +2,12 @@
   "provenance_sha256": {
     "artifacts/bakeoff_all_20260911/bakeoff_all.json": "a9e1efd18ea38445296c8f909d18bcf10e282cb5b230fd08542c377703bd3e65",
     "artifacts/submission_20260911/ppa.json": "480837ae078dcde5fbf43084951157abc83baf222d8aeabd1cc71bdca80bec26",
-    "artifacts/eqy/report.json": "706ef23975b817ca06fe157c35c7882291a383e84d99ee072343efb4c70eef5c",
+    "artifacts/eqy/report.json": "ff4212b9d886e378af7cc6dfbc0b1abb5a2bccc0e9df8919232335dab8afc5f8",
     "artifacts/final_candidate/toplevel_equiv.json": "a93b764002ae83142083d344429e8a92b77b5a5bee2643bc2020ffc4f919cfce",
     "artifacts/loop/history.jsonl": "f4cb2725075bc25d2d4d1b068939a7266933501acc785dc5979250e164639b44",
     "artifacts/submission_20260911/synth.json": "92303f15a690a30e3b892e3824cce530822f4bb8e5562f58b70efbc8028fa691",
-    "artifacts/eqy/retry_summary_20260911.json": "105c8f887a13fba52c0ea7d1f3669ebfddfc73a538b47e4d7e9f2b73514618c9"
+    "artifacts/eqy/retry_summary_20260911.json": "105c8f887a13fba52c0ea7d1f3669ebfddfc73a538b47e4d7e9f2b73514618c9",
+    "artifacts/eqy/reset_aware_20260911/report.json": "556ad49bfeb1dfac2d4fb8c52e9c1441092b81ed6838d5d90ef2c45cded0de8a"
   },
   "model_comparison": {
     "golden": "bench/rtl",
@@ -492,11 +493,32 @@
     "modules_checked": 54,
     "total_seconds": 3637.3,
     "method": "compositional: a module proved equivalent is boxed identically on both sides of every later check",
+    "supplement": {
+      "proved": 9,
+      "depth": 5,
+      "modules": [
+        "axi_lite_dma_config",
+        "axi_lite_gpio",
+        "axi_lite_timer",
+        "axi_lite_uart",
+        "branch_predictor",
+        "dma_controller",
+        "instruction_fetch_stage",
+        "read_buffer_d_cache",
+        "uart_controller"
+      ],
+      "method": "reset-constrained bounded RTL-to-netlist equivalence",
+      "reset_contract": "all reset inputs asserted in initial formal step; compare after every domain observes reset",
+      "negative_control": "first output inverted; a valid run must find a counterexample"
+    },
+    "combined_modules_with_formal_evidence": 45,
     "evidence": {
       "json": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/soc_top_hier4.json",
       "json_sha256": "1e2c46397d5e267a1e9a9253a5b72429fe04ca0723c2ef6327287e832d5a4d54",
       "log": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier4.log",
-      "log_sha256": "ca592518e2bf4f042b738b1db3641c5d0a5f7deb7efe2d2486cf83c9c14f483a"
+      "log_sha256": "ca592518e2bf4f042b738b1db3641c5d0a5f7deb7efe2d2486cf83c9c14f483a",
+      "supplement": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/reset_aware_20260911/report.json",
+      "supplement_sha256": "556ad49bfeb1dfac2d4fb8c52e9c1441092b81ed6838d5d90ef2c45cded0de8a"
     },
     "results": [
       {
@@ -505,7 +527,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 5.9,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "alu_src_a_mux",
@@ -513,7 +536,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.0,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "alu_src_b_mux",
@@ -521,7 +545,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.1,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "arbiter",
@@ -529,7 +554,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.0,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "axi_lite_dma_config",
@@ -537,7 +563,8 @@
         "status": "UNPROVEN (234 cells) at depth 5",
         "seconds": 37.2,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": true
       },
       {
         "module": "axi_lite_master",
@@ -545,7 +572,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 11.8,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "branch_comp_decoder",
@@ -553,7 +581,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.2,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "branch_comprator",
@@ -561,7 +590,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.5,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "branch_predictor",
@@ -569,7 +599,8 @@
         "status": "TIMEOUT after 180s",
         "seconds": 200.2,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": true
       },
       {
         "module": "clk_div_mux",
@@ -577,7 +608,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 8.5,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "clk_gate",
@@ -585,7 +617,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.0,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "control_unit",
@@ -593,7 +626,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 9.2,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "csr_regfile",
@@ -601,7 +635,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 20.5,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "data_clipper",
@@ -609,7 +644,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.0,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "data_extender",
@@ -617,7 +653,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.0,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "data_forwarding_unit",
@@ -625,7 +662,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.4,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "dma_controller",
@@ -636,7 +674,8 @@
         "intermediate_counterexample_claims": [
           "partitioned",
           "merged"
-        ]
+        ],
+        "reset_constrained_proof": true
       },
       {
         "module": "dmem",
@@ -644,7 +683,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 38.2,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "fp4_mul",
@@ -652,7 +692,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 12.4,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "fp8_adder",
@@ -660,7 +701,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 5.8,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "gpio_controller",
@@ -668,7 +710,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 22.9,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "hazard_detection_unit",
@@ -676,7 +719,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 9.3,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "i_rom_32x256",
@@ -684,7 +728,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 12.5,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "id_memory_256x64_wrap",
@@ -692,7 +737,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 71.3,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "immediate_generator",
@@ -700,7 +746,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.6,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "interrupt_control_unit",
@@ -708,7 +755,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.4,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "l1_cache_axi_master",
@@ -716,7 +764,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 75.2,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "mem_axi_slave",
@@ -724,7 +773,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 16.3,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "memory_stage",
@@ -732,7 +782,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 7.8,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "multiplier_pipelined",
@@ -742,7 +793,8 @@
         "proved_child_cut_points": [],
         "intermediate_counterexample_claims": [
           "merged"
-        ]
+        ],
+        "reset_constrained_proof": false
       },
       {
         "module": "pipeline_reg_ex_mem",
@@ -750,7 +802,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 5.2,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "pipeline_reg_id_ex",
@@ -758,7 +811,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 6.7,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "pipeline_reg_if_id",
@@ -766,7 +820,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.6,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "pipeline_reg_mem_wb",
@@ -774,7 +829,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 4.5,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "read_buffer_d_cache",
@@ -784,7 +840,8 @@
         "proved_child_cut_points": [],
         "intermediate_counterexample_claims": [
           "partitioned"
-        ]
+        ],
+        "reset_constrained_proof": true
       },
       {
         "module": "read_buffer_i_cache",
@@ -792,7 +849,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 31.6,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "register_file",
@@ -800,7 +858,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 29.0,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "tag_memory_92x64_wrap",
@@ -808,7 +867,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 21.3,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "timer",
@@ -816,7 +876,8 @@
         "status": "PROVED_EQUIVALENT",
         "seconds": 5.4,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "uart_controller",
@@ -826,7 +887,8 @@
         "proved_child_cut_points": [],
         "intermediate_counterexample_claims": [
           "partitioned"
-        ]
+        ],
+        "reset_constrained_proof": true
       },
       {
         "module": "axi_interconnect_2m_8s",
@@ -836,7 +898,8 @@
         "proved_child_cut_points": [
           "arbiter"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "axi_lite_gpio",
@@ -846,7 +909,8 @@
         "proved_child_cut_points": [
           "gpio_controller"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": true
       },
       {
         "module": "axi_lite_timer",
@@ -856,7 +920,8 @@
         "proved_child_cut_points": [
           "timer"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": true
       },
       {
         "module": "axi_lite_uart",
@@ -864,7 +929,8 @@
         "status": "UNPROVEN (18 cells) at depth 5",
         "seconds": 177.4,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": true
       },
       {
         "module": "execution_stage",
@@ -875,7 +941,8 @@
           "alu",
           "data_clipper"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "fp4_dot_unit",
@@ -888,7 +955,8 @@
         ],
         "intermediate_counterexample_claims": [
           "partitioned"
-        ]
+        ],
+        "reset_constrained_proof": false
       },
       {
         "module": "instruction_decode_stage",
@@ -902,7 +970,8 @@
           "immediate_generator",
           "register_file"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "l1_d_cache_8kb",
@@ -913,7 +982,8 @@
           "id_memory_256x64_wrap",
           "tag_memory_92x64_wrap"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "l1_i_cache_8kb",
@@ -924,7 +994,8 @@
           "id_memory_256x64_wrap",
           "tag_memory_92x64_wrap"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "write_back_stage",
@@ -934,7 +1005,8 @@
         "proved_child_cut_points": [
           "data_extender"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "axi_lite_dot",
@@ -942,7 +1014,8 @@
         "status": "TIMEOUT after 180s",
         "seconds": 194.2,
         "proved_child_cut_points": [],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "instruction_fetch_stage",
@@ -953,7 +1026,8 @@
           "i_rom_32x256",
           "read_buffer_i_cache"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": true
       },
       {
         "module": "processor_top",
@@ -975,7 +1049,8 @@
           "pipeline_reg_mem_wb",
           "write_back_stage"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       },
       {
         "module": "soc_top",
@@ -991,7 +1066,8 @@
           "l1_cache_axi_master",
           "mem_axi_slave"
         ],
-        "intermediate_counterexample_claims": []
+        "intermediate_counterexample_claims": [],
+        "reset_constrained_proof": false
       }
     ]
   },
@@ -1663,5 +1739,461 @@
       }
     ],
     "conclusion": "Targeted deeper retries produced zero additional proofs. The defensible result remains 36/54 proved and 0 counterexamples."
+  },
+  "eqy_reset_supplement": {
+    "method": "reset-constrained bounded RTL-to-netlist equivalence",
+    "depth": 5,
+    "reset_contract": "all reset inputs asserted in initial formal step; compare after every domain observes reset",
+    "negative_control": "first output inverted; a valid run must find a counterexample",
+    "modules_requested": 9,
+    "modules_proved": 9,
+    "base_unrestricted_proved": 36,
+    "base_total": 54,
+    "combined_modules_with_formal_evidence": 45,
+    "inputs": {
+      "rtl": [
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu.v",
+          "sha256": "497684c505b9ce641f7c656fd58ee22ba6a8efa0e81f57f7134df69139fc4685"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_a_mux.v",
+          "sha256": "9853363847f190e616fba733a76020d56b9cf844e0f0f3a4b07d37bcc82bb91e"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_b_mux.v",
+          "sha256": "169c197d86891e8f922f9cc56660891a78dc8a4e8845e23d76da10ea6a90857c"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/arbiter.v",
+          "sha256": "cdf4eded29c9e2fa69ad749b8f707077aaefbc8c0618889a478c31f0cd3b96a1"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v",
+          "sha256": "9b4f3ac6b4efd234c6cbcc8a3537a05f45a5daa8aa7971d2879a07d44fc86b3f"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+          "sha256": "aa999cebf561429a2997711a91b1760573be5df74ec79e7a329a22a82f6ec1fd"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dma_config.v",
+          "sha256": "8d03ad87e0650a95e50d135d9d4af8191126ed41146af6c477a4a07547585b19"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dot.v",
+          "sha256": "f4cd8fc83206e08c9c072a695683de49f573dc047a6934d6c91d2a795f7ae1a6"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v",
+          "sha256": "950cae3b4e7556135d6d0e16f8cfe8a43adcfc3760dd312981a0cd575ffeffbc"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_master.v",
+          "sha256": "8fbe6052e8eecbe49285f754dce97b6fb551c64ffb5823f39f11b535e959436d"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_timer.v",
+          "sha256": "30c33e1816d2b88395b619a5e1a774b358b5b0046049aa663f16a3ebcd584c2f"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_uart.v",
+          "sha256": "4bfd721e02bf037e564d529e8ae93006b1a008b5a46d33cff9e4046d34974a09"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comp_decoder.v",
+          "sha256": "6751c37bfb6b4e308b7ce10197c33ecbe2393ec5fe4bb02e64d8786ef6c62b77"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comprator.v",
+          "sha256": "f921c21f10817dc25bbbbee9943ee1ccc34e8b150a170fddb4131de8cfc9dea1"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_predictor.v",
+          "sha256": "4df75f6c700d46109e02e85e81450770405f7bb69452b334d7242d044d04aece"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+          "sha256": "7bc1e2c051ce3d6ba95963e8c3ef531cd882b53ea7f5261b6893dc034cd262fa"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_gate.v",
+          "sha256": "573a68620e157a2be969942b0df1ecbc7dabcdd2023bf8bc1e2c13f0ab190d8f"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/control_unit.v",
+          "sha256": "fd1a85527fa09ce5651f831a4e61e15c102594f36b13abc475059fb68d3ec57f"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/csr_regfile.v",
+          "sha256": "3e685a02f7bc0b89db8e9fd6aedc984c3bf148a51ff10bcd0ad4775cdcdab31d"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_clipper.v",
+          "sha256": "95bc5e941841aa60d76061a14cd23672ad0bf58fb818302300268821cee28c4a"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_extender.v",
+          "sha256": "0d9aaf3eece441799cf9a1aa4466c1ce41ec171948d0dbf47e9051151486413c"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_forwarding_unit.v",
+          "sha256": "4a3f7f032e0553c66f614d90f3c962e644f3ef53859f7b03643a4c1752aa4a14"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v",
+          "sha256": "b0d4e08abfb96283686cfc99f7b3afa8079752c1d70251898f2e1e5fb643c59f"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dmem.v",
+          "sha256": "d43db2e35634f465dc570ff74519e775fdb130ef32751c2b1697d56aa07a3d00"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/execution_stage.v",
+          "sha256": "161cb0b2645a1f9c4dbe5fba862e288bec89f547ebe2dc1ab6bc3069361ff396"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_dot_unit.v",
+          "sha256": "3660d47b2bf31f792b9baa5eace879fb086caa32177b917a9703764425caca7b"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_mul.v",
+          "sha256": "d638c6eaa65f45c5e4978dfcb0fd051187bc5603a74104ad202d3290250be091"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v",
+          "sha256": "c8a445720dc03266611730d18a2becf9ad704802d8332e0cb7001d565e1a6256"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v",
+          "sha256": "78b0890708bc01241ab8b67f1682d79c36287cae9708c3a735e0014be42e8325"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/hazard_detection_unit.v",
+          "sha256": "c6e224d3d8e8188c5ee431c0a1eb50521324b5cb887d363e9854abf6d4d97913"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/i_rom_32x256.v",
+          "sha256": "261ab7b36c4a84933c640b6fad9d7dd8dbbd4293112e73b1360cc69ad4b91f34"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/id_memory_256x64_wrap.v",
+          "sha256": "18de356a1bed4f47c9a953cd99a9de5664b6987204e9ab0ad739ae11c32e9a7d"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/immediate_generator.v",
+          "sha256": "b81f4ccac25f61141430229ca62342448d4d021e99707de4bc849730c2cb3c95"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_decode_stage.v",
+          "sha256": "5c3561041f85dd7af7b5e32fbb75437e654019c68c882cd51794e203aa013556"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_fetch_stage.v",
+          "sha256": "d942d419080723c61214e3fa2fcf8e40a885de223eddcd55809f6a13ea5ff9c6"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/interrupt_control_unit.v",
+          "sha256": "ef7fba89c94ca3755571ca59d6828c9f8dac15d74840ed2469be06d0a4c1ce40"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_cache_axi_master.v",
+          "sha256": "c2a38c16d8039842f5c49966edbc898e52e8d8ea29efbf17620b343748d80ab3"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_d_cache_8kb.v",
+          "sha256": "e188e3d37ed00e8673ee7a6ed3c00997b8b8d3909408427ca5b0f3c97d05c1ea"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_i_cache_8kb.v",
+          "sha256": "bbf5c25094f6daead0bc38b6031bb74384683192fc4e2ea944f910887d0ef35c"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/mem_axi_slave.v",
+          "sha256": "452ed0c501f3df4e7a018ece8b0ea13b520cffc044cbc1ed6fb1f843389c0eee"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/memory_stage.v",
+          "sha256": "ec40a8901052d1b4589a8c72fd003f621016862cfc9821233f8a3f0a5e73a9f9"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/multiplier_pipelined.v",
+          "sha256": "26b528d88228b11c711e3a771e34ccc2f68bf6d8988884a76f4133a06a7a209e"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_ex_mem.v",
+          "sha256": "ebcdf9263328441292eb29ccb690deafd0e2f67f4ee1d933a8efba344df3cffb"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_id_ex.v",
+          "sha256": "b760191e63f5ee4d4ef38ac1a019f9e9566db21a9e61926c67ab7c5f42aaa031"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_if_id.v",
+          "sha256": "35a15d63f5ed71971707aa9d813d618244b0c895a24791d655d6df2d0a690610"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_mem_wb.v",
+          "sha256": "0a99851478663f6cd54a300d0aff7ded36a2c63cc23412a23d1ee73a2a33afe0"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/processor_top.v",
+          "sha256": "483c90dbbdec94c876b84c4daa747912fad81a51e24d7b896d3b6abad3821dcb"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_d_cache.v",
+          "sha256": "90fb2c5faa90a177bd342fe339c262eb3e89edadd12e441988eb1b10f38ac0c6"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_i_cache.v",
+          "sha256": "0d7f7b40a5d00de2c995a38e29bd0662a7f9af1e1ba1d63e4e9d82936d3a5a72"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/register_file.v",
+          "sha256": "59eb01c46e75d9f5c342bdec0fcd21afa969b774a872b96d00d9aa73aaf5daab"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/soc_top.v",
+          "sha256": "7ff6be5a8682557f0808f145478e31d28c2a72e42867b7767822f73c66ae1ac9"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/tag_memory_92x64_wrap.v",
+          "sha256": "4d6eeef301fa7cc60f4d4f22f9cc7893804eb78492d73cbd685d8262349295cf"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/timer.v",
+          "sha256": "4a27c013c05febaf8f04b98a7e5550d96e2312d25665d9c7c12863b2f8c7f804"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v",
+          "sha256": "8a50206ccb01b390456172c6d1f428e90ac2f571c03345002e5b576115fbd49d"
+        },
+        {
+          "path": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/write_back_stage.v",
+          "sha256": "98259d5f41db8e6d9f14fdbc6d56ba008d9124ca3d323f934c76cac18cb82787"
+        }
+      ],
+      "netlist": {
+        "path": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+        "sha256": "5cf826ec4e4886e6f75ddd9930312c0eca9f831538bd7fe240c74d7f5f27af3b"
+      },
+      "liberty": {
+        "path": "/Users/shubhanshu/Desktop/Nebula/digital/sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib",
+        "sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9"
+      },
+      "base_report": {
+        "path": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/soc_top_hier4.json",
+        "sha256": "1e2c46397d5e267a1e9a9253a5b72429fe04ca0723c2ef6327287e832d5a4d54"
+      }
+    },
+    "results": [
+      {
+        "module": "uart_controller",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "data_out",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 4.2,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 4.0,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      },
+      {
+        "module": "read_buffer_d_cache",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "data_out",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 5.8,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 4.7,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      },
+      {
+        "module": "dma_controller",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "data_out",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 5.2,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 4.6,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      },
+      {
+        "module": "branch_predictor",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "hit_wire",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 8.0,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 7.0,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      },
+      {
+        "module": "axi_lite_uart",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "int_out_uart",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 6.4,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 6.3,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      },
+      {
+        "module": "axi_lite_timer",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "int_out_timer",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 6.2,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 6.2,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      },
+      {
+        "module": "axi_lite_gpio",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "int_out_gpio",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 6.9,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 6.8,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      },
+      {
+        "module": "axi_lite_dma_config",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "s1_ar_ready",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 4.9,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 4.9,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      },
+      {
+        "module": "instruction_fetch_stage",
+        "status": "PROVED_RESET_CONSTRAINED",
+        "proved": true,
+        "depth": 5,
+        "negative_control_output": "pc_pluse4_if",
+        "attempts": [
+          {
+            "kind": "positive",
+            "returncode": 0,
+            "seconds": 33.7,
+            "proof_success": true,
+            "counterexample_found": false
+          },
+          {
+            "kind": "negative_control",
+            "returncode": 1,
+            "seconds": 31.1,
+            "proof_success": false,
+            "counterexample_found": true
+          }
+        ]
+      }
+    ]
   }
 }

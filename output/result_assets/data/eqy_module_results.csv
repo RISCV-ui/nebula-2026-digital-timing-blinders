@@ -1,55 +1,55 @@
-module,category,status,seconds,proved_child_cut_points,intermediate_counterexample_claims
-alu,proved,PROVED_EQUIVALENT,5.9,,
-alu_src_a_mux,proved,PROVED_EQUIVALENT,4.0,,
-alu_src_b_mux,proved,PROVED_EQUIVALENT,4.1,,
-arbiter,proved,PROVED_EQUIVALENT,4.0,,
-axi_lite_dma_config,unproven,UNPROVEN (234 cells) at depth 5,37.2,,
-axi_lite_master,proved,PROVED_EQUIVALENT,11.8,,
-branch_comp_decoder,proved,PROVED_EQUIVALENT,4.2,,
-branch_comprator,proved,PROVED_EQUIVALENT,4.5,,
-branch_predictor,timeout,TIMEOUT after 180s,200.2,,
-clk_div_mux,proved,PROVED_EQUIVALENT,8.5,,
-clk_gate,proved,PROVED_EQUIVALENT,4.0,,
-control_unit,proved,PROVED_EQUIVALENT,9.2,,
-csr_regfile,proved,PROVED_EQUIVALENT,20.5,,
-data_clipper,proved,PROVED_EQUIVALENT,4.0,,
-data_extender,proved,PROVED_EQUIVALENT,4.0,,
-data_forwarding_unit,proved,PROVED_EQUIVALENT,4.4,,
-dma_controller,unproven,UNPROVEN (166 cells) at depth 5,46.8,,partitioned;merged
-dmem,proved,PROVED_EQUIVALENT,38.2,,
-fp4_mul,proved,PROVED_EQUIVALENT,12.4,,
-fp8_adder,proved,PROVED_EQUIVALENT,5.8,,
-gpio_controller,proved,PROVED_EQUIVALENT,22.9,,
-hazard_detection_unit,proved,PROVED_EQUIVALENT,9.3,,
-i_rom_32x256,proved,PROVED_EQUIVALENT,12.5,,
-id_memory_256x64_wrap,proved,PROVED_EQUIVALENT,71.3,,
-immediate_generator,proved,PROVED_EQUIVALENT,4.6,,
-interrupt_control_unit,proved,PROVED_EQUIVALENT,4.4,,
-l1_cache_axi_master,proved,PROVED_EQUIVALENT,75.2,,
-mem_axi_slave,proved,PROVED_EQUIVALENT,16.3,,
-memory_stage,proved,PROVED_EQUIVALENT,7.8,,
-multiplier_pipelined,timeout,TIMEOUT after 180s,417.1,,merged
-pipeline_reg_ex_mem,proved,PROVED_EQUIVALENT,5.2,,
-pipeline_reg_id_ex,proved,PROVED_EQUIVALENT,6.7,,
-pipeline_reg_if_id,proved,PROVED_EQUIVALENT,4.6,,
-pipeline_reg_mem_wb,proved,PROVED_EQUIVALENT,4.5,,
-read_buffer_d_cache,unproven,UNPROVEN (2 cells) at depth 5,26.2,,partitioned
-read_buffer_i_cache,proved,PROVED_EQUIVALENT,31.6,,
-register_file,proved,PROVED_EQUIVALENT,29.0,,
-tag_memory_92x64_wrap,proved,PROVED_EQUIVALENT,21.3,,
-timer,proved,PROVED_EQUIVALENT,5.4,,
-uart_controller,unproven,UNPROVEN (1 cells) at depth 5,31.4,,partitioned
-axi_interconnect_2m_8s,unproven,UNPROVEN (882 cells) at depth 5,19.7,arbiter,
-axi_lite_gpio,timeout,TIMEOUT after 180s,286.4,gpio_controller,
-axi_lite_timer,unproven,UNPROVEN (22 cells) at depth 5,229.5,timer,
-axi_lite_uart,unproven,UNPROVEN (18 cells) at depth 5,177.4,,
-execution_stage,timeout,TIMEOUT after 180s,402.6,alu;data_clipper,
-fp4_dot_unit,timeout,TIMEOUT after 180s,217.1,fp4_mul;fp8_adder,partitioned
-instruction_decode_stage,proved,PROVED_EQUIVALENT,94.8,branch_comp_decoder;control_unit;csr_regfile;immediate_generator;register_file,
-l1_d_cache_8kb,timeout,TIMEOUT after 180s,180.2,id_memory_256x64_wrap;tag_memory_92x64_wrap,
-l1_i_cache_8kb,timeout,TIMEOUT after 180s,180.1,id_memory_256x64_wrap;tag_memory_92x64_wrap,
-write_back_stage,proved,PROVED_EQUIVALENT,8.5,data_extender,
-axi_lite_dot,timeout,TIMEOUT after 180s,194.2,,
-instruction_fetch_stage,timeout,TIMEOUT after 180s,180.1,i_rom_32x256;read_buffer_i_cache,
-processor_top,timeout,TIMEOUT after 180s,180.2,alu_src_a_mux;alu_src_b_mux;branch_comprator;data_extender;data_forwarding_unit;hazard_detection_unit;instruction_decode_stage;memory_stage;pipeline_reg_ex_mem;pipeline_reg_id_ex;pipeline_reg_if_id;pipeline_reg_mem_wb;write_back_stage,
-soc_top,tool_error,YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.,45.3,axi_lite_master;clk_div_mux;clk_gate;dmem;interrupt_control_unit;l1_cache_axi_master;mem_axi_slave,
+module,category,status,seconds,proved_child_cut_points,intermediate_counterexample_claims,reset_constrained_proof
+alu,proved,PROVED_EQUIVALENT,5.9,,,False
+alu_src_a_mux,proved,PROVED_EQUIVALENT,4.0,,,False
+alu_src_b_mux,proved,PROVED_EQUIVALENT,4.1,,,False
+arbiter,proved,PROVED_EQUIVALENT,4.0,,,False
+axi_lite_dma_config,unproven,UNPROVEN (234 cells) at depth 5,37.2,,,True
+axi_lite_master,proved,PROVED_EQUIVALENT,11.8,,,False
+branch_comp_decoder,proved,PROVED_EQUIVALENT,4.2,,,False
+branch_comprator,proved,PROVED_EQUIVALENT,4.5,,,False
+branch_predictor,timeout,TIMEOUT after 180s,200.2,,,True
+clk_div_mux,proved,PROVED_EQUIVALENT,8.5,,,False
+clk_gate,proved,PROVED_EQUIVALENT,4.0,,,False
+control_unit,proved,PROVED_EQUIVALENT,9.2,,,False
+csr_regfile,proved,PROVED_EQUIVALENT,20.5,,,False
+data_clipper,proved,PROVED_EQUIVALENT,4.0,,,False
+data_extender,proved,PROVED_EQUIVALENT,4.0,,,False
+data_forwarding_unit,proved,PROVED_EQUIVALENT,4.4,,,False
+dma_controller,unproven,UNPROVEN (166 cells) at depth 5,46.8,,partitioned;merged,True
+dmem,proved,PROVED_EQUIVALENT,38.2,,,False
+fp4_mul,proved,PROVED_EQUIVALENT,12.4,,,False
+fp8_adder,proved,PROVED_EQUIVALENT,5.8,,,False
+gpio_controller,proved,PROVED_EQUIVALENT,22.9,,,False
+hazard_detection_unit,proved,PROVED_EQUIVALENT,9.3,,,False
+i_rom_32x256,proved,PROVED_EQUIVALENT,12.5,,,False
+id_memory_256x64_wrap,proved,PROVED_EQUIVALENT,71.3,,,False
+immediate_generator,proved,PROVED_EQUIVALENT,4.6,,,False
+interrupt_control_unit,proved,PROVED_EQUIVALENT,4.4,,,False
+l1_cache_axi_master,proved,PROVED_EQUIVALENT,75.2,,,False
+mem_axi_slave,proved,PROVED_EQUIVALENT,16.3,,,False
+memory_stage,proved,PROVED_EQUIVALENT,7.8,,,False
+multiplier_pipelined,timeout,TIMEOUT after 180s,417.1,,merged,False
+pipeline_reg_ex_mem,proved,PROVED_EQUIVALENT,5.2,,,False
+pipeline_reg_id_ex,proved,PROVED_EQUIVALENT,6.7,,,False
+pipeline_reg_if_id,proved,PROVED_EQUIVALENT,4.6,,,False
+pipeline_reg_mem_wb,proved,PROVED_EQUIVALENT,4.5,,,False
+read_buffer_d_cache,unproven,UNPROVEN (2 cells) at depth 5,26.2,,partitioned,True
+read_buffer_i_cache,proved,PROVED_EQUIVALENT,31.6,,,False
+register_file,proved,PROVED_EQUIVALENT,29.0,,,False
+tag_memory_92x64_wrap,proved,PROVED_EQUIVALENT,21.3,,,False
+timer,proved,PROVED_EQUIVALENT,5.4,,,False
+uart_controller,unproven,UNPROVEN (1 cells) at depth 5,31.4,,partitioned,True
+axi_interconnect_2m_8s,unproven,UNPROVEN (882 cells) at depth 5,19.7,arbiter,,False
+axi_lite_gpio,timeout,TIMEOUT after 180s,286.4,gpio_controller,,True
+axi_lite_timer,unproven,UNPROVEN (22 cells) at depth 5,229.5,timer,,True
+axi_lite_uart,unproven,UNPROVEN (18 cells) at depth 5,177.4,,,True
+execution_stage,timeout,TIMEOUT after 180s,402.6,alu;data_clipper,,False
+fp4_dot_unit,timeout,TIMEOUT after 180s,217.1,fp4_mul;fp8_adder,partitioned,False
+instruction_decode_stage,proved,PROVED_EQUIVALENT,94.8,branch_comp_decoder;control_unit;csr_regfile;immediate_generator;register_file,,False
+l1_d_cache_8kb,timeout,TIMEOUT after 180s,180.2,id_memory_256x64_wrap;tag_memory_92x64_wrap,,False
+l1_i_cache_8kb,timeout,TIMEOUT after 180s,180.1,id_memory_256x64_wrap;tag_memory_92x64_wrap,,False
+write_back_stage,proved,PROVED_EQUIVALENT,8.5,data_extender,,False
+axi_lite_dot,timeout,TIMEOUT after 180s,194.2,,,False
+instruction_fetch_stage,timeout,TIMEOUT after 180s,180.1,i_rom_32x256;read_buffer_i_cache,,True
+processor_top,timeout,TIMEOUT after 180s,180.2,alu_src_a_mux;alu_src_b_mux;branch_comprator;data_extender;data_forwarding_unit;hazard_detection_unit;instruction_decode_stage;memory_stage;pipeline_reg_ex_mem;pipeline_reg_id_ex;pipeline_reg_if_id;pipeline_reg_mem_wb;write_back_stage,,False
+soc_top,tool_error,YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.,45.3,axi_lite_master;clk_div_mux;clk_gate;dmem;interrupt_control_unit;l1_cache_axi_master;mem_axi_slave,,False

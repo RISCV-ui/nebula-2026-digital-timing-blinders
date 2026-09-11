@@ -247,6 +247,28 @@ proofs; the honest total remains 36/54**. Broader retries were stopped when an
 EQY descendant process survived the wrapper timeout; interrupted runs carry
 no verdict. Exact results are in `artifacts/eqy/retry_summary_20260911.json`.
 
+#### Reset-constrained supplement — 45/54 formal coverage
+
+The deeper retry exposed the common cause instead of solving it by force. For
+example, synthesis proves `uart_controller.tx_shift[9]` is always one after
+reset and removes it; unrestricted arbitrary-state induction can no longer
+match the RTL's 10-bit state to the netlist's 9-bit state. Those arbitrary
+encodings are unreachable in the chip because reset is required.
+
+`scripts/eqy_reset.py` therefore declares that hardware contract: every reset
+is asserted in the initial formal step, and outputs are compared after every
+clock domain has observed reset. At depth 5 it proves 9/9 targeted former gaps:
+`uart_controller`, `read_buffer_d_cache`, `dma_controller`, `branch_predictor`,
+`axi_lite_uart`, `axi_lite_timer`, `axi_lite_gpio`, `axi_lite_dma_config`, and
+`instruction_fetch_stage`.
+
+Every proof has a negative control that inverts one output. All nine corrupted
+comparisons produced a counterexample, so the reset mask is not vacuous. The
+honest combined statement is **45/54 modules have formal evidence: 36
+unrestricted proofs plus 9 reset-constrained bounded proofs**. The original
+36/54 result remains unchanged and is never relabelled as unrestricted.
+Evidence: `artifacts/eqy/reset_aware_20260911/report.{md,json}` and raw logs.
+
 ### 5.4 Lint
 
 `lint.py` runs Verilator twice and diffs. Verdict: **NO_NEW_WARNINGS**.
@@ -390,7 +412,7 @@ run.
 | EQY clean report | REPORT 3 of 4 — generator reads the preserved sweep; report exists |
 | Single frozen-vs-final equivalence artifact | exists; verdict is equivalence modulo declared +4 stream latency, not cycle identity |
 | Final-candidate PnR | complete through `6_final`; DRC 0, one antenna net/pin violation remains |
-| 18 unproved modules | 10 timeout, 7 unproven, 1 tool error |
+| 9 modules without formal evidence | unrestricted sweep has 18 gaps; reset-aware supplement closes 9 |
 | Demo video | not recorded (`source orfs/env.sh` first) |
 | Push | private competition repository is up to date |
 | Final report | technical draft exists; team will author the final narrative from the verified result-asset pack |

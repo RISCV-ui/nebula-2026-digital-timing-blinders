@@ -699,10 +699,16 @@ the design:
 **Nothing in the sweep is `NOT_EQUIVALENT`.** Every failure is `UNPROVEN`,
 `TIMEOUT`, or a tool error, and the difference matters: the checker never found
 a netlist that behaves differently from its RTL, it ran out of resources or
-anchors on half the tree. Reporting 36/54 as "two thirds of the design is
-verified" is the accurate claim; reporting it as "a third of the design is
-wrong" would be false, and reporting 54/54 by loosening the checker would be
-worse than either.
+anchors on half the tree.
+
+A later reset-constrained supplement closed nine of these gaps at bounded
+depth 5. It assumes every hardware reset is asserted in the initial formal
+step and compares outputs after each clock domain has observed reset. Each of
+the nine positive proofs is paired with an inverted-output negative control;
+all nine negative controls produced a counterexample. The resulting claim is
+therefore **45/54 modules have formal evidence: 36 unrestricted EQY proofs plus
+9 reset-constrained bounded proofs**. The two proof classes stay separate;
+reporting the supplement as 45 unrestricted proofs would be false.
 
 ---
 

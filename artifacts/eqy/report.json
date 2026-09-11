@@ -12,11 +12,32 @@
   "modules_checked": 54,
   "total_seconds": 3637.3,
   "method": "compositional: a module proved equivalent is boxed identically on both sides of every later check",
+  "supplement": {
+    "proved": 9,
+    "depth": 5,
+    "modules": [
+      "axi_lite_dma_config",
+      "axi_lite_gpio",
+      "axi_lite_timer",
+      "axi_lite_uart",
+      "branch_predictor",
+      "dma_controller",
+      "instruction_fetch_stage",
+      "read_buffer_d_cache",
+      "uart_controller"
+    ],
+    "method": "reset-constrained bounded RTL-to-netlist equivalence",
+    "reset_contract": "all reset inputs asserted in initial formal step; compare after every domain observes reset",
+    "negative_control": "first output inverted; a valid run must find a counterexample"
+  },
+  "combined_modules_with_formal_evidence": 45,
   "evidence": {
     "json": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/soc_top_hier4.json",
     "json_sha256": "1e2c46397d5e267a1e9a9253a5b72429fe04ca0723c2ef6327287e832d5a4d54",
     "log": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier4.log",
-    "log_sha256": "ca592518e2bf4f042b738b1db3641c5d0a5f7deb7efe2d2486cf83c9c14f483a"
+    "log_sha256": "ca592518e2bf4f042b738b1db3641c5d0a5f7deb7efe2d2486cf83c9c14f483a",
+    "supplement": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/reset_aware_20260911/report.json",
+    "supplement_sha256": "556ad49bfeb1dfac2d4fb8c52e9c1441092b81ed6838d5d90ef2c45cded0de8a"
   },
   "results": [
     {
@@ -25,7 +46,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 5.9,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "alu_src_a_mux",
@@ -33,7 +55,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.0,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "alu_src_b_mux",
@@ -41,7 +64,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.1,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "arbiter",
@@ -49,7 +73,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.0,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "axi_lite_dma_config",
@@ -57,7 +82,8 @@
       "status": "UNPROVEN (234 cells) at depth 5",
       "seconds": 37.2,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": true
     },
     {
       "module": "axi_lite_master",
@@ -65,7 +91,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 11.8,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "branch_comp_decoder",
@@ -73,7 +100,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.2,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "branch_comprator",
@@ -81,7 +109,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.5,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "branch_predictor",
@@ -89,7 +118,8 @@
       "status": "TIMEOUT after 180s",
       "seconds": 200.2,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": true
     },
     {
       "module": "clk_div_mux",
@@ -97,7 +127,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 8.5,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "clk_gate",
@@ -105,7 +136,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.0,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "control_unit",
@@ -113,7 +145,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 9.2,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "csr_regfile",
@@ -121,7 +154,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 20.5,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "data_clipper",
@@ -129,7 +163,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.0,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "data_extender",
@@ -137,7 +172,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.0,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "data_forwarding_unit",
@@ -145,7 +181,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.4,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "dma_controller",
@@ -156,7 +193,8 @@
       "intermediate_counterexample_claims": [
         "partitioned",
         "merged"
-      ]
+      ],
+      "reset_constrained_proof": true
     },
     {
       "module": "dmem",
@@ -164,7 +202,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 38.2,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "fp4_mul",
@@ -172,7 +211,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 12.4,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "fp8_adder",
@@ -180,7 +220,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 5.8,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "gpio_controller",
@@ -188,7 +229,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 22.9,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "hazard_detection_unit",
@@ -196,7 +238,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 9.3,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "i_rom_32x256",
@@ -204,7 +247,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 12.5,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "id_memory_256x64_wrap",
@@ -212,7 +256,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 71.3,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "immediate_generator",
@@ -220,7 +265,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.6,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "interrupt_control_unit",
@@ -228,7 +274,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.4,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "l1_cache_axi_master",
@@ -236,7 +283,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 75.2,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "mem_axi_slave",
@@ -244,7 +292,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 16.3,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "memory_stage",
@@ -252,7 +301,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 7.8,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "multiplier_pipelined",
@@ -262,7 +312,8 @@
       "proved_child_cut_points": [],
       "intermediate_counterexample_claims": [
         "merged"
-      ]
+      ],
+      "reset_constrained_proof": false
     },
     {
       "module": "pipeline_reg_ex_mem",
@@ -270,7 +321,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 5.2,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "pipeline_reg_id_ex",
@@ -278,7 +330,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 6.7,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "pipeline_reg_if_id",
@@ -286,7 +339,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.6,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "pipeline_reg_mem_wb",
@@ -294,7 +348,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 4.5,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "read_buffer_d_cache",
@@ -304,7 +359,8 @@
       "proved_child_cut_points": [],
       "intermediate_counterexample_claims": [
         "partitioned"
-      ]
+      ],
+      "reset_constrained_proof": true
     },
     {
       "module": "read_buffer_i_cache",
@@ -312,7 +368,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 31.6,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "register_file",
@@ -320,7 +377,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 29.0,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "tag_memory_92x64_wrap",
@@ -328,7 +386,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 21.3,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "timer",
@@ -336,7 +395,8 @@
       "status": "PROVED_EQUIVALENT",
       "seconds": 5.4,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "uart_controller",
@@ -346,7 +406,8 @@
       "proved_child_cut_points": [],
       "intermediate_counterexample_claims": [
         "partitioned"
-      ]
+      ],
+      "reset_constrained_proof": true
     },
     {
       "module": "axi_interconnect_2m_8s",
@@ -356,7 +417,8 @@
       "proved_child_cut_points": [
         "arbiter"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "axi_lite_gpio",
@@ -366,7 +428,8 @@
       "proved_child_cut_points": [
         "gpio_controller"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": true
     },
     {
       "module": "axi_lite_timer",
@@ -376,7 +439,8 @@
       "proved_child_cut_points": [
         "timer"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": true
     },
     {
       "module": "axi_lite_uart",
@@ -384,7 +448,8 @@
       "status": "UNPROVEN (18 cells) at depth 5",
       "seconds": 177.4,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": true
     },
     {
       "module": "execution_stage",
@@ -395,7 +460,8 @@
         "alu",
         "data_clipper"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "fp4_dot_unit",
@@ -408,7 +474,8 @@
       ],
       "intermediate_counterexample_claims": [
         "partitioned"
-      ]
+      ],
+      "reset_constrained_proof": false
     },
     {
       "module": "instruction_decode_stage",
@@ -422,7 +489,8 @@
         "immediate_generator",
         "register_file"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "l1_d_cache_8kb",
@@ -433,7 +501,8 @@
         "id_memory_256x64_wrap",
         "tag_memory_92x64_wrap"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "l1_i_cache_8kb",
@@ -444,7 +513,8 @@
         "id_memory_256x64_wrap",
         "tag_memory_92x64_wrap"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "write_back_stage",
@@ -454,7 +524,8 @@
       "proved_child_cut_points": [
         "data_extender"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "axi_lite_dot",
@@ -462,7 +533,8 @@
       "status": "TIMEOUT after 180s",
       "seconds": 194.2,
       "proved_child_cut_points": [],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "instruction_fetch_stage",
@@ -473,7 +545,8 @@
         "i_rom_32x256",
         "read_buffer_i_cache"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": true
     },
     {
       "module": "processor_top",
@@ -495,7 +568,8 @@
         "pipeline_reg_mem_wb",
         "write_back_stage"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     },
     {
       "module": "soc_top",
@@ -511,7 +585,8 @@
         "l1_cache_axi_master",
         "mem_axi_slave"
       ],
-      "intermediate_counterexample_claims": []
+      "intermediate_counterexample_claims": [],
+      "reset_constrained_proof": false
     }
   ]
 }

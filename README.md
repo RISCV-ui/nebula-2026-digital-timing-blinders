@@ -15,7 +15,7 @@ This project closes a real RTL timing loop with an LLM as proposer and determini
 - Setup TNS: **-3384.4421 to -1.9487 ns**.
 - Routed area: **-1.596%**; instances: **-4,927 (-1.025%)**.
 - DRC: **0**. Final lint: **no new warnings**.
-- EQY: **36/54 proved, 0 counterexamples**.
+- Formal coverage: **45/54 modules** — 36 unrestricted EQY proofs plus 9 reset-constrained bounded proofs, with **0 counterexamples** on the real designs.
 - Changed stream: data and order proved with a declared **+4-cycle latency**.
 
 ## Same-task model comparison
@@ -50,6 +50,6 @@ The accepted FP4 pipeline is intentionally not cycle-by-cycle identical because 
 - `clk1` and `clk_s8` retain small setup violations.
 - `clk2` through `clk5` report no timing paths and are not counted as passing.
 - Four timed clocks regress in slack while remaining closed.
-- EQY leaves 10 timeout, 7 unproven and 1 tool-error module.
-- Five targeted deeper retries produced zero new proofs; the total remains 36/54.
+- Unrestricted EQY leaves 10 timeout, 7 unproven and 1 tool-error module. The reset-aware supplement closes nine of those gaps; 9 modules still lack a proof.
+- Five brute-force deeper retries produced zero new proofs. The separate reset-aware method reached 45/54 and rejected an inverted-output negative control for every added proof.
 - Paid model arm and demo video remain pending.

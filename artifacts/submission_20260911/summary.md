@@ -10,7 +10,7 @@ All local work required before the paid-model comparison is complete. `python3 s
 - Routed area: **-1.60%**; instances: **-4,927**
 - Lint: **NO_NEW_WARNINGS**
 - Synthesis: **SYNTHESIS_VALID**
-- EQY: **36/54 proved, 0 counterexamples**
+- Formal coverage: **45/54 modules** — 36 unrestricted EQY proofs plus 9 reset-constrained bounded proofs; 0 real-design counterexamples
 - Top artifact: **equivalent modulo declared +4-cycle stream latency**; ordinary cycle equivalence is `NOT_EQUIVALENT`
 - Demo replay rehearsal: **exit 0**, final signoff numbers shown, no network/API used
 

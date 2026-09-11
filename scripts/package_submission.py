@@ -43,6 +43,7 @@ TREES = [
     "artifacts/final_candidate/rtl",
     "artifacts/final_candidate/orfs_run/reports/sky130hd/nebula_bench/final_candidate",
     "artifacts/synth_report",
+    "artifacts/eqy/reset_aware_20260911",
     "artifacts/bakeoff",
     "artifacts/bakeoff_open",
     "artifacts/bakeoff_signoff_nemotron_ultra_20260910",

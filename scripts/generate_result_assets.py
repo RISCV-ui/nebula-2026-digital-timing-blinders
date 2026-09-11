@@ -391,8 +391,8 @@ def formal_chart(eqy, top):
     ]
     c = Canvas(
         "Formal verification evidence",
-        "Compositional EQY sweep plus latency-aware proof for the changed FP4 stream.",
-        "Sources: EQY clean report and final top-level equivalence artifact",
+        "Unrestricted EQY, reset-aware supplement, and the changed FP4 stream contract.",
+        "Sources: EQY clean report, reset supplement, and final top-level artifact",
     )
     x, y, total_w = 70, 220, 1460
     for label, n, color in items:
@@ -409,8 +409,9 @@ def formal_chart(eqy, top):
         c.text(bx + 30, 372, f"{label}: {n}", 16, INK, "700")
     c.rect(70, 450, 710, 285, WHITE, BLUE, 18, 3)
     c.text(425, 505, "EQY sweep", 24, BLUE, "700", "middle")
-    c.text(425, 585, "36 / 54", 54, NAVY, "700", "middle")
-    c.text(425, 630, "proved equivalent", 21, MUTED, anchor="middle")
+    c.text(425, 570, "36 unrestricted", 42, NAVY, "700", "middle")
+    c.text(425, 620, f"{eqy['combined_modules_with_formal_evidence']} / 54 total", 34, PURPLE, "700", "middle")
+    c.text(425, 655, "9 add reset-constrained evidence", 17, MUTED, anchor="middle")
     c.text(425, 684, "0 counterexamples", 25, GREEN, "700", "middle")
     c.rect(820, 450, 710, 285, WHITE, PURPLE, 18, 3)
     c.text(1175, 505, "Changed cone contract", 24, PURPLE, "700", "middle")
@@ -564,6 +565,7 @@ def result_tables(arms, clocks, ppa, eqy, top, synth, history):
     write_csv("ppa_comparison.csv", ppa_rows)
     write_csv("formal_summary.csv", [
         {"check": "EQY modules", "result": eqy["headline"], "scope": "54-module compositional sweep"},
+        {"check": "reset-constrained supplement", "result": f"{eqy['combined_modules_with_formal_evidence']}/54 total coverage", "scope": "9 bounded depth-5 proofs, each with a failing negative control"},
         {"check": "fp8_adder", "result": "EQUIVALENT", "scope": "complete combinational proof, depth 1"},
         {"check": "FP4 stream", "result": "STREAM_EQUIVALENT", "scope": "six-property contract, depth 16, +4 cycles"},
         {"check": "ordinary top cycle equivalence", "result": "NOT_EQUIVALENT", "scope": "expected after declared latency change"},
@@ -578,6 +580,7 @@ def result_tables(arms, clocks, ppa, eqy, top, synth, history):
             "module": row["module"], "category": row["category"], "status": row["status"],
             "seconds": row["seconds"], "proved_child_cut_points": ";".join(row["proved_child_cut_points"]),
             "intermediate_counterexample_claims": ";".join(row["intermediate_counterexample_claims"]),
+            "reset_constrained_proof": row.get("reset_constrained_proof", False),
         }
         for row in eqy["results"]
     ])
@@ -641,6 +644,31 @@ def retry_assets(retry):
     )
 
 
+def reset_supplement_assets(reset):
+    rows = []
+    csv_rows = []
+    for item in reset["results"]:
+        positive, negative = item["attempts"]
+        rows.append([
+            item["module"], str(item["depth"]), "PASS" if item["proved"] else "NO PROOF",
+            f"{positive['seconds']:.1f}", "COUNTEREXAMPLE" if negative["counterexample_found"] else "MISSED",
+        ])
+        csv_rows.append({
+            "module": item["module"], "depth": item["depth"], "status": item["status"],
+            "positive_seconds": positive["seconds"],
+            "negative_control_output": item["negative_control_output"],
+            "negative_control_counterexample": negative["counterexample_found"],
+        })
+    write_csv("eqy_reset_supplement.csv", csv_rows)
+    table_figure(
+        "15_eqy_reset_supplement", "Reset-aware formal supplement",
+        "Nine former gaps now prove after declared reset; every inverted-output control is rejected.",
+        ["Module", "Depth", "Real design", "Seconds", "Negative control"], rows,
+        [0.30, 0.09, 0.15, 0.13, 0.33],
+        "Source: artifacts/eqy/reset_aware_20260911/report.json", 13,
+    )
+
+
 def write_index(source_hashes):
     content = """# Digital result asset pack
 
@@ -662,6 +690,7 @@ Ready-to-paste figures are in `figures/` as both SVG and 1600x900 PNG. Machine-r
 12. `12_complete_clock_table` - every clock, including four NO PATH rows.
 13. `13_stage_aware_area` - mapped synthesis versus routed PPA without mixing stages.
 14. `14_eqy_targeted_retries` - deeper retry results and zero-new-proof outcome.
+15. `15_eqy_reset_supplement` - nine reset-constrained proofs with negative controls.
 
 ## Required interpretation
 
@@ -670,8 +699,8 @@ Ready-to-paste figures are in `figures/` as both SVG and 1600x900 PNG. Machine-r
 - Nemotron Ultra is 1/7 after audit. A historical second accept targeted one module but returned an unchanged/wrong module and is invalid.
 - Full OpenROAD PnR/PPA was run once for the final combined accepted candidate. No individual model-arm PnR numbers exist. The model comparison therefore reports proposal/gate performance; the PPA figures report final combined design performance.
 - `clk1` and `clk_s8` retain small violations. `clk2` through `clk5` report no paths. Four timed clocks regress in slack while remaining closed.
-- EQY has 36/54 proved and zero counterexamples; 18 modules remain unresolved. The accepted pipeline changes latency by four cycles, so ordinary cycle equivalence is not claimed.
-- Five targeted deeper EQY retries produced zero new proofs. The original 36/54 result remains unchanged.
+- Unrestricted EQY remains 36/54 with zero counterexamples. A separate reset-constrained bounded supplement closes nine former gaps, so 45/54 modules now have formal evidence; the two proof classes are never conflated.
+- Five brute-force deeper retries produced zero new proofs. The later reset-aware method succeeds because it declares the hardware reset contract and checks every proof with an inverted-output negative control.
 
 ## Evidence hashes
 
@@ -692,6 +721,7 @@ def main():
         "artifacts/loop/history.jsonl",
         "artifacts/submission_20260911/synth.json",
         "artifacts/eqy/retry_summary_20260911.json",
+        "artifacts/eqy/reset_aware_20260911/report.json",
     ]
     hashes = {rel: hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() for rel in sources}
     bakeoff = load(sources[0])
@@ -701,6 +731,7 @@ def main():
     history = [json.loads(line) for line in (ROOT / sources[4]).read_text().splitlines() if line.strip()]
     synth = load(sources[5])
     retry = load(sources[6])
+    reset = load(sources[7])
 
     flow_figure()
     dashboard(ppa, eqy, top)
@@ -715,6 +746,7 @@ def main():
     stage_aware_chart(synth, ppa)
     result_tables(bakeoff["arms"], ppa["clocks"], ppa, eqy, top, synth, history)
     retry_assets(retry)
+    reset_supplement_assets(reset)
     consolidated = {
         "provenance_sha256": hashes,
         "model_comparison": bakeoff,
@@ -727,6 +759,7 @@ def main():
         },
         "accepted_loop_history": history,
         "eqy_targeted_retry": retry,
+        "eqy_reset_supplement": reset,
     }
     (DATA / "all_results.json").write_text(json.dumps(consolidated, indent=2) + "\n")
     write_index(hashes)
