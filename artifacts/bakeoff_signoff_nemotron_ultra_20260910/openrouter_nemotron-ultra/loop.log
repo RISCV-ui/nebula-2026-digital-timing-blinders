@@ -1,0 +1,9 @@
+backend openrouter:nvidia/nemotron-3-ultra-550b-a55b:free, 6 calls
+accepted 2: fp8_adder/logic_restructure/+0, fp4_dot_unit/logic_restructure/+0
+  rejected axi_lite_dot: unparseable reply
+history -> artifacts/bakeoff_signoff_nemotron_ultra_20260910/openrouter_nemotron-ultra/history.jsonl
+candidate RTL -> artifacts/bakeoff_signoff_nemotron_ultra_20260910/openrouter_nemotron-ultra/rtl
+8 slicer targets -> 3 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -25.254  fp8_adder
+   clk_s5     slack  -25.254  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -25.254  axi_lite_dot   [instantiates fp4_dot_unit]

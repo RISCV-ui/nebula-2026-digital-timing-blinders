@@ -2,7 +2,7 @@
 """
 demo.py -- the whole flow, one command, narrated.
 
-Deliverable 7. Seven acts, in the order the flow actually runs them, each one
+Deliverable 7. Eight acts, in the order the flow actually runs them, each one
 printing the evidence it acted on rather than a claim that it worked.
 
 Two modes:
@@ -90,23 +90,32 @@ def act1(live):
         "problems: many are endpoints of one FIFO word, and many blame the "
         "same module. The slicer collapses them and attributes the delay per "
         "module instance.")
-    d = load("artifacts/paths/baseline.json", "slicer output")
+    d = load("artifacts/paths/baseline_signoff.json", "slicer output")
     if not d:
+        return
+    signoff = load("artifacts/audit_20260910/metrics_base_signoff.json",
+                   "baseline signoff metrics")
+    if not signoff:
         return
     say(f'20 reported paths collapse to {d["path_count"]} targets.')
     print()
     for p in d["paths"]:
         t = p.get("target") or {}
-        s = p["slack_ns"]
+        s = (signoff.get("clocks", {}).get(p["clock"], {})
+             .get("wns_ns"))
         col = C["no"] if s < 0 else C["dim"]
-        print(f'  {p["id"]} {p["clock"]:<12}{col}slack {s:>9.3f}{C["x"]}  '
+        print(f'  {p["id"]} {p["clock"]:<12}{col}signoff {s:>8.3f}{C["x"]}  '
               f'{p["stages"]:>3} stages  {t.get("module","-"):<24}'
               f'{t.get("share_pct",0):>6.1f}% x{len(t.get("instances",[])) or 1}')
     print()
     worst = d["paths"][0]
-    say(f'One domain fails: {worst["clock"]} misses by '
-        f'{-worst["slack_ns"]:.3f} ns over {worst["stages"]} logic stages, '
-        f'{(worst.get("target") or {}).get("share_pct",0)}% of it inside '
+    wns = signoff["clocks"][worst["clock"]]["wns_ns"]
+    failing = [k for k, v in signoff["clocks"].items()
+               if v.get("wns_ns") is not None and v["wns_ns"] < 0]
+    say(f'Signoff has {len(failing)} failing clock groups. The dominant one is '
+        f'{worst["clock"]} at {wns:.4f} ns over {worst["stages"]} logic '
+        f'stages, with {(worst.get("target") or {}).get("share_pct",0)}% of '
+        f'the recorded cell delay inside '
         f'{len((worst.get("target") or {}).get("instances",[]))} chained '
         f'{(worst.get("target") or {}).get("module")} instances.')
 
@@ -118,18 +127,27 @@ def act2(live):
         "proof on it duplicates work that is free and carries no equivalence "
         "risk. So every path is labelled none / gate / rtl, with the "
         "arithmetic attached.")
-    d = load("artifacts/paths/baseline.json", "slicer output")
+    d = load("artifacts/paths/baseline_signoff.json", "slicer output")
     if not d:
+        return
+    signoff = load("artifacts/audit_20260910/metrics_base_signoff.json",
+                   "baseline signoff metrics")
+    if not signoff:
         return
     for p in d["paths"]:
         lv = p.get("lever") or {}
         tag = lv.get("lever", "?")
         col = {"rtl": C["no"], "gate": C["hd"]}.get(tag, C["dim"])
-        print(f'  {p["id"]} {col}{tag:<5}{C["x"]} {lv.get("reason","")[:120]}')
+        now = signoff["clocks"].get(p["clock"], {}).get("wns_ns")
+        structure = ((p.get("target") or {}).get("module") or "-")
+        print(f'  {p["id"]} {col}{tag:<5}{C["x"]} signoff '
+              f'{now:+.4f} ns; recorded target {structure}')
     n = sum(1 for p in d["paths"] if (p.get("lever") or {}).get("lever") == "rtl")
     print()
-    say(f'{d["path_count"]} targets, {n} worth a model call. That is the '
-        f'entire call budget for this design.')
+    say(f'The recorded selector sent {n} of {d["path_count"]} targets to the '
+        "model. The self-audit later made small violations on other domains "
+        "visible; those are reported and are not retroactively presented as "
+        "targets the model saw.")
 
 
 def act3(live):
@@ -349,11 +367,13 @@ def act7(live):
 
 def act8(live):
     act(8, "G3 -- measure what survived",
-        "One accepted edit, re-run through the identical ORFS flow, PDK, SDC "
-        "and floorplan. FLOW_VARIANT isolates the candidate; NEBULA_RTL is "
-        "the only thing that differs between the two runs.")
-    base = load("artifacts/metrics/baseline_final.json", "baseline metrics")
-    opt = load("artifacts/metrics/opt_final.json", "candidate metrics")
+        "The recorded candidate was re-run through the identical ORFS flow, "
+        "PDK, SDC and floorplan. This replay uses extracted parasitics and "
+        "propagated clocks, matching ORFS signoff.")
+    base = load("artifacts/audit_20260910/metrics_base_signoff.json",
+                "baseline signoff metrics")
+    opt = load("artifacts/final_candidate/metrics_final_candidate_signoff.json",
+               "final-candidate signoff metrics")
     if not base:
         return
     rows = [("WNS (ns)", "wns"), ("TNS (ns)", "tns"),
@@ -375,10 +395,8 @@ def act8(live):
             "FLOW_VARIANT=opt NEBULA_RTL=artifacts/loop/rtl_frozen")
         return
 
-    # Design-wide WNS is the worst endpoint anywhere in five asynchronous
-    # domains, so it reports whichever clock happens to be tightest and hides
-    # the one the loop actually worked on. Per clock is the honest view, and it
-    # is also the view that shows nothing was traded away.
+    # Design-wide WNS hides which domains improved or regressed. Per-clock
+    # signoff keeps every trade visible alongside the target domain.
     print()
     print(f'  {"clock":<16}{"period":>10}{"baseline":>12}{"candidate":>12}'
           f'{"delta":>10}')
@@ -395,26 +413,25 @@ def act8(live):
               f'{"-" if bw is None else f"{bw:+.3f}":>12}'
               f'{"-" if ow is None else f"{ow:+.3f}":>12}{d:>10}{mark}')
     print()
-    say("clk_s5 is the domain the loop was pointed at: -19.677 ns to +4.776, "
-        "a 24.45 ns swing that turns a hard violation into margin. Every other "
-        "domain moves by less than a third of a nanosecond, and the largest "
-        "regression -- clk_s8 at -0.319 -- still leaves +2.303 ns against a "
-        "10 ns period. The violation was closed, not relocated, and design TNS "
-        "going to exactly zero is the number that proves it.")
+    say("clk_s5 is the target: -25.2539 ns to +1.4876 ns, a 26.7415 ns "
+        "improvement. The full chip is not timing-clean: clk1 remains at "
+        "-0.1659 ns and clk_s8 at -0.1494 ns, while design TNS improves from "
+        "-3384.4421 ns to -1.9487 ns.")
 
     # Slack answers "does it close at the specified period". Fmax answers "how
     # fast can it actually run", which is the question deliverable 5 asks and
     # the one a slack number alone never answers. Both sides were swept with
     # the same probe schedule and the same lower bound, so the columns compare.
-    fb = load("artifacts/metrics/fmax_base_lo05.json", "baseline Fmax")
-    fo = load("artifacts/metrics/fmax_opt_lo05.json", "candidate Fmax")
+    fb = load("artifacts/audit_20260910/fmax_base_signoff.json",
+              "baseline signoff Fmax")
+    fo = load("artifacts/final_candidate/fmax_final_candidate_signoff.json",
+              "final-candidate signoff Fmax")
     if not (fb and fo):
         return
     fb, fo = fb.get("fmax", {}), fo.get("fmax", {})
-    say("Slack says the design closes. Fmax says how fast it can actually be "
-        "run -- binary search over the SDC period, one full STA per probe, on "
-        "the routed database. Both runs used the same lower bound so the two "
-        "columns are comparable.")
+    say("Fmax is measured by binary search over the SDC period, one full "
+        "parasitic-aware STA per probe. Both runs used the same lower bound, "
+        "so the columns are comparable.")
     print()
     print(f"  {'clock':<14}{'baseline':>12}{'candidate':>12}{'change':>10}")
     for k in ("clk_s5", "clk1", "clk_s3", "clk_s1", "clk_s2", "clk_s4",
@@ -426,15 +443,11 @@ def act8(live):
         print(f"  {k:<14}{b:>10.1f} M{o:>10.1f} M{(o - b) / b * 100:>9.1f}%"
               f"{mark}")
     print()
-    say("29.8 MHz to 126.2 MHz on clk_s5. The baseline figure is the honest "
-        "comparison: at its nominal 80 MHz the baseline does not close at all, "
-        "so 29.8 MHz was the real ceiling for the whole design -- a chip runs "
-        "at the speed of its worst path, not its average one. clk1 and clk_s3 "
-        "move a few percent in opposite directions; neither was touched by the "
-        "edit, and that is placement noise from a re-run, not a result. Two "
-        "gated domains still closed at the smallest period probed, so their "
-        "Fmax is a lower bound and is left out of this table rather than "
-        "reported as a number.")
+    say("clk_s5 improves from 25.65 MHz to 89.09 MHz, or 3.47 times. "
+        "Non-target clocks move in both directions and are shown without a "
+        "causal claim. Two baseline gated domains hit the sweep floor, so "
+        "their baseline values are lower bounds. These numbers come from the "
+        "repaired final RTL's completed isolated PnR run.")
 
 
 ACTS = [act1, act2, act3, act4, act5, act6, act7, act8]
@@ -442,8 +455,14 @@ ACTS = [act1, act2, act3, act4, act5, act6, act7, act8]
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--live", action="store_true",
-                    help="re-run the gates for real (needs the toolchain)")
+    mode = ap.add_mutually_exclusive_group()
+    mode.add_argument("--live", action="store_true",
+                      help="re-run the gates for real (needs the toolchain)")
+    # Replay is the safe recording command. It is also the default, but an
+    # explicit flag prevents a presenter from wondering whether a live API or
+    # tool call can occur while the terminal is already being captured.
+    mode.add_argument("--replay", action="store_true",
+                      help="read saved artifacts only; no network or API key")
     ap.add_argument("--act", type=int, action="append",
                     help="run only these acts (repeatable)")
     ap.add_argument("--no-colour", action="store_true")

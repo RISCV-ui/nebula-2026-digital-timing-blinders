@@ -1,0 +1,8 @@
+backend openrouter:nvidia/nemotron-3-ultra-550b-a55b:free, 13 calls
+accepted 2: fp8_adder/logic_restructure/+0, fp4_dot_unit/logic_restructure/+0
+history -> artifacts/bakeoff_open/openrouter_nemotron-ultra/history.jsonl
+candidate RTL -> artifacts/bakeoff_open/openrouter_nemotron-ultra/rtl
+7 slicer targets -> 3 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -19.677  fp8_adder
+   clk_s5     slack  -19.677  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -19.677  axi_lite_dot   [instantiates fp4_dot_unit]

@@ -1,0 +1,41 @@
+%Warning-WIDTHTRUNC: artifacts/final_candidate/rtl/l1_i_cache_8kb.v:252:33: Bit extraction of array[7:0] requires 3 bit index, not 6 bits.
+                                                                          : ... note: In instance 'soc_top.processor_0.if_stage.i_cache_0'
+  252 |                age_valid_dirty_0[i[5:0]] <= 4'b0000;
+      |                                 ^
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.052
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Warning-WIDTHTRUNC: artifacts/final_candidate/rtl/l1_i_cache_8kb.v:253:33: Bit extraction of array[7:0] requires 3 bit index, not 6 bits.
+                                                                          : ... note: In instance 'soc_top.processor_0.if_stage.i_cache_0'
+  253 |                age_valid_dirty_1[i[5:0]] <= 4'b0100;
+      |                                 ^
+%Warning-WIDTHTRUNC: artifacts/final_candidate/rtl/l1_i_cache_8kb.v:254:33: Bit extraction of array[7:0] requires 3 bit index, not 6 bits.
+                                                                          : ... note: In instance 'soc_top.processor_0.if_stage.i_cache_0'
+  254 |                age_valid_dirty_2[i[5:0]] <= 4'b1000;
+      |                                 ^
+%Warning-WIDTHTRUNC: artifacts/final_candidate/rtl/l1_i_cache_8kb.v:255:33: Bit extraction of array[7:0] requires 3 bit index, not 6 bits.
+                                                                          : ... note: In instance 'soc_top.processor_0.if_stage.i_cache_0'
+  255 |                age_valid_dirty_3[i[5:0]] <= 4'b1100;
+      |                                 ^
+%Warning-WIDTHTRUNC: artifacts/final_candidate/rtl/l1_d_cache_8kb.v:340:33: Bit extraction of array[7:0] requires 3 bit index, not 6 bits.
+                                                                          : ... note: In instance 'soc_top.d_cache_0'
+  340 |                age_valid_dirty_0[i[5:0]] <= 4'b0000;
+      |                                 ^
+%Warning-WIDTHTRUNC: artifacts/final_candidate/rtl/l1_d_cache_8kb.v:341:33: Bit extraction of array[7:0] requires 3 bit index, not 6 bits.
+                                                                          : ... note: In instance 'soc_top.d_cache_0'
+  341 |                age_valid_dirty_1[i[5:0]] <= 4'b0100;
+      |                                 ^
+%Warning-WIDTHTRUNC: artifacts/final_candidate/rtl/l1_d_cache_8kb.v:342:33: Bit extraction of array[7:0] requires 3 bit index, not 6 bits.
+                                                                          : ... note: In instance 'soc_top.d_cache_0'
+  342 |                age_valid_dirty_2[i[5:0]] <= 4'b1000;
+      |                                 ^
+%Warning-WIDTHTRUNC: artifacts/final_candidate/rtl/l1_d_cache_8kb.v:343:33: Bit extraction of array[7:0] requires 3 bit index, not 6 bits.
+                                                                          : ... note: In instance 'soc_top.d_cache_0'
+  343 |                age_valid_dirty_3[i[5:0]] <= 4'b1100;
+      |                                 ^
+%Warning-UNUSEDSIGNAL: artifacts/final_candidate/rtl/dmem.v:4:24: Bits of signal are not used: 'addr'[9:8]
+                                                                : ... note: In instance 'soc_top.main_memory_0'
+    4 |     input  wire [31:0] addr,     
+      |                        ^~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.052
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Error: Exiting due to 9 warning(s)

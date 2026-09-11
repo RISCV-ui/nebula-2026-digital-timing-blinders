@@ -1,0 +1,80 @@
+{
+  "antenna_violations": null,
+  "area_um2": 1718957.0,
+  "clocks": {
+    "clk1": {
+      "period_ns": 10.0,
+      "wns_ns": -0.2274
+    },
+    "clk2": {
+      "period_ns": 20.0,
+      "wns_ns": null
+    },
+    "clk3": {
+      "period_ns": 12.5,
+      "wns_ns": null
+    },
+    "clk4": {
+      "period_ns": 25.0,
+      "wns_ns": null
+    },
+    "clk5": {
+      "period_ns": 40.0,
+      "wns_ns": null
+    },
+    "clk_s1": {
+      "period_ns": 25.0,
+      "wns_ns": 17.3372
+    },
+    "clk_s1_gate": {
+      "period_ns": 25.0,
+      "wns_ns": 22.8394
+    },
+    "clk_s2": {
+      "period_ns": 20.0,
+      "wns_ns": 12.5832
+    },
+    "clk_s2_gate": {
+      "period_ns": 20.0,
+      "wns_ns": 18.0074
+    },
+    "clk_s3": {
+      "period_ns": 10.0,
+      "wns_ns": 0.2514
+    },
+    "clk_s4": {
+      "period_ns": 40.0,
+      "wns_ns": 33.3002
+    },
+    "clk_s4_gate": {
+      "period_ns": 40.0,
+      "wns_ns": 37.9392
+    },
+    "clk_s5": {
+      "period_ns": 12.5,
+      "wns_ns": 1.9054
+    },
+    "clk_s5_gate": {
+      "period_ns": 12.5,
+      "wns_ns": 10.2824
+    },
+    "clk_s8": {
+      "period_ns": 10.0,
+      "wns_ns": -0.1858
+    }
+  },
+  "drc_violations": 0,
+  "instances": 476324,
+  "nets": 115964,
+  "odb": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/nebula_bench/opt/6_final.odb",
+  "power_total_w": null,
+  "sdc": "/Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/results/sky130hd/nebula_bench/opt/6_final.sdc",
+  "tag": "audit_signoff_opt",
+  "timestamp": "2026-09-10T00:37:06",
+  "tns": -4.082,
+  "tns_hold": -0.5316,
+  "utilization_pct": 49.0,
+  "wirelength_um": 6676996,
+  "wns": -0.2274,
+  "wns_hold": -0.0512
+}

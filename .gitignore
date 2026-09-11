@@ -29,6 +29,13 @@
 /artifacts/wns/dryrun/cand_*/
 /artifacts/wns/dryrun/rtl/
 /artifacts/pnr_opt.log
+/artifacts/final_candidate/orfs_run/
+/artifacts/eqy/soc_top_suffix_fix/
+/artifacts/bakeoff_all/
+/artifacts/bakeoff_audit_20260911/
+/artifacts/bakeoff*/**/cand_*/
+/artifacts/bakeoff*/**/rtl/
+/tmp/
 
 # ---------------------------------------------------------------------------
 # Credentials. Keys live in ~/.config/nebula/env, outside this tree, and are

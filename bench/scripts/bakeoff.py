@@ -47,7 +47,7 @@ OPENROUTER_MODELS_URL = "https://openrouter.ai/api/v1/models"
 # The order gates fire in. A record's `stage` is where the proposal died, so
 # ordering the columns this way makes each arm's row read left to right as
 # "how far did this model get before something stopped it".
-STAGES = ["backend", "propose", "memo", "validate",
+STAGES = ["backend", "propose", "memo", "validate", "audit",
           "g1", "g1b", "g1c", "g2", "g2c", "accepted"]
 
 
@@ -114,10 +114,40 @@ def run_arm(spec, args):
     with open(log, "w") as fh:
         fh.write(p.stdout + p.stderr)
 
-    return summarise(spec, out, wall, p.returncode)
+    return summarise(spec, out, wall, p.returncode, args.rtl)
 
 
-def summarise(spec, out, wall, rc):
+def _accepted_audit(recs, out, golden):
+    """Identify historical accepts that changed nothing or missed the target."""
+    current = golden
+    valid, invalid = [], []
+    for r in recs:
+        if r.get("verdict") != "ACCEPTED":
+            continue
+        cand = os.path.join(out, f"cand_{r.get('iteration')}_{r.get('attempt')}")
+        reasons = []
+        actual = (r.get("proposal_module") or
+                  (r.get("g1") or {}).get("module"))
+        if actual and actual != r.get("module"):
+            reasons.append(f"target {r.get('module')} but rewrote {actual}")
+        if os.path.isdir(current) and os.path.isdir(cand):
+            d = diff_tree(current, cand)
+            if not any(d[k] for k in ("changed", "added", "removed")):
+                reasons.append("no RTL bytes changed")
+        if reasons:
+            invalid.append({"iteration": r.get("iteration"),
+                            "attempt": r.get("attempt"),
+                            "reasons": reasons})
+        else:
+            valid.append(r)
+        # Reconstruct what the historical loop actually carried forward even
+        # when the acceptance is invalid, so the next comparison is faithful.
+        if os.path.isdir(cand):
+            current = cand
+    return valid, invalid
+
+
+def summarise(spec, out, wall, rc, golden=None):
     """
     Read one arm's history and reduce it to the row that goes in the table.
 
@@ -138,7 +168,12 @@ def summarise(spec, out, wall, rc):
                         pass
 
     died = Counter(r.get("stage", "?") for r in recs)
-    accepted = [r for r in recs if r.get("verdict") == "ACCEPTED"]
+    raw_accepted = [r for r in recs if r.get("verdict") == "ACCEPTED"]
+    accepted, invalid = ((raw_accepted, []) if not golden else
+                         _accepted_audit(recs, out, golden))
+    if invalid:
+        died["accepted"] -= len(invalid)
+        died["audit"] += len(invalid)
 
     # First-attempt accepts say something the total does not: whether the model
     # got it right unaided, or only after a gate handed back a rejection to
@@ -153,6 +188,8 @@ def summarise(spec, out, wall, rc):
         "wall_seconds": round(wall, 1),
         "proposals": len(recs),
         "accepted": len(accepted),
+        "raw_accepted": len(raw_accepted),
+        "invalid_accepts": invalid,
         "accepted_first_attempt": len(first_try),
         "accept_rate": round(len(accepted) / len(recs), 3) if recs else None,
         "died_at": {s: died.get(s, 0) for s in STAGES if died.get(s)},

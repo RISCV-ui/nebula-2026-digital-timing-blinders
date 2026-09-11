@@ -1,0 +1,90 @@
+# Frozen RTL to final RTL equivalence artifact
+
+## EQUIVALENT_MODULO_DECLARED_STREAM_LATENCY
+
+The final RTL is **not cycle-by-cycle equivalent** to the frozen RTL. The accepted FP4 transform adds four cycles, and an ordinary parent miter correctly finds a counterexample. The supported claim is equivalence modulo that declared elastic-stream latency.
+
+## Decomposed argument
+
+1. **File identity:** 52 RTL files are byte-identical between the frozen and final trees.
+2. **FP8 leaf:** `fp8_adder` is `EQUIVALENT` at depth 1 in 0.6 s. It is combinational, so depth 1 covers the complete function.
+3. **FP4 stream:** `fp4_dot_stage` is `STREAM_EQUIVALENT` at depth 16 in 11.4 s under a +4 cycle contract.
+4. **Ordinary boundary check:** `axi_lite_dot` is `NOT_EQUIVALENT` at cycle 16; the candidate result-valid signal is later. This is the declared latency difference, not a hidden clean pass.
+
+The stream proof checks acceptance when operands and room are available, no overflow, no invented result, no lost result, data and order equality, bounded drain, and paired operand reads.
+
+## Exact RTL scope
+
+- Frozen tree: 55 Verilog files
+- Final tree: 56 Verilog files
+- Changed: `axi_lite_dot.v`, `fp4_dot_unit.v`, `fp8_adder.v`
+- Added: `fp4_dot_stage.v`
+
+| file | status | frozen SHA-256 | final SHA-256 |
+|---|---|---|---|
+| `alu.v` | identical | `497684c505b9ce641f7c656fd58ee22ba6a8efa0e81f57f7134df69139fc4685` | `497684c505b9ce641f7c656fd58ee22ba6a8efa0e81f57f7134df69139fc4685` |
+| `alu_src_a_mux.v` | identical | `9853363847f190e616fba733a76020d56b9cf844e0f0f3a4b07d37bcc82bb91e` | `9853363847f190e616fba733a76020d56b9cf844e0f0f3a4b07d37bcc82bb91e` |
+| `alu_src_b_mux.v` | identical | `169c197d86891e8f922f9cc56660891a78dc8a4e8845e23d76da10ea6a90857c` | `169c197d86891e8f922f9cc56660891a78dc8a4e8845e23d76da10ea6a90857c` |
+| `arbiter.v` | identical | `cdf4eded29c9e2fa69ad749b8f707077aaefbc8c0618889a478c31f0cd3b96a1` | `cdf4eded29c9e2fa69ad749b8f707077aaefbc8c0618889a478c31f0cd3b96a1` |
+| `asynchronous_fifo_gen.v` | identical | `9b4f3ac6b4efd234c6cbcc8a3537a05f45a5daa8aa7971d2879a07d44fc86b3f` | `9b4f3ac6b4efd234c6cbcc8a3537a05f45a5daa8aa7971d2879a07d44fc86b3f` |
+| `axi_interconnect_2m_8s.v` | identical | `aa999cebf561429a2997711a91b1760573be5df74ec79e7a329a22a82f6ec1fd` | `aa999cebf561429a2997711a91b1760573be5df74ec79e7a329a22a82f6ec1fd` |
+| `axi_lite_dma_config.v` | identical | `8d03ad87e0650a95e50d135d9d4af8191126ed41146af6c477a4a07547585b19` | `8d03ad87e0650a95e50d135d9d4af8191126ed41146af6c477a4a07547585b19` |
+| `axi_lite_dot.v` | changed | `f4cd8fc83206e08c9c072a695683de49f573dc047a6934d6c91d2a795f7ae1a6` | `2ca5e8f1494a4cf6184ab7db432c39afdcfb84b736b5de20d6e13ba1743ae0eb` |
+| `axi_lite_gpio.v` | identical | `950cae3b4e7556135d6d0e16f8cfe8a43adcfc3760dd312981a0cd575ffeffbc` | `950cae3b4e7556135d6d0e16f8cfe8a43adcfc3760dd312981a0cd575ffeffbc` |
+| `axi_lite_master.v` | identical | `8fbe6052e8eecbe49285f754dce97b6fb551c64ffb5823f39f11b535e959436d` | `8fbe6052e8eecbe49285f754dce97b6fb551c64ffb5823f39f11b535e959436d` |
+| `axi_lite_timer.v` | identical | `30c33e1816d2b88395b619a5e1a774b358b5b0046049aa663f16a3ebcd584c2f` | `30c33e1816d2b88395b619a5e1a774b358b5b0046049aa663f16a3ebcd584c2f` |
+| `axi_lite_uart.v` | identical | `4bfd721e02bf037e564d529e8ae93006b1a008b5a46d33cff9e4046d34974a09` | `4bfd721e02bf037e564d529e8ae93006b1a008b5a46d33cff9e4046d34974a09` |
+| `branch_comp_decoder.v` | identical | `6751c37bfb6b4e308b7ce10197c33ecbe2393ec5fe4bb02e64d8786ef6c62b77` | `6751c37bfb6b4e308b7ce10197c33ecbe2393ec5fe4bb02e64d8786ef6c62b77` |
+| `branch_comprator.v` | identical | `f921c21f10817dc25bbbbee9943ee1ccc34e8b150a170fddb4131de8cfc9dea1` | `f921c21f10817dc25bbbbee9943ee1ccc34e8b150a170fddb4131de8cfc9dea1` |
+| `branch_predictor.v` | identical | `4df75f6c700d46109e02e85e81450770405f7bb69452b334d7242d044d04aece` | `4df75f6c700d46109e02e85e81450770405f7bb69452b334d7242d044d04aece` |
+| `clk_div_mux.v` | identical | `7bc1e2c051ce3d6ba95963e8c3ef531cd882b53ea7f5261b6893dc034cd262fa` | `7bc1e2c051ce3d6ba95963e8c3ef531cd882b53ea7f5261b6893dc034cd262fa` |
+| `clk_gate.v` | identical | `573a68620e157a2be969942b0df1ecbc7dabcdd2023bf8bc1e2c13f0ab190d8f` | `573a68620e157a2be969942b0df1ecbc7dabcdd2023bf8bc1e2c13f0ab190d8f` |
+| `control_unit.v` | identical | `fd1a85527fa09ce5651f831a4e61e15c102594f36b13abc475059fb68d3ec57f` | `fd1a85527fa09ce5651f831a4e61e15c102594f36b13abc475059fb68d3ec57f` |
+| `csr_regfile.v` | identical | `3e685a02f7bc0b89db8e9fd6aedc984c3bf148a51ff10bcd0ad4775cdcdab31d` | `3e685a02f7bc0b89db8e9fd6aedc984c3bf148a51ff10bcd0ad4775cdcdab31d` |
+| `data_clipper.v` | identical | `95bc5e941841aa60d76061a14cd23672ad0bf58fb818302300268821cee28c4a` | `95bc5e941841aa60d76061a14cd23672ad0bf58fb818302300268821cee28c4a` |
+| `data_extender.v` | identical | `0d9aaf3eece441799cf9a1aa4466c1ce41ec171948d0dbf47e9051151486413c` | `0d9aaf3eece441799cf9a1aa4466c1ce41ec171948d0dbf47e9051151486413c` |
+| `data_forwarding_unit.v` | identical | `4a3f7f032e0553c66f614d90f3c962e644f3ef53859f7b03643a4c1752aa4a14` | `4a3f7f032e0553c66f614d90f3c962e644f3ef53859f7b03643a4c1752aa4a14` |
+| `dma_controller.v` | identical | `b0d4e08abfb96283686cfc99f7b3afa8079752c1d70251898f2e1e5fb643c59f` | `b0d4e08abfb96283686cfc99f7b3afa8079752c1d70251898f2e1e5fb643c59f` |
+| `dmem.v` | identical | `d43db2e35634f465dc570ff74519e775fdb130ef32751c2b1697d56aa07a3d00` | `d43db2e35634f465dc570ff74519e775fdb130ef32751c2b1697d56aa07a3d00` |
+| `execution_stage.v` | identical | `161cb0b2645a1f9c4dbe5fba862e288bec89f547ebe2dc1ab6bc3069361ff396` | `161cb0b2645a1f9c4dbe5fba862e288bec89f547ebe2dc1ab6bc3069361ff396` |
+| `fp4_dot_stage.v` | added | `—` | `39e4341fae866a80ce332ef135112b9fd39da21b6fc885006cdb131bf0e4d798` |
+| `fp4_dot_unit.v` | changed | `3660d47b2bf31f792b9baa5eace879fb086caa32177b917a9703764425caca7b` | `665c61956c5f36ddd4686722d2aa0cda953bfa6263fbc5609ec888a57b92f666` |
+| `fp4_mul.v` | identical | `d638c6eaa65f45c5e4978dfcb0fd051187bc5603a74104ad202d3290250be091` | `d638c6eaa65f45c5e4978dfcb0fd051187bc5603a74104ad202d3290250be091` |
+| `fp8_adder.v` | changed | `c8a445720dc03266611730d18a2becf9ad704802d8332e0cb7001d565e1a6256` | `da40d2ef2b9641c716d58b13bb93b9e776c637e6b0568a46aced8ad061dee6c2` |
+| `gpio_controller.v` | identical | `78b0890708bc01241ab8b67f1682d79c36287cae9708c3a735e0014be42e8325` | `78b0890708bc01241ab8b67f1682d79c36287cae9708c3a735e0014be42e8325` |
+| `hazard_detection_unit.v` | identical | `c6e224d3d8e8188c5ee431c0a1eb50521324b5cb887d363e9854abf6d4d97913` | `c6e224d3d8e8188c5ee431c0a1eb50521324b5cb887d363e9854abf6d4d97913` |
+| `i_rom_32x256.v` | identical | `261ab7b36c4a84933c640b6fad9d7dd8dbbd4293112e73b1360cc69ad4b91f34` | `261ab7b36c4a84933c640b6fad9d7dd8dbbd4293112e73b1360cc69ad4b91f34` |
+| `id_memory_256x64_wrap.v` | identical | `18de356a1bed4f47c9a953cd99a9de5664b6987204e9ab0ad739ae11c32e9a7d` | `18de356a1bed4f47c9a953cd99a9de5664b6987204e9ab0ad739ae11c32e9a7d` |
+| `immediate_generator.v` | identical | `b81f4ccac25f61141430229ca62342448d4d021e99707de4bc849730c2cb3c95` | `b81f4ccac25f61141430229ca62342448d4d021e99707de4bc849730c2cb3c95` |
+| `instruction_decode_stage.v` | identical | `5c3561041f85dd7af7b5e32fbb75437e654019c68c882cd51794e203aa013556` | `5c3561041f85dd7af7b5e32fbb75437e654019c68c882cd51794e203aa013556` |
+| `instruction_fetch_stage.v` | identical | `d942d419080723c61214e3fa2fcf8e40a885de223eddcd55809f6a13ea5ff9c6` | `d942d419080723c61214e3fa2fcf8e40a885de223eddcd55809f6a13ea5ff9c6` |
+| `interrupt_control_unit.v` | identical | `ef7fba89c94ca3755571ca59d6828c9f8dac15d74840ed2469be06d0a4c1ce40` | `ef7fba89c94ca3755571ca59d6828c9f8dac15d74840ed2469be06d0a4c1ce40` |
+| `l1_cache_axi_master.v` | identical | `c2a38c16d8039842f5c49966edbc898e52e8d8ea29efbf17620b343748d80ab3` | `c2a38c16d8039842f5c49966edbc898e52e8d8ea29efbf17620b343748d80ab3` |
+| `l1_d_cache_8kb.v` | identical | `e188e3d37ed00e8673ee7a6ed3c00997b8b8d3909408427ca5b0f3c97d05c1ea` | `e188e3d37ed00e8673ee7a6ed3c00997b8b8d3909408427ca5b0f3c97d05c1ea` |
+| `l1_i_cache_8kb.v` | identical | `bbf5c25094f6daead0bc38b6031bb74384683192fc4e2ea944f910887d0ef35c` | `bbf5c25094f6daead0bc38b6031bb74384683192fc4e2ea944f910887d0ef35c` |
+| `mem_axi_slave.v` | identical | `452ed0c501f3df4e7a018ece8b0ea13b520cffc044cbc1ed6fb1f843389c0eee` | `452ed0c501f3df4e7a018ece8b0ea13b520cffc044cbc1ed6fb1f843389c0eee` |
+| `memory_stage.v` | identical | `ec40a8901052d1b4589a8c72fd003f621016862cfc9821233f8a3f0a5e73a9f9` | `ec40a8901052d1b4589a8c72fd003f621016862cfc9821233f8a3f0a5e73a9f9` |
+| `multiplier_pipelined.v` | identical | `26b528d88228b11c711e3a771e34ccc2f68bf6d8988884a76f4133a06a7a209e` | `26b528d88228b11c711e3a771e34ccc2f68bf6d8988884a76f4133a06a7a209e` |
+| `pipeline_reg_ex_mem.v` | identical | `ebcdf9263328441292eb29ccb690deafd0e2f67f4ee1d933a8efba344df3cffb` | `ebcdf9263328441292eb29ccb690deafd0e2f67f4ee1d933a8efba344df3cffb` |
+| `pipeline_reg_id_ex.v` | identical | `b760191e63f5ee4d4ef38ac1a019f9e9566db21a9e61926c67ab7c5f42aaa031` | `b760191e63f5ee4d4ef38ac1a019f9e9566db21a9e61926c67ab7c5f42aaa031` |
+| `pipeline_reg_if_id.v` | identical | `35a15d63f5ed71971707aa9d813d618244b0c895a24791d655d6df2d0a690610` | `35a15d63f5ed71971707aa9d813d618244b0c895a24791d655d6df2d0a690610` |
+| `pipeline_reg_mem_wb.v` | identical | `0a99851478663f6cd54a300d0aff7ded36a2c63cc23412a23d1ee73a2a33afe0` | `0a99851478663f6cd54a300d0aff7ded36a2c63cc23412a23d1ee73a2a33afe0` |
+| `processor_top.v` | identical | `483c90dbbdec94c876b84c4daa747912fad81a51e24d7b896d3b6abad3821dcb` | `483c90dbbdec94c876b84c4daa747912fad81a51e24d7b896d3b6abad3821dcb` |
+| `read_buffer_d_cache.v` | identical | `90fb2c5faa90a177bd342fe339c262eb3e89edadd12e441988eb1b10f38ac0c6` | `90fb2c5faa90a177bd342fe339c262eb3e89edadd12e441988eb1b10f38ac0c6` |
+| `read_buffer_i_cache.v` | identical | `0d7f7b40a5d00de2c995a38e29bd0662a7f9af1e1ba1d63e4e9d82936d3a5a72` | `0d7f7b40a5d00de2c995a38e29bd0662a7f9af1e1ba1d63e4e9d82936d3a5a72` |
+| `register_file.v` | identical | `59eb01c46e75d9f5c342bdec0fcd21afa969b774a872b96d00d9aa73aaf5daab` | `59eb01c46e75d9f5c342bdec0fcd21afa969b774a872b96d00d9aa73aaf5daab` |
+| `soc_top.v` | identical | `7ff6be5a8682557f0808f145478e31d28c2a72e42867b7767822f73c66ae1ac9` | `7ff6be5a8682557f0808f145478e31d28c2a72e42867b7767822f73c66ae1ac9` |
+| `tag_memory_92x64_wrap.v` | identical | `4d6eeef301fa7cc60f4d4f22f9cc7893804eb78492d73cbd685d8262349295cf` | `4d6eeef301fa7cc60f4d4f22f9cc7893804eb78492d73cbd685d8262349295cf` |
+| `timer.v` | identical | `4a27c013c05febaf8f04b98a7e5550d96e2312d25665d9c7c12863b2f8c7f804` | `4a27c013c05febaf8f04b98a7e5550d96e2312d25665d9c7c12863b2f8c7f804` |
+| `uart_controller.v` | identical | `8a50206ccb01b390456172c6d1f428e90ac2f571c03345002e5b576115fbd49d` | `8a50206ccb01b390456172c6d1f428e90ac2f571c03345002e5b576115fbd49d` |
+| `write_back_stage.v` | identical | `98259d5f41db8e6d9f14fdbc6d56ba008d9124ca3d323f934c76cac18cb82787` | `98259d5f41db8e6d9f14fdbc6d56ba008d9124ca3d323f934c76cac18cb82787` |
+
+## Evidence files
+
+- `g1`: `978789f35f10bd1c5824b50dcc7a71f37e0a13e81a1cf5c19539620dfa0fdebb` — `/Users/shubhanshu/Desktop/Nebula/digital/artifacts/final_candidate/g1_fp8_adder.json`
+- `g1c`: `7c37633efd092ddca67e0f31eb292a41677e4c4bed509a5a8d5fb48f6ff1cbed` — `/Users/shubhanshu/Desktop/Nebula/digital/artifacts/final_candidate/g1c_stream.json`
+- `ordinary_boundary`: `7b31ca611e369a134488a7919a74da4a3b5dfbb8a3a025c39a7cec0f840aeecf` — `/Users/shubhanshu/Desktop/Nebula/digital/artifacts/final_candidate/g1b_fp4_dot_unit.json`
+
+## Limitation
+
+This is not cycle-by-cycle soc_top equivalence. The stream proof is bounded to 16 cycles and permits the declared result-latency change at the FIFO-shaped interface.

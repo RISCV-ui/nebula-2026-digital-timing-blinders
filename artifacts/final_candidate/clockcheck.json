@@ -1,0 +1,8 @@
+{
+  "verdict": "PASS",
+  "failures": [],
+  "warnings": [
+    "clk_div_mux: clk_out is selected combinationally among clk, clk_div2, clk_div4, clk_div8; a select change mid-pulse truncates it (inherited from baseline)",
+    "clk_gate: clk_out = clk_in & clk_en with no low-phase latch on the enable; an enable change while clk_in is high chops the pulse (inherited from baseline)"
+  ]
+}

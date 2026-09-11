@@ -1,0 +1,34 @@
+  ok      openrouter:nemotron                nvidia/nemotron-3-super-120b-a12b:free
+  ok      openrouter:nemotron-ultra          nvidia/nemotron-3-ultra-550b-a55b:free
+  ok      openrouter:nemotron-nano           nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
+  ok      openrouter:gemma-free              google/gemma-4-31b-it:free
+
+=== arm 1/4: openrouter:nemotron ===
+    0/5 accepted in 974.5s -> artifacts/bakeoff_open/openrouter_nemotron/rtl
+
+=== arm 2/4: openrouter:nemotron-ultra ===
+    2/7 accepted in 2582.3s -> artifacts/bakeoff_open/openrouter_nemotron-ultra/rtl
+
+=== arm 3/4: openrouter:nemotron-nano ===
+    0/5 accepted in 1707.6s -> artifacts/bakeoff_open/openrouter_nemotron-nano/rtl
+
+=== arm 4/4: openrouter:gemma-free ===
+    0/1 accepted in 179.3s -> artifacts/bakeoff_open/openrouter_gemma-free/rtl
+
+| model | proposals | accepted | 1st try | accept rate | wall s | died at |
+|---|---|---|---|---|---|---|
+| `openrouter:nemotron` | 5 | 0 | 0 | 0.0 | 974.5 | propose 2, validate 2, g1 1 |
+| `openrouter:nemotron-ultra` | 7 | 2 | 1 | 0.286 | 2582.3 | validate 3, g1 2 |
+| `openrouter:nemotron-nano` | 5 | 0 | 0 | 0.0 | 1707.6 | propose 2, validate 2, g1 1 |
+| `openrouter:gemma-free` | 1 | 0 | 0 | 0.0 | 179.3 | backend 1 |
+
+Frozen input RTL: `bench/rtl` (never written to).
+
+| model | optimised RTL | files changed | files added |
+|---|---|---|---|
+| `openrouter:nemotron` | `artifacts/bakeoff_open/openrouter_nemotron/rtl` | -- | -- |
+| `openrouter:nemotron-ultra` | `artifacts/bakeoff_open/openrouter_nemotron-ultra/rtl` | `fp8_adder.v` | -- |
+| `openrouter:nemotron-nano` | `artifacts/bakeoff_open/openrouter_nemotron-nano/rtl` | -- | -- |
+| `openrouter:gemma-free` | `artifacts/bakeoff_open/openrouter_gemma-free/rtl` | -- | -- |
+
+wrote artifacts/bakeoff_open/bakeoff.json and artifacts/bakeoff_open/bakeoff.md

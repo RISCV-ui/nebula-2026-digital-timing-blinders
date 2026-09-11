@@ -1,0 +1,30 @@
+PASS  lint_final_tree
+PASS  synthesis_report
+PASS  eqy_no_counterexamples
+PASS  top_level_contract
+PASS  final_ppa_stage
+PASS  target_fmax
+PASS  clock_count
+PASS  bakeoff_audit
+PASS  gemma_rate_limit_recorded
+PASS  final_matches_orfs
+PASS  baseline_matches_orfs
+
+Recorded negative results:
+  PPA regressions: clk_s1, clk_s1_gate, clk_s2_gate, clk_s4
+  EQY incomplete: 10 timeout, 7 unproven, 1 tool error
+  Ordinary top-level cycle equivalence: NOT_EQUIVALENT (+4-cycle contract)
+  Gemma free: NOT TESTED (HTTP 429 before a gate)
+  Paid Claude: PENDING
+  Demo video: PENDING
+
+Key SHA-256:
+  537a217cb5894c03e6a38dc3b63649490aeb4be48877d69f8fb0215f5c7a3e2b  artifacts/submission_20260911/lint.json
+  92303f15a690a30e3b892e3824cce530822f4bb8e5562f58b70efbc8028fa691  artifacts/submission_20260911/synth.json
+  706ef23975b817ca06fe157c35c7882291a383e84d99ee072343efb4c70eef5c  artifacts/submission_20260911/eqy.json
+  480837ae078dcde5fbf43084951157abc83baf222d8aeabd1cc71bdca80bec26  artifacts/submission_20260911/ppa.json
+  a93b764002ae83142083d344429e8a92b77b5a5bee2643bc2020ffc4f919cfce  artifacts/submission_20260911/toplevel_equiv.json
+  a9e1efd18ea38445296c8f909d18bcf10e282cb5b230fd08542c377703bd3e65  artifacts/bakeoff_all_20260911/bakeoff_all.json
+  311227da0380ea2839702db846fce71ff31de57bb4845046408a3df6bec6beaf  output/pdf/Nebula_Digital_Final_Report.pdf
+
+READY_EXCEPT_PAID_MODEL_AND_VIDEO

@@ -1,0 +1,266 @@
+{
+  "before": "baseline_signoff",
+  "after": "final_candidate_signoff",
+  "stage": "6_final",
+  "ppa": {
+    "instances": {
+      "before": 480545,
+      "after": 475618,
+      "abs": -4927,
+      "pct": -1.0252941972135803,
+      "verdict": "better"
+    },
+    "area_um2": {
+      "before": 1746071.0,
+      "after": 1718209.0,
+      "abs": -27862.0,
+      "pct": -1.5956968531062024,
+      "verdict": "better"
+    },
+    "nets": {
+      "before": 121589,
+      "after": 116411,
+      "abs": -5178,
+      "pct": -4.258608920214822,
+      "verdict": "better"
+    },
+    "utilization_pct": {
+      "before": 49.0,
+      "after": 49.0,
+      "abs": 0.0,
+      "pct": 0.0,
+      "verdict": "same"
+    },
+    "power_total_w": {
+      "before": null,
+      "after": null,
+      "abs": null,
+      "pct": null,
+      "verdict": "not reported"
+    },
+    "wns": {
+      "before": -25.2539,
+      "after": -0.1659,
+      "abs": 25.088,
+      "pct": 99.34307176317321,
+      "verdict": "better"
+    },
+    "tns": {
+      "before": -3384.4421,
+      "after": -1.9487,
+      "abs": 3382.4934000000003,
+      "pct": 99.94242182485557,
+      "verdict": "better"
+    },
+    "wns_hold": {
+      "before": -0.1329,
+      "after": -0.0117,
+      "abs": 0.12119999999999999,
+      "pct": 91.19638826185101,
+      "verdict": "better"
+    },
+    "tns_hold": {
+      "before": -2.5864,
+      "after": -0.0357,
+      "abs": 2.5507,
+      "pct": 98.61970306217135,
+      "verdict": "better"
+    },
+    "drc_violations": {
+      "before": 0,
+      "after": 0,
+      "abs": 0,
+      "pct": null,
+      "verdict": "same"
+    },
+    "antenna_violations": {
+      "before": null,
+      "after": null,
+      "abs": null,
+      "pct": null,
+      "verdict": "not reported"
+    }
+  },
+  "clocks": [
+    {
+      "clock": "clk1",
+      "period_ns": 10.0,
+      "wns_before": -0.967,
+      "wns_after": -0.1659,
+      "fmax_before": 86.81,
+      "fmax_after": 95.9,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": 0.8010999999999999
+    },
+    {
+      "clock": "clk2",
+      "period_ns": 20.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk3",
+      "period_ns": 12.5,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk4",
+      "period_ns": 25.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk5",
+      "period_ns": 40.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk_s1",
+      "period_ns": 25.0,
+      "wns_before": 18.5562,
+      "wns_after": 17.2714,
+      "fmax_before": 154.68,
+      "fmax_after": 126.74,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -1.2848000000000006
+    },
+    {
+      "clock": "clk_s1_gate",
+      "period_ns": 25.0,
+      "wns_before": 23.8439,
+      "wns_after": 23.0861,
+      "fmax_before": 800.0,
+      "fmax_after": 510.86,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -0.7578000000000031
+    },
+    {
+      "clock": "clk_s2",
+      "period_ns": 20.0,
+      "wns_before": 11.7365,
+      "wns_after": 11.9371,
+      "fmax_before": 117.51,
+      "fmax_after": 123.52,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.20059999999999967
+    },
+    {
+      "clock": "clk_s2_gate",
+      "period_ns": 20.0,
+      "wns_before": 17.91,
+      "wns_after": 17.8441,
+      "fmax_before": 473.93,
+      "fmax_after": 450.86,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -0.06589999999999918
+    },
+    {
+      "clock": "clk_s3",
+      "period_ns": 10.0,
+      "wns_before": -0.1499,
+      "wns_after": 0.1248,
+      "fmax_before": 95.9,
+      "fmax_after": 100.8,
+      "met_before": false,
+      "met_after": true,
+      "delta_ns": 0.2747
+    },
+    {
+      "clock": "clk_s4",
+      "period_ns": 40.0,
+      "wns_before": 32.9459,
+      "wns_after": 31.1937,
+      "fmax_before": 136.99,
+      "fmax_after": 112.26,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -1.752200000000002
+    },
+    {
+      "clock": "clk_s4_gate",
+      "period_ns": 40.0,
+      "wns_before": 38.1878,
+      "wns_after": 38.326,
+      "fmax_before": 500.0,
+      "fmax_after": 500.0,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.13819999999999766
+    },
+    {
+      "clock": "clk_s5",
+      "period_ns": 12.5,
+      "wns_before": -25.2539,
+      "wns_after": 1.4876,
+      "fmax_before": 25.65,
+      "fmax_after": 89.09,
+      "met_before": false,
+      "met_after": true,
+      "delta_ns": 26.741500000000002
+    },
+    {
+      "clock": "clk_s5_gate",
+      "period_ns": 12.5,
+      "wns_before": 10.5825,
+      "wns_after": 10.6704,
+      "fmax_before": 508.91,
+      "fmax_after": 534.76,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.0879000000000012
+    },
+    {
+      "clock": "clk_s8",
+      "period_ns": 10.0,
+      "wns_before": -1.1998,
+      "wns_after": -0.1494,
+      "fmax_before": 86.81,
+      "fmax_after": 95.9,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": 1.0504
+    }
+  ],
+  "clock_summary": {
+    "constrained": 11,
+    "unreported": 4,
+    "met_before": 7,
+    "met_after": 9,
+    "regressed": [
+      "clk_s1",
+      "clk_s1_gate",
+      "clk_s2_gate",
+      "clk_s4"
+    ]
+  },
+  "frequency_method": "measured period sweep",
+  "fmax_before": "artifacts/audit_20260910/fmax_base_signoff.json",
+  "fmax_after": "artifacts/final_candidate/fmax_final_candidate_signoff.json"
+}

@@ -154,12 +154,19 @@ YOSYS = REPO_ROOT / "oss-cad-suite" / "bin" / "yosys"
 #   ERROR: No SAT model available for cell mul_unit_ex_gate (multiplier_pipelined).
 # That error was read as "compositional boxing does not work here" for twelve
 # modules of the first full sweep. It was the attribute, not the boxing.
+# equiv_make reserves <wire>_gold and <wire>_gate for its two copies.
+# soc_top already has clk_s1 and clk_s1_gate, so matching the latter tries
+# to create a wire that the former's copy already owns and Yosys asserts.
+# Hide only internal wires with those suffixes on BOTH sides before copying.
+# This removes naming cut points, not logic or proof obligations; outputs and
+# all other matching names remain. A wrong-output regression must still fail.
 EQUIV_YS = """\
 {stub}read_verilog {rtl}
 setattr -mod -unset keep_hierarchy
 prep -flatten -top {module}
 memory_map
 opt -fast
+rename -hide w:*_gold w:*_gate
 design -stash gold
 
 {stub}read_liberty -ignore_miss_func {liberty}
@@ -168,6 +175,7 @@ setattr -mod -unset keep_hierarchy
 prep -flatten -top {module}
 memory_map
 opt -fast
+rename -hide w:*_gold w:*_gate
 design -stash gate
 
 design -copy-from gold -as gold {module}
@@ -202,7 +210,13 @@ def run_yosys_equiv(module, rtl, netlist, liberty, stub, depth, timeout, workroo
             timeout=timeout,
         )
         log = proc.stdout + proc.stderr
-    except subprocess.TimeoutExpired:
+    except subprocess.TimeoutExpired as exc:
+        # A timeout is where the next investigation starts. Dropping stdout
+        # here used to erase which pass was consuming the entire budget.
+        output = (exc.stdout or b"") + (exc.stderr or b"")
+        if isinstance(output, bytes):
+            output = output.decode(errors="replace")
+        (workroot / f"{module}.equiv.log").write_text(output)
         return {
             "module": module,
             "pass": "yosys-equiv",
@@ -213,7 +227,8 @@ def run_yosys_equiv(module, rtl, netlist, liberty, stub, depth, timeout, workroo
             "log_tail": [],
         }
 
-    ok = "Equivalence successfully proven!" in log
+    (workroot / f"{module}.equiv.log").write_text(log)
+    ok = proc.returncode == 0 and "Equivalence successfully proven!" in log
     if ok:
         status = "PROVED_EQUIVALENT"
     else:

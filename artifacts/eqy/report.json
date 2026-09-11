@@ -1,0 +1,517 @@
+{
+  "verdict": "NO_COUNTEREXAMPLES",
+  "headline": "36/54 proved, 0 counterexamples",
+  "counts": {
+    "proved": 36,
+    "unproven": 7,
+    "timeout": 10,
+    "tool_error": 1,
+    "not_equivalent": 0,
+    "other": 0
+  },
+  "modules_checked": 54,
+  "total_seconds": 3637.3,
+  "method": "compositional: a module proved equivalent is boxed identically on both sides of every later check",
+  "evidence": {
+    "json": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/soc_top_hier4.json",
+    "json_sha256": "1e2c46397d5e267a1e9a9253a5b72429fe04ca0723c2ef6327287e832d5a4d54",
+    "log": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/hier4.log",
+    "log_sha256": "ca592518e2bf4f042b738b1db3641c5d0a5f7deb7efe2d2486cf83c9c14f483a"
+  },
+  "results": [
+    {
+      "module": "alu",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.9,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "alu_src_a_mux",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.0,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "alu_src_b_mux",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.1,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "arbiter",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.0,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "axi_lite_dma_config",
+      "category": "unproven",
+      "status": "UNPROVEN (234 cells) at depth 5",
+      "seconds": 37.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "axi_lite_master",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 11.8,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "branch_comp_decoder",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "branch_comprator",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.5,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "branch_predictor",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 200.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "clk_div_mux",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 8.5,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "clk_gate",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.0,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "control_unit",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 9.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "csr_regfile",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.5,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "data_clipper",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.0,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "data_extender",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.0,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "data_forwarding_unit",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.4,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "dma_controller",
+      "category": "unproven",
+      "status": "UNPROVEN (166 cells) at depth 5",
+      "seconds": 46.8,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": [
+        "partitioned",
+        "merged"
+      ]
+    },
+    {
+      "module": "dmem",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 38.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "fp4_mul",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 12.4,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "fp8_adder",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.8,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "gpio_controller",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 22.9,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "hazard_detection_unit",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 9.3,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "i_rom_32x256",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 12.5,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "id_memory_256x64_wrap",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 71.3,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "immediate_generator",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.6,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "interrupt_control_unit",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.4,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "l1_cache_axi_master",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 75.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "mem_axi_slave",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 16.3,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "memory_stage",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 7.8,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "multiplier_pipelined",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 417.1,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": [
+        "merged"
+      ]
+    },
+    {
+      "module": "pipeline_reg_ex_mem",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "pipeline_reg_id_ex",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 6.7,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "pipeline_reg_if_id",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.6,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "pipeline_reg_mem_wb",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 4.5,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "read_buffer_d_cache",
+      "category": "unproven",
+      "status": "UNPROVEN (2 cells) at depth 5",
+      "seconds": 26.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": [
+        "partitioned"
+      ]
+    },
+    {
+      "module": "read_buffer_i_cache",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 31.6,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "register_file",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 29.0,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "tag_memory_92x64_wrap",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 21.3,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "timer",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 5.4,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "uart_controller",
+      "category": "unproven",
+      "status": "UNPROVEN (1 cells) at depth 5",
+      "seconds": 31.4,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": [
+        "partitioned"
+      ]
+    },
+    {
+      "module": "axi_interconnect_2m_8s",
+      "category": "unproven",
+      "status": "UNPROVEN (882 cells) at depth 5",
+      "seconds": 19.7,
+      "proved_child_cut_points": [
+        "arbiter"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "axi_lite_gpio",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 286.4,
+      "proved_child_cut_points": [
+        "gpio_controller"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "axi_lite_timer",
+      "category": "unproven",
+      "status": "UNPROVEN (22 cells) at depth 5",
+      "seconds": 229.5,
+      "proved_child_cut_points": [
+        "timer"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "axi_lite_uart",
+      "category": "unproven",
+      "status": "UNPROVEN (18 cells) at depth 5",
+      "seconds": 177.4,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "execution_stage",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 402.6,
+      "proved_child_cut_points": [
+        "alu",
+        "data_clipper"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "fp4_dot_unit",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 217.1,
+      "proved_child_cut_points": [
+        "fp4_mul",
+        "fp8_adder"
+      ],
+      "intermediate_counterexample_claims": [
+        "partitioned"
+      ]
+    },
+    {
+      "module": "instruction_decode_stage",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 94.8,
+      "proved_child_cut_points": [
+        "branch_comp_decoder",
+        "control_unit",
+        "csr_regfile",
+        "immediate_generator",
+        "register_file"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "l1_d_cache_8kb",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 180.2,
+      "proved_child_cut_points": [
+        "id_memory_256x64_wrap",
+        "tag_memory_92x64_wrap"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "l1_i_cache_8kb",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 180.1,
+      "proved_child_cut_points": [
+        "id_memory_256x64_wrap",
+        "tag_memory_92x64_wrap"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "write_back_stage",
+      "category": "proved",
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 8.5,
+      "proved_child_cut_points": [
+        "data_extender"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "axi_lite_dot",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 194.2,
+      "proved_child_cut_points": [],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "instruction_fetch_stage",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 180.1,
+      "proved_child_cut_points": [
+        "i_rom_32x256",
+        "read_buffer_i_cache"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "processor_top",
+      "category": "timeout",
+      "status": "TIMEOUT after 180s",
+      "seconds": 180.2,
+      "proved_child_cut_points": [
+        "alu_src_a_mux",
+        "alu_src_b_mux",
+        "branch_comprator",
+        "data_extender",
+        "data_forwarding_unit",
+        "hazard_detection_unit",
+        "instruction_decode_stage",
+        "memory_stage",
+        "pipeline_reg_ex_mem",
+        "pipeline_reg_id_ex",
+        "pipeline_reg_if_id",
+        "pipeline_reg_mem_wb",
+        "write_back_stage"
+      ],
+      "intermediate_counterexample_claims": []
+    },
+    {
+      "module": "soc_top",
+      "category": "tool_error",
+      "status": "YOSYS_ERROR: ERROR: Assert `count_id(wire->name) == 0' failed in /work/_builds/darwin-arm64/yosys/yosys/kernel/rtlil.cc:2888.",
+      "seconds": 45.3,
+      "proved_child_cut_points": [
+        "axi_lite_master",
+        "clk_div_mux",
+        "clk_gate",
+        "dmem",
+        "interrupt_control_unit",
+        "l1_cache_axi_master",
+        "mem_axi_slave"
+      ],
+      "intermediate_counterexample_claims": []
+    }
+  ]
+}

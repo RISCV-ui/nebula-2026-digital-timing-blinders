@@ -34,8 +34,11 @@ solver stepping both clocks together would be checking one phase relationship
 out of infinitely many. Whether the FIFOs themselves are safe is G2's
 question.
 
-Five properties, checked together on the same trace:
+Six properties, checked together on the same trace:
 
+    P0  accept input      when both operands and output room are available,
+                          the pair is consumed; a dead unit cannot pass by
+                          producing an empty stream forever
     P1  no overflow      w_en never asserts while full
     P2a no invention     w_en never asserts with an empty shadow queue
     P2b no loss          pending results never exceed the pipeline depth
@@ -71,7 +74,8 @@ def reference_model(golden_dir, module):
     _, src = T.module_source(module, golden_dir)
     if src is None:
         raise SystemExit(f"{module} not found in {golden_dir}")
-    return re.sub(rf"\bmodule\s+{re.escape(module)}\b", f"module {REF}", src, 1)
+    return re.sub(rf"\bmodule\s+{re.escape(module)}\b", f"module {REF}", src,
+                  count=1)
 
 
 def checker(lat, qw, module="fp4_dot_stage"):
@@ -140,6 +144,11 @@ always @(posedge clk) begin
 end
 
 always @(posedge clk) if (!rst) begin
+    // P0  input availability cannot be ignored forever. Without this, a unit
+    // that ties every enable low satisfies every output property vacuously:
+    // it emits the same empty stream as its own empty shadow queue.
+    assert (!(empty_1 == 0 && empty_2 == 0 && full == 0) ||
+            (r_en_1 && r_en_2));
     // P1  no overflow
     assert (!(w_en && full));
     // P2a no invention
@@ -276,7 +285,8 @@ def run(golden, candidate, lat, qw, depth, timeout, module="fp4_dot_stage",
 
     res = {"seconds": round(time.time() - t0, 1), "depth": depth,
            "latency": lat, "module": module, "abstract": abstract,
-           "properties": ["P1 no overflow", "P2a no invention",
+           "properties": ["P0 accept available input", "P1 no overflow",
+                          "P2a no invention",
                           "P2b no loss", "P3 data and order",
                           "P4 drain", "r_en_1 == r_en_2"]}
     if "SAT proof finished - no model found: SUCCESS" in out:

@@ -37,15 +37,16 @@ TCL = r"""
 read_liberty {liberty}
 read_db {odb}
 read_sdc {sdc}
+{signoff_setup}
 
 puts "NEBULA_BEGIN"
 
 puts "instances [llength [[ord::get_db_block] getInsts]]"
 puts "nets [llength [[ord::get_db_block] getNets]]"
 
-# Ideal clocks. The candidate and the baseline are compared to each other, not
-# to signoff, and propagating a clock on a pre-CTS netlist reports a clock
-# network delay that is pure fiction -- 114 ns was observed here once.
+# A final routed database is evaluated with extracted parasitics and propagated
+# clocks, matching ORFS's own finish report. Using ideal clocks here made the
+# saved comparison optimistic even though both sides used the same mistake.
 puts "SETUP"
 report_worst_slack -max -digits 4
 report_tns -max -digits 4
@@ -70,8 +71,21 @@ puts "NEBULA_END"
 """
 
 
+def signoff_setup(odb):
+    """Restore timing state that ORFS writes after the final ODB snapshot."""
+    spef = os.path.splitext(os.path.abspath(odb))[0] + ".spef"
+    if not os.path.isfile(spef):
+        return ""
+    # ORFS writes 6_final.odb before extraction, then reads this SPEF and
+    # reports propagated clocks. The ODB alone therefore cannot reproduce the
+    # final report, even though its filename says final.
+    return f"read_spef {spef}\nset_propagated_clock [all_clocks]"
+
+
 def run_openroad(odb, sdc):
-    tcl = TCL.format(liberty=LIBERTY, odb=os.path.abspath(odb), sdc=os.path.abspath(sdc))
+    tcl = TCL.format(liberty=LIBERTY, odb=os.path.abspath(odb),
+                     sdc=os.path.abspath(sdc),
+                     signoff_setup=signoff_setup(odb))
     with tempfile.NamedTemporaryFile("w", suffix=".tcl", delete=False) as f:
         f.write(tcl)
         path = f.name

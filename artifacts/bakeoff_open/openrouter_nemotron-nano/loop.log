@@ -1,0 +1,10 @@
+backend openrouter:nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free, 5 calls
+accepted 0: 
+  rejected fp8_adder: unparseable reply
+  rejected fp4_dot_unit: unparseable reply
+history -> artifacts/bakeoff_open/openrouter_nemotron-nano/history.jsonl
+candidate RTL -> artifacts/bakeoff_open/openrouter_nemotron-nano/rtl
+7 slicer targets -> 3 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -19.677  fp8_adder
+   clk_s5     slack  -19.677  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -19.677  axi_lite_dot   [instantiates fp4_dot_unit]

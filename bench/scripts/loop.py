@@ -466,10 +466,26 @@ def run(args):
                 rejected.append((mod, rec["detail"]))
                 break
 
-            key = (p.get("module"), p.get("transform"))
-            rec.update(transform=p.get("transform"),
+            proposal_module = p.get("module")
+            key = (proposal_module, p.get("transform"))
+            rec.update(proposal_module=proposal_module,
+                       transform=p.get("transform"),
                        latency_delta=p.get("latency_delta"),
                        reason=p.get("reason"))
+            # A derived prompt includes child source so the model can return a
+            # coordinated parent+child edit, but the parent still has to be the
+            # primary module. Otherwise a model can repeat an earlier child
+            # rewrite and earn another acceptance without addressing this
+            # target -- exactly what one bake-off arm did.
+            if proposal_module != mod:
+                detail = (f"proposal rewrites {proposal_module!r}, but this "
+                          f"target is {mod!r}")
+                rec.update(stage="validate", verdict="REJECTED", detail=detail)
+                hist.write(json.dumps(rec) + "\n"); hist.flush()
+                feedback = ("\n\nYour previous answer rewrote the wrong primary "
+                            f"module. Return `{mod}` in `module`; put any "
+                            "coordinated child rewrites in `submodules`.")
+                continue
             # The memo stops a later target buying an idea an earlier target
             # already proved bad. It must not fire inside a target's own
             # repair loop: attempt 1 is the same module and the same transform
@@ -493,6 +509,22 @@ def run(args):
 
             cand = os.path.join(args.out, f"cand_{n}_{attempt}")
             T.apply(p, cand, work)
+
+            # Formal equivalence correctly passes identical inputs, so it
+            # cannot distinguish a useful rewrite from a byte-for-byte repeat.
+            # Reject the repeat before buying a proof or counting an accept.
+            before = {os.path.basename(f): open(f, "rb").read()
+                      for f in glob.glob(os.path.join(work, "*.v"))}
+            after = {os.path.basename(f): open(f, "rb").read()
+                     for f in glob.glob(os.path.join(cand, "*.v"))}
+            if before == after:
+                rec.update(stage="validate", verdict="REJECTED",
+                           detail="proposal changes no RTL bytes")
+                hist.write(json.dumps(rec) + "\n"); hist.flush()
+                feedback = ("\n\nYour previous answer reproduced the current "
+                            "RTL byte-for-byte. Propose a real change or "
+                            "refuse this target.")
+                continue
 
             lat = int(p.get("latency_delta") or 0)
 

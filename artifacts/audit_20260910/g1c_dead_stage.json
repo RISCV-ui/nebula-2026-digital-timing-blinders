@@ -1,0 +1,20 @@
+{
+  "test": "Candidate never consumes input or emits output",
+  "scratch": "/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula_audit_checks_ijcsjeuy",
+  "result": {
+    "seconds": 0.1,
+    "depth": 16,
+    "latency": 4,
+    "module": "fp4_dot_stage",
+    "abstract": true,
+    "properties": [
+      "P1 no overflow",
+      "P2a no invention",
+      "P2b no loss",
+      "P3 data and order",
+      "P4 drain",
+      "r_en_1 == r_en_2"
+    ],
+    "verdict": "STREAM_EQUIVALENT"
+  }
+}

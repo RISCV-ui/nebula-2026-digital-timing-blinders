@@ -1,0 +1,105 @@
+{
+  "golden": "bench/rtl",
+  "targets": "artifacts/paths/baseline.json",
+  "max_targets": 3,
+  "retries": 2,
+  "arms": [
+    {
+      "arm": "openrouter:nemotron",
+      "out": "artifacts/bakeoff_open/openrouter_nemotron",
+      "rtl": "artifacts/bakeoff_open/openrouter_nemotron/rtl",
+      "returncode": 0,
+      "wall_seconds": 974.5,
+      "proposals": 5,
+      "accepted": 0,
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "propose": 2,
+        "validate": 2,
+        "g1": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "openrouter:nemotron-ultra",
+      "out": "artifacts/bakeoff_open/openrouter_nemotron-ultra",
+      "rtl": "artifacts/bakeoff_open/openrouter_nemotron-ultra/rtl",
+      "returncode": 0,
+      "wall_seconds": 2582.3,
+      "proposals": 7,
+      "accepted": 2,
+      "accepted_first_attempt": 1,
+      "accept_rate": 0.286,
+      "died_at": {
+        "validate": 3,
+        "g1": 2,
+        "accepted": 2
+      },
+      "transforms": {
+        "logic_restructure": 2
+      },
+      "modules_changed": [
+        "fp4_dot_unit",
+        "fp8_adder"
+      ],
+      "tree_diff": {
+        "changed": [
+          "fp8_adder.v"
+        ],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "openrouter:nemotron-nano",
+      "out": "artifacts/bakeoff_open/openrouter_nemotron-nano",
+      "rtl": "artifacts/bakeoff_open/openrouter_nemotron-nano/rtl",
+      "returncode": 0,
+      "wall_seconds": 1707.6,
+      "proposals": 5,
+      "accepted": 0,
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "propose": 2,
+        "validate": 2,
+        "g1": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "openrouter:gemma-free",
+      "out": "artifacts/bakeoff_open/openrouter_gemma-free",
+      "rtl": "artifacts/bakeoff_open/openrouter_gemma-free/rtl",
+      "returncode": 0,
+      "wall_seconds": 179.3,
+      "proposals": 1,
+      "accepted": 0,
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "backend": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    }
+  ]
+}

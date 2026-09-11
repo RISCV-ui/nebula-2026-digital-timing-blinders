@@ -1,0 +1,266 @@
+{
+  "before": "baseline_signoff",
+  "after": "audit_signoff_opt",
+  "stage": "6_final",
+  "ppa": {
+    "instances": {
+      "before": 480545,
+      "after": 476324,
+      "abs": -4221,
+      "pct": -0.8783776753477822,
+      "verdict": "better"
+    },
+    "area_um2": {
+      "before": 1746071.0,
+      "after": 1718957.0,
+      "abs": -27114.0,
+      "pct": -1.5528578162056412,
+      "verdict": "better"
+    },
+    "nets": {
+      "before": 121589,
+      "after": 115964,
+      "abs": -5625,
+      "pct": -4.626240860604167,
+      "verdict": "better"
+    },
+    "utilization_pct": {
+      "before": 49.0,
+      "after": 49.0,
+      "abs": 0.0,
+      "pct": 0.0,
+      "verdict": "same"
+    },
+    "power_total_w": {
+      "before": null,
+      "after": null,
+      "abs": null,
+      "pct": null,
+      "verdict": "not reported"
+    },
+    "wns": {
+      "before": -25.2539,
+      "after": -0.2274,
+      "abs": 25.026500000000002,
+      "pct": 99.09954502076907,
+      "verdict": "better"
+    },
+    "tns": {
+      "before": -3384.4421,
+      "after": -4.082,
+      "abs": 3380.3601000000003,
+      "pct": 99.8793892795507,
+      "verdict": "better"
+    },
+    "wns_hold": {
+      "before": -0.1329,
+      "after": -0.0512,
+      "abs": 0.0817,
+      "pct": 61.47479307750188,
+      "verdict": "better"
+    },
+    "tns_hold": {
+      "before": -2.5864,
+      "after": -0.5316,
+      "abs": 2.0547999999999997,
+      "pct": 79.4463346736777,
+      "verdict": "better"
+    },
+    "drc_violations": {
+      "before": 0,
+      "after": 0,
+      "abs": 0,
+      "pct": null,
+      "verdict": "same"
+    },
+    "antenna_violations": {
+      "before": null,
+      "after": null,
+      "abs": null,
+      "pct": null,
+      "verdict": "not reported"
+    }
+  },
+  "clocks": [
+    {
+      "clock": "clk1",
+      "period_ns": 10.0,
+      "wns_before": -0.967,
+      "wns_after": -0.2274,
+      "fmax_before": 86.81,
+      "fmax_after": 95.9,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": 0.7396
+    },
+    {
+      "clock": "clk2",
+      "period_ns": 20.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk3",
+      "period_ns": 12.5,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk4",
+      "period_ns": 25.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk5",
+      "period_ns": 40.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk_s1",
+      "period_ns": 25.0,
+      "wns_before": 18.5562,
+      "wns_after": 17.3372,
+      "fmax_before": 154.68,
+      "fmax_after": 126.74,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -1.2190000000000012
+    },
+    {
+      "clock": "clk_s1_gate",
+      "period_ns": 25.0,
+      "wns_before": 23.8439,
+      "wns_after": 22.8394,
+      "fmax_before": 800.0,
+      "fmax_after": 462.43,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -1.0045000000000002
+    },
+    {
+      "clock": "clk_s2",
+      "period_ns": 20.0,
+      "wns_before": 11.7365,
+      "wns_after": 12.5832,
+      "fmax_before": 117.51,
+      "fmax_after": 129.84,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.8467000000000002
+    },
+    {
+      "clock": "clk_s2_gate",
+      "period_ns": 20.0,
+      "wns_before": 17.91,
+      "wns_after": 18.0074,
+      "fmax_before": 473.93,
+      "fmax_after": 498.01,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.09740000000000038
+    },
+    {
+      "clock": "clk_s3",
+      "period_ns": 10.0,
+      "wns_before": -0.1499,
+      "wns_after": 0.2514,
+      "fmax_before": 95.9,
+      "fmax_after": 100.8,
+      "met_before": false,
+      "met_after": true,
+      "delta_ns": 0.4013
+    },
+    {
+      "clock": "clk_s4",
+      "period_ns": 40.0,
+      "wns_before": 32.9459,
+      "wns_after": 33.3002,
+      "fmax_before": 136.99,
+      "fmax_after": 144.01,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.35429999999999495
+    },
+    {
+      "clock": "clk_s4_gate",
+      "period_ns": 40.0,
+      "wns_before": 38.1878,
+      "wns_after": 37.9392,
+      "fmax_before": 500.0,
+      "fmax_after": 476.19,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -0.24860000000000326
+    },
+    {
+      "clock": "clk_s5",
+      "period_ns": 12.5,
+      "wns_before": -25.2539,
+      "wns_after": 1.9054,
+      "fmax_before": 25.65,
+      "fmax_after": 93.63,
+      "met_before": false,
+      "met_after": true,
+      "delta_ns": 27.1593
+    },
+    {
+      "clock": "clk_s5_gate",
+      "period_ns": 12.5,
+      "wns_before": 10.5825,
+      "wns_after": 10.2824,
+      "fmax_before": 508.91,
+      "fmax_after": 438.36,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -0.3000999999999987
+    },
+    {
+      "clock": "clk_s8",
+      "period_ns": 10.0,
+      "wns_before": -1.1998,
+      "wns_after": -0.1858,
+      "fmax_before": 86.81,
+      "fmax_after": 95.9,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": 1.014
+    }
+  ],
+  "clock_summary": {
+    "constrained": 11,
+    "unreported": 4,
+    "met_before": 7,
+    "met_after": 9,
+    "regressed": [
+      "clk_s1",
+      "clk_s1_gate",
+      "clk_s4_gate",
+      "clk_s5_gate"
+    ]
+  },
+  "frequency_method": "measured period sweep",
+  "fmax_before": "artifacts/audit_20260910/fmax_base_signoff.json",
+  "fmax_after": "artifacts/audit_20260910/fmax_opt_signoff.json"
+}

@@ -1,0 +1,2264 @@
+{
+  "tag": "final_candidate_signoff",
+  "probes": 35,
+  "fmax": {
+    "clk1": {
+      "min_period_ns": 10.428,
+      "fmax_mhz": 95.9,
+      "scale": 1.0428,
+      "slack_at_min_ns": 0.2621
+    },
+    "clk2": {
+      "min_period_ns": null,
+      "fmax_mhz": null,
+      "note": "no probed period closes"
+    },
+    "clk3": {
+      "min_period_ns": null,
+      "fmax_mhz": null,
+      "note": "no probed period closes"
+    },
+    "clk4": {
+      "min_period_ns": null,
+      "fmax_mhz": null,
+      "note": "no probed period closes"
+    },
+    "clk5": {
+      "min_period_ns": null,
+      "fmax_mhz": null,
+      "note": "no probed period closes"
+    },
+    "clk_s1": {
+      "min_period_ns": 7.89,
+      "fmax_mhz": 126.74,
+      "scale": 0.3156,
+      "slack_at_min_ns": 0.1614
+    },
+    "clk_s1_gate": {
+      "min_period_ns": 1.9575,
+      "fmax_mhz": 510.86,
+      "scale": 0.0783,
+      "slack_at_min_ns": 0.0436
+    },
+    "clk_s2": {
+      "min_period_ns": 8.096,
+      "fmax_mhz": 123.52,
+      "scale": 0.4048,
+      "slack_at_min_ns": 0.0331
+    },
+    "clk_s2_gate": {
+      "min_period_ns": 2.218,
+      "fmax_mhz": 450.86,
+      "scale": 0.1109,
+      "slack_at_min_ns": 0.0621
+    },
+    "clk_s3": {
+      "min_period_ns": 9.921,
+      "fmax_mhz": 100.8,
+      "scale": 0.9921,
+      "slack_at_min_ns": 0.0458
+    },
+    "clk_s4": {
+      "min_period_ns": 8.908,
+      "fmax_mhz": 112.26,
+      "scale": 0.2227,
+      "slack_at_min_ns": 0.1017
+    },
+    "clk_s4_gate": {
+      "min_period_ns": 2.0,
+      "fmax_mhz": 500.0,
+      "scale": 0.05,
+      "slack_at_min_ns": 0.326
+    },
+    "clk_s5": {
+      "min_period_ns": 11.225,
+      "fmax_mhz": 89.09,
+      "scale": 0.898,
+      "slack_at_min_ns": 0.2126
+    },
+    "clk_s5_gate": {
+      "min_period_ns": 1.87,
+      "fmax_mhz": 534.76,
+      "scale": 0.1496,
+      "slack_at_min_ns": 0.0404
+    },
+    "clk_s8": {
+      "min_period_ns": 10.428,
+      "fmax_mhz": 95.9,
+      "scale": 1.0428,
+      "slack_at_min_ns": 0.2786
+    }
+  },
+  "sweep": {
+    "0.05": {
+      "clk1": {
+        "period_ns": 0.5,
+        "slack_ns": -9.6659
+      },
+      "clk2": {
+        "period_ns": 1.0,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 0.625,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 1.25,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 2.0,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 1.25,
+        "slack_ns": -0.6639
+      },
+      "clk_s2_gate": {
+        "period_ns": 1.0,
+        "slack_ns": -1.1559
+      },
+      "clk_s5_gate": {
+        "period_ns": 0.625,
+        "slack_ns": -1.2046
+      },
+      "clk_s4_gate": {
+        "period_ns": 2.0,
+        "slack_ns": 0.326
+      },
+      "clk_s3": {
+        "period_ns": 0.5,
+        "slack_ns": -9.3752
+      },
+      "clk_s8": {
+        "period_ns": 0.5,
+        "slack_ns": -9.6494
+      },
+      "clk_s1": {
+        "period_ns": 1.25,
+        "slack_ns": -6.4786
+      },
+      "clk_s2": {
+        "period_ns": 1.0,
+        "slack_ns": -7.0629
+      },
+      "clk_s5": {
+        "period_ns": 0.625,
+        "slack_ns": -10.3874
+      },
+      "clk_s4": {
+        "period_ns": 2.0,
+        "slack_ns": -6.8063
+      }
+    },
+    "0.0745": {
+      "clk1": {
+        "period_ns": 0.745,
+        "slack_ns": -9.4209
+      },
+      "clk2": {
+        "period_ns": 1.49,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 0.93125,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 1.8625,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 2.98,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 1.8625,
+        "slack_ns": -0.0514
+      },
+      "clk_s2_gate": {
+        "period_ns": 1.49,
+        "slack_ns": -0.6659
+      },
+      "clk_s5_gate": {
+        "period_ns": 0.93125,
+        "slack_ns": -0.8983
+      },
+      "clk_s4_gate": {
+        "period_ns": 2.98,
+        "slack_ns": 1.306
+      },
+      "clk_s3": {
+        "period_ns": 0.745,
+        "slack_ns": -9.1302
+      },
+      "clk_s8": {
+        "period_ns": 0.745,
+        "slack_ns": -9.4044
+      },
+      "clk_s1": {
+        "period_ns": 1.8625,
+        "slack_ns": -5.8661
+      },
+      "clk_s2": {
+        "period_ns": 1.49,
+        "slack_ns": -6.5729
+      },
+      "clk_s5": {
+        "period_ns": 0.93125,
+        "slack_ns": -10.0812
+      },
+      "clk_s4": {
+        "period_ns": 2.98,
+        "slack_ns": -5.8263
+      }
+    },
+    "0.0783": {
+      "clk1": {
+        "period_ns": 0.783,
+        "slack_ns": -9.3829
+      },
+      "clk2": {
+        "period_ns": 1.566,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 0.97875,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 1.9575,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 3.132,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 1.9575,
+        "slack_ns": 0.0436
+      },
+      "clk_s2_gate": {
+        "period_ns": 1.566,
+        "slack_ns": -0.5899
+      },
+      "clk_s5_gate": {
+        "period_ns": 0.97875,
+        "slack_ns": -0.8508
+      },
+      "clk_s4_gate": {
+        "period_ns": 3.132,
+        "slack_ns": 1.458
+      },
+      "clk_s3": {
+        "period_ns": 0.783,
+        "slack_ns": -9.0922
+      },
+      "clk_s8": {
+        "period_ns": 0.783,
+        "slack_ns": -9.3664
+      },
+      "clk_s1": {
+        "period_ns": 1.9575,
+        "slack_ns": -5.7711
+      },
+      "clk_s2": {
+        "period_ns": 1.566,
+        "slack_ns": -6.4969
+      },
+      "clk_s5": {
+        "period_ns": 0.97875,
+        "slack_ns": -10.0337
+      },
+      "clk_s4": {
+        "period_ns": 3.132,
+        "slack_ns": -5.6743
+      }
+    },
+    "0.0823": {
+      "clk1": {
+        "period_ns": 0.823,
+        "slack_ns": -9.3429
+      },
+      "clk2": {
+        "period_ns": 1.646,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 1.02875,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 2.0575,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 3.292,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 2.0575,
+        "slack_ns": 0.1436
+      },
+      "clk_s2_gate": {
+        "period_ns": 1.646,
+        "slack_ns": -0.5099
+      },
+      "clk_s5_gate": {
+        "period_ns": 1.02875,
+        "slack_ns": -0.8008
+      },
+      "clk_s4_gate": {
+        "period_ns": 3.292,
+        "slack_ns": 1.618
+      },
+      "clk_s3": {
+        "period_ns": 0.823,
+        "slack_ns": -9.0522
+      },
+      "clk_s8": {
+        "period_ns": 0.823,
+        "slack_ns": -9.3264
+      },
+      "clk_s1": {
+        "period_ns": 2.0575,
+        "slack_ns": -5.6711
+      },
+      "clk_s2": {
+        "period_ns": 1.646,
+        "slack_ns": -6.4169
+      },
+      "clk_s5": {
+        "period_ns": 1.02875,
+        "slack_ns": -9.9837
+      },
+      "clk_s4": {
+        "period_ns": 3.292,
+        "slack_ns": -5.5143
+      }
+    },
+    "0.0909": {
+      "clk1": {
+        "period_ns": 0.909,
+        "slack_ns": -9.2569
+      },
+      "clk2": {
+        "period_ns": 1.818,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 1.13625,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 2.2725,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 3.636,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 2.2725,
+        "slack_ns": 0.3586
+      },
+      "clk_s2_gate": {
+        "period_ns": 1.818,
+        "slack_ns": -0.3379
+      },
+      "clk_s5_gate": {
+        "period_ns": 1.13625,
+        "slack_ns": -0.6933
+      },
+      "clk_s4_gate": {
+        "period_ns": 3.636,
+        "slack_ns": 1.962
+      },
+      "clk_s3": {
+        "period_ns": 0.909,
+        "slack_ns": -8.9662
+      },
+      "clk_s8": {
+        "period_ns": 0.909,
+        "slack_ns": -9.2404
+      },
+      "clk_s1": {
+        "period_ns": 2.2725,
+        "slack_ns": -5.4561
+      },
+      "clk_s2": {
+        "period_ns": 1.818,
+        "slack_ns": -6.2449
+      },
+      "clk_s5": {
+        "period_ns": 1.13625,
+        "slack_ns": -9.8762
+      },
+      "clk_s4": {
+        "period_ns": 3.636,
+        "slack_ns": -5.1703
+      }
+    },
+    "0.1004": {
+      "clk1": {
+        "period_ns": 1.004,
+        "slack_ns": -9.1619
+      },
+      "clk2": {
+        "period_ns": 2.008,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 1.255,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 2.51,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 4.016,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 2.51,
+        "slack_ns": 0.5961
+      },
+      "clk_s2_gate": {
+        "period_ns": 2.008,
+        "slack_ns": -0.1479
+      },
+      "clk_s5_gate": {
+        "period_ns": 1.255,
+        "slack_ns": -0.5746
+      },
+      "clk_s4_gate": {
+        "period_ns": 4.016,
+        "slack_ns": 2.342
+      },
+      "clk_s3": {
+        "period_ns": 1.004,
+        "slack_ns": -8.8712
+      },
+      "clk_s8": {
+        "period_ns": 1.004,
+        "slack_ns": -9.1454
+      },
+      "clk_s1": {
+        "period_ns": 2.51,
+        "slack_ns": -5.2186
+      },
+      "clk_s2": {
+        "period_ns": 2.008,
+        "slack_ns": -6.0549
+      },
+      "clk_s5": {
+        "period_ns": 1.255,
+        "slack_ns": -9.7574
+      },
+      "clk_s4": {
+        "period_ns": 4.016,
+        "slack_ns": -4.7903
+      }
+    },
+    "0.1055": {
+      "clk1": {
+        "period_ns": 1.055,
+        "slack_ns": -9.1109
+      },
+      "clk2": {
+        "period_ns": 2.11,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 1.31875,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 2.6375,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 4.22,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 2.6375,
+        "slack_ns": 0.7236
+      },
+      "clk_s2_gate": {
+        "period_ns": 2.11,
+        "slack_ns": -0.0459
+      },
+      "clk_s5_gate": {
+        "period_ns": 1.31875,
+        "slack_ns": -0.5108
+      },
+      "clk_s4_gate": {
+        "period_ns": 4.22,
+        "slack_ns": 2.546
+      },
+      "clk_s3": {
+        "period_ns": 1.055,
+        "slack_ns": -8.8202
+      },
+      "clk_s8": {
+        "period_ns": 1.055,
+        "slack_ns": -9.0944
+      },
+      "clk_s1": {
+        "period_ns": 2.6375,
+        "slack_ns": -5.0911
+      },
+      "clk_s2": {
+        "period_ns": 2.11,
+        "slack_ns": -5.9529
+      },
+      "clk_s5": {
+        "period_ns": 1.31875,
+        "slack_ns": -9.6937
+      },
+      "clk_s4": {
+        "period_ns": 4.22,
+        "slack_ns": -4.5863
+      }
+    },
+    "0.1109": {
+      "clk1": {
+        "period_ns": 1.109,
+        "slack_ns": -9.0569
+      },
+      "clk2": {
+        "period_ns": 2.218,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 1.38625,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 2.7725,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 4.436,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 2.7725,
+        "slack_ns": 0.8586
+      },
+      "clk_s2_gate": {
+        "period_ns": 2.218,
+        "slack_ns": 0.0621
+      },
+      "clk_s5_gate": {
+        "period_ns": 1.38625,
+        "slack_ns": -0.4433
+      },
+      "clk_s4_gate": {
+        "period_ns": 4.436,
+        "slack_ns": 2.762
+      },
+      "clk_s3": {
+        "period_ns": 1.109,
+        "slack_ns": -8.7662
+      },
+      "clk_s8": {
+        "period_ns": 1.109,
+        "slack_ns": -9.0404
+      },
+      "clk_s1": {
+        "period_ns": 2.7725,
+        "slack_ns": -4.9561
+      },
+      "clk_s2": {
+        "period_ns": 2.218,
+        "slack_ns": -5.8449
+      },
+      "clk_s5": {
+        "period_ns": 1.38625,
+        "slack_ns": -9.6262
+      },
+      "clk_s4": {
+        "period_ns": 4.436,
+        "slack_ns": -4.3703
+      }
+    },
+    "0.1354": {
+      "clk1": {
+        "period_ns": 1.354,
+        "slack_ns": -8.8119
+      },
+      "clk2": {
+        "period_ns": 2.708,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 1.6925,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 3.385,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 5.416,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 3.385,
+        "slack_ns": 1.4711
+      },
+      "clk_s2_gate": {
+        "period_ns": 2.708,
+        "slack_ns": 0.5521
+      },
+      "clk_s5_gate": {
+        "period_ns": 1.6925,
+        "slack_ns": -0.1371
+      },
+      "clk_s4_gate": {
+        "period_ns": 5.416,
+        "slack_ns": 3.742
+      },
+      "clk_s3": {
+        "period_ns": 1.354,
+        "slack_ns": -8.5212
+      },
+      "clk_s8": {
+        "period_ns": 1.354,
+        "slack_ns": -8.7954
+      },
+      "clk_s1": {
+        "period_ns": 3.385,
+        "slack_ns": -4.3436
+      },
+      "clk_s2": {
+        "period_ns": 2.708,
+        "slack_ns": -5.3549
+      },
+      "clk_s5": {
+        "period_ns": 1.6925,
+        "slack_ns": -9.3199
+      },
+      "clk_s4": {
+        "period_ns": 5.416,
+        "slack_ns": -3.3903
+      }
+    },
+    "0.1423": {
+      "clk1": {
+        "period_ns": 1.423,
+        "slack_ns": -8.7429
+      },
+      "clk2": {
+        "period_ns": 2.846,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 1.77875,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 3.5575,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 5.692,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 3.5575,
+        "slack_ns": 1.6436
+      },
+      "clk_s2_gate": {
+        "period_ns": 2.846,
+        "slack_ns": 0.6901
+      },
+      "clk_s5_gate": {
+        "period_ns": 1.77875,
+        "slack_ns": -0.0508
+      },
+      "clk_s4_gate": {
+        "period_ns": 5.692,
+        "slack_ns": 4.018
+      },
+      "clk_s3": {
+        "period_ns": 1.423,
+        "slack_ns": -8.4522
+      },
+      "clk_s8": {
+        "period_ns": 1.423,
+        "slack_ns": -8.7264
+      },
+      "clk_s1": {
+        "period_ns": 3.5575,
+        "slack_ns": -4.1711
+      },
+      "clk_s2": {
+        "period_ns": 2.846,
+        "slack_ns": -5.2169
+      },
+      "clk_s5": {
+        "period_ns": 1.77875,
+        "slack_ns": -9.2337
+      },
+      "clk_s4": {
+        "period_ns": 5.692,
+        "slack_ns": -3.1143
+      }
+    },
+    "0.1496": {
+      "clk1": {
+        "period_ns": 1.496,
+        "slack_ns": -8.6699
+      },
+      "clk2": {
+        "period_ns": 2.992,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 1.87,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 3.74,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 5.984,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 3.74,
+        "slack_ns": 1.8261
+      },
+      "clk_s2_gate": {
+        "period_ns": 2.992,
+        "slack_ns": 0.8361
+      },
+      "clk_s5_gate": {
+        "period_ns": 1.87,
+        "slack_ns": 0.0404
+      },
+      "clk_s4_gate": {
+        "period_ns": 5.984,
+        "slack_ns": 4.31
+      },
+      "clk_s3": {
+        "period_ns": 1.496,
+        "slack_ns": -8.3792
+      },
+      "clk_s8": {
+        "period_ns": 1.496,
+        "slack_ns": -8.6534
+      },
+      "clk_s1": {
+        "period_ns": 3.74,
+        "slack_ns": -3.9886
+      },
+      "clk_s2": {
+        "period_ns": 2.992,
+        "slack_ns": -5.0709
+      },
+      "clk_s5": {
+        "period_ns": 1.87,
+        "slack_ns": -9.1424
+      },
+      "clk_s4": {
+        "period_ns": 5.984,
+        "slack_ns": -2.8223
+      }
+    },
+    "0.1652": {
+      "clk1": {
+        "period_ns": 1.652,
+        "slack_ns": -8.5139
+      },
+      "clk2": {
+        "period_ns": 3.304,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 2.065,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 4.13,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 6.608,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 4.13,
+        "slack_ns": 2.2161
+      },
+      "clk_s2_gate": {
+        "period_ns": 3.304,
+        "slack_ns": 1.1481
+      },
+      "clk_s5_gate": {
+        "period_ns": 2.065,
+        "slack_ns": 0.2354
+      },
+      "clk_s4_gate": {
+        "period_ns": 6.608,
+        "slack_ns": 4.934
+      },
+      "clk_s3": {
+        "period_ns": 1.652,
+        "slack_ns": -8.2232
+      },
+      "clk_s8": {
+        "period_ns": 1.652,
+        "slack_ns": -8.4974
+      },
+      "clk_s1": {
+        "period_ns": 4.13,
+        "slack_ns": -3.5986
+      },
+      "clk_s2": {
+        "period_ns": 3.304,
+        "slack_ns": -4.7589
+      },
+      "clk_s5": {
+        "period_ns": 2.065,
+        "slack_ns": -8.9474
+      },
+      "clk_s4": {
+        "period_ns": 6.608,
+        "slack_ns": -2.1983
+      }
+    },
+    "0.2016": {
+      "clk1": {
+        "period_ns": 2.016,
+        "slack_ns": -8.1499
+      },
+      "clk2": {
+        "period_ns": 4.032,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 2.52,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 5.04,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 8.064,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 5.04,
+        "slack_ns": 3.1261
+      },
+      "clk_s2_gate": {
+        "period_ns": 4.032,
+        "slack_ns": 1.8761
+      },
+      "clk_s5_gate": {
+        "period_ns": 2.52,
+        "slack_ns": 0.6904
+      },
+      "clk_s4_gate": {
+        "period_ns": 8.064,
+        "slack_ns": 6.39
+      },
+      "clk_s3": {
+        "period_ns": 2.016,
+        "slack_ns": -7.8592
+      },
+      "clk_s8": {
+        "period_ns": 2.016,
+        "slack_ns": -8.1334
+      },
+      "clk_s1": {
+        "period_ns": 5.04,
+        "slack_ns": -2.6886
+      },
+      "clk_s2": {
+        "period_ns": 4.032,
+        "slack_ns": -4.0309
+      },
+      "clk_s5": {
+        "period_ns": 2.52,
+        "slack_ns": -8.4924
+      },
+      "clk_s4": {
+        "period_ns": 8.064,
+        "slack_ns": -0.7423
+      }
+    },
+    "0.2119": {
+      "clk1": {
+        "period_ns": 2.119,
+        "slack_ns": -8.0469
+      },
+      "clk2": {
+        "period_ns": 4.238,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 2.64875,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 5.2975,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 8.476,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 5.2975,
+        "slack_ns": 3.3836
+      },
+      "clk_s2_gate": {
+        "period_ns": 4.238,
+        "slack_ns": 2.0821
+      },
+      "clk_s5_gate": {
+        "period_ns": 2.64875,
+        "slack_ns": 0.8192
+      },
+      "clk_s4_gate": {
+        "period_ns": 8.476,
+        "slack_ns": 6.802
+      },
+      "clk_s3": {
+        "period_ns": 2.119,
+        "slack_ns": -7.7562
+      },
+      "clk_s8": {
+        "period_ns": 2.119,
+        "slack_ns": -8.0304
+      },
+      "clk_s1": {
+        "period_ns": 5.2975,
+        "slack_ns": -2.4311
+      },
+      "clk_s2": {
+        "period_ns": 4.238,
+        "slack_ns": -3.8249
+      },
+      "clk_s5": {
+        "period_ns": 2.64875,
+        "slack_ns": -8.3637
+      },
+      "clk_s4": {
+        "period_ns": 8.476,
+        "slack_ns": -0.3303
+      }
+    },
+    "0.2227": {
+      "clk1": {
+        "period_ns": 2.227,
+        "slack_ns": -7.9389
+      },
+      "clk2": {
+        "period_ns": 4.454,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 2.78375,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 5.5675,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 8.908,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 5.5675,
+        "slack_ns": 3.6536
+      },
+      "clk_s2_gate": {
+        "period_ns": 4.454,
+        "slack_ns": 2.2981
+      },
+      "clk_s5_gate": {
+        "period_ns": 2.78375,
+        "slack_ns": 0.9542
+      },
+      "clk_s4_gate": {
+        "period_ns": 8.908,
+        "slack_ns": 7.234
+      },
+      "clk_s3": {
+        "period_ns": 2.227,
+        "slack_ns": -7.6482
+      },
+      "clk_s8": {
+        "period_ns": 2.227,
+        "slack_ns": -7.9224
+      },
+      "clk_s1": {
+        "period_ns": 5.5675,
+        "slack_ns": -2.1611
+      },
+      "clk_s2": {
+        "period_ns": 4.454,
+        "slack_ns": -3.6089
+      },
+      "clk_s5": {
+        "period_ns": 2.78375,
+        "slack_ns": -8.2287
+      },
+      "clk_s4": {
+        "period_ns": 8.908,
+        "slack_ns": 0.1017
+      }
+    },
+    "0.246": {
+      "clk1": {
+        "period_ns": 2.46,
+        "slack_ns": -7.7059
+      },
+      "clk2": {
+        "period_ns": 4.92,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 3.075,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 6.15,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 9.84,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 6.15,
+        "slack_ns": 4.2361
+      },
+      "clk_s2_gate": {
+        "period_ns": 4.92,
+        "slack_ns": 2.7641
+      },
+      "clk_s5_gate": {
+        "period_ns": 3.075,
+        "slack_ns": 1.2454
+      },
+      "clk_s4_gate": {
+        "period_ns": 9.84,
+        "slack_ns": 8.166
+      },
+      "clk_s3": {
+        "period_ns": 2.46,
+        "slack_ns": -7.4152
+      },
+      "clk_s8": {
+        "period_ns": 2.46,
+        "slack_ns": -7.6894
+      },
+      "clk_s1": {
+        "period_ns": 6.15,
+        "slack_ns": -1.5786
+      },
+      "clk_s2": {
+        "period_ns": 4.92,
+        "slack_ns": -3.1429
+      },
+      "clk_s5": {
+        "period_ns": 3.075,
+        "slack_ns": -7.9374
+      },
+      "clk_s4": {
+        "period_ns": 9.84,
+        "slack_ns": 1.0337
+      }
+    },
+    "0.3002": {
+      "clk1": {
+        "period_ns": 3.002,
+        "slack_ns": -7.1639
+      },
+      "clk2": {
+        "period_ns": 6.004,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 3.7525,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 7.505001,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 12.008,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 7.505001,
+        "slack_ns": 5.5911
+      },
+      "clk_s2_gate": {
+        "period_ns": 6.004,
+        "slack_ns": 3.8481
+      },
+      "clk_s5_gate": {
+        "period_ns": 3.7525,
+        "slack_ns": 1.9229
+      },
+      "clk_s4_gate": {
+        "period_ns": 12.008,
+        "slack_ns": 10.334
+      },
+      "clk_s3": {
+        "period_ns": 3.002,
+        "slack_ns": -6.8732
+      },
+      "clk_s8": {
+        "period_ns": 3.002,
+        "slack_ns": -7.1474
+      },
+      "clk_s1": {
+        "period_ns": 7.505001,
+        "slack_ns": -0.2236
+      },
+      "clk_s2": {
+        "period_ns": 6.004,
+        "slack_ns": -2.0589
+      },
+      "clk_s5": {
+        "period_ns": 3.7525,
+        "slack_ns": -7.2599
+      },
+      "clk_s4": {
+        "period_ns": 12.008,
+        "slack_ns": 3.2017
+      }
+    },
+    "0.3156": {
+      "clk1": {
+        "period_ns": 3.156,
+        "slack_ns": -7.0099
+      },
+      "clk2": {
+        "period_ns": 6.312,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 3.945,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 7.89,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 12.624,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 7.89,
+        "slack_ns": 5.9761
+      },
+      "clk_s2_gate": {
+        "period_ns": 6.312,
+        "slack_ns": 4.1561
+      },
+      "clk_s5_gate": {
+        "period_ns": 3.945,
+        "slack_ns": 2.1154
+      },
+      "clk_s4_gate": {
+        "period_ns": 12.624,
+        "slack_ns": 10.95
+      },
+      "clk_s3": {
+        "period_ns": 3.156,
+        "slack_ns": -6.7192
+      },
+      "clk_s8": {
+        "period_ns": 3.156,
+        "slack_ns": -6.9934
+      },
+      "clk_s1": {
+        "period_ns": 7.89,
+        "slack_ns": 0.1614
+      },
+      "clk_s2": {
+        "period_ns": 6.312,
+        "slack_ns": -1.7509
+      },
+      "clk_s5": {
+        "period_ns": 3.945,
+        "slack_ns": -7.0674
+      },
+      "clk_s4": {
+        "period_ns": 12.624,
+        "slack_ns": 3.8177
+      }
+    },
+    "0.3317": {
+      "clk1": {
+        "period_ns": 3.317,
+        "slack_ns": -6.8489
+      },
+      "clk2": {
+        "period_ns": 6.634,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 4.14625,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 8.2925,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 13.268001,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 8.2925,
+        "slack_ns": 6.3786
+      },
+      "clk_s2_gate": {
+        "period_ns": 6.634,
+        "slack_ns": 4.4781
+      },
+      "clk_s5_gate": {
+        "period_ns": 4.14625,
+        "slack_ns": 2.3167
+      },
+      "clk_s4_gate": {
+        "period_ns": 13.268001,
+        "slack_ns": 11.594
+      },
+      "clk_s3": {
+        "period_ns": 3.317,
+        "slack_ns": -6.5582
+      },
+      "clk_s8": {
+        "period_ns": 3.317,
+        "slack_ns": -6.8324
+      },
+      "clk_s1": {
+        "period_ns": 8.2925,
+        "slack_ns": 0.5639
+      },
+      "clk_s2": {
+        "period_ns": 6.634,
+        "slack_ns": -1.4289
+      },
+      "clk_s5": {
+        "period_ns": 4.14625,
+        "slack_ns": -6.8662
+      },
+      "clk_s4": {
+        "period_ns": 13.268001,
+        "slack_ns": 4.4617
+      }
+    },
+    "0.3664": {
+      "clk1": {
+        "period_ns": 3.664,
+        "slack_ns": -6.5019
+      },
+      "clk2": {
+        "period_ns": 7.328,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 4.58,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 9.16,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 14.656,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 9.16,
+        "slack_ns": 7.2461
+      },
+      "clk_s2_gate": {
+        "period_ns": 7.328,
+        "slack_ns": 5.1721
+      },
+      "clk_s5_gate": {
+        "period_ns": 4.58,
+        "slack_ns": 2.7504
+      },
+      "clk_s4_gate": {
+        "period_ns": 14.656,
+        "slack_ns": 12.982
+      },
+      "clk_s3": {
+        "period_ns": 3.664,
+        "slack_ns": -6.2112
+      },
+      "clk_s8": {
+        "period_ns": 3.664,
+        "slack_ns": -6.4854
+      },
+      "clk_s1": {
+        "period_ns": 9.16,
+        "slack_ns": 1.4314
+      },
+      "clk_s2": {
+        "period_ns": 7.328,
+        "slack_ns": -0.7349
+      },
+      "clk_s5": {
+        "period_ns": 4.58,
+        "slack_ns": -6.4324
+      },
+      "clk_s4": {
+        "period_ns": 14.656,
+        "slack_ns": 5.8497
+      }
+    },
+    "0.3851": {
+      "clk1": {
+        "period_ns": 3.851,
+        "slack_ns": -6.3149
+      },
+      "clk2": {
+        "period_ns": 7.702,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 4.81375,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 9.6275,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 15.404,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 9.6275,
+        "slack_ns": 7.7136
+      },
+      "clk_s2_gate": {
+        "period_ns": 7.702,
+        "slack_ns": 5.5461
+      },
+      "clk_s5_gate": {
+        "period_ns": 4.81375,
+        "slack_ns": 2.9842
+      },
+      "clk_s4_gate": {
+        "period_ns": 15.404,
+        "slack_ns": 13.73
+      },
+      "clk_s3": {
+        "period_ns": 3.851,
+        "slack_ns": -6.0242
+      },
+      "clk_s8": {
+        "period_ns": 3.851,
+        "slack_ns": -6.2984
+      },
+      "clk_s1": {
+        "period_ns": 9.6275,
+        "slack_ns": 1.8989
+      },
+      "clk_s2": {
+        "period_ns": 7.702,
+        "slack_ns": -0.3609
+      },
+      "clk_s5": {
+        "period_ns": 4.81375,
+        "slack_ns": -6.1987
+      },
+      "clk_s4": {
+        "period_ns": 15.404,
+        "slack_ns": 6.5977
+      }
+    },
+    "0.4048": {
+      "clk1": {
+        "period_ns": 4.048,
+        "slack_ns": -6.1179
+      },
+      "clk2": {
+        "period_ns": 8.096,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 5.06,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 10.12,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 16.191999,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 10.12,
+        "slack_ns": 8.2061
+      },
+      "clk_s2_gate": {
+        "period_ns": 8.096,
+        "slack_ns": 5.9401
+      },
+      "clk_s5_gate": {
+        "period_ns": 5.06,
+        "slack_ns": 3.2304
+      },
+      "clk_s4_gate": {
+        "period_ns": 16.191999,
+        "slack_ns": 14.518
+      },
+      "clk_s3": {
+        "period_ns": 4.048,
+        "slack_ns": -5.8272
+      },
+      "clk_s8": {
+        "period_ns": 4.048,
+        "slack_ns": -6.1014
+      },
+      "clk_s1": {
+        "period_ns": 10.12,
+        "slack_ns": 2.3914
+      },
+      "clk_s2": {
+        "period_ns": 8.096,
+        "slack_ns": 0.0331
+      },
+      "clk_s5": {
+        "period_ns": 5.06,
+        "slack_ns": -5.9524
+      },
+      "clk_s4": {
+        "period_ns": 16.191999,
+        "slack_ns": 7.3857
+      }
+    },
+    "0.4472": {
+      "clk1": {
+        "period_ns": 4.472,
+        "slack_ns": -5.6939
+      },
+      "clk2": {
+        "period_ns": 8.943999,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 5.59,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 11.18,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 17.887999,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 11.18,
+        "slack_ns": 9.2661
+      },
+      "clk_s2_gate": {
+        "period_ns": 8.943999,
+        "slack_ns": 6.7881
+      },
+      "clk_s5_gate": {
+        "period_ns": 5.59,
+        "slack_ns": 3.7604
+      },
+      "clk_s4_gate": {
+        "period_ns": 17.887999,
+        "slack_ns": 16.214
+      },
+      "clk_s3": {
+        "period_ns": 4.472,
+        "slack_ns": -5.4032
+      },
+      "clk_s8": {
+        "period_ns": 4.472,
+        "slack_ns": -5.6774
+      },
+      "clk_s1": {
+        "period_ns": 11.18,
+        "slack_ns": 3.4514
+      },
+      "clk_s2": {
+        "period_ns": 8.943999,
+        "slack_ns": 0.8811
+      },
+      "clk_s5": {
+        "period_ns": 5.59,
+        "slack_ns": -5.4224
+      },
+      "clk_s4": {
+        "period_ns": 17.887999,
+        "slack_ns": 9.0817
+      }
+    },
+    "0.5458": {
+      "clk1": {
+        "period_ns": 5.458,
+        "slack_ns": -4.7079
+      },
+      "clk2": {
+        "period_ns": 10.916,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 6.8225,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 13.645,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 21.832001,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 13.645,
+        "slack_ns": 11.7311
+      },
+      "clk_s2_gate": {
+        "period_ns": 10.916,
+        "slack_ns": 8.7601
+      },
+      "clk_s5_gate": {
+        "period_ns": 6.8225,
+        "slack_ns": 4.9929
+      },
+      "clk_s4_gate": {
+        "period_ns": 21.832001,
+        "slack_ns": 20.158
+      },
+      "clk_s3": {
+        "period_ns": 5.458,
+        "slack_ns": -4.4172
+      },
+      "clk_s8": {
+        "period_ns": 5.458,
+        "slack_ns": -4.6914
+      },
+      "clk_s1": {
+        "period_ns": 13.645,
+        "slack_ns": 5.9164
+      },
+      "clk_s2": {
+        "period_ns": 10.916,
+        "slack_ns": 2.8531
+      },
+      "clk_s5": {
+        "period_ns": 6.8225,
+        "slack_ns": -4.1899
+      },
+      "clk_s4": {
+        "period_ns": 21.832001,
+        "slack_ns": 13.0257
+      }
+    },
+    "0.8129": {
+      "clk1": {
+        "period_ns": 8.129,
+        "slack_ns": -2.0369
+      },
+      "clk2": {
+        "period_ns": 16.257999,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 10.16125,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 20.3225,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 32.515999,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 20.3225,
+        "slack_ns": 18.4086
+      },
+      "clk_s2_gate": {
+        "period_ns": 16.257999,
+        "slack_ns": 14.1021
+      },
+      "clk_s5_gate": {
+        "period_ns": 10.16125,
+        "slack_ns": 8.3317
+      },
+      "clk_s4_gate": {
+        "period_ns": 32.515999,
+        "slack_ns": 30.842
+      },
+      "clk_s3": {
+        "period_ns": 8.129,
+        "slack_ns": -1.7462
+      },
+      "clk_s8": {
+        "period_ns": 8.129,
+        "slack_ns": -2.0204
+      },
+      "clk_s1": {
+        "period_ns": 20.3225,
+        "slack_ns": 12.5939
+      },
+      "clk_s2": {
+        "period_ns": 16.257999,
+        "slack_ns": 8.1951
+      },
+      "clk_s5": {
+        "period_ns": 10.16125,
+        "slack_ns": -0.8512
+      },
+      "clk_s4": {
+        "period_ns": 32.515999,
+        "slack_ns": 23.7097
+      }
+    },
+    "0.8544": {
+      "clk1": {
+        "period_ns": 8.544001,
+        "slack_ns": -1.6219
+      },
+      "clk2": {
+        "period_ns": 17.088001,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 10.68,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 21.360001,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 34.176003,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 21.360001,
+        "slack_ns": 19.4461
+      },
+      "clk_s2_gate": {
+        "period_ns": 17.088001,
+        "slack_ns": 14.9321
+      },
+      "clk_s5_gate": {
+        "period_ns": 10.68,
+        "slack_ns": 8.8504
+      },
+      "clk_s4_gate": {
+        "period_ns": 34.176003,
+        "slack_ns": 32.502
+      },
+      "clk_s3": {
+        "period_ns": 8.544001,
+        "slack_ns": -1.3312
+      },
+      "clk_s8": {
+        "period_ns": 8.544001,
+        "slack_ns": -1.6054
+      },
+      "clk_s1": {
+        "period_ns": 21.360001,
+        "slack_ns": 13.6314
+      },
+      "clk_s2": {
+        "period_ns": 17.088001,
+        "slack_ns": 9.0251
+      },
+      "clk_s5": {
+        "period_ns": 10.68,
+        "slack_ns": -0.3324
+      },
+      "clk_s4": {
+        "period_ns": 34.176003,
+        "slack_ns": 25.3697
+      }
+    },
+    "0.898": {
+      "clk1": {
+        "period_ns": 8.98,
+        "slack_ns": -1.1859
+      },
+      "clk2": {
+        "period_ns": 17.960001,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 11.225,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 22.450001,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 35.920002,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 22.450001,
+        "slack_ns": 20.5361
+      },
+      "clk_s2_gate": {
+        "period_ns": 17.960001,
+        "slack_ns": 15.8041
+      },
+      "clk_s5_gate": {
+        "period_ns": 11.225,
+        "slack_ns": 9.3954
+      },
+      "clk_s4_gate": {
+        "period_ns": 35.920002,
+        "slack_ns": 34.246
+      },
+      "clk_s3": {
+        "period_ns": 8.98,
+        "slack_ns": -0.8952
+      },
+      "clk_s8": {
+        "period_ns": 8.98,
+        "slack_ns": -1.1694
+      },
+      "clk_s1": {
+        "period_ns": 22.450001,
+        "slack_ns": 14.7214
+      },
+      "clk_s2": {
+        "period_ns": 17.960001,
+        "slack_ns": 9.8971
+      },
+      "clk_s5": {
+        "period_ns": 11.225,
+        "slack_ns": 0.2126
+      },
+      "clk_s4": {
+        "period_ns": 35.920002,
+        "slack_ns": 27.1137
+      }
+    },
+    "0.9439": {
+      "clk1": {
+        "period_ns": 9.439,
+        "slack_ns": -0.7269
+      },
+      "clk2": {
+        "period_ns": 18.878,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 11.79875,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 23.5975,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 37.756001,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 23.5975,
+        "slack_ns": 21.6836
+      },
+      "clk_s2_gate": {
+        "period_ns": 18.878,
+        "slack_ns": 16.7221
+      },
+      "clk_s5_gate": {
+        "period_ns": 11.79875,
+        "slack_ns": 9.9692
+      },
+      "clk_s4_gate": {
+        "period_ns": 37.756001,
+        "slack_ns": 36.082
+      },
+      "clk_s3": {
+        "period_ns": 9.439,
+        "slack_ns": -0.4362
+      },
+      "clk_s8": {
+        "period_ns": 9.439,
+        "slack_ns": -0.7104
+      },
+      "clk_s1": {
+        "period_ns": 23.5975,
+        "slack_ns": 15.8689
+      },
+      "clk_s2": {
+        "period_ns": 18.878,
+        "slack_ns": 10.8151
+      },
+      "clk_s5": {
+        "period_ns": 11.79875,
+        "slack_ns": 0.7863
+      },
+      "clk_s4": {
+        "period_ns": 37.756001,
+        "slack_ns": 28.9497
+      }
+    },
+    "0.9921": {
+      "clk1": {
+        "period_ns": 9.921,
+        "slack_ns": -0.2449
+      },
+      "clk2": {
+        "period_ns": 19.842001,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 12.40125,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 24.8025,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 39.684002,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 24.8025,
+        "slack_ns": 22.8886
+      },
+      "clk_s2_gate": {
+        "period_ns": 19.842001,
+        "slack_ns": 17.6861
+      },
+      "clk_s5_gate": {
+        "period_ns": 12.40125,
+        "slack_ns": 10.5717
+      },
+      "clk_s4_gate": {
+        "period_ns": 39.684002,
+        "slack_ns": 38.01
+      },
+      "clk_s3": {
+        "period_ns": 9.921,
+        "slack_ns": 0.0458
+      },
+      "clk_s8": {
+        "period_ns": 9.921,
+        "slack_ns": -0.2284
+      },
+      "clk_s1": {
+        "period_ns": 24.8025,
+        "slack_ns": 17.0739
+      },
+      "clk_s2": {
+        "period_ns": 19.842001,
+        "slack_ns": 11.7791
+      },
+      "clk_s5": {
+        "period_ns": 12.40125,
+        "slack_ns": 1.3888
+      },
+      "clk_s4": {
+        "period_ns": 39.684002,
+        "slack_ns": 30.8777
+      }
+    },
+    "1.0428": {
+      "clk1": {
+        "period_ns": 10.428,
+        "slack_ns": 0.2621
+      },
+      "clk2": {
+        "period_ns": 20.856001,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 13.035,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 26.07,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 41.712002,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 26.07,
+        "slack_ns": 24.1561
+      },
+      "clk_s2_gate": {
+        "period_ns": 20.856001,
+        "slack_ns": 18.7001
+      },
+      "clk_s5_gate": {
+        "period_ns": 13.035,
+        "slack_ns": 11.2054
+      },
+      "clk_s4_gate": {
+        "period_ns": 41.712002,
+        "slack_ns": 40.038
+      },
+      "clk_s3": {
+        "period_ns": 10.428,
+        "slack_ns": 0.5528
+      },
+      "clk_s8": {
+        "period_ns": 10.428,
+        "slack_ns": 0.2786
+      },
+      "clk_s1": {
+        "period_ns": 26.07,
+        "slack_ns": 18.3414
+      },
+      "clk_s2": {
+        "period_ns": 20.856001,
+        "slack_ns": 12.7931
+      },
+      "clk_s5": {
+        "period_ns": 13.035,
+        "slack_ns": 2.0226
+      },
+      "clk_s4": {
+        "period_ns": 41.712002,
+        "slack_ns": 32.9057
+      }
+    },
+    "1.096": {
+      "clk1": {
+        "period_ns": 10.96,
+        "slack_ns": 0.7941
+      },
+      "clk2": {
+        "period_ns": 21.92,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 13.7,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 27.4,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 43.84,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 27.4,
+        "slack_ns": 25.4861
+      },
+      "clk_s2_gate": {
+        "period_ns": 21.92,
+        "slack_ns": 19.7641
+      },
+      "clk_s5_gate": {
+        "period_ns": 13.7,
+        "slack_ns": 11.8704
+      },
+      "clk_s4_gate": {
+        "period_ns": 43.84,
+        "slack_ns": 42.166
+      },
+      "clk_s3": {
+        "period_ns": 10.96,
+        "slack_ns": 1.0848
+      },
+      "clk_s8": {
+        "period_ns": 10.96,
+        "slack_ns": 0.8106
+      },
+      "clk_s1": {
+        "period_ns": 27.4,
+        "slack_ns": 19.6714
+      },
+      "clk_s2": {
+        "period_ns": 21.92,
+        "slack_ns": 13.8571
+      },
+      "clk_s5": {
+        "period_ns": 13.7,
+        "slack_ns": 2.6876
+      },
+      "clk_s4": {
+        "period_ns": 43.84,
+        "slack_ns": 35.0337
+      }
+    },
+    "1.2107": {
+      "clk1": {
+        "period_ns": 12.107,
+        "slack_ns": 1.9411
+      },
+      "clk2": {
+        "period_ns": 24.214001,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 15.133751,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 30.267502,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 48.428001,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 30.267502,
+        "slack_ns": 28.3536
+      },
+      "clk_s2_gate": {
+        "period_ns": 24.214001,
+        "slack_ns": 22.0581
+      },
+      "clk_s5_gate": {
+        "period_ns": 15.133751,
+        "slack_ns": 13.3042
+      },
+      "clk_s4_gate": {
+        "period_ns": 48.428001,
+        "slack_ns": 46.754
+      },
+      "clk_s3": {
+        "period_ns": 12.107,
+        "slack_ns": 2.2318
+      },
+      "clk_s8": {
+        "period_ns": 12.107,
+        "slack_ns": 1.9576
+      },
+      "clk_s1": {
+        "period_ns": 30.267502,
+        "slack_ns": 22.5389
+      },
+      "clk_s2": {
+        "period_ns": 24.214001,
+        "slack_ns": 16.1511
+      },
+      "clk_s5": {
+        "period_ns": 15.133751,
+        "slack_ns": 4.1213
+      },
+      "clk_s4": {
+        "period_ns": 48.428001,
+        "slack_ns": 39.6217
+      }
+    },
+    "1.8032": {
+      "clk1": {
+        "period_ns": 18.032,
+        "slack_ns": 7.8661
+      },
+      "clk2": {
+        "period_ns": 36.063999,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 22.540001,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 45.080002,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 72.127998,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 45.080002,
+        "slack_ns": 43.1661
+      },
+      "clk_s2_gate": {
+        "period_ns": 36.063999,
+        "slack_ns": 33.9081
+      },
+      "clk_s5_gate": {
+        "period_ns": 22.540001,
+        "slack_ns": 20.7104
+      },
+      "clk_s4_gate": {
+        "period_ns": 72.127998,
+        "slack_ns": 70.454
+      },
+      "clk_s3": {
+        "period_ns": 18.032,
+        "slack_ns": 8.1568
+      },
+      "clk_s8": {
+        "period_ns": 18.032,
+        "slack_ns": 7.8826
+      },
+      "clk_s1": {
+        "period_ns": 45.080002,
+        "slack_ns": 37.3514
+      },
+      "clk_s2": {
+        "period_ns": 36.063999,
+        "slack_ns": 28.0011
+      },
+      "clk_s5": {
+        "period_ns": 22.540001,
+        "slack_ns": 11.5276
+      },
+      "clk_s4": {
+        "period_ns": 72.127998,
+        "slack_ns": 63.3217
+      }
+    },
+    "2.6857": {
+      "clk1": {
+        "period_ns": 26.856998,
+        "slack_ns": 16.6911
+      },
+      "clk2": {
+        "period_ns": 53.713997,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 33.571251,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 67.142502,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 107.427994,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 67.142502,
+        "slack_ns": 65.2286
+      },
+      "clk_s2_gate": {
+        "period_ns": 53.713997,
+        "slack_ns": 51.5581
+      },
+      "clk_s5_gate": {
+        "period_ns": 33.571251,
+        "slack_ns": 31.7417
+      },
+      "clk_s4_gate": {
+        "period_ns": 107.427994,
+        "slack_ns": 105.754
+      },
+      "clk_s3": {
+        "period_ns": 26.856998,
+        "slack_ns": 16.9818
+      },
+      "clk_s8": {
+        "period_ns": 26.856998,
+        "slack_ns": 16.7076
+      },
+      "clk_s1": {
+        "period_ns": 67.142502,
+        "slack_ns": 59.4139
+      },
+      "clk_s2": {
+        "period_ns": 53.713997,
+        "slack_ns": 45.6511
+      },
+      "clk_s5": {
+        "period_ns": 33.571251,
+        "slack_ns": 22.5588
+      },
+      "clk_s4": {
+        "period_ns": 107.427994,
+        "slack_ns": 98.6217
+      }
+    },
+    "4.0": {
+      "clk1": {
+        "period_ns": 40.0,
+        "slack_ns": 29.8341
+      },
+      "clk2": {
+        "period_ns": 80.0,
+        "slack_ns": null
+      },
+      "clk3": {
+        "period_ns": 50.0,
+        "slack_ns": null
+      },
+      "clk4": {
+        "period_ns": 100.0,
+        "slack_ns": null
+      },
+      "clk5": {
+        "period_ns": 160.0,
+        "slack_ns": null
+      },
+      "clk_s1_gate": {
+        "period_ns": 100.0,
+        "slack_ns": 98.0861
+      },
+      "clk_s2_gate": {
+        "period_ns": 80.0,
+        "slack_ns": 77.8441
+      },
+      "clk_s5_gate": {
+        "period_ns": 50.0,
+        "slack_ns": 48.1704
+      },
+      "clk_s4_gate": {
+        "period_ns": 160.0,
+        "slack_ns": 158.326
+      },
+      "clk_s3": {
+        "period_ns": 40.0,
+        "slack_ns": 30.1248
+      },
+      "clk_s8": {
+        "period_ns": 40.0,
+        "slack_ns": 29.8506
+      },
+      "clk_s1": {
+        "period_ns": 100.0,
+        "slack_ns": 92.2714
+      },
+      "clk_s2": {
+        "period_ns": 80.0,
+        "slack_ns": 71.9371
+      },
+      "clk_s5": {
+        "period_ns": 50.0,
+        "slack_ns": 38.9876
+      },
+      "clk_s4": {
+        "period_ns": 160.0,
+        "slack_ns": 151.1937
+      }
+    }
+  }
+}

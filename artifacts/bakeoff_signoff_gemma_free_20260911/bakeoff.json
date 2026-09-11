@@ -1,0 +1,31 @@
+{
+  "golden": "bench/rtl",
+  "targets": "artifacts/paths/baseline_signoff.json",
+  "max_targets": 3,
+  "retries": 2,
+  "arms": [
+    {
+      "arm": "openrouter:gemma-free",
+      "out": "artifacts/bakeoff_signoff_gemma_free_20260911/openrouter_gemma-free",
+      "rtl": "artifacts/bakeoff_signoff_gemma_free_20260911/openrouter_gemma-free/rtl",
+      "returncode": 0,
+      "wall_seconds": 179.4,
+      "proposals": 1,
+      "accepted": 0,
+      "raw_accepted": 0,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "backend": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    }
+  ]
+}

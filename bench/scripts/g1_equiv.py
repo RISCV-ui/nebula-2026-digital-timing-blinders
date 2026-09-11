@@ -518,12 +518,12 @@ def main():
     res = run(a.golden, a.candidate, a.module, a.depth,
               a.latency, clock, a.timeout, a.enable, a.reset,
               a.reset_align, a.observe)
-    if a.json:
-        print(json.dumps(res, indent=2))
-        sys.exit(0 if res["verdict"] == "EQUIVALENT" else 1)
     if a.out:
         os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
         open(a.out, "w").write(json.dumps(res, indent=2) + "\n")
+    if a.json:
+        print(json.dumps(res, indent=2))
+        sys.exit(0 if res["verdict"] == "EQUIVALENT" else 1)
     print(f'{res["verdict"]:<16} {a.module:<24} '
           f'depth {res.get("depth")}  latency +{res.get("latency_delta")}  '
           f'{res.get("seconds")}s')

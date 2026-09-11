@@ -1,0 +1,10 @@
+backend openrouter:nvidia/nemotron-3-super-120b-a12b:free, 7 calls
+accepted 0: 
+  rejected fp8_adder: unparseable reply
+  rejected axi_lite_dot: The critical path is entirely within the asynchronous FIFO submodule (fifo_timer_r) which is a clock-domain crossing module and cannot be edited. The axi_lite_dot module's own combinational logic delay is only 0.256 ns, which is insufficient to meet the slack requirement of -19.6769 ns.
+history -> artifacts/bakeoff_open/openrouter_nemotron/history.jsonl
+candidate RTL -> artifacts/bakeoff_open/openrouter_nemotron/rtl
+7 slicer targets -> 3 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -19.677  fp8_adder
+   clk_s5     slack  -19.677  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -19.677  axi_lite_dot   [instantiates fp4_dot_unit]

@@ -1,0 +1,37 @@
+{
+  "golden": "bench/rtl",
+  "targets": "artifacts/paths/baseline_signoff.json",
+  "max_targets": 3,
+  "retries": 2,
+  "arms": [
+    {
+      "arm": "openrouter:nemotron-ultra",
+      "out": "artifacts/bakeoff_signoff_nemotron_ultra_20260910/openrouter_nemotron-ultra",
+      "rtl": "artifacts/bakeoff_signoff_nemotron_ultra_20260910/openrouter_nemotron-ultra/rtl",
+      "returncode": 0,
+      "wall_seconds": 707.6,
+      "proposals": 3,
+      "accepted": 2,
+      "accepted_first_attempt": 2,
+      "accept_rate": 0.667,
+      "died_at": {
+        "propose": 1,
+        "accepted": 2
+      },
+      "transforms": {
+        "logic_restructure": 2
+      },
+      "modules_changed": [
+        "fp4_dot_unit",
+        "fp8_adder"
+      ],
+      "tree_diff": {
+        "changed": [
+          "fp8_adder.v"
+        ],
+        "added": [],
+        "removed": []
+      }
+    }
+  ]
+}

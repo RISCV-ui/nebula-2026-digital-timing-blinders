@@ -1,0 +1,7 @@
+{
+  "seconds": 0.6,
+  "depth": 1,
+  "latency_delta": 0,
+  "module": "fp8_adder",
+  "verdict": "EQUIVALENT"
+}

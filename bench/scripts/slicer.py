@@ -140,6 +140,7 @@ TCL = """
 read_liberty {liberty}
 read_db {odb}
 read_sdc {sdc}
+{signoff_setup}
 report_checks -path_delay max -sort_by_slack -group_path_count {n} \\
               -format full -digits 4
 """
@@ -147,9 +148,21 @@ report_checks -path_delay max -sort_by_slack -group_path_count {n} \\
 PIN = re.compile(r"^\s*(-?[\d.]+)\s+(-?[\d.]+)\s+[\^v]\s+(\S+)\s+\((\S+)\)\s*$")
 
 
+def signoff_setup(odb):
+    """Restore the RC and clock state that ORFS adds after saving 6_final."""
+    spef = os.path.splitext(os.path.abspath(odb))[0] + ".spef"
+    if not os.path.isfile(spef):
+        return ""
+    # Target selection must see the same critical path as signoff. Without the
+    # adjacent SPEF, every model in a bake-off answers a stale ideal-clock
+    # problem even though the final PPA comparison uses extracted parasitics.
+    return f"read_spef {spef}\nset_propagated_clock [all_clocks]"
+
+
 def run_sta(odb, sdc, n):
     tcl = TCL.format(liberty=LIBERTY, odb=os.path.abspath(odb),
-                     sdc=os.path.abspath(sdc), n=n)
+                     sdc=os.path.abspath(sdc), n=n,
+                     signoff_setup=signoff_setup(odb))
     with tempfile.NamedTemporaryFile("w", suffix=".tcl", delete=False) as f:
         f.write(tcl)
         p = f.name

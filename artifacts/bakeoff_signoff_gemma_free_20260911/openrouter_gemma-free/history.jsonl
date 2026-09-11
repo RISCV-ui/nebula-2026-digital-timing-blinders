@@ -1,0 +1,1 @@
+{"iteration": 0, "attempt": 0, "module": "fp8_adder", "clock": "clk_s5", "slack_ns": -25.2539, "paths_covered": 2, "backend": "openrouter:google/gemma-4-31b-it:free", "t": 1789072646.3207822, "stage": "backend", "verdict": "UNAVAILABLE", "detail": "openrouter:google/gemma-4-31b-it:free failed after 5 tries: HTTP Error 429: Too Many Requests"}

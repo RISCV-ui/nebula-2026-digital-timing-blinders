@@ -20,11 +20,14 @@ same function of their inputs? — and answers it well. Three classes of damage
 an LLM can do to RTL are invisible to it, and all three are reachable by the
 four transforms the problem statement allows:
 
-| What breaks | Why equivalence cannot see it | Our gate |
-|---|---|---|
-| A pipelined module's **parent** still expects the old latency | At module scope nothing is wrong; the module is correct N cycles later, and it was proven so | **G1b** — miter the *parent* over both children, no delay wrapper |
-| A **CDC synchronizer** loses its second flop, or gains logic between stages | A duplicated sampler is logically identical by construction | **G2** — structural crossing comparison |
-| A **generated clock** becomes glitchy | A combinational clock mux and a flop-based one compute the same function of `sel`; they differ only between the cycles a solver samples | **G2c** — clock-structure classification |
+- **Parent latency:** a pipelined module can be correct N cycles later while
+  its parent still consumes the old cycle. **G1b** miters the parent over both
+  children without a delay wrapper.
+- **CDC structure:** removing a synchronizer stage can preserve the Boolean
+  function and still fail in silicon. **G2** compares the crossing structure.
+- **Generated clocks:** combinational and registered clock logic may agree at
+  sampled edges while differing between them. **G2c** classifies the clock
+  structure and rejects a regression.
 
 None of these is hypothetical here. Each one either fired on this design or
 was found in it. Section 6 gives the evidence.
@@ -54,17 +57,11 @@ and the record keeps how many paths each target was blamed for, so a module
 holding fifteen near-critical paths is visibly worth more than one holding a
 single path at the same slack.
 
-**Baseline, `nebula_bench` post-route, 20 reported paths → 7 targets:**
-
-```
-P000 clk_s5       slack  -19.677  195 stages  fp8_adder                85.7% x3   lever rtl
-P001 clk1         slack    0.935   40 stages  multiplier_pipelined    100.0% x1   lever none
-P002 clk_s8       slack    2.622   22 stages  axi_interconnect_2m_8s   53.3% x1   lever none
-P003 clk_s5_gate  slack   11.448    5 stages  clk_div_mux             100.0% x1   lever none
-P004 clk_s2       slack   15.157   19 stages  gpio_controller          47.0% x1   lever none
-P005 clk_s1       slack   20.471   15 stages  axi_lite_timer            8.2% x1   lever none
-P006 clk_s4       slack   35.458   16 stages  uart_controller          46.3% x1   lever none
-```
+**Baseline, `nebula_bench` post-route:** 20 reported paths collapse to 7 RTL
+targets. The selected `clk_s5` path has 195 logic stages, with 85.7% of its
+cell delay inside three chained `fp8_adder` instances. Parasitic-aware signoff
+ranks the failing domains as `clk_s5` −25.2539 ns, `clk_s8` −1.1998 ns,
+`clk1` −0.9670 ns, and `clk_s3` −0.1499 ns.
 
 ### 1.1 The lever selector
 
@@ -92,11 +89,11 @@ One veto overrides the arithmetic: a path under four stages goes back to
 `gate` however bad its slack, because a deep cell or a long wire has no
 structure to restructure.
 
-On this design the split is stark. `clk_s5` needs 12.5 ns and takes
-32.196 ns — a 19.677 ns gap against a gate-level reach of roughly 6.4 ns,
-three times what any sizing pass delivers, with 85.7% of the path inside three
-*chained* `fp8_adder` instances. That is the only path here that is genuinely
-an RTL problem, and it is the only path the model is asked about.
+On this design the split is stark. At the 12.5 ns target, signoff reports
+`clk_s5` WNS −25.2539 ns; the measured period sweep closes at 38.98 ns. The gap
+is well outside the selector's optimistic gate-level reach, with 85.7% of the
+diagnostic path's cell delay inside three *chained* `fp8_adder` instances.
+That is the path the model is asked about.
 
 **Seven targets become one model call.**
 
@@ -111,12 +108,14 @@ accept → G3.
 
 **Model access.** The engine is provider-agnostic (`llm.py` speaks the OpenAI
 chat-completions shape; OpenRouter and Google Gemini are configured, and the
-model is a flag). The runs reported here used `gemini-3.5-flash` on the free
-tier, chosen deliberately: **a result nobody else can re-run is not a result.**
-Anyone reading this report can reproduce every number in it with a free key.
+model is a flag). The accepted design run used `gemini-3.5-flash`; the bake-off
+also exercises open-weight Nemotron models under the same targets and gate
+budget. Provider quotas affect whether a response is available, so every API
+response and outage is preserved rather than assuming a free key will always
+reproduce it on demand.
 
 **The model is constrained, not trusted.** It returns JSON naming one of the
-four allowed transforms plus the complete rewritten module — never prose, never
+five allowed transforms plus the complete rewritten module — never prose, never
 a diff. Anything unparseable is recorded as a refusal, which is a real outcome
 the loop handles, not a crash.
 
@@ -132,7 +131,32 @@ the next attempt.
 
 **Cost.** The transform catalogue is byte-identical on every call and is the
 bulk of the tokens, so it is sent as its own cacheable system block where the
-provider supports it. A full run over this design is **5 model calls.**
+provider supports it. The primary accepted run records **6 proposals**: two
+accepted, three formally disproved at G1, and one rejected structurally.
+
+### 2.1 Same-task model bake-off
+
+Each arm receives the same parasitic-aware targets, transform catalogue, retry
+budget, and gates. The corrected merged evidence is
+`artifacts/bakeoff_all_20260911/`.
+
+| licence | model | proposals | accepted | where the others stopped |
+|---|---|---:|---:|---|
+| open-weight | Nemotron Ultra 550B | 7 | **1** | validate 3, audit 1, G1 2 |
+| open-weight | Nemotron Super 120B | 5 | 0 | propose 2, validate 2, G1 1 |
+| open-weight | Nemotron Nano 30B | 5 | 0 | propose 2, validate 2, G1 1 |
+| open-weight | Gemma 4 31B | 1 | *not tested* | provider HTTP 429 |
+| free closed-weight | Gemini 3.5 Flash | 6 | **1** | propose 1, G1 4 |
+| free closed-weight | Gemini 3.1 Pro | 1 | *not tested* | provider quota |
+
+The Nemotron Ultra history originally reported 2/7. Its second “accept”
+targeted `fp4_dot_unit` but returned and proved another `fp8_adder` rewrite;
+the final tree changed only `fp8_adder.v`. The preserved record is now marked
+`audit`, giving the defensible result 1/7. Future runs reject a wrong primary
+module and a byte-identical rewrite before buying a formal proof. Gemma was
+retried alone on 11 September after its live model slug passed the public
+probe; OpenRouter again returned HTTP 429 before any proposal reached a gate.
+Both untested rows are absence of evidence, not model failures.
 
 ---
 
@@ -148,21 +172,21 @@ dividers at four ratios, 113,036 cells post-synthesis.
 
 | Metric | Value |
 |---|---|
-| WNS | **−19.677 ns** (`clk_s5`, 12.5 ns period) |
-| TNS | −2406.61 ns |
-| Hold WNS | +0.167 ns |
-| Failing domains | 1 of 14 (`clk_s5`) |
+| WNS | **−25.2539 ns** (`clk_s5`, 12.5 ns period) |
+| TNS | −3384.4421 ns |
+| Hold WNS | −0.1329 ns |
+| Failing domains | 4 of 11 reported (`clk_s5`, `clk_s8`, `clk1`, `clk_s3`) |
 | DRC violations | 0 |
 
 **Per-clock WNS:**
 
 ```
-clk1        10.0 ns    +0.935     clk_s2       20.0 ns   +15.157
-clk_s1      25.0 ns   +20.471     clk_s2_gate  20.0 ns   +18.946
-clk_s1_gate 25.0 ns   +23.921     clk_s3       10.0 ns    +3.021
-clk_s4      40.0 ns   +35.458     clk_s4_gate  40.0 ns   +38.943
-clk_s5      12.5 ns   −19.677     clk_s5_gate  12.5 ns   +11.448
-clk_s8      10.0 ns    +2.622
+clk1        10.0 ns    −0.9670    clk_s2       20.0 ns   +11.7365
+clk_s1      25.0 ns   +18.5562    clk_s2_gate  20.0 ns   +17.9100
+clk_s1_gate 25.0 ns   +23.8439    clk_s3       10.0 ns    −0.1499
+clk_s4      40.0 ns   +32.9459    clk_s4_gate  40.0 ns   +38.1878
+clk_s5      12.5 ns   −25.2539    clk_s5_gate  12.5 ns   +10.5825
+clk_s8      10.0 ns    −1.1998
 ```
 
 **Root cause of the one failure.** `clk_s5` clocks `axi_lite_dot`, an AXI-Lite
@@ -210,9 +234,9 @@ satisfy in 0.8 s. Attempt 1 kept the same four-stage cut and changed one thing:
 the pipeline now advances while *any* stage is still occupied, so the tail of a
 burst drains instead of stalling in the last stages. That is the model's own
 stated fix, written against the returned counterexample. The +4 cycles are the
-"adding four stages of registers to the dot-product datapath" that §5 then
-measures — the −19.677 ns WNS on `clk_s5`, the 29.8 → 126.2 MHz Fmax, and the
-−1.55% area all trace back to this one accepted edit.
+"adding four stages of registers to the dot-product datapath" whose timing
+effect is measured on the repaired final tree in §5. The older `opt` run
+predates the parent repair and is retained only as audit history.
 
 **A second, independent run with the full gate stack armed.** Everything above
 came from a loop in which G1b and the clock gate did not yet exist. To check
@@ -247,153 +271,93 @@ keeps it usable on a design that is already dirty.
 
 ## 5. Deliverable 5 — Timing, frequency and PPA comparison
 
-*(status: complete. Baseline and optimised runs both routed to `6_final`.)*
+*(status: complete for the repaired final RTL)*
 
-Both runs use the identical ORFS flow, PDK, SDC and floorplan; `FLOW_VARIANT`
-isolates the candidate's results, and `NEBULA_RTL` is the only thing that
-differs between them.
+Both recorded runs use the same ORFS flow, PDK, SDC and floorplan and reach
+`6_final`. The timing analysis reads the adjacent `6_final.spef` and propagates
+clocks, matching ORFS's finish report.
 
-**Baseline, post-route:**
+### Self-audit finding: the first headline omitted signoff parasitics
 
-| Metric | Baseline |
-|---|---|
-| Area | 1,746,071 µm² |
-| Utilisation | 49.0% |
-| Instances | 480,545 |
-| Nets | 121,589 |
-| Wirelength | 6,901,284 µm |
-| WNS / TNS | −19.677 / −2406.61 ns |
-| Fmax (`clk_s5`, the limiter) | 29.8 MHz (min period 33.6 ns) |
-| Fmax (`clk1`) | 105.9 MHz (min period 9.439 ns) |
+The first report re-read `6_final.odb` alone. ORFS writes that database before
+RC extraction, then reads `6_final.spef` and propagates clocks before producing
+`6_finish.rpt`. The old positive WNS and zero TNS therefore matched neither
+ORFS run. We corrected the scripts and reran both sides. On the repaired final
+candidate, the extractor reports WNS −0.1659 ns and TNS −1.9487 ns, matching
+its own ORFS signoff report. The agreement is the sanity check.
 
-Fmax is measured by binary search over the SDC period, re-running STA on the
-routed database at each probe, not by adding slack to the nominal period, which
-overstates it. It is measured per clock: each probe scales one domain and asks
-whether that domain closes, so a design with a failing domain still yields a
-number for every other one. The full per-clock sweep and the baseline-vs-
-optimised comparison are in §5.4.
+The improvement remains large, but the chip is not fully timing-clean. The
+target `clk_s5` closes with +1.4876 ns, while `clk1` remains at −0.1659 ns and
+`clk_s8` at −0.1494 ns. We caught our own optimistic measurement and corrected
+it against the flow's own signoff report.
 
-The row that matters here is `clk_s5` at **29.8 MHz against a nominal 80 MHz**.
-That is the same violation as the −19.68 ns WNS stated in one-clock-cycle terms:
-the design as delivered cannot be run at its specified frequency, and 29.8 MHz
-is the rate the slowest path actually supports. Every other domain in the table
-has headroom it cannot use, because a chip runs at the speed of its worst path,
-not its average one. **`clk_s5` is the binding constraint on the whole design**,
-which is exactly why the loop spends its one call there. `clk2`–`clk5` report no
-Fmax in either run: no probed period closes for them at all, so there is nothing
-to bisect.
-
-**Candidate (`opt` variant), post-route, same flow:**
-
-| Metric | Baseline | Optimised | Delta |
-|---|---|---|---|
-| `clk_s5` WNS | −19.677 ns | **+4.776 ns** | **+24.453 ns** |
-| Design TNS | −2406.61 ns | **0.0 ns** | +2406.61 ns |
-| Hold WNS | +0.167 ns | +0.096 ns | −0.072 ns (still met) |
-| Area | 1,746,071 µm² | 1,718,957 µm² | **−1.55%** |
-| Instances | 480,545 | 476,324 | −4,221 (−0.88%) |
-| Nets | 121,589 | 115,964 | −5,625 (−4.63%) |
-| Wirelength | 6,901,284 µm | 6,676,996 µm | −3.25% |
+| Metric | Baseline | Final candidate | Delta |
+|---|---:|---:|---:|
+| Design WNS | −25.2539 ns | −0.1659 ns | +25.0880 ns |
+| Design TNS | −3384.4421 ns | −1.9487 ns | +3382.4934 ns |
+| Hold WNS | −0.1329 ns | −0.0117 ns | +0.1212 ns |
+| Hold TNS | −2.5864 ns | −0.0357 ns | +2.5507 ns |
+| Area | 1,746,071 µm² | 1,718,209 µm² | −1.60% |
+| Instances | 480,545 | 475,618 | −4,927 (−1.03%) |
+| Nets | 121,589 | 116,411 | −5,178 (−4.26%) |
+| Wirelength | 6,901,284 µm | 6,634,649 µm | −3.86% |
 | DRC violations | 0 | 0 | — |
+| Antenna violations | not extracted | 1 net / 1 pin | open |
 
-Three things in that table deserve comment, because two of them are the ones a
-reader should be suspicious of.
+At the nominal periods, 9 of 11 clock groups with reported paths meet setup
+timing after optimisation, up from 7. Four domains (`clk2`–`clk5`) report no
+path and are excluded: no path is an open constraint question, not a pass.
 
-**The violation is closed, not moved.** Design TNS goes to exactly zero. That
-is the number to watch rather than WNS: a transform that buys `clk_s5` its
-slack by pushing the shortfall into some other endpoint leaves TNS roughly
-where it was, and this one does not.
+### 5.1 Maximum frequency
 
-**No other domain paid for it.** Per-clock WNS, baseline → optimised:
+Fmax is measured by binary search over each clock's SDC period with extracted
+parasitics and propagated clocks. Both sides use the same `--lo 0.05` schedule.
 
-| Clock | Period | Baseline | Optimised | Delta |
-|---|---|---|---|---|
-| `clk1` | 10.0 ns | +0.935 | +1.180 | +0.245 |
-| `clk_s1` | 25.0 ns | +20.471 | +20.561 | +0.090 |
-| `clk_s2` | 20.0 ns | +15.157 | +15.226 | +0.069 |
-| `clk_s3` | 10.0 ns | +3.021 | +2.916 | −0.105 |
-| `clk_s4` | 40.0 ns | +35.458 | +35.482 | +0.024 |
-| **`clk_s5`** | **12.5 ns** | **−19.677** | **+4.776** | **+24.453** |
-| `clk_s8` | 10.0 ns | +2.622 | +2.303 | −0.319 |
+| Clock | Baseline Fmax | Final candidate Fmax | Change |
+|---|---:|---:|---:|
+| **`clk_s5`** | **25.65 MHz** | **89.09 MHz** | **+247.3% (3.47×)** |
+| `clk1` | 86.81 MHz | 95.90 MHz | +10.5% |
+| `clk_s1` | 154.68 MHz | 126.74 MHz | −18.1% |
+| `clk_s2` | 117.51 MHz | 123.52 MHz | +5.1% |
+| `clk_s3` | 95.90 MHz | 100.80 MHz | +5.1% |
+| `clk_s4` | 136.99 MHz | 112.26 MHz | −18.1% |
+| `clk_s8` | 86.81 MHz | 95.90 MHz | +10.5% |
+| `clk_s1_gate` | ≥800.00 MHz *(floor)* | 510.91 MHz | unresolved baseline delta |
+| `clk_s2_gate` | 473.93 MHz | 450.86 MHz | −4.9% |
+| `clk_s4_gate` | ≥500.00 MHz *(floor)* | ≥500.00 MHz *(floor)* | unresolved |
+| `clk_s5_gate` | 508.91 MHz | 534.76 MHz | +5.1% |
+| `clk2`–`clk5` | not measured | not measured | no timing paths |
 
-The largest regression anywhere in the design is `clk_s8` at −0.319 ns, on a
-domain that still holds +2.303 ns of margin against a 10 ns period. Gate
-domains (`clk_s1_gate`, `clk_s2_gate`, `clk_s4_gate`, `clk_s5_gate`) move by
-less than 0.03 ns and are omitted for space.
+The headline supported by the corrected evidence is `clk_s5` 25.65 → 89.09
+MHz. Non-target clocks move in both directions; the report records those moves
+without claiming that the target edit caused each one. Generated-clock Fmax is
+not independent design headroom because each generated clock is derived from a
+master.
 
-**Area went down, which is the opposite of what pipelining usually costs.**
-Adding four stages of registers to the dot-product datapath should add area,
-and locally it does. It is more than repaid at the design level: with the
-combinational cone broken up, the placer and the resizer no longer have to
-fight a 31.66 ns path, so the upsized cells and buffer trees ORFS had inserted
-along it to chase an unreachable target are no longer needed. −4,221 instances
-net, and −4.63% on net count, is that repair work disappearing. This is a real
-effect and not a measurement artefact — both runs are the same flow, same PDK,
-same SDC and same floorplan, with `NEBULA_RTL` the only difference — but it is
-a second-order consequence of closing timing, not a goal the loop optimised
-for, and it should not be read as a general claim that pipelining reduces area.
+### 5.2 Physical-signoff limitations
 
-### 5.4 Maximum frequency
-
-Fmax is measured per clock by binary search over the SDC period: each probe
-scales one clock's period, re-runs STA on the routed database, and asks whether
-that domain closes. The number reported is the shortest period that still
-closes. Both designs were swept with the same probe schedule and the same lower
-bound (`--lo 0.05`, i.e. down to 5% of the nominal period) so the two columns
-are comparable.
-
-| Clock | Baseline Fmax | Optimised Fmax | Change |
-|---|---|---|---|
-| `clk_s5` | **29.8 MHz** | **126.2 MHz** | **+323.7%** |
-| `clk1` | 105.9 MHz | 111.4 MHz | +5.1% |
-| `clk_s3` | 142.8 MHz | 135.9 MHz | −4.9% |
-| `clk_s1` | 219.2 MHz | 219.2 MHz | 0.0% |
-| `clk_s2` | 203.2 MHz | 203.2 MHz | 0.0% |
-| `clk_s4` | 214.4 MHz | 214.4 MHz | 0.0% |
-| `clk_s8` | 129.3 MHz | 129.3 MHz | 0.0% |
-| `clk_s2_gate` | 905.8 MHz | 905.8 MHz | 0.0% |
-| `clk_s5_gate` | 924.9 MHz | 924.9 MHz | 0.0% |
-| `clk_s1_gate` | ≥800 MHz *(floor)* | ≥800 MHz *(floor)* | not resolved |
-| `clk_s4_gate` | ≥500 MHz *(floor)* | ≥500 MHz *(floor)* | not resolved |
-| `clk2`–`clk5` | not measured | not measured | — |
-
-**The headline number is `clk_s5`: 29.8 → 126.2 MHz.** That domain is the one
-the loop targeted, and it is the only one that moves materially. The baseline
-figure is the honest one to compare against: at nominal 80 MHz the baseline
-does not close at all (WNS −19.68 ns), so its true maximum operating frequency
-was 29.8 MHz — the whole design was rate-limited by this one path. After the
-fix `clk_s5` closes at nominal with 4.78 ns to spare and does not become the
-limiter again until 126.2 MHz.
-
-**Two entries are floors, not measurements.** `clk_s1_gate` and `clk_s4_gate`
-still closed at the smallest period the sweep probed, so the search never
-bracketed their true minimum; the figures are lower bounds on Fmax, reported as
-`≥`. They are identical in both runs, so nothing is being claimed either way
-about them. An earlier sweep used the tool's default `--lo 0.4`, where three
-more domains bottomed out on the floor — read naively that would have shown
-`clk_s4` "regressing" from 216 to 62.5 MHz, which is an artefact of the search
-bound and not a property of the design. Re-running both sides at `--lo 0.05`
-removed it. `clk2`–`clk5` report no Fmax in either run for the reason given in
-§5.1: no probed period closes for them, so there is nothing to bisect.
-
-**The two small movers are noise, not signal.** `clk1` gains 5.1% and `clk_s3`
-loses 4.9%. Neither domain was touched by the RTL edit; both sit within the
-resolution of a placement-and-routing re-run, where the optimised netlist's
-different instance count perturbs placement globally. Reporting them is more
-honest than suppressing the one that went the wrong way, but neither should be
-attributed to the transform.
-
-**What is still missing here.** Power is null in both records rather than zero;
-the flow's power step was not run, and reporting a zero would look like a
-result. The two floor entries above are the other open item — resolving them
-needs a sweep with a lower bound below 5% of nominal, which costs one full STA
-per additional probe on a 476K-instance routed database.
+The table is from an isolated ORFS run over
+`artifacts/final_candidate/rtl`, through `6_final`. Detailed-route DRC is zero.
+The final antenna checker still reports one violating net and one pin, and the
+signoff timing report retains 36 setup and 6 hold violating endpoints. Power is
+not emitted by the comparison extractor. These are open signoff issues, not
+clean passes.
 
 ---
 
 ## 6. Deliverable 6 — Formal equivalence verification report
 
 *(status: complete)*
+
+The single frozen-to-final artifact is
+`artifacts/final_candidate/toplevel_equiv.{md,json}`. Its verdict is
+**equivalent modulo the declared stream latency** (artifact verdict:
+`EQUIVALENT_MODULO_DECLARED_STREAM_LATENCY`). This is not an ordinary clean
+top-level pass. It combines 52 byte-identical RTL files, a complete combinational proof
+for `fp8_adder`, and the six-property FP4 stream proof at depth 16 under the
+declared +4-cycle contract. An ordinary `axi_lite_dot` boundary miter correctly
+finds a cycle-16 counterexample because the result-valid pulse moves four
+cycles; the artifact preserves that counterexample instead of hiding it.
 
 ### 6.1 G1b — the result we did not expect
 
@@ -469,12 +433,12 @@ gate that had just told it precisely why its plan was invalid, the model
 declined to guess. A loop without that channel would have spent its remaining
 budget generating pipelines that G1b rejects one after another.
 
-That is the honest reading of this design's headline path: **the 31.6 ns path
-in `fp4_dot_unit` cannot be closed at RTL under the constraints we imposed.**
-Closing it needs a change of contract — a valid/ready handshake on
-`axi_lite_dot`, or an architectural decision to run that unit at a lower clock
-— and neither is an RTL rewrite the loop is permitted to make. The system's
-correct output here is a refusal with a reason attached, not an edit.
+That run establishes the narrower result: **the 31.6 ns path cannot be closed
+by editing `fp4_dot_unit` while keeping its rigid parent contract.** Section
+6.4 records the next step that succeeded: move the target to the FIFO-shaped
+`fp4_dot_stage` boundary, change the parent control with the child, and prove
+the resulting data stream under a declared +4-cycle contract. Ordinary parent
+equivalence remains false and is retained as part of the final artifact.
 
 ### 6.2 Completeness — three proof arguments, honestly labelled
 
@@ -949,18 +913,19 @@ proof.
 
 *(status: complete; video pending)*
 
-`demo.py` at the repo root walks the whole flow in seven acts, in the order the
+`demo.py` at the repo root walks the whole flow in eight acts, in the order the
 system itself works in:
 
 | act | what it shows |
 |---|---|
-| 1 | the slicer: 7 targets ranked, and the lever selector's verdict on each |
-| 2 | the prompt the model actually receives, and its proposal |
-| 3 | G1 — bounded sequential equivalence, with the completeness argument named |
+| 1 | seven critical-path targets ranked from the parasitic-aware baseline |
+| 2 | the lever selector: which violations justify an RTL/model call |
+| 3 | G1 — exact/bounded equivalence, with the completeness argument named |
 | 4 | G1b — the parent contract, the rejection, and the model's refusal |
-| 5 | G2 — CDC structure, inherited vs created |
-| 6 | G2c — clock structure, and the two bugs in the baseline |
-| 7 | G3 — PPA re-measured through the identical flow |
+| 5 | G1c — the rejected dead pipeline and accepted six-property stream proof |
+| 6 | G2 — CDC structure, inherited vs created |
+| 7 | G2c — clock structure, and the two bugs in the baseline |
+| 8 | G3 — final PPA and Fmax re-measured through the identical flow |
 
 Two modes, and the distinction matters for anyone reproducing this:
 
@@ -971,12 +936,13 @@ python3 demo.py --act 4      # one act
 ```
 
 Replay reads the recorded artifacts — `artifacts/loop/history.jsonl`,
-`artifacts/loop_g1b/history.jsonl`, `artifacts/metrics/*.json` — and prints
+`artifacts/loop_g1b/history.jsonl`, and the final-candidate signoff JSON — and prints
 exactly what the run produced, including its failures. Nothing in replay mode is
-narrated from memory: Act 4's refusal text is read out of the run record, and
-Act 7 prints "no recorded candidate metrics" when the candidate PnR has not been
-re-run, rather than showing a stale number. `--live` re-executes the same acts
-against the tools, which takes minutes and needs `GEMINI_API_KEY`.
+narrated from memory: Act 4's refusal text is read out of the run record. The
+repaired candidate's `6_final` metrics are wired into Act 8. The replay was
+rehearsed successfully on 11 September; only the screen recording remains.
+`--live` re-executes the same acts against the tools, which takes minutes and
+may require a configured model key.
 
 ---
 
@@ -1090,23 +1056,24 @@ evidence that forced it. The ones worth reading:
   run holding an accepted, proved edit. `BackendUnavailable` is now distinct
   from a refusal: a refusal is an answer, an outage is the absence of one, and
   the loop records it and stops early keeping everything already accepted.
-- **We ran EQY against the wrong netlist once** — the standalone synthesis
-  output rather than the ORFS one — and the timestamps caught it. Both were
-  56 modules; they were different netlists. Every result in §6.3 is against
-  ORFS's own `1_2_yosys.v`.
+- **We first ran EQY against an unusable netlist** — ORFS flattened hierarchy
+  and ABC renamed the register anchors that EQY needs. The named synthesis
+  netlist restored those anchors and raised the result from 27/54 to 36/54;
+  the ORFS netlist remains the PPA source of truth.
 
 ---
 
 ## 10. Honest limitations
 
-1. The candidate PnR comparison in §5 is one accepted edit on one design. It is
-   a demonstration of a working flow, not a benchmark study.
+1. The candidate PnR comparison in §5 is two proven transformations on one
+   benchmark design. It demonstrates a working flow; it is not a broad
+   benchmark study.
 2. G1's bounded proofs are bounded. Where the module allows a complete
    argument we make it and label it; where it does not, depth 12 is what we
    claim.
-3. G1b proves the *parent* unchanged. A parent deliberately redesigned to
-   absorb the new latency would fail it, correctly, and needs a different
-   argument — one we have not built.
+3. G1b proves the *parent* unchanged. The final parent deliberately changes to
+   absorb latency, so ordinary equivalence fails correctly; G1c supplies a
+   bounded depth-16 stream-contract proof instead.
 4. `clockcheck.py` is structural. It recognises the shapes it was taught;
    `UNRECOGNISED` is a prompt to look, not a verdict.
 5. Multi-bit CDC crossings are reported as warnings, not proven. G2 cannot

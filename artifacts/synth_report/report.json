@@ -1,0 +1,1870 @@
+{
+  "verdict": "SYNTHESIS_VALID",
+  "blocking_findings": [],
+  "liberty": "/Users/shubhanshu/Desktop/Nebula/digital/sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib",
+  "liberty_sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9",
+  "golden": {
+    "creator": "Yosys 0.67+135 (git sha1 ac5910309-dirty, Release, Clang /usr/local/osxcross/target/bin/aarch64-apple-darwin25.5-clang++ 21.1.8)",
+    "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth_report/golden_named.v",
+    "netlist_sha256": "1825aa7cde6ac8e8bdb6e2adedbe98ebc8bff87bf9c3c8b8bd1524a3a6afdf4b",
+    "module_count": 56,
+    "hierarchy_retained": true,
+    "top": "soc_top",
+    "cells": 90193,
+    "area_um2": 1413941.0816,
+    "sequential_area_um2": 956377.2416,
+    "unmapped_generic_cells": {},
+    "modules": {
+      "write_back_stage": {
+        "cells_inclusive": 71,
+        "area_inclusive_um2": 626.8512,
+        "cells_local": 32,
+        "area_local_um2": 360.3456,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "uart_controller": {
+        "cells_inclusive": 722,
+        "area_inclusive_um2": 5920.6784,
+        "cells_local": 722,
+        "area_local_um2": 5920.6784,
+        "sequential_area_inclusive_um2": 2722.6112,
+        "sequential_area_local_um2": 2722.6112
+      },
+      "timer": {
+        "cells_inclusive": 533,
+        "area_inclusive_um2": 4242.8192,
+        "cells_local": 533,
+        "area_local_um2": 4242.8192,
+        "sequential_area_inclusive_um2": 1941.8624,
+        "sequential_area_local_um2": 1941.8624
+      },
+      "tag_memory_92x64_wrap": {
+        "cells_inclusive": 1394,
+        "area_inclusive_um2": 30728.2208,
+        "cells_local": 1394,
+        "area_local_um2": 30728.2208,
+        "sequential_area_inclusive_um2": 23962.9824,
+        "sequential_area_local_um2": 23962.9824
+      },
+      "soc_top": {
+        "cells_inclusive": 90193,
+        "area_inclusive_um2": 1413941.0816,
+        "cells_local": 1475,
+        "area_local_um2": 11771.2896,
+        "sequential_area_inclusive_um2": 956377.2416,
+        "sequential_area_local_um2": 1981.9008
+      },
+      "register_file": {
+        "cells_inclusive": 2561,
+        "area_inclusive_um2": 46494.592,
+        "cells_local": 2561,
+        "area_local_um2": 46494.592,
+        "sequential_area_inclusive_um2": 30749.4912,
+        "sequential_area_local_um2": 30749.4912
+      },
+      "read_buffer_i_cache": {
+        "cells_inclusive": 1491,
+        "area_inclusive_um2": 12095.3504,
+        "cells_local": 1491,
+        "area_local_um2": 12095.3504,
+        "sequential_area_inclusive_um2": 6406.144,
+        "sequential_area_local_um2": 6406.144
+      },
+      "read_buffer_d_cache": {
+        "cells_inclusive": 1162,
+        "area_inclusive_um2": 15175.8048,
+        "cells_local": 1162,
+        "area_local_um2": 15175.8048,
+        "sequential_area_inclusive_um2": 9008.64,
+        "sequential_area_local_um2": 9008.64
+      },
+      "processor_top": {
+        "cells_inclusive": 38003,
+        "area_inclusive_um2": 582029.4624,
+        "cells_local": 35,
+        "area_local_um2": 379.1136,
+        "sequential_area_inclusive_um2": 384168.448,
+        "sequential_area_local_um2": 0.0
+      },
+      "pipeline_reg_mem_wb": {
+        "cells_inclusive": 150,
+        "area_inclusive_um2": 1970.64,
+        "cells_local": 150,
+        "area_local_um2": 1970.64,
+        "sequential_area_inclusive_um2": 1501.44,
+        "sequential_area_local_um2": 1501.44
+      },
+      "pipeline_reg_if_id": {
+        "cells_inclusive": 289,
+        "area_inclusive_um2": 3249.3664,
+        "cells_local": 289,
+        "area_local_um2": 3249.3664,
+        "sequential_area_inclusive_um2": 1921.8432,
+        "sequential_area_local_um2": 1921.8432
+      },
+      "pipeline_reg_id_ex": {
+        "cells_inclusive": 688,
+        "area_inclusive_um2": 7743.6768,
+        "cells_local": 688,
+        "area_local_um2": 7743.6768,
+        "sequential_area_inclusive_um2": 4584.3968,
+        "sequential_area_local_um2": 4584.3968
+      },
+      "pipeline_reg_ex_mem": {
+        "cells_inclusive": 240,
+        "area_inclusive_um2": 2702.592,
+        "cells_local": 240,
+        "area_local_um2": 2702.592,
+        "sequential_area_inclusive_um2": 1601.536,
+        "sequential_area_local_um2": 1601.536
+      },
+      "multiplier_pipelined": {
+        "cells_inclusive": 4418,
+        "area_inclusive_um2": 31560.2688,
+        "cells_local": 4418,
+        "area_local_um2": 31560.2688,
+        "sequential_area_inclusive_um2": 3303.168,
+        "sequential_area_local_um2": 3303.168
+      },
+      "memory_stage": {
+        "cells_inclusive": 0,
+        "area_inclusive_um2": 0.0,
+        "cells_local": 0,
+        "area_local_um2": 0.0,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "mem_axi_slave": {
+        "cells_inclusive": 609,
+        "area_inclusive_um2": 4160.24,
+        "cells_local": 609,
+        "area_local_um2": 4160.24,
+        "sequential_area_inclusive_um2": 1121.0752,
+        "sequential_area_local_um2": 1121.0752
+      },
+      "l1_i_cache_8kb": {
+        "cells_inclusive": 19944,
+        "area_inclusive_um2": 394523.3792,
+        "cells_local": 3130,
+        "area_local_um2": 22562.8896,
+        "sequential_area_inclusive_um2": 295363.2768,
+        "sequential_area_local_um2": 4824.6272
+      },
+      "l1_d_cache_8kb": {
+        "cells_inclusive": 21096,
+        "area_inclusive_um2": 404223.9328,
+        "cells_local": 4282,
+        "area_local_um2": 32263.4432,
+        "sequential_area_inclusive_um2": 296324.1984,
+        "sequential_area_local_um2": 5785.5488
+      },
+      "l1_cache_axi_master": {
+        "cells_inclusive": 2757,
+        "area_inclusive_um2": 23007.0656,
+        "cells_local": 2757,
+        "area_local_um2": 23007.0656,
+        "sequential_area_inclusive_um2": 12932.4032,
+        "sequential_area_local_um2": 12932.4032
+      },
+      "interrupt_control_unit": {
+        "cells_inclusive": 27,
+        "area_inclusive_um2": 282.7712,
+        "cells_local": 27,
+        "area_local_um2": 282.7712,
+        "sequential_area_inclusive_um2": 180.1728,
+        "sequential_area_local_um2": 180.1728
+      },
+      "instruction_fetch_stage": {
+        "cells_inclusive": 26428,
+        "area_inclusive_um2": 464407.904,
+        "cells_local": 483,
+        "area_local_um2": 4080.1632,
+        "sequential_area_inclusive_um2": 335381.6576,
+        "sequential_area_local_um2": 1341.2864
+      },
+      "instruction_decode_stage": {
+        "cells_inclusive": 3983,
+        "area_inclusive_um2": 58178.2976,
+        "cells_local": 1,
+        "area_local_um2": 6.256,
+        "sequential_area_inclusive_um2": 35874.4064,
+        "sequential_area_local_um2": 0.0
+      },
+      "immediate_generator": {
+        "cells_inclusive": 52,
+        "area_inclusive_um2": 371.6064,
+        "cells_local": 52,
+        "area_local_um2": 371.6064,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "id_memory_256x64_wrap": {
+        "cells_inclusive": 3855,
+        "area_inclusive_um2": 85308.0672,
+        "cells_local": 3855,
+        "area_local_um2": 85308.0672,
+        "sequential_area_inclusive_um2": 66643.9168,
+        "sequential_area_local_um2": 66643.9168
+      },
+      "i_rom_32x256": {
+        "cells_inclusive": 28,
+        "area_inclusive_um2": 265.2544,
+        "cells_local": 28,
+        "area_local_um2": 265.2544,
+        "sequential_area_inclusive_um2": 160.1536,
+        "sequential_area_local_um2": 160.1536
+      },
+      "hazard_detection_unit": {
+        "cells_inclusive": 88,
+        "area_inclusive_um2": 599.3248,
+        "cells_local": 88,
+        "area_local_um2": 599.3248,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "gpio_controller": {
+        "cells_inclusive": 1999,
+        "area_inclusive_um2": 18052.3136,
+        "cells_local": 1999,
+        "area_local_um2": 18052.3136,
+        "sequential_area_inclusive_um2": 10249.8304,
+        "sequential_area_local_um2": 10249.8304
+      },
+      "fp8_adder": {
+        "cells_inclusive": 381,
+        "area_inclusive_um2": 2406.0576,
+        "cells_local": 381,
+        "area_local_um2": 2406.0576,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "fp4_mul": {
+        "cells_inclusive": 32,
+        "area_inclusive_um2": 207.6992,
+        "cells_local": 32,
+        "area_local_um2": 207.6992,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "fp4_dot_unit": {
+        "cells_inclusive": 2923,
+        "area_inclusive_um2": 18503.9968,
+        "cells_local": 0,
+        "area_local_um2": 0.0,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "execution_stage": {
+        "cells_inclusive": 5505,
+        "area_inclusive_um2": 38350.5312,
+        "cells_local": 64,
+        "area_local_um2": 720.6912,
+        "sequential_area_inclusive_um2": 3303.168,
+        "sequential_area_local_um2": 0.0
+      },
+      "dmem": {
+        "cells_inclusive": 3312,
+        "area_inclusive_um2": 78238.7872,
+        "cells_local": 3312,
+        "area_local_um2": 78238.7872,
+        "sequential_area_inclusive_um2": 62139.5968,
+        "sequential_area_local_um2": 62139.5968
+      },
+      "dma_controller": {
+        "cells_inclusive": 1765,
+        "area_inclusive_um2": 14546.4512,
+        "cells_local": 1765,
+        "area_local_um2": 14546.4512,
+        "sequential_area_inclusive_um2": 6486.2208,
+        "sequential_area_local_um2": 6486.2208
+      },
+      "data_forwarding_unit": {
+        "cells_inclusive": 256,
+        "area_inclusive_um2": 1921.8432,
+        "cells_local": 256,
+        "area_local_um2": 1921.8432,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "data_extender": {
+        "cells_inclusive": 39,
+        "area_inclusive_um2": 266.5056,
+        "cells_local": 39,
+        "area_local_um2": 266.5056,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "data_clipper": {
+        "cells_inclusive": 34,
+        "area_inclusive_um2": 195.1872,
+        "cells_local": 34,
+        "area_local_um2": 195.1872,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "csr_regfile": {
+        "cells_inclusive": 1287,
+        "area_inclusive_um2": 10796.6048,
+        "cells_local": 1287,
+        "area_local_um2": 10796.6048,
+        "sequential_area_inclusive_um2": 5124.9152,
+        "sequential_area_local_um2": 5124.9152
+      },
+      "control_unit": {
+        "cells_inclusive": 74,
+        "area_inclusive_um2": 462.944,
+        "cells_local": 74,
+        "area_local_um2": 462.944,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "clk_gate": {
+        "cells_inclusive": 1,
+        "area_inclusive_um2": 6.256,
+        "cells_local": 1,
+        "area_local_um2": 6.256,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "clk_div_mux": {
+        "cells_inclusive": 10,
+        "area_inclusive_um2": 115.1104,
+        "cells_local": 10,
+        "area_local_um2": 115.1104,
+        "sequential_area_inclusive_um2": 60.0576,
+        "sequential_area_local_um2": 60.0576
+      },
+      "branch_predictor": {
+        "cells_inclusive": 4482,
+        "area_inclusive_um2": 53443.7568,
+        "cells_local": 4482,
+        "area_local_um2": 53443.7568,
+        "sequential_area_inclusive_um2": 32110.7968,
+        "sequential_area_local_um2": 32110.7968
+      },
+      "branch_comprator": {
+        "cells_inclusive": 130,
+        "area_inclusive_um2": 808.2752,
+        "cells_local": 130,
+        "area_local_um2": 808.2752,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "branch_comp_decoder": {
+        "cells_inclusive": 8,
+        "area_inclusive_um2": 46.2944,
+        "cells_local": 8,
+        "area_local_um2": 46.2944,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "axi_lite_uart": {
+        "cells_inclusive": 3291,
+        "area_inclusive_um2": 54235.7664,
+        "cells_local": 226,
+        "area_local_um2": 1794.2208,
+        "sequential_area_inclusive_um2": 39878.2464,
+        "sequential_area_local_um2": 880.8448
+      },
+      "axi_lite_timer": {
+        "cells_inclusive": 3102,
+        "area_inclusive_um2": 52557.9072,
+        "cells_local": 226,
+        "area_local_um2": 1794.2208,
+        "sequential_area_inclusive_um2": 39097.4976,
+        "sequential_area_local_um2": 880.8448
+      },
+      "axi_lite_master": {
+        "cells_inclusive": 553,
+        "area_inclusive_um2": 4782.0864,
+        "cells_local": 553,
+        "area_local_um2": 4782.0864,
+        "sequential_area_inclusive_um2": 2782.6688,
+        "sequential_area_local_um2": 2782.6688
+      },
+      "axi_lite_gpio": {
+        "cells_inclusive": 4568,
+        "area_inclusive_um2": 66367.4016,
+        "cells_local": 226,
+        "area_local_um2": 1794.2208,
+        "sequential_area_inclusive_um2": 47405.4656,
+        "sequential_area_local_um2": 880.8448
+      },
+      "axi_lite_dot": {
+        "cells_inclusive": 6320,
+        "area_inclusive_um2": 82599.2192,
+        "cells_local": 283,
+        "area_local_um2": 2386.0384,
+        "sequential_area_inclusive_um2": 48806.8096,
+        "sequential_area_local_um2": 880.8448
+      },
+      "axi_lite_dma_config": {
+        "cells_inclusive": 2480,
+        "area_inclusive_um2": 20559.7184,
+        "cells_local": 715,
+        "area_local_um2": 6013.2672,
+        "sequential_area_inclusive_um2": 9949.5424,
+        "sequential_area_local_um2": 3463.3216
+      },
+      "axi_interconnect_2m_8s": {
+        "cells_inclusive": 1392,
+        "area_inclusive_um2": 13451.6512,
+        "cells_local": 1360,
+        "area_local_um2": 13141.3536,
+        "sequential_area_inclusive_um2": 360.3456,
+        "sequential_area_local_um2": 200.192
+      },
+      "arbiter": {
+        "cells_inclusive": 4,
+        "area_inclusive_um2": 38.7872,
+        "cells_local": 4,
+        "area_local_um2": 38.7872,
+        "sequential_area_inclusive_um2": 20.0192,
+        "sequential_area_local_um2": 20.0192
+      },
+      "alu_src_b_mux": {
+        "cells_inclusive": 35,
+        "area_inclusive_um2": 294.032,
+        "cells_local": 35,
+        "area_local_um2": 294.032,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "alu_src_a_mux": {
+        "cells_inclusive": 66,
+        "area_inclusive_um2": 530.5088,
+        "cells_local": 66,
+        "area_local_um2": 530.5088,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "alu": {
+        "cells_inclusive": 989,
+        "area_inclusive_um2": 5874.384,
+        "cells_local": 989,
+        "area_local_um2": 5874.384,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\\asynchronous_fifo_gen": {
+        "cells_inclusive": 1305,
+        "area_inclusive_um2": 25951.1392,
+        "cells_local": 1305,
+        "area_local_um2": 25951.1392,
+        "sequential_area_inclusive_um2": 20299.4688,
+        "sequential_area_local_um2": 20299.4688
+      },
+      "$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen": {
+        "cells_inclusive": 1038,
+        "area_inclusive_um2": 20569.728,
+        "cells_local": 1038,
+        "area_local_um2": 20569.728,
+        "sequential_area_inclusive_um2": 15975.3216,
+        "sequential_area_local_um2": 15975.3216
+      }
+    }
+  },
+  "candidate": {
+    "creator": "Yosys 0.67+135 (git sha1 ac5910309-dirty, Release, Clang /usr/local/osxcross/target/bin/aarch64-apple-darwin25.5-clang++ 21.1.8)",
+    "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/final_candidate/soc_top_named.v",
+    "netlist_sha256": "834b6ab7a0ef180c638987f5bcd1a728c53f026cafe4fc35c2adc98f20f9853e",
+    "module_count": 57,
+    "hierarchy_retained": true,
+    "top": "soc_top",
+    "cells": 90798,
+    "area_um2": 1417519.5136,
+    "sequential_area_um2": 958859.6224,
+    "unmapped_generic_cells": {},
+    "modules": {
+      "write_back_stage": {
+        "cells_inclusive": 71,
+        "area_inclusive_um2": 626.8512,
+        "cells_local": 32,
+        "area_local_um2": 360.3456,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "uart_controller": {
+        "cells_inclusive": 722,
+        "area_inclusive_um2": 5920.6784,
+        "cells_local": 722,
+        "area_local_um2": 5920.6784,
+        "sequential_area_inclusive_um2": 2722.6112,
+        "sequential_area_local_um2": 2722.6112
+      },
+      "timer": {
+        "cells_inclusive": 533,
+        "area_inclusive_um2": 4242.8192,
+        "cells_local": 533,
+        "area_local_um2": 4242.8192,
+        "sequential_area_inclusive_um2": 1941.8624,
+        "sequential_area_local_um2": 1941.8624
+      },
+      "tag_memory_92x64_wrap": {
+        "cells_inclusive": 1394,
+        "area_inclusive_um2": 30728.2208,
+        "cells_local": 1394,
+        "area_local_um2": 30728.2208,
+        "sequential_area_inclusive_um2": 23962.9824,
+        "sequential_area_local_um2": 23962.9824
+      },
+      "soc_top": {
+        "cells_inclusive": 90798,
+        "area_inclusive_um2": 1417519.5136,
+        "cells_local": 1475,
+        "area_local_um2": 11771.2896,
+        "sequential_area_inclusive_um2": 958859.6224,
+        "sequential_area_local_um2": 1981.9008
+      },
+      "register_file": {
+        "cells_inclusive": 2561,
+        "area_inclusive_um2": 46494.592,
+        "cells_local": 2561,
+        "area_local_um2": 46494.592,
+        "sequential_area_inclusive_um2": 30749.4912,
+        "sequential_area_local_um2": 30749.4912
+      },
+      "read_buffer_i_cache": {
+        "cells_inclusive": 1491,
+        "area_inclusive_um2": 12095.3504,
+        "cells_local": 1491,
+        "area_local_um2": 12095.3504,
+        "sequential_area_inclusive_um2": 6406.144,
+        "sequential_area_local_um2": 6406.144
+      },
+      "read_buffer_d_cache": {
+        "cells_inclusive": 1162,
+        "area_inclusive_um2": 15175.8048,
+        "cells_local": 1162,
+        "area_local_um2": 15175.8048,
+        "sequential_area_inclusive_um2": 9008.64,
+        "sequential_area_local_um2": 9008.64
+      },
+      "processor_top": {
+        "cells_inclusive": 38102,
+        "area_inclusive_um2": 582004.4384,
+        "cells_local": 35,
+        "area_local_um2": 379.1136,
+        "sequential_area_inclusive_um2": 384168.448,
+        "sequential_area_local_um2": 0.0
+      },
+      "pipeline_reg_mem_wb": {
+        "cells_inclusive": 150,
+        "area_inclusive_um2": 1970.64,
+        "cells_local": 150,
+        "area_local_um2": 1970.64,
+        "sequential_area_inclusive_um2": 1501.44,
+        "sequential_area_local_um2": 1501.44
+      },
+      "pipeline_reg_if_id": {
+        "cells_inclusive": 289,
+        "area_inclusive_um2": 3249.3664,
+        "cells_local": 289,
+        "area_local_um2": 3249.3664,
+        "sequential_area_inclusive_um2": 1921.8432,
+        "sequential_area_local_um2": 1921.8432
+      },
+      "pipeline_reg_id_ex": {
+        "cells_inclusive": 688,
+        "area_inclusive_um2": 7743.6768,
+        "cells_local": 688,
+        "area_local_um2": 7743.6768,
+        "sequential_area_inclusive_um2": 4584.3968,
+        "sequential_area_local_um2": 4584.3968
+      },
+      "pipeline_reg_ex_mem": {
+        "cells_inclusive": 240,
+        "area_inclusive_um2": 2702.592,
+        "cells_local": 240,
+        "area_local_um2": 2702.592,
+        "sequential_area_inclusive_um2": 1601.536,
+        "sequential_area_local_um2": 1601.536
+      },
+      "multiplier_pipelined": {
+        "cells_inclusive": 4418,
+        "area_inclusive_um2": 31560.2688,
+        "cells_local": 4418,
+        "area_local_um2": 31560.2688,
+        "sequential_area_inclusive_um2": 3303.168,
+        "sequential_area_local_um2": 3303.168
+      },
+      "memory_stage": {
+        "cells_inclusive": 0,
+        "area_inclusive_um2": 0.0,
+        "cells_local": 0,
+        "area_local_um2": 0.0,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "mem_axi_slave": {
+        "cells_inclusive": 629,
+        "area_inclusive_um2": 4276.6016,
+        "cells_local": 629,
+        "area_local_um2": 4276.6016,
+        "sequential_area_inclusive_um2": 1121.0752,
+        "sequential_area_local_um2": 1121.0752
+      },
+      "l1_i_cache_8kb": {
+        "cells_inclusive": 20043,
+        "area_inclusive_um2": 394498.3552,
+        "cells_local": 3229,
+        "area_local_um2": 22537.8656,
+        "sequential_area_inclusive_um2": 295363.2768,
+        "sequential_area_local_um2": 4824.6272
+      },
+      "l1_d_cache_8kb": {
+        "cells_inclusive": 21124,
+        "area_inclusive_um2": 404062.528,
+        "cells_local": 4310,
+        "area_local_um2": 32102.0384,
+        "sequential_area_inclusive_um2": 296324.1984,
+        "sequential_area_local_um2": 5785.5488
+      },
+      "l1_cache_axi_master": {
+        "cells_inclusive": 2757,
+        "area_inclusive_um2": 23007.0656,
+        "cells_local": 2757,
+        "area_local_um2": 23007.0656,
+        "sequential_area_inclusive_um2": 12932.4032,
+        "sequential_area_local_um2": 12932.4032
+      },
+      "interrupt_control_unit": {
+        "cells_inclusive": 27,
+        "area_inclusive_um2": 282.7712,
+        "cells_local": 27,
+        "area_local_um2": 282.7712,
+        "sequential_area_inclusive_um2": 180.1728,
+        "sequential_area_local_um2": 180.1728
+      },
+      "instruction_fetch_stage": {
+        "cells_inclusive": 26527,
+        "area_inclusive_um2": 464382.88,
+        "cells_local": 483,
+        "area_local_um2": 4080.1632,
+        "sequential_area_inclusive_um2": 335381.6576,
+        "sequential_area_local_um2": 1341.2864
+      },
+      "instruction_decode_stage": {
+        "cells_inclusive": 3983,
+        "area_inclusive_um2": 58178.2976,
+        "cells_local": 1,
+        "area_local_um2": 6.256,
+        "sequential_area_inclusive_um2": 35874.4064,
+        "sequential_area_local_um2": 0.0
+      },
+      "immediate_generator": {
+        "cells_inclusive": 52,
+        "area_inclusive_um2": 371.6064,
+        "cells_local": 52,
+        "area_local_um2": 371.6064,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "id_memory_256x64_wrap": {
+        "cells_inclusive": 3855,
+        "area_inclusive_um2": 85308.0672,
+        "cells_local": 3855,
+        "area_local_um2": 85308.0672,
+        "sequential_area_inclusive_um2": 66643.9168,
+        "sequential_area_local_um2": 66643.9168
+      },
+      "i_rom_32x256": {
+        "cells_inclusive": 28,
+        "area_inclusive_um2": 265.2544,
+        "cells_local": 28,
+        "area_local_um2": 265.2544,
+        "sequential_area_inclusive_um2": 160.1536,
+        "sequential_area_local_um2": 160.1536
+      },
+      "hazard_detection_unit": {
+        "cells_inclusive": 88,
+        "area_inclusive_um2": 599.3248,
+        "cells_local": 88,
+        "area_local_um2": 599.3248,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "gpio_controller": {
+        "cells_inclusive": 1999,
+        "area_inclusive_um2": 18052.3136,
+        "cells_local": 1999,
+        "area_local_um2": 18052.3136,
+        "sequential_area_inclusive_um2": 10249.8304,
+        "sequential_area_local_um2": 10249.8304
+      },
+      "fp8_adder": {
+        "cells_inclusive": 390,
+        "area_inclusive_um2": 2374.7776,
+        "cells_local": 390,
+        "area_local_um2": 2374.7776,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "fp4_mul": {
+        "cells_inclusive": 32,
+        "area_inclusive_um2": 207.6992,
+        "cells_local": 32,
+        "area_local_um2": 207.6992,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "fp4_dot_unit": {
+        "cells_inclusive": 3346,
+        "area_inclusive_um2": 22338.9248,
+        "cells_local": 360,
+        "area_local_um2": 4053.888,
+        "sequential_area_inclusive_um2": 2402.304,
+        "sequential_area_local_um2": 2402.304
+      },
+      "execution_stage": {
+        "cells_inclusive": 5505,
+        "area_inclusive_um2": 38350.5312,
+        "cells_local": 64,
+        "area_local_um2": 720.6912,
+        "sequential_area_inclusive_um2": 3303.168,
+        "sequential_area_local_um2": 0.0
+      },
+      "dmem": {
+        "cells_inclusive": 3312,
+        "area_inclusive_um2": 78238.7872,
+        "cells_local": 3312,
+        "area_local_um2": 78238.7872,
+        "sequential_area_inclusive_um2": 62139.5968,
+        "sequential_area_local_um2": 62139.5968
+      },
+      "dma_controller": {
+        "cells_inclusive": 1765,
+        "area_inclusive_um2": 14546.4512,
+        "cells_local": 1765,
+        "area_local_um2": 14546.4512,
+        "sequential_area_inclusive_um2": 6486.2208,
+        "sequential_area_local_um2": 6486.2208
+      },
+      "data_forwarding_unit": {
+        "cells_inclusive": 256,
+        "area_inclusive_um2": 1921.8432,
+        "cells_local": 256,
+        "area_local_um2": 1921.8432,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "data_extender": {
+        "cells_inclusive": 39,
+        "area_inclusive_um2": 266.5056,
+        "cells_local": 39,
+        "area_local_um2": 266.5056,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "data_clipper": {
+        "cells_inclusive": 34,
+        "area_inclusive_um2": 195.1872,
+        "cells_local": 34,
+        "area_local_um2": 195.1872,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "csr_regfile": {
+        "cells_inclusive": 1287,
+        "area_inclusive_um2": 10796.6048,
+        "cells_local": 1287,
+        "area_local_um2": 10796.6048,
+        "sequential_area_inclusive_um2": 5124.9152,
+        "sequential_area_local_um2": 5124.9152
+      },
+      "control_unit": {
+        "cells_inclusive": 74,
+        "area_inclusive_um2": 462.944,
+        "cells_local": 74,
+        "area_local_um2": 462.944,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "clk_gate": {
+        "cells_inclusive": 1,
+        "area_inclusive_um2": 6.256,
+        "cells_local": 1,
+        "area_local_um2": 6.256,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "clk_div_mux": {
+        "cells_inclusive": 10,
+        "area_inclusive_um2": 115.1104,
+        "cells_local": 10,
+        "area_local_um2": 115.1104,
+        "sequential_area_inclusive_um2": 60.0576,
+        "sequential_area_local_um2": 60.0576
+      },
+      "branch_predictor": {
+        "cells_inclusive": 4482,
+        "area_inclusive_um2": 53443.7568,
+        "cells_local": 4482,
+        "area_local_um2": 53443.7568,
+        "sequential_area_inclusive_um2": 32110.7968,
+        "sequential_area_local_um2": 32110.7968
+      },
+      "branch_comprator": {
+        "cells_inclusive": 130,
+        "area_inclusive_um2": 808.2752,
+        "cells_local": 130,
+        "area_local_um2": 808.2752,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "branch_comp_decoder": {
+        "cells_inclusive": 8,
+        "area_inclusive_um2": 46.2944,
+        "cells_local": 8,
+        "area_local_um2": 46.2944,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "axi_lite_uart": {
+        "cells_inclusive": 3294,
+        "area_inclusive_um2": 54178.2112,
+        "cells_local": 226,
+        "area_local_um2": 1794.2208,
+        "sequential_area_inclusive_um2": 39878.2464,
+        "sequential_area_local_um2": 880.8448
+      },
+      "axi_lite_timer": {
+        "cells_inclusive": 3105,
+        "area_inclusive_um2": 52500.352,
+        "cells_local": 226,
+        "area_local_um2": 1794.2208,
+        "sequential_area_inclusive_um2": 39097.4976,
+        "sequential_area_local_um2": 880.8448
+      },
+      "axi_lite_master": {
+        "cells_inclusive": 553,
+        "area_inclusive_um2": 4782.0864,
+        "cells_local": 553,
+        "area_local_um2": 4782.0864,
+        "sequential_area_inclusive_um2": 2782.6688,
+        "sequential_area_local_um2": 2782.6688
+      },
+      "axi_lite_gpio": {
+        "cells_inclusive": 4571,
+        "area_inclusive_um2": 66309.8464,
+        "cells_local": 226,
+        "area_local_um2": 1794.2208,
+        "sequential_area_inclusive_um2": 47405.4656,
+        "sequential_area_local_um2": 880.8448
+      },
+      "axi_lite_dot": {
+        "cells_inclusive": 6769,
+        "area_inclusive_um2": 86420.384,
+        "cells_local": 282,
+        "area_local_um2": 2381.0336,
+        "sequential_area_inclusive_um2": 51289.1904,
+        "sequential_area_local_um2": 880.8448
+      },
+      "axi_lite_dma_config": {
+        "cells_inclusive": 2480,
+        "area_inclusive_um2": 20559.7184,
+        "cells_local": 715,
+        "area_local_um2": 6013.2672,
+        "sequential_area_inclusive_um2": 9949.5424,
+        "sequential_area_local_um2": 3463.3216
+      },
+      "axi_interconnect_2m_8s": {
+        "cells_inclusive": 1392,
+        "area_inclusive_um2": 13451.6512,
+        "cells_local": 1360,
+        "area_local_um2": 13141.3536,
+        "sequential_area_inclusive_um2": 360.3456,
+        "sequential_area_local_um2": 200.192
+      },
+      "arbiter": {
+        "cells_inclusive": 4,
+        "area_inclusive_um2": 38.7872,
+        "cells_local": 4,
+        "area_local_um2": 38.7872,
+        "sequential_area_inclusive_um2": 20.0192,
+        "sequential_area_local_um2": 20.0192
+      },
+      "alu_src_b_mux": {
+        "cells_inclusive": 35,
+        "area_inclusive_um2": 294.032,
+        "cells_local": 35,
+        "area_local_um2": 294.032,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "alu_src_a_mux": {
+        "cells_inclusive": 66,
+        "area_inclusive_um2": 530.5088,
+        "cells_local": 66,
+        "area_local_um2": 530.5088,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "alu": {
+        "cells_inclusive": 989,
+        "area_inclusive_um2": 5874.384,
+        "cells_local": 989,
+        "area_local_um2": 5874.384,
+        "sequential_area_inclusive_um2": 0.0,
+        "sequential_area_local_um2": 0.0
+      },
+      "$paramod\\fp4_dot_stage\\DOT_LAT=s32'00000000000000000000000000000100": {
+        "cells_inclusive": 3364,
+        "area_inclusive_um2": 22502.832,
+        "cells_local": 18,
+        "area_local_um2": 163.9072,
+        "sequential_area_inclusive_um2": 2482.3808,
+        "sequential_area_local_um2": 80.0768
+      },
+      "$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\\asynchronous_fifo_gen": {
+        "cells_inclusive": 1305,
+        "area_inclusive_um2": 25951.1392,
+        "cells_local": 1305,
+        "area_local_um2": 25951.1392,
+        "sequential_area_inclusive_um2": 20299.4688,
+        "sequential_area_local_um2": 20299.4688
+      },
+      "$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen": {
+        "cells_inclusive": 1041,
+        "area_inclusive_um2": 20512.1728,
+        "cells_local": 1041,
+        "area_local_um2": 20512.1728,
+        "sequential_area_inclusive_um2": 15975.3216,
+        "sequential_area_local_um2": 15975.3216
+      }
+    }
+  },
+  "top_cells": {
+    "before": 90193,
+    "after": 90798,
+    "delta": 605,
+    "percent": 0.6707837637067178
+  },
+  "top_area_um2": {
+    "before": 1413941.0816,
+    "after": 1417519.5136,
+    "delta": 3578.43200000003,
+    "percent": 0.25308211541252595
+  },
+  "top_sequential_area_um2": {
+    "before": 956377.2416,
+    "after": 958859.6224,
+    "delta": 2482.3808000000427,
+    "percent": 0.2595608398049152
+  },
+  "modules": [
+    {
+      "module": "$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen",
+      "presence": "both",
+      "cells_local": {
+        "before": 1038,
+        "after": 1041,
+        "delta": 3,
+        "percent": 0.2890173410404624
+      },
+      "area_local_um2": {
+        "before": 20569.728,
+        "after": 20512.1728,
+        "delta": -57.55519999999888,
+        "percent": -0.2798053527980481
+      }
+    },
+    {
+      "module": "$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\\asynchronous_fifo_gen",
+      "presence": "both",
+      "cells_local": {
+        "before": 1305,
+        "after": 1305,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 25951.1392,
+        "after": 25951.1392,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "$paramod\\fp4_dot_stage\\DOT_LAT=s32'00000000000000000000000000000100",
+      "presence": "candidate_only",
+      "cells_local": {
+        "before": 0,
+        "after": 18,
+        "delta": 18,
+        "percent": null
+      },
+      "area_local_um2": {
+        "before": 0.0,
+        "after": 163.9072,
+        "delta": 163.9072,
+        "percent": null
+      }
+    },
+    {
+      "module": "alu",
+      "presence": "both",
+      "cells_local": {
+        "before": 989,
+        "after": 989,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 5874.384,
+        "after": 5874.384,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "alu_src_a_mux",
+      "presence": "both",
+      "cells_local": {
+        "before": 66,
+        "after": 66,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 530.5088,
+        "after": 530.5088,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "alu_src_b_mux",
+      "presence": "both",
+      "cells_local": {
+        "before": 35,
+        "after": 35,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 294.032,
+        "after": 294.032,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "arbiter",
+      "presence": "both",
+      "cells_local": {
+        "before": 4,
+        "after": 4,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 38.7872,
+        "after": 38.7872,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "axi_interconnect_2m_8s",
+      "presence": "both",
+      "cells_local": {
+        "before": 1360,
+        "after": 1360,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 13141.3536,
+        "after": 13141.3536,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "axi_lite_dma_config",
+      "presence": "both",
+      "cells_local": {
+        "before": 715,
+        "after": 715,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 6013.2672,
+        "after": 6013.2672,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "axi_lite_dot",
+      "presence": "both",
+      "cells_local": {
+        "before": 283,
+        "after": 282,
+        "delta": -1,
+        "percent": -0.35335689045936397
+      },
+      "area_local_um2": {
+        "before": 2386.0384,
+        "after": 2381.0336,
+        "delta": -5.004799999999705,
+        "percent": -0.20975353959096824
+      }
+    },
+    {
+      "module": "axi_lite_gpio",
+      "presence": "both",
+      "cells_local": {
+        "before": 226,
+        "after": 226,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 1794.2208,
+        "after": 1794.2208,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "axi_lite_master",
+      "presence": "both",
+      "cells_local": {
+        "before": 553,
+        "after": 553,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 4782.0864,
+        "after": 4782.0864,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "axi_lite_timer",
+      "presence": "both",
+      "cells_local": {
+        "before": 226,
+        "after": 226,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 1794.2208,
+        "after": 1794.2208,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "axi_lite_uart",
+      "presence": "both",
+      "cells_local": {
+        "before": 226,
+        "after": 226,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 1794.2208,
+        "after": 1794.2208,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "branch_comp_decoder",
+      "presence": "both",
+      "cells_local": {
+        "before": 8,
+        "after": 8,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 46.2944,
+        "after": 46.2944,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "branch_comprator",
+      "presence": "both",
+      "cells_local": {
+        "before": 130,
+        "after": 130,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 808.2752,
+        "after": 808.2752,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "branch_predictor",
+      "presence": "both",
+      "cells_local": {
+        "before": 4482,
+        "after": 4482,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 53443.7568,
+        "after": 53443.7568,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "clk_div_mux",
+      "presence": "both",
+      "cells_local": {
+        "before": 10,
+        "after": 10,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 115.1104,
+        "after": 115.1104,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "clk_gate",
+      "presence": "both",
+      "cells_local": {
+        "before": 1,
+        "after": 1,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 6.256,
+        "after": 6.256,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "control_unit",
+      "presence": "both",
+      "cells_local": {
+        "before": 74,
+        "after": 74,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 462.944,
+        "after": 462.944,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "csr_regfile",
+      "presence": "both",
+      "cells_local": {
+        "before": 1287,
+        "after": 1287,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 10796.6048,
+        "after": 10796.6048,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "data_clipper",
+      "presence": "both",
+      "cells_local": {
+        "before": 34,
+        "after": 34,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 195.1872,
+        "after": 195.1872,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "data_extender",
+      "presence": "both",
+      "cells_local": {
+        "before": 39,
+        "after": 39,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 266.5056,
+        "after": 266.5056,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "data_forwarding_unit",
+      "presence": "both",
+      "cells_local": {
+        "before": 256,
+        "after": 256,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 1921.8432,
+        "after": 1921.8432,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "dma_controller",
+      "presence": "both",
+      "cells_local": {
+        "before": 1765,
+        "after": 1765,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 14546.4512,
+        "after": 14546.4512,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "dmem",
+      "presence": "both",
+      "cells_local": {
+        "before": 3312,
+        "after": 3312,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 78238.7872,
+        "after": 78238.7872,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "execution_stage",
+      "presence": "both",
+      "cells_local": {
+        "before": 64,
+        "after": 64,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 720.6912,
+        "after": 720.6912,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "fp4_dot_unit",
+      "presence": "both",
+      "cells_local": {
+        "before": 0,
+        "after": 360,
+        "delta": 360,
+        "percent": null
+      },
+      "area_local_um2": {
+        "before": 0.0,
+        "after": 4053.888,
+        "delta": 4053.888,
+        "percent": null
+      }
+    },
+    {
+      "module": "fp4_mul",
+      "presence": "both",
+      "cells_local": {
+        "before": 32,
+        "after": 32,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 207.6992,
+        "after": 207.6992,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "fp8_adder",
+      "presence": "both",
+      "cells_local": {
+        "before": 381,
+        "after": 390,
+        "delta": 9,
+        "percent": 2.3622047244094486
+      },
+      "area_local_um2": {
+        "before": 2406.0576,
+        "after": 2374.7776,
+        "delta": -31.2800000000002,
+        "percent": -1.3000520020800914
+      }
+    },
+    {
+      "module": "gpio_controller",
+      "presence": "both",
+      "cells_local": {
+        "before": 1999,
+        "after": 1999,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 18052.3136,
+        "after": 18052.3136,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "hazard_detection_unit",
+      "presence": "both",
+      "cells_local": {
+        "before": 88,
+        "after": 88,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 599.3248,
+        "after": 599.3248,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "i_rom_32x256",
+      "presence": "both",
+      "cells_local": {
+        "before": 28,
+        "after": 28,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 265.2544,
+        "after": 265.2544,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "id_memory_256x64_wrap",
+      "presence": "both",
+      "cells_local": {
+        "before": 3855,
+        "after": 3855,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 85308.0672,
+        "after": 85308.0672,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "immediate_generator",
+      "presence": "both",
+      "cells_local": {
+        "before": 52,
+        "after": 52,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 371.6064,
+        "after": 371.6064,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "instruction_decode_stage",
+      "presence": "both",
+      "cells_local": {
+        "before": 1,
+        "after": 1,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 6.256,
+        "after": 6.256,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "instruction_fetch_stage",
+      "presence": "both",
+      "cells_local": {
+        "before": 483,
+        "after": 483,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 4080.1632,
+        "after": 4080.1632,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "interrupt_control_unit",
+      "presence": "both",
+      "cells_local": {
+        "before": 27,
+        "after": 27,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 282.7712,
+        "after": 282.7712,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "l1_cache_axi_master",
+      "presence": "both",
+      "cells_local": {
+        "before": 2757,
+        "after": 2757,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 23007.0656,
+        "after": 23007.0656,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "l1_d_cache_8kb",
+      "presence": "both",
+      "cells_local": {
+        "before": 4282,
+        "after": 4310,
+        "delta": 28,
+        "percent": 0.6539000467071462
+      },
+      "area_local_um2": {
+        "before": 32263.4432,
+        "after": 32102.0384,
+        "delta": -161.40480000000025,
+        "percent": -0.5002714651361212
+      }
+    },
+    {
+      "module": "l1_i_cache_8kb",
+      "presence": "both",
+      "cells_local": {
+        "before": 3130,
+        "after": 3229,
+        "delta": 99,
+        "percent": 3.1629392971246006
+      },
+      "area_local_um2": {
+        "before": 22562.8896,
+        "after": 22537.8656,
+        "delta": -25.023999999997613,
+        "percent": -0.11090778018076912
+      }
+    },
+    {
+      "module": "mem_axi_slave",
+      "presence": "both",
+      "cells_local": {
+        "before": 609,
+        "after": 629,
+        "delta": 20,
+        "percent": 3.284072249589491
+      },
+      "area_local_um2": {
+        "before": 4160.24,
+        "after": 4276.6016,
+        "delta": 116.36160000000018,
+        "percent": 2.796992481203012
+      }
+    },
+    {
+      "module": "memory_stage",
+      "presence": "both",
+      "cells_local": {
+        "before": 0,
+        "after": 0,
+        "delta": 0,
+        "percent": null
+      },
+      "area_local_um2": {
+        "before": 0.0,
+        "after": 0.0,
+        "delta": 0.0,
+        "percent": null
+      }
+    },
+    {
+      "module": "multiplier_pipelined",
+      "presence": "both",
+      "cells_local": {
+        "before": 4418,
+        "after": 4418,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 31560.2688,
+        "after": 31560.2688,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "pipeline_reg_ex_mem",
+      "presence": "both",
+      "cells_local": {
+        "before": 240,
+        "after": 240,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 2702.592,
+        "after": 2702.592,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "pipeline_reg_id_ex",
+      "presence": "both",
+      "cells_local": {
+        "before": 688,
+        "after": 688,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 7743.6768,
+        "after": 7743.6768,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "pipeline_reg_if_id",
+      "presence": "both",
+      "cells_local": {
+        "before": 289,
+        "after": 289,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 3249.3664,
+        "after": 3249.3664,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "pipeline_reg_mem_wb",
+      "presence": "both",
+      "cells_local": {
+        "before": 150,
+        "after": 150,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 1970.64,
+        "after": 1970.64,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "processor_top",
+      "presence": "both",
+      "cells_local": {
+        "before": 35,
+        "after": 35,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 379.1136,
+        "after": 379.1136,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "read_buffer_d_cache",
+      "presence": "both",
+      "cells_local": {
+        "before": 1162,
+        "after": 1162,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 15175.8048,
+        "after": 15175.8048,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "read_buffer_i_cache",
+      "presence": "both",
+      "cells_local": {
+        "before": 1491,
+        "after": 1491,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 12095.3504,
+        "after": 12095.3504,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "register_file",
+      "presence": "both",
+      "cells_local": {
+        "before": 2561,
+        "after": 2561,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 46494.592,
+        "after": 46494.592,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "soc_top",
+      "presence": "both",
+      "cells_local": {
+        "before": 1475,
+        "after": 1475,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 11771.2896,
+        "after": 11771.2896,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "tag_memory_92x64_wrap",
+      "presence": "both",
+      "cells_local": {
+        "before": 1394,
+        "after": 1394,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 30728.2208,
+        "after": 30728.2208,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "timer",
+      "presence": "both",
+      "cells_local": {
+        "before": 533,
+        "after": 533,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 4242.8192,
+        "after": 4242.8192,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "uart_controller",
+      "presence": "both",
+      "cells_local": {
+        "before": 722,
+        "after": 722,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 5920.6784,
+        "after": 5920.6784,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    },
+    {
+      "module": "write_back_stage",
+      "presence": "both",
+      "cells_local": {
+        "before": 32,
+        "after": 32,
+        "delta": 0,
+        "percent": 0.0
+      },
+      "area_local_um2": {
+        "before": 360.3456,
+        "after": 360.3456,
+        "delta": 0.0,
+        "percent": 0.0
+      }
+    }
+  ]
+}

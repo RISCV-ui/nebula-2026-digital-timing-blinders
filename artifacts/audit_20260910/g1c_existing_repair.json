@@ -1,0 +1,16 @@
+{
+  "seconds": 13.4,
+  "depth": 16,
+  "latency": 4,
+  "module": "fp4_dot_stage",
+  "abstract": true,
+  "properties": [
+    "P1 no overflow",
+    "P2a no invention",
+    "P2b no loss",
+    "P3 data and order",
+    "P4 drain",
+    "r_en_1 == r_en_2"
+  ],
+  "verdict": "STREAM_EQUIVALENT"
+}

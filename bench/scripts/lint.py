@@ -35,6 +35,12 @@ LINE_RE = re.compile(
     r"^%(?P<sev>Warning|Error)-(?P<code>[A-Z0-9_]+):\s+"
     r"(?P<file>[^:]+):(?P<line>\d+):(?P<col>\d+):\s+(?P<msg>.*)$")
 
+# Syntax and elaboration failures use `%Error:` without a diagnostic code, so
+# LINE_RE cannot see them. Treating an empty parsed warning list as clean made
+# a syntactically invalid candidate pass the gate. The final "Exiting due to
+# N warning(s)" line is excluded because warnings are compared separately.
+ERROR_RE = re.compile(r"^%Error(?:-[A-Z0-9_]+)?:\s+(?P<msg>.*)$")
+
 
 def run(tree, top, extra_args):
     files = sorted(glob.glob(os.path.join(tree, "*.v")))
@@ -46,22 +52,27 @@ def run(tree, top, extra_args):
     out = p.stdout + p.stderr
 
     found = []
+    errors = []
     for ln in out.splitlines():
         m = LINE_RE.match(ln)
-        if not m:
+        if m:
+            d = m.groupdict()
+            found.append({
+                "severity": d["sev"],
+                "code": d["code"],
+                "file": os.path.basename(d["file"]),
+                "line": int(d["line"]),
+                "message": d["msg"].strip(),
+                # identity without the line number, so an inserted pipeline stage
+                # does not make every warning below it look new
+                "key": f"{d['code']}|{os.path.basename(d['file'])}|{d['msg'].strip()}",
+            })
             continue
-        d = m.groupdict()
-        found.append({
-            "severity": d["sev"],
-            "code": d["code"],
-            "file": os.path.basename(d["file"]),
-            "line": int(d["line"]),
-            "message": d["msg"].strip(),
-            # identity without the line number, so an inserted pipeline stage
-            # does not make every warning below it look new
-            "key": f"{d['code']}|{os.path.basename(d['file'])}|{d['msg'].strip()}",
-        })
+        e = ERROR_RE.match(ln)
+        if e and not e.group("msg").startswith("Exiting due to"):
+            errors.append(e.group("msg").strip())
     return {"tree": tree, "files": len(files), "findings": found,
+            "errors": errors, "returncode": p.returncode,
             "command": " ".join(cmd[:6] + ["..."]), "raw": out}
 
 
@@ -90,6 +101,11 @@ def main():
 
     verdict = "CLEAN" if not g["findings"] else "WARNINGS_ONLY_IN_BASELINE"
     rc = 0
+    if g["errors"]:
+        verdict, rc = "GOLDEN_ERROR", 1
+        print(f"golden errors: {len(g['errors'])}")
+        for err in g["errors"]:
+            print(f"    {err}")
 
     if a.candidate:
         c = run(a.candidate, a.top, a.verilator_arg)
@@ -110,10 +126,16 @@ def main():
         for f in new:
             print(f"    {f['code']}  {f['file']}:{f['line']}  {f['message']}")
         print(f"resolved by optimisation:   {len(fixed)}")
+        if c["errors"]:
+            print(f"candidate errors: {len(c['errors'])}")
+            for err in c["errors"]:
+                print(f"    {err}")
 
         # The gate. A pre-existing warning is the design's, not the model's;
         # only a new one is evidence the optimisation hurt the code.
-        if new:
+        if c["errors"]:
+            verdict, rc = "REGRESSED", 1
+        elif new:
             verdict, rc = "REGRESSED", 1
         elif fixed:
             verdict = "IMPROVED"

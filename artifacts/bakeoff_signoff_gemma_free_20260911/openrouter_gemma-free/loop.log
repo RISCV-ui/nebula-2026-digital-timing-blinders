@@ -1,0 +1,9 @@
+backend openrouter:google/gemma-4-31b-it:free, 0 calls
+accepted 0: 
+history -> artifacts/bakeoff_signoff_gemma_free_20260911/openrouter_gemma-free/history.jsonl
+candidate RTL -> artifacts/bakeoff_signoff_gemma_free_20260911/openrouter_gemma-free/rtl
+8 slicer targets -> 3 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -25.254  fp8_adder
+   clk_s5     slack  -25.254  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -25.254  axi_lite_dot   [instantiates fp4_dot_unit]
+backend unavailable, stopping early: openrouter:google/gemma-4-31b-it:free failed after 5 tries: HTTP Error 429: Too Many Requests

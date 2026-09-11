@@ -1,0 +1,204 @@
+{
+  "golden": "bench/rtl",
+  "roots": [
+    "artifacts/bakeoff",
+    "artifacts/bakeoff_open",
+    "artifacts/bakeoff_signoff_nemotron_ultra_20260910",
+    "artifacts/bakeoff_signoff_gemma_free_20260911"
+  ],
+  "arms": [
+    {
+      "arm": "gemini:gemini-flash",
+      "out": "artifacts/bakeoff/gemini_gemini-flash",
+      "rtl": "artifacts/bakeoff/gemini_gemini-flash/rtl",
+      "returncode": 0,
+      "wall_seconds": 2401.9,
+      "proposals": 6,
+      "accepted": 1,
+      "raw_accepted": 1,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 1,
+      "accept_rate": 0.167,
+      "died_at": {
+        "propose": 1,
+        "g1": 4,
+        "accepted": 1
+      },
+      "transforms": {
+        "logic_restructure": 1
+      },
+      "modules_changed": [
+        "axi_lite_dot"
+      ],
+      "licence": "free-closed",
+      "tested": true,
+      "model_id": "models/gemini-3.5-flash",
+      "sweep": "bakeoff",
+      "tree_diff": {
+        "changed": [
+          "axi_lite_dot.v",
+          "fp4_dot_unit.v",
+          "fp8_adder.v"
+        ],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "gemini:gemini-pro",
+      "out": "artifacts/bakeoff/gemini_gemini-pro",
+      "rtl": "artifacts/bakeoff/gemini_gemini-pro/rtl",
+      "returncode": 0,
+      "wall_seconds": 178.1,
+      "proposals": 1,
+      "accepted": 0,
+      "raw_accepted": 0,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "backend": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "licence": "free-closed",
+      "tested": false,
+      "model_id": "models/gemini-3.1-pro-preview",
+      "sweep": "bakeoff",
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "openrouter:gemma-free",
+      "out": "artifacts/bakeoff_signoff_gemma_free_20260911/openrouter_gemma-free",
+      "rtl": "artifacts/bakeoff_signoff_gemma_free_20260911/openrouter_gemma-free/rtl",
+      "returncode": 0,
+      "wall_seconds": 179.4,
+      "proposals": 1,
+      "accepted": 0,
+      "raw_accepted": 0,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "backend": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "licence": "open-weight",
+      "tested": false,
+      "model_id": "google/gemma-4-31b-it:free",
+      "sweep": "bakeoff_signoff_gemma_free_20260911",
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "openrouter:nemotron-nano",
+      "out": "artifacts/bakeoff_open/openrouter_nemotron-nano",
+      "rtl": "artifacts/bakeoff_open/openrouter_nemotron-nano/rtl",
+      "returncode": 0,
+      "wall_seconds": 1707.6,
+      "proposals": 5,
+      "accepted": 0,
+      "raw_accepted": 0,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "propose": 2,
+        "validate": 2,
+        "g1": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "licence": "open-weight",
+      "tested": true,
+      "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "sweep": "bakeoff_open",
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "openrouter:nemotron-ultra",
+      "out": "artifacts/bakeoff_open/openrouter_nemotron-ultra",
+      "rtl": "artifacts/bakeoff_open/openrouter_nemotron-ultra/rtl",
+      "returncode": 0,
+      "wall_seconds": 2582.3,
+      "proposals": 7,
+      "accepted": 1,
+      "raw_accepted": 2,
+      "invalid_accepts": [
+        {
+          "iteration": 1,
+          "attempt": 2,
+          "reasons": [
+            "target fp4_dot_unit but rewrote fp8_adder"
+          ]
+        }
+      ],
+      "accepted_first_attempt": 1,
+      "accept_rate": 0.143,
+      "died_at": {
+        "validate": 3,
+        "audit": 1,
+        "g1": 2,
+        "accepted": 1
+      },
+      "transforms": {
+        "logic_restructure": 1
+      },
+      "modules_changed": [
+        "fp8_adder"
+      ],
+      "licence": "open-weight",
+      "tested": true,
+      "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "sweep": "bakeoff_open",
+      "tree_diff": {
+        "changed": [
+          "fp8_adder.v"
+        ],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "openrouter:nemotron",
+      "out": "artifacts/bakeoff_open/openrouter_nemotron",
+      "rtl": "artifacts/bakeoff_open/openrouter_nemotron/rtl",
+      "returncode": 0,
+      "wall_seconds": 974.5,
+      "proposals": 5,
+      "accepted": 0,
+      "raw_accepted": 0,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "propose": 2,
+        "validate": 2,
+        "g1": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "licence": "open-weight",
+      "tested": true,
+      "model_id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "sweep": "bakeoff_open",
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    }
+  ]
+}

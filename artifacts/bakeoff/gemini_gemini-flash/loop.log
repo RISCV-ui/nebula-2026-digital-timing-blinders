@@ -1,0 +1,9 @@
+backend gemini:models/gemini-3.5-flash, 6 calls
+accepted 1: axi_lite_dot/logic_restructure/+0
+  rejected fp8_adder: unparseable reply
+history -> artifacts/bakeoff/gemini_gemini-flash/history.jsonl
+candidate RTL -> artifacts/bakeoff/gemini_gemini-flash/rtl
+7 slicer targets -> 3 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -19.677  fp8_adder
+   clk_s5     slack  -19.677  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -19.677  axi_lite_dot   [instantiates fp4_dot_unit]

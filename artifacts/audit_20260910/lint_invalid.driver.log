@@ -1,0 +1,7 @@
+golden    /var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula_audit_checks_ijcsjeuy/valid: 0 findings over 1 files
+candidate /var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula_audit_checks_ijcsjeuy/syntax_error: 0 findings over 1 files
+introduced by optimisation: 0
+resolved by optimisation:   0
+
+verdict: NO_NEW_WARNINGS
+wrote artifacts/audit_20260910/lint_invalid.json

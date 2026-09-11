@@ -615,3 +615,28 @@ argument claims in the first place.
 **Cost.** A module now sees fewer cut points, so parents of unproven children
 stay expensive. That was already true by design; the change only stops the
 saving from being taken where it was never justified.
+
+## Bind every proposal to its requested target, and reject no-op accepts (2026-09-11)
+
+**Decision.** `loop.py` records the module returned by the model separately
+from the requested target and rejects the proposal unless they match. A
+derived parent proposal may still rewrite children through `submodules`, but
+the parent named in the prompt must remain the primary module. After applying
+the proposal to a candidate tree, the loop also rejects a byte-identical tree
+before running formal verification.
+
+**Why.** The original Nemotron Ultra bake-off recorded two acceptances, but
+the second record targeted `fp4_dot_unit` while its proposal and G1 result both
+named `fp8_adder`. In the fresh signoff-target rerun the second candidate was
+byte-identical to the first accepted candidate. Formal equivalence correctly
+proved that identical input, and the loop counted a second acceptance even
+though the requested target was untouched. The actual final tree changed only
+`fp8_adder.v`.
+
+The historical history files remain unchanged. `bakeoff.py` reconstructs each
+accepted candidate snapshot against the preceding working tree and marks this
+record `audit`, so the corrected row is **1/7 accepted**, not 2/7. Offline mock
+checks cover both failure modes: a wrong primary module and an exact repeat
+each stop at `validate` with zero accepts. This check belongs before G1 because
+the theorem "unchanged RTL is equivalent" is true but irrelevant to whether
+the model improved the requested path.

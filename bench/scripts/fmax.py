@@ -36,6 +36,7 @@ PREAMBLE = """
 read_liberty {liberty}
 read_db {odb}
 read_sdc {sdc}
+{signoff_setup}
 """
 
 # Only the five masters carry a period. Every generated clock is divide_by 1
@@ -70,12 +71,22 @@ def probe(odb, sdc, scales, workdir):
     that already exists replaces its period, which is exactly a period sweep.
     """
     text = open(sdc).read()
+    spef = os.path.splitext(os.path.abspath(odb))[0] + ".spef"
+    # ORFS writes the final ODB before RC extraction. Re-reading only that ODB
+    # silently drops the extracted interconnect and propagated clock latency,
+    # which overstated the saved Fmax result. Match final_outputs.tcl whenever
+    # the adjacent final SPEF exists.
+    signoff = (f"read_spef {spef}\nset_propagated_clock [all_clocks]"
+               if os.path.isfile(spef) else "")
     s = PREAMBLE.format(liberty=LIBERTY, odb=os.path.abspath(odb),
-                        sdc=os.path.abspath(sdc))
+                        sdc=os.path.abspath(sdc), signoff_setup=signoff)
     for sc in scales:
         p = os.path.join(workdir, f"p_{sc}.sdc")
         scaled_sdc(text, sc, p)
-        s += f'\nread_sdc {p}\nputs "SCALE {sc}"\n'
+        # read_sdc recreates clocks, so propagation must be restored for every
+        # candidate period rather than only once in the preamble.
+        propagate = "set_propagated_clock [all_clocks]\n" if signoff else ""
+        s += f'\nread_sdc {p}\n{propagate}puts "SCALE {sc}"\n'
         s += """
 foreach clk [sta::all_clocks] {
     set nm [get_name $clk]

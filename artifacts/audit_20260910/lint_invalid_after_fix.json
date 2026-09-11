@@ -1,0 +1,18 @@
+{
+  "top": "top",
+  "golden": {
+    "total": 0,
+    "by_code": {},
+    "by_file": {},
+    "tree": "/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula_audit_checks_ijcsjeuy/valid"
+  },
+  "candidate": {
+    "total": 0,
+    "by_code": {},
+    "by_file": {},
+    "tree": "/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula_audit_checks_ijcsjeuy/syntax_error"
+  },
+  "introduced": [],
+  "resolved": [],
+  "verdict": "REGRESSED"
+}
