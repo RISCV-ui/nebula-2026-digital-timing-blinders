@@ -1,0 +1,1980 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67+135 (git sha1 ac5910309-dirty, Release, Clang /usr/local/osxcross/target/bin/aarch64-apple-darwin25.5-clang++ 21.1.8)
+
+-- Executing script file `/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.ys' --
+
+1. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu.v' to AST representation.
+Generating RTLIL representation for module `\alu'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_a_mux.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_a_mux.v' to AST representation.
+Generating RTLIL representation for module `\alu_src_a_mux'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_b_mux.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_b_mux.v' to AST representation.
+Generating RTLIL representation for module `\alu_src_b_mux'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/arbiter.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/arbiter.v' to AST representation.
+Generating RTLIL representation for module `\arbiter'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v' to AST representation.
+Generating RTLIL representation for module `\asynchronous_fifo_gen'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v' to AST representation.
+Generating RTLIL representation for module `\axi_interconnect_2m_8s'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dma_config.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dma_config.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_dma_config'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dot.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dot.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_dot'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_gpio'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_master.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_master.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_master'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_timer.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_timer.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_timer'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_uart.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_uart.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_uart'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comp_decoder.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comp_decoder.v' to AST representation.
+Generating RTLIL representation for module `\branch_comp_decoder'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comprator.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comprator.v' to AST representation.
+Generating RTLIL representation for module `\branch_comprator'.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_predictor.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_predictor.v' to AST representation.
+Generating RTLIL representation for module `\branch_predictor'.
+Successfully finished Verilog frontend.
+
+16. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v' to AST representation.
+Generating RTLIL representation for module `\clk_div_mux'.
+Successfully finished Verilog frontend.
+
+17. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_gate.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_gate.v' to AST representation.
+Generating RTLIL representation for module `\clk_gate'.
+Successfully finished Verilog frontend.
+
+18. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/control_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/control_unit.v' to AST representation.
+Generating RTLIL representation for module `\control_unit'.
+Successfully finished Verilog frontend.
+
+19. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/csr_regfile.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/csr_regfile.v' to AST representation.
+Generating RTLIL representation for module `\csr_regfile'.
+Successfully finished Verilog frontend.
+
+20. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_clipper.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_clipper.v' to AST representation.
+Generating RTLIL representation for module `\data_clipper'.
+Successfully finished Verilog frontend.
+
+21. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_extender.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_extender.v' to AST representation.
+Generating RTLIL representation for module `\data_extender'.
+Successfully finished Verilog frontend.
+
+22. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_forwarding_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_forwarding_unit.v' to AST representation.
+Generating RTLIL representation for module `\data_forwarding_unit'.
+Successfully finished Verilog frontend.
+
+23. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v' to AST representation.
+Generating RTLIL representation for module `\dma_controller'.
+Successfully finished Verilog frontend.
+
+24. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dmem.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dmem.v' to AST representation.
+Generating RTLIL representation for module `\dmem'.
+Successfully finished Verilog frontend.
+
+25. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/execution_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/execution_stage.v' to AST representation.
+Generating RTLIL representation for module `\execution_stage'.
+Successfully finished Verilog frontend.
+
+26. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_dot_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_dot_unit.v' to AST representation.
+Generating RTLIL representation for module `\fp4_dot_unit'.
+Successfully finished Verilog frontend.
+
+27. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_mul.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_mul.v' to AST representation.
+Generating RTLIL representation for module `\fp4_mul'.
+Successfully finished Verilog frontend.
+
+28. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v' to AST representation.
+Generating RTLIL representation for module `\fp8_adder'.
+Successfully finished Verilog frontend.
+
+29. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v' to AST representation.
+Generating RTLIL representation for module `\gpio_controller'.
+Successfully finished Verilog frontend.
+
+30. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/hazard_detection_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/hazard_detection_unit.v' to AST representation.
+Generating RTLIL representation for module `\hazard_detection_unit'.
+Successfully finished Verilog frontend.
+
+31. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/i_rom_32x256.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/i_rom_32x256.v' to AST representation.
+Generating RTLIL representation for module `\i_rom_32x256'.
+Successfully finished Verilog frontend.
+
+32. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/id_memory_256x64_wrap.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/id_memory_256x64_wrap.v' to AST representation.
+Generating RTLIL representation for module `\id_memory_256x64_wrap'.
+Successfully finished Verilog frontend.
+
+33. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/immediate_generator.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/immediate_generator.v' to AST representation.
+Generating RTLIL representation for module `\immediate_generator'.
+Successfully finished Verilog frontend.
+
+34. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_decode_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_decode_stage.v' to AST representation.
+Generating RTLIL representation for module `\instruction_decode_stage'.
+Successfully finished Verilog frontend.
+
+35. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_fetch_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_fetch_stage.v' to AST representation.
+Generating RTLIL representation for module `\instruction_fetch_stage'.
+Successfully finished Verilog frontend.
+
+36. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/interrupt_control_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/interrupt_control_unit.v' to AST representation.
+Generating RTLIL representation for module `\interrupt_control_unit'.
+Successfully finished Verilog frontend.
+
+37. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_cache_axi_master.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_cache_axi_master.v' to AST representation.
+Generating RTLIL representation for module `\l1_cache_axi_master'.
+Successfully finished Verilog frontend.
+
+38. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_d_cache_8kb.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_d_cache_8kb.v' to AST representation.
+Generating RTLIL representation for module `\l1_d_cache_8kb'.
+Successfully finished Verilog frontend.
+
+39. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_i_cache_8kb.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_i_cache_8kb.v' to AST representation.
+Generating RTLIL representation for module `\l1_i_cache_8kb'.
+Successfully finished Verilog frontend.
+
+40. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/mem_axi_slave.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/mem_axi_slave.v' to AST representation.
+Generating RTLIL representation for module `\mem_axi_slave'.
+Successfully finished Verilog frontend.
+
+41. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/memory_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/memory_stage.v' to AST representation.
+Generating RTLIL representation for module `\memory_stage'.
+Successfully finished Verilog frontend.
+
+42. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/multiplier_pipelined.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/multiplier_pipelined.v' to AST representation.
+Generating RTLIL representation for module `\multiplier_pipelined'.
+Successfully finished Verilog frontend.
+
+43. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_ex_mem.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_ex_mem.v' to AST representation.
+Generating RTLIL representation for module `\pipeline_reg_ex_mem'.
+Successfully finished Verilog frontend.
+
+44. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_id_ex.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_id_ex.v' to AST representation.
+Generating RTLIL representation for module `\pipeline_reg_id_ex'.
+Successfully finished Verilog frontend.
+
+45. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_if_id.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_if_id.v' to AST representation.
+Generating RTLIL representation for module `\pipeline_reg_if_id'.
+Successfully finished Verilog frontend.
+
+46. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_mem_wb.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_mem_wb.v' to AST representation.
+Generating RTLIL representation for module `\pipeline_reg_mem_wb'.
+Successfully finished Verilog frontend.
+
+47. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/processor_top.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/processor_top.v' to AST representation.
+Generating RTLIL representation for module `\processor_top'.
+Successfully finished Verilog frontend.
+
+48. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_d_cache.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_d_cache.v' to AST representation.
+Generating RTLIL representation for module `\read_buffer_d_cache'.
+Successfully finished Verilog frontend.
+
+49. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_i_cache.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_i_cache.v' to AST representation.
+Generating RTLIL representation for module `\read_buffer_i_cache'.
+Warning: Replacing memory \buf_data with list of registers. See /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_i_cache.v:87
+Successfully finished Verilog frontend.
+
+50. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/register_file.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/register_file.v' to AST representation.
+Generating RTLIL representation for module `\register_file'.
+Successfully finished Verilog frontend.
+
+51. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/soc_top.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/soc_top.v' to AST representation.
+Generating RTLIL representation for module `\soc_top'.
+Successfully finished Verilog frontend.
+
+52. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/tag_memory_92x64_wrap.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/tag_memory_92x64_wrap.v' to AST representation.
+Generating RTLIL representation for module `\tag_memory_92x64_wrap'.
+Successfully finished Verilog frontend.
+
+53. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/timer.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/timer.v' to AST representation.
+Generating RTLIL representation for module `\timer'.
+Successfully finished Verilog frontend.
+
+54. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v' to AST representation.
+Generating RTLIL representation for module `\uart_controller'.
+Successfully finished Verilog frontend.
+
+55. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/write_back_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/write_back_stage.v' to AST representation.
+Generating RTLIL representation for module `\write_back_stage'.
+Successfully finished Verilog frontend.
+
+56. Executing PREP pass.
+
+56.1. Executing HIERARCHY pass (managing design hierarchy).
+
+56.1.1. Analyzing design hierarchy..
+Top module:  \uart_controller
+
+56.1.2. Analyzing design hierarchy..
+Top module:  \uart_controller
+Removing unused module `\write_back_stage'.
+Removing unused module `\timer'.
+Removing unused module `\tag_memory_92x64_wrap'.
+Removing unused module `\soc_top'.
+Removing unused module `\register_file'.
+Removing unused module `\read_buffer_i_cache'.
+Removing unused module `\read_buffer_d_cache'.
+Removing unused module `\processor_top'.
+Removing unused module `\pipeline_reg_mem_wb'.
+Removing unused module `\pipeline_reg_if_id'.
+Removing unused module `\pipeline_reg_id_ex'.
+Removing unused module `\pipeline_reg_ex_mem'.
+Removing unused module `\multiplier_pipelined'.
+Removing unused module `\memory_stage'.
+Removing unused module `\mem_axi_slave'.
+Removing unused module `\l1_i_cache_8kb'.
+Removing unused module `\l1_d_cache_8kb'.
+Removing unused module `\l1_cache_axi_master'.
+Removing unused module `\interrupt_control_unit'.
+Removing unused module `\instruction_fetch_stage'.
+Removing unused module `\instruction_decode_stage'.
+Removing unused module `\immediate_generator'.
+Removing unused module `\id_memory_256x64_wrap'.
+Removing unused module `\i_rom_32x256'.
+Removing unused module `\hazard_detection_unit'.
+Removing unused module `\gpio_controller'.
+Removing unused module `\fp8_adder'.
+Removing unused module `\fp4_mul'.
+Removing unused module `\fp4_dot_unit'.
+Removing unused module `\execution_stage'.
+Removing unused module `\dmem'.
+Removing unused module `\dma_controller'.
+Removing unused module `\data_forwarding_unit'.
+Removing unused module `\data_extender'.
+Removing unused module `\data_clipper'.
+Removing unused module `\csr_regfile'.
+Removing unused module `\control_unit'.
+Removing unused module `\clk_gate'.
+Removing unused module `\clk_div_mux'.
+Removing unused module `\branch_predictor'.
+Removing unused module `\branch_comprator'.
+Removing unused module `\branch_comp_decoder'.
+Removing unused module `\axi_lite_uart'.
+Removing unused module `\axi_lite_timer'.
+Removing unused module `\axi_lite_master'.
+Removing unused module `\axi_lite_gpio'.
+Removing unused module `\axi_lite_dot'.
+Removing unused module `\axi_lite_dma_config'.
+Removing unused module `\axi_interconnect_2m_8s'.
+Removing unused module `\asynchronous_fifo_gen'.
+Removing unused module `\arbiter'.
+Removing unused module `\alu_src_b_mux'.
+Removing unused module `\alu_src_a_mux'.
+Removing unused module `\alu'.
+Removed 54 unused modules.
+
+56.2. Executing PROC pass (convert processes to netlists).
+
+56.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+56.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 6 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316 in module uart_controller.
+Marked 4 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:144$5311 in module uart_controller.
+Marked 2 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:125$5306 in module uart_controller.
+Marked 1 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:105$5302 in module uart_controller.
+Removed a total of 0 dead cases.
+
+56.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 1 assignment to connection.
+
+56.2.4. Executing PROC_INIT pass (extract init attributes).
+
+56.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+56.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~23 debug messages>
+
+56.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+     1/9: $0\rx_sync[1:0]
+     2/9: $0\rx_busy[0:0]
+     3/9: $0\rx_cnt[15:0]
+     4/9: $0\rx_bit_cnt[3:0]
+     5/9: $0\rx_shift[7:0]
+     6/9: $0\frame_err[0:0]
+     7/9: $0\rx_overrun[0:0]
+     8/9: $0\rx_valid[0:0]
+     9/9: $0\rx_data_reg[7:0]
+Creating decoders for process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:144$5311'.
+     1/4: $0\tx_busy[0:0]
+     2/4: $0\tx_cnt[15:0]
+     3/4: $0\tx_bit_cnt[3:0]
+     4/4: $0\tx_shift[9:0]
+Creating decoders for process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:125$5306'.
+     1/2: $2\data_out[31:0]
+     2/2: $1\data_out[31:0]
+Creating decoders for process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:105$5302'.
+     1/2: $0\uart_control_reg[31:0]
+     2/2: $0\uart_divider_reg[31:0]
+
+56.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\uart_controller.\data_out' from process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:125$5306'.
+
+56.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\uart_controller.\rx_data_reg' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5558' with positive edge clock.
+Creating register for signal `\uart_controller.\rx_valid' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5559' with positive edge clock.
+Creating register for signal `\uart_controller.\rx_overrun' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5560' with positive edge clock.
+Creating register for signal `\uart_controller.\frame_err' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5561' with positive edge clock.
+Creating register for signal `\uart_controller.\rx_sync' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5562' with positive edge clock.
+Creating register for signal `\uart_controller.\rx_shift' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5563' with positive edge clock.
+Creating register for signal `\uart_controller.\rx_bit_cnt' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5564' with positive edge clock.
+Creating register for signal `\uart_controller.\rx_cnt' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5565' with positive edge clock.
+Creating register for signal `\uart_controller.\rx_busy' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+  created $dff cell `$procdff$5566' with positive edge clock.
+Creating register for signal `\uart_controller.\tx_shift' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:144$5311'.
+  created $dff cell `$procdff$5567' with positive edge clock.
+Creating register for signal `\uart_controller.\tx_bit_cnt' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:144$5311'.
+  created $dff cell `$procdff$5568' with positive edge clock.
+Creating register for signal `\uart_controller.\tx_cnt' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:144$5311'.
+  created $dff cell `$procdff$5569' with positive edge clock.
+Creating register for signal `\uart_controller.\tx_busy' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:144$5311'.
+  created $dff cell `$procdff$5570' with positive edge clock.
+Creating register for signal `\uart_controller.\uart_divider_reg' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:105$5302'.
+  created $dff cell `$procdff$5571' with positive edge clock.
+Creating register for signal `\uart_controller.\uart_control_reg' using process `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:105$5302'.
+  created $dff cell `$procdff$5572' with positive edge clock.
+
+56.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+56.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 13 empty switches in `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+Removing empty process `uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:180$5316'.
+Found and cleaned up 5 empty switches in `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:144$5311'.
+Removing empty process `uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:144$5311'.
+Found and cleaned up 2 empty switches in `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:125$5306'.
+Removing empty process `uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:125$5306'.
+Found and cleaned up 3 empty switches in `\uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:105$5302'.
+Removing empty process `uart_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:105$5302'.
+Cleaned up 23 empty switches.
+
+56.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+<suppressed ~18 debug messages>
+
+56.3. Executing FLATTEN pass (flatten design).
+
+56.4. Executing FUTURE pass.
+
+56.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+56.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+Removed 1 unused cells and 106 unused wires.
+<suppressed ~2 debug messages>
+
+56.7. Executing CHECK pass (checking for obvious problems).
+Checking module uart_controller...
+Found and reported 0 problems.
+
+56.8. Executing OPT pass (performing simple optimizations).
+
+56.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+56.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 140 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Computing hashes of 131 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+56.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$5487: \tx_busy -> 1'0
+      Replacing known input bits on port A of cell $procmux$5485: \tx_busy -> 1'1
+      Replacing known input bits on port A of cell $procmux$5483: \tx_busy -> 1'1
+      Replacing known input bits on port A of cell $procmux$5347: \rx_busy -> 1'1
+      Replacing known input bits on port A of cell $procmux$5343: \rx_busy -> 1'1
+      Replacing known input bits on port B of cell $procmux$5339: \rx_busy -> 1'1
+      Replacing known input bits on port A of cell $procmux$5350: \rx_busy -> 1'0
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$5538.
+Removed 1 multiplexer ports.
+<suppressed ~128 debug messages>
+
+56.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_controller.
+Performed a total of 0 changes.
+
+56.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 130 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Removed a total of 0 cells.
+
+56.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~1 debug messages>
+
+56.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+56.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+56.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~127 debug messages>
+
+56.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_controller.
+Performed a total of 0 changes.
+
+56.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 130 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Removed a total of 0 cells.
+
+56.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+
+56.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+56.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+56.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 3 bits (of 4) from port B of cell uart_controller.$eq$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:166$5313 ($eq).
+Removed top 3 bits (of 4) from port B of cell uart_controller.$sub$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:171$5314 ($sub).
+Removed top 15 bits (of 16) from port B of cell uart_controller.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:173$5315 ($add).
+Removed top 3 bits (of 4) from port B of cell uart_controller.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:230$5326 ($add).
+Removed top 15 bits (of 16) from port B of cell uart_controller.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v:246$5331 ($add).
+Removed top 4 bits (of 8) from port B of cell uart_controller.$procmux$5535_CMP0 ($eq).
+Removed top 4 bits (of 8) from port B of cell uart_controller.$procmux$5544_CMP0 ($eq).
+Removed top 5 bits (of 8) from port B of cell uart_controller.$procmux$5552_CMP0 ($eq).
+
+56.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+
+56.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+56.12. Executing OPT pass (performing simple optimizations).
+
+56.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+56.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 130 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Removed a total of 0 cells.
+
+56.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+
+56.12.4. Finished fast OPT passes.
+
+56.13. Executing SORT pass.
+
+56.14. Printing statistics.
+
+=== uart_controller ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      140 wires
+      908 wire bits
+       31 public wires
+      276 public wire bits
+       10 ports
+      103 port bits
+      130 cells
+        3   $add
+       15   $dff
+        6   $eq
+        1   $le
+       12   $logic_and
+        6   $logic_not
+        1   $logic_or
+       80   $mux
+        3   $not
+        1   $or
+        1   $pmux
+        1   $sub
+
+56.15. Executing CHECK pass (checking for obvious problems).
+Checking module uart_controller...
+Found and reported 0 problems.
+
+57. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+58. Executing OPT pass (performing simple optimizations).
+
+58.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+58.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 130 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Removed a total of 0 cells.
+
+58.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$5572 ($dff) from module uart_controller (D = $procmux$5545_Y, Q = \uart_control_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$5573 ($sdff) from module uart_controller (D = \data_in, Q = \uart_control_reg).
+Adding SRST signal on $procdff$5571 ($dff) from module uart_controller (D = $procmux$5553_Y, Q = \uart_divider_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$5577 ($sdff) from module uart_controller (D = \data_in, Q = \uart_divider_reg).
+Adding SRST signal on $procdff$5570 ($dff) from module uart_controller (D = $procmux$5490_Y, Q = \tx_busy, rval = 1'0).
+Adding SRST signal on $procdff$5569 ($dff) from module uart_controller (D = $procmux$5498_Y, Q = \tx_cnt, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$5582 ($sdff) from module uart_controller (D = $procmux$5496_Y, Q = \tx_cnt).
+Adding SRST signal on $procdff$5568 ($dff) from module uart_controller (D = { $procmux$5515_Y [3] $procmux$5515_Y [1] }, Q = { \tx_bit_cnt [3] \tx_bit_cnt [1] }, rval = 2'00).
+Adding SRST signal on $procdff$5568 ($dff) from module uart_controller (D = { $procmux$5512_Y [2] $procmux$5512_Y [0] }, Q = { \tx_bit_cnt [2] \tx_bit_cnt [0] }, rval = 2'00).
+Adding EN signal on $auto$ff.cc:337:slice$5587 ($sdff) from module uart_controller (D = { $procmux$5508_Y [2] $procmux$5508_Y [0] }, Q = { \tx_bit_cnt [2] \tx_bit_cnt [0] }).
+Adding EN signal on $auto$ff.cc:337:slice$5586 ($sdff) from module uart_controller (D = { $procmux$5515_Y [3] $procmux$5515_Y [1] }, Q = { \tx_bit_cnt [3] \tx_bit_cnt [1] }).
+Adding SRST signal on $procdff$5567 ($dff) from module uart_controller (D = $procmux$5526_Y [8:0], Q = \tx_shift [8:0], rval = 9'111111111).
+Adding SRST signal on $procdff$5567 ($dff) from module uart_controller (D = $procmux$5523_Y [9], Q = \tx_shift [9], rval = 1'1).
+Adding EN signal on $auto$ff.cc:337:slice$5601 ($sdff) from module uart_controller (D = 1'1, Q = \tx_shift [9]).
+Adding EN signal on $auto$ff.cc:337:slice$5600 ($sdff) from module uart_controller (D = $procmux$5526_Y [8:0], Q = \tx_shift [8:0]).
+Adding SRST signal on $procdff$5566 ($dff) from module uart_controller (D = $procmux$5352_Y, Q = \rx_busy, rval = 1'0).
+Adding SRST signal on $procdff$5565 ($dff) from module uart_controller (D = $procmux$5363_Y, Q = \rx_cnt, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:337:slice$5615 ($sdff) from module uart_controller (D = $procmux$5363_Y, Q = \rx_cnt).
+Adding SRST signal on $procdff$5564 ($dff) from module uart_controller (D = $procmux$5383_Y, Q = \rx_bit_cnt, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:337:slice$5619 ($sdff) from module uart_controller (D = $procmux$5383_Y, Q = \rx_bit_cnt).
+Adding SRST signal on $procdff$5563 ($dff) from module uart_controller (D = $procmux$5398_Y, Q = \rx_shift, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$5631 ($sdff) from module uart_controller (D = { \rx_sync [1] \rx_shift [7:1] }, Q = \rx_shift).
+Adding SRST signal on $procdff$5562 ($dff) from module uart_controller (D = { \rx_sync [0] \uart_rx }, Q = \rx_sync, rval = 2'11).
+Adding SRST signal on $procdff$5561 ($dff) from module uart_controller (D = $procmux$5417_Y, Q = \frame_err, rval = 1'0).
+Adding SRST signal on $procdff$5560 ($dff) from module uart_controller (D = $procmux$5440_Y, Q = \rx_overrun, rval = 1'0).
+Adding SRST signal on $procdff$5559 ($dff) from module uart_controller (D = $procmux$5459_Y, Q = \rx_valid, rval = 1'0).
+Adding SRST signal on $procdff$5558 ($dff) from module uart_controller (D = $procmux$5476_Y, Q = \rx_data_reg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:337:slice$5641 ($sdff) from module uart_controller (D = \rx_shift, Q = \rx_data_reg).
+Setting constant 1-bit at position 0 on $auto$ff.cc:337:slice$5604 ($sdffe) from module uart_controller.
+
+58.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+Removed 32 unused cells and 32 unused wires.
+<suppressed ~33 debug messages>
+
+58.5. Rerunning OPT passes. (Removed registers in this run.)
+
+58.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+<suppressed ~6 debug messages>
+
+58.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 123 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Computing hashes of 118 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Computing hashes of 117 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+58.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+58.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+58.10. Finished fast OPT passes.
+Renaming module \uart_controller to \gold_core.
+
+59. Executing Liberty frontend: /Users/shubhanshu/Desktop/Nebula/digital/sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib
+Ignoring cell sky130_fd_sc_hd__dlclkp_1 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__dlclkp_2 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__dlclkp_4 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_1 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_2 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_4 with missing function on output GCLK.
+Imported 422 cell types from liberty file.
+<suppressed ~12 debug messages>
+
+60. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v' to AST representation.
+Generating RTLIL representation for module `\$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Generating RTLIL representation for module `\$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen'.
+Generating RTLIL representation for module `\alu'.
+Generating RTLIL representation for module `\alu_src_a_mux'.
+Generating RTLIL representation for module `\alu_src_b_mux'.
+Generating RTLIL representation for module `\arbiter'.
+Generating RTLIL representation for module `\axi_interconnect_2m_8s'.
+Generating RTLIL representation for module `\axi_lite_dma_config'.
+Generating RTLIL representation for module `\axi_lite_dot'.
+Generating RTLIL representation for module `\axi_lite_gpio'.
+Generating RTLIL representation for module `\axi_lite_master'.
+Generating RTLIL representation for module `\axi_lite_timer'.
+Generating RTLIL representation for module `\axi_lite_uart'.
+Generating RTLIL representation for module `\branch_comp_decoder'.
+Generating RTLIL representation for module `\branch_comprator'.
+Generating RTLIL representation for module `\branch_predictor'.
+Generating RTLIL representation for module `\clk_div_mux'.
+Generating RTLIL representation for module `\clk_gate'.
+Generating RTLIL representation for module `\control_unit'.
+Generating RTLIL representation for module `\csr_regfile'.
+Generating RTLIL representation for module `\data_clipper'.
+Generating RTLIL representation for module `\data_extender'.
+Generating RTLIL representation for module `\data_forwarding_unit'.
+Generating RTLIL representation for module `\dma_controller'.
+Generating RTLIL representation for module `\dmem'.
+Generating RTLIL representation for module `\execution_stage'.
+Generating RTLIL representation for module `\fp4_dot_unit'.
+Generating RTLIL representation for module `\fp4_mul'.
+Generating RTLIL representation for module `\fp8_adder'.
+Generating RTLIL representation for module `\gpio_controller'.
+Generating RTLIL representation for module `\hazard_detection_unit'.
+Generating RTLIL representation for module `\i_rom_32x256'.
+Generating RTLIL representation for module `\id_memory_256x64_wrap'.
+Generating RTLIL representation for module `\immediate_generator'.
+Generating RTLIL representation for module `\instruction_decode_stage'.
+Generating RTLIL representation for module `\instruction_fetch_stage'.
+Generating RTLIL representation for module `\interrupt_control_unit'.
+Generating RTLIL representation for module `\l1_cache_axi_master'.
+Generating RTLIL representation for module `\l1_d_cache_8kb'.
+Generating RTLIL representation for module `\l1_i_cache_8kb'.
+Generating RTLIL representation for module `\mem_axi_slave'.
+Generating RTLIL representation for module `\memory_stage'.
+Generating RTLIL representation for module `\multiplier_pipelined'.
+Generating RTLIL representation for module `\pipeline_reg_ex_mem'.
+Generating RTLIL representation for module `\pipeline_reg_id_ex'.
+Generating RTLIL representation for module `\pipeline_reg_if_id'.
+Generating RTLIL representation for module `\pipeline_reg_mem_wb'.
+Generating RTLIL representation for module `\processor_top'.
+Generating RTLIL representation for module `\read_buffer_d_cache'.
+Generating RTLIL representation for module `\read_buffer_i_cache'.
+Generating RTLIL representation for module `\register_file'.
+Generating RTLIL representation for module `\soc_top'.
+Generating RTLIL representation for module `\tag_memory_92x64_wrap'.
+Generating RTLIL representation for module `\timer'.
+Generating RTLIL representation for module `\uart_controller'.
+Generating RTLIL representation for module `\write_back_stage'.
+Successfully finished Verilog frontend.
+
+61. Executing PREP pass.
+
+61.1. Executing HIERARCHY pass (managing design hierarchy).
+
+61.1.1. Analyzing design hierarchy..
+Top module:  \uart_controller
+Used module:     \sky130_fd_sc_hd__dfxtp_1
+Used module:     \sky130_fd_sc_hd__nor2_1
+Used module:     \sky130_fd_sc_hd__a22oi_1
+Used module:     \sky130_fd_sc_hd__a21oi_1
+Used module:     \sky130_fd_sc_hd__nand4_1
+Used module:     \sky130_fd_sc_hd__nand2_1
+Used module:     \sky130_fd_sc_hd__nor3_1
+Used module:     \sky130_fd_sc_hd__lpflow_isobufsrc_1
+Used module:     \sky130_fd_sc_hd__lpflow_inputiso1p_1
+Used module:     \sky130_fd_sc_hd__mux2i_1
+Used module:     \sky130_fd_sc_hd__a41oi_1
+Used module:     \sky130_fd_sc_hd__o21ai_0
+Used module:     \sky130_fd_sc_hd__a311oi_1
+Used module:     \sky130_fd_sc_hd__a31oi_1
+Used module:     \sky130_fd_sc_hd__xor2_1
+Used module:     \sky130_fd_sc_hd__a211o_1
+Used module:     \sky130_fd_sc_hd__a2111oi_0
+Used module:     \sky130_fd_sc_hd__xnor2_1
+Used module:     \sky130_fd_sc_hd__a211oi_1
+Used module:     \sky130_fd_sc_hd__nor3b_1
+Used module:     \sky130_fd_sc_hd__nand3_1
+Used module:     \sky130_fd_sc_hd__and2_0
+Used module:     \sky130_fd_sc_hd__and3_1
+Used module:     \sky130_fd_sc_hd__and4_1
+Used module:     \sky130_fd_sc_hd__or3_1
+Used module:     \sky130_fd_sc_hd__nor4_1
+Used module:     \sky130_fd_sc_hd__o32a_1
+Used module:     \sky130_fd_sc_hd__nand2b_1
+Used module:     \sky130_fd_sc_hd__a311o_1
+Used module:     \sky130_fd_sc_hd__o21bai_1
+Used module:     \sky130_fd_sc_hd__a41o_1
+Used module:     \sky130_fd_sc_hd__a21o_1
+Used module:     \sky130_fd_sc_hd__o21a_1
+Used module:     \sky130_fd_sc_hd__o2111ai_1
+Used module:     \sky130_fd_sc_hd__a221oi_1
+Used module:     \sky130_fd_sc_hd__a222oi_1
+Used module:     \sky130_fd_sc_hd__o221a_1
+Used module:     \sky130_fd_sc_hd__or4b_1
+Used module:     \sky130_fd_sc_hd__o221ai_1
+Used module:     \sky130_fd_sc_hd__a2bb2oi_1
+Used module:     \sky130_fd_sc_hd__o31ai_1
+Used module:     \sky130_fd_sc_hd__o2bb2ai_1
+Used module:     \sky130_fd_sc_hd__o22ai_1
+Used module:     \sky130_fd_sc_hd__a22o_1
+Used module:     \sky130_fd_sc_hd__and3b_1
+Used module:     \sky130_fd_sc_hd__and4b_1
+Used module:     \sky130_fd_sc_hd__clkinv_1
+
+61.1.2. Analyzing design hierarchy..
+Top module:  \uart_controller
+Used module:     \sky130_fd_sc_hd__dfxtp_1
+Used module:     \sky130_fd_sc_hd__nor2_1
+Used module:     \sky130_fd_sc_hd__a22oi_1
+Used module:     \sky130_fd_sc_hd__a21oi_1
+Used module:     \sky130_fd_sc_hd__nand4_1
+Used module:     \sky130_fd_sc_hd__nand2_1
+Used module:     \sky130_fd_sc_hd__nor3_1
+Used module:     \sky130_fd_sc_hd__lpflow_isobufsrc_1
+Used module:     \sky130_fd_sc_hd__lpflow_inputiso1p_1
+Used module:     \sky130_fd_sc_hd__mux2i_1
+Used module:     \sky130_fd_sc_hd__a41oi_1
+Used module:     \sky130_fd_sc_hd__o21ai_0
+Used module:     \sky130_fd_sc_hd__a311oi_1
+Used module:     \sky130_fd_sc_hd__a31oi_1
+Used module:     \sky130_fd_sc_hd__xor2_1
+Used module:     \sky130_fd_sc_hd__a211o_1
+Used module:     \sky130_fd_sc_hd__a2111oi_0
+Used module:     \sky130_fd_sc_hd__xnor2_1
+Used module:     \sky130_fd_sc_hd__a211oi_1
+Used module:     \sky130_fd_sc_hd__nor3b_1
+Used module:     \sky130_fd_sc_hd__nand3_1
+Used module:     \sky130_fd_sc_hd__and2_0
+Used module:     \sky130_fd_sc_hd__and3_1
+Used module:     \sky130_fd_sc_hd__and4_1
+Used module:     \sky130_fd_sc_hd__or3_1
+Used module:     \sky130_fd_sc_hd__nor4_1
+Used module:     \sky130_fd_sc_hd__o32a_1
+Used module:     \sky130_fd_sc_hd__nand2b_1
+Used module:     \sky130_fd_sc_hd__a311o_1
+Used module:     \sky130_fd_sc_hd__o21bai_1
+Used module:     \sky130_fd_sc_hd__a41o_1
+Used module:     \sky130_fd_sc_hd__a21o_1
+Used module:     \sky130_fd_sc_hd__o21a_1
+Used module:     \sky130_fd_sc_hd__o2111ai_1
+Used module:     \sky130_fd_sc_hd__a221oi_1
+Used module:     \sky130_fd_sc_hd__a222oi_1
+Used module:     \sky130_fd_sc_hd__o221a_1
+Used module:     \sky130_fd_sc_hd__or4b_1
+Used module:     \sky130_fd_sc_hd__o221ai_1
+Used module:     \sky130_fd_sc_hd__a2bb2oi_1
+Used module:     \sky130_fd_sc_hd__o31ai_1
+Used module:     \sky130_fd_sc_hd__o2bb2ai_1
+Used module:     \sky130_fd_sc_hd__o22ai_1
+Used module:     \sky130_fd_sc_hd__a22o_1
+Used module:     \sky130_fd_sc_hd__and3b_1
+Used module:     \sky130_fd_sc_hd__and4b_1
+Used module:     \sky130_fd_sc_hd__clkinv_1
+Removing unused module `\write_back_stage'.
+Removing unused module `\timer'.
+Removing unused module `\tag_memory_92x64_wrap'.
+Removing unused module `\soc_top'.
+Removing unused module `\register_file'.
+Removing unused module `\read_buffer_i_cache'.
+Removing unused module `\read_buffer_d_cache'.
+Removing unused module `\processor_top'.
+Removing unused module `\pipeline_reg_mem_wb'.
+Removing unused module `\pipeline_reg_if_id'.
+Removing unused module `\pipeline_reg_id_ex'.
+Removing unused module `\pipeline_reg_ex_mem'.
+Removing unused module `\multiplier_pipelined'.
+Removing unused module `\memory_stage'.
+Removing unused module `\mem_axi_slave'.
+Removing unused module `\l1_i_cache_8kb'.
+Removing unused module `\l1_d_cache_8kb'.
+Removing unused module `\l1_cache_axi_master'.
+Removing unused module `\interrupt_control_unit'.
+Removing unused module `\instruction_fetch_stage'.
+Removing unused module `\instruction_decode_stage'.
+Removing unused module `\immediate_generator'.
+Removing unused module `\id_memory_256x64_wrap'.
+Removing unused module `\i_rom_32x256'.
+Removing unused module `\hazard_detection_unit'.
+Removing unused module `\gpio_controller'.
+Removing unused module `\fp8_adder'.
+Removing unused module `\fp4_mul'.
+Removing unused module `\fp4_dot_unit'.
+Removing unused module `\execution_stage'.
+Removing unused module `\dmem'.
+Removing unused module `\dma_controller'.
+Removing unused module `\data_forwarding_unit'.
+Removing unused module `\data_extender'.
+Removing unused module `\data_clipper'.
+Removing unused module `\csr_regfile'.
+Removing unused module `\control_unit'.
+Removing unused module `\clk_gate'.
+Removing unused module `\clk_div_mux'.
+Removing unused module `\branch_predictor'.
+Removing unused module `\branch_comprator'.
+Removing unused module `\branch_comp_decoder'.
+Removing unused module `\axi_lite_uart'.
+Removing unused module `\axi_lite_timer'.
+Removing unused module `\axi_lite_master'.
+Removing unused module `\axi_lite_gpio'.
+Removing unused module `\axi_lite_dot'.
+Removing unused module `\axi_lite_dma_config'.
+Removing unused module `\axi_interconnect_2m_8s'.
+Removing unused module `\arbiter'.
+Removing unused module `\alu_src_b_mux'.
+Removing unused module `\alu_src_a_mux'.
+Removing unused module `\alu'.
+Removing unused module `\$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen'.
+Removing unused module `\$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Removing unused module `\sky130_fd_sc_hd__xor3_4'.
+Removing unused module `\sky130_fd_sc_hd__xor3_2'.
+Removing unused module `\sky130_fd_sc_hd__xor3_1'.
+Removing unused module `\sky130_fd_sc_hd__xor2_4'.
+Removing unused module `\sky130_fd_sc_hd__xor2_2'.
+Removing unused module `\sky130_fd_sc_hd__xnor3_4'.
+Removing unused module `\sky130_fd_sc_hd__xnor3_2'.
+Removing unused module `\sky130_fd_sc_hd__xnor3_1'.
+Removing unused module `\sky130_fd_sc_hd__xnor2_4'.
+Removing unused module `\sky130_fd_sc_hd__xnor2_2'.
+Removing unused module `\sky130_fd_sc_hd__sedfxtp_4'.
+Removing unused module `\sky130_fd_sc_hd__sedfxtp_2'.
+Removing unused module `\sky130_fd_sc_hd__sedfxtp_1'.
+Removing unused module `\sky130_fd_sc_hd__sedfxbp_2'.
+Removing unused module `\sky130_fd_sc_hd__sedfxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfxtp_4'.
+Removing unused module `\sky130_fd_sc_hd__sdfxtp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfxtp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfxbp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfstp_4'.
+Removing unused module `\sky130_fd_sc_hd__sdfstp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfstp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfsbp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfsbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfrtp_4'.
+Removing unused module `\sky130_fd_sc_hd__sdfrtp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfrtp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfrtn_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfrbp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfrbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfbbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfbbn_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfbbn_1'.
+Removing unused module `\sky130_fd_sc_hd__probec_p_8'.
+Removing unused module `\sky130_fd_sc_hd__probe_p_8'.
+Removing unused module `\sky130_fd_sc_hd__or4bb_4'.
+Removing unused module `\sky130_fd_sc_hd__or4bb_2'.
+Removing unused module `\sky130_fd_sc_hd__or4bb_1'.
+Removing unused module `\sky130_fd_sc_hd__or4b_4'.
+Removing unused module `\sky130_fd_sc_hd__or4b_2'.
+Removing unused module `\sky130_fd_sc_hd__or4_4'.
+Removing unused module `\sky130_fd_sc_hd__or4_2'.
+Removing unused module `\sky130_fd_sc_hd__or4_1'.
+Removing unused module `\sky130_fd_sc_hd__or3b_4'.
+Removing unused module `\sky130_fd_sc_hd__or3b_2'.
+Removing unused module `\sky130_fd_sc_hd__or3b_1'.
+Removing unused module `\sky130_fd_sc_hd__or3_4'.
+Removing unused module `\sky130_fd_sc_hd__or3_2'.
+Removing unused module `\sky130_fd_sc_hd__or2b_4'.
+Removing unused module `\sky130_fd_sc_hd__or2b_2'.
+Removing unused module `\sky130_fd_sc_hd__or2b_1'.
+Removing unused module `\sky130_fd_sc_hd__or2_4'.
+Removing unused module `\sky130_fd_sc_hd__or2_2'.
+Removing unused module `\sky130_fd_sc_hd__or2_1'.
+Removing unused module `\sky130_fd_sc_hd__or2_0'.
+Removing unused module `\sky130_fd_sc_hd__o41ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o41ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o41ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o41a_4'.
+Removing unused module `\sky130_fd_sc_hd__o41a_2'.
+Removing unused module `\sky130_fd_sc_hd__o41a_1'.
+Removing unused module `\sky130_fd_sc_hd__o32ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o32ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o32ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o32a_4'.
+Removing unused module `\sky130_fd_sc_hd__o32a_2'.
+Removing unused module `\sky130_fd_sc_hd__o31ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o31ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o31a_4'.
+Removing unused module `\sky130_fd_sc_hd__o31a_2'.
+Removing unused module `\sky130_fd_sc_hd__o31a_1'.
+Removing unused module `\sky130_fd_sc_hd__o311ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o311ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o311ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o311ai_0'.
+Removing unused module `\sky130_fd_sc_hd__o311a_4'.
+Removing unused module `\sky130_fd_sc_hd__o311a_2'.
+Removing unused module `\sky130_fd_sc_hd__o311a_1'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2a_4'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2a_2'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2a_1'.
+Removing unused module `\sky130_fd_sc_hd__o22ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o22ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o22a_4'.
+Removing unused module `\sky130_fd_sc_hd__o22a_2'.
+Removing unused module `\sky130_fd_sc_hd__o22a_1'.
+Removing unused module `\sky130_fd_sc_hd__o221ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o221ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o221a_4'.
+Removing unused module `\sky130_fd_sc_hd__o221a_2'.
+Removing unused module `\sky130_fd_sc_hd__o21bai_4'.
+Removing unused module `\sky130_fd_sc_hd__o21bai_2'.
+Removing unused module `\sky130_fd_sc_hd__o21ba_4'.
+Removing unused module `\sky130_fd_sc_hd__o21ba_2'.
+Removing unused module `\sky130_fd_sc_hd__o21ba_1'.
+Removing unused module `\sky130_fd_sc_hd__o21ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o21ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o21ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o21a_4'.
+Removing unused module `\sky130_fd_sc_hd__o21a_2'.
+Removing unused module `\sky130_fd_sc_hd__o211ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o211ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o211ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o211a_4'.
+Removing unused module `\sky130_fd_sc_hd__o211a_2'.
+Removing unused module `\sky130_fd_sc_hd__o211a_1'.
+Removing unused module `\sky130_fd_sc_hd__o2111ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o2111ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o2111a_4'.
+Removing unused module `\sky130_fd_sc_hd__o2111a_2'.
+Removing unused module `\sky130_fd_sc_hd__o2111a_1'.
+Removing unused module `\sky130_fd_sc_hd__nor4bb_4'.
+Removing unused module `\sky130_fd_sc_hd__nor4bb_2'.
+Removing unused module `\sky130_fd_sc_hd__nor4bb_1'.
+Removing unused module `\sky130_fd_sc_hd__nor4b_4'.
+Removing unused module `\sky130_fd_sc_hd__nor4b_2'.
+Removing unused module `\sky130_fd_sc_hd__nor4b_1'.
+Removing unused module `\sky130_fd_sc_hd__nor4_4'.
+Removing unused module `\sky130_fd_sc_hd__nor4_2'.
+Removing unused module `\sky130_fd_sc_hd__nor3b_4'.
+Removing unused module `\sky130_fd_sc_hd__nor3b_2'.
+Removing unused module `\sky130_fd_sc_hd__nor3_4'.
+Removing unused module `\sky130_fd_sc_hd__nor3_2'.
+Removing unused module `\sky130_fd_sc_hd__nor2b_4'.
+Removing unused module `\sky130_fd_sc_hd__nor2b_2'.
+Removing unused module `\sky130_fd_sc_hd__nor2b_1'.
+Removing unused module `\sky130_fd_sc_hd__nor2_8'.
+Removing unused module `\sky130_fd_sc_hd__nor2_4'.
+Removing unused module `\sky130_fd_sc_hd__nor2_2'.
+Removing unused module `\sky130_fd_sc_hd__nand4bb_4'.
+Removing unused module `\sky130_fd_sc_hd__nand4bb_2'.
+Removing unused module `\sky130_fd_sc_hd__nand4bb_1'.
+Removing unused module `\sky130_fd_sc_hd__nand4b_4'.
+Removing unused module `\sky130_fd_sc_hd__nand4b_2'.
+Removing unused module `\sky130_fd_sc_hd__nand4b_1'.
+Removing unused module `\sky130_fd_sc_hd__nand4_4'.
+Removing unused module `\sky130_fd_sc_hd__nand4_2'.
+Removing unused module `\sky130_fd_sc_hd__nand3b_4'.
+Removing unused module `\sky130_fd_sc_hd__nand3b_2'.
+Removing unused module `\sky130_fd_sc_hd__nand3b_1'.
+Removing unused module `\sky130_fd_sc_hd__nand3_4'.
+Removing unused module `\sky130_fd_sc_hd__nand3_2'.
+Removing unused module `\sky130_fd_sc_hd__nand2b_4'.
+Removing unused module `\sky130_fd_sc_hd__nand2b_2'.
+Removing unused module `\sky130_fd_sc_hd__nand2_8'.
+Removing unused module `\sky130_fd_sc_hd__nand2_4'.
+Removing unused module `\sky130_fd_sc_hd__nand2_2'.
+Removing unused module `\sky130_fd_sc_hd__mux4_4'.
+Removing unused module `\sky130_fd_sc_hd__mux4_2'.
+Removing unused module `\sky130_fd_sc_hd__mux4_1'.
+Removing unused module `\sky130_fd_sc_hd__mux2i_4'.
+Removing unused module `\sky130_fd_sc_hd__mux2i_2'.
+Removing unused module `\sky130_fd_sc_hd__mux2_8'.
+Removing unused module `\sky130_fd_sc_hd__mux2_4'.
+Removing unused module `\sky130_fd_sc_hd__mux2_2'.
+Removing unused module `\sky130_fd_sc_hd__mux2_1'.
+Removing unused module `\sky130_fd_sc_hd__maj3_4'.
+Removing unused module `\sky130_fd_sc_hd__maj3_2'.
+Removing unused module `\sky130_fd_sc_hd__maj3_1'.
+Removing unused module `\sky130_fd_sc_hd__macro_sparecell'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrckapwr_16'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrc_8'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrc_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrc_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrc_16'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_inputisolatch_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_inputiso1n_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_inputiso0p_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_inputiso0n_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_8'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_6'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_3'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_12'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_8'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_16'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_8'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_16'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_bleeder_1'.
+Removing unused module `\sky130_fd_sc_hd__inv_8'.
+Removing unused module `\sky130_fd_sc_hd__inv_6'.
+Removing unused module `\sky130_fd_sc_hd__inv_4'.
+Removing unused module `\sky130_fd_sc_hd__inv_2'.
+Removing unused module `\sky130_fd_sc_hd__inv_16'.
+Removing unused module `\sky130_fd_sc_hd__inv_12'.
+Removing unused module `\sky130_fd_sc_hd__inv_1'.
+Removing unused module `\sky130_fd_sc_hd__ha_4'.
+Removing unused module `\sky130_fd_sc_hd__ha_2'.
+Removing unused module `\sky130_fd_sc_hd__ha_1'.
+Removing unused module `\sky130_fd_sc_hd__fahcon_1'.
+Removing unused module `\sky130_fd_sc_hd__fahcin_1'.
+Removing unused module `\sky130_fd_sc_hd__fah_1'.
+Removing unused module `\sky130_fd_sc_hd__fa_4'.
+Removing unused module `\sky130_fd_sc_hd__fa_2'.
+Removing unused module `\sky130_fd_sc_hd__fa_1'.
+Removing unused module `\sky130_fd_sc_hd__einvp_8'.
+Removing unused module `\sky130_fd_sc_hd__einvp_4'.
+Removing unused module `\sky130_fd_sc_hd__einvp_2'.
+Removing unused module `\sky130_fd_sc_hd__einvp_1'.
+Removing unused module `\sky130_fd_sc_hd__einvn_8'.
+Removing unused module `\sky130_fd_sc_hd__einvn_4'.
+Removing unused module `\sky130_fd_sc_hd__einvn_2'.
+Removing unused module `\sky130_fd_sc_hd__einvn_1'.
+Removing unused module `\sky130_fd_sc_hd__einvn_0'.
+Removing unused module `\sky130_fd_sc_hd__edfxtp_1'.
+Removing unused module `\sky130_fd_sc_hd__edfxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__ebufn_8'.
+Removing unused module `\sky130_fd_sc_hd__ebufn_4'.
+Removing unused module `\sky130_fd_sc_hd__ebufn_2'.
+Removing unused module `\sky130_fd_sc_hd__ebufn_1'.
+Removing unused module `\sky130_fd_sc_hd__dlymetal6s6s_1'.
+Removing unused module `\sky130_fd_sc_hd__dlymetal6s4s_1'.
+Removing unused module `\sky130_fd_sc_hd__dlymetal6s2s_1'.
+Removing unused module `\sky130_fd_sc_hd__dlygate4sd3_1'.
+Removing unused module `\sky130_fd_sc_hd__dlygate4sd2_1'.
+Removing unused module `\sky130_fd_sc_hd__dlygate4sd1_1'.
+Removing unused module `\sky130_fd_sc_hd__dlxtp_1'.
+Removing unused module `\sky130_fd_sc_hd__dlxtn_4'.
+Removing unused module `\sky130_fd_sc_hd__dlxtn_2'.
+Removing unused module `\sky130_fd_sc_hd__dlxtn_1'.
+Removing unused module `\sky130_fd_sc_hd__dlxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dlxbn_2'.
+Removing unused module `\sky130_fd_sc_hd__dlxbn_1'.
+Removing unused module `\sky130_fd_sc_hd__dlrtp_4'.
+Removing unused module `\sky130_fd_sc_hd__dlrtp_2'.
+Removing unused module `\sky130_fd_sc_hd__dlrtp_1'.
+Removing unused module `\sky130_fd_sc_hd__dlrtn_4'.
+Removing unused module `\sky130_fd_sc_hd__dlrtn_2'.
+Removing unused module `\sky130_fd_sc_hd__dlrtn_1'.
+Removing unused module `\sky130_fd_sc_hd__dlrbp_2'.
+Removing unused module `\sky130_fd_sc_hd__dlrbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dlrbn_2'.
+Removing unused module `\sky130_fd_sc_hd__dlrbn_1'.
+Removing unused module `\sky130_fd_sc_hd__diode_2'.
+Removing unused module `\sky130_fd_sc_hd__dfxtp_4'.
+Removing unused module `\sky130_fd_sc_hd__dfxtp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfxbp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfstp_4'.
+Removing unused module `\sky130_fd_sc_hd__dfstp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfstp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfsbp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfsbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfrtp_4'.
+Removing unused module `\sky130_fd_sc_hd__dfrtp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfrtp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfrtn_1'.
+Removing unused module `\sky130_fd_sc_hd__dfrbp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfrbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfbbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfbbn_2'.
+Removing unused module `\sky130_fd_sc_hd__dfbbn_1'.
+Removing unused module `\sky130_fd_sc_hd__decap_8'.
+Removing unused module `\sky130_fd_sc_hd__decap_6'.
+Removing unused module `\sky130_fd_sc_hd__decap_4'.
+Removing unused module `\sky130_fd_sc_hd__decap_3'.
+Removing unused module `\sky130_fd_sc_hd__decap_12'.
+Removing unused module `\sky130_fd_sc_hd__conb_1'.
+Removing unused module `\sky130_fd_sc_hd__clkinvlp_4'.
+Removing unused module `\sky130_fd_sc_hd__clkinvlp_2'.
+Removing unused module `\sky130_fd_sc_hd__clkinv_8'.
+Removing unused module `\sky130_fd_sc_hd__clkinv_4'.
+Removing unused module `\sky130_fd_sc_hd__clkinv_2'.
+Removing unused module `\sky130_fd_sc_hd__clkinv_16'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s50_2'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s50_1'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s25_2'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s25_1'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s18_2'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s18_1'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s15_2'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s15_1'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_8'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_4'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_2'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_16'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_1'.
+Removing unused module `\sky130_fd_sc_hd__bufinv_8'.
+Removing unused module `\sky130_fd_sc_hd__bufinv_16'.
+Removing unused module `\sky130_fd_sc_hd__bufbuf_8'.
+Removing unused module `\sky130_fd_sc_hd__bufbuf_16'.
+Removing unused module `\sky130_fd_sc_hd__buf_8'.
+Removing unused module `\sky130_fd_sc_hd__buf_6'.
+Removing unused module `\sky130_fd_sc_hd__buf_4'.
+Removing unused module `\sky130_fd_sc_hd__buf_2'.
+Removing unused module `\sky130_fd_sc_hd__buf_16'.
+Removing unused module `\sky130_fd_sc_hd__buf_12'.
+Removing unused module `\sky130_fd_sc_hd__buf_1'.
+Removing unused module `\sky130_fd_sc_hd__and4bb_4'.
+Removing unused module `\sky130_fd_sc_hd__and4bb_2'.
+Removing unused module `\sky130_fd_sc_hd__and4bb_1'.
+Removing unused module `\sky130_fd_sc_hd__and4b_4'.
+Removing unused module `\sky130_fd_sc_hd__and4b_2'.
+Removing unused module `\sky130_fd_sc_hd__and4_4'.
+Removing unused module `\sky130_fd_sc_hd__and4_2'.
+Removing unused module `\sky130_fd_sc_hd__and3b_4'.
+Removing unused module `\sky130_fd_sc_hd__and3b_2'.
+Removing unused module `\sky130_fd_sc_hd__and3_4'.
+Removing unused module `\sky130_fd_sc_hd__and3_2'.
+Removing unused module `\sky130_fd_sc_hd__and2b_4'.
+Removing unused module `\sky130_fd_sc_hd__and2b_2'.
+Removing unused module `\sky130_fd_sc_hd__and2b_1'.
+Removing unused module `\sky130_fd_sc_hd__and2_4'.
+Removing unused module `\sky130_fd_sc_hd__and2_2'.
+Removing unused module `\sky130_fd_sc_hd__and2_1'.
+Removing unused module `\sky130_fd_sc_hd__a41oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a41oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a41o_4'.
+Removing unused module `\sky130_fd_sc_hd__a41o_2'.
+Removing unused module `\sky130_fd_sc_hd__a32oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a32oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a32oi_1'.
+Removing unused module `\sky130_fd_sc_hd__a32o_4'.
+Removing unused module `\sky130_fd_sc_hd__a32o_2'.
+Removing unused module `\sky130_fd_sc_hd__a32o_1'.
+Removing unused module `\sky130_fd_sc_hd__a31oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a31oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a31o_4'.
+Removing unused module `\sky130_fd_sc_hd__a31o_2'.
+Removing unused module `\sky130_fd_sc_hd__a31o_1'.
+Removing unused module `\sky130_fd_sc_hd__a311oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a311oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a311o_4'.
+Removing unused module `\sky130_fd_sc_hd__a311o_2'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2o_4'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2o_2'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2o_1'.
+Removing unused module `\sky130_fd_sc_hd__a22oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a22oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a22o_4'.
+Removing unused module `\sky130_fd_sc_hd__a22o_2'.
+Removing unused module `\sky130_fd_sc_hd__a221oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a221oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a221o_4'.
+Removing unused module `\sky130_fd_sc_hd__a221o_2'.
+Removing unused module `\sky130_fd_sc_hd__a221o_1'.
+Removing unused module `\sky130_fd_sc_hd__a21oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a21oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a21o_4'.
+Removing unused module `\sky130_fd_sc_hd__a21o_2'.
+Removing unused module `\sky130_fd_sc_hd__a21boi_4'.
+Removing unused module `\sky130_fd_sc_hd__a21boi_2'.
+Removing unused module `\sky130_fd_sc_hd__a21boi_1'.
+Removing unused module `\sky130_fd_sc_hd__a21boi_0'.
+Removing unused module `\sky130_fd_sc_hd__a21bo_4'.
+Removing unused module `\sky130_fd_sc_hd__a21bo_2'.
+Removing unused module `\sky130_fd_sc_hd__a21bo_1'.
+Removing unused module `\sky130_fd_sc_hd__a211oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a211oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a211o_4'.
+Removing unused module `\sky130_fd_sc_hd__a211o_2'.
+Removing unused module `\sky130_fd_sc_hd__a2111oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a2111oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a2111oi_1'.
+Removing unused module `\sky130_fd_sc_hd__a2111o_4'.
+Removing unused module `\sky130_fd_sc_hd__a2111o_2'.
+Removing unused module `\sky130_fd_sc_hd__a2111o_1'.
+Removed 430 unused modules.
+
+61.2. Executing PROC pass (convert processes to netlists).
+
+61.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+61.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+61.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+61.2.4. Executing PROC_INIT pass (extract init attributes).
+
+61.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+61.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+61.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+61.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+61.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+61.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+61.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+61.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sky130_fd_sc_hd__o22ai_1.
+Optimizing module sky130_fd_sc_hd__o21bai_1.
+Optimizing module sky130_fd_sc_hd__a311o_1.
+Optimizing module sky130_fd_sc_hd__and4_1.
+Optimizing module sky130_fd_sc_hd__mux2i_1.
+Optimizing module sky130_fd_sc_hd__a2bb2oi_1.
+Optimizing module sky130_fd_sc_hd__o32a_1.
+Optimizing module sky130_fd_sc_hd__and3b_1.
+Optimizing module sky130_fd_sc_hd__nor4_1.
+Optimizing module sky130_fd_sc_hd__or4b_1.
+Optimizing module sky130_fd_sc_hd__and3_1.
+Optimizing module sky130_fd_sc_hd__a22oi_1.
+Optimizing module sky130_fd_sc_hd__o2bb2ai_1.
+Optimizing module sky130_fd_sc_hd__nand4_1.
+Optimizing module sky130_fd_sc_hd__a22o_1.
+Optimizing module sky130_fd_sc_hd__a222oi_1.
+Optimizing module sky130_fd_sc_hd__nor3b_1.
+Optimizing module sky130_fd_sc_hd__or3_1.
+Optimizing module sky130_fd_sc_hd__a221oi_1.
+Optimizing module sky130_fd_sc_hd__o2111ai_1.
+Optimizing module sky130_fd_sc_hd__nor3_1.
+Optimizing module sky130_fd_sc_hd__and2_0.
+Optimizing module sky130_fd_sc_hd__o31ai_1.
+Optimizing module sky130_fd_sc_hd__nand3_1.
+Optimizing module sky130_fd_sc_hd__a21oi_1.
+Optimizing module sky130_fd_sc_hd__a41oi_1.
+Optimizing module sky130_fd_sc_hd__o221ai_1.
+Optimizing module sky130_fd_sc_hd__a21o_1.
+Optimizing module sky130_fd_sc_hd__o21ai_0.
+Optimizing module sky130_fd_sc_hd__a41o_1.
+Optimizing module sky130_fd_sc_hd__nand2b_1.
+Optimizing module uart_controller.
+Optimizing module sky130_fd_sc_hd__xnor2_1.
+Optimizing module sky130_fd_sc_hd__o21a_1.
+Optimizing module sky130_fd_sc_hd__nand2_1.
+Optimizing module sky130_fd_sc_hd__nor2_1.
+Optimizing module sky130_fd_sc_hd__o221a_1.
+Optimizing module sky130_fd_sc_hd__a211oi_1.
+Optimizing module sky130_fd_sc_hd__lpflow_isobufsrc_1.
+Optimizing module sky130_fd_sc_hd__a31oi_1.
+Optimizing module sky130_fd_sc_hd__a211o_1.
+Optimizing module sky130_fd_sc_hd__dfxtp_1.
+Optimizing module sky130_fd_sc_hd__xor2_1.
+Optimizing module sky130_fd_sc_hd__clkinv_1.
+Optimizing module sky130_fd_sc_hd__a2111oi_0.
+Optimizing module sky130_fd_sc_hd__lpflow_inputiso1p_1.
+Optimizing module sky130_fd_sc_hd__and4b_1.
+Optimizing module sky130_fd_sc_hd__a311oi_1.
+
+61.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module sky130_fd_sc_hd__o22ai_1.
+Deleting now unused module sky130_fd_sc_hd__o21bai_1.
+Deleting now unused module sky130_fd_sc_hd__a311o_1.
+Deleting now unused module sky130_fd_sc_hd__and4_1.
+Deleting now unused module sky130_fd_sc_hd__mux2i_1.
+Deleting now unused module sky130_fd_sc_hd__a2bb2oi_1.
+Deleting now unused module sky130_fd_sc_hd__o32a_1.
+Deleting now unused module sky130_fd_sc_hd__and3b_1.
+Deleting now unused module sky130_fd_sc_hd__nor4_1.
+Deleting now unused module sky130_fd_sc_hd__or4b_1.
+Deleting now unused module sky130_fd_sc_hd__and3_1.
+Deleting now unused module sky130_fd_sc_hd__a22oi_1.
+Deleting now unused module sky130_fd_sc_hd__o2bb2ai_1.
+Deleting now unused module sky130_fd_sc_hd__nand4_1.
+Deleting now unused module sky130_fd_sc_hd__a22o_1.
+Deleting now unused module sky130_fd_sc_hd__a222oi_1.
+Deleting now unused module sky130_fd_sc_hd__nor3b_1.
+Deleting now unused module sky130_fd_sc_hd__or3_1.
+Deleting now unused module sky130_fd_sc_hd__a221oi_1.
+Deleting now unused module sky130_fd_sc_hd__o2111ai_1.
+Deleting now unused module sky130_fd_sc_hd__nor3_1.
+Deleting now unused module sky130_fd_sc_hd__and2_0.
+Deleting now unused module sky130_fd_sc_hd__o31ai_1.
+Deleting now unused module sky130_fd_sc_hd__nand3_1.
+Deleting now unused module sky130_fd_sc_hd__a21oi_1.
+Deleting now unused module sky130_fd_sc_hd__a41oi_1.
+Deleting now unused module sky130_fd_sc_hd__o221ai_1.
+Deleting now unused module sky130_fd_sc_hd__a21o_1.
+Deleting now unused module sky130_fd_sc_hd__o21ai_0.
+Deleting now unused module sky130_fd_sc_hd__a41o_1.
+Deleting now unused module sky130_fd_sc_hd__nand2b_1.
+Deleting now unused module sky130_fd_sc_hd__xnor2_1.
+Deleting now unused module sky130_fd_sc_hd__o21a_1.
+Deleting now unused module sky130_fd_sc_hd__nand2_1.
+Deleting now unused module sky130_fd_sc_hd__nor2_1.
+Deleting now unused module sky130_fd_sc_hd__o221a_1.
+Deleting now unused module sky130_fd_sc_hd__a211oi_1.
+Deleting now unused module sky130_fd_sc_hd__lpflow_isobufsrc_1.
+Deleting now unused module sky130_fd_sc_hd__a31oi_1.
+Deleting now unused module sky130_fd_sc_hd__a211o_1.
+Deleting now unused module sky130_fd_sc_hd__dfxtp_1.
+Deleting now unused module sky130_fd_sc_hd__xor2_1.
+Deleting now unused module sky130_fd_sc_hd__clkinv_1.
+Deleting now unused module sky130_fd_sc_hd__a2111oi_0.
+Deleting now unused module sky130_fd_sc_hd__lpflow_inputiso1p_1.
+Deleting now unused module sky130_fd_sc_hd__and4b_1.
+Deleting now unused module sky130_fd_sc_hd__a311oi_1.
+<suppressed ~719 debug messages>
+
+61.4. Executing FUTURE pass.
+
+61.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+<suppressed ~50 debug messages>
+
+61.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+Removed 284 unused cells and 1489 unused wires.
+<suppressed ~456 debug messages>
+
+61.7. Executing CHECK pass (checking for obvious problems).
+Checking module uart_controller...
+Found and reported 0 problems.
+
+61.8. Executing OPT pass (performing simple optimizations).
+
+61.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+61.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 4135 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Computing hashes of 2924 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Computing hashes of 2865 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Computing hashes of 2862 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+<suppressed ~3819 debug messages>
+Removed a total of 1273 cells.
+
+61.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_controller..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+61.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_controller.
+Performed a total of 0 changes.
+
+61.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 2862 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Removed a total of 0 cells.
+
+61.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+Removed 0 unused cells and 1273 unused wires.
+<suppressed ~1 debug messages>
+
+61.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+61.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+61.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \uart_controller..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+61.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \uart_controller.
+Performed a total of 0 changes.
+
+61.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 2862 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Removed a total of 0 cells.
+
+61.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+
+61.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+61.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+61.9. Executing WREDUCE pass (reducing word size of cells).
+
+61.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+
+61.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+61.12. Executing OPT pass (performing simple optimizations).
+
+61.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+61.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 2862 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Removed a total of 0 cells.
+
+61.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+
+61.12.4. Finished fast OPT passes.
+
+61.13. Executing SORT pass.
+
+61.14. Printing statistics.
+
+=== uart_controller ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     4144 wires
+     4373 wire bits
+     2708 public wires
+     2937 public wire bits
+       10 ports
+      103 port bits
+     2862 cells
+      866   $_AND_
+      136   $_DFF_P_
+      547   $_NOT_
+      594   $_OR_
+      719   $scopeinfo
+
+61.15. Executing CHECK pass (checking for obvious problems).
+Checking module uart_controller...
+Found and reported 0 problems.
+
+62. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+63. Executing OPT pass (performing simple optimizations).
+
+63.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module uart_controller.
+
+63.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\uart_controller'.
+Computing hashes of 2862 cells of `\uart_controller'.
+Finding duplicate cells in `\uart_controller'.
+Removed a total of 0 cells.
+
+63.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+63.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \uart_controller..
+
+63.5. Finished fast OPT passes.
+Renaming module \uart_controller to \gate_core.
+
+64. Executing Verilog-2005 frontend: /var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v
+Parsing formal Verilog input from `/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v' to AST representation.
+Generating RTLIL representation for module `\reset_miter'.
+Successfully finished Verilog frontend.
+
+65. Executing PREP pass.
+
+65.1. Executing HIERARCHY pass (managing design hierarchy).
+
+65.1.1. Analyzing design hierarchy..
+Top module:  \reset_miter
+Used module:     \gate_core
+Used module:     \gold_core
+
+65.1.2. Analyzing design hierarchy..
+Top module:  \reset_miter
+Used module:     \gate_core
+Used module:     \gold_core
+Removed 0 unused modules.
+Module reset_miter directly or indirectly contains formal properties -> setting "keep" attribute.
+
+65.2. Executing PROC pass (convert processes to netlists).
+
+65.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+65.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+65.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 1 assignment to connection.
+
+65.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:15$12497'.
+  Set init value: \reset_seen_0 = 1'0
+
+65.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+65.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+65.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:15$12497'.
+Creating decoders for process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:19$12492'.
+     1/2: $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12494_EN
+     2/2: $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:20$12493_EN
+Creating decoders for process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:16$12491'.
+     1/1: $0\reset_seen_0[0:0]
+
+65.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+65.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\reset_miter.\reset_seen_0' using process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:16$12491'.
+  created $dff cell `$procdff$12504' with positive edge clock.
+
+65.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+65.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:15$12497'.
+Found and cleaned up 2 empty switches in `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:19$12492'.
+Removing empty process `reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:19$12492'.
+Found and cleaned up 1 empty switch in `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:16$12491'.
+Removing empty process `reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:16$12491'.
+Cleaned up 3 empty switches.
+
+65.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+Optimizing module gate_core.
+Optimizing module gold_core.
+
+65.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module gate_core.
+Deleting now unused module gold_core.
+<suppressed ~2 debug messages>
+
+65.4. Executing FUTURE pass.
+
+65.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
+
+65.7. Executing CHECK pass (checking for obvious problems).
+Checking module reset_miter...
+Found and reported 0 problems.
+
+65.8. Executing OPT pass (performing simple optimizations).
+
+65.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reset_miter'.
+Computing hashes of 2990 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+Removed a total of 0 cells.
+
+65.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \reset_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~99 debug messages>
+
+65.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \reset_miter.
+Performed a total of 0 changes.
+
+65.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reset_miter'.
+Computing hashes of 2990 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+Removed a total of 0 cells.
+
+65.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+
+65.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.8.8. Finished fast OPT passes. (There is nothing left to do.)
+
+65.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 10) from mux cell reset_miter.$flatten\gold_i.$procmux$5526 ($mux).
+Removed top 1 bits (of 10) from mux cell reset_miter.$flatten\gold_i.$procmux$5523 ($mux).
+Removed top 1 bits (of 10) from mux cell reset_miter.$flatten\gold_i.$procmux$5521 ($mux).
+Removed top 1 bits (of 2) from port B of cell reset_miter.$flatten\gold_i.$auto$opt_dff.cc:320:make_patterns_logic$5626 ($ne).
+Removed top 2 bits (of 3) from port B of cell reset_miter.$flatten\gold_i.$auto$opt_dff.cc:320:make_patterns_logic$5628 ($ne).
+Removed top 1 bits (of 10) from wire reset_miter.$flatten\gold_i.$procmux$5526_Y.
+Removed top 1 bits (of 10) from wire reset_miter.$flatten\gold_i.$procmux$5523_Y.
+Removed top 1 bits (of 10) from wire reset_miter.$flatten\gold_i.$procmux$5521_Y.
+
+65.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+65.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+65.12. Executing OPT pass (performing simple optimizations).
+
+65.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reset_miter'.
+Computing hashes of 2990 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+Removed a total of 0 cells.
+
+65.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+
+65.12.4. Finished fast OPT passes.
+
+65.13. Executing SORT pass.
+
+65.14. Printing statistics.
+
+=== reset_miter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     4290 wires
+     5103 wire bits
+     2753 public wires
+     3351 public wire bits
+        7 ports
+       69 port bits
+     2990 cells
+      866   $_AND_
+      136   $_DFF_P_
+      547   $_NOT_
+      594   $_OR_
+        3   $add
+        2   $check
+        1   $dff
+        7   $eq
+        1   $initstate
+        1   $le
+       12   $logic_and
+        6   $logic_not
+        1   $logic_or
+       53   $mux
+        3   $ne
+        6   $not
+        1   $or
+        1   $pmux
+        7   $reduce_and
+        3   $reduce_bool
+        1   $reduce_or
+      721   $scopeinfo
+        6   $sdff
+       10   $sdffe
+        1   $sub
+
+65.15. Executing CHECK pass (checking for obvious problems).
+Checking module reset_miter...
+Found and reported 0 problems.
+
+66. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 2994 cells to SAT database.
+Import constraint from assume cell: \rst when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:20$12493_EN.
+Import set-constraint from init attribute: \reset_seen_0 = 1'0
+Final init constraint equation: \reset_seen_0 = 1'0
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12496_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12494_EN.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 2994 cells to SAT database.
+Import constraint from assume cell: \rst when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:20$12493_EN.
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12496_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12494_EN.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 2994 cells to SAT database.
+Import constraint from assume cell: \rst when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:20$12493_EN.
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12496_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12494_EN.
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 2994 cells to SAT database.
+Import constraint from assume cell: \rst when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:20$12493_EN.
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12496_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12494_EN.
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 2994 cells to SAT database.
+Import constraint from assume cell: \rst when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:20$12493_EN.
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12496_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.v:21$12494_EN.
+
+Solving problem with 68668 variables and 179077 clauses..
+SAT proof finished - model found: FAIL!
+
+   ______                   ___       ___       _ _            _ _ 
+  (_____ \                 / __)     / __)     (_) |          | | |
+   _____) )___ ___   ___ _| |__    _| |__ _____ _| | _____  __| | |
+  |  ____/ ___) _ \ / _ (_   __)  (_   __|____ | | || ___ |/ _  |_|
+  | |   | |  | |_| | |_| || |       | |  / ___ | | || ____( (_| |_ 
+  |_|   |_|   \___/ \___/ |_|       |_|  \_____|_|\_)_____)\____|_|
+
+
+  Time Signal Name                           Dec       Hex                                 Bin
+  ---- ----------------------------- ----------- --------- -----------------------------------
+  init \gate_i._1132_.IQ                       0         0                                   0
+  init \gate_i._1133_.IQ                       0         0                                   0
+  init \gate_i._1134_.IQ                       0         0                                   0
+  init \gate_i._1135_.IQ                       0         0                                   0
+  init \gate_i._1136_.IQ                       0         0                                   0
+  init \gate_i._1137_.IQ                       0         0                                   0
+  init \gate_i._1138_.IQ                       0         0                                   0
+  init \gate_i._1139_.IQ                       0         0                                   0
+  init \gate_i._1140_.IQ                       1         1                                   1
+  init \gate_i._1141_.IQ                       0         0                                   0
+  init \gate_i._1142_.IQ                       0         0                                   0
+  init \gate_i._1143_.IQ                       0         0                                   0
+  init \gate_i._1144_.IQ                       0         0                                   0
+  init \gate_i._1145_.IQ                       0         0                                   0
+  init \gate_i._1146_.IQ                       0         0                                   0
+  init \gate_i._1147_.IQ                       0         0                                   0
+  init \gate_i._1148_.IQ                       1         1                                   1
+  init \gate_i._1149_.IQ                       1         1                                   1
+  init \gate_i._1150_.IQ                       0         0                                   0
+  init \gate_i._1151_.IQ                       0         0                                   0
+  init \gate_i._1152_.IQ                       0         0                                   0
+  init \gate_i._1153_.IQ                       0         0                                   0
+  init \gate_i._1154_.IQ                       0         0                                   0
+  init \gate_i._1155_.IQ                       0         0                                   0
+  init \gate_i._1156_.IQ                       0         0                                   0
+  init \gate_i._1157_.IQ                       0         0                                   0
+  init \gate_i._1158_.IQ                       0         0                                   0
+  init \gate_i._1159_.IQ                       0         0                                   0
+  init \gate_i._1160_.IQ                       0         0                                   0
+  init \gate_i._1161_.IQ                       0         0                                   0
+  init \gate_i._1162_.IQ                       0         0                                   0
+  init \gate_i._1163_.IQ                       0         0                                   0
+  init \gate_i._1164_.IQ                       0         0                                   0
+  init \gate_i._1165_.IQ                       0         0                                   0
+  init \gate_i._1166_.IQ                       0         0                                   0
+  init \gate_i._1167_.IQ                       0         0                                   0
+  init \gate_i._1168_.IQ                       1         1                                   1
+  init \gate_i._1169_.IQ                       0         0                                   0
+  init \gate_i._1170_.IQ                       0         0                                   0
+  init \gate_i._1171_.IQ                       1         1                                   1
+  init \gate_i._1172_.IQ                       1         1                                   1
+  init \gate_i._1173_.IQ                       1         1                                   1
+  init \gate_i._1174_.IQ                       1         1                                   1
+  init \gate_i._1175_.IQ                       1         1                                   1
+  init \gate_i._1176_.IQ                       1         1                                   1
+  init \gate_i._1177_.IQ                       1         1                                   1
+  init \gate_i._1178_.IQ                       1         1                                   1
+  init \gate_i._1179_.IQ                       0         0                                   0
+  init \gate_i._1180_.IQ                       1         1                                   1
+  init \gate_i._1181_.IQ                       0         0                                   0
+  init \gate_i._1182_.IQ                       1         1                                   1
+  init \gate_i._1183_.IQ                       1         1                                   1
+  init \gate_i._1184_.IQ                       1         1                                   1
+  init \gate_i._1185_.IQ                       0         0                                   0
+  init \gate_i._1186_.IQ                       1         1                                   1
+  init \gate_i._1187_.IQ                       0         0                                   0
+  init \gate_i._1188_.IQ                       0         0                                   0
+  init \gate_i._1189_.IQ                       0         0                                   0
+  init \gate_i._1190_.IQ                       0         0                                   0
+  init \gate_i._1191_.IQ                       0         0                                   0
+  init \gate_i._1192_.IQ                       0         0                                   0
+  init \gate_i._1193_.IQ                       1         1                                   1
+  init \gate_i._1194_.IQ                       1         1                                   1
+  init \gate_i._1195_.IQ                       1         1                                   1
+  init \gate_i._1196_.IQ                       1         1                                   1
+  init \gate_i._1197_.IQ                       1         1                                   1
+  init \gate_i._1198_.IQ                       1         1                                   1
+  init \gate_i._1199_.IQ                       1         1                                   1
+  init \gate_i._1200_.IQ                       1         1                                   1
+  init \gate_i._1201_.IQ                       0         0                                   0
+  init \gate_i._1202_.IQ                       1         1                                   1
+  init \gate_i._1203_.IQ                       0         0                                   0
+  init \gate_i._1204_.IQ                       1         1                                   1
+  init \gate_i._1205_.IQ                       1         1                                   1
+  init \gate_i._1206_.IQ                       1         1                                   1
+  init \gate_i._1207_.IQ                       0         0                                   0
+  init \gate_i._1208_.IQ                       0         0                                   0
+  init \gate_i._1209_.IQ                       0         0                                   0
+  init \gate_i._1210_.IQ                       0         0                                   0
+  init \gate_i._1211_.IQ                       0         0                                   0
+  init \gate_i._1212_.IQ                       0         0                                   0
+  init \gate_i._1213_.IQ                       0         0                                   0
+  init \gate_i._1214_.IQ                       0         0                                   0
+  init \gate_i._1215_.IQ                       1         1                                   1
+  init \gate_i._1216_.IQ                       0         0                                   0
+  init \gate_i._1217_.IQ                       0         0                                   0
+  init \gate_i._1218_.IQ                       0         0                                   0
+  init \gate_i._1219_.IQ                       1         1                                   1
+  init \gate_i._1220_.IQ                       0         0                                   0
+  init \gate_i._1221_.IQ                       1         1                                   1
+  init \gate_i._1222_.IQ                       0         0                                   0
+  init \gate_i._1223_.IQ                       0         0                                   0
+  init \gate_i._1224_.IQ                       0         0                                   0
+  init \gate_i._1225_.IQ                       0         0                                   0
+  init \gate_i._1226_.IQ                       0         0                                   0
+  init \gate_i._1227_.IQ                       0         0                                   0
+  init \gate_i._1228_.IQ                       0         0                                   0
+  init \gate_i._1229_.IQ                       0         0                                   0
+  init \gate_i._1230_.IQ                       0         0                                   0
+  init \gate_i._1231_.IQ                       1         1                                   1
+  init \gate_i._1232_.IQ                       0         0                                   0
+  init \gate_i._1233_.IQ                       0         0                                   0
+  init \gate_i._1234_.IQ                       0         0                                   0
+  init \gate_i._1235_.IQ                       0         0                                   0
+  init \gate_i._1236_.IQ                       0         0                                   0
+  init \gate_i._1237_.IQ                       0         0                                   0
+  init \gate_i._1238_.IQ                       0         0                                   0
+  init \gate_i._1239_.IQ                       0         0                                   0
+  init \gate_i._1240_.IQ                       0         0                                   0
+  init \gate_i._1241_.IQ                       0         0                                   0
+  init \gate_i._1242_.IQ                       0         0                                   0
+  init \gate_i._1243_.IQ                       1         1                                   1
+  init \gate_i._1244_.IQ                       0         0                                   0
+  init \gate_i._1245_.IQ                       0         0                                   0
+  init \gate_i._1246_.IQ                       0         0                                   0
+  init \gate_i._1247_.IQ                       0         0                                   0
+  init \gate_i._1248_.IQ                       0         0                                   0
+  init \gate_i._1249_.IQ                       0         0                                   0
+  init \gate_i._1250_.IQ                       0         0                                   0
+  init \gate_i._1251_.IQ                       0         0                                   0
+  init \gate_i._1252_.IQ                       0         0                                   0
+  init \gate_i._1253_.IQ                       0         0                                   0
+  init \gate_i._1254_.IQ                       1         1                                   1
+  init \gate_i._1255_.IQ                       0         0                                   0
+  init \gate_i._1256_.IQ                       0         0                                   0
+  init \gate_i._1257_.IQ                       0         0                                   0
+  init \gate_i._1258_.IQ                       0         0                                   0
+  init \gate_i._1259_.IQ                       0         0                                   0
+  init \gate_i._1260_.IQ                       0         0                                   0
+  init \gate_i._1261_.IQ                       0         0                                   0
+  init \gate_i._1262_.IQ                       0         0                                   0
+  init \gate_i._1263_.IQ                       0         0                                   0
+  init \gate_i._1264_.IQ                       1         1                                   1
+  init \gate_i._1265_.IQ                       0         0                                   0
+  init \gate_i._1266_.IQ                       0         0                                   0
+  init \gate_i._1267_.IQ                       0         0                                   0
+  init \gold_i.frame_err                       0         0                                   0
+  init \gold_i.rx_bit_cnt                      2         2                                0010
+  init \gold_i.rx_busy                         0         0                                   0
+  init \gold_i.rx_cnt                      65535      ffff                    1111111111111111
+  init \gold_i.rx_data_reg                     0         0                            00000000
+  init \gold_i.rx_overrun                      0         0                                   0
+  init \gold_i.rx_shift                        0         0                            00000000
+  init \gold_i.rx_sync                         0         0                                  00
+  init \gold_i.rx_valid                        0         0                                   0
+  init \gold_i.tx_bit_cnt [0]                  0         0                                   0
+  init \gold_i.tx_bit_cnt [1]                  0         0                                   0
+  init \gold_i.tx_bit_cnt [2]                  0         0                                   0
+  init \gold_i.tx_bit_cnt [3]                  1         1                                   1
+  init \gold_i.tx_busy                         0         0                                   0
+  init \gold_i.tx_cnt                      65535      ffff                    1111111111111111
+  init \gold_i.tx_shift [8:0]                  0         0                           000000000
+  init \gold_i.uart_control_reg                0         0    00000000000000000000000000000000
+  init \gold_i.uart_divider_reg              256       100    00000000000000000000000100000000
+  init \reset_seen_0                           0         0                                   0
+Dumping SAT model to VCD file /var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/uart_controller.negative_control.vcd
+
+ERROR: Called with -verify and proof did fail!

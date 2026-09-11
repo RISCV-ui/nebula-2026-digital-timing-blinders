@@ -1,0 +1,2182 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67+135 (git sha1 ac5910309-dirty, Release, Clang /usr/local/osxcross/target/bin/aarch64-apple-darwin25.5-clang++ 21.1.8)
+
+-- Executing script file `/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.ys' --
+
+1. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu.v' to AST representation.
+Generating RTLIL representation for module `\alu'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_a_mux.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_a_mux.v' to AST representation.
+Generating RTLIL representation for module `\alu_src_a_mux'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_b_mux.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu_src_b_mux.v' to AST representation.
+Generating RTLIL representation for module `\alu_src_b_mux'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/arbiter.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/arbiter.v' to AST representation.
+Generating RTLIL representation for module `\arbiter'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v' to AST representation.
+Generating RTLIL representation for module `\asynchronous_fifo_gen'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v' to AST representation.
+Generating RTLIL representation for module `\axi_interconnect_2m_8s'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dma_config.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dma_config.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_dma_config'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dot.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dot.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_dot'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_gpio'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_master.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_master.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_master'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_timer.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_timer.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_timer'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_uart.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_uart.v' to AST representation.
+Generating RTLIL representation for module `\axi_lite_uart'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comp_decoder.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comp_decoder.v' to AST representation.
+Generating RTLIL representation for module `\branch_comp_decoder'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comprator.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_comprator.v' to AST representation.
+Generating RTLIL representation for module `\branch_comprator'.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_predictor.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/branch_predictor.v' to AST representation.
+Generating RTLIL representation for module `\branch_predictor'.
+Successfully finished Verilog frontend.
+
+16. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v' to AST representation.
+Generating RTLIL representation for module `\clk_div_mux'.
+Successfully finished Verilog frontend.
+
+17. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_gate.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_gate.v' to AST representation.
+Generating RTLIL representation for module `\clk_gate'.
+Successfully finished Verilog frontend.
+
+18. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/control_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/control_unit.v' to AST representation.
+Generating RTLIL representation for module `\control_unit'.
+Successfully finished Verilog frontend.
+
+19. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/csr_regfile.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/csr_regfile.v' to AST representation.
+Generating RTLIL representation for module `\csr_regfile'.
+Successfully finished Verilog frontend.
+
+20. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_clipper.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_clipper.v' to AST representation.
+Generating RTLIL representation for module `\data_clipper'.
+Successfully finished Verilog frontend.
+
+21. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_extender.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_extender.v' to AST representation.
+Generating RTLIL representation for module `\data_extender'.
+Successfully finished Verilog frontend.
+
+22. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_forwarding_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/data_forwarding_unit.v' to AST representation.
+Generating RTLIL representation for module `\data_forwarding_unit'.
+Successfully finished Verilog frontend.
+
+23. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v' to AST representation.
+Generating RTLIL representation for module `\dma_controller'.
+Successfully finished Verilog frontend.
+
+24. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dmem.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dmem.v' to AST representation.
+Generating RTLIL representation for module `\dmem'.
+Successfully finished Verilog frontend.
+
+25. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/execution_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/execution_stage.v' to AST representation.
+Generating RTLIL representation for module `\execution_stage'.
+Successfully finished Verilog frontend.
+
+26. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_dot_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_dot_unit.v' to AST representation.
+Generating RTLIL representation for module `\fp4_dot_unit'.
+Successfully finished Verilog frontend.
+
+27. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_mul.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp4_mul.v' to AST representation.
+Generating RTLIL representation for module `\fp4_mul'.
+Successfully finished Verilog frontend.
+
+28. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v' to AST representation.
+Generating RTLIL representation for module `\fp8_adder'.
+Successfully finished Verilog frontend.
+
+29. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v' to AST representation.
+Generating RTLIL representation for module `\gpio_controller'.
+Successfully finished Verilog frontend.
+
+30. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/hazard_detection_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/hazard_detection_unit.v' to AST representation.
+Generating RTLIL representation for module `\hazard_detection_unit'.
+Successfully finished Verilog frontend.
+
+31. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/i_rom_32x256.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/i_rom_32x256.v' to AST representation.
+Generating RTLIL representation for module `\i_rom_32x256'.
+Successfully finished Verilog frontend.
+
+32. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/id_memory_256x64_wrap.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/id_memory_256x64_wrap.v' to AST representation.
+Generating RTLIL representation for module `\id_memory_256x64_wrap'.
+Successfully finished Verilog frontend.
+
+33. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/immediate_generator.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/immediate_generator.v' to AST representation.
+Generating RTLIL representation for module `\immediate_generator'.
+Successfully finished Verilog frontend.
+
+34. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_decode_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_decode_stage.v' to AST representation.
+Generating RTLIL representation for module `\instruction_decode_stage'.
+Successfully finished Verilog frontend.
+
+35. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_fetch_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/instruction_fetch_stage.v' to AST representation.
+Generating RTLIL representation for module `\instruction_fetch_stage'.
+Successfully finished Verilog frontend.
+
+36. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/interrupt_control_unit.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/interrupt_control_unit.v' to AST representation.
+Generating RTLIL representation for module `\interrupt_control_unit'.
+Successfully finished Verilog frontend.
+
+37. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_cache_axi_master.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_cache_axi_master.v' to AST representation.
+Generating RTLIL representation for module `\l1_cache_axi_master'.
+Successfully finished Verilog frontend.
+
+38. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_d_cache_8kb.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_d_cache_8kb.v' to AST representation.
+Generating RTLIL representation for module `\l1_d_cache_8kb'.
+Successfully finished Verilog frontend.
+
+39. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_i_cache_8kb.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/l1_i_cache_8kb.v' to AST representation.
+Generating RTLIL representation for module `\l1_i_cache_8kb'.
+Successfully finished Verilog frontend.
+
+40. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/mem_axi_slave.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/mem_axi_slave.v' to AST representation.
+Generating RTLIL representation for module `\mem_axi_slave'.
+Successfully finished Verilog frontend.
+
+41. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/memory_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/memory_stage.v' to AST representation.
+Generating RTLIL representation for module `\memory_stage'.
+Successfully finished Verilog frontend.
+
+42. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/multiplier_pipelined.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/multiplier_pipelined.v' to AST representation.
+Generating RTLIL representation for module `\multiplier_pipelined'.
+Successfully finished Verilog frontend.
+
+43. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_ex_mem.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_ex_mem.v' to AST representation.
+Generating RTLIL representation for module `\pipeline_reg_ex_mem'.
+Successfully finished Verilog frontend.
+
+44. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_id_ex.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_id_ex.v' to AST representation.
+Generating RTLIL representation for module `\pipeline_reg_id_ex'.
+Successfully finished Verilog frontend.
+
+45. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_if_id.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_if_id.v' to AST representation.
+Generating RTLIL representation for module `\pipeline_reg_if_id'.
+Successfully finished Verilog frontend.
+
+46. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_mem_wb.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/pipeline_reg_mem_wb.v' to AST representation.
+Generating RTLIL representation for module `\pipeline_reg_mem_wb'.
+Successfully finished Verilog frontend.
+
+47. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/processor_top.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/processor_top.v' to AST representation.
+Generating RTLIL representation for module `\processor_top'.
+Successfully finished Verilog frontend.
+
+48. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_d_cache.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_d_cache.v' to AST representation.
+Generating RTLIL representation for module `\read_buffer_d_cache'.
+Successfully finished Verilog frontend.
+
+49. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_i_cache.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_i_cache.v' to AST representation.
+Generating RTLIL representation for module `\read_buffer_i_cache'.
+Warning: Replacing memory \buf_data with list of registers. See /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/read_buffer_i_cache.v:87
+Successfully finished Verilog frontend.
+
+50. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/register_file.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/register_file.v' to AST representation.
+Generating RTLIL representation for module `\register_file'.
+Successfully finished Verilog frontend.
+
+51. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/soc_top.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/soc_top.v' to AST representation.
+Generating RTLIL representation for module `\soc_top'.
+Successfully finished Verilog frontend.
+
+52. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/tag_memory_92x64_wrap.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/tag_memory_92x64_wrap.v' to AST representation.
+Generating RTLIL representation for module `\tag_memory_92x64_wrap'.
+Successfully finished Verilog frontend.
+
+53. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/timer.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/timer.v' to AST representation.
+Generating RTLIL representation for module `\timer'.
+Successfully finished Verilog frontend.
+
+54. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v' to AST representation.
+Generating RTLIL representation for module `\uart_controller'.
+Successfully finished Verilog frontend.
+
+55. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/write_back_stage.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/write_back_stage.v' to AST representation.
+Generating RTLIL representation for module `\write_back_stage'.
+Successfully finished Verilog frontend.
+
+56. Executing PREP pass.
+
+56.1. Executing HIERARCHY pass (managing design hierarchy).
+
+56.1.1. Analyzing design hierarchy..
+Top module:  \axi_lite_gpio
+Used module:     \gpio_controller
+Used module:     \asynchronous_fifo_gen
+Parameter \width = 32
+Parameter \logofdepth = 4
+
+56.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\asynchronous_fifo_gen'.
+Parameter \width = 32
+Parameter \logofdepth = 4
+Generating RTLIL representation for module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Parameter \width = 41
+Parameter \logofdepth = 4
+
+56.1.3. Executing AST frontend in derive mode using pre-parsed AST for module `\asynchronous_fifo_gen'.
+Parameter \width = 41
+Parameter \logofdepth = 4
+Generating RTLIL representation for module `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen'.
+
+56.1.4. Analyzing design hierarchy..
+Top module:  \axi_lite_gpio
+Used module:     \gpio_controller
+Used module:     $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Used module:     $paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen
+
+56.1.5. Analyzing design hierarchy..
+Top module:  \axi_lite_gpio
+Used module:     \gpio_controller
+Used module:     $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Used module:     $paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen
+Removing unused module `\write_back_stage'.
+Removing unused module `\uart_controller'.
+Removing unused module `\timer'.
+Removing unused module `\tag_memory_92x64_wrap'.
+Removing unused module `\soc_top'.
+Removing unused module `\register_file'.
+Removing unused module `\read_buffer_i_cache'.
+Removing unused module `\read_buffer_d_cache'.
+Removing unused module `\processor_top'.
+Removing unused module `\pipeline_reg_mem_wb'.
+Removing unused module `\pipeline_reg_if_id'.
+Removing unused module `\pipeline_reg_id_ex'.
+Removing unused module `\pipeline_reg_ex_mem'.
+Removing unused module `\multiplier_pipelined'.
+Removing unused module `\memory_stage'.
+Removing unused module `\mem_axi_slave'.
+Removing unused module `\l1_i_cache_8kb'.
+Removing unused module `\l1_d_cache_8kb'.
+Removing unused module `\l1_cache_axi_master'.
+Removing unused module `\interrupt_control_unit'.
+Removing unused module `\instruction_fetch_stage'.
+Removing unused module `\instruction_decode_stage'.
+Removing unused module `\immediate_generator'.
+Removing unused module `\id_memory_256x64_wrap'.
+Removing unused module `\i_rom_32x256'.
+Removing unused module `\hazard_detection_unit'.
+Removing unused module `\fp8_adder'.
+Removing unused module `\fp4_mul'.
+Removing unused module `\fp4_dot_unit'.
+Removing unused module `\execution_stage'.
+Removing unused module `\dmem'.
+Removing unused module `\dma_controller'.
+Removing unused module `\data_forwarding_unit'.
+Removing unused module `\data_extender'.
+Removing unused module `\data_clipper'.
+Removing unused module `\csr_regfile'.
+Removing unused module `\control_unit'.
+Removing unused module `\clk_gate'.
+Removing unused module `\clk_div_mux'.
+Removing unused module `\branch_predictor'.
+Removing unused module `\branch_comprator'.
+Removing unused module `\branch_comp_decoder'.
+Removing unused module `\axi_lite_uart'.
+Removing unused module `\axi_lite_timer'.
+Removing unused module `\axi_lite_master'.
+Removing unused module `\axi_lite_dot'.
+Removing unused module `\axi_lite_dma_config'.
+Removing unused module `\axi_interconnect_2m_8s'.
+Removing unused module `\asynchronous_fifo_gen'.
+Removing unused module `\arbiter'.
+Removing unused module `\alu_src_b_mux'.
+Removing unused module `\alu_src_a_mux'.
+Removing unused module `\alu'.
+Removed 53 unused modules.
+Mapping positional arguments of cell axi_lite_gpio.gpio_0 (gpio_controller).
+Mapping positional arguments of cell axi_lite_gpio.fifo_timer_r ($paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen).
+Mapping positional arguments of cell axi_lite_gpio.fifo_timer_w ($paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen).
+
+56.2. Executing PROC pass (convert processes to netlists).
+
+56.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+56.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5363 in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Marked 3 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349 in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Marked 1 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717 in module gpio_controller.
+Marked 2 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:130$1716 in module gpio_controller.
+Removed 1 dead cases from process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:104$1709 in module gpio_controller.
+Marked 3 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:104$1709 in module gpio_controller.
+Marked 1 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699 in module gpio_controller.
+Marked 2 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5398 in module $paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.
+Marked 3 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384 in module $paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.
+Marked 3 switch rules as full_case in process $proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812 in module axi_lite_gpio.
+Removed a total of 1 dead cases.
+
+56.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 17 redundant assignments.
+Promoted 10 assignments to connections.
+
+56.2.4. Executing PROC_INIT pass (extract init attributes).
+
+56.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+56.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~38 debug messages>
+
+56.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5363'.
+     1/3: $0\synchronizers_2_clk_2[4:0]
+     2/3: $0\synchronizers_1_clk_2[4:0]
+     3/3: $0\counter_2[4:0]
+Creating decoders for process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+     1/6: $0\synchronizers_2_clk_1[4:0]
+     2/6: $0\synchronizers_1_clk_1[4:0]
+     3/6: $1$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5358
+     4/6: $1$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5357
+     5/6: $1$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_ADDR[3:0]$5356
+     6/6: $0\counter_1[4:0]
+Creating decoders for process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+     1/8: $0\int_level_edge_mode_reg_gpio[31:0]
+     2/8: $0\int_clr_reg_gpio[31:0]
+     3/8: $0\int_set_reg_gpio[31:0]
+     4/8: $0\int_mask_reg_gpio[31:0]
+     5/8: $0\clr_reg_gpio[31:0]
+     6/8: $0\set_reg_gpio[31:0]
+     7/8: $0\write_reg_gpio[31:0]
+     8/8: $0\direction_reg_gpio[31:0]
+Creating decoders for process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:130$1716'.
+     1/2: $2\data_out[31:0]
+     2/2: $1\data_out[31:0]
+Creating decoders for process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:104$1709'.
+     1/3: $1\mux_2_1_mode[31:0]
+     2/3: $1\mux_2_1_out[31:0]
+     3/3: $1\mux4_1_out[31:0]
+Creating decoders for process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+     1/9: $0\level_trigger_int_reg[31:0]
+     2/9: $0\edge_trigger_int_reg[31:0]
+     3/9: $0\int_status_reg_gpio[31:0]
+     4/9: $0\read_reg_gpio[31:0]
+     5/9: $0\synch_reg2[31:0]
+     6/9: $0\synch_reg1[31:0]
+     7/9: $0\read_reg[31:0]
+     8/9: $0\write_reg[31:0]
+     9/9: $0\direction_reg[31:0]
+Creating decoders for process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5398'.
+     1/3: $0\synchronizers_2_clk_2[4:0]
+     2/3: $0\synchronizers_1_clk_2[4:0]
+     3/3: $0\counter_2[4:0]
+Creating decoders for process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+     1/6: $0\synchronizers_2_clk_1[4:0]
+     2/6: $0\synchronizers_1_clk_1[4:0]
+     3/6: $1$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5393
+     4/6: $1$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5392
+     5/6: $1$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_ADDR[3:0]$5391
+     6/6: $0\counter_1[4:0]
+Creating decoders for process `\axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+     1/6: $0\data_w_comp[0:0]
+     2/6: $0\addr_w_comp[0:0]
+     3/6: $0\addr_r_comp[0:0]
+     4/6: $0\data_reg[31:0]
+     5/6: $0\addr_r_w[31:0]
+     6/6: $0\s1_b_valid[0:0]
+
+56.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\gpio_controller.\data_out' from process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:130$1716'.
+No latch inferred for signal `\gpio_controller.\mux4_1_out' from process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:104$1709'.
+No latch inferred for signal `\gpio_controller.\mux_2_1_out' from process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:104$1709'.
+No latch inferred for signal `\gpio_controller.\mux_2_1_mode' from process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:104$1709'.
+
+56.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.\counter_2' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5363'.
+  created $dff cell `$procdff$5667' with positive edge clock.
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.\synchronizers_1_clk_2' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5363'.
+  created $dff cell `$procdff$5668' with positive edge clock.
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.\synchronizers_2_clk_2' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5363'.
+  created $dff cell `$procdff$5669' with positive edge clock.
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.\counter_1' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+  created $dff cell `$procdff$5670' with positive edge clock.
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.\synchronizers_1_clk_1' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+  created $dff cell `$procdff$5671' with positive edge clock.
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.\synchronizers_2_clk_1' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+  created $dff cell `$procdff$5672' with positive edge clock.
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_ADDR' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+  created $dff cell `$procdff$5673' with positive edge clock.
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+  created $dff cell `$procdff$5674' with positive edge clock.
+Creating register for signal `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN' using process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+  created $dff cell `$procdff$5675' with positive edge clock.
+Creating register for signal `\gpio_controller.\direction_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+  created $dff cell `$procdff$5676' with positive edge clock.
+Creating register for signal `\gpio_controller.\write_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+  created $dff cell `$procdff$5677' with positive edge clock.
+Creating register for signal `\gpio_controller.\set_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+  created $dff cell `$procdff$5678' with positive edge clock.
+Creating register for signal `\gpio_controller.\clr_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+  created $dff cell `$procdff$5679' with positive edge clock.
+Creating register for signal `\gpio_controller.\int_mask_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+  created $dff cell `$procdff$5680' with positive edge clock.
+Creating register for signal `\gpio_controller.\int_set_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+  created $dff cell `$procdff$5681' with positive edge clock.
+Creating register for signal `\gpio_controller.\int_clr_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+  created $dff cell `$procdff$5682' with positive edge clock.
+Creating register for signal `\gpio_controller.\int_level_edge_mode_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+  created $dff cell `$procdff$5683' with positive edge clock.
+Creating register for signal `\gpio_controller.\read_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5684' with positive edge clock.
+Creating register for signal `\gpio_controller.\int_status_reg_gpio' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5685' with positive edge clock.
+Creating register for signal `\gpio_controller.\direction_reg' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5686' with positive edge clock.
+Creating register for signal `\gpio_controller.\write_reg' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5687' with positive edge clock.
+Creating register for signal `\gpio_controller.\read_reg' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5688' with positive edge clock.
+Creating register for signal `\gpio_controller.\synch_reg1' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5689' with positive edge clock.
+Creating register for signal `\gpio_controller.\synch_reg2' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5690' with positive edge clock.
+Creating register for signal `\gpio_controller.\edge_trigger_int_reg' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5691' with positive edge clock.
+Creating register for signal `\gpio_controller.\level_trigger_int_reg' using process `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+  created $dff cell `$procdff$5692' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.\counter_2' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5398'.
+  created $dff cell `$procdff$5693' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.\synchronizers_1_clk_2' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5398'.
+  created $dff cell `$procdff$5694' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.\synchronizers_2_clk_2' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5398'.
+  created $dff cell `$procdff$5695' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.\counter_1' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+  created $dff cell `$procdff$5696' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.\synchronizers_1_clk_1' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+  created $dff cell `$procdff$5697' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.\synchronizers_2_clk_1' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+  created $dff cell `$procdff$5698' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_ADDR' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+  created $dff cell `$procdff$5699' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+  created $dff cell `$procdff$5700' with positive edge clock.
+Creating register for signal `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN' using process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+  created $dff cell `$procdff$5701' with positive edge clock.
+Creating register for signal `\axi_lite_gpio.\s1_b_valid' using process `\axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+  created $dff cell `$procdff$5702' with positive edge clock.
+Creating register for signal `\axi_lite_gpio.\addr_r_w' using process `\axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+  created $dff cell `$procdff$5703' with positive edge clock.
+Creating register for signal `\axi_lite_gpio.\data_reg' using process `\axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+  created $dff cell `$procdff$5704' with positive edge clock.
+Creating register for signal `\axi_lite_gpio.\addr_r_comp' using process `\axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+  created $dff cell `$procdff$5705' with positive edge clock.
+Creating register for signal `\axi_lite_gpio.\addr_w_comp' using process `\axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+  created $dff cell `$procdff$5706' with positive edge clock.
+Creating register for signal `\axi_lite_gpio.\data_w_comp' using process `\axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+  created $dff cell `$procdff$5707' with positive edge clock.
+
+56.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+56.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 3 empty switches in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5363'.
+Removing empty process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5363'.
+Found and cleaned up 4 empty switches in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+Removing empty process `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5349'.
+Found and cleaned up 11 empty switches in `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+Removing empty process `gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:173$1717'.
+Found and cleaned up 2 empty switches in `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:130$1716'.
+Removing empty process `gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:130$1716'.
+Found and cleaned up 3 empty switches in `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:104$1709'.
+Removing empty process `gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:104$1709'.
+Found and cleaned up 1 empty switch in `\gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+Removing empty process `gpio_controller.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:54$1699'.
+Found and cleaned up 3 empty switches in `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5398'.
+Removing empty process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:76$5398'.
+Found and cleaned up 4 empty switches in `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+Removing empty process `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:45$5384'.
+Found and cleaned up 7 empty switches in `\axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+Removing empty process `axi_lite_gpio.$proc$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v:142$812'.
+Cleaned up 38 empty switches.
+
+56.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+<suppressed ~8 debug messages>
+Optimizing module gpio_controller.
+<suppressed ~3 debug messages>
+Optimizing module $paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.
+<suppressed ~9 debug messages>
+Optimizing module axi_lite_gpio.
+<suppressed ~1 debug messages>
+
+56.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Deleting now unused module gpio_controller.
+Deleting now unused module $paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.
+<suppressed ~3 debug messages>
+
+56.4. Executing FUTURE pass.
+
+56.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+<suppressed ~10 debug messages>
+
+56.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+Removed 6 unused cells and 174 unused wires.
+<suppressed ~7 debug messages>
+
+56.7. Executing CHECK pass (checking for obvious problems).
+Checking module axi_lite_gpio...
+Found and reported 0 problems.
+
+56.8. Executing OPT pass (performing simple optimizations).
+
+56.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+56.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 234 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 214 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 210 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+<suppressed ~72 debug messages>
+Removed a total of 24 cells.
+
+56.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_lite_gpio..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $flatten\gpio_0.$procmux$5547.
+Removed 1 multiplexer ports.
+<suppressed ~137 debug messages>
+
+56.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_lite_gpio.
+    Consolidated identical input bits for $mux cell $flatten\fifo_timer_r.$procmux$5421:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352
+      New ports: A=1'0, B=1'1, Y=$flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0]
+      New connections: $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [31:1] = { $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_EN[31:0]$5352 [0] }
+    Consolidated identical input bits for $mux cell $flatten\fifo_timer_w.$procmux$5609:
+      Old ports: A=41'00000000000000000000000000000000000000000, B=41'11111111111111111111111111111111111111111, Y=$flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387
+      New ports: A=1'0, B=1'1, Y=$flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0]
+      New connections: $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [40:1] = { $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_EN[40:0]$5387 [0] }
+  Optimizing cells in module \axi_lite_gpio.
+Performed a total of 2 changes.
+
+56.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 209 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 208 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+56.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~1 debug messages>
+
+56.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+56.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+56.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_lite_gpio..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~134 debug messages>
+
+56.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_lite_gpio.
+Performed a total of 0 changes.
+
+56.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 208 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Removed a total of 0 cells.
+
+56.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+
+56.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+56.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+56.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell axi_lite_gpio.$flatten\fifo_timer_w.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:81$5402 ($add).
+Removed top 27 bits (of 32) from port Y of cell axi_lite_gpio.$flatten\fifo_timer_w.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:81$5402 ($add).
+Removed top 31 bits (of 32) from port B of cell axi_lite_gpio.$flatten\fifo_timer_w.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:51$5397 ($add).
+Removed top 27 bits (of 32) from port Y of cell axi_lite_gpio.$flatten\fifo_timer_w.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:51$5397 ($add).
+Removed top 1 bits (of 5) from port B of cell axi_lite_gpio.$flatten\fifo_timer_w.$xor$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:34$5376 ($xor).
+Removed top 1 bits (of 5) from port B of cell axi_lite_gpio.$flatten\fifo_timer_w.$xor$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:33$5375 ($xor).
+Removed top 31 bits (of 32) from port B of cell axi_lite_gpio.$flatten\fifo_timer_r.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:81$5367 ($add).
+Removed top 27 bits (of 32) from port Y of cell axi_lite_gpio.$flatten\fifo_timer_r.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:81$5367 ($add).
+Removed top 31 bits (of 32) from port B of cell axi_lite_gpio.$flatten\fifo_timer_r.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:51$5362 ($add).
+Removed top 27 bits (of 32) from port Y of cell axi_lite_gpio.$flatten\fifo_timer_r.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:51$5362 ($add).
+Removed top 1 bits (of 5) from port B of cell axi_lite_gpio.$flatten\fifo_timer_r.$xor$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:34$5341 ($xor).
+Removed top 1 bits (of 5) from port B of cell axi_lite_gpio.$flatten\fifo_timer_r.$xor$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:33$5340 ($xor).
+Removed top 1 bits (of 2) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5562_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5558_CMP0 ($eq).
+Removed top 3 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5545_CMP0 ($eq).
+Removed top 2 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5538_CMP0 ($eq).
+Removed top 3 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5528_CMP0 ($eq).
+Removed top 3 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5512_CMP0 ($eq).
+Removed top 3 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5497_CMP0 ($eq).
+Removed top 2 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5483_CMP0 ($eq).
+Removed top 2 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5470_CMP0 ($eq).
+Removed top 2 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5458_CMP0 ($eq).
+Removed top 2 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5447_CMP0 ($eq).
+Removed top 2 bits (of 8) from port B of cell axi_lite_gpio.$flatten\gpio_0.$procmux$5437_CMP0 ($eq).
+Removed top 27 bits (of 32) from wire axi_lite_gpio.$flatten\fifo_timer_r.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:51$5362_Y.
+Removed top 27 bits (of 32) from wire axi_lite_gpio.$flatten\fifo_timer_r.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:81$5367_Y.
+Removed top 27 bits (of 32) from wire axi_lite_gpio.$flatten\fifo_timer_w.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:51$5397_Y.
+Removed top 27 bits (of 32) from wire axi_lite_gpio.$flatten\fifo_timer_w.$add$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:81$5402_Y.
+Removed top 24 bits (of 32) from wire axi_lite_gpio.addr.
+
+56.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~1 debug messages>
+
+56.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+56.12. Executing OPT pass (performing simple optimizations).
+
+56.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+56.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 206 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Removed a total of 0 cells.
+
+56.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+
+56.12.4. Finished fast OPT passes.
+
+56.13. Executing SORT pass.
+
+56.14. Printing statistics.
+
+=== axi_lite_gpio ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      261 wires
+     4035 wire bits
+      116 public wires
+     1623 public wire bits
+       25 ports
+      247 port bits
+      206 cells
+        4   $add
+        6   $and
+       35   $dff
+       19   $eq
+       19   $logic_and
+        6   $logic_not
+        1   $logic_or
+        2   $mem_v2
+       85   $mux
+        4   $ne
+       10   $not
+        2   $or
+        4   $pmux
+        1   $reduce_or
+        3   $scopeinfo
+        5   $xor
+
+56.15. Executing CHECK pass (checking for obvious problems).
+Checking module axi_lite_gpio...
+Found and reported 0 problems.
+
+57. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \fifo_timer_r.mem in module \axi_lite_gpio:
+  created 16 $dff cells and 0 static cells of width 32.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+Mapping memory \fifo_timer_w.mem in module \axi_lite_gpio:
+  created 16 $dff cells and 0 static cells of width 41.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+
+58. Executing OPT pass (performing simple optimizations).
+
+58.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+<suppressed ~16 debug messages>
+
+58.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 386 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 385 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 384 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+58.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$5707 ($dff) from module axi_lite_gpio (D = $procmux$5622_Y, Q = \data_w_comp, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$6128 ($sdff) from module axi_lite_gpio (D = 1'1, Q = \data_w_comp).
+Adding SRST signal on $procdff$5706 ($dff) from module axi_lite_gpio (D = $procmux$5630_Y, Q = \addr_w_comp, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$6132 ($sdff) from module axi_lite_gpio (D = 1'1, Q = \addr_w_comp).
+Adding SRST signal on $procdff$5705 ($dff) from module axi_lite_gpio (D = $procmux$5641_Y, Q = \addr_r_comp, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$6136 ($sdff) from module axi_lite_gpio (D = $procmux$5641_Y, Q = \addr_r_comp).
+Adding SRST signal on $procdff$5704 ($dff) from module axi_lite_gpio (D = $procmux$5646_Y, Q = \data_reg, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6140 ($sdff) from module axi_lite_gpio (D = \s1_dw_data, Q = \data_reg).
+Adding SRST signal on $procdff$5703 ($dff) from module axi_lite_gpio (D = $procmux$5654_Y, Q = \addr_r_w, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6144 ($sdff) from module axi_lite_gpio (D = \s1_aw_addr, Q = \addr_r_w).
+Adding SRST signal on $procdff$5702 ($dff) from module axi_lite_gpio (D = $procmux$5662_Y, Q = \s1_b_valid, rval = 1'0).
+Adding EN signal on $auto$ff.cc:337:slice$6146 ($sdff) from module axi_lite_gpio (D = $procmux$5662_Y, Q = \s1_b_valid).
+Adding SRST signal on $flatten\gpio_0.$procdff$5691 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$and$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:83$1703_Y, Q = \gpio_0.edge_trigger_int_reg, rval = 0).
+Adding SRST signal on $flatten\gpio_0.$procdff$5690 ($dff) from module axi_lite_gpio (D = \gpio_0.synch_reg1, Q = \gpio_0.synch_reg2, rval = 0).
+Adding SRST signal on $flatten\gpio_0.$procdff$5689 ($dff) from module axi_lite_gpio (D = \gpio_read, Q = \gpio_0.synch_reg1, rval = 0).
+Adding SRST signal on $flatten\gpio_0.$procdff$5688 ($dff) from module axi_lite_gpio (D = \gpio_0.synch_reg2, Q = \gpio_0.read_reg, rval = 0).
+Adding SRST signal on $flatten\gpio_0.$procdff$5687 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$and$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:73$1702_Y, Q = \gpio_0.write_reg, rval = 0).
+Adding SRST signal on $flatten\gpio_0.$procdff$5686 ($dff) from module axi_lite_gpio (D = \gpio_0.direction_reg_gpio, Q = \gpio_0.direction_reg, rval = 0).
+Adding SRST signal on $flatten\gpio_0.$procdff$5685 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$and$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v:88$1708_Y, Q = \gpio_0.int_status_reg_gpio, rval = 0).
+Adding SRST signal on $flatten\gpio_0.$procdff$5684 ($dff) from module axi_lite_gpio (D = \gpio_0.read_reg, Q = \gpio_0.read_reg_gpio, rval = 0).
+Adding SRST signal on $flatten\gpio_0.$procdff$5683 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$procmux$5438_Y, Q = \gpio_0.int_level_edge_mode_reg_gpio, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6158 ($sdff) from module axi_lite_gpio (D = \fifo_data_read [31:0], Q = \gpio_0.int_level_edge_mode_reg_gpio).
+Adding SRST signal on $flatten\gpio_0.$procdff$5682 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$procmux$5448_Y, Q = \gpio_0.int_clr_reg_gpio, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6164 ($sdff) from module axi_lite_gpio (D = \fifo_data_read [31:0], Q = \gpio_0.int_clr_reg_gpio).
+Adding SRST signal on $flatten\gpio_0.$procdff$5681 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$procmux$5459_Y, Q = \gpio_0.int_set_reg_gpio, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6170 ($sdff) from module axi_lite_gpio (D = \fifo_data_read [31:0], Q = \gpio_0.int_set_reg_gpio).
+Adding SRST signal on $flatten\gpio_0.$procdff$5680 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$procmux$5471_Y, Q = \gpio_0.int_mask_reg_gpio, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6176 ($sdff) from module axi_lite_gpio (D = \fifo_data_read [31:0], Q = \gpio_0.int_mask_reg_gpio).
+Adding SRST signal on $flatten\gpio_0.$procdff$5679 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$procmux$5484_Y, Q = \gpio_0.clr_reg_gpio, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6182 ($sdff) from module axi_lite_gpio (D = \fifo_data_read [31:0], Q = \gpio_0.clr_reg_gpio).
+Adding SRST signal on $flatten\gpio_0.$procdff$5678 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$procmux$5498_Y, Q = \gpio_0.set_reg_gpio, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6188 ($sdff) from module axi_lite_gpio (D = \fifo_data_read [31:0], Q = \gpio_0.set_reg_gpio).
+Adding SRST signal on $flatten\gpio_0.$procdff$5677 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$procmux$5513_Y, Q = \gpio_0.write_reg_gpio, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6194 ($sdff) from module axi_lite_gpio (D = \fifo_data_read [31:0], Q = \gpio_0.write_reg_gpio).
+Adding SRST signal on $flatten\gpio_0.$procdff$5676 ($dff) from module axi_lite_gpio (D = $flatten\gpio_0.$procmux$5529_Y, Q = \gpio_0.direction_reg_gpio, rval = 0).
+Adding EN signal on $auto$ff.cc:337:slice$6200 ($sdff) from module axi_lite_gpio (D = \fifo_data_read [31:0], Q = \gpio_0.direction_reg_gpio).
+Adding SRST signal on $flatten\fifo_timer_w.$procdff$5698 ($dff) from module axi_lite_gpio (D = \fifo_timer_w.synchronizers_1_clk_1, Q = \fifo_timer_w.synchronizers_2_clk_1, rval = 5'00000).
+Adding SRST signal on $flatten\fifo_timer_w.$procdff$5697 ($dff) from module axi_lite_gpio (D = \fifo_timer_w.counter_2_gray, Q = \fifo_timer_w.synchronizers_1_clk_1, rval = 5'00000).
+Adding SRST signal on $flatten\fifo_timer_w.$procdff$5696 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$procmux$5617_Y, Q = \fifo_timer_w.counter_1, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$6208 ($sdff) from module axi_lite_gpio (D = $auto$wreduce.cc:514:run$5715 [4:0], Q = \fifo_timer_w.counter_1).
+Adding SRST signal on $flatten\fifo_timer_w.$procdff$5695 ($dff) from module axi_lite_gpio (D = \fifo_timer_w.synchronizers_1_clk_2, Q = \fifo_timer_w.synchronizers_2_clk_2, rval = 5'00000).
+Adding SRST signal on $flatten\fifo_timer_w.$procdff$5694 ($dff) from module axi_lite_gpio (D = \fifo_timer_w.counter_1_gray, Q = \fifo_timer_w.synchronizers_1_clk_2, rval = 5'00000).
+Adding SRST signal on $flatten\fifo_timer_w.$procdff$5693 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$procmux$5597_Y, Q = \fifo_timer_w.counter_2, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$6212 ($sdff) from module axi_lite_gpio (D = $auto$wreduce.cc:514:run$5716 [4:0], Q = \fifo_timer_w.counter_2).
+Adding SRST signal on $flatten\fifo_timer_r.$procdff$5672 ($dff) from module axi_lite_gpio (D = \fifo_timer_r.synchronizers_1_clk_1, Q = \fifo_timer_r.synchronizers_2_clk_1, rval = 5'00000).
+Adding SRST signal on $flatten\fifo_timer_r.$procdff$5671 ($dff) from module axi_lite_gpio (D = \fifo_timer_r.counter_2_gray, Q = \fifo_timer_r.synchronizers_1_clk_1, rval = 5'00000).
+Adding SRST signal on $flatten\fifo_timer_r.$procdff$5670 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$procmux$5429_Y, Q = \fifo_timer_r.counter_1, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$6216 ($sdff) from module axi_lite_gpio (D = $auto$wreduce.cc:514:run$5713 [4:0], Q = \fifo_timer_r.counter_1).
+Adding SRST signal on $flatten\fifo_timer_r.$procdff$5669 ($dff) from module axi_lite_gpio (D = \fifo_timer_r.synchronizers_1_clk_2, Q = \fifo_timer_r.synchronizers_2_clk_2, rval = 5'00000).
+Adding SRST signal on $flatten\fifo_timer_r.$procdff$5668 ($dff) from module axi_lite_gpio (D = \fifo_timer_r.counter_1_gray, Q = \fifo_timer_r.synchronizers_1_clk_2, rval = 5'00000).
+Adding SRST signal on $flatten\fifo_timer_r.$procdff$5667 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$procmux$5409_Y, Q = \fifo_timer_r.counter_2, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:337:slice$6220 ($sdff) from module axi_lite_gpio (D = $auto$wreduce.cc:514:run$5714 [4:0], Q = \fifo_timer_r.counter_2).
+
+58.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+Removed 69 unused cells and 136 unused wires.
+<suppressed ~70 debug messages>
+
+58.5. Rerunning OPT passes. (Removed registers in this run.)
+
+58.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+<suppressed ~2 debug messages>
+
+58.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 336 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 326 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+<suppressed ~30 debug messages>
+Removed a total of 10 cells.
+
+58.8. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\fifo_timer_r.mem[0]$5718 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[0]).
+Adding EN signal on $memory\fifo_timer_r.mem[1]$5720 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[1]).
+Adding EN signal on $memory\fifo_timer_r.mem[2]$5722 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[2]).
+Adding EN signal on $memory\fifo_timer_r.mem[3]$5724 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[3]).
+Adding EN signal on $memory\fifo_timer_r.mem[4]$5726 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[4]).
+Adding EN signal on $memory\fifo_timer_r.mem[5]$5728 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[5]).
+Adding EN signal on $memory\fifo_timer_r.mem[6]$5730 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[6]).
+Adding EN signal on $memory\fifo_timer_r.mem[7]$5732 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[7]).
+Adding EN signal on $memory\fifo_timer_r.mem[8]$5734 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[8]).
+Adding EN signal on $memory\fifo_timer_r.mem[9]$5736 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[9]).
+Adding EN signal on $memory\fifo_timer_r.mem[10]$5738 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[10]).
+Adding EN signal on $memory\fifo_timer_r.mem[11]$5740 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[11]).
+Adding EN signal on $memory\fifo_timer_r.mem[12]$5742 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[12]).
+Adding EN signal on $memory\fifo_timer_r.mem[13]$5744 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[13]).
+Adding EN signal on $memory\fifo_timer_r.mem[14]$5746 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[14]).
+Adding EN signal on $memory\fifo_timer_r.mem[15]$5748 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_r.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5334_DATA[31:0]$5351, Q = \fifo_timer_r.mem[15]).
+Adding EN signal on $memory\fifo_timer_w.mem[0]$5923 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[0]).
+Adding EN signal on $memory\fifo_timer_w.mem[1]$5925 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[1]).
+Adding EN signal on $memory\fifo_timer_w.mem[2]$5927 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[2]).
+Adding EN signal on $memory\fifo_timer_w.mem[3]$5929 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[3]).
+Adding EN signal on $memory\fifo_timer_w.mem[4]$5931 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[4]).
+Adding EN signal on $memory\fifo_timer_w.mem[5]$5933 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[5]).
+Adding EN signal on $memory\fifo_timer_w.mem[6]$5935 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[6]).
+Adding EN signal on $memory\fifo_timer_w.mem[7]$5937 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[7]).
+Adding EN signal on $memory\fifo_timer_w.mem[8]$5939 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[8]).
+Adding EN signal on $memory\fifo_timer_w.mem[9]$5941 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[9]).
+Adding EN signal on $memory\fifo_timer_w.mem[10]$5943 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[10]).
+Adding EN signal on $memory\fifo_timer_w.mem[11]$5945 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[11]).
+Adding EN signal on $memory\fifo_timer_w.mem[12]$5947 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[12]).
+Adding EN signal on $memory\fifo_timer_w.mem[13]$5949 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[13]).
+Adding EN signal on $memory\fifo_timer_w.mem[14]$5951 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[14]).
+Adding EN signal on $memory\fifo_timer_w.mem[15]$5953 ($dff) from module axi_lite_gpio (D = $flatten\fifo_timer_w.$0$memwr$\mem$/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/asynchronous_fifo_gen.v:48$5368_DATA[40:0]$5386, Q = \fifo_timer_w.mem[15]).
+
+58.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+Removed 32 unused cells and 42 unused wires.
+<suppressed ~33 debug messages>
+
+58.10. Rerunning OPT passes. (Removed registers in this run.)
+
+58.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+58.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 294 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Removed a total of 0 cells.
+
+58.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+58.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+
+58.15. Finished fast OPT passes.
+Renaming module \axi_lite_gpio to \gold_core.
+
+59. Executing Liberty frontend: /Users/shubhanshu/Desktop/Nebula/digital/sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib
+Ignoring cell sky130_fd_sc_hd__dlclkp_1 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__dlclkp_2 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__dlclkp_4 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_1 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_2 with missing function on output GCLK.
+Ignoring cell sky130_fd_sc_hd__sdlclkp_4 with missing function on output GCLK.
+Imported 422 cell types from liberty file.
+<suppressed ~12 debug messages>
+
+60. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v
+Parsing Verilog input from `/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v' to AST representation.
+Generating RTLIL representation for module `\$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Generating RTLIL representation for module `\$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen'.
+Generating RTLIL representation for module `\alu'.
+Generating RTLIL representation for module `\alu_src_a_mux'.
+Generating RTLIL representation for module `\alu_src_b_mux'.
+Generating RTLIL representation for module `\arbiter'.
+Generating RTLIL representation for module `\axi_interconnect_2m_8s'.
+Generating RTLIL representation for module `\axi_lite_dma_config'.
+Generating RTLIL representation for module `\axi_lite_dot'.
+Generating RTLIL representation for module `\axi_lite_gpio'.
+Generating RTLIL representation for module `\axi_lite_master'.
+Generating RTLIL representation for module `\axi_lite_timer'.
+Generating RTLIL representation for module `\axi_lite_uart'.
+Generating RTLIL representation for module `\branch_comp_decoder'.
+Generating RTLIL representation for module `\branch_comprator'.
+Generating RTLIL representation for module `\branch_predictor'.
+Generating RTLIL representation for module `\clk_div_mux'.
+Generating RTLIL representation for module `\clk_gate'.
+Generating RTLIL representation for module `\control_unit'.
+Generating RTLIL representation for module `\csr_regfile'.
+Generating RTLIL representation for module `\data_clipper'.
+Generating RTLIL representation for module `\data_extender'.
+Generating RTLIL representation for module `\data_forwarding_unit'.
+Generating RTLIL representation for module `\dma_controller'.
+Generating RTLIL representation for module `\dmem'.
+Generating RTLIL representation for module `\execution_stage'.
+Generating RTLIL representation for module `\fp4_dot_unit'.
+Generating RTLIL representation for module `\fp4_mul'.
+Generating RTLIL representation for module `\fp8_adder'.
+Generating RTLIL representation for module `\gpio_controller'.
+Generating RTLIL representation for module `\hazard_detection_unit'.
+Generating RTLIL representation for module `\i_rom_32x256'.
+Generating RTLIL representation for module `\id_memory_256x64_wrap'.
+Generating RTLIL representation for module `\immediate_generator'.
+Generating RTLIL representation for module `\instruction_decode_stage'.
+Generating RTLIL representation for module `\instruction_fetch_stage'.
+Generating RTLIL representation for module `\interrupt_control_unit'.
+Generating RTLIL representation for module `\l1_cache_axi_master'.
+Generating RTLIL representation for module `\l1_d_cache_8kb'.
+Generating RTLIL representation for module `\l1_i_cache_8kb'.
+Generating RTLIL representation for module `\mem_axi_slave'.
+Generating RTLIL representation for module `\memory_stage'.
+Generating RTLIL representation for module `\multiplier_pipelined'.
+Generating RTLIL representation for module `\pipeline_reg_ex_mem'.
+Generating RTLIL representation for module `\pipeline_reg_id_ex'.
+Generating RTLIL representation for module `\pipeline_reg_if_id'.
+Generating RTLIL representation for module `\pipeline_reg_mem_wb'.
+Generating RTLIL representation for module `\processor_top'.
+Generating RTLIL representation for module `\read_buffer_d_cache'.
+Generating RTLIL representation for module `\read_buffer_i_cache'.
+Generating RTLIL representation for module `\register_file'.
+Generating RTLIL representation for module `\soc_top'.
+Generating RTLIL representation for module `\tag_memory_92x64_wrap'.
+Generating RTLIL representation for module `\timer'.
+Generating RTLIL representation for module `\uart_controller'.
+Generating RTLIL representation for module `\write_back_stage'.
+Successfully finished Verilog frontend.
+
+61. Executing PREP pass.
+
+61.1. Executing HIERARCHY pass (managing design hierarchy).
+
+61.1.1. Analyzing design hierarchy..
+Top module:  \axi_lite_gpio
+Used module:     \gpio_controller
+Used module:         \sky130_fd_sc_hd__dfxtp_1
+Used module:         \sky130_fd_sc_hd__a21oi_1
+Used module:         \sky130_fd_sc_hd__nand2_1
+Used module:         \sky130_fd_sc_hd__and2_0
+Used module:         \sky130_fd_sc_hd__lpflow_isobufsrc_1
+Used module:         \sky130_fd_sc_hd__nor3_1
+Used module:         \sky130_fd_sc_hd__a31oi_1
+Used module:         \sky130_fd_sc_hd__o21ai_0
+Used module:         \sky130_fd_sc_hd__o211ai_1
+Used module:         \sky130_fd_sc_hd__nand3b_1
+Used module:         \sky130_fd_sc_hd__nor2_1
+Used module:         \sky130_fd_sc_hd__nand2b_1
+Used module:         \sky130_fd_sc_hd__lpflow_inputiso1p_1
+Used module:         \sky130_fd_sc_hd__nand4_1
+Used module:         \sky130_fd_sc_hd__nor4_1
+Used module:         \sky130_fd_sc_hd__o21a_1
+Used module:         \sky130_fd_sc_hd__nand3_1
+Used module:         \sky130_fd_sc_hd__a22oi_1
+Used module:         \sky130_fd_sc_hd__a222oi_1
+Used module:         \sky130_fd_sc_hd__a22o_1
+Used module:         \sky130_fd_sc_hd__nand4bb_1
+Used module:         \sky130_fd_sc_hd__or4_1
+Used module:         \sky130_fd_sc_hd__or4b_1
+Used module:     \$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen
+Used module:         \sky130_fd_sc_hd__edfxtp_1
+Used module:         \sky130_fd_sc_hd__a311oi_1
+Used module:         \sky130_fd_sc_hd__a211oi_1
+Used module:         \sky130_fd_sc_hd__a21o_1
+Used module:         \sky130_fd_sc_hd__mux4_2
+Used module:         \sky130_fd_sc_hd__o22ai_1
+Used module:         \sky130_fd_sc_hd__mux2i_1
+Used module:         \sky130_fd_sc_hd__mux2_1
+Used module:         \sky130_fd_sc_hd__or3_1
+Used module:         \sky130_fd_sc_hd__a31o_1
+Used module:         \sky130_fd_sc_hd__and3_1
+Used module:         \sky130_fd_sc_hd__xnor3_1
+Used module:         \sky130_fd_sc_hd__o221a_1
+Used module:         \sky130_fd_sc_hd__xnor2_1
+Used module:         \sky130_fd_sc_hd__a221oi_1
+Used module:         \sky130_fd_sc_hd__clkinv_1
+Used module:         \sky130_fd_sc_hd__o221ai_1
+Used module:         \sky130_fd_sc_hd__a21boi_0
+Used module:         \sky130_fd_sc_hd__and3b_1
+Used module:         \sky130_fd_sc_hd__xor3_1
+Used module:     \$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Used module:         \sky130_fd_sc_hd__o211a_1
+Used module:         \sky130_fd_sc_hd__xor2_1
+Used module:         \sky130_fd_sc_hd__o31ai_1
+Used module:         \sky130_fd_sc_hd__o41ai_1
+Used module:         \sky130_fd_sc_hd__o41a_1
+Used module:     \sky130_fd_sc_hd__o21bai_1
+
+61.1.2. Analyzing design hierarchy..
+Top module:  \axi_lite_gpio
+Used module:     \gpio_controller
+Used module:         \sky130_fd_sc_hd__dfxtp_1
+Used module:         \sky130_fd_sc_hd__a21oi_1
+Used module:         \sky130_fd_sc_hd__nand2_1
+Used module:         \sky130_fd_sc_hd__and2_0
+Used module:         \sky130_fd_sc_hd__lpflow_isobufsrc_1
+Used module:         \sky130_fd_sc_hd__nor3_1
+Used module:         \sky130_fd_sc_hd__a31oi_1
+Used module:         \sky130_fd_sc_hd__o21ai_0
+Used module:         \sky130_fd_sc_hd__o211ai_1
+Used module:         \sky130_fd_sc_hd__nand3b_1
+Used module:         \sky130_fd_sc_hd__nor2_1
+Used module:         \sky130_fd_sc_hd__nand2b_1
+Used module:         \sky130_fd_sc_hd__lpflow_inputiso1p_1
+Used module:         \sky130_fd_sc_hd__nand4_1
+Used module:         \sky130_fd_sc_hd__nor4_1
+Used module:         \sky130_fd_sc_hd__o21a_1
+Used module:         \sky130_fd_sc_hd__nand3_1
+Used module:         \sky130_fd_sc_hd__a22oi_1
+Used module:         \sky130_fd_sc_hd__a222oi_1
+Used module:         \sky130_fd_sc_hd__a22o_1
+Used module:         \sky130_fd_sc_hd__nand4bb_1
+Used module:         \sky130_fd_sc_hd__or4_1
+Used module:         \sky130_fd_sc_hd__or4b_1
+Used module:     \$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen
+Used module:         \sky130_fd_sc_hd__edfxtp_1
+Used module:         \sky130_fd_sc_hd__a311oi_1
+Used module:         \sky130_fd_sc_hd__a211oi_1
+Used module:         \sky130_fd_sc_hd__a21o_1
+Used module:         \sky130_fd_sc_hd__mux4_2
+Used module:         \sky130_fd_sc_hd__o22ai_1
+Used module:         \sky130_fd_sc_hd__mux2i_1
+Used module:         \sky130_fd_sc_hd__mux2_1
+Used module:         \sky130_fd_sc_hd__or3_1
+Used module:         \sky130_fd_sc_hd__a31o_1
+Used module:         \sky130_fd_sc_hd__and3_1
+Used module:         \sky130_fd_sc_hd__xnor3_1
+Used module:         \sky130_fd_sc_hd__o221a_1
+Used module:         \sky130_fd_sc_hd__xnor2_1
+Used module:         \sky130_fd_sc_hd__a221oi_1
+Used module:         \sky130_fd_sc_hd__clkinv_1
+Used module:         \sky130_fd_sc_hd__o221ai_1
+Used module:         \sky130_fd_sc_hd__a21boi_0
+Used module:         \sky130_fd_sc_hd__and3b_1
+Used module:         \sky130_fd_sc_hd__xor3_1
+Used module:     \$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Used module:         \sky130_fd_sc_hd__o211a_1
+Used module:         \sky130_fd_sc_hd__xor2_1
+Used module:         \sky130_fd_sc_hd__o31ai_1
+Used module:         \sky130_fd_sc_hd__o41ai_1
+Used module:         \sky130_fd_sc_hd__o41a_1
+Used module:     \sky130_fd_sc_hd__o21bai_1
+Removing unused module `\write_back_stage'.
+Removing unused module `\uart_controller'.
+Removing unused module `\timer'.
+Removing unused module `\tag_memory_92x64_wrap'.
+Removing unused module `\soc_top'.
+Removing unused module `\register_file'.
+Removing unused module `\read_buffer_i_cache'.
+Removing unused module `\read_buffer_d_cache'.
+Removing unused module `\processor_top'.
+Removing unused module `\pipeline_reg_mem_wb'.
+Removing unused module `\pipeline_reg_if_id'.
+Removing unused module `\pipeline_reg_id_ex'.
+Removing unused module `\pipeline_reg_ex_mem'.
+Removing unused module `\multiplier_pipelined'.
+Removing unused module `\memory_stage'.
+Removing unused module `\mem_axi_slave'.
+Removing unused module `\l1_i_cache_8kb'.
+Removing unused module `\l1_d_cache_8kb'.
+Removing unused module `\l1_cache_axi_master'.
+Removing unused module `\interrupt_control_unit'.
+Removing unused module `\instruction_fetch_stage'.
+Removing unused module `\instruction_decode_stage'.
+Removing unused module `\immediate_generator'.
+Removing unused module `\id_memory_256x64_wrap'.
+Removing unused module `\i_rom_32x256'.
+Removing unused module `\hazard_detection_unit'.
+Removing unused module `\fp8_adder'.
+Removing unused module `\fp4_mul'.
+Removing unused module `\fp4_dot_unit'.
+Removing unused module `\execution_stage'.
+Removing unused module `\dmem'.
+Removing unused module `\dma_controller'.
+Removing unused module `\data_forwarding_unit'.
+Removing unused module `\data_extender'.
+Removing unused module `\data_clipper'.
+Removing unused module `\csr_regfile'.
+Removing unused module `\control_unit'.
+Removing unused module `\clk_gate'.
+Removing unused module `\clk_div_mux'.
+Removing unused module `\branch_predictor'.
+Removing unused module `\branch_comprator'.
+Removing unused module `\branch_comp_decoder'.
+Removing unused module `\axi_lite_uart'.
+Removing unused module `\axi_lite_timer'.
+Removing unused module `\axi_lite_master'.
+Removing unused module `\axi_lite_dot'.
+Removing unused module `\axi_lite_dma_config'.
+Removing unused module `\axi_interconnect_2m_8s'.
+Removing unused module `\arbiter'.
+Removing unused module `\alu_src_b_mux'.
+Removing unused module `\alu_src_a_mux'.
+Removing unused module `\alu'.
+Removing unused module `\sky130_fd_sc_hd__xor3_4'.
+Removing unused module `\sky130_fd_sc_hd__xor3_2'.
+Removing unused module `\sky130_fd_sc_hd__xor2_4'.
+Removing unused module `\sky130_fd_sc_hd__xor2_2'.
+Removing unused module `\sky130_fd_sc_hd__xnor3_4'.
+Removing unused module `\sky130_fd_sc_hd__xnor3_2'.
+Removing unused module `\sky130_fd_sc_hd__xnor2_4'.
+Removing unused module `\sky130_fd_sc_hd__xnor2_2'.
+Removing unused module `\sky130_fd_sc_hd__sedfxtp_4'.
+Removing unused module `\sky130_fd_sc_hd__sedfxtp_2'.
+Removing unused module `\sky130_fd_sc_hd__sedfxtp_1'.
+Removing unused module `\sky130_fd_sc_hd__sedfxbp_2'.
+Removing unused module `\sky130_fd_sc_hd__sedfxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfxtp_4'.
+Removing unused module `\sky130_fd_sc_hd__sdfxtp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfxtp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfxbp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfstp_4'.
+Removing unused module `\sky130_fd_sc_hd__sdfstp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfstp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfsbp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfsbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfrtp_4'.
+Removing unused module `\sky130_fd_sc_hd__sdfrtp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfrtp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfrtn_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfrbp_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfrbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfbbp_1'.
+Removing unused module `\sky130_fd_sc_hd__sdfbbn_2'.
+Removing unused module `\sky130_fd_sc_hd__sdfbbn_1'.
+Removing unused module `\sky130_fd_sc_hd__probec_p_8'.
+Removing unused module `\sky130_fd_sc_hd__probe_p_8'.
+Removing unused module `\sky130_fd_sc_hd__or4bb_4'.
+Removing unused module `\sky130_fd_sc_hd__or4bb_2'.
+Removing unused module `\sky130_fd_sc_hd__or4bb_1'.
+Removing unused module `\sky130_fd_sc_hd__or4b_4'.
+Removing unused module `\sky130_fd_sc_hd__or4b_2'.
+Removing unused module `\sky130_fd_sc_hd__or4_4'.
+Removing unused module `\sky130_fd_sc_hd__or4_2'.
+Removing unused module `\sky130_fd_sc_hd__or3b_4'.
+Removing unused module `\sky130_fd_sc_hd__or3b_2'.
+Removing unused module `\sky130_fd_sc_hd__or3b_1'.
+Removing unused module `\sky130_fd_sc_hd__or3_4'.
+Removing unused module `\sky130_fd_sc_hd__or3_2'.
+Removing unused module `\sky130_fd_sc_hd__or2b_4'.
+Removing unused module `\sky130_fd_sc_hd__or2b_2'.
+Removing unused module `\sky130_fd_sc_hd__or2b_1'.
+Removing unused module `\sky130_fd_sc_hd__or2_4'.
+Removing unused module `\sky130_fd_sc_hd__or2_2'.
+Removing unused module `\sky130_fd_sc_hd__or2_1'.
+Removing unused module `\sky130_fd_sc_hd__or2_0'.
+Removing unused module `\sky130_fd_sc_hd__o41ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o41ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o41a_4'.
+Removing unused module `\sky130_fd_sc_hd__o41a_2'.
+Removing unused module `\sky130_fd_sc_hd__o32ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o32ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o32ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o32a_4'.
+Removing unused module `\sky130_fd_sc_hd__o32a_2'.
+Removing unused module `\sky130_fd_sc_hd__o32a_1'.
+Removing unused module `\sky130_fd_sc_hd__o31ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o31ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o31a_4'.
+Removing unused module `\sky130_fd_sc_hd__o31a_2'.
+Removing unused module `\sky130_fd_sc_hd__o31a_1'.
+Removing unused module `\sky130_fd_sc_hd__o311ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o311ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o311ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o311ai_0'.
+Removing unused module `\sky130_fd_sc_hd__o311a_4'.
+Removing unused module `\sky130_fd_sc_hd__o311a_2'.
+Removing unused module `\sky130_fd_sc_hd__o311a_1'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2a_4'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2a_2'.
+Removing unused module `\sky130_fd_sc_hd__o2bb2a_1'.
+Removing unused module `\sky130_fd_sc_hd__o22ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o22ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o22a_4'.
+Removing unused module `\sky130_fd_sc_hd__o22a_2'.
+Removing unused module `\sky130_fd_sc_hd__o22a_1'.
+Removing unused module `\sky130_fd_sc_hd__o221ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o221ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o221a_4'.
+Removing unused module `\sky130_fd_sc_hd__o221a_2'.
+Removing unused module `\sky130_fd_sc_hd__o21bai_4'.
+Removing unused module `\sky130_fd_sc_hd__o21bai_2'.
+Removing unused module `\sky130_fd_sc_hd__o21ba_4'.
+Removing unused module `\sky130_fd_sc_hd__o21ba_2'.
+Removing unused module `\sky130_fd_sc_hd__o21ba_1'.
+Removing unused module `\sky130_fd_sc_hd__o21ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o21ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o21ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o21a_4'.
+Removing unused module `\sky130_fd_sc_hd__o21a_2'.
+Removing unused module `\sky130_fd_sc_hd__o211ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o211ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o211a_4'.
+Removing unused module `\sky130_fd_sc_hd__o211a_2'.
+Removing unused module `\sky130_fd_sc_hd__o2111ai_4'.
+Removing unused module `\sky130_fd_sc_hd__o2111ai_2'.
+Removing unused module `\sky130_fd_sc_hd__o2111ai_1'.
+Removing unused module `\sky130_fd_sc_hd__o2111a_4'.
+Removing unused module `\sky130_fd_sc_hd__o2111a_2'.
+Removing unused module `\sky130_fd_sc_hd__o2111a_1'.
+Removing unused module `\sky130_fd_sc_hd__nor4bb_4'.
+Removing unused module `\sky130_fd_sc_hd__nor4bb_2'.
+Removing unused module `\sky130_fd_sc_hd__nor4bb_1'.
+Removing unused module `\sky130_fd_sc_hd__nor4b_4'.
+Removing unused module `\sky130_fd_sc_hd__nor4b_2'.
+Removing unused module `\sky130_fd_sc_hd__nor4b_1'.
+Removing unused module `\sky130_fd_sc_hd__nor4_4'.
+Removing unused module `\sky130_fd_sc_hd__nor4_2'.
+Removing unused module `\sky130_fd_sc_hd__nor3b_4'.
+Removing unused module `\sky130_fd_sc_hd__nor3b_2'.
+Removing unused module `\sky130_fd_sc_hd__nor3b_1'.
+Removing unused module `\sky130_fd_sc_hd__nor3_4'.
+Removing unused module `\sky130_fd_sc_hd__nor3_2'.
+Removing unused module `\sky130_fd_sc_hd__nor2b_4'.
+Removing unused module `\sky130_fd_sc_hd__nor2b_2'.
+Removing unused module `\sky130_fd_sc_hd__nor2b_1'.
+Removing unused module `\sky130_fd_sc_hd__nor2_8'.
+Removing unused module `\sky130_fd_sc_hd__nor2_4'.
+Removing unused module `\sky130_fd_sc_hd__nor2_2'.
+Removing unused module `\sky130_fd_sc_hd__nand4bb_4'.
+Removing unused module `\sky130_fd_sc_hd__nand4bb_2'.
+Removing unused module `\sky130_fd_sc_hd__nand4b_4'.
+Removing unused module `\sky130_fd_sc_hd__nand4b_2'.
+Removing unused module `\sky130_fd_sc_hd__nand4b_1'.
+Removing unused module `\sky130_fd_sc_hd__nand4_4'.
+Removing unused module `\sky130_fd_sc_hd__nand4_2'.
+Removing unused module `\sky130_fd_sc_hd__nand3b_4'.
+Removing unused module `\sky130_fd_sc_hd__nand3b_2'.
+Removing unused module `\sky130_fd_sc_hd__nand3_4'.
+Removing unused module `\sky130_fd_sc_hd__nand3_2'.
+Removing unused module `\sky130_fd_sc_hd__nand2b_4'.
+Removing unused module `\sky130_fd_sc_hd__nand2b_2'.
+Removing unused module `\sky130_fd_sc_hd__nand2_8'.
+Removing unused module `\sky130_fd_sc_hd__nand2_4'.
+Removing unused module `\sky130_fd_sc_hd__nand2_2'.
+Removing unused module `\sky130_fd_sc_hd__mux4_4'.
+Removing unused module `\sky130_fd_sc_hd__mux4_1'.
+Removing unused module `\sky130_fd_sc_hd__mux2i_4'.
+Removing unused module `\sky130_fd_sc_hd__mux2i_2'.
+Removing unused module `\sky130_fd_sc_hd__mux2_8'.
+Removing unused module `\sky130_fd_sc_hd__mux2_4'.
+Removing unused module `\sky130_fd_sc_hd__mux2_2'.
+Removing unused module `\sky130_fd_sc_hd__maj3_4'.
+Removing unused module `\sky130_fd_sc_hd__maj3_2'.
+Removing unused module `\sky130_fd_sc_hd__maj3_1'.
+Removing unused module `\sky130_fd_sc_hd__macro_sparecell'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrckapwr_16'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrc_8'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrc_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrc_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_isobufsrc_16'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_inputisolatch_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_inputiso1n_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_inputiso0p_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_inputiso0n_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_8'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_6'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_3'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_decapkapwr_12'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_8'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_16'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkinvkapwr_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_8'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_4'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_2'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_16'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_clkbufkapwr_1'.
+Removing unused module `\sky130_fd_sc_hd__lpflow_bleeder_1'.
+Removing unused module `\sky130_fd_sc_hd__inv_8'.
+Removing unused module `\sky130_fd_sc_hd__inv_6'.
+Removing unused module `\sky130_fd_sc_hd__inv_4'.
+Removing unused module `\sky130_fd_sc_hd__inv_2'.
+Removing unused module `\sky130_fd_sc_hd__inv_16'.
+Removing unused module `\sky130_fd_sc_hd__inv_12'.
+Removing unused module `\sky130_fd_sc_hd__inv_1'.
+Removing unused module `\sky130_fd_sc_hd__ha_4'.
+Removing unused module `\sky130_fd_sc_hd__ha_2'.
+Removing unused module `\sky130_fd_sc_hd__ha_1'.
+Removing unused module `\sky130_fd_sc_hd__fahcon_1'.
+Removing unused module `\sky130_fd_sc_hd__fahcin_1'.
+Removing unused module `\sky130_fd_sc_hd__fah_1'.
+Removing unused module `\sky130_fd_sc_hd__fa_4'.
+Removing unused module `\sky130_fd_sc_hd__fa_2'.
+Removing unused module `\sky130_fd_sc_hd__fa_1'.
+Removing unused module `\sky130_fd_sc_hd__einvp_8'.
+Removing unused module `\sky130_fd_sc_hd__einvp_4'.
+Removing unused module `\sky130_fd_sc_hd__einvp_2'.
+Removing unused module `\sky130_fd_sc_hd__einvp_1'.
+Removing unused module `\sky130_fd_sc_hd__einvn_8'.
+Removing unused module `\sky130_fd_sc_hd__einvn_4'.
+Removing unused module `\sky130_fd_sc_hd__einvn_2'.
+Removing unused module `\sky130_fd_sc_hd__einvn_1'.
+Removing unused module `\sky130_fd_sc_hd__einvn_0'.
+Removing unused module `\sky130_fd_sc_hd__edfxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__ebufn_8'.
+Removing unused module `\sky130_fd_sc_hd__ebufn_4'.
+Removing unused module `\sky130_fd_sc_hd__ebufn_2'.
+Removing unused module `\sky130_fd_sc_hd__ebufn_1'.
+Removing unused module `\sky130_fd_sc_hd__dlymetal6s6s_1'.
+Removing unused module `\sky130_fd_sc_hd__dlymetal6s4s_1'.
+Removing unused module `\sky130_fd_sc_hd__dlymetal6s2s_1'.
+Removing unused module `\sky130_fd_sc_hd__dlygate4sd3_1'.
+Removing unused module `\sky130_fd_sc_hd__dlygate4sd2_1'.
+Removing unused module `\sky130_fd_sc_hd__dlygate4sd1_1'.
+Removing unused module `\sky130_fd_sc_hd__dlxtp_1'.
+Removing unused module `\sky130_fd_sc_hd__dlxtn_4'.
+Removing unused module `\sky130_fd_sc_hd__dlxtn_2'.
+Removing unused module `\sky130_fd_sc_hd__dlxtn_1'.
+Removing unused module `\sky130_fd_sc_hd__dlxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dlxbn_2'.
+Removing unused module `\sky130_fd_sc_hd__dlxbn_1'.
+Removing unused module `\sky130_fd_sc_hd__dlrtp_4'.
+Removing unused module `\sky130_fd_sc_hd__dlrtp_2'.
+Removing unused module `\sky130_fd_sc_hd__dlrtp_1'.
+Removing unused module `\sky130_fd_sc_hd__dlrtn_4'.
+Removing unused module `\sky130_fd_sc_hd__dlrtn_2'.
+Removing unused module `\sky130_fd_sc_hd__dlrtn_1'.
+Removing unused module `\sky130_fd_sc_hd__dlrbp_2'.
+Removing unused module `\sky130_fd_sc_hd__dlrbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dlrbn_2'.
+Removing unused module `\sky130_fd_sc_hd__dlrbn_1'.
+Removing unused module `\sky130_fd_sc_hd__diode_2'.
+Removing unused module `\sky130_fd_sc_hd__dfxtp_4'.
+Removing unused module `\sky130_fd_sc_hd__dfxtp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfxbp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfxbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfstp_4'.
+Removing unused module `\sky130_fd_sc_hd__dfstp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfstp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfsbp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfsbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfrtp_4'.
+Removing unused module `\sky130_fd_sc_hd__dfrtp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfrtp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfrtn_1'.
+Removing unused module `\sky130_fd_sc_hd__dfrbp_2'.
+Removing unused module `\sky130_fd_sc_hd__dfrbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfbbp_1'.
+Removing unused module `\sky130_fd_sc_hd__dfbbn_2'.
+Removing unused module `\sky130_fd_sc_hd__dfbbn_1'.
+Removing unused module `\sky130_fd_sc_hd__decap_8'.
+Removing unused module `\sky130_fd_sc_hd__decap_6'.
+Removing unused module `\sky130_fd_sc_hd__decap_4'.
+Removing unused module `\sky130_fd_sc_hd__decap_3'.
+Removing unused module `\sky130_fd_sc_hd__decap_12'.
+Removing unused module `\sky130_fd_sc_hd__conb_1'.
+Removing unused module `\sky130_fd_sc_hd__clkinvlp_4'.
+Removing unused module `\sky130_fd_sc_hd__clkinvlp_2'.
+Removing unused module `\sky130_fd_sc_hd__clkinv_8'.
+Removing unused module `\sky130_fd_sc_hd__clkinv_4'.
+Removing unused module `\sky130_fd_sc_hd__clkinv_2'.
+Removing unused module `\sky130_fd_sc_hd__clkinv_16'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s50_2'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s50_1'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s25_2'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s25_1'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s18_2'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s18_1'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s15_2'.
+Removing unused module `\sky130_fd_sc_hd__clkdlybuf4s15_1'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_8'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_4'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_2'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_16'.
+Removing unused module `\sky130_fd_sc_hd__clkbuf_1'.
+Removing unused module `\sky130_fd_sc_hd__bufinv_8'.
+Removing unused module `\sky130_fd_sc_hd__bufinv_16'.
+Removing unused module `\sky130_fd_sc_hd__bufbuf_8'.
+Removing unused module `\sky130_fd_sc_hd__bufbuf_16'.
+Removing unused module `\sky130_fd_sc_hd__buf_8'.
+Removing unused module `\sky130_fd_sc_hd__buf_6'.
+Removing unused module `\sky130_fd_sc_hd__buf_4'.
+Removing unused module `\sky130_fd_sc_hd__buf_2'.
+Removing unused module `\sky130_fd_sc_hd__buf_16'.
+Removing unused module `\sky130_fd_sc_hd__buf_12'.
+Removing unused module `\sky130_fd_sc_hd__buf_1'.
+Removing unused module `\sky130_fd_sc_hd__and4bb_4'.
+Removing unused module `\sky130_fd_sc_hd__and4bb_2'.
+Removing unused module `\sky130_fd_sc_hd__and4bb_1'.
+Removing unused module `\sky130_fd_sc_hd__and4b_4'.
+Removing unused module `\sky130_fd_sc_hd__and4b_2'.
+Removing unused module `\sky130_fd_sc_hd__and4b_1'.
+Removing unused module `\sky130_fd_sc_hd__and4_4'.
+Removing unused module `\sky130_fd_sc_hd__and4_2'.
+Removing unused module `\sky130_fd_sc_hd__and4_1'.
+Removing unused module `\sky130_fd_sc_hd__and3b_4'.
+Removing unused module `\sky130_fd_sc_hd__and3b_2'.
+Removing unused module `\sky130_fd_sc_hd__and3_4'.
+Removing unused module `\sky130_fd_sc_hd__and3_2'.
+Removing unused module `\sky130_fd_sc_hd__and2b_4'.
+Removing unused module `\sky130_fd_sc_hd__and2b_2'.
+Removing unused module `\sky130_fd_sc_hd__and2b_1'.
+Removing unused module `\sky130_fd_sc_hd__and2_4'.
+Removing unused module `\sky130_fd_sc_hd__and2_2'.
+Removing unused module `\sky130_fd_sc_hd__and2_1'.
+Removing unused module `\sky130_fd_sc_hd__a41oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a41oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a41oi_1'.
+Removing unused module `\sky130_fd_sc_hd__a41o_4'.
+Removing unused module `\sky130_fd_sc_hd__a41o_2'.
+Removing unused module `\sky130_fd_sc_hd__a41o_1'.
+Removing unused module `\sky130_fd_sc_hd__a32oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a32oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a32oi_1'.
+Removing unused module `\sky130_fd_sc_hd__a32o_4'.
+Removing unused module `\sky130_fd_sc_hd__a32o_2'.
+Removing unused module `\sky130_fd_sc_hd__a32o_1'.
+Removing unused module `\sky130_fd_sc_hd__a31oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a31oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a31o_4'.
+Removing unused module `\sky130_fd_sc_hd__a31o_2'.
+Removing unused module `\sky130_fd_sc_hd__a311oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a311oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a311o_4'.
+Removing unused module `\sky130_fd_sc_hd__a311o_2'.
+Removing unused module `\sky130_fd_sc_hd__a311o_1'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2oi_1'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2o_4'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2o_2'.
+Removing unused module `\sky130_fd_sc_hd__a2bb2o_1'.
+Removing unused module `\sky130_fd_sc_hd__a22oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a22oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a22o_4'.
+Removing unused module `\sky130_fd_sc_hd__a22o_2'.
+Removing unused module `\sky130_fd_sc_hd__a221oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a221oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a221o_4'.
+Removing unused module `\sky130_fd_sc_hd__a221o_2'.
+Removing unused module `\sky130_fd_sc_hd__a221o_1'.
+Removing unused module `\sky130_fd_sc_hd__a21oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a21oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a21o_4'.
+Removing unused module `\sky130_fd_sc_hd__a21o_2'.
+Removing unused module `\sky130_fd_sc_hd__a21boi_4'.
+Removing unused module `\sky130_fd_sc_hd__a21boi_2'.
+Removing unused module `\sky130_fd_sc_hd__a21boi_1'.
+Removing unused module `\sky130_fd_sc_hd__a21bo_4'.
+Removing unused module `\sky130_fd_sc_hd__a21bo_2'.
+Removing unused module `\sky130_fd_sc_hd__a21bo_1'.
+Removing unused module `\sky130_fd_sc_hd__a211oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a211oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a211o_4'.
+Removing unused module `\sky130_fd_sc_hd__a211o_2'.
+Removing unused module `\sky130_fd_sc_hd__a211o_1'.
+Removing unused module `\sky130_fd_sc_hd__a2111oi_4'.
+Removing unused module `\sky130_fd_sc_hd__a2111oi_2'.
+Removing unused module `\sky130_fd_sc_hd__a2111oi_1'.
+Removing unused module `\sky130_fd_sc_hd__a2111oi_0'.
+Removing unused module `\sky130_fd_sc_hd__a2111o_4'.
+Removing unused module `\sky130_fd_sc_hd__a2111o_2'.
+Removing unused module `\sky130_fd_sc_hd__a2111o_1'.
+Removed 425 unused modules.
+
+61.2. Executing PROC pass (convert processes to netlists).
+
+61.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+61.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+61.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+61.2.4. Executing PROC_INIT pass (extract init attributes).
+
+61.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+61.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+61.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+61.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+61.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+61.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+61.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+61.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module sky130_fd_sc_hd__o221ai_1.
+Optimizing module sky130_fd_sc_hd__a31o_1.
+Optimizing module sky130_fd_sc_hd__mux2i_1.
+Optimizing module sky130_fd_sc_hd__o211a_1.
+Optimizing module sky130_fd_sc_hd__a311oi_1.
+Optimizing module sky130_fd_sc_hd__or4_1.
+Optimizing module sky130_fd_sc_hd__xor2_1.
+Optimizing module sky130_fd_sc_hd__mux2_1.
+Optimizing module sky130_fd_sc_hd__o221a_1.
+Optimizing module sky130_fd_sc_hd__nor2_1.
+Optimizing module axi_lite_gpio.
+Optimizing module gpio_controller.
+Optimizing module sky130_fd_sc_hd__nand4bb_1.
+Optimizing module sky130_fd_sc_hd__o21bai_1.
+Optimizing module sky130_fd_sc_hd__o31ai_1.
+Optimizing module sky130_fd_sc_hd__xnor3_1.
+Optimizing module sky130_fd_sc_hd__a22oi_1.
+Optimizing module sky130_fd_sc_hd__o41ai_1.
+Optimizing module sky130_fd_sc_hd__xor3_1.
+Optimizing module sky130_fd_sc_hd__a22o_1.
+Optimizing module sky130_fd_sc_hd__a222oi_1.
+Optimizing module sky130_fd_sc_hd__and3b_1.
+Optimizing module sky130_fd_sc_hd__nand4_1.
+Optimizing module sky130_fd_sc_hd__a221oi_1.
+Optimizing module sky130_fd_sc_hd__or3_1.
+Optimizing module sky130_fd_sc_hd__and3_1.
+Optimizing module sky130_fd_sc_hd__o22ai_1.
+Optimizing module sky130_fd_sc_hd__clkinv_1.
+Optimizing module sky130_fd_sc_hd__nand3b_1.
+Optimizing module sky130_fd_sc_hd__a21oi_1.
+Optimizing module sky130_fd_sc_hd__o21ai_0.
+Optimizing module sky130_fd_sc_hd__o41a_1.
+Optimizing module sky130_fd_sc_hd__a21o_1.
+Optimizing module sky130_fd_sc_hd__lpflow_isobufsrc_1.
+Optimizing module sky130_fd_sc_hd__and2_0.
+Optimizing module sky130_fd_sc_hd__nand3_1.
+Optimizing module sky130_fd_sc_hd__a21boi_0.
+Optimizing module sky130_fd_sc_hd__lpflow_inputiso1p_1.
+Optimizing module sky130_fd_sc_hd__nor4_1.
+Optimizing module \$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.
+Optimizing module sky130_fd_sc_hd__nand2b_1.
+Optimizing module sky130_fd_sc_hd__dfxtp_1.
+Optimizing module sky130_fd_sc_hd__a211oi_1.
+Optimizing module sky130_fd_sc_hd__o21a_1.
+Optimizing module sky130_fd_sc_hd__or4b_1.
+Optimizing module sky130_fd_sc_hd__xnor2_1.
+Optimizing module sky130_fd_sc_hd__nand2_1.
+Optimizing module sky130_fd_sc_hd__o211ai_1.
+Optimizing module sky130_fd_sc_hd__edfxtp_1.
+Optimizing module sky130_fd_sc_hd__mux4_2.
+Optimizing module sky130_fd_sc_hd__nor3_1.
+Optimizing module sky130_fd_sc_hd__a31oi_1.
+Optimizing module \$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+
+61.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module sky130_fd_sc_hd__o221ai_1.
+Deleting now unused module sky130_fd_sc_hd__a31o_1.
+Deleting now unused module sky130_fd_sc_hd__mux2i_1.
+Deleting now unused module sky130_fd_sc_hd__o211a_1.
+Deleting now unused module sky130_fd_sc_hd__a311oi_1.
+Deleting now unused module sky130_fd_sc_hd__or4_1.
+Deleting now unused module sky130_fd_sc_hd__xor2_1.
+Deleting now unused module sky130_fd_sc_hd__mux2_1.
+Deleting now unused module sky130_fd_sc_hd__o221a_1.
+Deleting now unused module sky130_fd_sc_hd__nor2_1.
+Deleting now unused module gpio_controller.
+Deleting now unused module sky130_fd_sc_hd__nand4bb_1.
+Deleting now unused module sky130_fd_sc_hd__o21bai_1.
+Deleting now unused module sky130_fd_sc_hd__o31ai_1.
+Deleting now unused module sky130_fd_sc_hd__xnor3_1.
+Deleting now unused module sky130_fd_sc_hd__a22oi_1.
+Deleting now unused module sky130_fd_sc_hd__o41ai_1.
+Deleting now unused module sky130_fd_sc_hd__xor3_1.
+Deleting now unused module sky130_fd_sc_hd__a22o_1.
+Deleting now unused module sky130_fd_sc_hd__a222oi_1.
+Deleting now unused module sky130_fd_sc_hd__and3b_1.
+Deleting now unused module sky130_fd_sc_hd__nand4_1.
+Deleting now unused module sky130_fd_sc_hd__a221oi_1.
+Deleting now unused module sky130_fd_sc_hd__or3_1.
+Deleting now unused module sky130_fd_sc_hd__and3_1.
+Deleting now unused module sky130_fd_sc_hd__o22ai_1.
+Deleting now unused module sky130_fd_sc_hd__clkinv_1.
+Deleting now unused module sky130_fd_sc_hd__nand3b_1.
+Deleting now unused module sky130_fd_sc_hd__a21oi_1.
+Deleting now unused module sky130_fd_sc_hd__o21ai_0.
+Deleting now unused module sky130_fd_sc_hd__o41a_1.
+Deleting now unused module sky130_fd_sc_hd__a21o_1.
+Deleting now unused module sky130_fd_sc_hd__lpflow_isobufsrc_1.
+Deleting now unused module sky130_fd_sc_hd__and2_0.
+Deleting now unused module sky130_fd_sc_hd__nand3_1.
+Deleting now unused module sky130_fd_sc_hd__a21boi_0.
+Deleting now unused module sky130_fd_sc_hd__lpflow_inputiso1p_1.
+Deleting now unused module sky130_fd_sc_hd__nor4_1.
+Deleting now unused module \$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen.
+Deleting now unused module sky130_fd_sc_hd__nand2b_1.
+Deleting now unused module sky130_fd_sc_hd__dfxtp_1.
+Deleting now unused module sky130_fd_sc_hd__a211oi_1.
+Deleting now unused module sky130_fd_sc_hd__o21a_1.
+Deleting now unused module sky130_fd_sc_hd__or4b_1.
+Deleting now unused module sky130_fd_sc_hd__xnor2_1.
+Deleting now unused module sky130_fd_sc_hd__nand2_1.
+Deleting now unused module sky130_fd_sc_hd__o211ai_1.
+Deleting now unused module sky130_fd_sc_hd__edfxtp_1.
+Deleting now unused module sky130_fd_sc_hd__mux4_2.
+Deleting now unused module sky130_fd_sc_hd__nor3_1.
+Deleting now unused module sky130_fd_sc_hd__a31oi_1.
+Deleting now unused module \$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+<suppressed ~4465 debug messages>
+
+61.4. Executing FUTURE pass.
+
+61.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+<suppressed ~246 debug messages>
+
+61.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+Removed 3588 unused cells and 6754 unused wires.
+<suppressed ~5502 debug messages>
+
+61.7. Executing CHECK pass (checking for obvious problems).
+Checking module axi_lite_gpio...
+Found and reported 0 problems.
+
+61.8. Executing OPT pass (performing simple optimizations).
+
+61.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+61.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 30684 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 22370 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 21685 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 21590 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 21589 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+<suppressed ~27285 debug messages>
+Removed a total of 9095 cells.
+
+61.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_lite_gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+61.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_lite_gpio.
+Performed a total of 0 changes.
+
+61.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 21589 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Removed a total of 0 cells.
+
+61.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+Removed 0 unused cells and 9095 unused wires.
+<suppressed ~1 debug messages>
+
+61.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+<suppressed ~1 debug messages>
+
+61.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+61.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_lite_gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+61.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_lite_gpio.
+Performed a total of 0 changes.
+
+61.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 21588 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Computing hashes of 21587 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+61.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+61.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+61.8.14. Rerunning OPT passes. (Maybe there is more to do..)
+
+61.8.15. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_lite_gpio..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+61.8.16. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_lite_gpio.
+Performed a total of 0 changes.
+
+61.8.17. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 21587 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Removed a total of 0 cells.
+
+61.8.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+
+61.8.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+61.8.20. Finished fast OPT passes. (There is nothing left to do.)
+
+61.9. Executing WREDUCE pass (reducing word size of cells).
+
+61.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+
+61.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+61.12. Executing OPT pass (performing simple optimizations).
+
+61.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+61.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 21587 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Removed a total of 0 cells.
+
+61.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+
+61.12.4. Finished fast OPT passes.
+
+61.13. Executing SORT pass.
+
+61.14. Printing statistics.
+
+=== axi_lite_gpio ===
+
+        +----------Local Count, excluding submodules.
+        | 
+    34156 wires
+    36682 wire bits
+    21474 public wires
+    24000 public wire bits
+       25 ports
+      247 port bits
+    21587 cells
+     7798   $_AND_
+     1784   $_DFF_P_
+     2705   $_NOT_
+     4835   $_OR_
+     4465   $scopeinfo
+
+61.15. Executing CHECK pass (checking for obvious problems).
+Checking module axi_lite_gpio...
+Found and reported 0 problems.
+
+62. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+63. Executing OPT pass (performing simple optimizations).
+
+63.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_lite_gpio.
+
+63.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_lite_gpio'.
+Computing hashes of 21587 cells of `\axi_lite_gpio'.
+Finding duplicate cells in `\axi_lite_gpio'.
+Removed a total of 0 cells.
+
+63.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+63.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_lite_gpio..
+
+63.5. Finished fast OPT passes.
+Renaming module \axi_lite_gpio to \gate_core.
+
+64. Executing Verilog-2005 frontend: /var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v
+Parsing formal Verilog input from `/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v' to AST representation.
+Generating RTLIL representation for module `\reset_miter'.
+Successfully finished Verilog frontend.
+
+65. Executing PREP pass.
+
+65.1. Executing HIERARCHY pass (managing design hierarchy).
+
+65.1.1. Analyzing design hierarchy..
+Top module:  \reset_miter
+Used module:     \gate_core
+Used module:     \gold_core
+
+65.1.2. Analyzing design hierarchy..
+Top module:  \reset_miter
+Used module:     \gate_core
+Used module:     \gold_core
+Removed 0 unused modules.
+Module reset_miter directly or indirectly contains formal properties -> setting "keep" attribute.
+
+65.2. Executing PROC pass (convert processes to netlists).
+
+65.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+65.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+65.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 2 assignments to connections.
+
+65.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:40$16852'.
+  Set init value: \reset_seen_1 = 1'0
+Found init rule in `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:38$16851'.
+  Set init value: \reset_seen_0 = 1'0
+
+65.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+65.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+65.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:40$16852'.
+Creating decoders for process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:38$16851'.
+Creating decoders for process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:44$16845'.
+     1/3: $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16849_EN
+     2/3: $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:46$16847_EN
+     3/3: $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN
+Creating decoders for process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:41$16844'.
+     1/1: $0\reset_seen_1[0:0]
+Creating decoders for process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:39$16843'.
+     1/1: $0\reset_seen_0[0:0]
+
+65.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+65.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\reset_miter.\reset_seen_1' using process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:41$16844'.
+  created $dff cell `$procdff$16863' with positive edge clock.
+Creating register for signal `\reset_miter.\reset_seen_0' using process `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:39$16843'.
+  created $dff cell `$procdff$16864' with positive edge clock.
+
+65.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+65.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:40$16852'.
+Removing empty process `reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:38$16851'.
+Found and cleaned up 3 empty switches in `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:44$16845'.
+Removing empty process `reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:44$16845'.
+Found and cleaned up 1 empty switch in `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:41$16844'.
+Removing empty process `reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:41$16844'.
+Found and cleaned up 1 empty switch in `\reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:39$16843'.
+Removing empty process `reset_miter.$proc$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:39$16843'.
+Cleaned up 5 empty switches.
+
+65.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+Optimizing module gate_core.
+Optimizing module gold_core.
+
+65.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module gate_core.
+Deleting now unused module gold_core.
+<suppressed ~2 debug messages>
+
+65.4. Executing FUTURE pass.
+
+65.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~1 debug messages>
+
+65.7. Executing CHECK pass (checking for obvious problems).
+Checking module reset_miter...
+Found and reported 0 problems.
+
+65.8. Executing OPT pass (performing simple optimizations).
+
+65.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reset_miter'.
+Computing hashes of 21897 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+Computing hashes of 21896 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+65.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \reset_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~73 debug messages>
+
+65.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \reset_miter.
+Performed a total of 0 changes.
+
+65.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reset_miter'.
+Computing hashes of 21896 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+Computing hashes of 21895 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+65.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+65.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+65.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \reset_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~71 debug messages>
+
+65.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \reset_miter.
+Performed a total of 0 changes.
+
+65.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reset_miter'.
+Computing hashes of 21895 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+Removed a total of 0 cells.
+
+65.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+
+65.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+65.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 24 bits (of 32) from FF cell reset_miter.$flatten\gold_i.$auto$ff.cc:337:slice$6145 ($sdffe).
+Removed top 27 bits (of 32) from wire reset_miter.$flatten\gold_i.$auto$wreduce.cc:514:run$5716.
+Removed top 27 bits (of 32) from wire reset_miter.$flatten\gold_i.$auto$wreduce.cc:514:run$5715.
+Removed top 27 bits (of 32) from wire reset_miter.$flatten\gold_i.$auto$wreduce.cc:514:run$5714.
+Removed top 27 bits (of 32) from wire reset_miter.$flatten\gold_i.$auto$wreduce.cc:514:run$5713.
+
+65.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+65.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+65.12. Executing OPT pass (performing simple optimizations).
+
+65.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module reset_miter.
+
+65.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\reset_miter'.
+Computing hashes of 21895 cells of `\reset_miter'.
+Finding duplicate cells in `\reset_miter'.
+Removed a total of 0 cells.
+
+65.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \reset_miter..
+
+65.12.4. Finished fast OPT passes.
+
+65.13. Executing SORT pass.
+
+65.14. Printing statistics.
+
+=== reset_miter ===
+
+        +----------Local Count, excluding submodules.
+        | 
+    34557 wires
+    41808 wire bits
+    21660 public wires
+    27146 public wire bits
+       14 ports
+      141 port bits
+    21895 cells
+     7798   $_AND_
+     1784   $_DFF_P_
+     2705   $_NOT_
+     4835   $_OR_
+        4   $add
+       86   $and
+        3   $check
+        2   $dff
+       32   $dffe
+       20   $eq
+        1   $initstate
+       20   $logic_and
+        6   $logic_not
+        1   $logic_or
+       50   $mux
+        4   $ne
+       17   $not
+        2   $or
+        4   $pmux
+        8   $reduce_and
+        2   $reduce_bool
+        2   $reduce_or
+     4470   $scopeinfo
+       16   $sdff
+       18   $sdffe
+        5   $xor
+
+65.15. Executing CHECK pass (checking for obvious problems).
+Checking module reset_miter...
+Found and reported 0 problems.
+
+66. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 21901 cells to SAT database.
+Import constraint from assume cell: \rst_2 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import constraint from assume cell: \rst_1 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import set-constraint from init attribute: \reset_seen_0 = 1'0
+Import set-constraint from init attribute: \reset_seen_1 = 1'0
+Final init constraint equation: { \reset_seen_1 \reset_seen_0 } = 2'00
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16850_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16849_EN.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 21901 cells to SAT database.
+Import constraint from assume cell: \rst_2 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import constraint from assume cell: \rst_1 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16850_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16849_EN.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 21901 cells to SAT database.
+Import constraint from assume cell: \rst_2 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import constraint from assume cell: \rst_1 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16850_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16849_EN.
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 21901 cells to SAT database.
+Import constraint from assume cell: \rst_2 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import constraint from assume cell: \rst_1 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16850_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16849_EN.
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 21901 cells to SAT database.
+Import constraint from assume cell: \rst_2 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import constraint from assume cell: \rst_1 when $assume$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:45$16846_EN.
+Import proof for assert: $eq$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16850_Y when $assert$/var/folders/td/fl3qdd2s7z7bh32xsr0pklr00000gn/T/nebula-reset-eqy-kb5q_7u3/axi_lite_gpio.positive.v:47$16849_EN.
+
+Solving problem with 527048 variables and 1367421 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 42ca9428d6, time: 6.85s, user: 7.30s, system: 0.34s, MEM: 1086.59 MB peak
+Yosys 0.67+135 (git sha1 ac5910309-dirty, Release, Clang /usr/local/osxcross/target/bin/aarch64-apple-darwin25.5-clang++ 21.1.8)
+Time spent: 45% 60x read_verilog (3 sec), 21% 1x sat (1 sec), ...
