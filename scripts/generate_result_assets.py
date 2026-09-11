@@ -620,6 +620,27 @@ def result_tables(arms, clocks, ppa, eqy, top, synth, history):
     )
 
 
+def retry_assets(retry):
+    rows = []
+    csv_rows = []
+    for item in retry["completed_retries"]:
+        rows.append([
+            item["module"], str(item["depth"]), item["method"], item["status"],
+            f'{item["seconds"]:.1f}', "YES" if item["new_proof"] else "NO",
+        ])
+        csv_rows.append({
+            "module": item["module"], "depth": item["depth"], "method": item["method"],
+            "status": item["status"], "seconds": item["seconds"], "new_proof": item["new_proof"],
+            "evidence_sha256": item["evidence_sha256"],
+        })
+    write_csv("eqy_targeted_retries.csv", csv_rows)
+    table_figure(
+        "14_eqy_targeted_retries", "Targeted deeper EQY retries", "Five bounded checks produced zero new proofs; 36/54 remains the defensible result.",
+        ["Module", "Depth", "Method", "Result", "Seconds", "New proof"], rows,
+        [0.18, 0.07, 0.24, 0.31, 0.10, 0.10], "Source: artifacts/eqy/retry_summary_20260911.json", 13,
+    )
+
+
 def write_index(source_hashes):
     content = """# Digital result asset pack
 
@@ -640,6 +661,7 @@ Ready-to-paste figures are in `figures/` as both SVG and 1600x900 PNG. Machine-r
 11. `11_model_comparison_table` - all model rows, including untested arms.
 12. `12_complete_clock_table` - every clock, including four NO PATH rows.
 13. `13_stage_aware_area` - mapped synthesis versus routed PPA without mixing stages.
+14. `14_eqy_targeted_retries` - deeper retry results and zero-new-proof outcome.
 
 ## Required interpretation
 
@@ -649,6 +671,7 @@ Ready-to-paste figures are in `figures/` as both SVG and 1600x900 PNG. Machine-r
 - Full OpenROAD PnR/PPA was run once for the final combined accepted candidate. No individual model-arm PnR numbers exist. The model comparison therefore reports proposal/gate performance; the PPA figures report final combined design performance.
 - `clk1` and `clk_s8` retain small violations. `clk2` through `clk5` report no paths. Four timed clocks regress in slack while remaining closed.
 - EQY has 36/54 proved and zero counterexamples; 18 modules remain unresolved. The accepted pipeline changes latency by four cycles, so ordinary cycle equivalence is not claimed.
+- Five targeted deeper EQY retries produced zero new proofs. The original 36/54 result remains unchanged.
 
 ## Evidence hashes
 
@@ -668,6 +691,7 @@ def main():
         "artifacts/final_candidate/toplevel_equiv.json",
         "artifacts/loop/history.jsonl",
         "artifacts/submission_20260911/synth.json",
+        "artifacts/eqy/retry_summary_20260911.json",
     ]
     hashes = {rel: hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() for rel in sources}
     bakeoff = load(sources[0])
@@ -676,6 +700,7 @@ def main():
     top = load(sources[3])
     history = [json.loads(line) for line in (ROOT / sources[4]).read_text().splitlines() if line.strip()]
     synth = load(sources[5])
+    retry = load(sources[6])
 
     flow_figure()
     dashboard(ppa, eqy, top)
@@ -689,6 +714,7 @@ def main():
     rtl_scope_chart(top)
     stage_aware_chart(synth, ppa)
     result_tables(bakeoff["arms"], ppa["clocks"], ppa, eqy, top, synth, history)
+    retry_assets(retry)
     consolidated = {
         "provenance_sha256": hashes,
         "model_comparison": bakeoff,
@@ -700,6 +726,7 @@ def main():
             "top_area_um2": synth["top_area_um2"], "top_sequential_area_um2": synth["top_sequential_area_um2"],
         },
         "accepted_loop_history": history,
+        "eqy_targeted_retry": retry,
     }
     (DATA / "all_results.json").write_text(json.dumps(consolidated, indent=2) + "\n")
     write_index(hashes)

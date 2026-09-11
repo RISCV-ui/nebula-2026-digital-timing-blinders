@@ -5,7 +5,8 @@
     "artifacts/eqy/report.json": "706ef23975b817ca06fe157c35c7882291a383e84d99ee072343efb4c70eef5c",
     "artifacts/final_candidate/toplevel_equiv.json": "a93b764002ae83142083d344429e8a92b77b5a5bee2643bc2020ffc4f919cfce",
     "artifacts/loop/history.jsonl": "f4cb2725075bc25d2d4d1b068939a7266933501acc785dc5979250e164639b44",
-    "artifacts/submission_20260911/synth.json": "92303f15a690a30e3b892e3824cce530822f4bb8e5562f58b70efbc8028fa691"
+    "artifacts/submission_20260911/synth.json": "92303f15a690a30e3b892e3824cce530822f4bb8e5562f58b70efbc8028fa691",
+    "artifacts/eqy/retry_summary_20260911.json": "105c8f887a13fba52c0ea7d1f3669ebfddfc73a538b47e4d7e9f2b73514618c9"
   },
   "model_comparison": {
     "golden": "bench/rtl",
@@ -1585,5 +1586,82 @@
       "stage": "accepted",
       "verdict": "ACCEPTED"
     }
-  ]
+  ],
+  "eqy_targeted_retry": {
+    "baseline_proved": 36,
+    "modules_checked": 54,
+    "new_proofs": 0,
+    "final_proved": 36,
+    "verdict": "NO_IMPROVEMENT",
+    "completed_retries": [
+      {
+        "module": "read_buffer_d_cache",
+        "depth": 10,
+        "method": "plain yosys miter",
+        "status": "UNPROVEN (2 cells) at depth 10",
+        "seconds": 29.4,
+        "new_proof": false,
+        "evidence": "artifacts/eqy/retry_direct_d10_20260911.json",
+        "evidence_sha256": "ecf4dfb09f0e1418bc56d2bbdf534db1de9904aca3160cf07a753828b7584966"
+      },
+      {
+        "module": "uart_controller",
+        "depth": 10,
+        "method": "plain yosys miter",
+        "status": "UNPROVEN (1 cells) at depth 10",
+        "seconds": 9.0,
+        "new_proof": false,
+        "evidence": "artifacts/eqy/retry_direct_uart_d10_20260911.json",
+        "evidence_sha256": "1afd4b11f00989eac4617303fc81e5435d14b18b7bc340fe36adfd26d2e2911d"
+      },
+      {
+        "module": "dma_controller",
+        "depth": 10,
+        "method": "plain yosys miter",
+        "status": "UNPROVEN (166 cells) at depth 10",
+        "seconds": 32.0,
+        "new_proof": false,
+        "evidence": "artifacts/eqy/retry_direct_dma_d10_20260911.json",
+        "evidence_sha256": "6905edc2bd7874d79bc3e94f0f58f84d35d85ed080a8c1bd67e7f3669cd92910"
+      },
+      {
+        "module": "axi_lite_dma_config",
+        "depth": 10,
+        "method": "plain yosys miter",
+        "status": "TIMEOUT after 60s",
+        "seconds": 60.0,
+        "new_proof": false,
+        "evidence": "artifacts/eqy/retry_direct_dma_cfg_d10_20260911.json",
+        "evidence_sha256": "9b44d460adf5eee13965386ed2d6c8b2e0df340a387b44406d106662f89a43a1"
+      },
+      {
+        "module": "axi_lite_timer",
+        "depth": 7,
+        "method": "timer child cut-point + plain miter",
+        "status": "TIMEOUT after 60s",
+        "seconds": 60.0,
+        "new_proof": false,
+        "evidence": "artifacts/eqy/retry_axi_timer_cutpoint_20260911.json",
+        "evidence_sha256": "1d9fa9eebc830c1bb2bf9478c8fcdc6b79f641f19b97f12a86baa6f2689eb330"
+      }
+    ],
+    "aborted_runs": [
+      {
+        "scope": "9-module depth-10 hierarchical retry",
+        "observation": "known-fast arbiter did not return after more than 150 seconds",
+        "action": "interrupted"
+      },
+      {
+        "scope": "4-leaf depth-7 hierarchical retry",
+        "observation": "first module did not return after more than 180 seconds",
+        "action": "interrupted"
+      },
+      {
+        "scope": "uart_controller full EQY depth-10 retry",
+        "observation": "subprocess timeout did not terminate descendant processes; no verdict after more than 210 seconds",
+        "action": "interrupted"
+      }
+    ],
+    "conclusion": "Targeted deeper retries produced zero additional proofs. The defensible result remains 36/54 proved and 0 counterexamples."
+  }
 }

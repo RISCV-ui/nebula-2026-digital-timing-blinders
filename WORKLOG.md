@@ -235,6 +235,18 @@ every flop, so EQY finds no internal match point and k-induction on an
 accumulator is unprovable at any depth. A separate `synth_named.ys` keeps
 hierarchy and net names.
 
+#### Targeted deeper retry — no improvement
+
+On 11 September, five unresolved cases were retried against the named netlist
+in new workdirs; the preserved `hier4` sweep was not overwritten. Depth-10
+direct checks left `read_buffer_d_cache` with 2 unproven cells,
+`uart_controller` with 1, and `dma_controller` with 166.
+`axi_lite_dma_config` timed out at 60 s, as did `axi_lite_timer` at depth 7
+with the already-proved `timer` child used as a cut-point. Result: **0 new
+proofs; the honest total remains 36/54**. Broader retries were stopped when an
+EQY descendant process survived the wrapper timeout; interrupted runs carry
+no verdict. Exact results are in `artifacts/eqy/retry_summary_20260911.json`.
+
 ### 5.4 Lint
 
 `lint.py` runs Verilator twice and diffs. Verdict: **NO_NEW_WARNINGS**.
@@ -328,7 +340,7 @@ demo.py                   eight-act replay demo, runs offline with no API key
 artifacts/                every run kept: loop, eqy, wns, metrics, bakeoff, lint, ppa
 ```
 
-8 commits on `nebula-digital`, all local and unpushed.
+The `nebula-digital` branch is pushed to the private competition repository.
 
 ---
 
@@ -380,8 +392,8 @@ run.
 | Final-candidate PnR | complete through `6_final`; DRC 0, one antenna net/pin violation remains |
 | 18 unproved modules | 10 timeout, 7 unproven, 1 tool error |
 | Demo video | not recorded (`source orfs/env.sh` first) |
-| Push | 8 commits local |
-| Final report | current 13-page PDF exists; paid-model row will be added after that arm runs |
+| Push | private competition repository is up to date |
+| Final report | technical draft exists; team will author the final narrative from the verified result-asset pack |
 
 All four report generators now exist: `lint.py`, `synth_report.py`,
 `eqy_report.py`, and `ppa_report.py`.

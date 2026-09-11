@@ -51,4 +51,5 @@ The accepted FP4 pipeline is intentionally not cycle-by-cycle identical because 
 - `clk2` through `clk5` report no timing paths and are not counted as passing.
 - Four timed clocks regress in slack while remaining closed.
 - EQY leaves 10 timeout, 7 unproven and 1 tool-error module.
+- Five targeted deeper retries produced zero new proofs; the total remains 36/54.
 - Paid model arm and demo video remain pending.

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Targeted deeper EQY retries</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Five bounded checks produced zero new proofs; 36/54 remains the defensible result.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: artifacts/eqy/retry_summary_20260911.json</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="55" y="175" width="1490" height="74" rx="4" fill="#12263A" stroke="#12263A" stroke-width="0"/>
+<text x="67" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Module</text>
+<text x="335.2" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Depth</text>
+<text x="439.5" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Method</text>
+<text x="797.0999999999999" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Result</text>
+<text x="1259.0" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Seconds</text>
+<text x="1408.0" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">New proof</text>
+<rect x="55" y="249" width="1490" height="74" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">read_buffer_d_cache</text>
+<text x="335.2" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">10</text>
+<text x="439.5" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">plain yosys miter</text>
+<text x="797.0999999999999" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">UNPROVEN (2 cells) at depth 10</text>
+<text x="1259.0" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">29.4</text>
+<text x="1408.0" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">NO</text>
+<rect x="55" y="323" width="1490" height="74" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">uart_controller</text>
+<text x="335.2" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">10</text>
+<text x="439.5" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">plain yosys miter</text>
+<text x="797.0999999999999" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">UNPROVEN (1 cells) at depth 10</text>
+<text x="1259.0" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">9.0</text>
+<text x="1408.0" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">NO</text>
+<rect x="55" y="397" width="1490" height="74" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">dma_controller</text>
+<text x="335.2" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">10</text>
+<text x="439.5" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">plain yosys miter</text>
+<text x="797.0999999999999" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">UNPROVEN (166 cells) at depth 10</text>
+<text x="1259.0" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">32.0</text>
+<text x="1408.0" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO</text>
+<rect x="55" y="471" width="1490" height="74" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">axi_lite_dma_config</text>
+<text x="335.2" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">10</text>
+<text x="439.5" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">plain yosys miter</text>
+<text x="797.0999999999999" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">TIMEOUT after 60s</text>
+<text x="1259.0" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">60.0</text>
+<text x="1408.0" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO</text>
+<rect x="55" y="545" width="1490" height="74" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">axi_lite_timer</text>
+<text x="335.2" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">7</text>
+<text x="439.5" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">timer child cut-point + plain miter</text>
+<text x="797.0999999999999" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">TIMEOUT after 60s</text>
+<text x="1259.0" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">60.0</text>
+<text x="1408.0" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO</text>
+</svg>

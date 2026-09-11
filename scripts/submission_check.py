@@ -36,6 +36,7 @@ def main():
         "artifacts/submission_20260911/ppa.json",
         "artifacts/submission_20260911/toplevel_equiv.json",
         "artifacts/bakeoff_all_20260911/bakeoff_all.json",
+        "artifacts/eqy/retry_summary_20260911.json",
         "artifacts/submission_20260911/raw/final_6_finish.rpt",
         "artifacts/submission_20260911/raw/baseline_6_finish.rpt",
         "output/result_assets/data/all_results.json",
@@ -55,6 +56,7 @@ def main():
     ppa = load("artifacts/submission_20260911/ppa.json")
     top = load("artifacts/submission_20260911/toplevel_equiv.json")
     bake = load("artifacts/bakeoff_all_20260911/bakeoff_all.json")
+    retry = load("artifacts/eqy/retry_summary_20260911.json")
 
     checks = {
         "lint_final_tree": (lint.get("verdict") == "NO_NEW_WARNINGS" and
@@ -76,6 +78,9 @@ def main():
         "clock_count": (ppa.get("clock_summary", {}).get("met_after") == 9 and
                          ppa.get("clock_summary", {}).get("constrained") == 11 and
                          ppa.get("clock_summary", {}).get("unreported") == 4),
+        "eqy_retry_recorded": (retry.get("verdict") == "NO_IMPROVEMENT" and
+                               retry.get("new_proofs") == 0 and
+                               retry.get("final_proved") == 36),
     }
 
     arms = {a["arm"]: a for a in bake.get("arms", [])}
@@ -102,6 +107,7 @@ def main():
     print("\nRecorded negative results:")
     print("  PPA regressions: " + ", ".join(ppa["clock_summary"]["regressed"]))
     print("  EQY incomplete: 10 timeout, 7 unproven, 1 tool error")
+    print("  EQY deeper retry: 0 new proofs; 36/54 remains")
     print("  Ordinary top-level cycle equivalence: NOT_EQUIVALENT (+4-cycle contract)")
     print("  Gemma free: NOT TESTED (HTTP 429 before a gate)")
     print("  Paid Claude: PENDING")

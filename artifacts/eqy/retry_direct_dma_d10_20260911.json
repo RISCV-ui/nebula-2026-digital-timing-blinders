@@ -1,0 +1,34 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/synth/soc_top_named.v",
+  "modules_checked": 1,
+  "modules_equivalent": 0,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "dma_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (166 cells) at depth 10",
+      "seconds": 32.0,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13475: \\addr_dest_dma_gold [5] \\addr_dest_dma_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13474: \\addr_dest_dma_gold [4] \\addr_dest_dma_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13473: \\addr_dest_dma_gold [3] \\addr_dest_dma_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13472: \\addr_dest_dma_gold [2] \\addr_dest_dma_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13471: \\addr_dest_dma_gold [1] \\addr_dest_dma_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13470: \\addr_dest_dma_gold [0] \\addr_dest_dma_gate [0]",
+        "Found a total of 166 unproven $equiv cells.",
+        "ERROR: Found 166 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (166 cells) at depth 10",
+          "seconds": 32.0
+        }
+      ]
+    }
+  ]
+}
