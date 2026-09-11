@@ -1,0 +1,7 @@
+model,propose,validate,audit,g1,backend,accepted
+Gemini 3.5 Flash,1,0,0,4,0,1
+Gemini 3.1 Pro,0,0,0,0,1,0
+Gemma 4 31B free,0,0,0,0,1,0
+Nemotron Nano 30B,2,2,0,1,0,0
+Nemotron Ultra 550B,0,3,1,2,0,1
+Nemotron Super 120B,2,2,0,1,0,0

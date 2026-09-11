@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Final physical implementation comparison</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Baseline and optimized designs compared at the same routed 6_final stage.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: OpenROAD signoff reports with SPEF parasitics</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="65" y="175" width="710" height="235" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<text x="95" y="218" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="start">Routed area (um2)</text>
+<text x="95" y="275" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#5B6678" text-anchor="start">1,746,071.0000</text>
+<text x="95" y="307" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#5B6678" text-anchor="start">BASELINE</text>
+<line x1="345" y1="275" x2="455" y2="275" stroke="#2563EB" stroke-width="3"/>
+<polygon points="455,275 444.2093040419421,282.2498883260884 444.2093040419421,267.7501116739116" fill="#2563EB"/>
+<text x="485" y="275" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#12263A" text-anchor="start">1,718,209.0000</text>
+<text x="485" y="307" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#5B6678" text-anchor="start">FINAL</text>
+<rect x="95" y="340" width="650" height="45" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+<text x="420" y="370" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="middle">-1.596%</text>
+<rect x="825" y="175" width="710" height="235" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<text x="855" y="218" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="start">Instances</text>
+<text x="855" y="275" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#5B6678" text-anchor="start">480,545</text>
+<text x="855" y="307" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#5B6678" text-anchor="start">BASELINE</text>
+<line x1="1105" y1="275" x2="1215" y2="275" stroke="#2563EB" stroke-width="3"/>
+<polygon points="1215,275 1204.209304041942,282.2498883260884 1204.209304041942,267.7501116739116" fill="#2563EB"/>
+<text x="1245" y="275" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#12263A" text-anchor="start">475,618</text>
+<text x="1245" y="307" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#5B6678" text-anchor="start">FINAL</text>
+<rect x="855" y="340" width="650" height="45" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+<text x="1180" y="370" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="middle">-4,927</text>
+<rect x="65" y="460" width="710" height="235" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<text x="95" y="503" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="start">Setup WNS (ns)</text>
+<text x="95" y="560" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#5B6678" text-anchor="start">-25.2539</text>
+<text x="95" y="592" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#5B6678" text-anchor="start">BASELINE</text>
+<line x1="345" y1="560" x2="455" y2="560" stroke="#2563EB" stroke-width="3"/>
+<polygon points="455,560 444.2093040419421,567.2498883260885 444.2093040419421,552.7501116739115" fill="#2563EB"/>
+<text x="485" y="560" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#12263A" text-anchor="start">-0.1659</text>
+<text x="485" y="592" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#5B6678" text-anchor="start">FINAL</text>
+<rect x="95" y="625" width="650" height="45" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+<text x="420" y="655" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="middle">+25.088 ns</text>
+<rect x="825" y="460" width="710" height="235" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<text x="855" y="503" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="start">Setup TNS (ns)</text>
+<text x="855" y="560" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#5B6678" text-anchor="start">-3,384.4421</text>
+<text x="855" y="592" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#5B6678" text-anchor="start">BASELINE</text>
+<line x1="1105" y1="560" x2="1215" y2="560" stroke="#2563EB" stroke-width="3"/>
+<polygon points="1215,560 1204.209304041942,567.2498883260885 1204.209304041942,552.7501116739115" fill="#2563EB"/>
+<text x="1245" y="560" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#12263A" text-anchor="start">-1.9487</text>
+<text x="1245" y="592" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#5B6678" text-anchor="start">FINAL</text>
+<rect x="855" y="625" width="650" height="45" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+<text x="1180" y="655" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="middle">+3382.4934 ns</text>
+<text x="800" y="790" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#172033" text-anchor="middle">DRC: 0 -&gt; 0 | Hold WNS: -0.1329 -&gt; -0.0117 ns | Power: not reported</text>
+</svg>

@@ -1,0 +1,12 @@
+metric,before,after,abs,pct,verdict
+instances,480545,475618,-4927,-1.0252941972135803,better
+area_um2,1746071.0,1718209.0,-27862.0,-1.5956968531062024,better
+nets,121589,116411,-5178,-4.258608920214822,better
+utilization_pct,49.0,49.0,0.0,0.0,same
+power_total_w,,,,,not reported
+wns,-25.2539,-0.1659,25.088,99.34307176317321,better
+tns,-3384.4421,-1.9487,3382.4934000000003,99.94242182485557,better
+wns_hold,-0.1329,-0.0117,0.12119999999999999,91.19638826185101,better
+tns_hold,-2.5864,-0.0357,2.5507,98.61970306217135,better
+drc_violations,0,0,0,,same
+antenna_violations,,,,,not reported

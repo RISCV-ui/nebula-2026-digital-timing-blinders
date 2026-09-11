@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Complete model comparison</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Individual model-arm PnR was not run; full PPA belongs to the combined accepted candidate.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: corrected merged bake-off JSON</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="55" y="175" width="1490" height="74" rx="4" fill="#12263A" stroke="#12263A" stroke-width="0"/>
+<text x="67" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Model</text>
+<text x="320.3" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Class</text>
+<text x="499.1" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Status</text>
+<text x="737.5" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Attempts</text>
+<text x="856.7" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Accepted</text>
+<text x="975.9000000000001" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Rate</text>
+<text x="1095.1000000000001" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Wall</text>
+<text x="1229.2" y="223.84" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">PPA scope</text>
+<rect x="55" y="249" width="1490" height="74" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">Gemini 3.5 Flash</text>
+<text x="320.3" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">free-closed</text>
+<text x="499.1" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">TESTED</text>
+<text x="737.5" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">6</text>
+<text x="856.7" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">1</text>
+<text x="975.9000000000001" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">16.7%</text>
+<text x="1095.1000000000001" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">40.0 min</text>
+<text x="1229.2" y="296.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">Not run per arm</text>
+<rect x="55" y="323" width="1490" height="74" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">Nemotron Ultra 550B</text>
+<text x="320.3" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">open-weight</text>
+<text x="499.1" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">TESTED</text>
+<text x="737.5" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">7</text>
+<text x="856.7" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">1</text>
+<text x="975.9000000000001" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">14.3%</text>
+<text x="1095.1000000000001" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">43.0 min</text>
+<text x="1229.2" y="370.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">Not run per arm</text>
+<rect x="55" y="397" width="1490" height="74" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">Nemotron Nano 30B</text>
+<text x="320.3" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">open-weight</text>
+<text x="499.1" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">TESTED</text>
+<text x="737.5" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="856.7" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">0</text>
+<text x="975.9000000000001" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">0.0%</text>
+<text x="1095.1000000000001" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">28.5 min</text>
+<text x="1229.2" y="444.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">Not run per arm</text>
+<rect x="55" y="471" width="1490" height="74" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">Nemotron Super 120B</text>
+<text x="320.3" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">open-weight</text>
+<text x="499.1" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">TESTED</text>
+<text x="737.5" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">5</text>
+<text x="856.7" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">0</text>
+<text x="975.9000000000001" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">0.0%</text>
+<text x="1095.1000000000001" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">16.2 min</text>
+<text x="1229.2" y="518.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">Not run per arm</text>
+<rect x="55" y="545" width="1490" height="74" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">Gemini 3.1 Pro</text>
+<text x="320.3" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">free-closed</text>
+<text x="499.1" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#DC2626" text-anchor="start">NOT TESTED (429)</text>
+<text x="737.5" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">1</text>
+<text x="856.7" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">0</text>
+<text x="975.9000000000001" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="1095.1000000000001" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">3.0 min</text>
+<text x="1229.2" y="592.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">Not run per arm</text>
+<rect x="55" y="619" width="1490" height="74" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="666.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">Gemma 4 31B free</text>
+<text x="320.3" y="666.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">open-weight</text>
+<text x="499.1" y="666.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#DC2626" text-anchor="start">NOT TESTED (429)</text>
+<text x="737.5" y="666.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">1</text>
+<text x="856.7" y="666.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">0</text>
+<text x="975.9000000000001" y="666.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="1095.1000000000001" y="666.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">3.0 min</text>
+<text x="1229.2" y="666.36" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">Not run per arm</text>
+</svg>

@@ -36,8 +36,12 @@ def main():
         "artifacts/submission_20260911/ppa.json",
         "artifacts/submission_20260911/toplevel_equiv.json",
         "artifacts/bakeoff_all_20260911/bakeoff_all.json",
-        "artifacts/final_candidate/orfs_run/reports/sky130hd/nebula_bench/final_candidate/6_finish.rpt",
-        "orfs/flow/reports/sky130hd/nebula_bench/base/6_finish.rpt",
+        "artifacts/submission_20260911/raw/final_6_finish.rpt",
+        "artifacts/submission_20260911/raw/baseline_6_finish.rpt",
+        "output/result_assets/data/all_results.json",
+        "output/result_assets/figures/03_model_gate_outcomes.png",
+        "output/result_assets/figures/08_physical_ppa.png",
+        "output/result_assets/figures/09_formal_verification.png",
         "output/pdf/Nebula_Digital_Final_Report.pdf",
     ]
     missing = [p for p in required if not os.path.isfile(path(p))]
@@ -85,8 +89,8 @@ def main():
 
     # Matching the rounded ORFS report prevents an extractor-only number from
     # becoming the headline when the signoff tool itself says something else.
-    finish = open(path(required[-3])).read()
-    base_finish = open(path(required[-2])).read()
+    finish = open(path("artifacts/submission_20260911/raw/final_6_finish.rpt")).read()
+    base_finish = open(path("artifacts/submission_20260911/raw/baseline_6_finish.rpt")).read()
     checks["final_matches_orfs"] = ("tns max -1.95" in finish and
                                     "wns max -0.17" in finish)
     checks["baseline_matches_orfs"] = ("tns max -3384.44" in base_finish and
@@ -104,7 +108,7 @@ def main():
     print("  Demo video: PENDING")
 
     print("\nKey SHA-256:")
-    for rel in required[:6] + [required[-1]]:
+    for rel in required[:6] + ["output/pdf/Nebula_Digital_Final_Report.pdf"]:
         print(f"  {sha256(rel)}  {rel}")
 
     failed = [name for name, ok in checks.items() if not ok]

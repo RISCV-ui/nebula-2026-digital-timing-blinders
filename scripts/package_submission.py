@@ -37,6 +37,7 @@ TREES = [
     "macros",
     "sta/sky130hd",
     "output/pdf",
+    "output/result_assets",
     "artifacts/audit_20260910",
     "artifacts/submission_20260911",
     "artifacts/final_candidate/rtl",

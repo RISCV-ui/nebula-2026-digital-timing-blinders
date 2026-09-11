@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Same-task model outcomes</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Same paths, retry budget and formal gates. Only tested arms receive rates.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: artifacts/bakeoff_all_20260911/bakeoff_all.json</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="530" y="155" width="20" height="20" rx="3" fill="#7C3AED" stroke="#7C3AED" stroke-width="0"/>
+<text x="558" y="172" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#5B6678" text-anchor="start">PROPOSE</text>
+<rect x="710" y="155" width="20" height="20" rx="3" fill="#D97706" stroke="#D97706" stroke-width="0"/>
+<text x="738" y="172" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#5B6678" text-anchor="start">VALIDATE</text>
+<rect x="890" y="155" width="20" height="20" rx="3" fill="#64748B" stroke="#64748B" stroke-width="0"/>
+<text x="918" y="172" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#5B6678" text-anchor="start">AUDIT</text>
+<rect x="1070" y="155" width="20" height="20" rx="3" fill="#DC2626" stroke="#DC2626" stroke-width="0"/>
+<text x="1098" y="172" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#5B6678" text-anchor="start">G1</text>
+<rect x="1250" y="155" width="20" height="20" rx="3" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="1278" y="172" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#5B6678" text-anchor="start">ACCEPTED</text>
+<text x="70" y="280" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#12263A" text-anchor="start">Nemotron Ultra 550B</text>
+<text x="70" y="310" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#5B6678" text-anchor="start">nvidia/nemotron-3-ultra-550b-a55b:free</text>
+<rect x="515.0" y="245" width="364.2857142857143" height="66" rx="4" fill="#D97706" stroke="#D97706" stroke-width="0"/>
+<text x="697.1428571428571" y="286" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<rect x="879.2857142857142" y="245" width="121.42857142857143" height="66" rx="4" fill="#64748B" stroke="#64748B" stroke-width="0"/>
+<text x="939.9999999999999" y="286" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<rect x="1000.7142857142857" y="245" width="242.85714285714286" height="66" rx="4" fill="#DC2626" stroke="#DC2626" stroke-width="0"/>
+<text x="1122.142857142857" y="286" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<rect x="1243.5714285714284" y="245" width="121.42857142857143" height="66" rx="4" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="1304.2857142857142" y="286" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1415" y="274" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#059669" text-anchor="middle">1/7</text>
+<text x="1415" y="303" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">14.3% valid</text>
+<text x="70" y="410" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#12263A" text-anchor="start">Gemini 3.5 Flash</text>
+<text x="70" y="440" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#5B6678" text-anchor="start">models/gemini-3.5-flash</text>
+<rect x="515" y="375" width="121.42857142857143" height="66" rx="4" fill="#7C3AED" stroke="#7C3AED" stroke-width="0"/>
+<text x="575.7142857142857" y="416" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<rect x="636.4285714285714" y="375" width="485.7142857142857" height="66" rx="4" fill="#DC2626" stroke="#DC2626" stroke-width="0"/>
+<text x="879.2857142857143" y="416" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+<rect x="1122.142857142857" y="375" width="121.42857142857143" height="66" rx="4" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="1182.857142857143" y="416" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1415" y="404" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#059669" text-anchor="middle">1/6</text>
+<text x="1415" y="433" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">16.7% valid</text>
+<text x="70" y="540" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#12263A" text-anchor="start">Nemotron Super 120B</text>
+<text x="70" y="570" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#5B6678" text-anchor="start">nvidia/nemotron-3-super-120b-a12b:free</text>
+<rect x="515" y="505" width="242.85714285714286" height="66" rx="4" fill="#7C3AED" stroke="#7C3AED" stroke-width="0"/>
+<text x="636.4285714285714" y="546" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<rect x="757.8571428571429" y="505" width="242.85714285714286" height="66" rx="4" fill="#D97706" stroke="#D97706" stroke-width="0"/>
+<text x="879.2857142857143" y="546" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<rect x="1000.7142857142858" y="505" width="121.42857142857143" height="66" rx="4" fill="#DC2626" stroke="#DC2626" stroke-width="0"/>
+<text x="1061.4285714285716" y="546" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1415" y="534" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#5B6678" text-anchor="middle">0/5</text>
+<text x="1415" y="563" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">0.0% valid</text>
+<text x="70" y="670" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#12263A" text-anchor="start">Nemotron Nano 30B</text>
+<text x="70" y="700" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#5B6678" text-anchor="start">nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free</text>
+<rect x="515" y="635" width="242.85714285714286" height="66" rx="4" fill="#7C3AED" stroke="#7C3AED" stroke-width="0"/>
+<text x="636.4285714285714" y="676" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<rect x="757.8571428571429" y="635" width="242.85714285714286" height="66" rx="4" fill="#D97706" stroke="#D97706" stroke-width="0"/>
+<text x="879.2857142857143" y="676" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<rect x="1000.7142857142858" y="635" width="121.42857142857143" height="66" rx="4" fill="#DC2626" stroke="#DC2626" stroke-width="0"/>
+<text x="1061.4285714285716" y="676" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1415" y="664" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#5B6678" text-anchor="middle">0/5</text>
+<text x="1415" y="693" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">0.0% valid</text>
+<rect x="65" y="765" width="1450" height="56" rx="12" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1.5"/>
+<text x="90" y="800" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#64748B" text-anchor="start">NOT TESTED: Gemma 4 31B free and Gemini 3.1 Pro - HTTP 429 before any proposal reached a gate.</text>
+</svg>

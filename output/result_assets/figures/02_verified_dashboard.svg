@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Verified result dashboard</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Parasitic-aware final signoff; optimistic ideal-clock numbers are excluded.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Sources: ppa.json, fmax signoff JSON, EQY report, top-level contract</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="64" y="175" width="455" height="185" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<rect x="64" y="175" width="9" height="185" rx="4" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="92" y="215" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#5B6678" text-anchor="start">clk_s5 Fmax</text>
+<text x="92" y="270" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" fill="#059669" text-anchor="start">25.65 -&gt; 89.09 MHz</text>
+<text x="92" y="305" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="start">3.47x measured period sweep</text>
+<rect x="564" y="175" width="455" height="185" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<rect x="564" y="175" width="9" height="185" rx="4" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="592" y="215" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#5B6678" text-anchor="start">Setup WNS</text>
+<text x="592" y="270" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" fill="#059669" text-anchor="start">-25.2539 -&gt; -0.1659 ns</text>
+<text x="592" y="305" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="start">+25.088 ns</text>
+<rect x="1064" y="175" width="455" height="185" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<rect x="1064" y="175" width="9" height="185" rx="4" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="1092" y="215" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#5B6678" text-anchor="start">Setup TNS</text>
+<text x="1092" y="270" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" fill="#059669" text-anchor="start">-3384.4421 -&gt; -1.9487 ns</text>
+<text x="1092" y="305" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="start">+3382.4934 ns</text>
+<rect x="64" y="420" width="455" height="185" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<rect x="64" y="420" width="9" height="185" rx="4" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="92" y="460" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#5B6678" text-anchor="start">Routed area</text>
+<text x="92" y="515" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" fill="#059669" text-anchor="start">-1.596%</text>
+<text x="92" y="550" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="start">1,746,071 -&gt; 1,718,209 um2</text>
+<rect x="564" y="420" width="455" height="185" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<rect x="564" y="420" width="9" height="185" rx="4" fill="#2563EB" stroke="#2563EB" stroke-width="0"/>
+<text x="592" y="460" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#5B6678" text-anchor="start">Formal sweep</text>
+<text x="592" y="515" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" fill="#2563EB" text-anchor="start">36/54 proved</text>
+<text x="592" y="550" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="start">0 counterexamples; 18 unresolved</text>
+<rect x="1064" y="420" width="455" height="185" rx="18" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1.5"/>
+<rect x="1064" y="420" width="9" height="185" rx="4" fill="#7C3AED" stroke="#7C3AED" stroke-width="0"/>
+<text x="1092" y="460" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#5B6678" text-anchor="start">Top contract</text>
+<text x="1092" y="515" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="700" fill="#7C3AED" text-anchor="start">+4 cycles</text>
+<text x="1092" y="550" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="start">stream data/order proved at depth 16</text>
+<rect x="64" y="700" width="1455" height="85" rx="14" fill="#FFF7ED" stroke="#D97706" stroke-width="2"/>
+<text x="90" y="737" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#D97706" text-anchor="start">Honest limits</text>
+<text x="245" y="737" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#172033" text-anchor="start">clk1 and clk_s8 retain small violations; clk2-clk5 have no timing paths; 18 EQY modules unresolved.</text>
+<text x="245" y="767" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" fill="#172033" text-anchor="start">Ordinary cycle-by-cycle top equivalence is NOT claimed because accepted pipeline adds four cycles.</text>
+</svg>

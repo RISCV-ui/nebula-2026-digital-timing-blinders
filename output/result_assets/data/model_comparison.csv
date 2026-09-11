@@ -1,0 +1,7 @@
+model,model_id,licence,status,recorded_attempts,valid_accepted,acceptance_rate,wall_seconds,individual_pnr
+Gemini 3.5 Flash,models/gemini-3.5-flash,free-closed,TESTED,6,1,16.7%,2401.9,not run
+Gemini 3.1 Pro,models/gemini-3.1-pro-preview,free-closed,NOT TESTED (429),1,0,N/A,178.1,not run
+Gemma 4 31B free,google/gemma-4-31b-it:free,open-weight,NOT TESTED (429),1,0,N/A,179.4,not run
+Nemotron Nano 30B,nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free,open-weight,TESTED,5,0,0.0%,1707.6,not run
+Nemotron Ultra 550B,nvidia/nemotron-3-ultra-550b-a55b:free,open-weight,TESTED,7,1,14.3%,2582.3,not run
+Nemotron Super 120B,nvidia/nemotron-3-super-120b-a12b:free,open-weight,TESTED,5,0,0.0%,974.5,not run

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Proof-gated GenAI RTL optimization loop</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">LLM proposes; deterministic tools decide whether an edit survives.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: bench/scripts/loop.py and verified gate artifacts</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="45" y="250" width="205" height="135" rx="18" fill="#FFFFFF" stroke="#0891B2" stroke-width="3"/>
+<text x="147" y="300" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#0891B2" text-anchor="middle">Signoff STA</text>
+<text x="147" y="338" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">Rank real paths</text>
+<line x1="250" y1="318" x2="288" y2="318" stroke="#64748B" stroke-width="3"/>
+<polygon points="288,318 277.2093040419421,325.2498883260884 277.2093040419421,310.7501116739116" fill="#64748B"/>
+<rect x="300" y="250" width="205" height="135" rx="18" fill="#FFFFFF" stroke="#2563EB" stroke-width="3"/>
+<text x="402" y="300" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#2563EB" text-anchor="middle">RTL slicer</text>
+<text x="402" y="338" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">Path -&gt; module + lines</text>
+<line x1="505" y1="318" x2="543" y2="318" stroke="#64748B" stroke-width="3"/>
+<polygon points="543,318 532.2093040419421,325.2498883260884 532.2093040419421,310.7501116739116" fill="#64748B"/>
+<rect x="555" y="250" width="205" height="135" rx="18" fill="#FFFFFF" stroke="#7C3AED" stroke-width="3"/>
+<text x="657" y="300" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#7C3AED" text-anchor="middle">LLM proposal</text>
+<text x="657" y="338" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">One bounded transform</text>
+<line x1="760" y1="318" x2="798" y2="318" stroke="#64748B" stroke-width="3"/>
+<polygon points="798,318 787.2093040419421,325.2498883260884 787.2093040419421,310.7501116739116" fill="#64748B"/>
+<rect x="810" y="250" width="205" height="135" rx="18" fill="#FFFFFF" stroke="#D97706" stroke-width="3"/>
+<text x="912" y="300" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#D97706" text-anchor="middle">Validate</text>
+<text x="912" y="338" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">Syntax + structure</text>
+<line x1="1015" y1="318" x2="1053" y2="318" stroke="#64748B" stroke-width="3"/>
+<polygon points="1053,318 1042.209304041942,325.2498883260884 1042.209304041942,310.7501116739116" fill="#64748B"/>
+<rect x="1065" y="250" width="205" height="135" rx="18" fill="#FFFFFF" stroke="#DC2626" stroke-width="3"/>
+<text x="1167" y="300" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#DC2626" text-anchor="middle">Formal gates</text>
+<text x="1167" y="338" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">G1 / G1c / CDC / clocks</text>
+<line x1="1270" y1="318" x2="1308" y2="318" stroke="#64748B" stroke-width="3"/>
+<polygon points="1308,318 1297.209304041942,325.2498883260884 1297.209304041942,310.7501116739116" fill="#64748B"/>
+<rect x="1320" y="250" width="205" height="135" rx="18" fill="#FFFFFF" stroke="#059669" stroke-width="3"/>
+<text x="1422" y="300" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#059669" text-anchor="middle">Accept</text>
+<text x="1422" y="338" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">Write candidate tree</text>
+<rect x="560" y="520" width="480" height="140" rx="18" fill="#EEF6FF" stroke="#2563EB" stroke-width="3"/>
+<text x="800" y="570" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#12263A" text-anchor="middle">Final combined candidate</text>
+<text x="800" y="610" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#5B6678" text-anchor="middle">One full OpenROAD PnR + parasitic signoff</text>
+<line x1="1422" y1="385" x2="1030" y2="520" stroke="#059669" stroke-width="3"/>
+<polygon points="1030,520 1037.841913250704,509.63156730414704 1042.5633158915996,523.3411216391922" fill="#059669"/>
+<rect x="1050" y="705" width="440" height="86" rx="16" fill="#FFF1F2" stroke="#DC2626" stroke-width="2"/>
+<text x="1270" y="741" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#DC2626" text-anchor="middle">Reject + preserve counterexample</text>
+<text x="1270" y="770" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">Retry is capped; frozen RTL is never edited</text>
+<line x1="1165" y1="385" x2="1220" y2="705" stroke="#DC2626" stroke-width="2"/>
+<polygon points="1220,705 1211.0270314965933,695.5933089645258 1225.3172702924103,693.1371741714947" fill="#DC2626"/>
+<line x1="1050" y1="748" x2="658" y2="385" stroke="#DC2626" stroke-width="2"/>
+<polygon points="658,385 670.8433183541391,387.01225586202014 660.9915124587834,397.6511206305585" fill="#DC2626"/>
+<text x="800" y="185" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="middle">Cheap checks first</text>
+<text x="800" y="215" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#5B6678" text-anchor="middle">milliseconds -&gt; formal seconds/minutes -&gt; one final PnR</text>
+</svg>

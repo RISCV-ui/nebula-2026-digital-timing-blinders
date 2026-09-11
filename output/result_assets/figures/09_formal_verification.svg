@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Formal verification evidence</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Compositional EQY sweep plus latency-aware proof for the changed FP4 stream.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Sources: EQY clean report and final top-level equivalence artifact</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="70" y="220" width="973.3333333333334" height="92" rx="2" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="556.6666666666667" y="262" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="middle">36</text>
+<text x="556.6666666666667" y="290" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROVED</text>
+<rect x="1043.3333333333335" y="220" width="270.3703703703704" height="92" rx="2" fill="#D97706" stroke="#D97706" stroke-width="0"/>
+<text x="1178.5185185185187" y="262" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="middle">10</text>
+<text x="1178.5185185185187" y="290" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">TIMEOUT</text>
+<rect x="1313.703703703704" y="220" width="189.25925925925927" height="92" rx="2" fill="#7C3AED" stroke="#7C3AED" stroke-width="0"/>
+<text x="1408.3333333333335" y="262" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text>
+<text x="1408.3333333333335" y="290" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">UNPROVEN</text>
+<rect x="1502.9629629629633" y="220" width="27.037037037037038" height="92" rx="2" fill="#64748B" stroke="#64748B" stroke-width="0"/>
+<rect x="110" y="355" width="20" height="20" rx="3" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="140" y="372" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#172033" text-anchor="start">PROVED: 36</text>
+<rect x="400" y="355" width="20" height="20" rx="3" fill="#D97706" stroke="#D97706" stroke-width="0"/>
+<text x="430" y="372" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#172033" text-anchor="start">TIMEOUT: 10</text>
+<rect x="690" y="355" width="20" height="20" rx="3" fill="#7C3AED" stroke="#7C3AED" stroke-width="0"/>
+<text x="720" y="372" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#172033" text-anchor="start">UNPROVEN: 7</text>
+<rect x="980" y="355" width="20" height="20" rx="3" fill="#64748B" stroke="#64748B" stroke-width="0"/>
+<text x="1010" y="372" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#172033" text-anchor="start">TOOL ERROR: 1</text>
+<rect x="1270" y="355" width="20" height="20" rx="3" fill="#DC2626" stroke="#DC2626" stroke-width="0"/>
+<text x="1300" y="372" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#172033" text-anchor="start">COUNTEREXAMPLE: 0</text>
+<rect x="70" y="450" width="710" height="285" rx="18" fill="#FFFFFF" stroke="#2563EB" stroke-width="3"/>
+<text x="425" y="505" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#2563EB" text-anchor="middle">EQY sweep</text>
+<text x="425" y="585" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" fill="#12263A" text-anchor="middle">36 / 54</text>
+<text x="425" y="630" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="400" fill="#5B6678" text-anchor="middle">proved equivalent</text>
+<text x="425" y="684" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#059669" text-anchor="middle">0 counterexamples</text>
+<rect x="820" y="450" width="710" height="285" rx="18" fill="#FFFFFF" stroke="#7C3AED" stroke-width="3"/>
+<text x="1175" y="505" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" fill="#7C3AED" text-anchor="middle">Changed cone contract</text>
+<text x="1175" y="570" font-family="Arial,Helvetica,sans-serif" font-size="44" font-weight="700" fill="#12263A" text-anchor="middle">+4 cycles</text>
+<text x="1175" y="615" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#059669" text-anchor="middle">STREAM_EQUIVALENT at depth 16</text>
+<text x="1175" y="655" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="400" fill="#5B6678" text-anchor="middle">data and order preserved</text>
+<text x="1175" y="695" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#DC2626" text-anchor="middle">ordinary cycle equivalence: NOT_EQUIVALENT</text>
+</svg>

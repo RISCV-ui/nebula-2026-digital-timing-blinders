@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Model acceptance rate and wall time</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Wall time includes provider latency, retries and formal gates; it is not pure inference latency.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: corrected merged bake-off artifact</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<text x="385" y="180" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#12263A" text-anchor="middle">Valid acceptance rate</text>
+<text x="1160" y="180" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#12263A" text-anchor="middle">End-to-end wall time</text>
+<text x="65" y="278" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#172033" text-anchor="start">Gemini Flash</text>
+<rect x="260" y="250" width="520" height="50" rx="5" fill="#E5EAF1" stroke="#E5EAF1" stroke-width="0"/>
+<rect x="260" y="250" width="434.2" height="50" rx="5" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="795" y="283" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">16.7%</text>
+<rect x="985" y="250" width="450" height="50" rx="5" fill="#E5EAF1" stroke="#E5EAF1" stroke-width="0"/>
+<rect x="985" y="250" width="400.31666666666666" height="50" rx="5" fill="#2563EB" stroke="#2563EB" stroke-width="0"/>
+<text x="1450" y="283" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2563EB" text-anchor="start">40.0 min</text>
+<text x="65" y="403" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#172033" text-anchor="start">Nemotron Ultra</text>
+<rect x="260" y="375" width="520" height="50" rx="5" fill="#E5EAF1" stroke="#E5EAF1" stroke-width="0"/>
+<rect x="260" y="375" width="371.79999999999995" height="50" rx="5" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="795" y="408" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#059669" text-anchor="start">14.3%</text>
+<rect x="985" y="375" width="450" height="50" rx="5" fill="#E5EAF1" stroke="#E5EAF1" stroke-width="0"/>
+<rect x="985" y="375" width="430.3833333333333" height="50" rx="5" fill="#2563EB" stroke="#2563EB" stroke-width="0"/>
+<text x="1450" y="408" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2563EB" text-anchor="start">43.0 min</text>
+<text x="65" y="528" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#172033" text-anchor="start">Nemotron Nano</text>
+<rect x="260" y="500" width="520" height="50" rx="5" fill="#E5EAF1" stroke="#E5EAF1" stroke-width="0"/>
+<text x="795" y="533" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#5B6678" text-anchor="start">0.0%</text>
+<rect x="985" y="500" width="450" height="50" rx="5" fill="#E5EAF1" stroke="#E5EAF1" stroke-width="0"/>
+<rect x="985" y="500" width="284.59999999999997" height="50" rx="5" fill="#2563EB" stroke="#2563EB" stroke-width="0"/>
+<text x="1450" y="533" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2563EB" text-anchor="start">28.5 min</text>
+<text x="65" y="653" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#172033" text-anchor="start">Nemotron Super</text>
+<rect x="260" y="625" width="520" height="50" rx="5" fill="#E5EAF1" stroke="#E5EAF1" stroke-width="0"/>
+<text x="795" y="658" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#5B6678" text-anchor="start">0.0%</text>
+<rect x="985" y="625" width="450" height="50" rx="5" fill="#E5EAF1" stroke="#E5EAF1" stroke-width="0"/>
+<rect x="985" y="625" width="162.41666666666666" height="50" rx="5" fill="#2563EB" stroke="#2563EB" stroke-width="0"/>
+<text x="1450" y="658" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2563EB" text-anchor="start">16.2 min</text>
+<rect x="65" y="755" width="1450" height="70" rx="12" fill="#FFF7ED" stroke="#D97706" stroke-width="2"/>
+<text x="90" y="787" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#D97706" text-anchor="start">Audit correction</text>
+<text x="255" y="787" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#172033" text-anchor="start">Nemotron Ultra raw history said 2/7; one no-op/wrong-target accept was removed. Honest score: 1/7.</text>
+</svg>

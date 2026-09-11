@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Complete clock-by-clock timing table</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">NO PATH means unconstrained/unreported, never a passing clock.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: PPA signoff comparison</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="55" y="175" width="1490" height="37.5" rx="4" fill="#12263A" stroke="#12263A" stroke-width="0"/>
+<text x="67" y="199.75" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Clock</text>
+<text x="260.70000000000005" y="199.75" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">WNS before</text>
+<text x="484.20000000000005" y="199.75" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">WNS after</text>
+<text x="707.7" y="199.75" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Delta ns</text>
+<text x="901.4000000000001" y="199.75" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Fmax before</text>
+<text x="1124.9" y="199.75" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Fmax after</text>
+<text x="1348.4" y="199.75" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="start">Final</text>
+<rect x="55" y="212.5" width="1490" height="37.5" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="236.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">clk1</text>
+<text x="260.70000000000005" y="236.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">-0.9670</text>
+<text x="484.20000000000005" y="236.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">-0.1659</text>
+<text x="707.7" y="236.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">+0.8011</text>
+<text x="901.4000000000001" y="236.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">86.81</text>
+<text x="1124.9" y="236.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">95.90</text>
+<text x="1348.4" y="236.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">VIOLATION</text>
+<rect x="55" y="250.0" width="1490" height="37.5" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="274.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">clk2</text>
+<text x="260.70000000000005" y="274.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">NO PATH</text>
+<text x="484.20000000000005" y="274.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">NO PATH</text>
+<text x="707.7" y="274.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">N/A</text>
+<text x="901.4000000000001" y="274.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">N/A</text>
+<text x="1124.9" y="274.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">N/A</text>
+<text x="1348.4" y="274.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#172033" text-anchor="start">UNREPORTED</text>
+<rect x="55" y="287.5" width="1490" height="37.5" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="311.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk3</text>
+<text x="260.70000000000005" y="311.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO PATH</text>
+<text x="484.20000000000005" y="311.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO PATH</text>
+<text x="707.7" y="311.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="901.4000000000001" y="311.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="1124.9" y="311.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="1348.4" y="311.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">UNREPORTED</text>
+<rect x="55" y="325.0" width="1490" height="37.5" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="349.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk4</text>
+<text x="260.70000000000005" y="349.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO PATH</text>
+<text x="484.20000000000005" y="349.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO PATH</text>
+<text x="707.7" y="349.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="901.4000000000001" y="349.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="1124.9" y="349.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="1348.4" y="349.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">UNREPORTED</text>
+<rect x="55" y="362.5" width="1490" height="37.5" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="386.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk5</text>
+<text x="260.70000000000005" y="386.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO PATH</text>
+<text x="484.20000000000005" y="386.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">NO PATH</text>
+<text x="707.7" y="386.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="901.4000000000001" y="386.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="1124.9" y="386.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">N/A</text>
+<text x="1348.4" y="386.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">UNREPORTED</text>
+<rect x="55" y="400.0" width="1490" height="37.5" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="424.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s1</text>
+<text x="260.70000000000005" y="424.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">18.5562</text>
+<text x="484.20000000000005" y="424.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">17.2714</text>
+<text x="707.7" y="424.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">-1.2848</text>
+<text x="901.4000000000001" y="424.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">154.68</text>
+<text x="1124.9" y="424.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">126.74</text>
+<text x="1348.4" y="424.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="437.5" width="1490" height="37.5" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="461.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s1_gate</text>
+<text x="260.70000000000005" y="461.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">23.8439</text>
+<text x="484.20000000000005" y="461.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">23.0861</text>
+<text x="707.7" y="461.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">-0.7578</text>
+<text x="901.4000000000001" y="461.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">800.00</text>
+<text x="1124.9" y="461.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">510.86</text>
+<text x="1348.4" y="461.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="475.0" width="1490" height="37.5" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="499.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s2</text>
+<text x="260.70000000000005" y="499.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">11.7365</text>
+<text x="484.20000000000005" y="499.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">11.9371</text>
+<text x="707.7" y="499.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">+0.2006</text>
+<text x="901.4000000000001" y="499.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">117.51</text>
+<text x="1124.9" y="499.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">123.52</text>
+<text x="1348.4" y="499.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="512.5" width="1490" height="37.5" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="536.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s2_gate</text>
+<text x="260.70000000000005" y="536.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">17.9100</text>
+<text x="484.20000000000005" y="536.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">17.8441</text>
+<text x="707.7" y="536.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">-0.0659</text>
+<text x="901.4000000000001" y="536.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">473.93</text>
+<text x="1124.9" y="536.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">450.86</text>
+<text x="1348.4" y="536.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="550.0" width="1490" height="37.5" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="574.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s3</text>
+<text x="260.70000000000005" y="574.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">-0.1499</text>
+<text x="484.20000000000005" y="574.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">0.1248</text>
+<text x="707.7" y="574.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">+0.2747</text>
+<text x="901.4000000000001" y="574.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">95.90</text>
+<text x="1124.9" y="574.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">100.80</text>
+<text x="1348.4" y="574.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="587.5" width="1490" height="37.5" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="611.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s4</text>
+<text x="260.70000000000005" y="611.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">32.9459</text>
+<text x="484.20000000000005" y="611.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">31.1937</text>
+<text x="707.7" y="611.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">-1.7522</text>
+<text x="901.4000000000001" y="611.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">136.99</text>
+<text x="1124.9" y="611.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">112.26</text>
+<text x="1348.4" y="611.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="625.0" width="1490" height="37.5" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="649.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s4_gate</text>
+<text x="260.70000000000005" y="649.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">38.1878</text>
+<text x="484.20000000000005" y="649.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">38.3260</text>
+<text x="707.7" y="649.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">+0.1382</text>
+<text x="901.4000000000001" y="649.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">500.00</text>
+<text x="1124.9" y="649.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">500.00</text>
+<text x="1348.4" y="649.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="662.5" width="1490" height="37.5" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="686.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s5</text>
+<text x="260.70000000000005" y="686.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">-25.2539</text>
+<text x="484.20000000000005" y="686.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">1.4876</text>
+<text x="707.7" y="686.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">+26.7415</text>
+<text x="901.4000000000001" y="686.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">25.65</text>
+<text x="1124.9" y="686.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">89.09</text>
+<text x="1348.4" y="686.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="700.0" width="1490" height="37.5" rx="0" fill="#EEF2F7" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="724.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s5_gate</text>
+<text x="260.70000000000005" y="724.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">10.5825</text>
+<text x="484.20000000000005" y="724.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">10.6704</text>
+<text x="707.7" y="724.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">+0.0879</text>
+<text x="901.4000000000001" y="724.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">508.91</text>
+<text x="1124.9" y="724.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">534.76</text>
+<text x="1348.4" y="724.0" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">PASS</text>
+<rect x="55" y="737.5" width="1490" height="37.5" rx="0" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="1"/>
+<text x="67" y="761.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">clk_s8</text>
+<text x="260.70000000000005" y="761.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">-1.1998</text>
+<text x="484.20000000000005" y="761.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">-0.1494</text>
+<text x="707.7" y="761.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">+1.0504</text>
+<text x="901.4000000000001" y="761.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">86.81</text>
+<text x="1124.9" y="761.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">95.90</text>
+<text x="1348.4" y="761.5" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="400" fill="#172033" text-anchor="start">VIOLATION</text>
+</svg>

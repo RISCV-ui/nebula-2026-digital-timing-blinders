@@ -9,9 +9,11 @@ Package status on 11 September 2026: **READY_EXCEPT_PAID_MODEL_AND_VIDEO**.
 Start with:
 
 1. `WORKLOG.md` for verified history, failures, and open items.
-2. `output/pdf/Nebula_Digital_Final_Report.pdf` for the submission report.
+2. `output/result_assets/README.md` for report-ready figures and complete CSV tables.
 3. `artifacts/submission_20260911/summary.md` for the compact evidence index.
 4. `scripts/submission_check.py` for the offline end-to-end evidence check.
+
+`output/pdf/Nebula_Digital_Final_Report.pdf` is an earlier technical draft. The team will author the final narrative separately from the verified asset pack.
 
 ## Verified results
 

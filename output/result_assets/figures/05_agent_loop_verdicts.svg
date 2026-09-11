@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Accepted-design loop: six proposal verdicts</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Four of six suggestions were stopped before final PnR.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: artifacts/loop/history.jsonl</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="90" y="220" width="430" height="400" rx="22" fill="#FFFFFF" stroke="#059669" stroke-width="3"/>
+<circle cx="305" cy="365" r="92" fill="#059669" stroke="#059669" stroke-width="1"/>
+<text x="305" y="388" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="305" y="510" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#059669" text-anchor="middle">Accepted</text>
+<text x="305" y="550" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">formally gated into final candidate</text>
+<rect x="590" y="220" width="430" height="400" rx="22" fill="#FFFFFF" stroke="#DC2626" stroke-width="3"/>
+<circle cx="805" cy="365" r="92" fill="#DC2626" stroke="#DC2626" stroke-width="1"/>
+<text x="805" y="388" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="805" y="510" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#DC2626" text-anchor="middle">Formal rejection (G1)</text>
+<text x="805" y="550" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">counterexample / contract failure</text>
+<rect x="1090" y="220" width="430" height="400" rx="22" fill="#FFFFFF" stroke="#D97706" stroke-width="3"/>
+<circle cx="1305" cy="365" r="92" fill="#D97706" stroke="#D97706" stroke-width="1"/>
+<text x="1305" y="388" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="1305" y="510" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#D97706" text-anchor="middle">Structural rejection</text>
+<text x="1305" y="550" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="400" fill="#5B6678" text-anchor="middle">invalid before expensive proof</text>
+<rect x="90" y="690" width="1430" height="92" rx="15" fill="#EEF6FF" stroke="#2563EB" stroke-width="2"/>
+<text x="805" y="728" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2563EB" text-anchor="middle">Core evidence</text>
+<text x="805" y="760" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="middle">Half of proposals from a capable model were formally disproved; compilation alone would not catch this.</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#F5F7FB"/>
+<rect width="1600" height="16" fill="#2563EB"/>
+<text x="64" y="76" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" fill="#12263A" text-anchor="start">Final RTL change scope</text>
+<text x="64" y="116" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" fill="#5B6678" text-anchor="start">Identity closes unchanged files; proof focuses on the modified cone.</text>
+<text x="64" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="start">Source: SHA-256 manifest in toplevel_equiv.json</text>
+<text x="1536" y="868" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="400" fill="#5B6678" text-anchor="end">Timing Blinders | Nebula 2026 Digital</text>
+<rect x="80" y="220" width="1337.142857142857" height="100" rx="2" fill="#2563EB" stroke="#2563EB" stroke-width="0"/>
+<text x="748.5714285714286" y="265" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">52</text>
+<text x="748.5714285714286" y="295" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Byte-identical</text>
+<rect x="1417.142857142857" y="220" width="77.14285714285714" height="100" rx="2" fill="#D97706" stroke="#D97706" stroke-width="0"/>
+<rect x="1494.2857142857142" y="220" width="25.714285714285715" height="100" rx="2" fill="#059669" stroke="#059669" stroke-width="0"/>
+<text x="800" y="370" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#12263A" text-anchor="middle">52 identical | 3 changed | 1 added</text>
+<rect x="80" y="475" width="330" height="150" rx="16" fill="#FFFFFF" stroke="#D97706" stroke-width="3"/>
+<text x="245" y="535" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="middle">axi_lite_dot.v</text>
+<text x="245" y="578" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#D97706" text-anchor="middle">CHANGED</text>
+<line x1="410" y1="550" x2="443" y2="550" stroke="#64748B" stroke-width="2"/>
+<polygon points="443,550 432.2093040419421,557.2498883260885 432.2093040419421,542.7501116739115" fill="#64748B"/>
+<rect x="455" y="475" width="330" height="150" rx="16" fill="#FFFFFF" stroke="#059669" stroke-width="3"/>
+<text x="620" y="535" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="middle">fp4_dot_stage.v</text>
+<text x="620" y="578" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#059669" text-anchor="middle">ADDED</text>
+<line x1="785" y1="550" x2="818" y2="550" stroke="#64748B" stroke-width="2"/>
+<polygon points="818,550 807.2093040419421,557.2498883260885 807.2093040419421,542.7501116739115" fill="#64748B"/>
+<rect x="830" y="475" width="330" height="150" rx="16" fill="#FFFFFF" stroke="#D97706" stroke-width="3"/>
+<text x="995" y="535" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="middle">fp4_dot_unit.v</text>
+<text x="995" y="578" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#D97706" text-anchor="middle">CHANGED</text>
+<line x1="1160" y1="550" x2="1193" y2="550" stroke="#64748B" stroke-width="2"/>
+<polygon points="1193,550 1182.209304041942,557.2498883260885 1182.209304041942,542.7501116739115" fill="#64748B"/>
+<rect x="1205" y="475" width="330" height="150" rx="16" fill="#FFFFFF" stroke="#D97706" stroke-width="3"/>
+<text x="1370" y="535" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#12263A" text-anchor="middle">fp8_adder.v</text>
+<text x="1370" y="578" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#D97706" text-anchor="middle">CHANGED</text>
+<rect x="80" y="690" width="1440" height="90" rx="14" fill="#EEF6FF" stroke="#2563EB" stroke-width="2"/>
+<text x="800" y="728" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#2563EB" text-anchor="middle">Proof decomposition</text>
+<text x="800" y="758" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="400" fill="#172033" text-anchor="middle">fp8_adder: complete combinational equivalence | FP4 stream: six-property latency contract | rest: file identity</text>
+</svg>
