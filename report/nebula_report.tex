@@ -107,10 +107,9 @@ candidate rewrites from four independently developed models produced
 \numaccepted{} that survived every gate. The figure reported below is not the
 largest one the flow produced. On the \bestclock{} domain, worst negative slack
 improves by \bestdelta\,ns, taking $F_{\max}$ from \bestfmaxfrom\,MHz to
-\bestfmaxto\,MHz. Two structurally different rewrites, generated independently
-by two different models, agree on that figure to within \bestagreement\,ns.
-That margin is below the placement variance measured on this design, so the
-change is attributed to the edit.
+\bestfmaxto\,MHz --- a figure two independently generated rewrites reproduce to
+within \bestagreement\,ns, which is below the placement variance measured on
+this design.
 
 The more useful finding is a negative one. \numcontractkills{} rewrites passed
 formal equivalence and were still rejected, each by a gate that asks a question
@@ -132,9 +131,9 @@ listed deliverables is answered.
 \toprule
 \textbf{Asked for} & \textbf{Delivered} \\
 \midrule
-1. RTL timing analysis framework & OpenSTA driven from TCL, ranked paths as
-JSON, each annotated with its owning module, that module's parents, and whether
-an RTL lever exists --- \file{bench/scripts/sta.py}, Section~\ref{sec:d1} \\
+1. RTL timing analysis framework & OpenSTA driven from TCL, ranked paths
+returned as JSON and attributed per module instance ---
+\file{bench/scripts/sta.py}, Section~\ref{sec:d1} \\
 2. GenAI-based RTL optimisation engine & \file{bench/scripts/loop.py}: propose,
 gate, feed the rejecting gate's finding back, retry. Four models ran through it
 unchanged --- Section~\ref{sec:d2} \\
@@ -224,9 +223,8 @@ and Figure~\ref{fig:soc} shows where.
   \item \textbf{A gate and a divider on every master.} Each domain runs
         master $\rightarrow$ \texttt{clk\_gate} $\rightarrow$
         \texttt{clk\_div\_mux} $\rightarrow$ functional clock, giving divide
-        by 1, 2, 4 or 8 under software control. The constraints pin
-        divide-by-1 because it is the fastest the mux output can be: a design
-        that closes there closes at every setting.
+        by 1, 2, 4 or 8 under software control, constrained at divide-by-1
+        (Section~\ref{sec:clocktree}).
   \item \textbf{Crossings that are real.} Every peripheral has its AXI-Lite
         side in the core domain and its functional side in its own, so each
         one is a genuine crossing rather than a decorative one.
@@ -240,6 +238,7 @@ and Figure~\ref{fig:soc} shows where.
 \end{itemize}
 
 \subsection{The clock tree}
+\label{sec:clocktree}
 
 Every clock in Table~\ref{tab:clocks} is declared, not inferred. The five
 masters are created with \texttt{create\_clock}; everything below them is a
@@ -326,8 +325,8 @@ them is the easiest way to overstate a result, so they are named separately.
 
 \subsection{The frozen input}
 
-The RTL in \texttt{bench/rtl\_v2} is frozen before any model sees it and is
-never edited by hand afterwards. Every number labelled \emph{baseline} is
+The RTL in \texttt{bench/rtl\_v2} is never edited by hand. Every number
+labelled \emph{baseline} is
 measured on that tree taken through the same synthesis, placement and routing
 as every variant, with the same PDK, the same constraints and the same flow
 settings. A variant is compared only against that run, never against another
@@ -343,11 +342,6 @@ replace, under a complete proof, and still wrong in the design, because the
 parent that instantiates them no longer meets its contract. A loop whose
 acceptance test is ``does it still simulate'' or ``did the model say it was
 safe'' accepts all of them.
-
-The same applies to the no-op case in Section~\ref{sec:scope}: a proposal that
-changed nothing passed every gate, because proving an unchanged module against
-itself is trivially true, and would have been recorded as a closed path by any
-loop that trusts what the model says it edited.
 
 \subsection{The published systems}
 \label{sec:related}
@@ -392,6 +386,7 @@ mechanical and specific: the model is told which gate rejected it and what the
 gate found, and the next attempt answers that.
 
 \subsection{The gates}
+\label{sec:gates}
 
 \begin{itemize}
   \item \textbf{G1 --- module equivalence.} The rewritten module against the
@@ -416,6 +411,7 @@ at step 0 or 1 is conclusive regardless of the bound, and rejections on that
 basis are final.
 
 \subsection{Multi-module edits}
+\label{sec:multimodule}
 
 A latency change is not a local edit: every parent has to learn to wait. The
 harness accepts one proposal that rewrites the target and, through a
@@ -646,12 +642,10 @@ been shown rejecting a known-bad case.
 
 \subsection{The slicer was reading the wrong netlist}
 
-Critical paths were originally sliced from the post-resizer netlist, because
-that is the netlist the timing report comes from. The resizer had already
-absorbed two of the three violating domains into buffering, so the slicer
-reported closure the RTL had not achieved and sent the model nothing to do. The
-slicer now reads the post-synthesis database, where an RTL defect is still an
-RTL defect.
+The first loop runs stopped with nothing to do: the slicer was reading the
+post-resizer netlist, and the resizer had already hidden two of the three
+violating domains in buffering (Section~\ref{sec:d1}). Every target list in
+this report is sliced from the post-synthesis database instead.
 
 \subsection{Most of the call budget was spent on paths no rewrite can reach}
 
@@ -665,40 +659,33 @@ rewrite can actually move.
 
 \subsection{A proposal that changed nothing was counted as a closed path}
 
-One arm re-proposed an already-accepted edit under a second module's name. The
-proposal was well-formed and the gates passed, because the tree already
-contained the edit and there was nothing left to disprove, so the loop counted
-a second closed path. Scope is now derived from the working tree's diff instead
-of from the proposal's own module list, and a proposal with an empty diff is
-recorded as a no-op (Section~\ref{sec:scope}).
+One arm re-proposed an already-accepted edit under a second module's name and
+the loop counted a second closed path. That run is what put the scope rule in
+Section~\ref{sec:scope} into the flow.
 
 \subsection{Pipelining forced the parent into the proof}
 
-Two of the four permitted transforms change latency, and no single-module
-equivalence check can accept a latency change. The first fix was the
-\texttt{submodules} channel: one proposal rewrites the target and every parent
-that must learn to wait, and the set is proved together. That produced the next failure: rewrites
-that were provably equivalent at the module and wrong at the parent. G1b was
-added to catch them, and its rejections are Table~\ref{tab:g1b}.
+The first pipelining proposals were rejected outright, which is what the
+\texttt{submodules} channel in Section~\ref{sec:multimodule} was built for.
+Making those edits reachable produced the next failure directly: rewrites proved
+equivalent at the module and wrong at the parent, which is where G1b came from.
 
 \subsection{The biggest loss in the funnel was ours}
 
-In the first version of Table~\ref{tab:funnel} the largest single cause of
-rejection was not a gate but replies that spent their whole token budget inside
-reasoning and returned no text, which the harness recorded as a model failure.
-The defect hit the reasoning-heavy arms hardest, which biases the comparison
-towards the cheaper models. It is fixed in the runs that followed. It is left
-in the published funnel with the affected arms marked, rather than removed.
+Reading the first funnel showed the largest single cause of rejection was our
+own truncation defect rather than a gate (Section~\ref{sec:d3}). It hit the
+reasoning-heavy arms hardest, which biases the bake-off towards the cheaper
+models, so the affected arms are marked in every table built from those runs
+instead of the rows being removed.
 
 \subsection{Global WNS was not a usable metric on this design}
 
-Global WNS on a five-master design is set by whichever domain is worst, and
-here that is the divider path no permitted transform can reach. It also moves
-further between two placements of the same netlist than under any accepted
-edit. Reporting was changed to per-domain slack, and the headline claim
-restricted to a change two independently generated rewrites reproduce. The
-second routed generation was run for the same reason: a wider floorplan with
-its own baseline, with no figures mixed between generations.
+The first routed comparison was read off global WNS, which moved in the wrong
+direction while two domains improved. Following that showed global WNS here is
+set by the divider path and moves further between two placements of the same
+netlist than under any accepted edit, which is why Section~\ref{sec:d5} reports
+per domain. The second routed generation was run to see whether the surviving
+claim reproduced on an independent floorplan with its own baseline.
 
 % =====================================================================
 \section{Innovation}
@@ -712,27 +699,24 @@ it, and each has a measurement in this report behind it.
   \item \textbf{Equivalence gate with a recorded proof depth.} An edit enters
         the optimised RTL only with an EQY result attached, and the depth of
         that result is stored with it. A combinational rewrite is proved
-        complete in one miter cycle. A feed-forward pipeline insertion is
-        proved complete at latency${}+2$. Every other case is bounded, and the
-        bound is printed next to the result rather than folded into a pass
-        count. A flow that accepts on simulation does not separate these three
-        cases.
+        complete in one miter cycle, a feed-forward pipeline insertion at
+        latency${}+2$, and every other case is bounded with its bound printed
+        beside the result rather than folded into a pass count
+        (Section~\ref{sec:gates}). A flow that accepts on simulation does not
+        separate those cases.
 
   \item \textbf{A separate gate for the parent's timing contract (G1b).}
-        Module-level equivalence is not sufficient, and the gap is measured
-        here rather than argued: \numcontractkills{} rewrites passed G1 with a
-        complete proof and were rejected by G1b at the parent
-        (Table~\ref{tab:g1b}). The three rewrites came from three different
-        models, so the defect follows the task rather than one model. This is
-        the report's main result.
+        \numcontractkills{} rewrites passed G1 with a complete proof and were
+        rejected by G1b at the parent (Table~\ref{tab:g1b}), and they came from
+        three different models. This is the report's main result.
 
   \item \textbf{Multi-module proposals, so latency-changing edits are
         reachable.} Pipelining changes latency, and a single-module
         equivalence check rejects any latency change. A proposal therefore
         carries a \texttt{submodules} field: it rewrites the target and every
-        parent that must wait for it, and the set is proved together. Without
-        that field the only reachable edits are latency-preserving ones, which
-        rules out the transform that deep combinational paths need.
+        parent that must wait for it, and the set is proved together
+        (Section~\ref{sec:multimodule}). Without that field, pipelining is
+        unreachable.
 
   \item \textbf{Accepted scope taken from the working-tree diff.} The loop
         computes what an edit changed by diffing the tree, not by reading the
@@ -811,11 +795,5 @@ them to describe the path in front of the model rather than give general
 timing-closure advice.
 
 \input{generated/prompt}
-
-\vfill
-\begin{center}\small\color{accent}
-All figures regenerated from run artifacts by
-\texttt{scripts/build\_report.py}, \reportgenerated.
-\end{center}
 
 \end{document}
