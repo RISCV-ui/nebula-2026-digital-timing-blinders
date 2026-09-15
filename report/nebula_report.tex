@@ -104,12 +104,13 @@ alone does not cover.
 
 On a \baselineinstances-instance, \baselineclocks-clock benchmark, \numcandidates{}
 candidate rewrites from four independently developed models produced
-\numaccepted{} that survived every gate. The number we trust most is not the
+\numaccepted{} that survived every gate. The figure reported below is not the
 largest one the flow produced. On the \bestclock{} domain, worst negative slack
 improves by \bestdelta\,ns, taking $F_{\max}$ from \bestfmaxfrom\,MHz to
 \bestfmaxto\,MHz. Two structurally different rewrites, generated independently
-by two different models, agree on that figure to within \bestagreement\,ns. Agreement at that margin is the reason we report it as an
-effect of the edit rather than as placement variance.
+by two different models, agree on that figure to within \bestagreement\,ns.
+That margin is below the placement variance measured on this design, so the
+change is attributed to the edit.
 
 The more useful finding is a negative one. \numcontractkills{} rewrites passed
 formal equivalence and were still rejected, each by a gate that asks a question
@@ -176,19 +177,19 @@ one changed.
 % =====================================================================
 \section{What this had to get right}
 
-Three claims carry the work. Each is written so that it can be checked.
+Three rules were fixed before the runs started, and every result in this report
+is reported under them.
 
 \claim{%
-\textbf{1. Verified means proved, not reviewed.} No edit reaches the reported
-results unless a solver accepted it. Where the proof is complete, it is marked
-complete; where it is bounded, the bound is stated and the weaker claim is
-made.\\[4pt]
-\textbf{2. Closed and verified are separate claims.} An accepted edit is
-correct. Whether it improved timing is measured afterwards, at the same flow
-stage, against the same baseline, and reported separately.\\[4pt]
-\textbf{3. A number that does not reproduce is not a result.} Every timing
-figure quoted as an effect of an edit is one that two independent rewrites
-agree on. The rest is disclosed as noise.}
+\textbf{1. Acceptance requires a solver result.} No edit reaches the reported
+results unless a formal check accepted it. A complete proof is marked complete;
+a bounded proof is reported with its bound and the weaker claim is made.\\[4pt]
+\textbf{2. Correctness and timing are measured separately.} An accepted edit is
+equivalent to the RTL it replaced. Whether it improved timing is measured
+afterwards, at the same flow stage and against the same baseline.\\[4pt]
+\textbf{3. A timing figure is quoted only if it reproduces.} A slack change is
+attributed to an edit only where two independently generated rewrites agree on
+it. Everything else is reported as noise.}
 
 \subsection{The four transforms}
 
@@ -349,6 +350,7 @@ itself is trivially true, and would have been recorded as a closed path by any
 loop that trusts what the model says it edited.
 
 \subsection{The published systems}
+\label{sec:related}
 
 ViTAD reports 73.68\% repair success against 54.38\% for a plain-LLM baseline,
 and is the closest published architecture to this one: parse the RTL and the
@@ -439,10 +441,10 @@ than as a closed path.
 
 \input{generated/tab_funnel}
 
-Table~\ref{tab:funnel} is the honest shape of the problem. Most candidates die
-before any prover sees them, and the largest single loss is not the model at
-all. It is replies that exhausted their token budget inside reasoning and
-emitted no text. That is a harness defect, it is disclosed in
+Table~\ref{tab:funnel} gives the full funnel. Most candidates are rejected
+before any prover runs, and the largest single loss is not a model failure: it
+is replies that exhausted their token budget inside reasoning and returned no
+text. That is a harness defect, it is disclosed in
 Table~\ref{tab:bakeoff} per arm, and it is corrected in the runs that followed.
 
 The funnel counts the four bake-off arms only, and its accepted row is
@@ -558,10 +560,9 @@ key, no network, no toolchain. It finishes in about a second. A demo that
 depends on a free-tier provider being up is a demo that fails in front of an
 audience.
 
-The rejection rows are the part worth watching. A run that only ever shows
-acceptances demonstrates a generator; the funnel in Act~3 shows
-equivalent-but-wrong rewrites being caught, which is what demonstrates the
-gate. For a live run, \texttt{bench/scripts/loop.py} takes the same targets
+Act~3 is the part that demonstrates the gate rather than the generator: it
+shows equivalent-but-wrong rewrites being caught and names the gate that caught
+each one. For a live run, \texttt{bench/scripts/loop.py} takes the same targets
 file and re-executes the whole loop against a backend of choice; the recorded
 acts are that command's output from the runs this report is about.
 
@@ -570,8 +571,8 @@ acts are that command's output from the runs this report is about.
 
 \armstotal{} models ran in one invocation, over the same three targets, with
 the same prompt, the same retry budget and the same gate configuration. Only
-the backend changed. That is what makes the rows comparable, and it is also
-why one of them is not readable: an arm that lost calls to the harness defect
+the backend changed, which is what makes the rows comparable. One row is still
+not readable: an arm that lost calls to the harness defect
 attempted fewer real edits than its proposal count suggests, so the count is
 printed next to it rather than averaged away.
 
@@ -585,11 +586,9 @@ printed next to it rather than averaged away.
 gate, and the two that did converged: the same module, the same transform
 class, found independently. One of them cost \$\armcheapcost{}
 (\armcheapname, on a free endpoint) and took \armcheaphours\,h. The other
-cost \$\armpaidcost{} (\armpaidname) and took \armpaidhours\,h. Six times the
-wall clock against roughly three dollars is a real trade, and on this workload
-it is the whole difference between them. Nothing in the routed result
-distinguishes which arm the edit came from: the two netlists agree to within
-\bestagreement\,ns.
+cost \$\armpaidcost{} (\armpaidname) and took \armpaidhours\,h. The difference on this workload is therefore about six times the wall clock
+against about three dollars. The routed results do not distinguish the two:
+the netlists agree to within \bestagreement\,ns.
 
 \subsection{What the spend did not buy}
 
@@ -597,39 +596,38 @@ distinguishes which arm the edit came from: the two netlists agree to within
 \armtopaccepted{} accepted rewrites. We do not read that as a ranking. Of its
 \armtopproposals{} calls, \armtoplost{} returned no usable text at all, which
 is this harness truncating a reply mid-reasoning rather than the model
-declining, and the defect was fixed after these runs. The honest statement is
-that this arm spent the most and produced the least evidence, and that the
-experiment does not support a claim about the model.
+declining, and the defect was fixed after these runs. This arm spent the most and
+produced the fewest usable proposals, but the run was not a fair test of it, so
+no conclusion about the model is drawn from it.
 
-\subsection{Failing differently is the useful signal}
+\subsection{Where each arm's candidates died}
 
 \input{generated/tab_deaths}
 
-Accept counts rank arms. Table~\ref{tab:deaths} says something a rank cannot:
-the arms fail in different places, and the fixes those failures call for point
-in opposite directions. \armcheapname{} reached the gates most often and lost
+Table~\ref{tab:deaths} breaks the losses down by gate. The arms fail at
+different stages, and the corresponding fixes are different. \armcheapname{} reached the gates most often and lost
 most of its candidates at \texttt{validate}, before a prover was ever started,
 by proposing edits outside the permitted transform set or by changing an
-interface it was told to leave alone. That is a prompt-and-parser problem. The
-two Anthropic arms lost their candidates earlier still, inside the call, which
-is an infrastructure problem and was ours. \texttt{gemini-flash} ran for
+interface it was told to leave alone; that is a prompt and parser problem. The
+two Anthropic arms lost their candidates earlier, inside the call itself, which
+was the harness defect above. \texttt{gemini-flash} ran for
 minutes, proposed three times, and returned nothing the gates could act on.
 
-One column is the same everywhere it could be. The three arms that ever
+One column is the same for every arm that reached it. The three arms that ever
 cleared \texttt{g1} each then lost a candidate at \texttt{g1b}, the
-parent-contract gate: a rewrite proved equivalent to the module it replaced,
-and still wrong in the design. Three independently developed models, three different vendors, the
-same defect. That is the strongest argument in this report for gating it
-mechanically instead of trusting review.
+parent-contract gate: a rewrite proved equivalent to the module it replaced and
+still wrong in the design. Three models from three vendors produced the same
+defect, which is the main evidence for checking it mechanically rather than by
+review.
 
 % =====================================================================
 \section{Thought process}
 \label{sec:journey}
 
-Every structural decision in this system came from a run that produced a wrong
-answer confidently. That is the failure mode that matters here: a flow that
-crashes costs an afternoon, and a flow that reports closure it did not achieve
-costs the result. The route below is in the order it happened.
+Most of the structural decisions in this system came from runs that reported a
+result we later found to be wrong. Those are the expensive failures here: a
+crash is caught immediately, while a flow that reports closure it did not
+achieve is not. The subsections below are in the order the problems appeared.
 
 \subsection{The benchmark had bugs before any model saw it}
 
@@ -642,9 +640,9 @@ writing the audit that is now the G1c/G2c gate, and we fixed them in the
 benchmark rather than tuning the audit until the benchmark passed. The control
 in Figure~\ref{fig:runt} is that audit run against the broken version.
 
-The lesson set the rule the rest of the work follows: the frozen input is
-frozen \emph{after} it is audited, and every gate is first demonstrated
-catching something real.
+Two rules follow from this and are applied throughout: the input RTL is frozen
+only after it has been audited, and no gate is used in the flow until it has
+been shown rejecting a known-bad case.
 
 \subsection{The slicer was reading the wrong netlist}
 
@@ -659,104 +657,100 @@ RTL defect.
 
 Early runs spent the majority of their API calls on targets where the critical
 path sits in a macro, a clock network, or an I/O constraint --- places none of
-the four permitted transforms can touch. The model would dutifully return a
-plausible rewrite of the nearest module and the gates would reject it. Targets
+the four permitted transforms can touch. The model returned a
+plausible rewrite of the nearest module and the gates rejected it. Targets
 now carry a lever annotation: no lever, no call, still reported and still
 counted as a violation. The same budget then buys proposals against paths a
 rewrite can actually move.
 
-\subsection{Saying you changed something is not changing it}
+\subsection{A proposal that changed nothing was counted as a closed path}
 
 One arm re-proposed an already-accepted edit under a second module's name. The
-proposal was well-formed, the gates passed --- there was nothing to disprove ---
-and the loop counted a second closed path. Scope is now derived from the
-working tree's diff rather than from the proposal's own claim, and a proposal
-that differs nowhere is recorded as a no-op (Section~\ref{sec:scope}). This is
-the class of defect that inflates a headline number quietly.
+proposal was well-formed and the gates passed, because the tree already
+contained the edit and there was nothing left to disprove, so the loop counted
+a second closed path. Scope is now derived from the working tree's diff instead
+of from the proposal's own module list, and a proposal with an empty diff is
+recorded as a no-op (Section~\ref{sec:scope}).
 
 \subsection{Pipelining forced the parent into the proof}
 
 Two of the four permitted transforms change latency, and no single-module
 equivalence check can accept a latency change. The first fix was the
 \texttt{submodules} channel: one proposal rewrites the target and every parent
-that must learn to wait, and the set is proved together. That immediately
-produced the opposite failure --- rewrites that were provably equivalent at the
-module and wrong at the parent --- which is where G1b came from, and which
-turned out to be the most interesting measurement in the report
-(Table~\ref{tab:g1b}).
+that must learn to wait, and the set is proved together. That produced the next failure: rewrites
+that were provably equivalent at the module and wrong at the parent. G1b was
+added to catch them, and its rejections are Table~\ref{tab:g1b}.
 
 \subsection{The biggest loss in the funnel was ours}
 
-When we first read Table~\ref{tab:funnel}, the largest single cause of death
-was not a gate. It was replies that spent their entire token budget inside
-reasoning and returned no text at all, which our harness scored as a model
-failure. It was a harness defect, and it hit the reasoning-heavy arms hardest,
-which is exactly the direction that would have flattered a cheap-model
-conclusion. It is fixed in the runs that followed; it is left visible in the
-funnel, and the affected arms are marked, because deleting it would make the
-bake-off look cleaner than it was.
+In the first version of Table~\ref{tab:funnel} the largest single cause of
+rejection was not a gate but replies that spent their whole token budget inside
+reasoning and returned no text, which the harness recorded as a model failure.
+The defect hit the reasoning-heavy arms hardest, which biases the comparison
+towards the cheaper models. It is fixed in the runs that followed. It is left
+in the published funnel with the affected arms marked, rather than removed.
 
-\subsection{One global number answered five questions at once}
+\subsection{Global WNS was not a usable metric on this design}
 
-Global WNS on a five-master design is governed by whichever domain is worst,
-and here that is a path no permitted transform can reach. It also moves more
-between two placements of the same netlist than it does under any edit we
-accepted. Reporting moved to per-domain slack, and the claim was narrowed to
-what two structurally different rewrites from two different models reproduce
-independently. The second routed generation exists for the same reason: a wider
-floorplan, its own baseline, no numbers mixed across generations.
+Global WNS on a five-master design is set by whichever domain is worst, and
+here that is the divider path no permitted transform can reach. It also moves
+further between two placements of the same netlist than under any accepted
+edit. Reporting was changed to per-domain slack, and the headline claim
+restricted to a change two independently generated rewrites reproduce. The
+second routed generation was run for the same reason: a wider floorplan with
+its own baseline, with no figures mixed between generations.
 
 % =====================================================================
 \section{Innovation}
 \label{sec:innovation}
 
-Five things in this system are not in the work we compared against. Each one
-exists because a run failed without it, and each is evidenced by a table in
-this report rather than asserted.
+Five features of this system are absent from the published work compared
+against in Section~\ref{sec:related}. Each was added after a run failed without
+it, and each has a measurement in this report behind it.
 
 \begin{enumerate}[leftmargin=1.4em]
-  \item \textbf{Acceptance is a proof, not a score.} No rewrite enters the
-        optimised RTL without a formal equivalence result, and the proof's
-        completeness is recorded with it. A combinational rewrite is proved
-        complete in one miter cycle; a feed-forward pipeline insertion is
-        complete at latency${}+2$; anything else is reported as bounded and
-        the bound is printed. Systems that accept on simulation cannot
-        distinguish those three cases, and they are not the same claim.
+  \item \textbf{Equivalence gate with a recorded proof depth.} An edit enters
+        the optimised RTL only with an EQY result attached, and the depth of
+        that result is stored with it. A combinational rewrite is proved
+        complete in one miter cycle. A feed-forward pipeline insertion is
+        proved complete at latency${}+2$. Every other case is bounded, and the
+        bound is printed next to the result rather than folded into a pass
+        count. A flow that accepts on simulation does not separate these three
+        cases.
 
-  \item \textbf{The parent contract is a separate gate.} Module-level
-        equivalence is not sufficient and this is measurable, not
-        theoretical: \numcontractkills{} rewrites passed G1 with a complete
-        proof and were killed by G1b at the parent
-        (Table~\ref{tab:g1b}). Three independently developed models produced
-        the same class of defect, so it is a property of the task, not of one
-        model. This is the report's central claim.
+  \item \textbf{A separate gate for the parent's timing contract (G1b).}
+        Module-level equivalence is not sufficient, and the gap is measured
+        here rather than argued: \numcontractkills{} rewrites passed G1 with a
+        complete proof and were rejected by G1b at the parent
+        (Table~\ref{tab:g1b}). The three rewrites came from three different
+        models, so the defect follows the task rather than one model. This is
+        the report's main result.
 
-  \item \textbf{A latency change is a legal move, with a price.} The four
-        permitted transforms include pipelining, which changes latency, which
-        no single-module equivalence check can accept. The harness therefore
-        takes one proposal that rewrites the target \emph{and} every parent
-        that must learn to wait, through a \texttt{submodules} field, and
-        proves the set together. Without that channel the only reachable
-        edits are latency-preserving ones, which excludes the transform that
-        deep combinational paths need.
+  \item \textbf{Multi-module proposals, so latency-changing edits are
+        reachable.} Pipelining changes latency, and a single-module
+        equivalence check rejects any latency change. A proposal therefore
+        carries a \texttt{submodules} field: it rewrites the target and every
+        parent that must wait for it, and the set is proved together. Without
+        that field the only reachable edits are latency-preserving ones, which
+        rules out the transform that deep combinational paths need.
 
-  \item \textbf{Scope comes from the tree.} What a proposal says it changed is
-        a claim; what differs from the working tree is evidence. The loop
-        derives the accepted set from the diff, and a proposal that differs
-        nowhere is recorded as a no-op instead of a closed path
-        (Section~\ref{sec:scope}). Without this, one already-accepted edit re-sent
-        under a second module's name counts twice, and the headline number
-        inflates silently.
+  \item \textbf{Accepted scope taken from the working-tree diff.} The loop
+        computes what an edit changed by diffing the tree, not by reading the
+        module list in the proposal. A proposal whose diff is empty is
+        recorded as a no-op rather than a closed path
+        (Section~\ref{sec:scope}). Without this, one accepted edit re-sent
+        under a second module's name is counted twice and the headline number
+        rises with no work behind it.
 
-  \item \textbf{Results are reported per clock domain, and noise is named.}
-        The design has five mutually asynchronous masters, so one global WNS
-        answers five independent questions at once and answers none of them.
-        Global WNS here is governed by a path no permitted transform can
-        reach, and it moves more under placement variance than under any
-        edit. The claim this report stands behind is the one two structurally
-        different rewrites reproduced independently to within
-        \bestagreement\,ns; the domains where they disagree in sign are
-        called noise and reported as noise.
+  \item \textbf{Slack reported per clock domain, with the noise floor
+        stated.} The design has five mutually asynchronous masters, so a
+        single global WNS mixes five independent questions. Global WNS here is
+        set by a divider path that no permitted transform reaches, and it
+        moves further between two placements of the same netlist than under
+        any accepted edit. The headline claim is therefore restricted to the
+        domain where two structurally different rewrites agree to within
+        \bestagreement\,ns; domains where the two disagree in sign are
+        reported as placement noise.
 \end{enumerate}
 
 % =====================================================================
@@ -773,9 +767,9 @@ this report rather than asserted.
   \item The clock structures were repaired after the audit found them, and
         the repair is backed by a runt-pulse simulation
         (Table~\ref{tab:clockrisk}), not by the structural auditor alone. The
-        auditor recognises shapes; it cannot certify a shape nobody taught it,
-        and G2c remains a regression gate rather than a certificate of clock
-        quality.
+        auditor matches known unsafe shapes and cannot detect one it has no
+        rule for, so G2c is a regression gate, not a clock-quality
+        certificate.
   \item CDC gates assume Gray or handshake encoding on multi-bit crossings
         rather than proving it. The assumption is recorded in every run's
         warnings, including the baseline's.
@@ -791,11 +785,11 @@ than transcribed, so it cannot drift from the RTL that was actually measured.
 
 Both models found the same target, a nine-iteration sequential leading-one
 search written as a \texttt{for} loop that synthesises to nine serial compares,
-and both replaced it with a single-level parallel priority match. They agree on the transform and disagree on everything else: one
-touched \difflinessonnet{} lines, the other \difflinesnemotronultra{}. That the two
-resulting netlists then land within \bestagreement\,ns of each other is the
-strongest evidence in this report that the improvement is a property of the
-transform and not of a model.
+and both replaced it with a single-level parallel priority match. The two
+implementations differ in size by an order of magnitude: one changed
+\difflinessonnet{} lines, the other \difflinesnemotronultra{}. The routed
+results still land within \bestagreement\,ns of each other, which is why the
+improvement is attributed to the transform rather than to either model.
 
 \input{generated/diff_fp8}
 
@@ -812,9 +806,9 @@ each and returned no verdict at all. Rewriting a restoring divider as
 \texttt{a / b} does not shorten the path; it hands the prover a hard arithmetic
 theorem.
 
-The diagnosis fields are not decoration either. They are read straight into
-this report, which is why the prompt insists they be written about the path in
-front of the model rather than as general timing-closure advice.
+The diagnosis fields are read directly into this report, so the prompt requires
+them to describe the path in front of the model rather than give general
+timing-closure advice.
 
 \input{generated/prompt}
 
