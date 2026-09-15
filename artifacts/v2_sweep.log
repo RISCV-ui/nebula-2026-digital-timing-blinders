@@ -1,0 +1,318 @@
+OPENROAD: /Users/shubhanshu/Desktop/Nebula/digital/orfs/tools/OpenROAD
+=== [1/4] bake-off: 4 arms over 3 v2 targets ===
+  --      gemini:gemini-flash                models/gemini-3.5-flash   (not routed via OpenRouter)
+  ok      openrouter:nemotron-ultra          nvidia/nemotron-3-ultra-550b-a55b:free
+  --      anthropic:sonnet-direct            claude-sonnet-5   (not routed via OpenRouter)
+  --      anthropic:opus-direct              claude-opus-5   (not routed via OpenRouter)
+
+=== arm 1/4: gemini:gemini-flash ===
+    0/3 accepted in 397.6s -> artifacts/bakeoff_v2/gemini_gemini-flash/rtl
+
+=== arm 2/4: openrouter:nemotron-ultra ===
+    1/21 accepted in 11310.1s -> artifacts/bakeoff_v2/openrouter_nemotron-ultra/rtl
+
+=== arm 3/4: anthropic:sonnet-direct ===
+    1/13 accepted in 1930.3s -> artifacts/bakeoff_v2/anthropic_sonnet-direct/rtl
+
+=== arm 4/4: anthropic:opus-direct ===
+    0/13 accepted in 2306.8s -> artifacts/bakeoff_v2/anthropic_opus-direct/rtl
+
+| model | proposals | accepted | 1st try | accept rate | wall s | died at |
+|---|---|---|---|---|---|---|
+| `gemini:gemini-flash` | 3 | 0 | 0 | 0.0 | 397.6 | backend 1, g1 1 |
+| `openrouter:nemotron-ultra` | 21 | 1 | 1 | 0.048 | 11310.1 | propose 4, validate 10, g1 4, g1b 1 |
+| `anthropic:sonnet-direct` | 13 | 1 | 1 | 0.077 | 1930.3 | propose 8, g1 2, g1b 1 |
+| `anthropic:opus-direct` | 13 | 0 | 0 | 0.0 | 2306.8 | propose 9, g1 2, g1b 1 |
+
+| model | tokens in | tokens out | cost USD | USD per accepted fix |
+|---|---|---|---|---|
+| `gemini:gemini-flash` | 5231 | 2903 | $0.0088 | no accepted fix |
+| `openrouter:nemotron-ultra` | 121504 | 369873 | $0.0000 | $0.0000 |
+| `anthropic:sonnet-direct` | 107730 | 160195 | $2.6484 | $2.6484 |
+| `anthropic:opus-direct` | 106411 | 163986 | $13.5065 | no accepted fix |
+
+Frozen input RTL: `bench/rtl_v2` (never written to).
+
+| model | optimised RTL | files changed | files added |
+|---|---|---|---|
+| `gemini:gemini-flash` | `artifacts/bakeoff_v2/gemini_gemini-flash/rtl` | -- | -- |
+| `openrouter:nemotron-ultra` | `artifacts/bakeoff_v2/openrouter_nemotron-ultra/rtl` | `fp8_adder.v` | -- |
+| `anthropic:sonnet-direct` | `artifacts/bakeoff_v2/anthropic_sonnet-direct/rtl` | `fp8_adder.v` | -- |
+| `anthropic:opus-direct` | `artifacts/bakeoff_v2/anthropic_opus-direct/rtl` | -- | -- |
+
+wrote artifacts/bakeoff_v2/bakeoff.json and artifacts/bakeoff_v2/bakeoff.md
+bake-off rc=0
+=== [2/4] build verified RTL variants ===
+baseline                     0 accepted edit(s): -
+anthropic_opus-direct        0 accepted edit(s): -
+anthropic_sonnet-direct      1 accepted edit(s): fp8_adder.v
+gemini_gemini-flash          0 accepted edit(s): -
+openrouter_nemotron-ultra    1 accepted edit(s): fp8_adder.v
+
+wrote /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/variants.json
+=== [3/4] place and route, one run per variant ===
+--- PnR baseline ---
+baseline rc=0
+--- PnR anthropic_sonnet-direct ---
+anthropic_sonnet-direct rc=0
+--- PnR openrouter_nemotron-ultra ---
+openrouter_nemotron-ultra rc=0
+=== [4/4] metrics and reports ===
+wrote /Users/shubhanshu/Desktop/Nebula/digital/artifacts/metrics_v2_20260913_2305/anthropic_sonnet-direct.json
+{
+  "antenna_violations": null,
+  "area_um2": 1913142.0,
+  "clocks": {
+    "clk1": {
+      "period_ns": 10.0,
+      "wns_ns": -124.116
+    },
+    "clk2": {
+      "period_ns": 20.0,
+      "wns_ns": null
+    },
+    "clk3": {
+      "period_ns": 12.5,
+      "wns_ns": null
+    },
+    "clk4": {
+      "period_ns": 25.0,
+      "wns_ns": null
+    },
+    "clk5": {
+      "period_ns": 40.0,
+      "wns_ns": null
+    },
+    "clk_s1": {
+      "period_ns": 25.0,
+      "wns_ns": 16.6978
+    },
+    "clk_s1_gate": {
+      "period_ns": 25.0,
+      "wns_ns": 23.1085
+    },
+    "clk_s2": {
+      "period_ns": 20.0,
+      "wns_ns": -26.1961
+    },
+    "clk_s2_gate": {
+      "period_ns": 20.0,
+      "wns_ns": 17.8225
+    },
+    "clk_s3": {
+      "period_ns": 10.0,
+      "wns_ns": -0.1641
+    },
+    "clk_s4": {
+      "period_ns": 40.0,
+      "wns_ns": -0.4108
+    },
+    "clk_s4_gate": {
+      "period_ns": 40.0,
+      "wns_ns": 37.8132
+    },
+    "clk_s5": {
+      "period_ns": 12.5,
+      "wns_ns": -29.4746
+    },
+    "clk_s5_gate": {
+      "period_ns": 12.5,
+      "wns_ns": 11.0465
+    },
+    "clk_s8": {
+      "period_ns": 10.0,
+      "wns_ns": -2.1431
+    }
+  },
+  "drc_violations": 0,
+  "instances": 488607,
+  "nets": 143398,
+  "odb": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_anthropic_sonnet-direct/results/sky130hd/nebula_bench_v2/anthropic_sonnet-direct/6_final.odb",
+  "power_total_w": null,
+  "sdc": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_anthropic_sonnet-direct/results/sky130hd/nebula_bench_v2/anthropic_sonnet-direct/6_final.sdc",
+  "tag": "anthropic_sonnet-direct",
+  "timestamp": "2026-09-14T09:43:42",
+  "tns": -94156.3203,
+  "tns_hold": -0.0854,
+  "utilization_pct": 54.0,
+  "wirelength_um": 7382892,
+  "wns": -124.116,
+  "wns_hold": -0.0583
+}
+wrote /Users/shubhanshu/Desktop/Nebula/digital/artifacts/metrics_v2_20260913_2305/baseline.json
+{
+  "antenna_violations": null,
+  "area_um2": 1914043.0,
+  "clocks": {
+    "clk1": {
+      "period_ns": 10.0,
+      "wns_ns": -126.6293
+    },
+    "clk2": {
+      "period_ns": 20.0,
+      "wns_ns": null
+    },
+    "clk3": {
+      "period_ns": 12.5,
+      "wns_ns": null
+    },
+    "clk4": {
+      "period_ns": 25.0,
+      "wns_ns": null
+    },
+    "clk5": {
+      "period_ns": 40.0,
+      "wns_ns": null
+    },
+    "clk_s1": {
+      "period_ns": 25.0,
+      "wns_ns": 16.9266
+    },
+    "clk_s1_gate": {
+      "period_ns": 25.0,
+      "wns_ns": 23.1259
+    },
+    "clk_s2": {
+      "period_ns": 20.0,
+      "wns_ns": -27.8
+    },
+    "clk_s2_gate": {
+      "period_ns": 20.0,
+      "wns_ns": 17.9242
+    },
+    "clk_s3": {
+      "period_ns": 10.0,
+      "wns_ns": -0.1019
+    },
+    "clk_s4": {
+      "period_ns": 40.0,
+      "wns_ns": 0.1477
+    },
+    "clk_s4_gate": {
+      "period_ns": 40.0,
+      "wns_ns": 37.8683
+    },
+    "clk_s5": {
+      "period_ns": 12.5,
+      "wns_ns": -29.374
+    },
+    "clk_s5_gate": {
+      "period_ns": 12.5,
+      "wns_ns": 10.5934
+    },
+    "clk_s8": {
+      "period_ns": 10.0,
+      "wns_ns": -3.3171
+    }
+  },
+  "drc_violations": 0,
+  "instances": 488118,
+  "nets": 143367,
+  "odb": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_baseline/results/sky130hd/nebula_bench_v2/baseline/6_final.odb",
+  "power_total_w": null,
+  "sdc": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_baseline/results/sky130hd/nebula_bench_v2/baseline/6_final.sdc",
+  "tag": "baseline",
+  "timestamp": "2026-09-14T09:44:17",
+  "tns": -97704.1328,
+  "tns_hold": -0.4563,
+  "utilization_pct": 54.0,
+  "wirelength_um": 7409236,
+  "wns": -126.6293,
+  "wns_hold": -0.082
+}
+wrote /Users/shubhanshu/Desktop/Nebula/digital/artifacts/metrics_v2_20260913_2305/openrouter_nemotron-ultra.json
+{
+  "antenna_violations": null,
+  "area_um2": 1905391.0,
+  "clocks": {
+    "clk1": {
+      "period_ns": 10.0,
+      "wns_ns": -130.0722
+    },
+    "clk2": {
+      "period_ns": 20.0,
+      "wns_ns": null
+    },
+    "clk3": {
+      "period_ns": 12.5,
+      "wns_ns": null
+    },
+    "clk4": {
+      "period_ns": 25.0,
+      "wns_ns": null
+    },
+    "clk5": {
+      "period_ns": 40.0,
+      "wns_ns": null
+    },
+    "clk_s1": {
+      "period_ns": 25.0,
+      "wns_ns": 16.8139
+    },
+    "clk_s1_gate": {
+      "period_ns": 25.0,
+      "wns_ns": 23.7575
+    },
+    "clk_s2": {
+      "period_ns": 20.0,
+      "wns_ns": -26.1916
+    },
+    "clk_s2_gate": {
+      "period_ns": 20.0,
+      "wns_ns": 18.2547
+    },
+    "clk_s3": {
+      "period_ns": 10.0,
+      "wns_ns": -0.1529
+    },
+    "clk_s4": {
+      "period_ns": 40.0,
+      "wns_ns": 0.169
+    },
+    "clk_s4_gate": {
+      "period_ns": 40.0,
+      "wns_ns": 38.1912
+    },
+    "clk_s5": {
+      "period_ns": 12.5,
+      "wns_ns": -29.4915
+    },
+    "clk_s5_gate": {
+      "period_ns": 12.5,
+      "wns_ns": 10.7228
+    },
+    "clk_s8": {
+      "period_ns": 10.0,
+      "wns_ns": -1.9365
+    }
+  },
+  "drc_violations": 0,
+  "instances": 489340,
+  "nets": 142790,
+  "odb": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_openrouter_nemotron-ultra/results/sky130hd/nebula_bench_v2/openrouter_nemotron-ultra/6_final.odb",
+  "power_total_w": null,
+  "sdc": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_openrouter_nemotron-ultra/results/sky130hd/nebula_bench_v2/openrouter_nemotron-ultra/6_final.sdc",
+  "tag": "openrouter_nemotron-ultra",
+  "timestamp": "2026-09-14T09:44:52",
+  "tns": -97854.0312,
+  "tns_hold": -0.4373,
+  "utilization_pct": 54.0,
+  "wirelength_um": 7376890,
+  "wns": -130.0722,
+  "wns_hold": -0.1233
+}
+**5 of 11 constrained clocks meet timing after optimisation** (was 6). 4 clocks reported no path and are excluded from that count -- an unconstrained domain is an open question, not a pass.
+
+Clocks whose slack got worse: `clk_s1`, `clk_s1_gate`, `clk_s2_gate`, `clk_s3`, `clk_s4`, `clk_s4_gate`, `clk_s5`.
+
+wrote /Users/shubhanshu/Desktop/Nebula/digital/artifacts/ppa_v2_20260913_2305_anthropic_sonnet-direct.md and /Users/shubhanshu/Desktop/Nebula/digital/artifacts/ppa_v2_20260913_2305_anthropic_sonnet-direct.json
+**6 of 11 constrained clocks meet timing after optimisation** (was 6). 4 clocks reported no path and are excluded from that count -- an unconstrained domain is an open question, not a pass.
+
+Clocks whose slack got worse: `clk1`, `clk_s1`, `clk_s3`, `clk_s5`.
+
+wrote /Users/shubhanshu/Desktop/Nebula/digital/artifacts/ppa_v2_20260913_2305_openrouter_nemotron-ultra.md and /Users/shubhanshu/Desktop/Nebula/digital/artifacts/ppa_v2_20260913_2305_openrouter_nemotron-ultra.json
+=== v2 sweep done ===
+  bake-off : artifacts/bakeoff_v2
+  variants : output/rtl_variants_v2
+  PnR      : /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305
+  metrics  : /Users/shubhanshu/Desktop/Nebula/digital/artifacts/metrics_v2_20260913_2305

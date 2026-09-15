@@ -1,55 +1,117 @@
 # Constraint Optimization through RTL Enhancement Using Generative AI
 
-**Astera Labs Nebula 2026 - Digital Track** - **Team Timing Blinders:** Shubhanshu Shivhare, Nagarjun BV - IIT Bombay
+**Astera Labs Nebula 2026 — Digital Track**
+**Team Timing Blinders:** Shubhanshu Shivhare, Nagarjun BV — IIT Bombay
 
-This project closes a real RTL timing loop with an LLM as proposer and deterministic EDA/formal tools as judges. Frozen input RTL is never edited. Every candidate must survive structural validation, formal equivalence or a declared latency contract, CDC checks, clock checks, and final OpenROAD signoff.
+An LLM proposes RTL timing fixes; deterministic EDA and formal tools decide
+whether any of them are allowed to survive. The input RTL is frozen. No edit
+reaches the reported design without passing structural validation, formal
+equivalence (or an explicitly declared latency contract), CDC and clock-
+structure checks, and a full OpenROAD route.
 
-![Proof-gated optimization loop](output/result_assets/figures/01_proof_gated_flow.png)
+## Read this first
 
-## Verified results
+**`report/nebula_report.pdf`** is the submission. Every number in it is
+regenerated from the run artifacts in this bundle by `scripts/build_report.py`;
+none is typed into the LaTeX source, and a missing artifact renders as a
+visible `[pending]` marker rather than as a zero. This README is generated the
+same way, from the same file, so the two cannot drift apart.
 
-![Verified result dashboard](output/result_assets/figures/02_verified_dashboard.png)
+## Headline
 
-- `clk_s5` Fmax: **25.65 to 89.09 MHz (3.47x)**.
-- Setup WNS: **-25.2539 to -0.1659 ns**.
-- Setup TNS: **-3384.4421 to -1.9487 ns**.
-- Routed area: **-1.596%**; instances: **-4,927 (-1.025%)**.
-- DRC: **0**. Final lint: **no new warnings**.
-- Formal coverage: **45/54 modules** — 36 unrestricted EQY proofs plus 9 reset-constrained bounded proofs, with **0 counterexamples** on the real designs.
-- Changed stream: data and order proved with a declared **+4-cycle latency**.
+| | |
+|---|---|
+| Candidate edits proposed | 46 |
+| Accepted after all gates | 3 |
+| Rejected by the latency contract alone | 3 |
+| Best per-domain gain | `clk_s2` +1.60 ns (20.92 → 21.65 MHz) |
+| Two independent models, same transform, netlists agree within | 0.005 ns |
+| Module-level netlist equivalence | 38 proved of 94 checked |
+| Clock-structure audit | CLEAN, 2 findings, 0 glitchy |
+| Runt-pulse simulation | 0 runts in the repaired design, 8 in the negative control |
+| Model API spend, whole bake-off | $16.16 |
 
-## Same-task model comparison
+The baseline worst negative slack is -126.6293 ns on a divider path, and
+that path does **not** close — see "What this does not claim" in the report.
+Gains are per-domain; the chip is still governed by its slowest domain.
 
-![Model gate outcomes](output/result_assets/figures/03_model_gate_outcomes.png)
+## What is in this bundle
 
-Four arms completed under identical paths, retries and gates. Gemma free and Gemini Pro received HTTP 429 before any proposal reached a gate, so both remain **not tested**. Nemotron Ultra's corrected score is **1/7**; the audit removed one historical no-op/wrong-target accept.
+| Path | What it is |
+|---|---|
+| `report/` | The report, its LaTeX source, and `generated/` — every table and number as an `\input` fragment |
+| `bench/rtl_v2/` | The frozen benchmark RTL: five asynchronous masters, generated clocks, CDC, dividers |
+| `bench/constraints/nebula.sdc` | The constraint set the whole flow is timed against |
+| `bench/scripts/loop.py` | The proposer loop and the system prompt the model is held to |
+| `bench/scripts/metrics.py`, `ppa_report.py` | Post-route metric extraction and the before/after comparison |
+| `demo_v2.py` | The interactive demo — eight acts over the recorded artifacts, about a second, no network |
+| `scripts/` | Report, figure, README, packaging and verification scripts |
+| `artifacts/bakeoff_v2*/`, `artifacts/divider_run/` | The runs the report counts, one `history.jsonl` per arm |
+| `artifacts/metrics_v2_*/`, `artifacts/ppa_v3_*` | Routed PPA for the v3 pair |
+| `artifacts/model_ppa_v3/pnr_*/reports/` | OpenROAD reports and logs for those routes |
+| `artifacts/eqy/shards/`, `artifacts/eqy_v2_serial_partial.log` | Netlist-vs-RTL equivalence evidence |
+| `artifacts/clockcheck_v2.json`, `artifacts/clocksim.json` | Clock-structure audit and the runt-pulse simulation |
+| `output/rtl_variants_v2/` | The RTL trees actually routed, one per accepted variant |
+| `docs/`, `WORKLOG.md` | Design notes and the dated build log |
 
-Individual model arms were compared by proposal and gate outcomes. Full PnR/PPA was run once on the combined formally accepted candidate, not once per model.
+Tool workdirs (`.odb`, `.def`, `.gds`) are deliberately excluded: they are
+gigabytes and are reproducible from the flow below.
 
-## Physical and formal evidence
+## Reproducing
 
-![Physical PPA](output/result_assets/figures/08_physical_ppa.png)
+```sh
+# 1. the loop, one model, over the sliced targets
+python3 bench/scripts/loop.py --targets artifacts/paths/v2_targets.json \
+    --rtl bench/rtl_v2 --backend anthropic:sonnet-direct \
+    --out artifacts/run --g1-timeout 300 --order closeable
 
-![Formal verification](output/result_assets/figures/09_formal_verification.png)
+# 2. build the verified RTL variants from the gate decisions
+python3 scripts/prepare_variants_v2.py
 
-The accepted FP4 pipeline is intentionally not cycle-by-cycle identical because it adds four cycles. The qualified result combines byte identity for 52 files, complete combinational equivalence for `fp8_adder`, and a six-property stream proof for the latency-changing cone.
+# 3. place and route each variant, then compare against the baseline
+bash scripts/run_variant_pnr.sh <variant> <ppa-dir> nebula_bench_v2
 
-## Complete result pack
+# 4. netlist-vs-RTL equivalence, module by module
+python3 scripts/eqy_netlist.py --rtl <variant>/rtl --netlist <1_2_yosys.v> \
+    --liberty sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib --depth 5
 
-- [Figure and data index](output/result_assets/README.md)
-- [Model comparison CSV](output/result_assets/data/model_comparison.csv)
-- [Per-clock timing CSV](output/result_assets/data/clock_comparison.csv)
-- [PPA CSV](output/result_assets/data/ppa_comparison.csv)
-- [EQY module results CSV](output/result_assets/data/eqy_module_results.csv)
-- [All consolidated results JSON](output/result_assets/data/all_results.json)
-- [Evidence summary](artifacts/submission_20260911/summary.md)
-- [Detailed worklog](WORKLOG.md)
+# 5. regenerate every table, figure, number and this README
+python3 scripts/build_report.py && python3 scripts/build_figures.py
+python3 scripts/build_readme.py
+latexmk -pdf report/nebula_report.tex
+```
 
-## Honest limits
+Steps 1–4 need the toolchain (OSS CAD Suite, EQY, OpenROAD-flow-scripts) and
+hours of compute. Step 5 needs only Python and LaTeX and rebuilds the whole
+document from the artifacts already in this bundle.
 
-- `clk1` and `clk_s8` retain small setup violations.
-- `clk2` through `clk5` report no timing paths and are not counted as passing.
-- Four timed clocks regress in slack while remaining closed.
-- Unrestricted EQY leaves 10 timeout, 7 unproven and 1 tool-error module. The reset-aware supplement closes nine of those gaps; 9 modules still lack a proof.
-- Five brute-force deeper retries produced zero new proofs. The separate reset-aware method reached 45/54 and rejected an inverted-output negative control for every added proof.
-- Paid model arm and demo video remain pending.
+## The demo
+
+```sh
+python3 demo_v2.py            # all eight acts
+python3 demo_v2.py --act 3    # just the gate funnel
+```
+
+Read-only, from the artifacts in this bundle: no API key, no network, no
+toolchain. Act 8 re-derives the report's own macros from those artifacts and
+diffs them against `report/generated/numbers.tex` on screen.
+
+## Verifying this bundle
+
+```sh
+python3 scripts/submission_check_v2.py
+```
+
+It re-derives the report's numbers from the artifacts, compares them against
+the shipped `report/generated/`, and fails if anything in the PDF is no longer
+backed by the evidence beside it.
+
+## API keys
+
+No key is in this bundle, and `scripts/package_submission_v2.py` refuses to
+build one that contains a key-shaped string. `bench/scripts/loop.py` reads
+credentials from the environment only.
+
+---
+*Generated by `scripts/build_readme.py` from `report/generated/numbers.tex` —
+15 September 2026, 04:06.*

@@ -1,0 +1,45 @@
+{
+  "golden": "bench/rtl",
+  "targets": "artifacts/paths/presizer_all.json",
+  "max_targets": 7,
+  "retries": 2,
+  "arms": [
+    {
+      "arm": "anthropic:sonnet-direct",
+      "out": "artifacts/bakeoff_v3_wide/anthropic_sonnet-direct",
+      "rtl": "artifacts/bakeoff_v3_wide/anthropic_sonnet-direct/rtl",
+      "returncode": 0,
+      "wall_seconds": 4786.7,
+      "proposals": 14,
+      "accepted": 4,
+      "raw_accepted": 4,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 4,
+      "accept_rate": 0.286,
+      "died_at": {
+        "propose": 1,
+        "validate": 3,
+        "g1": 5,
+        "accepted": 4
+      },
+      "transforms": {
+        "logic_restructure": 4
+      },
+      "modules_changed": [
+        "fp8_adder"
+      ],
+      "tokens_in": 98523,
+      "tokens_out": 218949,
+      "cost_usd": 3.536402,
+      "priced": true,
+      "cost_per_accepted_usd": 0.8841,
+      "tree_diff": {
+        "changed": [
+          "fp8_adder.v"
+        ],
+        "added": [],
+        "removed": []
+      }
+    }
+  ]
+}

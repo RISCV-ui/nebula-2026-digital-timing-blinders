@@ -1,0 +1,121 @@
+{
+  "top": "soc_top",
+  "path_count": 1,
+  "paths": [
+    {
+      "startpoint": "processor_0/pipeline_id_ex/src_mux_sel_2_out[0]$_SDFFE_PP0N_",
+      "endpoint": "soc_obs[7]$_SDFF_PP0_",
+      "clock": "clk1",
+      "slack_ns": -147.0448,
+      "combinational_delay_ns": 156.7589,
+      "stages": 849,
+      "modules": [
+        {
+          "instance": "processor_0/ex_stage/alu_ex",
+          "module": "alu",
+          "delay_ns": 151.3383,
+          "share_pct": 96.5
+        },
+        {
+          "instance": "processor_0/src_mx2",
+          "module": "alu_src_b_mux",
+          "delay_ns": 3.2097,
+          "share_pct": 2.0
+        },
+        {
+          "instance": "soc_top",
+          "module": "soc_top",
+          "delay_ns": 1.2773,
+          "share_pct": 0.8
+        },
+        {
+          "instance": "processor_0/ex_stage",
+          "module": "execution_stage",
+          "delay_ns": 0.59,
+          "share_pct": 0.4
+        },
+        {
+          "instance": "processor_0/pipeline_id_ex",
+          "module": "pipeline_reg_id_ex",
+          "delay_ns": 0.3436,
+          "share_pct": 0.2
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "processor_0",
+          "module": "processor_top"
+        },
+        {
+          "instance": "pipeline_id_ex",
+          "module": "pipeline_reg_id_ex"
+        }
+      ],
+      "end_chain": [],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "alu",
+          "instances": [
+            "processor_0/ex_stage/alu_ex"
+          ],
+          "delay_ns": 151.3383,
+          "share_pct": 96.5
+        },
+        {
+          "module": "alu_src_b_mux",
+          "instances": [
+            "processor_0/src_mx2"
+          ],
+          "delay_ns": 3.2097,
+          "share_pct": 2.0
+        },
+        {
+          "module": "soc_top",
+          "instances": [
+            "soc_top"
+          ],
+          "delay_ns": 1.2773,
+          "share_pct": 0.8
+        },
+        {
+          "module": "execution_stage",
+          "instances": [
+            "processor_0/ex_stage"
+          ],
+          "delay_ns": 0.59,
+          "share_pct": 0.4
+        },
+        {
+          "module": "pipeline_reg_id_ex",
+          "instances": [
+            "processor_0/pipeline_id_ex"
+          ],
+          "delay_ns": 0.3436,
+          "share_pct": 0.2
+        }
+      ],
+      "target": {
+        "module": "alu",
+        "instances": [
+          "processor_0/ex_stage/alu_ex"
+        ],
+        "delay_ns": 151.3383,
+        "share_pct": 96.5
+      },
+      "endpoint_count": 200,
+      "paths_covered": 15,
+      "id": "P000",
+      "lever": {
+        "gap_ns": 147.0448,
+        "gate_reach_ns": 31.3518,
+        "overrun_ratio": 15.137,
+        "lever": "rtl",
+        "reason": "needs 147.045 ns, 4.7x what the gate-level flow can reach (31.352 ns); 96.5% of the path sits in alu across 1 instance, so the structure is what has to change"
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/alu.v",
+      "target_source_lines": 65
+    }
+  ]
+}

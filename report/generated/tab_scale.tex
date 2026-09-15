@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{The benchmark at the scale the competition asks for, measured on the routed baseline rather than estimated from the RTL.}
+  \label{tab:scale}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{lr}
+    \toprule
+    \textbf{} & \textbf{Frozen input, post-route} \\
+    \midrule
+    RTL modules & 59 \\
+    RTL lines & 12\,015 \\
+    Master clock domains & 5, mutually asynchronous \\
+    Clocks declared & 15 \\
+    Placed instances & 488\,118 \\
+    Nets & 143\,367 \\
+    Die area & 1914043\,\si{\um\squared} \\
+    Routed wirelength & 7409236\,\si{\um} \\
+    Utilisation & 54.0\,\% \\
+    PDK & sky130hd, via OpenROAD-flow-scripts \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+\end{table}

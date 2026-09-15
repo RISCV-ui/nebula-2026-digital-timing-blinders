@@ -1,0 +1,142 @@
+{
+  "golden": "bench/rtl_v2",
+  "targets": "artifacts/paths/v2_targets.json",
+  "max_targets": 3,
+  "retries": 2,
+  "arms": [
+    {
+      "arm": "gemini:gemini-flash",
+      "out": "artifacts/bakeoff_v2/gemini_gemini-flash",
+      "rtl": "artifacts/bakeoff_v2/gemini_gemini-flash/rtl",
+      "returncode": 0,
+      "wall_seconds": 397.6,
+      "proposals": 3,
+      "accepted": 0,
+      "raw_accepted": 0,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "backend": 1,
+        "g1": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "tokens_in": 5231,
+      "tokens_out": 2903,
+      "cost_usd": 0.008827,
+      "priced": true,
+      "cost_per_accepted_usd": null,
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "openrouter:nemotron-ultra",
+      "out": "artifacts/bakeoff_v2/openrouter_nemotron-ultra",
+      "rtl": "artifacts/bakeoff_v2/openrouter_nemotron-ultra/rtl",
+      "returncode": 0,
+      "wall_seconds": 11310.1,
+      "proposals": 21,
+      "accepted": 1,
+      "raw_accepted": 1,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 1,
+      "accept_rate": 0.048,
+      "died_at": {
+        "propose": 4,
+        "validate": 10,
+        "g1": 4,
+        "g1b": 1,
+        "accepted": 1
+      },
+      "transforms": {
+        "logic_restructure": 1
+      },
+      "modules_changed": [
+        "fp8_adder"
+      ],
+      "tokens_in": 121504,
+      "tokens_out": 369873,
+      "cost_usd": 0.0,
+      "priced": true,
+      "cost_per_accepted_usd": 0.0,
+      "tree_diff": {
+        "changed": [
+          "fp8_adder.v"
+        ],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "anthropic:sonnet-direct",
+      "out": "artifacts/bakeoff_v2/anthropic_sonnet-direct",
+      "rtl": "artifacts/bakeoff_v2/anthropic_sonnet-direct/rtl",
+      "returncode": 0,
+      "wall_seconds": 1930.3,
+      "proposals": 13,
+      "accepted": 1,
+      "raw_accepted": 1,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 1,
+      "accept_rate": 0.077,
+      "died_at": {
+        "propose": 8,
+        "g1": 2,
+        "g1b": 1,
+        "accepted": 1
+      },
+      "transforms": {
+        "logic_restructure": 1
+      },
+      "modules_changed": [
+        "fp8_adder"
+      ],
+      "tokens_in": 107730,
+      "tokens_out": 160195,
+      "cost_usd": 2.648355,
+      "priced": true,
+      "cost_per_accepted_usd": 2.6484,
+      "tree_diff": {
+        "changed": [
+          "fp8_adder.v"
+        ],
+        "added": [],
+        "removed": []
+      }
+    },
+    {
+      "arm": "anthropic:opus-direct",
+      "out": "artifacts/bakeoff_v2/anthropic_opus-direct",
+      "rtl": "artifacts/bakeoff_v2/anthropic_opus-direct/rtl",
+      "returncode": 0,
+      "wall_seconds": 2306.8,
+      "proposals": 13,
+      "accepted": 0,
+      "raw_accepted": 0,
+      "invalid_accepts": [],
+      "accepted_first_attempt": 0,
+      "accept_rate": 0.0,
+      "died_at": {
+        "propose": 9,
+        "g1": 2,
+        "g1b": 1
+      },
+      "transforms": {},
+      "modules_changed": [],
+      "tokens_in": 106411,
+      "tokens_out": 163986,
+      "cost_usd": 13.506461,
+      "priced": true,
+      "cost_per_accepted_usd": null,
+      "tree_diff": {
+        "changed": [],
+        "added": [],
+        "removed": []
+      }
+    }
+  ]
+}

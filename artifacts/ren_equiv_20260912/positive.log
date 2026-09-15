@@ -1,0 +1,171 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+
+-- Running command `read_verilog artifacts/ren_equiv_20260912/miter.v; hierarchy -top miter; flatten; opt -full; sat -verify -prove differ 0 miter' --
+
+1. Executing Verilog-2005 frontend: artifacts/ren_equiv_20260912/miter.v
+Parsing Verilog input from `artifacts/ren_equiv_20260912/miter.v' to AST representation.
+Generating RTLIL representation for module `\ren_gold'.
+Generating RTLIL representation for module `\ren_gate'.
+Generating RTLIL representation for module `\miter'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \miter
+Used module:     \ren_gate
+Used module:     \ren_gold
+
+2.2. Analyzing design hierarchy..
+Top module:  \miter
+Used module:     \ren_gate
+Used module:     \ren_gold
+Removed 0 unused modules.
+Mapping positional arguments of cell miter.u_gate (ren_gate).
+Mapping positional arguments of cell miter.u_gold (ren_gold).
+
+3. Executing FLATTEN pass (flatten design).
+Deleting now unused module ren_gate.
+Deleting now unused module ren_gold.
+<suppressed ~2 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module miter.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\miter'.
+Computing hashes of 24 cells of `\miter'.
+Finding duplicate cells in `\miter'.
+Computing hashes of 17 cells of `\miter'.
+Finding duplicate cells in `\miter'.
+Computing hashes of 15 cells of `\miter'.
+Finding duplicate cells in `\miter'.
+Computing hashes of 14 cells of `\miter'.
+Finding duplicate cells in `\miter'.
+Computing hashes of 13 cells of `\miter'.
+Finding duplicate cells in `\miter'.
+<suppressed ~33 debug messages>
+Removed a total of 11 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \miter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \miter.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\miter'.
+Computing hashes of 13 cells of `\miter'.
+Finding duplicate cells in `\miter'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_SHARE pass.
+
+4.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \miter..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+4.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module miter.
+<suppressed ~1 debug messages>
+
+4.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \miter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \miter.
+Performed a total of 0 changes.
+
+4.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\miter'.
+Computing hashes of 12 cells of `\miter'.
+Finding duplicate cells in `\miter'.
+Removed a total of 0 cells.
+
+4.14. Executing OPT_SHARE pass.
+
+4.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \miter..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module miter.
+
+4.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \miter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \miter.
+Performed a total of 0 changes.
+
+4.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\miter'.
+Computing hashes of 12 cells of `\miter'.
+Finding duplicate cells in `\miter'.
+Removed a total of 0 cells.
+
+4.22. Executing OPT_SHARE pass.
+
+4.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \miter..
+
+4.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module miter.
+
+4.26. Finished fast OPT passes. (There is nothing left to do.)
+
+5. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up SAT problem:
+Final constraint equation: { } = { }
+Imported 12 cells to SAT database.
+Import proof-constraint: \differ = 1'0
+Final proof equation: \differ = 1'0
+
+Solving problem with 60 variables and 139 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+End of script. Logfile hash: 85e5956e39, time: 0.02s, user: 0.01s, system: 0.02s, MEM: 17.58 MB peak
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 29% 2x read_verilog (0 sec), 17% 4x opt_merge (0 sec), ...

@@ -1,0 +1,94 @@
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] Removing directory '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/absorption_20260912/work_gold'.
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] Copy '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/absorption_20260912/cuts_gold.v' to '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/absorption_20260912/work_gold/src/cuts_gold.v'.
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] Copy '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/absorption_20260912/axi_lite_dot_gold.v' to '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/absorption_20260912/work_gold/src/axi_lite_dot_gold.v'.
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] engine_0: smtbmc bitwuzla
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] base: starting process "cd artifacts/absorption_20260912/work_gold/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] base: finished (returncode=0)
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] prep: starting process "cd artifacts/absorption_20260912/work_gold/model; yosys -ql design_prep.log design_prep.ys"
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] prep: finished (returncode=0)
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] smt2: starting process "cd artifacts/absorption_20260912/work_gold/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] smt2: finished (returncode=0)
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] engine_0.basecase: starting process "cd artifacts/absorption_20260912/work_gold; yosys-smtbmc -s bitwuzla --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] engine_0.induction: starting process "cd artifacts/absorption_20260912/work_gold; yosys-smtbmc -s bitwuzla --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:00:00  Solver: bitwuzla
+SBY 18:37:41 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:00:00  Solver: bitwuzla
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 20..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 0..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 0..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 19..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 1..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 1..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 18..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 2..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 2..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 17..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 3..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 3..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 16..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 4..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 4..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 15..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 5..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 14..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 5..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 6..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 6..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 7..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 7..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 8..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 8..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 13..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 12..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 11..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 10..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 9..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 9..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 9..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 10..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 8..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 10..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 11..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 7..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 11..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 12..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 6..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 12..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 5..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 13..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 13..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 4..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 14..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 14..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 3..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 15..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 15..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 2..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 16..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 16..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 1..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 17..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 17..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Trying induction in step 0..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 18..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Temporal induction failed!
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 18..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Assert failed in axi_lite_dot: axi_lite_dot_gold.v:267.13-267.33 (_witness_.check_assert_axi_lite_dot_gold_v_267_89)
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:07  Writing trace to VCD file: engine_0/trace_induct.vcd
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assumptions in step 19..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Checking assertions in step 19..
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: ##   0:16:07  Status: passed
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: finished (returncode=0)
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:08  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:08  Writing trace to constraints file: engine_0/trace_induct.smtc
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:08  Writing trace to Yosys witness file: engine_0/trace_induct.yw
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: ##   0:16:08  Status: failed
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: finished (returncode=1)
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] engine_0.induction: Status returned by engine for induction: FAIL
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] summary: Elapsed clock time [H:MM:SS (secs)]: 0:16:08 (968)
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] summary: engine_0 (smtbmc bitwuzla) returned pass for basecase
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] summary: engine_0 (smtbmc bitwuzla) returned FAIL for induction
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] summary: counterexample trace [induction]: artifacts/absorption_20260912/work_gold/engine_0/trace_induct.vcd
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] summary:   failed assertion axi_lite_dot._witness_.check_assert_axi_lite_dot_gold_v_267_89 at axi_lite_dot_gold.v:267.13-267.33
+SBY 18:53:49 [artifacts/absorption_20260912/work_gold] DONE (UNKNOWN, rc=4)

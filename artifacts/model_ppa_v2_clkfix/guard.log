@@ -1,0 +1,349 @@
+14:35 load=51.15 swapfreeMB=671 diskGB=32 eqy=4 stage=
+14:37 load=39.26 swapfreeMB=990 diskGB=31 eqy=4 stage=
+14:39 load=35.51 swapfreeMB=1483 diskGB=30 eqy=4 stage=
+14:42 load=24.92 swapfreeMB=738 diskGB=30 eqy=4 stage=
+14:44 load=26.87 swapfreeMB=851 diskGB=29 eqy=4 stage=
+14:46 load=23.07 swapfreeMB=1178 diskGB=28 eqy=4 stage=
+14:48 load=36.94 swapfreeMB=1195 diskGB=28 eqy=4 stage=
+14:50 load=49.38 swapfreeMB=1192 diskGB=28 eqy=4 stage=
+14:52 load=50.27 swapfreeMB=1436 diskGB=38 eqy=4 stage=
+14:54 load=81.59 swapfreeMB=723 diskGB=40 eqy=3 stage=
+14:56 load=61.04 swapfreeMB=1147 diskGB=40 eqy=2 stage=
+14:58 load=60.63 swapfreeMB=969 diskGB=41 eqy=2 stage=
+15:00 load=61.33 swapfreeMB=1126 diskGB=41 eqy=2 stage=
+15:02 load=58.88 swapfreeMB=1491 diskGB=41 eqy=2 stage=
+15:04 load=63.53 swapfreeMB=749 diskGB=42 eqy=2 stage=
+15:06 load=83.10 swapfreeMB=529 diskGB=41 eqy=2 stage=
+15:08 load=121.26 swapfreeMB=564 diskGB=41 eqy=2 stage=
+15:10 load=79.98 swapfreeMB=440 diskGB=41 eqy=2 stage=
+15:12 load=74.99 swapfreeMB=601 diskGB=41 eqy=2 stage=
+15:14 load=93.62 swapfreeMB=638 diskGB=41 eqy=2 stage=
+15:16 load=98.51 swapfreeMB=1297 diskGB=75 eqy=2 stage=
+15:18 load=78.03 swapfreeMB=635 diskGB=75 eqy=2 stage=
+15:20 load=49.75 swapfreeMB=728 diskGB=75 eqy=2 stage=
+15:22 load=268.09 swapfreeMB=1222 diskGB=74 eqy=2 stage=
+15:24 load=141.18 swapfreeMB=1190 diskGB=73 eqy=2 stage=
+15:26 load=76.13 swapfreeMB=937 diskGB=73 eqy=2 stage=
+15:28 load=46.76 swapfreeMB=917 diskGB=72 eqy=2 stage=
+15:30 load=46.09 swapfreeMB=1276 diskGB=72 eqy=2 stage=
+15:32 load=42.76 swapfreeMB=1242 diskGB=72 eqy=2 stage=
+15:34 load=31.42 swapfreeMB=1127 diskGB=72 eqy=2 stage=
+15:36 load=36.02 swapfreeMB=799 diskGB=72 eqy=1 stage=
+15:38 load=40.29 swapfreeMB=980 diskGB=72 eqy=1 stage=
+15:40 load=39.29 swapfreeMB=1358 diskGB=73 eqy=1 stage=
+15:42 load=32.03 swapfreeMB=1147 diskGB=73 eqy=1 stage=
+15:44 load=34.03 swapfreeMB=1002 diskGB=73 eqy=1 stage=
+15:46 load=53.99 swapfreeMB=835 diskGB=73 eqy=1 stage=
+15:48 load=38.39 swapfreeMB=1131 diskGB=73 eqy=1 stage=
+15:50 load=32.79 swapfreeMB=1227 diskGB=73 eqy=1 stage=
+15:52 load=38.71 swapfreeMB=1355 diskGB=73 eqy=1 stage=
+15:54 load=34.38 swapfreeMB=1467 diskGB=73 eqy=1 stage=
+15:56 load=40.45 swapfreeMB=1547 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+15:58 load=107.28 swapfreeMB=906 diskGB=74 eqy=0 stage==== [2/4] PnR baseline 
+16:00 load=85.01 swapfreeMB=954 diskGB=74 eqy=0 stage==== [2/4] PnR baseline 
+16:02 load=84.43 swapfreeMB=994 diskGB=74 eqy=0 stage==== [3/4] PnR anthropic_sonnet-direct 
+16:07 load=95.14 swapfreeMB=1170 diskGB=74 eqy=0 stage==== [2/4] PnR baseline 
+16:09 load=128.42 swapfreeMB=1170 diskGB=74 eqy=0 stage==== [2/4] PnR baseline 
+16:11 load=133.26 swapfreeMB=1218 diskGB=74 eqy=0 stage==== [2/4] PnR baseline 
+16:13 load=83.98 swapfreeMB=1181 diskGB=74 eqy=0 stage==== [2/4] PnR baseline 
+16:15 load=56.30 swapfreeMB=1205 diskGB=74 eqy=0 stage==== [2/4] PnR baseline 
+16:17 load=47.98 swapfreeMB=1182 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:19 load=75.43 swapfreeMB=1214 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:21 load=74.23 swapfreeMB=1066 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:23 load=46.42 swapfreeMB=847 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:25 load=48.16 swapfreeMB=931 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:27 load=78.24 swapfreeMB=1001 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:30 load=80.88 swapfreeMB=364 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:32 load=47.19 swapfreeMB=652 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:34 load=44.05 swapfreeMB=724 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:36 load=78.41 swapfreeMB=576 diskGB=73 eqy=0 stage==== [2/4] PnR baseline 
+16:38 load=41.10 swapfreeMB=804 diskGB=72 eqy=0 stage==== [2/4] PnR baseline 
+16:40 load=66.02 swapfreeMB=1001 diskGB=72 eqy=0 stage==== [2/4] PnR baseline 
+16:44 load=54.41 swapfreeMB=1480 diskGB=71 pnr=3 baseline:4_1_cts.tmp.log anthropic_sonnet-direct:1_2_yosys.log openrouter_nemotron-ultra:1_2_yosys.log
+16:46 load=53.15 swapfreeMB=1732 diskGB=71 pnr=3 baseline:4_1_cts.tmp.log anthropic_sonnet-direct:1_2_yosys.log openrouter_nemotron-ultra:1_2_yosys.log
+16:48 load=44.22 swapfreeMB=682 diskGB=72 pnr=3 baseline:4_1_cts.tmp.log anthropic_sonnet-direct:2_1_floorplan.tmp.log openrouter_nemotron-ultra:2_1_floorplan.tmp.log
+16:50 load=76.29 swapfreeMB=1296 diskGB=71 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_1_place_gp_skip_io.tmp.log openrouter_nemotron-ultra:3_1_place_gp_skip_io.tmp.log
+16:52 load=67.15 swapfreeMB=926 diskGB=70 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_3_place_gp.tmp.log openrouter_nemotron-ultra:3_3_place_gp.tmp.log
+16:54 load=113.93 swapfreeMB=687 diskGB=69 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_3_place_gp.tmp.log openrouter_nemotron-ultra:3_3_place_gp.tmp.log
+16:56 load=128.59 swapfreeMB=1180 diskGB=69 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_3_place_gp.tmp.log openrouter_nemotron-ultra:3_3_place_gp.tmp.log
+16:58 load=112.10 swapfreeMB=1098 diskGB=69 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_3_place_gp.tmp.log openrouter_nemotron-ultra:3_3_place_gp.tmp.log
+17:00 load=125.65 swapfreeMB=1409 diskGB=69 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_3_place_gp.tmp.log openrouter_nemotron-ultra:3_3_place_gp.tmp.log
+17:02 load=134.74 swapfreeMB=952 diskGB=70 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_3_place_gp.tmp.log openrouter_nemotron-ultra:3_3_place_gp.tmp.log
+17:04 load=127.23 swapfreeMB=537 diskGB=70 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_3_place_gp.tmp.log openrouter_nemotron-ultra:3_3_place_gp.tmp.log
+17:06 load=129.75 swapfreeMB=929 diskGB=70 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_4_place_resized.tmp.log openrouter_nemotron-ultra:3_4_place_resized.tmp.log
+17:08 load=148.41 swapfreeMB=616 diskGB=70 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_4_place_resized.tmp.log openrouter_nemotron-ultra:3_4_place_resized.tmp.log
+17:10 load=55.19 swapfreeMB=1305 diskGB=69 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_4_place_resized.tmp.log openrouter_nemotron-ultra:3_4_place_resized.tmp.log
+17:13 load=44.19 swapfreeMB=1199 diskGB=69 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_5_place_dp.tmp.log openrouter_nemotron-ultra:3_5_place_dp.tmp.log
+17:15 load=55.92 swapfreeMB=1262 diskGB=69 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_5_place_dp.tmp.log openrouter_nemotron-ultra:3_5_place_dp.tmp.log
+17:17 load=37.44 swapfreeMB=978 diskGB=69 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:3_5_place_dp.tmp.log openrouter_nemotron-ultra:3_5_place_dp.tmp.log
+17:19 load=43.23 swapfreeMB=1202 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:21 load=43.07 swapfreeMB=914 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:23 load=39.49 swapfreeMB=837 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:25 load=33.78 swapfreeMB=645 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:27 load=33.11 swapfreeMB=807 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:29 load=44.12 swapfreeMB=890 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:31 load=40.62 swapfreeMB=1005 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:33 load=40.35 swapfreeMB=814 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:35 load=35.05 swapfreeMB=884 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:37 load=29.79 swapfreeMB=651 diskGB=68 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:39 load=41.52 swapfreeMB=1424 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:41 load=30.10 swapfreeMB=1282 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:4_1_cts.tmp.log openrouter_nemotron-ultra:4_1_cts.tmp.log
+17:43 load=45.80 swapfreeMB=921 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+17:45 load=73.20 swapfreeMB=1275 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+17:47 load=64.36 swapfreeMB=1166 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+17:49 load=66.97 swapfreeMB=1439 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+17:51 load=66.04 swapfreeMB=1183 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+17:53 load=64.03 swapfreeMB=1096 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+17:55 load=61.25 swapfreeMB=1074 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+17:57 load=64.56 swapfreeMB=1028 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+17:59 load=59.50 swapfreeMB=802 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:01 load=62.57 swapfreeMB=938 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:03 load=74.22 swapfreeMB=1169 diskGB=67 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:05 load=93.18 swapfreeMB=1536 diskGB=71 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:07 load=44.61 swapfreeMB=1028 diskGB=73 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:09 load=23.56 swapfreeMB=1340 diskGB=73 pnr=3 baseline:5_1_grt.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:11 load=30.93 swapfreeMB=952 diskGB=74 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:13 load=40.79 swapfreeMB=1112 diskGB=74 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:15 load=49.19 swapfreeMB=1712 diskGB=74 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:17 load=57.03 swapfreeMB=825 diskGB=74 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:19 load=38.86 swapfreeMB=857 diskGB=74 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:21 load=55.75 swapfreeMB=550 diskGB=73 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:23 load=54.92 swapfreeMB=1323 diskGB=72 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:25 load=57.19 swapfreeMB=1023 diskGB=70 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:27 load=117.99 swapfreeMB=1067 diskGB=70 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:29 load=74.33 swapfreeMB=1480 diskGB=69 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_1_grt.tmp.log
+18:31 load=45.11 swapfreeMB=1577 diskGB=69 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:33 load=89.82 swapfreeMB=1381 diskGB=70 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:35 load=162.84 swapfreeMB=413 diskGB=71 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:37 load=141.71 swapfreeMB=1009 diskGB=71 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:39 load=137.22 swapfreeMB=897 diskGB=70 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:41 load=141.71 swapfreeMB=1253 diskGB=70 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_1_grt.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:43 load=182.24 swapfreeMB=1405 diskGB=70 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:45 load=187.64 swapfreeMB=1485 diskGB=70 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:47 load=190.11 swapfreeMB=299 diskGB=70 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:50 load=180.90 memfree=52% swapfreeMB=1221 diskGB=68 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:52 load=214.35 memfree=36% swapfreeMB=1151 diskGB=69 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:54 load=288.95 memfree=32% swapfreeMB=975 diskGB=68 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:56 load=211.89 memfree=50% swapfreeMB=833 diskGB=69 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+18:58 load=165.23 memfree=36% swapfreeMB=1569 diskGB=69 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:00 load=246.85 memfree=34% swapfreeMB=531 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:02 load=308.18 memfree=35% swapfreeMB=797 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:04 load=287.60 memfree=41% swapfreeMB=835 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:06 load=283.32 memfree=33% swapfreeMB=656 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:08 load=287.37 memfree=35% swapfreeMB=1078 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:10 load=236.77 memfree=45% swapfreeMB=1611 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:12 load=244.02 memfree=33% swapfreeMB=1483 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:14 load=215.89 memfree=32% swapfreeMB=924 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:16 load=187.69 memfree=32% swapfreeMB=590 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:18 load=141.72 memfree=32% swapfreeMB=777 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:20 load=140.27 memfree=35% swapfreeMB=1456 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:22 load=123.24 memfree=32% swapfreeMB=1218 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:24 load=113.49 memfree=31% swapfreeMB=700 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:26 load=96.66 memfree=44% swapfreeMB=1435 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:28 load=133.44 memfree=38% swapfreeMB=939 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:30 load=170.23 memfree=32% swapfreeMB=563 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:32 load=183.83 memfree=32% swapfreeMB=1130 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:34 load=137.94 memfree=41% swapfreeMB=777 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:36 load=137.36 memfree=41% swapfreeMB=1137 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:38 load=101.08 memfree=33% swapfreeMB=783 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:40 load=84.74 memfree=47% swapfreeMB=868 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:42 load=103.20 memfree=41% swapfreeMB=913 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:44 load=173.77 memfree=32% swapfreeMB=773 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:46 load=198.59 memfree=32% swapfreeMB=1203 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:48 load=122.15 memfree=42% swapfreeMB=1462 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:50 load=133.16 memfree=44% swapfreeMB=1369 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:52 load=157.77 memfree=41% swapfreeMB=1721 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:54 load=198.47 memfree=34% swapfreeMB=1111 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:56 load=190.44 memfree=35% swapfreeMB=1092 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+19:58 load=194.60 memfree=46% swapfreeMB=1656 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:00 load=183.97 memfree=51% swapfreeMB=1102 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:02 load=227.68 memfree=45% swapfreeMB=1470 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:04 load=296.05 memfree=32% swapfreeMB=655 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:06 load=346.72 memfree=34% swapfreeMB=1377 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:08 load=349.67 memfree=44% swapfreeMB=1333 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:10 load=379.31 memfree=49% swapfreeMB=1517 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:12 load=393.22 memfree=46% swapfreeMB=1029 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:14 load=374.66 memfree=37% swapfreeMB=1405 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:16 load=394.72 memfree=32% swapfreeMB=1166 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:18 load=340.21 memfree=36% swapfreeMB=1540 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:20 load=294.24 memfree=35% swapfreeMB=1400 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:22 load=257.62 memfree=46% swapfreeMB=918 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:24 load=298.78 memfree=32% swapfreeMB=1112 diskGB=68 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:26 load=302.58 memfree=33% swapfreeMB=1274 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:28 load=308.97 memfree=34% swapfreeMB=502 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:30 load=297.16 memfree=31% swapfreeMB=888 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:32 load=283.32 memfree=40% swapfreeMB=1687 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:34 load=321.14 memfree=32% swapfreeMB=865 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:36 load=308.09 memfree=45% swapfreeMB=1384 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:38 load=311.80 memfree=34% swapfreeMB=1002 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:40 load=319.06 memfree=37% swapfreeMB=725 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:42 load=327.79 memfree=33% swapfreeMB=1303 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:44 load=338.40 memfree=49% swapfreeMB=1567 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:46 load=318.42 memfree=40% swapfreeMB=919 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:48 load=325.63 memfree=52% swapfreeMB=1135 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:50 load=320.39 memfree=44% swapfreeMB=1607 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:52 load=442.66 memfree=33% swapfreeMB=493 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:54 load=439.05 memfree=31% swapfreeMB=440 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:56 load=387.76 memfree=40% swapfreeMB=1281 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+20:58 load=376.24 memfree=52% swapfreeMB=852 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:00 load=405.25 memfree=36% swapfreeMB=1220 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:02 load=413.01 memfree=43% swapfreeMB=1187 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:04 load=385.65 memfree=32% swapfreeMB=1143 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:06 load=379.64 memfree=35% swapfreeMB=563 diskGB=63 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:08 load=364.05 memfree=50% swapfreeMB=1164 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:10 load=398.80 memfree=45% swapfreeMB=780 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:12 load=410.34 memfree=39% swapfreeMB=1612 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:14 load=419.54 memfree=41% swapfreeMB=1346 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:16 load=385.16 memfree=44% swapfreeMB=1448 diskGB=64 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:18 load=335.94 memfree=43% swapfreeMB=1345 diskGB=65 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:20 load=288.51 memfree=32% swapfreeMB=462 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:22 load=234.19 memfree=44% swapfreeMB=972 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:24 load=230.31 memfree=41% swapfreeMB=765 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:26 load=237.63 memfree=39% swapfreeMB=1140 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:28 load=254.96 memfree=36% swapfreeMB=1320 diskGB=66 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:30 load=264.05 memfree=49% swapfreeMB=824 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:32 load=326.50 memfree=45% swapfreeMB=896 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:34 load=329.21 memfree=41% swapfreeMB=1128 diskGB=67 pnr=3 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:36 load=354.32 memfree=43% swapfreeMB=1616 diskGB=67 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:38 load=351.87 memfree=44% swapfreeMB=981 diskGB=68 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:40 load=357.65 memfree=45% swapfreeMB=1429 diskGB=68 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:42 load=393.30 memfree=41% swapfreeMB=778 diskGB=69 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:44 load=358.07 memfree=32% swapfreeMB=981 diskGB=69 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:46 load=348.15 memfree=32% swapfreeMB=862 diskGB=67 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:48 load=330.40 memfree=46% swapfreeMB=947 diskGB=67 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:50 load=309.68 memfree=46% swapfreeMB=790 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:52 load=269.39 memfree=32% swapfreeMB=667 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:54 load=354.49 memfree=39% swapfreeMB=1198 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:56 load=382.90 memfree=48% swapfreeMB=939 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+21:58 load=347.10 memfree=45% swapfreeMB=1289 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:00 load=264.41 memfree=40% swapfreeMB=1473 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:02 load=320.08 memfree=41% swapfreeMB=1521 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:04 load=370.93 memfree=32% swapfreeMB=671 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:06 load=399.11 memfree=41% swapfreeMB=1462 diskGB=62 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:08 load=403.84 memfree=40% swapfreeMB=1266 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:10 load=238.21 memfree=50% swapfreeMB=1378 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:12 load=207.74 memfree=38% swapfreeMB=1589 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:14 load=171.29 memfree=35% swapfreeMB=1587 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:16 load=162.73 memfree=32% swapfreeMB=1097 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:18 load=152.26 memfree=35% swapfreeMB=982 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:20 load=156.64 memfree=39% swapfreeMB=1472 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:22 load=146.65 memfree=42% swapfreeMB=1069 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:24 load=134.45 memfree=42% swapfreeMB=1104 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:26 load=100.12 memfree=44% swapfreeMB=752 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:28 load=130.33 memfree=33% swapfreeMB=1304 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:30 load=146.92 memfree=34% swapfreeMB=1331 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:32 load=118.73 memfree=35% swapfreeMB=1147 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:34 load=112.38 memfree=39% swapfreeMB=1227 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:36 load=131.76 memfree=41% swapfreeMB=1006 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:38 load=102.39 memfree=41% swapfreeMB=1070 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:40 load=93.38 memfree=34% swapfreeMB=1306 diskGB=67 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:42 load=113.49 memfree=33% swapfreeMB=1367 diskGB=67 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:44 load=136.16 memfree=33% swapfreeMB=1377 diskGB=67 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:46 load=142.37 memfree=31% swapfreeMB=807 diskGB=68 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:48 load=157.21 memfree=35% swapfreeMB=768 diskGB=67 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:50 load=143.32 memfree=33% swapfreeMB=1073 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:52 load=142.63 memfree=33% swapfreeMB=931 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:55 load=123.41 memfree=35% swapfreeMB=897 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:57 load=131.06 memfree=38% swapfreeMB=1026 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+22:59 load=189.97 memfree=32% swapfreeMB=1232 diskGB=66 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:01 load=226.29 memfree=37% swapfreeMB=1145 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:03 load=202.86 memfree=40% swapfreeMB=1052 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:05 load=271.81 memfree=32% swapfreeMB=684 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:07 load=303.62 memfree=40% swapfreeMB=1277 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:09 load=296.02 memfree=45% swapfreeMB=1433 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:11 load=250.13 memfree=49% swapfreeMB=470 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:13 load=179.68 memfree=38% swapfreeMB=1380 diskGB=65 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:15 load=123.93 memfree=44% swapfreeMB=1354 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:17 load=116.74 memfree=40% swapfreeMB=1252 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:19 load=169.56 memfree=35% swapfreeMB=530 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:21 load=164.26 memfree=32% swapfreeMB=1016 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:23 load=166.55 memfree=45% swapfreeMB=1402 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:25 load=162.38 memfree=34% swapfreeMB=551 diskGB=64 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:27 load=178.46 memfree=35% swapfreeMB=1109 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:29 load=162.86 memfree=43% swapfreeMB=776 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:31 load=168.36 memfree=35% swapfreeMB=451 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:33 load=224.44 memfree=34% swapfreeMB=1675 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:35 load=222.55 memfree=42% swapfreeMB=1541 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:37 load=226.32 memfree=43% swapfreeMB=1602 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:39 load=207.04 memfree=32% swapfreeMB=744 diskGB=63 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:41 load=185.24 memfree=46% swapfreeMB=1541 diskGB=62 pnr=4 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:43 load=196.15 memfree=44% swapfreeMB=1501 diskGB=63 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:45 load=205.65 memfree=43% swapfreeMB=1026 diskGB=64 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:47 load=213.52 memfree=39% swapfreeMB=1482 diskGB=64 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:49 load=198.89 memfree=36% swapfreeMB=1650 diskGB=64 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:51 load=209.61 memfree=36% swapfreeMB=1619 diskGB=64 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:53 load=170.89 memfree=40% swapfreeMB=1691 diskGB=64 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:55 load=171.49 memfree=35% swapfreeMB=1383 diskGB=65 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:57 load=162.22 memfree=36% swapfreeMB=1607 diskGB=65 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+23:59 load=173.01 memfree=37% swapfreeMB=819 diskGB=65 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:01 load=211.22 memfree=34% swapfreeMB=1187 diskGB=65 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:03 load=205.03 memfree=32% swapfreeMB=861 diskGB=66 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:05 load=205.62 memfree=31% swapfreeMB=506 diskGB=66 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:07 load=226.97 memfree=31% swapfreeMB=718 diskGB=65 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:09 load=305.63 memfree=32% swapfreeMB=1100 diskGB=64 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:11 load=315.70 memfree=31% swapfreeMB=623 diskGB=60 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:13 load=316.56 memfree=41% swapfreeMB=1442 diskGB=59 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:15 load=329.69 memfree=54% swapfreeMB=1476 diskGB=58 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:17 load=372.93 memfree=32% swapfreeMB=1022 diskGB=57 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:19 load=320.84 memfree=32% swapfreeMB=975 diskGB=60 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:21 load=321.61 memfree=41% swapfreeMB=945 diskGB=60 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:23 load=302.15 memfree=41% swapfreeMB=1317 diskGB=59 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:25 load=298.30 memfree=45% swapfreeMB=857 diskGB=59 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:27 load=284.96 memfree=45% swapfreeMB=1056 diskGB=60 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:29 load=281.42 memfree=49% swapfreeMB=1729 diskGB=60 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:31 load=287.89 memfree=32% swapfreeMB=1024 diskGB=62 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:33 load=230.96 memfree=32% swapfreeMB=1228 diskGB=62 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:35 load=159.12 memfree=36% swapfreeMB=1152 diskGB=61 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:37 load=175.74 memfree=32% swapfreeMB=998 diskGB=61 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:39 load=157.82 memfree=38% swapfreeMB=1094 diskGB=61 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:41 load=141.03 memfree=43% swapfreeMB=749 diskGB=63 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:43 load=172.76 memfree=44% swapfreeMB=1190 diskGB=61 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:45 load=177.15 memfree=36% swapfreeMB=1700 diskGB=60 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:47 load=157.12 memfree=47% swapfreeMB=1386 diskGB=61 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:49 load=170.28 memfree=37% swapfreeMB=1034 diskGB=62 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:51 load=229.00 memfree=34% swapfreeMB=1205 diskGB=62 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:53 load=197.81 memfree=42% swapfreeMB=1660 diskGB=62 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:55 load=165.46 memfree=34% swapfreeMB=1152 diskGB=61 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:57 load=166.60 memfree=31% swapfreeMB=1326 diskGB=58 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+00:59 load=78.59 memfree=32% swapfreeMB=1300 diskGB=59 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:01 load=93.09 memfree=31% swapfreeMB=659 diskGB=59 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:03 load=83.59 memfree=31% swapfreeMB=467 diskGB=59 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:05 load=96.63 memfree=32% swapfreeMB=301 diskGB=59 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:07 load=80.29 memfree=32% swapfreeMB=434 diskGB=60 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:09 load=104.49 memfree=32% swapfreeMB=1006 diskGB=58 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:11 load=118.63 memfree=32% swapfreeMB=306 diskGB=58 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:13 load=81.67 memfree=43% swapfreeMB=1041 diskGB=61 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:15 load=126.73 memfree=32% swapfreeMB=1085 diskGB=62 pnr=5 baseline:5_2_route.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:17 load=107.19 memfree=40% swapfreeMB=953 diskGB=58 pnr=5 baseline:6_report.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:19 load=83.31 memfree=46% swapfreeMB=1053 diskGB=59 pnr=5 baseline:6_report.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:21 load=89.85 memfree=40% swapfreeMB=1162 diskGB=60 pnr=5 baseline:6_report.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:23 load=95.43 memfree=33% swapfreeMB=1420 diskGB=59 pnr=5 baseline:6_report.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:25 load=99.66 memfree=38% swapfreeMB=953 diskGB=60 pnr=5 baseline:6_report.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:27 load=76.27 memfree=39% swapfreeMB=737 diskGB=59 pnr=5 baseline:6_report.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:29 load=103.21 memfree=42% swapfreeMB=1598 diskGB=58 pnr=5 baseline:6_report.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:31 load=75.94 memfree=30% swapfreeMB=442 diskGB=61 pnr=5 baseline:6_report.tmp.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:33 load=75.63 memfree=31% swapfreeMB=919 diskGB=61 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:35 load=62.08 memfree=31% swapfreeMB=691 diskGB=62 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:37 load=80.56 memfree=32% swapfreeMB=291 diskGB=59 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:39 load=76.01 memfree=52% swapfreeMB=842 diskGB=59 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:41 load=105.54 memfree=37% swapfreeMB=1000 diskGB=60 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:43 load=115.32 memfree=32% swapfreeMB=849 diskGB=59 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:45 load=115.10 memfree=32% swapfreeMB=934 diskGB=60 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:47 load=121.03 memfree=35% swapfreeMB=768 diskGB=59 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:49 load=80.69 memfree=44% swapfreeMB=1455 diskGB=60 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:5_2_route.tmp.log
+01:51 load=113.68 memfree=37% swapfreeMB=1322 diskGB=60 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:6_report.tmp.log
+01:53 load=87.91 memfree=49% swapfreeMB=876 diskGB=59 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:6_report.tmp.log
+01:55 load=91.74 memfree=35% swapfreeMB=1224 diskGB=59 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:6_report.tmp.log
+01:57 load=79.48 memfree=45% swapfreeMB=1149 diskGB=59 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:6_report.tmp.log
+01:59 load=92.64 memfree=32% swapfreeMB=1310 diskGB=59 pnr=4 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:6_report.tmp.log
+02:01 load=82.61 memfree=50% swapfreeMB=762 diskGB=61 pnr=3 baseline:6_report.log anthropic_sonnet-direct:5_2_route.tmp.log openrouter_nemotron-ultra:6_report.log
+02:03 load=73.73 memfree=57% swapfreeMB=938 diskGB=59 pnr=3 baseline:6_report.log anthropic_sonnet-direct:6_report.tmp.log openrouter_nemotron-ultra:6_report.log
+02:05 load=53.51 memfree=57% swapfreeMB=1058 diskGB=59 pnr=3 baseline:6_report.log anthropic_sonnet-direct:6_report.tmp.log openrouter_nemotron-ultra:6_report.log
+02:07 load=65.36 memfree=31% swapfreeMB=357 diskGB=58 pnr=3 baseline:6_report.log anthropic_sonnet-direct:6_report.tmp.log openrouter_nemotron-ultra:6_report.log
+02:09 load=77.24 memfree=50% swapfreeMB=1316 diskGB=56 pnr=3 baseline:6_report.log anthropic_sonnet-direct:6_report.tmp.log openrouter_nemotron-ultra:6_report.log
+02:11 load=55.12 memfree=47% swapfreeMB=1572 diskGB=56 pnr=3 baseline:6_report.log anthropic_sonnet-direct:6_report.tmp.log openrouter_nemotron-ultra:6_report.log
+02:13 load=98.12 memfree=49% swapfreeMB=1282 diskGB=57 pnr=2 baseline:6_report.log anthropic_sonnet-direct:6_report.log openrouter_nemotron-ultra:6_report.log
+02:15 load=236.69 memfree=39% swapfreeMB=436 diskGB=58 pnr=2 baseline:6_report.log anthropic_sonnet-direct:6_report.log openrouter_nemotron-ultra:6_report.log
+02:17 load=260.71 memfree=38% swapfreeMB=1364 diskGB=58 pnr=2 baseline:6_report.log anthropic_sonnet-direct:6_report.log openrouter_nemotron-ultra:6_report.log
+02:19 load=223.38 memfree=48% swapfreeMB=969 diskGB=59 pnr=2 baseline:6_report.log anthropic_sonnet-direct:6_report.log openrouter_nemotron-ultra:6_report.log
+02:21 load=157.02 memfree=36% swapfreeMB=1249 diskGB=59 pnr=2 baseline:6_report.log anthropic_sonnet-direct:6_report.log openrouter_nemotron-ultra:6_report.log

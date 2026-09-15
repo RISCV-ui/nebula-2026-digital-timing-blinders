@@ -14,8 +14,12 @@ STA cannot see it either. OpenSTA is told `clk_out` is a clock, believes it,
 and reports timing against a clean idealised waveform. The tool is not wrong;
 it was never asked whether the waveform is producible.
 
-So it needs its own check, structural and cheap, and this design turns out to
-contain two textbook instances of it.
+So it needs its own check, structural and cheap, and this design turned out to
+contain two textbook instances of it. Both were found by this checker and both
+have since been repaired in `bench/rtl_v2`; the shapes are documented here
+because the checker still has to recognise them, and because the pre-fix RTL
+in `bench/rtl` is kept as the control the runt-pulse simulation runs against
+(`scripts/run_clock_sim.py`).
 
 **Combinational clock mux** (`clk_div_mux.v`):
 
@@ -43,6 +47,13 @@ while the clock is already low.
 
     always @(*) if (!clk_in) en_lat = clk_en;
     assign clk_out = clk_in & en_lat;
+
+**The safe mux** is not recognisable by counting sources -- the glitchy and
+the glitch-free mux both drive the output combinationally from every clock.
+What separates them is where the enables come from, so `SAFE_MUX` checks that
+per branch: `src & en`, with `en` registered on `src`'s falling edge, its data
+registered on `src`'s rising edge, and qualified by the negation of every
+other branch's enable. A branch failing any part of that is `GLITCHY_MUX`.
 
 What this checker does NOT claim: it is structural, and a structural check
 recognises the shapes it knows. A hand-built gate in a form it has not been
@@ -138,22 +149,35 @@ def comb_drivers(body):
     for m in re.finditer(r"always\s*@\s*\(([^)]*)\)", body):
         if re.search(r"\b(?:pos|neg)edge\b", m.group(1)):
             continue
-        rest = body[m.end():]
-        bm = re.match(r"\s*begin\b", rest)
-        if not bm:
-            text = rest[:rest.find(";") + 1]
-        else:
-            depth, text = 0, ""
-            tok = re.compile(r"\b(begin|case|casez|casex|end|endcase)\b")
-            for t in tok.finditer(body, m.end()):
-                w = t.group(1)
-                depth += 1 if w in ("begin", "case", "casez", "casex") else -1
-                if depth == 0:
-                    text = body[m.end():t.end()]
-                    break
-        for lhs, rhs in G2.assignments(text):
+        for lhs, rhs in G2.assignments(block_text(body, m.end())):
             out.setdefault(lhs, []).append(rhs.strip())
     return out
+
+
+def block_text(body, pos):
+    """The statement or begin/end block that starts at `pos`."""
+    rest = body[pos:]
+    if not re.match(r"\s*begin\b", rest):
+        # An `if (rst) ... else ...` with no begin/end is two statements and
+        # stopping at the first semicolon drops the else arm -- which, in a
+        # reset-and-data flop, is the arm that says what the flop does.
+        i = 0
+        while True:
+            j = rest.find(";", i)
+            if j < 0:
+                return rest
+            i = j + 1
+            if not re.match(r"\s*else\b", rest[i:]):
+                return rest[:i]
+    depth, text = 0, ""
+    tok = re.compile(r"\b(begin|case|casez|casex|end|endcase)\b")
+    for t in tok.finditer(body, pos):
+        w = t.group(1)
+        depth += 1 if w in ("begin", "case", "casez", "casex") else -1
+        if depth == 0:
+            text = body[pos:t.end()]
+            break
+    return text
 
 
 def latched_enable(body, enable):
@@ -168,11 +192,144 @@ def latched_enable(body, enable):
         rf"\s*{re.escape(enable)}\s*<?=", body))
 
 
+RESETISH = re.compile(r"(^|_)(rst|reset|rstn|resetn|nrst|clr)(_|$|n)", re.I)
+
+
+def seq_drivers(body, nets):
+    """
+    {reg: [(edge, clock, rhs), ...]} for edge-triggered always blocks.
+
+    The clock of a block is the edge signal that is not the asynchronous
+    reset, so `always @(posedge clk_div2 or posedge rst)` reads as a flop on
+    clk_div2 rather than as two clocks. Reset assignments come back like any
+    other, and the caller ignores the constant ones -- which of the two arms
+    is the reset arm does not matter for the shape being recognised here.
+    """
+    out = {}
+    for m in re.finditer(r"always\s*@\s*\(([^)]*)\)", body):
+        sens = m.group(1)
+        edges = re.findall(r"\b(pos|neg)edge\s+([A-Za-z_][\w$]*)", sens)
+        if not edges:
+            continue
+        real = [(e, s) for e, s in edges if not RESETISH.search(s)]
+        if len(real) != 1:
+            continue                       # two real clocks: not a plain flop
+        edge, clk = real[0]
+        for lhs, rhs in G2.assignments(block_text(body, m.end())):
+            out.setdefault(lhs, []).append((edge, clk, rhs.strip()))
+    return out
+
+
+def or_terms(rhs):
+    """Top-level `|` operands of an expression, parens stripped."""
+    terms, depth, cur = [], 0, ""
+    i = 0
+    while i < len(rhs):
+        c = rhs[i]
+        if c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+        if depth == 0 and c == "|" and rhs[i:i + 2] != "||":
+            terms.append(cur)
+            cur = ""
+            i += 1
+            continue
+        if depth == 0 and rhs[i:i + 2] == "||":
+            terms.append(cur)
+            cur = ""
+            i += 2
+            continue
+        cur += c
+        i += 1
+    terms.append(cur)
+    return [t.strip().strip("()").strip() for t in terms if t.strip()]
+
+
+def handover_mux(body, net, rhss, nets):
+    """
+    True when `net` is an OR of per-branch gated clocks with a safe handover.
+
+    This is the standard glitch-free clock mux, and the reason it needs its
+    own recogniser is that it looks exactly like the unsafe one to the source
+    count alone: the output is still combinationally driven from several clock
+    sources. What makes it safe is *where the enables come from*, so that is
+    what gets checked, per branch:
+
+      - the term is `src & en`, with `src` a clock;
+      - `en` is a flop on the NEGEDGE of that same `src`, so the AND in front
+        of the output can only change while `src` is low, which is precisely
+        the window in which changing it cannot cut a pulse;
+      - that flop's data is a flop on the POSEDGE of the same `src`, giving
+        the two-stage synchroniser that keeps the request out of the branch's
+        own timing;
+      - the first stage is qualified by the negation of every other branch's
+        enable, so no two branches are ever on at once and the output is
+        always whole pulses of exactly one source.
+
+    Any branch failing any of those falls back to GLITCHY_MUX. Recognising the
+    shape proves nothing on its own -- it is the simulation and the synthesis
+    that do that -- but an unrecognised shape is worth looking at, and this one
+    is now the shape the design actually has.
+    """
+    if len(rhss) != 1:
+        return False, "assigned in several branches of combinational logic"
+    seq = seq_drivers(body, nets)
+    terms = or_terms(rhss[0])
+    if len(terms) < 2:
+        return False, "not an OR of gated branches"
+
+    branches = []                       # (src, enable)
+    for t in terms:
+        parts = [p.strip() for p in re.split(r"&&?", t)]
+        if len(parts) != 2 or any(not re.fullmatch(r"[A-Za-z_][\w$]*", p)
+                                  for p in parts):
+            return False, f"branch `{t}` is not a plain `clock & enable`"
+        src = [p for p in parts if p in nets]
+        en = [p for p in parts if p not in nets]
+        if len(src) != 1 or len(en) != 1:
+            return False, f"branch `{t}` does not gate exactly one clock"
+        branches.append((src[0], en[0]))
+
+    enables = {e for _, e in branches}
+    if len(enables) != len(branches):
+        return False, "two branches share an enable"
+
+    for src, en in branches:
+        stage2 = [d for d in seq.get(en, [])
+                  if d[0] == "neg" and d[1] == src
+                  and re.fullmatch(r"[A-Za-z_][\w$]*", d[2])]
+        if not stage2:
+            return False, (f"enable {en} is not registered on the falling "
+                           f"edge of {src}, so the {src} branch can switch "
+                           f"while {src} is high")
+        stage1 = stage2[0][2]
+        data = [d for d in seq.get(stage1, [])
+                if d[0] == "pos" and d[1] == src
+                and not re.fullmatch(r"[\d']+[\w]*", d[2])]
+        if not data:
+            return False, (f"{stage1} is not registered on the rising edge "
+                           f"of {src}")
+        expr = " ".join(d[2] for d in data)
+        missing = [o for o in enables - {en} if not re.search(
+            rf"[!~]\s*{re.escape(o)}\b", expr)]
+        if missing:
+            return False, (f"the {src} branch turns on without waiting for "
+                           f"{', '.join(sorted(missing))} to release")
+
+    return True, (f"{net} hands over between "
+                  f"{', '.join(s for s, _ in branches)}: each branch is gated "
+                  f"by an enable registered on that branch's own falling edge "
+                  f"and may only assert once every other branch has released, "
+                  f"so the output is whole pulses of one source")
+
+
 def classify(module, body, ports):
     """
     Every combinationally-driven clock net in this module, with a verdict.
 
     SAFE_ICG        AND of a clock and a low-phase-latched enable
+    SAFE_MUX        OR of per-branch gated clocks with a proper handover
     GLITCHY_MUX     combinational select among two or more clock sources
     GLITCHY_GATE    clock ANDed with an enable that is not latched
     UNRECOGNISED    combinationally driven, shape not known to this checker
@@ -190,10 +347,14 @@ def classify(module, body, ports):
         detail = "; ".join(r[:80] for r in rhss[:4])
 
         if len(srcs) >= 2:
-            v = "GLITCHY_MUX"
-            why = (f"{net} is selected combinationally among "
-                   f"{', '.join(sorted(srcs))}; a select change mid-pulse "
-                   f"truncates it")
+            ok, why = handover_mux(body, net, rhss, nets)
+            if ok:
+                v = "SAFE_MUX"
+            else:
+                v = "GLITCHY_MUX"
+                why = (f"{net} is selected combinationally among "
+                       f"{', '.join(sorted(srcs))} ({why}); a select change "
+                       f"mid-pulse truncates it")
         elif len(srcs) == 1 and any("&" in r or "&&" in r for r in rhss):
             clk = next(iter(srcs))
             ens = set()

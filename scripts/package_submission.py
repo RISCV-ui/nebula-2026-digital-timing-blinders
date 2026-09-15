@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Build the review package without copying multi-gigabyte tool workdirs."""
+"""Build the v1 (2026-09-11) review package. SUPERSEDED.
+
+The current submission is built by scripts/package_submission_v2.py; this is
+kept so the v1 bundle stays reproducible. Its entry README now lives under
+docs/ because the repo root README is generated for the v2/v3 submission.
+"""
 
 from __future__ import annotations
 
@@ -18,7 +23,7 @@ ROOT_FILES = [
     ".gitignore",
     "CLAUDE.md",
     "WORKLOG.md",
-    "SUBMISSION_PACKAGE_README.md",
+    "docs/SUBMISSION_PACKAGE_README_v1_20260911.md",
     "demo.py",
     "Nebula 2026 Topics .pptx",
     "Nebula_Abstract.pdf",

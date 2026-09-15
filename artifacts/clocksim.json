@@ -1,0 +1,55 @@
+{
+  "fixed": {
+    "rtl": "bench/rtl_v2",
+    "gate_transitions": 1885,
+    "gate_runts": 0,
+    "mux_transitions": 729,
+    "mux_runts": 0,
+    "ratio_checks": 5,
+    "ratio_mismatches": 0,
+    "verdict": "PASS",
+    "log": [
+      "sel=00: 40 rising edges in 400 ns (expected 40)",
+      "sel=01: 20 rising edges in 400 ns (expected 20)",
+      "sel=10: 20 rising edges in 800 ns (expected 20)",
+      "sel=11: 20 rising edges in 1600 ns (expected 20)",
+      "sel=00: 40 rising edges in 400 ns (expected 40)",
+      "gate: 1885 transitions, 0 runts",
+      "mux : 729 transitions, 0 runts",
+      "RESULT PASS no runt pulses",
+      "/Users/shubhanshu/Desktop/Nebula/digital/bench/tb/tb_clk.v:115: $finish called at 9431000 (1ps)"
+    ]
+  },
+  "control": {
+    "rtl": "bench/rtl",
+    "gate_transitions": 1885,
+    "gate_runts": 2,
+    "mux_transitions": 861,
+    "mux_runts": 6,
+    "ratio_checks": 5,
+    "ratio_mismatches": 0,
+    "verdict": "FAIL",
+    "log": [
+      "sel=00: 40 rising edges in 400 ns (expected 40)",
+      "sel=01: 20 rising edges in 400 ns (expected 20)",
+      "sel=10: 20 rising edges in 800 ns (expected 20)",
+      "sel=11: 20 rising edges in 1600 ns (expected 20)",
+      "sel=00: 40 rising edges in 400 ns (expected 40)",
+      "RUNT mux at 4987000: 2.00 ns",
+      "RUNT mux at 5347000: 2.00 ns",
+      "RUNT mux at 6427000: 2.00 ns",
+      "RUNT mux at 6787000: 2.00 ns",
+      "RUNT mux at 7867000: 2.00 ns",
+      "RUNT mux at 8227000: 2.00 ns",
+      "RUNT gate at 9358000: 3.00 ns",
+      "RUNT gate at 9378000: 3.00 ns",
+      "gate: 1885 transitions, 2 runts",
+      "mux : 861 transitions, 6 runts",
+      "RESULT FAIL",
+      "/Users/shubhanshu/Desktop/Nebula/digital/bench/tb/tb_clk.v:115: $finish called at 9431000 (1ps)"
+    ]
+  },
+  "verdict": "PASS",
+  "runts_fixed": 0,
+  "runts_control": 8
+}

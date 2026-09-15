@@ -499,6 +499,72 @@ def stage_aware_chart(synth, ppa):
     c.save("13_stage_aware_area")
 
 
+def per_model_synthesis_chart(report):
+    rows = [row for row in report["rows"] if row["variant"] != "baseline"]
+    c = Canvas(
+        "Mapped synthesis area by model",
+        "Each accepted model tree is reconstructed from frozen RTL; HTTP 429/quota arms remain N/A.",
+        "Source: per-model Yosys mapped synthesis reports and RTL SHA-256 manifest",
+    )
+    zero_x, scale = 680, 1050
+    c.line(zero_x, 175, zero_x, 765, SLATE, 2)
+    c.text(zero_x, 155, "baseline", 15, MUTED, "700", "middle")
+    for idx, row in enumerate(rows):
+        y = 195 + idx * 82
+        c.text(65, y + 24, row["label"], 17, NAVY, "700")
+        synth = row.get("synthesis")
+        if not synth:
+            c.rect(zero_x, y, 520, 38, "#E5E7EB", "#E5E7EB", 4, 0)
+            c.text(zero_x + 540, y + 26, "N/A - not tested", 16, RED, "700")
+            continue
+        change = row["synthesis_delta"]["area_um2"]["percent"]
+        width = max(abs(change) * scale, 3)
+        color = GREEN if change < 0 else BLUE if change == 0 else ORANGE
+        x = zero_x - width if change < 0 else zero_x
+        c.rect(x, y, width, 38, color, color, 4, 0)
+        c.text(1260, y + 26, f"{change:+.4f}%", 17, color, "700", "end")
+        c.text(1510, y + 26, f'{synth["area_um2"]:,.1f} um2', 15, MUTED, anchor="end")
+    c.rect(65, 785, 1470, 48, "#FFF7ED", ORANGE, 10, 2)
+    c.text(800, 816, "Nemotron Ultra and the combined candidate grow slightly at mapped synthesis; this negative result is retained.", 16, INK, "700", "middle")
+    c.save("16_per_model_synthesis_area")
+
+
+def per_model_routed_chart(report):
+    rows = [row for row in report["rows"] if row["variant"] != "baseline"]
+    c = Canvas(
+        "Routed PPA by model",
+        "Measured signoff for changed model RTL; baseline inheritance requires byte-identical RTL.",
+        "Source: per-model OpenROAD 6_final ODB/SDC/SPEF metrics",
+    )
+    c.text(880, 158, "Area change vs baseline", 20, NAVY, "700", "middle")
+    c.text(1350, 158, "Setup WNS", 20, NAVY, "700", "middle")
+    zero_x, area_scale = 850, 170
+    c.line(zero_x, 180, zero_x, 760, SLATE, 2)
+    for idx, row in enumerate(rows):
+        y = 205 + idx * 82
+        c.text(65, y + 24, row["label"], 17, NAVY, "700")
+        c.text(430, y + 24, row["status"], 13, MUTED, "700")
+        routed = row.get("routed")
+        if not routed:
+            c.rect(650, y, 600, 38, "#E5E7EB", "#E5E7EB", 4, 0)
+            c.text(950, y + 26, "N/A - no tested routed candidate", 15, RED, "700", "middle")
+            continue
+        change = row["routed_delta"]["area_um2"]["percent"]
+        width = max(min(abs(change), 5.0) * area_scale, 3)
+        color = GREEN if change < 0 else BLUE if change == 0 else ORANGE
+        x = zero_x - width if change < 0 else zero_x
+        c.rect(x, y, width, 38, color, color, 4, 0)
+        c.text(1130, y + 25, f"{change:+.3f}%", 16, color, "700", "end")
+        wns = routed["setup_wns_ns"]
+        wns_color = GREEN if wns is not None and wns >= 0 else RED
+        c.text(1350, y + 25, "N/A" if wns is None else f"{wns:+.4f} ns", 17, wns_color, "700", "middle")
+        evidence = row["ppa_evidence"]
+        c.text(1530, y + 25, "measured" if evidence.startswith("measured") else "identity", 13, MUTED, "700", "end")
+    c.rect(65, 785, 1470, 48, "#EEF6FF", BLUE, 10, 2)
+    c.text(800, 816, "Untested arms are N/A. A zero-accept arm equals baseline only because every RTL file hash matches.", 16, NAVY, "700", "middle")
+    c.save("17_per_model_routed_ppa")
+
+
 def table_figure(stem, title, subtitle, headers, rows, widths, source, font=15):
     c = Canvas(title, subtitle, source)
     x0, y0 = 55, 175
@@ -691,6 +757,8 @@ Ready-to-paste figures are in `figures/` as both SVG and 1600x900 PNG. Machine-r
 13. `13_stage_aware_area` - mapped synthesis versus routed PPA without mixing stages.
 14. `14_eqy_targeted_retries` - deeper retry results and zero-new-proof outcome.
 15. `15_eqy_reset_supplement` - nine reset-constrained proofs with negative controls.
+16. `16_per_model_synthesis_area` - mapped area for each reconstructed model RTL tree.
+17. `17_per_model_routed_ppa` - measured or identity-derived routed PPA by model.
 
 ## Required interpretation
 
@@ -732,6 +800,11 @@ def main():
     synth = load(sources[5])
     retry = load(sources[6])
     reset = load(sources[7])
+    model_ppa_path = "artifacts/model_ppa_20260912/report.json"
+    model_ppa = None
+    if (ROOT / model_ppa_path).exists():
+        hashes[model_ppa_path] = hashlib.sha256((ROOT / model_ppa_path).read_bytes()).hexdigest()
+        model_ppa = load(model_ppa_path)
 
     flow_figure()
     dashboard(ppa, eqy, top)
@@ -747,6 +820,9 @@ def main():
     result_tables(bakeoff["arms"], ppa["clocks"], ppa, eqy, top, synth, history)
     retry_assets(retry)
     reset_supplement_assets(reset)
+    if model_ppa is not None:
+        per_model_synthesis_chart(model_ppa)
+        per_model_routed_chart(model_ppa)
     consolidated = {
         "provenance_sha256": hashes,
         "model_comparison": bakeoff,
@@ -758,6 +834,7 @@ def main():
             "top_area_um2": synth["top_area_um2"], "top_sequential_area_um2": synth["top_sequential_area_um2"],
         },
         "accepted_loop_history": history,
+        "per_model_ppa": model_ppa,
         "eqy_targeted_retry": retry,
         "eqy_reset_supplement": reset,
     }

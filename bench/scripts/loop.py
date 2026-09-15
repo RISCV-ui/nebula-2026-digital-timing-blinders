@@ -40,7 +40,16 @@ Reply with a single JSON object and nothing else:
    "latency_delta": <integer cycles the module's outputs are delayed by>,
    "rtl": "<the complete rewritten module, module...endmodule>",
    "submodules": {"<child module name>": "<its complete rewritten source>"},
-   "reason": "<one or two sentences: which part of the path this shortens>"}
+   "which_path": "<the failing path in one sentence: what it runs from, what
+                  it runs to, and which module or instances own the delay>",
+   "why": {"cause": "<exactly one of: logic_depth, high_fanout, clock_skew,
+                     net_delay, congestion, low_drive_strength, other>",
+           "evidence": "<the numbers above that support that cause>"},
+   "what": {"rtl_level_fix": "<the transform you are applying, and why it
+                              shortens this path>",
+            "tool_level_fix": "<what synthesis or place-and-route could do
+                               about this path instead, or \"none\" if the
+                               tools cannot reach it>"}}
 
 `submodules` is optional and usually absent. Include it only when the
 transform genuinely spans two levels -- pipelining a combinational child, for
@@ -65,9 +74,87 @@ Rules that are checked mechanically and will reject your answer:
     with its own unpipelined self for as long as reset is asserted -- which
     the equivalence check reports as a counterexample. Write the new stage as
     a bare `always @(posedge clk) q <= d;` with no reset branch.
+  - Do not replace an explicit structural arithmetic block with a behavioural
+    operator. Rewriting a 32-step restoring divider as `a / b`, or an array
+    multiplier as `a * b`, does not shorten the path: synthesis expands the
+    operator back into a comparable structure, so the same logic depth comes
+    back under a different name. It also hands the equivalence checker the
+    task of proving a hand-written division algorithm equal to the `/`
+    operator, which is a hard arithmetic theorem and not the question anyone
+    asked -- three such answers cost 2400 seconds each and returned no verdict
+    at all. If an arithmetic block is the bottleneck, pipeline it, retime it
+    or restructure it INTO stages; do not delete its structure.
+
+`which_path`, `why` and `what` are the diagnosis, not decoration. They are
+read straight into the report, so write them about THIS path with the numbers
+from the timing data above, not as general advice about timing closure.
+
+`what.tool_level_fix` is asked for even though you are not applying it, and
+answering it honestly matters: most of these paths are already past what the
+tools can do -- the design has been through resizing and buffering before you
+see it -- and saying so is the argument for why an RTL edit was needed at all.
+Write "none" and say why, rather than inventing a tool fix that would not
+work.
+
+SCOPE. `module` is the module you are rewriting and it must be the TARGET
+module named in the prompt, not one of the modules it instantiates. If the fix
+needs a child rewritten too, put the child in `submodules` and keep the target
+in `module`. Rewriting a child alone, with the child's name in `module`, is
+rejected without being read: the loop can only splice an edit it asked for.
+
+LATENCY. An edit that adds a pipeline stage changes when the target's outputs
+arrive, and every parent that consumes them in the same cycle it drives the
+inputs then breaks. On this design that has rejected four proposals. So a
+latency change is only worth proposing as ONE proposal that rewrites the
+target AND, through `submodules`, every parent that has to learn to wait --
+a valid/ready or stall handshake, written out, not assumed. A deep
+combinational block whose only fix is multi-cycle is exactly this case: it is
+allowed, it is not a new module, and it is the one way such a path closes.
 
 If no catalogue transform helps this path, reply {"refused": "<why>"}.
 """
+
+# The causes the report groups by. Anything else a model writes is recorded
+# verbatim under "other" rather than thrown away -- this field documents a
+# proposal, it does not gate one, and rejecting a proved optimisation over the
+# wording of its diagnosis would be the wrong trade.
+CAUSES = ("logic_depth", "high_fanout", "clock_skew", "net_delay",
+          "congestion", "low_drive_strength", "other")
+
+
+def threew(p):
+    """
+    Pull the 3W diagnosis out of a proposal, in whatever shape it arrived.
+
+    Models answer the schema loosely: `why` comes back as a bare string about
+    as often as the object it was asked for, and `what` sometimes collapses to
+    one sentence covering both fixes. All of that is still the diagnosis, so it
+    is normalised here rather than rejected -- and `reason`, the single field
+    this replaced, is accepted as a last resort so an older transcript still
+    renders.
+    """
+    why = p.get("why")
+    if isinstance(why, str):
+        why = {"cause": None, "evidence": why}
+    why = why if isinstance(why, dict) else {}
+    cause = (why.get("cause") or "").strip().lower().replace(" ", "_")
+    if cause not in CAUSES:
+        why["cause_verbatim"] = why.get("cause")
+        cause = "other" if cause else None
+
+    what = p.get("what")
+    if isinstance(what, str):
+        what = {"rtl_level_fix": what, "tool_level_fix": None}
+    what = what if isinstance(what, dict) else {}
+
+    return {
+        "which_path": p.get("which_path") or p.get("reason"),
+        "why_cause": cause,
+        "why_cause_verbatim": why.get("cause_verbatim"),
+        "why_evidence": why.get("evidence"),
+        "fix_rtl": what.get("rtl_level_fix") or p.get("reason"),
+        "fix_tool": what.get("tool_level_fix"),
+    }
 
 
 def prompt_for(target, rtl_dir):
@@ -122,6 +209,34 @@ def prompt_for(target, rtl_dir):
                      "below it as well, using `submodules` -- their sources "
                      "follow.\n\n" + "\n".join(parts))
 
+    # Every module this one instantiates, with its port list. The chain above
+    # only covers a derived target, so a root target was being asked to rewrite
+    # instantiations of modules it could not see. Two v2 targets died exactly
+    # there: rewriting a positional instantiation into a named one and
+    # inventing the port names, first `clip_sel`, then -- after the error was
+    # fed back verbatim -- the net name from the call site. That is not
+    # something a retry can fix, because the name is not in anything the model
+    # was given. The ports are a few lines each.
+    known = []
+    for fn in sorted(os.listdir(rtl_dir)):
+        if fn.endswith(".v") and fn[:-2] != mod:
+            known.append(fn[:-2])
+    body = re.sub(r"//[^\n]*", " ", src or "")
+    lines = []
+    for name in known:
+        if not re.search(r"\b" + re.escape(name) + r"\s+[A-Za-z_][\w$]*\s*\(",
+                         body):
+            continue
+        _, csrc = T.module_source(name, rtl_dir)
+        if not csrc:
+            continue
+        pl = ", ".join(f"{k} ({v})" for k, v in T.ports(csrc).items())
+        lines.append(f"  {name}({pl})")
+    interfaces = ("\nINTERFACES OF THE MODULES " + mod + " INSTANTIATES.\n"
+                  "These are the exact port names and widths. Do not guess a\n"
+                  "port name from the signal connected to it:\n"
+                  + "\n".join(lines) + "\n") if lines else ""
+
     return f"""TARGET MODULE: {mod}
 
 Clock {target['clock']}. Slack {target['slack_ns']} ns.
@@ -139,7 +254,7 @@ worth more than its own slack suggests.
 
 CURRENT SOURCE OF {mod}:
 {src}
-{below}"""
+{interfaces}{below}"""
 
 
 def feed_forward(src):
@@ -209,6 +324,68 @@ def stateless(rtl_dir, module):
         return False          # cannot tell -> do not claim completeness
     stat = r.stdout[r.stdout.rfind("Printing statistics"):]
     return not re.search(r"\$(dff|dffe|adff|sdff|dlatch|dffsr|mem|sr)\b", stat)
+
+
+def g1_scope(proposal, golden, cand, latency):
+    """
+    Which module boundaries G1 should actually prove at.
+
+    A proposal names a target module, but the edit it makes can sit several
+    levels below it. One gemini proposal rewrote only `div_restoring_32` and
+    declared `execution_stage` as its target; proving it at the declared
+    boundary dragged the entire pipeline stage -- register file reads, forward
+    muxes, the whole ALU -- into a miter whose only real question was about a
+    32-step divider. It timed out at 2400 s, three times, and a timeout is not
+    a verdict. Proving `div_restoring_32` on its own asks the same question
+    with two orders of magnitude less circuit around it.
+
+    That substitution is sound by congruence: a module is a function of its
+    submodules, so if every rewritten submodule is equivalent to the one it
+    replaced, and nothing else changed, the parent is equivalent too. Two
+    conditions have to hold for that argument, and both are checked rather
+    than assumed:
+
+      - latency must be unchanged. Congruence is about what a module computes,
+        not when. A pipelined submodule is not equivalent to its original at
+        its own boundary at all -- that is the whole reason for the latency
+        wrapper -- and the parent's timing shifts with it, so a latency change
+        stays at the declared boundary where G1b can ask about the parent.
+
+      - ports must be identical. A submodule whose interface moved is not a
+        drop-in for the old one, the miter would be comparing two different
+        shapes, and the parent had to change to match -- so the real question
+        is at the parent after all.
+
+    When either fails, this returns the declared module and G1 behaves exactly
+    as it did before this function existed.
+    """
+    declared = [proposal["module"]]
+    if latency:
+        return declared, "latency change: congruence does not apply"
+
+    changed = list(T.changed_modules(proposal))
+    if changed == declared:
+        return declared, None
+
+    scope = []
+    for name in changed:
+        _, gold_src = T.module_source(name, golden)
+        _, cand_src = T.module_source(name, cand)
+        if gold_src is None or cand_src is None:
+            return declared, f"{name} missing from one of the trees"
+        if T.ports(gold_src) != T.ports(cand_src):
+            return declared, f"{name} changed its ports"
+        # A module the proposal names but did not actually alter has nothing
+        # to prove, and it is routinely the expensive one: a proposal that
+        # edits only a submodule still carries its parent in `module`, and
+        # that parent is the whole pipeline stage.
+        if gold_src.strip() != cand_src.strip():
+            scope.append(name)
+
+    # Nothing changed at all. Keep the declared boundary so the record still
+    # shows a proof was run against the module the proposal claimed to edit;
+    # a no-op does not improve timing and G2 is what rejects it.
+    return (scope or declared), None
 
 
 def gate1(golden, cand, module, latency, clock, feed_forward, timeout,
@@ -340,6 +517,10 @@ def select(targets, rtl_dir, max_slack, with_parents, depth=2):
     have = {t["target"]["module"] for t in keep}
     out = []
     for t in keep:
+        # Which slicer path this candidate belongs to. A target and the
+        # parents derived from it are three attempts at ONE path, not three
+        # paths, and --max-targets has to be able to tell the difference.
+        t["root"] = t["target"]["module"]
         out.append(t)
         cur = t["target"]["module"]
         for _ in range(depth):
@@ -373,6 +554,7 @@ def select(targets, rtl_dir, max_slack, with_parents, depth=2):
             p["chain"] = (t.get("chain") or [t["target"]["module"]])
             if cur not in p["chain"]:
                 p["chain"] = p["chain"] + [cur]
+            p["root"] = t["root"]
             out.append(p)
             cur = parent
     return out
@@ -402,6 +584,31 @@ def run(args):
     before = len(targets)
     targets = select(targets, rtl_for_select, args.max_slack,
                      not args.no_parents, args.parent_depth)
+    if args.order == "closeable":
+        # Worst-slack-first is the right order for reporting and the wrong one
+        # for spending calls. The worst path on this design needs 147 ns, which
+        # no single transform in the catalogue delivers -- every model so far
+        # has diagnosed it correctly and refused -- and each attempt on it
+        # costs a call plus a 900 s equivalence proof that times out because
+        # the block responsible is a 32-step combinational divider. Ordering
+        # by how closeable a path is puts the budget on the paths a transform
+        # can reach first. Nothing is dropped: the unreachable path still runs,
+        # still gets its attempts, and is still reported -- it just no longer
+        # consumes the evening before the reachable ones are tried.
+        #
+        # Sorted by slack descending, i.e. least negative first, with the root
+        # kept ahead of its own derived parents so the cheap local edit is
+        # still tried before the structural one.
+        order = {}
+        for t in targets:
+            r = t.get("root", t["target"]["module"])
+            order.setdefault(r, len(order))
+        by_root = {}
+        for t in targets:
+            by_root.setdefault(t.get("root", t["target"]["module"]), []).append(t)
+        roots = sorted(by_root, key=lambda r: (-by_root[r][0]["slack_ns"],
+                                               order[r]))
+        targets = [t for r in roots for t in by_root[r]]
     print(f"{before} slicer targets -> {len(targets)} worth a call "
           f"(slack <= {args.max_slack} ns, lever=rtl"
           f"{'' if args.no_parents else ', parents included'})",
@@ -425,7 +632,23 @@ def run(args):
     accepted, rejected = [], []
     unavailable = False
 
-    for n, tgt in enumerate(targets[:args.max_targets]):
+    # --max-targets counts distinct critical paths, not candidates. Counting
+    # candidates silently spent an entire run on one path: `alu` failed, and
+    # its parents `execution_stage` and `processor_top` -- the same path, two
+    # levels up -- used the remaining budget, so the other two RTL targets in
+    # the other two clock domains never received a single call. The parent
+    # walk exists to give one path more than one chance; it must not do so by
+    # taking the other paths' chances away.
+    seen_roots, budgeted = [], []
+    for t in targets:
+        r = t.get("root", t["target"]["module"])
+        if r not in seen_roots:
+            if len(seen_roots) >= args.max_targets:
+                break
+            seen_roots.append(r)
+        budgeted.append(t)
+
+    for n, tgt in enumerate(budgeted):
         mod = (tgt.get("target") or {}).get("module")
         if not mod:
             continue
@@ -442,6 +665,25 @@ def run(args):
                    "paths_covered": tgt.get("paths_covered", 1),
                    "backend": backend.name, "t": time.time()}
 
+            # A hard ceiling on spend, checked before the call that would
+            # cross it rather than after. The v2 bake-off spent $13.51 on an
+            # arm that accepted nothing, which is exactly the failure a cap
+            # exists to bound. Stopping is treated like an outage: every edit
+            # proved so far is kept, and the run records why it stopped.
+            if args.budget_usd is not None:
+                spent = ((backend.usage_summary()
+                          if hasattr(backend, "usage_summary") else {})
+                         or {}).get("cost_usd") or 0.0
+                if spent >= args.budget_usd:
+                    rec.update(stage="budget", verdict="BUDGET_EXHAUSTED",
+                               detail=(f"spent ${spent:.2f}, cap is "
+                                       f"${args.budget_usd:.2f}"))
+                    hist.write(json.dumps(rec) + "\n"); hist.flush()
+                    print(f"budget cap reached (${spent:.2f} >= "
+                          f"${args.budget_usd:.2f}), stopping", file=sys.stderr)
+                    unavailable = True
+                    break
+
             user = prompt_for(tgt, work) + feedback
             try:
                 raw = backend.propose(SYSTEM + "\n\n" + T.prompt_catalog(),
@@ -457,13 +699,64 @@ def run(args):
                       file=sys.stderr)
                 unavailable = True
                 break
+            # What this one call cost, on the row for the attempt that spent
+            # it. Cost per accepted fix is only computable if a rejected
+            # attempt carries its price too.
+            if getattr(backend, "last_usage", None):
+                rec["usage"] = dict(backend.last_usage)
             p = LLM.extract_json(raw)
 
             if p is None or "refused" in (p or {}):
-                rec.update(stage="propose", verdict="REFUSED",
-                           detail=(p or {}).get("refused", "unparseable reply"))
+                # A reply that does not parse and a reply that refuses are
+                # recorded under one verdict, which makes a parse failure look
+                # like the model declining. Relabelling mid-bake-off would make
+                # this arm's rows incomparable to the arms already recorded, so
+                # the label stands and the raw reply is kept instead. It has
+                # to be diagnosable after the fact rather than inferred from
+                # which rows are missing, because the break below is shared
+                # with the genuine-refusal path: a refusal is reasoned and
+                # retrying it is waste, but a parse failure abandons the whole
+                # target having never made a real attempt at it.
+                if p is None:
+                    try:
+                        with open(os.path.join(args.out,
+                                  f"unparsed_{n}_{attempt}.txt"), "w") as fh:
+                            fh.write(raw)
+                    except OSError:
+                        pass
+                truncated = (p is None and getattr(
+                    backend, "last_stop_reason", None) == "max_tokens")
+                rec.update(stage="propose",
+                           verdict="TRUNCATED" if truncated else "REFUSED",
+                           detail=(p or {}).get(
+                               "refused",
+                               "reply hit max_tokens before emitting text"
+                               if truncated else "unparseable reply"))
                 hist.write(json.dumps(rec) + "\n"); hist.flush()
                 rejected.append((mod, rec["detail"]))
+                # A refusal is reasoned, so asking the same question again
+                # is waste. The other two are not refusals and are each worth
+                # one more call: a reply that ran out of budget said nothing
+                # at all, and a reply that failed to parse is usually a
+                # well-formed proposal with one stray character in it -- in
+                # the run that prompted this, $0.42 and a whole abandoned
+                # target for a `.` between a closing quote and its comma.
+                # The parser's own message goes back as feedback, the way
+                # every gate here reports what it found, rather than this
+                # guessing at a repair: a tolerant re-parse that silently
+                # changes what the proposal said is the one kind of fix this
+                # project cannot ship.
+                if truncated:
+                    continue
+                err = getattr(LLM.extract_json, "last_error", None)
+                if p is None and err:
+                    feedback = (
+                        "\n\nYour previous answer was not valid JSON and could "
+                        "not be read. The parser reported:\n  " + err +
+                        "\nSend the same proposal again as strictly valid JSON. "
+                        "Do not change the design to work around this; it is a "
+                        "formatting error, not a design problem.")
+                    continue
                 break
 
             proposal_module = p.get("module")
@@ -471,7 +764,16 @@ def run(args):
             rec.update(proposal_module=proposal_module,
                        transform=p.get("transform"),
                        latency_delta=p.get("latency_delta"),
-                       reason=p.get("reason"))
+                       reason=p.get("reason"),
+                       # One acceptance can legitimately rewrite more than one
+                       # file. prepare_variants_v2.py rebuilds the accepted set
+                       # from these rows and cross-checks it against a diff of
+                       # the tree, so a coordinated parent+child edit that goes
+                       # unrecorded here reads there as the tree and the record
+                       # disagreeing -- and aborts the variant build after the
+                       # whole sweep has already run.
+                       submodules=sorted(p.get("submodules") or {}),
+                       **threew(p))
             # A derived prompt includes child source so the model can return a
             # coordinated parent+child edit, but the parent still has to be the
             # primary module. Otherwise a model can repeat an earlier child
@@ -579,14 +881,35 @@ def run(args):
                     continue
             else:
                 ff = feed_forward(p["rtl"])
-                g1 = gate1(work, cand, p["module"], lat, args.clock, ff,
-                           args.g1_timeout, p.get("transform"))
+                scope, why_declared = g1_scope(p, work, cand, lat)
+                rec["g1_scope"] = scope
+                if why_declared:
+                    rec["g1_scope_reason"] = why_declared
+                # Every rewritten boundary has to clear G1. The first failure
+                # is the one reported, because it is the one the model has to
+                # answer for; proving the rest afterwards would cost time and
+                # change nothing.
+                per = {}
+                g1 = None
+                for name in scope:
+                    g1 = gate1(work, cand, name, lat, args.clock, ff,
+                               args.g1_timeout, p.get("transform"))
+                    per[name] = g1
+                    if g1["verdict"] != "EQUIVALENT":
+                        break
                 rec["g1"] = g1
+                if len(per) > 1 or scope != [p["module"]]:
+                    rec["g1_per_module"] = {k: v.get("verdict")
+                                            for k, v in per.items()}
                 if g1["verdict"] != "EQUIVALENT":
                     rec.update(stage="g1", verdict="REJECTED")
                     hist.write(json.dumps(rec) + "\n"); hist.flush()
+                    failed_at = next((k for k, v in per.items()
+                                      if v["verdict"] != "EQUIVALENT"),
+                                     p["module"])
                     feedback = ("\n\nYour previous answer failed formal "
-                                f"equivalence ({g1['verdict']}). "
+                                f"equivalence on module {failed_at} "
+                                f"({g1['verdict']}). "
                                 + (g1.get("counterexample_summary")
                                    or g1.get("counterexample", ""))[:1500])
                     continue
@@ -650,9 +973,49 @@ def run(args):
                               "with plain combinational logic.")
                 continue
 
-            # Both cheap gates passed. Fold the edit into the working tree so
-            # the next target sees it; G3 judges the accumulated set once.
+            # Both cheap gates passed, but "passed" is not yet "changed
+            # anything". A proposal names a target in `module` and may name
+            # more in `submodules`, and neither field is evidence that the
+            # text it carried differs from what the working tree already
+            # holds. The case is not hypothetical: asked about fp4_dot_unit,
+            # the model re-sent the fp8_adder edit it had already had accepted
+            # and left fp4_dot_unit byte-identical to the frozen input. Every
+            # gate passed, because proving an unchanged module against itself
+            # is trivially true, and the row went down as a second ACCEPTED
+            # naming a module the run never touched.
+            #
+            # Two things break if that stands. The record inflates -- that row
+            # is the same edit counted twice, and counting it again as a
+            # closed path is the one claim this project cannot afford to get
+            # wrong. And prepare_variants_v2.py derives the accepted set twice,
+            # from the record and from a diff of the tree, and exits when they
+            # disagree; this row makes them disagree, so the variant that
+            # would carry the real edit never gets built.
+            #
+            # So the tree decides, not the proposal. What actually differs
+            # from the working tree is recorded as the accepted set, and a
+            # proposal that differs nowhere is a no-op: it cannot have
+            # improved timing, and it must not occupy an ACCEPTED row.
+            really = []
+            for name, text in T.changed_modules(p).items():
+                _, before = T.module_source(name, work)
+                if before is None or before.strip() != (text or "").strip():
+                    really.append(name)
+            if not really:
+                rec.update(stage="accepted", verdict="REJECTED",
+                           detail="proposal is byte-identical to the working "
+                                  "tree: nothing was changed")
+                hist.write(json.dumps(rec) + "\n"); hist.flush()
+                feedback = ("\n\nYour previous answer was identical to the "
+                            "code you were given, so it changes nothing. "
+                            "Either make a real edit to the target module or "
+                            "refuse.")
+                continue
+
+            # Fold the edit into the working tree so the next target sees it;
+            # G3 judges the accumulated set once.
             T.splice(p, work)
+            rec["accepted_modules"] = sorted(really)
             rec.update(stage="accepted", verdict="ACCEPTED")
             hist.write(json.dumps(rec) + "\n"); hist.flush()
             accepted.append((mod, p["transform"], lat))
@@ -664,8 +1027,31 @@ def run(args):
         if unavailable:
             break
 
+    # One terminal row for the whole run. It is written to history.jsonl
+    # rather than to a second file so that everything about a run stays in one
+    # append-only record, and it is written even on an early stop -- the calls
+    # made before an outage were still paid for.
+    usage = (backend.usage_summary() if hasattr(backend, "usage_summary")
+             else {"backend": backend.name, "calls": getattr(backend, "calls", 0)})
+    n_acc = len(accepted)
+    cost = usage.get("cost_usd")
+    if cost is not None:
+        usage["cost_per_accepted_usd"] = (round(cost / n_acc, 6) if n_acc
+                                          else None)
+    usage["accepted"] = n_acc
+    hist.write(json.dumps({"stage": "run_summary", "verdict": "SUMMARY",
+                           "t": time.time(), **usage}) + "\n")
     hist.close()
     print(f"backend {backend.name}, {getattr(backend, 'calls', 0)} calls")
+    if cost is not None:
+        per = usage["cost_per_accepted_usd"]
+        print(f"  tokens {usage['tokens_in']} in / {usage['tokens_out']} out"
+              f"  cost ${cost:.4f}"
+              + (f"  ${per:.4f} per accepted fix" if per is not None
+                 else "  (no accepted fix to price)"))
+    elif usage.get("priced") is False:
+        print(f"  {usage['tokens_in']} in / {usage['tokens_out']} out tokens; "
+              f"{usage['model']} is not in the price table, cost unknown")
     print(f"accepted {len(accepted)}: " +
           ", ".join(f"{m}/{t}/+{l}" for m, t, l in accepted))
     for m, why in rejected:
@@ -689,10 +1075,17 @@ def main():
     ap.add_argument("--parent-depth", type=int, default=2,
                     help="how many levels up the instantiation chain to offer "
                          "as additional targets")
+    ap.add_argument("--order", choices=("worst", "closeable"), default="worst",
+                    help="worst: largest violation first, the classic STA "
+                         "ordering. closeable: smallest violation first, which "
+                         "spends the call budget where an RTL transform can "
+                         "actually reach before spending it where it cannot.")
     ap.add_argument("--no-parents", action="store_true",
                     help="do not add the target's parent as a second candidate")
     ap.add_argument("--retries", type=int, default=2,
                     help="repair attempts per target after a gate rejection")
+    ap.add_argument("--budget-usd", type=float, default=None,
+                    help="stop the run once accumulated spend reaches this")
     ap.add_argument("--g1-timeout", type=int, default=1800)
     ap.add_argument("--g1c-depth", type=int, default=16,
                     help="bounded depth for the stream proof. 16 with the "

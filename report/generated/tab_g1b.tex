@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Rewrites that a formal equivalence check passed and the flow still rejected. These are the cases an EQY-only gate ships.}
+  \label{tab:g1b}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{llllll}
+    \toprule
+    \textbf{Module} & \textbf{Model} & \textbf{G1 verdict} & \textbf{Proof} & \textbf{Killed by} & \textbf{What the gate found} \\
+    \midrule
+    \texttt{fp4\_dot\_unit} & claude-sonnet-5 & EQUIVALENT & feed-forward & \texttt{g1b} & CONTRACT\_BROKEN at \texttt{axi\_lite\_dot} \\
+    \texttt{fp4\_dot\_unit} & claude-opus-5 & EQUIVALENT & feed-forward & \texttt{g1b} & CONTRACT\_BROKEN at \texttt{axi\_lite\_dot} \\
+    \texttt{fp4\_dot\_unit} & free & EQUIVALENT & feed-forward & \texttt{g1b} & CONTRACT\_BROKEN at \texttt{axi\_lite\_dot} \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright Each of these is equivalent to the frozen module at its own boundary and still wrong in the design: equivalence is a statement about a function, and a pipeline stage is not only a function. That three independently developed models produce the same defect is the argument for checking it rather than reviewing for it.
+\end{table}

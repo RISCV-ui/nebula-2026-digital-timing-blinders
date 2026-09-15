@@ -1,0 +1,4 @@
+div_restoring_32      SYNTAX OK
+isqrt_restoring_32    SYNTAX OK
+mult_array_32         SYNTAX OK
+bin_to_bcd_32         SYNTAX OK

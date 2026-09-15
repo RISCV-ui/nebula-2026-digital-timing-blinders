@@ -1,0 +1,8 @@
+FAIL  dma_controller                   UNPROVEN (100 cells) at depth 5  [yosys-equiv]  (165.3s)
+FAIL  gpio_controller                  TIMEOUT after 900s  [yosys-equiv]  (1069.4s)
+FAIL  instruction_fetch_stage          TIMEOUT after 900s  [yosys-equiv]  (970.1s)
+FAIL  mem_axi_slave                    UNPROVEN (36 cells) at depth 5  [yosys-equiv]  (173.5s)
+PASS  pipeline_reg_if_id               PROVED_EQUIVALENT  [partitioned]  (10.6s)
+FAIL  soc_top                          TIMEOUT after 900s  [yosys-equiv]  (1142.2s)
+
+1/6 modules proved equivalent -> artifacts/eqy/shards/openrouter_nemotron-ultra_s2.json

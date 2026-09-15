@@ -1,0 +1,18 @@
+backend gemini:models/gemini-3.5-flash, 4 calls
+  tokens 20353 in / 2578 out  cost $0.0126  (no accepted fix to price)
+accepted 0: 
+  rejected alu: The critical path is dominated by a 32-bit combinational divider (div_restoring_32) inside the ALU, causing a 156.7 ns combinational delay. Closing the -147 ns slack requires pipelining the divider or the ALU. However, the alu module lacks a clock port, and its port list cannot be modified to introduce one. Without a clock, pipelining or multi-cycle implementation is impossible, and purely combinational restructuring cannot achieve the required timing closure.
+  rejected execution_stage: The critical path is dominated by a 32-bit combinational restoring divider (div_restoring_32) inside the ALU, which contributes 151.338 ns (96.5%) of the total 156.7589 ns delay over 849 logic stages. Because this divider is purely combinational and lacks a clock signal, it cannot be pipelined. Any attempt to restructure the combinational logic or replace the divider with behavioral operators either fails to reduce the massive logic depth or causes formal equivalence verification to timeout due to the complexity of proving 32-bit division.
+  rejected processor_top: The critical path is dominated by a 32-bit combinational divider (div_restoring_32) inside the ALU, which contributes 96.5% (151.338 ns) of the total 156.759 ns delay. A 32-bit combinational divider cannot close timing at the target frequency (~100 MHz) without being pipelined. However, pipelining the divider would change the latency of division instructions, which requires modifying the processor's hazard detection and forwarding units to support multi-cycle division. Since the source code for these units is not fully available and changing the latency of only division instructions would violate the uniform latency delta requirement of the pipeline transform, we cannot safely pipeline the divider. Pipelining the entire processor to maintain a uniform latency delta is also infeasible without rewriting the forwarding and hazard units. Therefore, no catalogue transform can close timing on this path without breaking the design's functionality or failing equivalence checks.
+history -> artifacts/bakeoff_v2/gemini_gemini-flash/history.jsonl
+candidate RTL -> artifacts/bakeoff_v2/gemini_gemini-flash/rtl
+12 slicer targets -> 9 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk1       slack -147.045  alu
+   clk1       slack -147.045  execution_stage   [instantiates alu]
+   clk1       slack -147.045  processor_top   [instantiates execution_stage]
+   clk_s2     slack  -33.728  gpio_controller
+   clk_s2     slack  -33.728  axi_lite_gpio   [instantiates gpio_controller]
+   clk_s2     slack  -33.728  soc_top   [instantiates axi_lite_gpio]
+   clk_s5     slack  -26.338  fp8_adder
+   clk_s5     slack  -26.338  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -26.338  axi_lite_dot   [instantiates fp4_dot_unit]

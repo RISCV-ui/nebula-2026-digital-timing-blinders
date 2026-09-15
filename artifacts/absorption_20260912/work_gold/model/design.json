@@ -1,0 +1,1431 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen",
+        "cell_sorts": [
+          {
+            "type": "$anyseq",
+            "ports": [
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$anyseq$93",
+                  "attributes": {
+                    "reg": "free_data",
+                    "src": "cuts_gold.v:31.31-31.40"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$anyseq$94",
+                  "attributes": {
+                    "reg": "free_full",
+                    "src": "cuts_gold.v:32.31-32.40"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$anyseq$95",
+                  "attributes": {
+                    "reg": "free_empty",
+                    "src": "cuts_gold.v:32.42-32.52"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "dynports": "00000000000000000000000000000001",
+            "hdlname": "asynchronous_fifo_gen",
+            "src": "cuts_gold.v:19.1-36.10"
+        }
+      },
+      {
+        "name": "axi_lite_dot",
+        "cell_sorts": [
+          {
+            "type": "$paramod$72f83d20332db853f52d52010cdb396e42162176\\asynchronous_fifo_gen",
+            "ports": [
+                {
+                  "name": "clk_1",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "clk_2",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "data_in_clk1",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "data_out_clk2",
+                  "direction": "",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "fifo_empty",
+                  "direction": "",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "fifo_full",
+                  "direction": "",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "r_en_clk_2",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "rst_1",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "rst_2",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "w_en_clk_1",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "fifo_timer_r",
+                  "attributes": {
+                    "module_not_derived": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:100.53-106.28"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "fifo_timer_w1",
+                  "attributes": {
+                    "module_not_derived": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:85.52-91.28"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "fifo_timer_w2",
+                  "attributes": {
+                    "module_not_derived": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:92.52-98.28"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$check",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "ARGS",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "TRG",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "_witness_.check_assert_axi_lite_dot_gold_v_251_74",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_axi_lite_dot_gold_v_251_74",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:251.9-251.46"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_axi_lite_dot_gold_v_255_78",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_axi_lite_dot_gold_v_255_78",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:255.9-256.52"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111110",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_axi_lite_dot_gold_v_260_84",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_axi_lite_dot_gold_v_260_84",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:260.9-260.62"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111101",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_axi_lite_dot_gold_v_267_89",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_axi_lite_dot_gold_v_267_89",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:267.13-267.33"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111100",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "fp4_dot_unit",
+            "ports": [
+                {
+                  "name": "clk",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "dot_out",
+                  "direction": "",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "rst",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "va",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "vb",
+                  "direction": "io",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "fp4_dot_0",
+                  "attributes": {
+                    "module_not_derived": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:109.17-109.60"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$157",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:244.1-269.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$158",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:244.1-269.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$159",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:148.1-208.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$160",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:148.1-208.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procdff$161",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:148.1-208.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procdff$162",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:148.1-208.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procdff$163",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:148.1-208.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$164",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:148.1-208.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$165",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:148.1-208.4"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$axi_lite_dot_gold.v:140$39",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:140.40-140.63"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$axi_lite_dot_gold.v:141$49",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.54-141.75"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:117$11",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:117.18-117.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:117$12",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:117.35-117.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:117$14",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:117.52-117.62"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:132$30",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:132.23-132.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:140$38",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:140.22-140.34"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:141$47",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.37-141.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:141$50",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.79-141.92"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:141$53",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.123-141.136"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:192$63",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:192.45-192.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:246$68",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:246.21-246.27"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:251$75",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:251.17-251.29"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:251$76",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:251.33-251.45"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:255$81",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:255.17-255.63"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$axi_lite_dot_gold.v:260$85",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:260.17-260.29"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:117$13",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:117.18-117.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:117$15",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:117.18-117.62"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:121$17",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:121.33-121.69"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:121$18",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:121.33-121.84"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:121$20",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:121.33-121.101"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:122$22",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:122.33-122.69"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:122$23",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:122.33-122.84"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:122$25",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:122.33-122.101"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:134$34",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:134.23-134.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:134$36",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:134.23-134.82"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:140$41",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:140.40-140.80"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:140$44",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:140.85-140.125"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:140$46",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:140.22-140.127"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:141$48",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.22-141.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:141$51",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.54-141.92"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:141$54",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.98-141.136"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:141$56",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.22-141.138"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:164$58",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:164.15-164.41"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:178$60",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:178.16-178.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:185$61",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:185.16-185.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:192$62",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:192.15-192.41"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:192$64",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:192.15-192.56"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:200$65",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:200.20-200.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:246$69",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:246.21-246.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:246$72",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:246.21-246.75"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:255$80",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:255.19-255.62"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:260$86",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:260.34-260.60"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$axi_lite_dot_gold.v:266$88",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:266.13-266.41"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [3, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$axi_lite_dot_gold.v:140$42",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:140.85-140.108"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$axi_lite_dot_gold.v:141$52",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.98-141.119"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$axi_lite_dot_gold.v:255$79",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:255.35-255.61"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$axi_lite_dot_gold.v:256$82",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:256.18-256.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$104",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:248.9-248.15|axi_lite_dot_gold.v:248.5-268.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$106",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:185.15-185.43|axi_lite_dot_gold.v:185.12-189.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$109",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:192.15-192.56|axi_lite_dot_gold.v:192.12-203.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$112",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:150.9-150.14|axi_lite_dot_gold.v:150.6-206.9"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$114",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:178.15-178.43|axi_lite_dot_gold.v:178.12-182.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$117",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:192.15-192.56|axi_lite_dot_gold.v:192.12-203.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$120",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:150.9-150.14|axi_lite_dot_gold.v:150.6-206.9"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$122",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:171.20-171.46|axi_lite_dot_gold.v:171.17-174.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$125",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:164.15-164.41|axi_lite_dot_gold.v:164.12-174.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$128",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:150.9-150.14|axi_lite_dot_gold.v:150.6-206.9"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$131",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:164.15-164.41|axi_lite_dot_gold.v:164.12-174.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$134",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:150.9-150.14|axi_lite_dot_gold.v:150.6-206.9"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$136",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:185.15-185.43|axi_lite_dot_gold.v:185.12-189.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$139",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:192.15-192.56|axi_lite_dot_gold.v:192.12-203.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$142",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:150.9-150.14|axi_lite_dot_gold.v:150.6-206.9"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$144",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:178.15-178.43|axi_lite_dot_gold.v:178.12-182.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$147",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:150.9-150.14|axi_lite_dot_gold.v:150.6-206.9"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procmux$149",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:200.20-200.44|axi_lite_dot_gold.v:200.17-203.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$152",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:192.15-192.56|axi_lite_dot_gold.v:192.12-203.15"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$155",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "axi_lite_dot_gold.v:150.9-150.14|axi_lite_dot_gold.v:150.6-206.9"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$96",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:266.13-266.41|axi_lite_dot_gold.v:266.9-267.34"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$98",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:248.9-248.15|axi_lite_dot_gold.v:248.5-268.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$ternary$axi_lite_dot_gold.v:124$27",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:124.33-124.73"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$ternary$axi_lite_dot_gold.v:125$29",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:125.33-125.73"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$ternary$axi_lite_dot_gold.v:133$32",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:133.24-133.79"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_or",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_or$axi_lite_dot_gold.v:140$45",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:140.39-140.126"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_or$axi_lite_dot_gold.v:141$55",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:141.53-141.137"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_or$axi_lite_dot_gold.v:251$77",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:251.17-251.45"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_or$axi_lite_dot_gold.v:255$83",
+                  "attributes": {
+                    "src": "axi_lite_dot_gold.v:255.17-256.51"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "hdlname": "axi_lite_dot",
+            "top": "00000000000000000000000000000001",
+            "src": "axi_lite_dot_gold.v:3.1-272.10"
+        }
+      },
+      {
+        "name": "fp4_dot_unit",
+        "cell_sorts": [
+          {
+            "type": "$anyseq",
+            "ports": [
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$anyseq$92",
+                  "attributes": {
+                    "reg": "free_dot",
+                    "src": "cuts_gold.v:42.26-42.34"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "hdlname": "fp4_dot_unit",
+            "src": "cuts_gold.v:38.1-44.10"
+        }
+      }
+  ]
+}

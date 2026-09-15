@@ -1,0 +1,8 @@
+FAIL  fp4_dot_unit                     TIMEOUT after 900s  [yosys-equiv]  (942.4s)
+FAIL  id_memory_256x64_wrap            UNPROVEN (256 cells) at depth 5  [yosys-equiv]  (101.0s)
+FAIL  l1_cache_axi_master              UNPROVEN (354 cells) at depth 5  [yosys-equiv]  (1046.7s)
+FAIL  multiplier_pipelined             TIMEOUT after 900s  [yosys-equiv]  (2512.3s)
+FAIL  read_buffer_d_cache              UNPROVEN (294 cells) at depth 5  [yosys-equiv]  (97.6s)
+FAIL  uart_controller                  TIMEOUT after 900s  [yosys-equiv]  (1830.0s)
+
+0/6 modules proved equivalent -> artifacts/eqy/shards/anthropic_sonnet-direct_s5.json

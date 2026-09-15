@@ -267,6 +267,72 @@ def _write_modules(proposal, rtl_dir):
         open(path, "w").write(body.replace(original, text.strip(), 1))
 
 
+ARITH_OPS = {"/": "divide", "%": "modulo", "*": "multiply"}
+
+
+def introduced_operators(original, rtl):
+    """
+    Arithmetic operators the rewrite adds that the original did not use.
+
+    The instance-deletion check catches a parent that throws its divider away.
+    It cannot catch the same move made one level down, where the divider
+    itself is the module being rewritten and its 32 explicit restoring steps
+    become `dividend / divisor`. Nothing was deleted there -- the whole body
+    was replaced -- so the operator is the only evidence, and it is enough: a
+    module that reached its result without `/` and now needs one has had its
+    structure removed, not restructured.
+
+    Shifts are not counted and neither is `+` or `-`; a constant shift is free
+    and adders are how pipelining splits a carry chain. Only the three
+    operators that stand in for a whole structural block are.
+    """
+    def ops(src):
+        src = re.sub(r"/\*.*?\*/", " ", src, flags=re.S)
+        src = re.sub(r"//[^\n]*", " ", src)
+        # Strip string literals and widths so `32'd5` and `[31:0]` cannot
+        # contribute a token.
+        src = re.sub(r'"[^"]*"', " ", src)
+        # Compiler directives are not logic, and `\`timescale 1ns / 1ps` at
+        # the top of every file in this tree reads as a divide. Left in, it
+        # makes every module look like it already divides, and the check
+        # silently stops catching the one thing it exists to catch.
+        src = re.sub(r"^\s*`\w+[^\n]*", " ", src, flags=re.M)
+        found = set()
+        for op, _ in ARITH_OPS.items():
+            if re.search(r"[\w)\]]\s*" + re.escape(op) + r"\s*[\w(]", src):
+                found.add(op)
+        return found
+    return sorted(ops(rtl) - ops(original))
+
+
+def dropped_instances(original, rtl, rtl_dir):
+    """
+    Submodules the original instantiated that the rewrite no longer does.
+
+    No transform in the catalogue deletes a structural block. Pipelining,
+    retiming, restructuring and FSM re-encoding all rearrange logic around the
+    instances that are there; none of them makes one disappear. A rewrite that
+    drops an instance has either lost functionality or replaced a hand-built
+    arithmetic structure with a behavioural operator, and the second is the
+    one that keeps happening: a 32-step restoring divider rewritten as `a / b`
+    reads like a simplification, shortens nothing once synthesis expands the
+    operator back out, and asks the equivalence checker to prove a division
+    algorithm equal to `/` -- which it cannot do inside any budget worth
+    spending.
+
+    Only names that are real modules in the tree count, so an ordinary
+    function call or a macro is not mistaken for a deleted instance.
+    """
+    def insts(src):
+        src = re.sub(r"/\*.*?\*/", " ", src, flags=re.S)
+        src = re.sub(r"//[^\n]*", " ", src)
+        return {m.group(1) for m in
+                re.finditer(r"^\s*([A-Za-z_]\w*)\s+[A-Za-z_]\w*\s*\(",
+                            src, re.M)
+                if module_source(m.group(1), rtl_dir)[1] is not None}
+    return sorted(insts(original) - insts(rtl))
+
+
 def validate(proposal, rtl_dir=RTL_DIR):
     """
     proposal = {"transform","module","latency_delta","rtl","reason", ...}
@@ -355,6 +421,28 @@ def validate(proposal, rtl_dir=RTL_DIR):
         if not isinstance(delta, int) or delta < 1:
             bad.append(f"{t} changes latency, so latency_delta must be an "
                        f"integer of 1 or more, got {delta!r}")
+
+    gone = dropped_instances(original, rtl, rtl_dir)
+    if gone:
+        bad.append(
+            f"the rewrite deletes {', '.join(gone)}, which {mod} instantiates. "
+            f"No catalogue transform removes a structural block: replacing one "
+            f"with a behavioural operator does not shorten the path, because "
+            f"synthesis expands the operator back into comparable logic, and "
+            f"it makes equivalence unprovable in practice. Pipeline, retime or "
+            f"restructure around {', '.join(gone)} instead of removing it.")
+
+    added_ops = introduced_operators(original, rtl)
+    if added_ops:
+        names = ", ".join(f"`{o}` ({ARITH_OPS[o]})" for o in added_ops)
+        bad.append(
+            f"the rewrite introduces {names}, which {mod} did not use. "
+            f"Collapsing an explicit arithmetic structure into an operator is "
+            f"not a restructure: synthesis expands it back into comparable "
+            f"logic, so the path does not get shorter, and it turns the "
+            f"equivalence check into a proof about the operator's definition "
+            f"rather than about your edit. Keep the existing structure and "
+            f"pipeline or retime it.")
 
     if not bad:
         ok, err = parses(rtl, mod)

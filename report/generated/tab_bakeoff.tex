@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Four models over the same three targets, one invocation, identical gate configuration. Acceptance means every gate passed, not that the model produced plausible-looking RTL.}
+  \label{tab:bakeoff}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    \textbf{Model} & \textbf{Proposals} & \textbf{Accepted} & \textbf{Cost (USD)} & \textbf{Harness losses} & \textbf{Wall (h)} \\
+    \midrule
+    gemini: gemini-flash & 3 & \textbf{0} & 0.01 & -- & 0.1 \\
+    openrouter: nemotron-ultra & 21 & \textbf{1} & 0.00 & 0 of 4 & 3.1 \\
+    anthropic: sonnet-direct & 13 & \textbf{1} & 2.65 & 7 of 8 & 0.5 \\
+    anthropic: opus-direct & 13 & \textbf{0} & 13.51 & 8 of 9 & 0.6 \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright \emph{Harness losses} are calls this harness threw away rather than the model declining: replies that exhausted the token budget inside reasoning and emitted no text. They are disclosed because an arm that lost calls attempted fewer real edits than its proposal count suggests, and comparing accept rates across arms without that is comparing two different experiments.
+\end{table}

@@ -1,0 +1,9 @@
+### cand_1_0  fp4_dot_unit  latency 3
+EQUIVALENT       fp4_dot_unit             [arith: smtbmc/bitwuzla]  depth 5  latency +3  43.3s
+### cand_1_1  fp4_dot_unit  latency 3
+EQUIVALENT       fp4_dot_unit             [arith: smtbmc/bitwuzla]  depth 5  latency +3  42.9s
+### cand_1_2  fp4_dot_unit  latency 3
+EQUIVALENT       fp4_dot_unit             [arith: smtbmc/bitwuzla]  depth 5  latency +3  42.7s
+### cand_2_0  axi_lite_dot  latency 3
+axi_lite_dot has no clock port among ['clk_1', 'clk_2', 'rst_1', 'rst_2', 's1_ar_addr', 's1_ar_valid', 's1_aw_addr', 's1_aw_valid', 's1_b_ready', 's1_dr_ready', 's1_dw_data', 's1_dw_strb', 's1_dw_valid']; a latency-changing transform needs one to delay against
+### DONE

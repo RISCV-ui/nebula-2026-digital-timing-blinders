@@ -1,0 +1,177 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_openrouter_nemotron-ultra/results/sky130hd/nebula_bench_v2/openrouter_nemotron-ultra/1_2_yosys.v",
+  "modules_checked": 6,
+  "modules_equivalent": 1,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "execution_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 957.7,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/openro",
+          "seconds": 29.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/openro",
+          "seconds": 28.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    },
+    {
+      "module": "i_rom_32x256",
+      "pass": "yosys-equiv",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 26.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 8.2
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 9.6
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 8.7
+        }
+      ]
+    },
+    {
+      "module": "isqrt_restoring_32",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 1836.7,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 36.7
+        },
+        {
+          "pass": "merged",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ],
+      "counterexample_claimed_by": [
+        "partitioned"
+      ]
+    },
+    {
+      "module": "mult_array_32",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 2700.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        },
+        {
+          "pass": "merged",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ]
+    },
+    {
+      "module": "processor_top",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 1040.6,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/openro",
+          "seconds": 77.6
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/openro",
+          "seconds": 62.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.2
+        }
+      ]
+    },
+    {
+      "module": "timer",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (97 cells) at depth 5",
+      "seconds": 931.7,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14912: \\data_out_gold [3] \\data_out_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14911: \\data_out_gold [2] \\data_out_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14910: \\data_out_gold [1] \\data_out_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14909: \\data_out_gold [0] \\data_out_gate [0]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$15037: \\timer_rate_mul.product_gold [31] \\timer_rate_mul.product_gate [31]",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$15036: \\timer_rate_mul.product_gold [30] \\timer_rate_mul.product_gate [30]",
+        "Found a total of 97 unproven $equiv cells.",
+        "ERROR: Found 97 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/openro",
+          "seconds": 12.1
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (97 cells) at depth 5",
+          "seconds": 19.6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "dirty_files": [
+    "axi_lite_dot.v",
+    "fp4_dot_stage.v",
+    "fp4_dot_unit.v",
+    "fp8_adder.v"
+  ],
+  "added_modules": [
+    "fp4_dot_stage"
+  ],
+  "modules": {
+    "alu": {
+      "file": "alu.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "alu_src_a_mux": {
+      "file": "alu_src_a_mux.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "alu_src_b_mux": {
+      "file": "alu_src_b_mux.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "arbiter": {
+      "file": "arbiter.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "asynchronous_fifo_gen": {
+      "file": "asynchronous_fifo_gen.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "axi_interconnect_2m_8s": {
+      "file": "axi_interconnect_2m_8s.v",
+      "subtree_size": 2,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "axi_lite_dma_config": {
+      "file": "axi_lite_dma_config.v",
+      "subtree_size": 2,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "axi_lite_dot": {
+      "file": "axi_lite_dot.v",
+      "subtree_size": 6,
+      "self_identical": false,
+      "dirty_in_subtree": [
+        "axi_lite_dot",
+        "fp4_dot_stage",
+        "fp4_dot_unit",
+        "fp8_adder"
+      ],
+      "closed_by_hash": false
+    },
+    "axi_lite_gpio": {
+      "file": "axi_lite_gpio.v",
+      "subtree_size": 3,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "axi_lite_master": {
+      "file": "axi_lite_master.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "axi_lite_timer": {
+      "file": "axi_lite_timer.v",
+      "subtree_size": 3,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "axi_lite_uart": {
+      "file": "axi_lite_uart.v",
+      "subtree_size": 3,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "branch_comp_decoder": {
+      "file": "branch_comp_decoder.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "branch_comprator": {
+      "file": "branch_comprator.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "branch_predictor": {
+      "file": "branch_predictor.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "clk_div_mux": {
+      "file": "clk_div_mux.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "clk_gate": {
+      "file": "clk_gate.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "control_unit": {
+      "file": "control_unit.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "csr_regfile": {
+      "file": "csr_regfile.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "data_clipper": {
+      "file": "data_clipper.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "data_extender": {
+      "file": "data_extender.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "data_forwarding_unit": {
+      "file": "data_forwarding_unit.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "dma_controller": {
+      "file": "dma_controller.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "dmem": {
+      "file": "dmem.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "execution_stage": {
+      "file": "execution_stage.v",
+      "subtree_size": 4,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "fp4_dot_unit": {
+      "file": "fp4_dot_unit.v",
+      "subtree_size": 3,
+      "self_identical": false,
+      "dirty_in_subtree": [
+        "fp4_dot_unit",
+        "fp8_adder"
+      ],
+      "closed_by_hash": false
+    },
+    "fp4_mul": {
+      "file": "fp4_mul.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "fp8_adder": {
+      "file": "fp8_adder.v",
+      "subtree_size": 1,
+      "self_identical": false,
+      "dirty_in_subtree": [
+        "fp8_adder"
+      ],
+      "closed_by_hash": false
+    },
+    "gpio_controller": {
+      "file": "gpio_controller.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "hazard_detection_unit": {
+      "file": "hazard_detection_unit.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "i_rom_32x256": {
+      "file": "i_rom_32x256.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "id_memory_256x64_wrap": {
+      "file": "id_memory_256x64_wrap.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "immediate_generator": {
+      "file": "immediate_generator.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "instruction_decode_stage": {
+      "file": "instruction_decode_stage.v",
+      "subtree_size": 6,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "instruction_fetch_stage": {
+      "file": "instruction_fetch_stage.v",
+      "subtree_size": 7,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "interrupt_control_unit": {
+      "file": "interrupt_control_unit.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "l1_cache_axi_master": {
+      "file": "l1_cache_axi_master.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "l1_d_cache_8kb": {
+      "file": "l1_d_cache_8kb.v",
+      "subtree_size": 3,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "l1_i_cache_8kb": {
+      "file": "l1_i_cache_8kb.v",
+      "subtree_size": 3,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "mem_axi_slave": {
+      "file": "mem_axi_slave.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "memory_stage": {
+      "file": "memory_stage.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "multiplier_pipelined": {
+      "file": "multiplier_pipelined.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "pipeline_reg_ex_mem": {
+      "file": "pipeline_reg_ex_mem.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "pipeline_reg_id_ex": {
+      "file": "pipeline_reg_id_ex.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "pipeline_reg_if_id": {
+      "file": "pipeline_reg_if_id.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "pipeline_reg_mem_wb": {
+      "file": "pipeline_reg_mem_wb.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "processor_top": {
+      "file": "processor_top.v",
+      "subtree_size": 30,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "read_buffer_d_cache": {
+      "file": "read_buffer_d_cache.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "read_buffer_i_cache": {
+      "file": "read_buffer_i_cache.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "register_file": {
+      "file": "register_file.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "soc_top": {
+      "file": "soc_top.v",
+      "subtree_size": 56,
+      "self_identical": true,
+      "dirty_in_subtree": [
+        "axi_lite_dot",
+        "fp4_dot_stage",
+        "fp4_dot_unit",
+        "fp8_adder"
+      ],
+      "closed_by_hash": false
+    },
+    "tag_memory_92x64_wrap": {
+      "file": "tag_memory_92x64_wrap.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "timer": {
+      "file": "timer.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "uart_controller": {
+      "file": "uart_controller.v",
+      "subtree_size": 1,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    },
+    "write_back_stage": {
+      "file": "write_back_stage.v",
+      "subtree_size": 2,
+      "self_identical": true,
+      "dirty_in_subtree": [],
+      "closed_by_hash": true
+    }
+  }
+}

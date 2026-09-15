@@ -1,0 +1,23 @@
+=== [0/4] clock audit and runt simulation (must be clean first) ===
+CLEAN
+  SAFE_MUX       clk_div_mux.clk_out
+      clk_out hands over between clk, clk_div2, clk_div4, clk_div8: each branch is gated by an enable registered on that branch's own falling edge and may only assert once every other branch has released, so the output is whole pulses of one source
+  SAFE_ICG       clk_gate.clk_out
+      clk_out = clk_in & latched enable (en_latch)
+fixed   PASS  0 runt(s), 5 ratio checks, 0 mismatch(es)
+control FAIL  8 runt(s)  (expected to fail)
+PASS -> artifacts/clocksim.json
+=== [1/4] rebuild variant trees from the frozen RTL ===
+baseline                     0 accepted edit(s): -
+anthropic_opus-direct        0 accepted edit(s): -
+anthropic_sonnet-direct      1 accepted edit(s): fp8_adder.v
+gemini_gemini-flash          0 accepted edit(s): -
+openrouter_nemotron-ultra    1 accepted edit(s): fp8_adder.v
+
+wrote /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/variants.json
+=== [2/4] PnR baseline ===
+Mon Sep 14 15:54:57 IST 2026
+baseline rc=2 Mon Sep 14 16:01:43 IST 2026
+WARNING: baseline did not finish -- see /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_clkfix/baseline.log
+=== [3/4] PnR anthropic_sonnet-direct ===
+Mon Sep 14 16:01:43 IST 2026

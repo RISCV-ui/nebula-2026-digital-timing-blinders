@@ -1,0 +1,134 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Found 0 SCCs in module axi_lite_dot.
+Found 0 SCCs in module fp4_dot_unit.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing CLK2FFLOGIC pass (convert clocked FFs to generic $ff cells).
+
+5.1. Executing PEEPOPT pass (run peephole optimizers).
+Replacing axi_lite_dot.$procdff$157 ($dff): CLK=\clk_1, D=1'1, Q=\f_past_valid
+Replacing axi_lite_dot.$procdff$158 ($dff): CLK=\clk_1, D=$0\f_p3_pending[0:0], Q=\f_p3_pending
+Replacing axi_lite_dot.$procdff$159 ($dff): CLK=\clk_1, D=$0\s1_b_valid[0:0], Q=\s1_b_valid
+Replacing axi_lite_dot.$procdff$160 ($dff): CLK=\clk_1, D=$0\addr_r_w[31:0], Q=\addr_r_w
+Replacing axi_lite_dot.$procdff$161 ($dff): CLK=\clk_1, D=$0\data_reg[31:0], Q=\data_reg
+Replacing axi_lite_dot.$procdff$162 ($dff): CLK=\clk_1, D=$0\addr_out_read[31:0], Q=\addr_out_read
+Replacing axi_lite_dot.$procdff$163 ($dff): CLK=\clk_1, D=$0\addr_r_comp[0:0], Q=\addr_r_comp
+Replacing axi_lite_dot.$procdff$164 ($dff): CLK=\clk_1, D=$0\addr_w_comp[0:0], Q=\addr_w_comp
+Replacing axi_lite_dot.$procdff$165 ($dff): CLK=\clk_1, D=$0\data_w_comp[0:0], Q=\data_w_comp
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \axi_lite_dot..
+Finding unused cells or wires in module \fp4_dot_unit..
+Removed 12 unused cells and 21 unused wires.
+<suppressed ~13 debug messages>
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \axi_lite_dot..
+Finding unused cells or wires in module \fp4_dot_unit..
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen...
+Checking module axi_lite_dot...
+Checking module fp4_dot_unit...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module axi_lite_dot.
+<suppressed ~4 debug messages>
+Optimizing module fp4_dot_unit.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Computing hashes of 3 cells of `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding duplicate cells in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding identical cells in module `\axi_lite_dot'.
+Computing hashes of 150 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Computing hashes of 136 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Computing hashes of 124 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Computing hashes of 122 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+<suppressed ~84 debug messages>
+Finding identical cells in module `\fp4_dot_unit'.
+Computing hashes of 1 cells of `\fp4_dot_unit'.
+Finding duplicate cells in `\fp4_dot_unit'.
+Removed a total of 28 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 1-bit at position 0 on $auto$clk2fflogic.cc:108:sample_data$297 ($ff) from module axi_lite_dot.
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \axi_lite_dot..
+Finding unused cells or wires in module \fp4_dot_unit..
+Removed 0 unused cells and 33 unused wires.
+<suppressed ~1 debug messages>
+
+11.5. Rerunning OPT passes. (Removed registers in this run.)
+
+11.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module axi_lite_dot.
+Optimizing module fp4_dot_unit.
+
+11.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Computing hashes of 3 cells of `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding duplicate cells in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding identical cells in module `\axi_lite_dot'.
+Computing hashes of 121 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Finding identical cells in module `\fp4_dot_unit'.
+Computing hashes of 1 cells of `\fp4_dot_unit'.
+Finding duplicate cells in `\fp4_dot_unit'.
+Removed a total of 0 cells.
+
+11.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \axi_lite_dot..
+Finding unused cells or wires in module \fp4_dot_unit..
+
+11.10. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \axi_lite_dot..
+Finding unused cells or wires in module \fp4_dot_unit..
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 05f5e6a8bb, time: 0.03s, user: 0.03s, system: 0.01s, MEM: 19.89 MB peak
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 33% 5x opt_clean (0 sec), 12% 2x opt_dff (0 sec), ...

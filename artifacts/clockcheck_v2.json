@@ -1,0 +1,30 @@
+{
+  "rtl": "bench/rtl_v2",
+  "findings": [
+    {
+      "module": "clk_div_mux",
+      "net": "clk_out",
+      "verdict": "SAFE_MUX",
+      "sources": [
+        "clk",
+        "clk_div2",
+        "clk_div4",
+        "clk_div8"
+      ],
+      "driver": "(clk      & q2_0)\n               | (clk_div2 & q2_1)\n               | (clk_div4 ",
+      "reason": "clk_out hands over between clk, clk_div2, clk_div4, clk_div8: each branch is gated by an enable registered on that branch's own falling edge and may only assert once every other branch has released, so the output is whole pulses of one source"
+    },
+    {
+      "module": "clk_gate",
+      "net": "clk_out",
+      "verdict": "SAFE_ICG",
+      "sources": [
+        "clk_in"
+      ],
+      "driver": "clk_in & en_latch",
+      "reason": "clk_out = clk_in & latched enable (en_latch)"
+    }
+  ],
+  "glitchy": 0,
+  "verdict": "CLEAN"
+}

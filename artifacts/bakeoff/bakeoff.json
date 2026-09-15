@@ -5,48 +5,20 @@
   "retries": 2,
   "arms": [
     {
-      "arm": "gemini:gemini-flash",
-      "out": "artifacts/bakeoff/gemini_gemini-flash",
-      "rtl": "artifacts/bakeoff/gemini_gemini-flash/rtl",
+      "arm": "anthropic:opus-direct",
+      "out": "artifacts/bakeoff/anthropic_opus-direct",
+      "rtl": "artifacts/bakeoff/anthropic_opus-direct/rtl",
       "returncode": 0,
-      "wall_seconds": 2401.9,
+      "wall_seconds": 573.7,
       "proposals": 6,
-      "accepted": 1,
-      "accepted_first_attempt": 1,
-      "accept_rate": 0.167,
-      "died_at": {
-        "propose": 1,
-        "g1": 4,
-        "accepted": 1
-      },
-      "transforms": {
-        "logic_restructure": 1
-      },
-      "modules_changed": [
-        "axi_lite_dot"
-      ],
-      "tree_diff": {
-        "changed": [
-          "axi_lite_dot.v",
-          "fp4_dot_unit.v",
-          "fp8_adder.v"
-        ],
-        "added": [],
-        "removed": []
-      }
-    },
-    {
-      "arm": "gemini:gemini-pro",
-      "out": "artifacts/bakeoff/gemini_gemini-pro",
-      "rtl": "artifacts/bakeoff/gemini_gemini-pro/rtl",
-      "returncode": 0,
-      "wall_seconds": 178.1,
-      "proposals": 1,
       "accepted": 0,
+      "raw_accepted": 0,
+      "invalid_accepts": [],
       "accepted_first_attempt": 0,
       "accept_rate": 0.0,
       "died_at": {
-        "backend": 1
+        "propose": 2,
+        "g1": 4
       },
       "transforms": {},
       "modules_changed": [],

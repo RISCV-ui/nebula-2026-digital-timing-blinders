@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Post-route PPA, frozen input against each formally verified variant. Every variant is routed from the frozen RTL with only gate-accepted edits applied, and every figure is read from the same flow stage.}
+  \label{tab:ppa}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{lrrr}
+    \toprule
+    \textbf{Metric} & \textbf{Baseline} & \textbf{sonnet} & \textbf{nemotron-ultra} \\
+    \midrule
+    Setup WNS (ns) & -126.6293 & -124.1160 \tiny(+2.5133) & -130.0722 \tiny(-3.4429) \\
+    Setup TNS (ns) & -97704.1 & -94156.3 \tiny(+3547.8) & -97854.0 \tiny(-149.9) \\
+    Hold WNS (ns) & -0.0820 & -0.0583 & -0.1233 \\
+    Area (\si{\um\squared}) & 1914043 & 1913142 & 1905391 \\
+    Instances & 488118 & 488607 & 489340 \\
+    Nets & 143367 & 143398 & 142790 \\
+    Wirelength (\si{\um}) & 7409236 & 7382892 & 7376890 \\
+    Utilisation (\%) & 54.0 & 54.0 & 54.0 \\
+    DRC violations & 0 & 0 & 0 \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright Bracketed figures are the delta against the baseline. Global WNS is set by a single unclosed path and is not a summary of the design; see Table~\ref{tab:fmax}.
+\end{table}

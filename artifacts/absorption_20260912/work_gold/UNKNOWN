@@ -1,0 +1,7 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:16:08 (968)
+Elapsed process time [H:MM:SS (secs)]: 0:00:01 (1)
+engine_0 (smtbmc bitwuzla) returned pass for basecase
+engine_0 (smtbmc bitwuzla) returned FAIL for induction
+counterexample trace [induction]: engine_0/trace_induct.vcd
+counterexample trace [induction]: engine_0/trace_induct.yw
+  failed assertion axi_lite_dot._witness_.check_assert_axi_lite_dot_gold_v_267_89 at axi_lite_dot_gold.v:267.13-267.33

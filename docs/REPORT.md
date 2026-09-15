@@ -994,10 +994,41 @@ The checker also recognises the fix, or it could only ever say no. Rewriting
 directions behave correctly.
 
 In the loop it runs in regression mode with the same stance G2 takes on
-crossings: **a transform may inherit a glitchy structure; it may not create
-one.** The baseline already contains two of these, and a gate that failed every
-candidate for a bug the candidate did not introduce would be switched off
-within a day.
+crossings: **a transform may inherit a structure the baseline already has; it
+may not create a glitchy one.** A gate that failed every candidate for a bug
+the candidate did not introduce would be switched off within a day.
+
+### Both findings were then fixed (2026-09-14)
+
+Disclosure is what you do about a defect you cannot fix. These two took an
+afternoon, so they were repaired instead, with ports unchanged so `soc_top`
+and the SDC are untouched:
+
+- `clk_gate` → latch-based ICG: the enable passes through a latch transparent
+  only while `clk_in` is low, so every pulse out is whole or absent.
+- `clk_div_mux` → handover mux: per-branch two-stage enable chain clocked by
+  that branch's own clock (rising, then falling), and a branch may only assert
+  once every other branch has released. The output is whole pulses of exactly
+  one source.
+
+`clockcheck.py` gained a `SAFE_MUX` verdict for that structure — it checks the
+enables per branch rather than counting sources, since source count is what
+the safe and unsafe muxes have in common. The audit now returns `CLEAN`.
+
+That is a shape recogniser agreeing with shapes we wrote down, so
+`scripts/run_clock_sim.py` measures pulse widths instead, switching the divide
+ratio 2 ns after a rising edge and toggling the gate enable at odd phases:
+**0 runts on the fixed structures, 8 on the originals under identical
+stimulus**, the originals run every time as a control because a runt check that
+passes on a design known to produce runts measures nothing.
+
+Cost: the handover flops are clocked by the divider's counter bits, so twelve
+internal nets are now real clocks. `nebula.sdc` declares each as a generated
+clock of its domain and puts it in that domain's asynchronous group —
+undeclared, they would be unclocked registers, which is a path silently
+dropped rather than a warning. Every PnR measurement was redone against the
+fixed clock RTL; the loop was not re-run, since the accepted edits are RTL
+decisions the clock structures do not touch.
 
 ---
 

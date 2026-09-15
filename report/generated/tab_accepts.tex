@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Every edit the gate accepted, with the proof that admitted it. A complete proof settles equivalence for all inputs and all time; a bounded one limits only the right to declare equivalence, never the right to reject on a counterexample.}
+  \label{tab:accepts}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{llrllrrl}
+    \toprule
+    \textbf{Module} & \textbf{Transform} & \textbf{$\Delta$latency} & \textbf{G1 verdict} & \textbf{Proof} & \textbf{Complete} & \textbf{Solver (s)} & \textbf{Run} \\
+    \midrule
+    \texttt{fp8\_adder} & logic\_restructure & 0 & EQUIVALENT & combinational & \checkmark & 0.5 & \texttt{bakeoff\_v2\_sonnet\_fixed} \\
+    \texttt{fp8\_adder} & logic\_restructure & 0 & EQUIVALENT & combinational & \checkmark & 0.3 & \texttt{anthropic\_sonnet-direct} \\
+    \texttt{fp8\_adder} & logic\_restructure & 0 & EQUIVALENT & combinational & \checkmark & 0.4 & \texttt{openrouter\_nemotron-ultra} \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright The module column lists what the run actually rewrote, derived from the working tree rather than from the proposal's own claim about its scope.
+\end{table}

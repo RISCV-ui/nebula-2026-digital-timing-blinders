@@ -1,0 +1,179 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_anthropic_sonnet-direct/results/sky130hd/nebula_bench_v2/anthropic_sonnet-direct/1_2_yosys.v",
+  "modules_checked": 6,
+  "modules_equivalent": 1,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "dma_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (100 cells) at depth 5",
+      "seconds": 241.3,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13454: \\addr_dest_dma_gold [5] \\addr_dest_dma_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13453: \\addr_dest_dma_gold [4] \\addr_dest_dma_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13452: \\addr_dest_dma_gold [3] \\addr_dest_dma_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13451: \\addr_dest_dma_gold [2] \\addr_dest_dma_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13450: \\addr_dest_dma_gold [1] \\addr_dest_dma_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13449: \\addr_dest_dma_gold [0] \\addr_dest_dma_gate [0]",
+        "Found a total of 100 unproven $equiv cells.",
+        "ERROR: Found 100 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 121.6
+        },
+        {
+          "pass": "merged",
+          "status": "UNPROVEN_EQY (equivalence unknown) at depth 5",
+          "seconds": 95.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (100 cells) at depth 5",
+          "seconds": 23.9
+        }
+      ],
+      "counterexample_claimed_by": [
+        "partitioned"
+      ]
+    },
+    {
+      "module": "gpio_controller",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 1126.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "UNPROVEN_EQY (equivalence unknown) at depth 5",
+          "seconds": 209.7
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/anthro",
+          "seconds": 17.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ]
+    },
+    {
+      "module": "instruction_fetch_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 1005.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/anthro",
+          "seconds": 54.9
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/anthro",
+          "seconds": 50.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    },
+    {
+      "module": "mem_axi_slave",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (36 cells) at depth 5",
+      "seconds": 223.9,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11968: \\addr_gold [5] \\addr_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11967: \\addr_gold [4] \\addr_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11966: \\addr_gold [3] \\addr_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11965: \\addr_gold [2] \\addr_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11964: \\addr_gold [1] \\addr_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$11963: \\addr_gold [0] \\addr_gate [0]",
+        "Found a total of 36 unproven $equiv cells.",
+        "ERROR: Found 36 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 147.0
+        },
+        {
+          "pass": "merged",
+          "status": "UNPROVEN_EQY (equivalence unknown) at depth 5",
+          "seconds": 55.8
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (36 cells) at depth 5",
+          "seconds": 21.1
+        }
+      ],
+      "counterexample_claimed_by": [
+        "partitioned"
+      ]
+    },
+    {
+      "module": "pipeline_reg_if_id",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 14.4,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 14.4
+        }
+      ]
+    },
+    {
+      "module": "soc_top",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 1317.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/anthro",
+          "seconds": 201.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/anthro",
+          "seconds": 215.7
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+NOT_EQUIVALENT   axi_lite_dot             [arith: smtbmc/bitwuzla]  depth 5  latency +3  2.5s
+    ##   0:00:00  Solver: bitwuzla
+    ##   0:00:00  Checking assertions in step 0..
+    ##   0:00:00  BMC failed!
+    ##   0:00:00  Assert failed in miter: $auto$miter.cc:273:create_miter_equiv$13201
+    ##   0:00:00  Status: FAILED

@@ -1,0 +1,120 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_openrouter_nemotron-ultra/results/sky130hd/nebula_bench_v2/openrouter_nemotron-ultra/1_2_yosys.v",
+  "modules_checked": 6,
+  "modules_equivalent": 5,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "fp4_mul",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 10.2,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 10.2
+        }
+      ]
+    },
+    {
+      "module": "immediate_generator",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 8.5,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 8.5
+        }
+      ]
+    },
+    {
+      "module": "l1_d_cache_8kb",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 976.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/openro",
+          "seconds": 37.2
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/openro",
+          "seconds": 39.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    },
+    {
+      "module": "pipeline_reg_ex_mem",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 10.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 10.9
+        }
+      ]
+    },
+    {
+      "module": "read_buffer_i_cache",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 143.9,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 124.8
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 19.1
+        }
+      ]
+    },
+    {
+      "module": "write_back_stage",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 9.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 9.1
+        }
+      ]
+    }
+  ]
+}

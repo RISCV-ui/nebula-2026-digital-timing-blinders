@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Where candidates died, summed over all four models. Each row is a rewrite that looked reasonable enough to reach that gate.}
+  \label{tab:funnel}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{llr}
+    \toprule
+    \textbf{Why the candidate was rejected} & \textbf{Gate} & \textbf{Count} \\
+    \midrule
+    reply unusable (truncated or unparseable) & \texttt{propose} & 21 \\
+    did not parse as Verilog, or changed the interface & \texttt{validate} & 10 \\
+    not equivalent to the frozen module & \texttt{g1} & 9 \\
+    equivalent, but broke the parent's timing contract & \texttt{g1b} & 3 \\
+    API call failed or was refused & \texttt{backend} & 1 \\
+    \textbf{accepted} & \texttt{accepted} & \textbf{2} \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright 46 candidates in total. The two rows below \texttt{g1} are the ones an equivalence-only flow would have shipped: they are formally equivalent to the frozen module and still wrong.
+\end{table}

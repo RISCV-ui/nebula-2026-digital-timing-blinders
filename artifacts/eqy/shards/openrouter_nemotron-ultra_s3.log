@@ -1,0 +1,8 @@
+FAIL  dmem                             UNPROVEN (32 cells) at depth 5  [yosys-equiv]  (53.2s)
+PASS  hazard_detection_unit            PROVED_EQUIVALENT  [merged]  (22.3s)
+PASS  interrupt_control_unit           PROVED_EQUIVALENT  [partitioned]  (9.0s)
+PASS  memory_stage                     PROVED_EQUIVALENT  [partitioned]  (17.1s)
+PASS  pipeline_reg_mem_wb              PROVED_EQUIVALENT  [partitioned]  (10.0s)
+FAIL  tag_memory_92x64_wrap            UNPROVEN (92 cells) at depth 5  [yosys-equiv]  (36.3s)
+
+4/6 modules proved equivalent -> artifacts/eqy/shards/openrouter_nemotron-ultra_s3.json

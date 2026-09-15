@@ -1,0 +1,9 @@
+# running in artifacts/absorption_20260912/work_gold/src/
+read -formal cuts_gold.v
+read -formal axi_lite_dot_gold.v
+prep -top axi_lite_dot
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

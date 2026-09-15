@@ -1,0 +1,163 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_anthropic_sonnet-direct/results/sky130hd/nebula_bench_v2/anthropic_sonnet-direct/1_2_yosys.v",
+  "modules_checked": 6,
+  "modules_equivalent": 2,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "div_restoring_32",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 2700.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        },
+        {
+          "pass": "merged",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.0
+        }
+      ]
+    },
+    {
+      "module": "fp8_adder",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 20.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 20.1
+        }
+      ]
+    },
+    {
+      "module": "instruction_decode_stage",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (226 cells) at depth 5",
+      "seconds": 221.8,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$18090: \\csr_rdata_gold [5] \\csr_rdata_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$18089: \\csr_rdata_gold [4] \\csr_rdata_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$18088: \\csr_rdata_gold [3] \\csr_rdata_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$18087: \\csr_rdata_gold [2] \\csr_rdata_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$18086: \\csr_rdata_gold [1] \\csr_rdata_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$18085: \\csr_rdata_gold [0] \\csr_rdata_gate [0]",
+        "Found a total of 226 unproven $equiv cells.",
+        "ERROR: Found 226 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "UNPROVEN_EQY (equivalence unknown) at depth 5",
+          "seconds": 93.0
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/anthro",
+          "seconds": 25.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (226 cells) at depth 5",
+          "seconds": 102.9
+        }
+      ]
+    },
+    {
+      "module": "l1_i_cache_8kb",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "TIMEOUT after 900s",
+      "seconds": 1016.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/anthro",
+          "seconds": 59.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: Failed to partition design. For details see '/Users/shubhanshu/Desktop/Nebula/digital/artifacts/eqy/shards/anthro",
+          "seconds": 56.9
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "TIMEOUT after 900s",
+          "seconds": 900.1
+        }
+      ]
+    },
+    {
+      "module": "pipeline_reg_id_ex",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 18.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 18.3
+        }
+      ]
+    },
+    {
+      "module": "register_file",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (64 cells) at depth 5",
+      "seconds": 68.2,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14316: \\RD1_gold [5] \\RD1_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14315: \\RD1_gold [4] \\RD1_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14314: \\RD1_gold [3] \\RD1_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14313: \\RD1_gold [2] \\RD1_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14312: \\RD1_gold [1] \\RD1_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$14311: \\RD1_gold [0] \\RD1_gate [0]",
+        "Found a total of 64 unproven $equiv cells.",
+        "ERROR: Found 64 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 18.7
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 18.0
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (64 cells) at depth 5",
+          "seconds": 31.5
+        }
+      ]
+    }
+  ]
+}

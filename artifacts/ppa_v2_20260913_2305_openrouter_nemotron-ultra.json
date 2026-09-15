@@ -1,0 +1,266 @@
+{
+  "before": "baseline",
+  "after": "openrouter_nemotron-ultra",
+  "stage": "6_final",
+  "ppa": {
+    "instances": {
+      "before": 488118,
+      "after": 489340,
+      "abs": 1222,
+      "pct": 0.25034930078382683,
+      "verdict": "worse"
+    },
+    "area_um2": {
+      "before": 1914043.0,
+      "after": 1905391.0,
+      "abs": -8652.0,
+      "pct": -0.4520274622879424,
+      "verdict": "better"
+    },
+    "nets": {
+      "before": 143367,
+      "after": 142790,
+      "abs": -577,
+      "pct": -0.40246360738524206,
+      "verdict": "better"
+    },
+    "utilization_pct": {
+      "before": 54.0,
+      "after": 54.0,
+      "abs": 0.0,
+      "pct": 0.0,
+      "verdict": "same"
+    },
+    "power_total_w": {
+      "before": null,
+      "after": null,
+      "abs": null,
+      "pct": null,
+      "verdict": "not reported"
+    },
+    "wns": {
+      "before": -126.6293,
+      "after": -130.0722,
+      "abs": -3.4429000000000087,
+      "pct": -2.7188810172685223,
+      "verdict": "worse"
+    },
+    "tns": {
+      "before": -97704.1328,
+      "after": -97854.0312,
+      "abs": -149.89839999999094,
+      "pct": -0.1534207363641745,
+      "verdict": "worse"
+    },
+    "wns_hold": {
+      "before": -0.082,
+      "after": -0.1233,
+      "abs": -0.0413,
+      "pct": -50.36585365853659,
+      "verdict": "worse"
+    },
+    "tns_hold": {
+      "before": -0.4563,
+      "after": -0.4373,
+      "abs": 0.01899999999999996,
+      "pct": 4.16392724085031,
+      "verdict": "better"
+    },
+    "drc_violations": {
+      "before": 0,
+      "after": 0,
+      "abs": 0,
+      "pct": null,
+      "verdict": "same"
+    },
+    "antenna_violations": {
+      "before": null,
+      "after": null,
+      "abs": null,
+      "pct": null,
+      "verdict": "not reported"
+    }
+  },
+  "clocks": [
+    {
+      "clock": "clk1",
+      "period_ns": 10.0,
+      "wns_before": -126.6293,
+      "wns_after": -130.0722,
+      "fmax_before": 7.31907431275722,
+      "fmax_after": 7.1391753681315775,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": -3.4429000000000087
+    },
+    {
+      "clock": "clk2",
+      "period_ns": 20.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk3",
+      "period_ns": 12.5,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk4",
+      "period_ns": 25.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk5",
+      "period_ns": 40.0,
+      "wns_before": null,
+      "wns_after": null,
+      "fmax_before": null,
+      "fmax_after": null,
+      "met_before": null,
+      "met_after": null,
+      "delta_ns": null
+    },
+    {
+      "clock": "clk_s1",
+      "period_ns": 25.0,
+      "wns_before": 16.9266,
+      "wns_after": 16.8139,
+      "fmax_before": 123.86355191121461,
+      "fmax_after": 122.15829271570101,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": -0.11270000000000024
+    },
+    {
+      "clock": "clk_s1_gate",
+      "period_ns": 25.0,
+      "wns_before": 23.1259,
+      "wns_after": 23.7575,
+      "fmax_before": 533.5894562723445,
+      "fmax_after": 804.8289738430585,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.6315999999999988
+    },
+    {
+      "clock": "clk_s2",
+      "period_ns": 20.0,
+      "wns_before": -27.8,
+      "wns_after": -26.1916,
+      "fmax_before": 20.92050209205021,
+      "fmax_after": 21.648957819170583,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": 1.6083999999999996
+    },
+    {
+      "clock": "clk_s2_gate",
+      "period_ns": 20.0,
+      "wns_before": 17.9242,
+      "wns_after": 18.2547,
+      "fmax_before": 481.7419789960495,
+      "fmax_after": 572.9673981550449,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.3305000000000007
+    },
+    {
+      "clock": "clk_s3",
+      "period_ns": 10.0,
+      "wns_before": -0.1019,
+      "wns_after": -0.1529,
+      "fmax_before": 98.99127886833169,
+      "fmax_after": 98.49402633730264,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": -0.051000000000000004
+    },
+    {
+      "clock": "clk_s4",
+      "period_ns": 40.0,
+      "wns_before": 0.1477,
+      "wns_after": 0.169,
+      "fmax_before": 25.092654627210976,
+      "fmax_after": 25.106073159097182,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.021300000000000013
+    },
+    {
+      "clock": "clk_s4_gate",
+      "period_ns": 40.0,
+      "wns_before": 37.8683,
+      "wns_after": 38.1912,
+      "fmax_before": 469.1091617019276,
+      "fmax_after": 552.8527200353832,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.3229000000000042
+    },
+    {
+      "clock": "clk_s5",
+      "period_ns": 12.5,
+      "wns_before": -29.374,
+      "wns_after": -29.4915,
+      "fmax_before": 23.881167311458185,
+      "fmax_after": 23.81434337901718,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": -0.11749999999999972
+    },
+    {
+      "clock": "clk_s5_gate",
+      "period_ns": 12.5,
+      "wns_before": 10.5934,
+      "wns_after": 10.7228,
+      "fmax_before": 524.4938634217982,
+      "fmax_after": 562.6828719333781,
+      "met_before": true,
+      "met_after": true,
+      "delta_ns": 0.12939999999999863
+    },
+    {
+      "clock": "clk_s8",
+      "period_ns": 10.0,
+      "wns_before": -3.3171,
+      "wns_after": -1.9365,
+      "fmax_before": 75.09142380848684,
+      "fmax_after": 83.77665144724165,
+      "met_before": false,
+      "met_after": false,
+      "delta_ns": 1.3805999999999998
+    }
+  ],
+  "clock_summary": {
+    "constrained": 11,
+    "unreported": 4,
+    "met_before": 6,
+    "met_after": 6,
+    "regressed": [
+      "clk1",
+      "clk_s1",
+      "clk_s3",
+      "clk_s5"
+    ]
+  },
+  "frequency_method": "single-point slack estimate",
+  "fmax_before": null,
+  "fmax_after": null
+}

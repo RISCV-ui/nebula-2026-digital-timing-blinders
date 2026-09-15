@@ -1,0 +1,483 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: cuts_gold.v
+Parsing formal SystemVerilog input from `cuts_gold.v' to AST representation.
+Storing AST representation for module `$abstract\asynchronous_fifo_gen'.
+Storing AST representation for module `$abstract\fp4_dot_unit'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: axi_lite_dot_gold.v
+Parsing formal SystemVerilog input from `axi_lite_dot_gold.v' to AST representation.
+Storing AST representation for module `$abstract\axi_lite_dot'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_dot'.
+Generating RTLIL representation for module `\axi_lite_dot'.
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \axi_lite_dot
+
+3.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\fp4_dot_unit'.
+Generating RTLIL representation for module `\fp4_dot_unit'.
+Parameter \width = 32
+Parameter \logofdepth = 4
+
+3.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\asynchronous_fifo_gen'.
+Parameter \width = 32
+Parameter \logofdepth = 4
+Generating RTLIL representation for module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Parameter \width = 32
+Parameter \logofdepth = 4
+Found cached RTLIL representation for module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Parameter \width = 32
+Parameter \logofdepth = 4
+Found cached RTLIL representation for module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+
+3.2.4. Analyzing design hierarchy..
+Top module:  \axi_lite_dot
+Used module:     \fp4_dot_unit
+Used module:     $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+
+3.2.5. Analyzing design hierarchy..
+Top module:  \axi_lite_dot
+Used module:     \fp4_dot_unit
+Used module:     $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Removing unused module `$abstract\axi_lite_dot'.
+Removing unused module `$abstract\fp4_dot_unit'.
+Removing unused module `$abstract\asynchronous_fifo_gen'.
+Removed 3 unused modules.
+Module axi_lite_dot directly or indirectly contains formal properties -> setting "keep" attribute.
+Mapping positional arguments of cell axi_lite_dot.fp4_dot_0 (fp4_dot_unit).
+Mapping positional arguments of cell axi_lite_dot.fifo_timer_r ($paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen).
+Mapping positional arguments of cell axi_lite_dot.fifo_timer_w2 ($paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen).
+Mapping positional arguments of cell axi_lite_dot.fifo_timer_w1 ($paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen).
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$axi_lite_dot_gold.v:148$57 in module axi_lite_dot.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 4 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\axi_lite_dot.$proc$axi_lite_dot_gold.v:242$91'.
+  Set init value: \f_p3_pending = 1'0
+Found init rule in `\axi_lite_dot.$proc$axi_lite_dot_gold.v:239$90'.
+  Set init value: \f_past_valid = 1'0
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~9 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:242$91'.
+Creating decoders for process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:239$90'.
+Creating decoders for process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:244$67'.
+     1/4: $assert$axi_lite_dot_gold.v:267$89_EN
+     2/4: $assert$axi_lite_dot_gold.v:260$84_EN
+     3/4: $assert$axi_lite_dot_gold.v:255$78_EN
+     4/4: $assert$axi_lite_dot_gold.v:251$74_EN
+Creating decoders for process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+     1/7: $0\data_w_comp[0:0]
+     2/7: $0\addr_w_comp[0:0]
+     3/7: $0\addr_r_comp[0:0]
+     4/7: $0\addr_out_read[31:0]
+     5/7: $0\data_reg[31:0]
+     6/7: $0\addr_r_w[31:0]
+     7/7: $0\s1_b_valid[0:0]
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\axi_lite_dot.\f_past_valid' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:244$67'.
+  created $dff cell `$procdff$157' with positive edge clock.
+Creating register for signal `\axi_lite_dot.\f_p3_pending' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:244$67'.
+  created $dff cell `$procdff$158' with positive edge clock.
+Creating register for signal `\axi_lite_dot.\s1_b_valid' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+  created $dff cell `$procdff$159' with positive edge clock.
+Creating register for signal `\axi_lite_dot.\addr_r_w' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+  created $dff cell `$procdff$160' with positive edge clock.
+Creating register for signal `\axi_lite_dot.\data_reg' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+  created $dff cell `$procdff$161' with positive edge clock.
+Creating register for signal `\axi_lite_dot.\addr_out_read' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+  created $dff cell `$procdff$162' with positive edge clock.
+Creating register for signal `\axi_lite_dot.\addr_r_comp' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+  created $dff cell `$procdff$163' with positive edge clock.
+Creating register for signal `\axi_lite_dot.\addr_w_comp' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+  created $dff cell `$procdff$164' with positive edge clock.
+Creating register for signal `\axi_lite_dot.\data_w_comp' using process `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+  created $dff cell `$procdff$165' with positive edge clock.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `axi_lite_dot.$proc$axi_lite_dot_gold.v:242$91'.
+Removing empty process `axi_lite_dot.$proc$axi_lite_dot_gold.v:239$90'.
+Found and cleaned up 2 empty switches in `\axi_lite_dot.$proc$axi_lite_dot_gold.v:244$67'.
+Removing empty process `axi_lite_dot.$proc$axi_lite_dot_gold.v:244$67'.
+Found and cleaned up 7 empty switches in `\axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+Removing empty process `axi_lite_dot.$proc$axi_lite_dot_gold.v:148$57'.
+Cleaned up 9 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module fp4_dot_unit.
+Optimizing module axi_lite_dot.
+<suppressed ~9 debug messages>
+
+3.4. Executing FUTURE pass.
+
+3.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module fp4_dot_unit.
+Optimizing module axi_lite_dot.
+
+3.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \fp4_dot_unit..
+Finding unused cells or wires in module \axi_lite_dot..
+Removed 1 unused cells and 58 unused wires.
+<suppressed ~4 debug messages>
+
+3.7. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen...
+Checking module fp4_dot_unit...
+Checking module axi_lite_dot...
+Found and reported 0 problems.
+
+3.8. Executing OPT pass (performing simple optimizations).
+
+3.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module fp4_dot_unit.
+Optimizing module axi_lite_dot.
+
+3.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Computing hashes of 3 cells of `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding duplicate cells in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding identical cells in module `\fp4_dot_unit'.
+Computing hashes of 1 cells of `\fp4_dot_unit'.
+Finding duplicate cells in `\fp4_dot_unit'.
+Finding identical cells in module `\axi_lite_dot'.
+Computing hashes of 122 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Computing hashes of 102 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Computing hashes of 99 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Computing hashes of 97 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+<suppressed ~75 debug messages>
+Removed a total of 25 cells.
+
+3.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \fp4_dot_unit..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \axi_lite_dot..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+3.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+  Optimizing cells in module \fp4_dot_unit.
+  Optimizing cells in module \axi_lite_dot.
+Performed a total of 0 changes.
+
+3.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Computing hashes of 3 cells of `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding duplicate cells in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding identical cells in module `\fp4_dot_unit'.
+Computing hashes of 1 cells of `\fp4_dot_unit'.
+Finding duplicate cells in `\fp4_dot_unit'.
+Finding identical cells in module `\axi_lite_dot'.
+Computing hashes of 97 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Computing hashes of 95 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+3.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \fp4_dot_unit..
+Finding unused cells or wires in module \axi_lite_dot..
+Removed 0 unused cells and 25 unused wires.
+<suppressed ~1 debug messages>
+
+3.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module fp4_dot_unit.
+Optimizing module axi_lite_dot.
+<suppressed ~1 debug messages>
+
+3.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \fp4_dot_unit..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \axi_lite_dot..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+3.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+  Optimizing cells in module \fp4_dot_unit.
+  Optimizing cells in module \axi_lite_dot.
+Performed a total of 0 changes.
+
+3.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Computing hashes of 3 cells of `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding duplicate cells in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding identical cells in module `\fp4_dot_unit'.
+Computing hashes of 1 cells of `\fp4_dot_unit'.
+Finding duplicate cells in `\fp4_dot_unit'.
+Finding identical cells in module `\axi_lite_dot'.
+Computing hashes of 94 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Removed a total of 0 cells.
+
+3.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \fp4_dot_unit..
+Finding unused cells or wires in module \axi_lite_dot..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module fp4_dot_unit.
+Optimizing module axi_lite_dot.
+
+3.8.14. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.8.15. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \fp4_dot_unit..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \axi_lite_dot..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+3.8.16. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+  Optimizing cells in module \fp4_dot_unit.
+  Optimizing cells in module \axi_lite_dot.
+Performed a total of 0 changes.
+
+3.8.17. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Computing hashes of 3 cells of `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding duplicate cells in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding identical cells in module `\fp4_dot_unit'.
+Computing hashes of 1 cells of `\fp4_dot_unit'.
+Finding duplicate cells in `\fp4_dot_unit'.
+Finding identical cells in module `\axi_lite_dot'.
+Computing hashes of 94 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Removed a total of 0 cells.
+
+3.8.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \fp4_dot_unit..
+Finding unused cells or wires in module \axi_lite_dot..
+
+3.8.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module fp4_dot_unit.
+Optimizing module axi_lite_dot.
+
+3.8.20. Finished fast OPT passes. (There is nothing left to do.)
+
+3.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 4) from port B of cell axi_lite_dot.$eq$axi_lite_dot_gold.v:140$42 ($eq).
+Removed top 1 bits (of 4) from port B of cell axi_lite_dot.$eq$axi_lite_dot_gold.v:141$52 ($eq).
+
+3.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \fp4_dot_unit..
+Finding unused cells or wires in module \axi_lite_dot..
+
+3.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Optimizing module fp4_dot_unit.
+Optimizing module axi_lite_dot.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Computing hashes of 3 cells of `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding duplicate cells in `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen'.
+Finding identical cells in module `\fp4_dot_unit'.
+Computing hashes of 1 cells of `\fp4_dot_unit'.
+Finding duplicate cells in `\fp4_dot_unit'.
+Finding identical cells in module `\axi_lite_dot'.
+Computing hashes of 94 cells of `\axi_lite_dot'.
+Finding duplicate cells in `\axi_lite_dot'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen..
+Finding unused cells or wires in module \fp4_dot_unit..
+Finding unused cells or wires in module \axi_lite_dot..
+
+3.12.4. Finished fast OPT passes.
+
+3.13. Executing SORT pass.
+
+3.14. Printing statistics.
+
+=== $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+      106 wire bits
+       13 public wires
+      106 public wire bits
+       10 ports
+       72 port bits
+        3 cells
+        3   $anyseq
+
+=== axi_lite_dot ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      117 wires
+      835 wire bits
+       51 public wires
+      552 public wire bits
+       21 ports
+      150 port bits
+       90 cells
+        4   $check
+        9   $dff
+        4   $eq
+       28   $logic_and
+       16   $logic_not
+        4   $logic_or
+       25   $mux
+        4 submodules
+        3   $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+        1   fp4_dot_unit
+
+=== fp4_dot_unit ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+      130 wire bits
+        6 public wires
+      130 public wire bits
+        5 ports
+       98 port bits
+        1 cells
+        1   $anyseq
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      100 axi_lite_dot
+        3 $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+        1 fp4_dot_unit
+
+        +----------Count including submodules.
+        | 
+      162 wires
+     1283 wire bits
+       96 public wires
+     1000 public wire bits
+       56 ports
+      464 port bits
+        - memories
+        - memory bits
+        - processes
+      100 cells
+       10   $anyseq
+        4   $check
+        9   $dff
+        4   $eq
+       28   $logic_and
+       16   $logic_not
+        4   $logic_or
+       25   $mux
+        4 submodules
+        3   $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+        1   fp4_dot_unit
+
+3.15. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen...
+Checking module axi_lite_dot...
+Checking module fp4_dot_unit...
+Found and reported 0 problems.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `axi_lite_dot'. Setting top module to axi_lite_dot.
+
+4.1. Analyzing design hierarchy..
+Top module:  \axi_lite_dot
+Used module:     $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Used module:     \fp4_dot_unit
+
+4.2. Analyzing design hierarchy..
+Top module:  \axi_lite_dot
+Used module:     $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Used module:     \fp4_dot_unit
+Removed 0 unused modules.
+Module axi_lite_dot directly or indirectly contains formal properties -> setting "keep" attribute.
+
+5. Executing jny backend.
+
+6. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 959bf36312, time: 0.05s, user: 0.03s, system: 0.03s, MEM: 20.48 MB peak
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 20% 6x opt_clean (0 sec), 15% 2x hierarchy (0 sec), ...

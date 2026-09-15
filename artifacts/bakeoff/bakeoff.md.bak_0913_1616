@@ -1,0 +1,9 @@
+| model | proposals | accepted | 1st try | accept rate | wall s | died at |
+|---|---|---|---|---|---|---|
+| `anthropic:sonnet-direct` | 5 | 1 | 1 | 0.2 | 360.4 | propose 1, g1 3 |
+
+Frozen input RTL: `bench/rtl` (never written to).
+
+| model | optimised RTL | files changed | files added |
+|---|---|---|---|
+| `anthropic:sonnet-direct` | `artifacts/bakeoff/anthropic_sonnet-direct/rtl` | `fp8_adder.v` | -- |

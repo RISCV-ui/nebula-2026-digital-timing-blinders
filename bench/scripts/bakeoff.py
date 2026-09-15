@@ -180,6 +180,13 @@ def summarise(spec, out, wall, rc, golden=None):
     # quote at it. The retry path is a feature of the harness, not of the model.
     first_try = [r for r in accepted if r.get("attempt", 0) == 0]
 
+    # The loop writes one run_summary row carrying what the arm's calls cost.
+    # A free arm reports 0.0 and an unpriced one reports None; the two are
+    # different answers and the table keeps them apart.
+    summary = next((r for r in reversed(recs)
+                    if r.get("stage") == "run_summary"), {})
+    cost = summary.get("cost_usd")
+
     return {
         "arm": spec,
         "out": out,
@@ -197,6 +204,15 @@ def summarise(spec, out, wall, rc, golden=None):
                                    if r.get("transform")).most_common()),
         "modules_changed": sorted({r["module"] for r in accepted
                                    if r.get("module")}),
+        "tokens_in": summary.get("tokens_in"),
+        "tokens_out": summary.get("tokens_out"),
+        "cost_usd": cost,
+        "priced": summary.get("priced"),
+        # The number the comparison actually turns on. Accepted means every
+        # gate passed, so this is dollars per formally verified fix, not
+        # dollars per suggestion.
+        "cost_per_accepted_usd": (round(cost / len(accepted), 4)
+                                  if cost is not None and accepted else None),
     }
 
 
@@ -222,6 +238,25 @@ def markdown(rows, golden):
                  f"{r['accepted_first_attempt']} | "
                  f"{r['accept_rate'] if r['accept_rate'] is not None else '--'} | "
                  f"{r['wall_seconds']} | {died} |")
+
+    # Cost is its own table rather than four more columns on the first one.
+    # It answers a different question -- what the paid arms bought over the
+    # free ones -- and a row where the model is unpriced has to say so instead
+    # of showing a blank that reads as zero.
+    L += ["", "| model | tokens in | tokens out | cost USD | USD per accepted fix |",
+          "|---|---|---|---|---|"]
+    for r in rows:
+        c = r.get("cost_usd")
+        per = r.get("cost_per_accepted_usd")
+        if c is None:
+            money, each = "unpriced", "unpriced"
+        else:
+            money = f"${c:.4f}"
+            each = f"${per:.4f}" if per is not None else "no accepted fix"
+        L.append(f"| `{r['arm']}` | {r.get('tokens_in') if r.get('tokens_in') is not None else '--'} | "
+                 f"{r.get('tokens_out') if r.get('tokens_out') is not None else '--'} | "
+                 f"{money} | {each} |")
+
     L += ["", f"Frozen input RTL: `{golden}` (never written to).", "",
           "| model | optimised RTL | files changed | files added |",
           "|---|---|---|---|"]

@@ -1,0 +1,14 @@
+backend anthropic:claude-sonnet-5, 13 calls
+  tokens 98523 in / 218949 out  cost $3.5364  $0.8841 per accepted fix
+accepted 4: fp8_adder/logic_restructure/+0, fp8_adder/logic_restructure/+0, fp8_adder/logic_restructure/+0, fp8_adder/logic_restructure/+0
+  rejected axi_lite_dot: reply hit max_tokens before emitting text
+history -> artifacts/bakeoff_v3_wide/anthropic_sonnet-direct/history.jsonl
+candidate RTL -> artifacts/bakeoff_v3_wide/anthropic_sonnet-direct/rtl
+42 slicer targets -> 7 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -26.338  fp8_adder
+   clk_s5     slack  -26.338  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -26.338  axi_lite_dot   [instantiates fp4_dot_unit]
+   clk_s5     slack  -26.152  fp8_adder
+   clk_s5     slack  -26.046  fp8_adder
+   clk_s5     slack  -17.597  fp8_adder
+   clk1       slack  -14.311  id_memory_256x64_wrap

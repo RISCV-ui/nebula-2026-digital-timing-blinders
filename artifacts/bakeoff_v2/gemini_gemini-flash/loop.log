@@ -1,0 +1,16 @@
+backend gemini:models/gemini-3.5-flash, 1 calls
+  tokens 5231 in / 2903 out  cost $0.0088  (no accepted fix to price)
+accepted 0: 
+history -> artifacts/bakeoff_v2/gemini_gemini-flash/history.jsonl
+candidate RTL -> artifacts/bakeoff_v2/gemini_gemini-flash/rtl
+12 slicer targets -> 9 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -26.338  fp8_adder
+   clk_s5     slack  -26.338  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -26.338  axi_lite_dot   [instantiates fp4_dot_unit]
+   clk_s2     slack  -33.728  gpio_controller
+   clk_s2     slack  -33.728  axi_lite_gpio   [instantiates gpio_controller]
+   clk_s2     slack  -33.728  soc_top   [instantiates axi_lite_gpio]
+   clk1       slack -147.045  alu
+   clk1       slack -147.045  execution_stage   [instantiates alu]
+   clk1       slack -147.045  processor_top   [instantiates execution_stage]
+backend unavailable, stopping early: gemini:models/gemini-3.5-flash failed after 5 tries: HTTP Error 429: Too Many Requests

@@ -1,0 +1,10 @@
+backend anthropic:claude-opus-5, 6 calls
+accepted 0: 
+  rejected fp8_adder: unparseable reply
+  rejected axi_lite_dot: unparseable reply
+history -> artifacts/bakeoff/anthropic_opus-direct/history.jsonl
+candidate RTL -> artifacts/bakeoff/anthropic_opus-direct/rtl
+7 slicer targets -> 3 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -19.677  fp8_adder
+   clk_s5     slack  -19.677  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -19.677  axi_lite_dot   [instantiates fp4_dot_unit]

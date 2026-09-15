@@ -1,0 +1,115 @@
+\paragraph{sonnet.} 38 changed lines in total; the hunk that carries the transform:
+\begin{lstlisting}[style=diff]
+@@ -185,17 +175,25 @@
+                 sing_reg = b[7];
+         end
+ 
+-       /////// leading  one detector 
+-       
++       /////// leading  one detector -- rewritten as a balanced priority casez
++       /////// instead of a 9-iteration sequential for loop. Same priority
++       /////// order (highest set bit wins), same result every cycle, but
++       /////// the dependency chain collapses from 9 serial compares to a
++       /////// single-level parallel priority match.
+ 
+-        for (i = 8; i >= 0; i = i - 1)
+-        begin
+-            if ((sum_mant[i] == 1'b1) && (found == 1'b0))
+-            begin
+-                leading_1_index = i[4:0];
+-                found = 1'b1;
+-            end
+-        end
++        casez (sum_mant[8:0])
++            9'b1????????: leading_1_index = 5'd8;
++            9'b01???????: leading_1_index = 5'd7;
++            9'b001??????: leading_1_index = 5'd6;
++            9'b0001?????: leading_1_index = 5'd5;
++            9'b00001????: leading_1_index = 5'd4;
++            9'b000001???: leading_1_index = 5'd3;
++            9'b0000001??: leading_1_index = 5'd2;
++            9'b00000001?: leading_1_index = 5'd1;
++            9'b000000001: leading_1_index = 5'd0;
++            default:      leading_1_index = 5'd0;
++        endcase
++        found = |sum_mant[8:0];
+ 
+ 
+\end{lstlisting}
+\paragraph{nemotron-ultra.} 299 changed lines in total; the hunk that carries the transform:
+\begin{lstlisting}[style=diff]
+@@ -46,249 +46,132 @@
+@@ ... 126 lines earlier in the same hunk ...
++        mant_a_reg = b_grater_reg ? {2'b00, (({mant_a, 4'd0}) >> shift_b) | {7'b0, sticky_a}} : {2'b00, {mant_a, 4'd0}};
++        mant_b_reg = a_grater_reg ? {2'b00, (({mant_b, 4'd0}) >> shift_a) | {7'b0, sticky_b}} : {2'b00, {mant_b, 4'd0}};
+ 
++        // Complement for subtraction
++        a_operand = ((b[6:0] > a[6:0]) && (a[7] ^ b[7])) ? ~mant_a_reg : mant_a_reg;
++        b_operand = ((a[6:0] > b[6:0]) && (a[7] ^ b[7])) ? ~mant_b_reg : mant_b_reg;
++        sum_mant  = a_operand + b_operand + {10'b0, (a[7] ^ b[7])};
+ 
+-        if (shift_b == 4'd0)
+-            sticky_a = 1'b0;
+-        else if (shift_b >= 4'd8)
+-            sticky_a = |{mant_a,4'd0};
+-        else
+-            sticky_a = |(({mant_a,4'd0}) & (8'hFF >> (8 - shift_b)));
++        // Sign
++        sing_reg = (a[7] == b[7]) ? a[7] : (a[6:0] >= b[6:0] ? a[7] : b[7]);
+ 
+-        if (shift_a == 4'd0)
+-            sticky_b = 1'b0;
+-        else if (shift_a >= 4'd8)
+-            sticky_b = |{mant_b,4'd0};
+-        else
+-            sticky_b = |(({mant_b,4'd0}) & (8'hFF >> (8 - shift_a)));
+-            
+-            
++        // Leading-one detector: parallel casez instead of for-loop priority chain
++        casez (sum_mant[8:0])
++            9'b1????????: leading_1_index = 5'd8;
++            9'b01???????: leading_1_index = 5'd7;
++            9'b001??????: leading_1_index = 5'd6;
++            9'b0001?????: leading_1_index = 5'd5;
++            9'b00001????: leading_1_index = 5'd4;
++            9'b000001???: leading_1_index = 5'd3;
++            9'b0000001??: leading_1_index = 5'd2;
+\end{lstlisting}
+\paragraph{sonnet\_wide.} 183 changed lines in total; the hunk that carries the transform:
+\begin{lstlisting}[style=diff]
+@@ -185,20 +207,27 @@
+                 sing_reg = b[7];
+         end
+ 
+-       /////// leading  one detector 
+-       
++       /////// leading one detector (flat casez priority encoder)
+ 
+-        for (i = 8; i >= 0; i = i - 1)
+-        begin
+-            if ((sum_mant[i] == 1'b1) && (found == 1'b0))
+-            begin
+-                leading_1_index = i[4:0];
+-                found = 1'b1;
+-            end
+-        end
++        casez (sum_mant[8:0])
++            9'b1????????: begin leading_1_index = 5'd8; found = 1'b1; end
++            9'b01???????: begin leading_1_index = 5'd7; found = 1'b1; end
++            9'b001??????: begin leading_1_index = 5'd6; found = 1'b1; end
++            9'b0001?????: begin leading_1_index = 5'd5; found = 1'b1; end
++            9'b00001????: begin leading_1_index = 5'd4; found = 1'b1; end
++            9'b000001???: begin leading_1_index = 5'd3; found = 1'b1; end
++            9'b0000001??: begin leading_1_index = 5'd2; found = 1'b1; end
++            9'b00000001?: begin leading_1_index = 5'd1; found = 1'b1; end
++            9'b000000001: begin leading_1_index = 5'd0; found = 1'b1; end
++            default:      begin leading_1_index = 5'd0; found = 1'b0; end
++        endcase
+ 
+ 
+-     //////// normilization 
++     //////// normalization -- candidates for every branch computed
++     //////// unconditionally in parallel; the branch conditions only pick
++     //////// among finished values (single flat mux level) instead of the
++     //////// original 3-deep nested if/else forcing each candidate's
+\end{lstlisting}

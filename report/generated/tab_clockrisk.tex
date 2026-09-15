@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{The clock-structure audit of the benchmark. Both structures started glitchy -- a bare AND clock gate and a combinational clock mux -- and both were rewritten: the gate into a latch-based ICG, the divider select into a handover mux whose branches are enabled by flops on their own clock. Simulation agrees with the audit: 0 runt pulses on the fixed structures against 8 on the originals under the same stimulus, which switches the divider select while the selected clock is high.}
+  \label{tab:clockrisk}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{lllp{62mm}}
+    \toprule
+    \textbf{Module} & \textbf{Net} & \textbf{Verdict} & \textbf{What the auditor found} \\
+    \midrule
+    \texttt{clk\_div\_mux} & \texttt{clk\_out} & \texttt{SAFE\_MUX} & clk\_out hands over between clk, clk\_div2, clk\_div4, clk\_div8: each branch is gated by an enable registered on that branch's own falling edge and may only assert once every other branch has released, so the output is whole pulses of one source \\
+    \texttt{clk\_gate} & \texttt{clk\_out} & \texttt{SAFE\_ICG} & clk\_out = clk\_in \& latched enable (en\_latch) \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+\end{table}

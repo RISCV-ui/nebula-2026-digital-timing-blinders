@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Every clock the design declares. The five masters are mutually asynchronous; each generated clock names the source it is derived from, so the analyser follows the gate and divider chain instead of treating their outputs as unclocked nets.}
+  \label{tab:clocks}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{llrrll}
+    \toprule
+    \textbf{Clock} & \textbf{Kind} & \textbf{Source} & \textbf{Period (ns)} & \textbf{Role} & \textbf{Baseline WNS} \\
+    \midrule
+    \texttt{clk1} & master & -- & 10 & core        100 MHz & -126.6293 \\
+    \texttt{clk2} & master & -- & 20 & gpio         50 MHz & {\footnotesize no endpoints} \\
+    \texttt{clk3} & master & -- & 12.5 & dot product  80 MHz & {\footnotesize no endpoints} \\
+    \texttt{clk4} & master & -- & 25 & timer        40 MHz & {\footnotesize no endpoints} \\
+    \texttt{clk5} & master & -- & 40 & uart         25 MHz & {\footnotesize no endpoints} \\
+    \texttt{clk\_s1\_gate} & generated & \texttt{clk4} & 25.0 & divide by 1 & 23.1259 \\
+    \texttt{clk\_s2\_gate} & generated & \texttt{clk2} & 20.0 & divide by 1 & 17.9242 \\
+    \texttt{clk\_s5\_gate} & generated & \texttt{clk3} & 12.5 & divide by 1 & 10.5934 \\
+    \texttt{clk\_s4\_gate} & generated & \texttt{clk5} & 40.0 & divide by 1 & 37.8683 \\
+    \texttt{clk\_s3} & generated & \texttt{clk1} & 10.0 & divide by 1 & -0.1019 \\
+    \texttt{clk\_s8} & generated & \texttt{clk1} & 10.0 & divide by 1 & -3.3171 \\
+    \texttt{clk\_s1} & generated & \texttt{clk\_s1\_gate} & 25.0 & divide by 1 & 16.9266 \\
+    \texttt{clk\_s2} & generated & \texttt{clk\_s2\_gate} & 20.0 & divide by 1 & -27.8000 \\
+    \texttt{clk\_s5} & generated & \texttt{clk\_s5\_gate} & 12.5 & divide by 1 & -29.3740 \\
+    \texttt{clk\_s4} & generated & \texttt{clk\_s4\_gate} & 40.0 & divide by 1 & 0.1477 \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright `no endpoints' is a domain in which nothing is clocked directly: every flop behind those four masters sits on the generated clock after the gate and divider, so the master itself owns no constrained path. Generated clocks are declared divide-by-1 because that is the fastest the divider mux can run, and a design that closes there closes at every other setting.
+\end{table}

@@ -1,0 +1,11 @@
+OPENROAD: /Users/shubhanshu/Desktop/Nebula/digital/orfs/tools/OpenROAD
+=== [1/4] bake-off: 4 arms over 3 v2 targets ===
+  --      gemini:gemini-flash                models/gemini-3.5-flash   (not routed via OpenRouter)
+  ok      openrouter:nemotron-ultra          nvidia/nemotron-3-ultra-550b-a55b:free
+  --      anthropic:sonnet-direct            claude-sonnet-5   (not routed via OpenRouter)
+  --      anthropic:opus-direct              claude-opus-5   (not routed via OpenRouter)
+
+=== arm 1/4: gemini:gemini-flash ===
+    0/5 accepted in 1040.0s -> artifacts/bakeoff_v2/gemini_gemini-flash/rtl
+
+=== arm 2/4: openrouter:nemotron-ultra ===

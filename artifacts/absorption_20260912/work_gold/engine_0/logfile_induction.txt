@@ -1,0 +1,29 @@
+##   0:00:00  Solver: bitwuzla
+##   0:16:07  Trying induction in step 20..
+##   0:16:07  Trying induction in step 19..
+##   0:16:07  Trying induction in step 18..
+##   0:16:07  Trying induction in step 17..
+##   0:16:07  Trying induction in step 16..
+##   0:16:07  Trying induction in step 15..
+##   0:16:07  Trying induction in step 14..
+##   0:16:07  Trying induction in step 13..
+##   0:16:07  Trying induction in step 12..
+##   0:16:07  Trying induction in step 11..
+##   0:16:07  Trying induction in step 10..
+##   0:16:07  Trying induction in step 9..
+##   0:16:07  Trying induction in step 8..
+##   0:16:07  Trying induction in step 7..
+##   0:16:07  Trying induction in step 6..
+##   0:16:07  Trying induction in step 5..
+##   0:16:07  Trying induction in step 4..
+##   0:16:07  Trying induction in step 3..
+##   0:16:07  Trying induction in step 2..
+##   0:16:07  Trying induction in step 1..
+##   0:16:07  Trying induction in step 0..
+##   0:16:07  Temporal induction failed!
+##   0:16:07  Assert failed in axi_lite_dot: axi_lite_dot_gold.v:267.13-267.33 (_witness_.check_assert_axi_lite_dot_gold_v_267_89)
+##   0:16:07  Writing trace to VCD file: engine_0/trace_induct.vcd
+##   0:16:08  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
+##   0:16:08  Writing trace to constraints file: engine_0/trace_induct.smtc
+##   0:16:08  Writing trace to Yosys witness file: engine_0/trace_induct.yw
+##   0:16:08  Status: failed

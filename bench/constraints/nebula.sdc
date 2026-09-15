@@ -51,7 +51,10 @@ create_clock -name clk5 -period 40.0 [get_ports clk5]   ;# uart         25 MHz
 # -------------------------------------------------------------------
 # 2. Gated clocks
 #
-# clk_gate is a plain AND. Gating does not change the period, so each
+# clk_gate is an integrated clock gate: the enable is latched on the low
+# phase of the clock and ANDed with it, so the enable can only change
+# while the clock is already low and no pulse is ever chopped. Gating
+# does not change the period, so each
 # gate output is a divide_by 1 generated clock of its source. Declaring
 # them explicitly is what stops the analyser treating the gate output as
 # an unclocked net and silently dropping every path behind it.
@@ -75,9 +78,12 @@ create_generated_clock -name clk_s8 -source [get_ports clk1] \
 # -------------------------------------------------------------------
 # 3. Divided clocks
 #
-# clk_div_mux selects between the incoming clock and counter bits 0, 1
-# and 2, giving divide by 1, 2, 4 or 8 under software control. sel is
-# written only during configuration, never while the domain is running.
+# clk_div_mux hands over between the incoming clock and counter bits 0,
+# 1 and 2, giving divide by 1, 2, 4 or 8 under software control. sel is
+# written only during configuration, never while the domain is running,
+# and the handover is glitch-free in any case: each branch is gated by
+# an enable registered on that branch's own falling edge, and a branch
+# may only assert once every other branch has released.
 #
 # Constraining divide_by 1 is the worst case: it is the fastest the mux
 # output can ever be, so a design that closes here closes at every other
@@ -92,6 +98,61 @@ create_generated_clock -name clk_s5 -source [clk_net clk_s5_gate] \
     -divide_by 1 [clk_net clk_s5]
 create_generated_clock -name clk_s4 -source [clk_net clk_s4_gate] \
     -divide_by 1 [clk_net clk_s4]
+
+# -------------------------------------------------------------------
+# 3b. Divider-internal handover clocks
+#
+# The glitch-free mux registers each branch's enable on that branch's
+# own clock, so the counter bits inside clk_div_mux are not just data --
+# they clock eight flops per instance. Left undeclared they would be
+# unclocked registers: OpenSTA drops every path to them without failing,
+# which is precisely the kind of silent hole the rest of this file
+# exists to close. They are declared per instance rather than once,
+# because each of the four dividers is a separate physical net.
+#
+# The internal net names survive linking as <instance>/clk_div2 and
+# friends; div_net resolves them and errors if a name ever stops
+# matching, so an under-constrained run fails at read_sdc instead of
+# reporting optimistic timing.
+# -------------------------------------------------------------------
+proc div_net {inst net} {
+  # Two linkers, two naming schemes, and which one is in force depends on how
+  # the netlist reached us. Reading the elaborated hierarchy, the full path is
+  # not a net name at all and only the leaf name exists -- `-hierarchical`
+  # matches that leaf at each level, so the instance has to be recovered from
+  # get_full_name. Reading the synthesised netlist the way the flow does, the
+  # opposite holds: `$inst/$net` resolves directly and `-hierarchical` on the
+  # leaf finds nothing. Try the direct name first, fall back to the leaf scan,
+  # and error if neither works rather than leaving the net unconstrained.
+  set n [get_nets -quiet "$inst/$net"]
+  if {[llength $n] == 0} {
+    foreach x [get_nets -quiet -hierarchical $net] {
+      if {[get_full_name $x] == "$inst/$net"} { lappend n $x }
+    }
+  }
+  if {[llength $n] == 0} { error "div_net: no net named $inst/$net" }
+  if {[llength $n] > 1}  { error "div_net: $inst/$net is ambiguous" }
+  foreach p [get_pins -quiet -of_objects $n] {
+    if {[get_property $p direction] == "output"} { return $p }
+  }
+  error "div_net: net $inst/$net has no output driver pin"
+}
+
+array set handover {clk1 {} clk2 {} clk3 {} clk4 {} clk5 {}}
+
+foreach {inst src master} {
+    timer_clk_div clk_s1_gate clk4
+    gpio_clk_div  clk_s2_gate clk2
+    dot_clk_div   clk_s5_gate clk3
+    uart_clk_div  clk_s4_gate clk5
+} {
+  foreach {net div} {clk_div2 2 clk_div4 4 clk_div8 8} {
+    set name ${inst}_${net}
+    create_generated_clock -name $name -source [clk_net $src] \
+        -divide_by $div [div_net $inst $net]
+    lappend handover($master) $name
+  }
+}
 
 # -------------------------------------------------------------------
 # 4. Clock uncertainty and transition
@@ -116,12 +177,16 @@ set_clock_transition        0.150  [all_clocks]
 # This declares the paths unanalysable, not safe. Safety comes from the
 # two-flop synchronisers and the async FIFO in the RTL.
 # -------------------------------------------------------------------
+#
+# The divider-internal handover clocks join their own master's group:
+# they are derived from it, and a `sel` write reaching them from clk1 is
+# a crossing like any other, covered by the same declaration.
 set_clock_groups -asynchronous \
-    -group {clk1 clk_s3 clk_s8} \
-    -group {clk2 clk_s2_gate clk_s2} \
-    -group {clk3 clk_s5_gate clk_s5} \
-    -group {clk4 clk_s1_gate clk_s1} \
-    -group {clk5 clk_s4_gate clk_s4}
+    -group [concat {clk1 clk_s3 clk_s8}        $handover(clk1)] \
+    -group [concat {clk2 clk_s2_gate clk_s2}   $handover(clk2)] \
+    -group [concat {clk3 clk_s5_gate clk_s5}   $handover(clk3)] \
+    -group [concat {clk4 clk_s1_gate clk_s1}   $handover(clk4)] \
+    -group [concat {clk5 clk_s4_gate clk_s4}   $handover(clk5)]
 
 # -------------------------------------------------------------------
 # 6. Reset

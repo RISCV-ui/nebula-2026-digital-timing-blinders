@@ -1,0 +1,8 @@
+PASS  fp4_mul                          PROVED_EQUIVALENT  [partitioned]  (10.2s)
+PASS  immediate_generator              PROVED_EQUIVALENT  [partitioned]  (8.5s)
+FAIL  l1_d_cache_8kb                   TIMEOUT after 900s  [yosys-equiv]  (976.3s)
+PASS  pipeline_reg_ex_mem              PROVED_EQUIVALENT  [partitioned]  (10.9s)
+PASS  read_buffer_i_cache              PROVED_EQUIVALENT  [merged]  (143.9s)
+PASS  write_back_stage                 PROVED_EQUIVALENT  [partitioned]  (9.1s)
+
+5/6 modules proved equivalent -> artifacts/eqy/shards/openrouter_nemotron-ultra_s0.json

@@ -1,0 +1,34 @@
+{
+  "claim": "operand consumption at the axi_lite_dot boundary is bit-identical between the frozen and the optimised design; only the result push (w_en/data_w) moved by DOT_LAT cycles",
+  "method": "combinational miter over the two r_en drivers, lifted verbatim from axi_lite_dot.v (frozen) and fp4_dot_stage.v (candidate), with the pipeline-occupancy vector vld left as a free input; solved with yosys sat / minisat",
+  "positive": {
+    "log": "artifacts/ren_equiv_20260912/positive.log",
+    "result": "no model found",
+    "verdict": "EQUIVALENT",
+    "returncode": 0
+  },
+  "negative_control": {
+    "log": "artifacts/ren_equiv_20260912/negative.log",
+    "returncode": 1,
+    "mutation": "dropped the `&& src` term from the candidate r_en drivers",
+    "result": "model found",
+    "verdict": "COUNTEREXAMPLE_AS_EXPECTED",
+    "why": "this is the most plausible way the restructure could have gone wrong: it would pop operands on drain cycles that carry none"
+  },
+  "miter_sha256": {
+    "miter.v": "c71426399b4812adf9a433fd5a4054f370cfa1b7816f299059d48a27a4d4d673",
+    "miter_neg.v": "6532ff695f92c7adae54a7d46c6cdbc3e62dd7ebbd8f2bc7e199298640e44bdb"
+  },
+  "source_sha256": {
+    "frozen/axi_lite_dot.v": "f4cd8fc83206e08c9c072a695683de49f573dc047a6934d6c91d2a795f7ae1a6",
+    "candidate/axi_lite_dot.v": "2ca5e8f1494a4cf6184ab7db432c39afdcfb84b736b5de20d6e13ba1743ae0eb",
+    "candidate/fp4_dot_stage.v": "39e4341fae866a80ce332ef135112b9fd39da21b6fc885006cdb131bf0e4d798"
+  },
+  "latency_absorption": {
+    "site": "axi_lite_dot.v, s1_dr_valid",
+    "expression": "!empty_r_axi && addr_r_comp && (addr_out_read[3:0] == 4'h8)",
+    "finding": "the AXI read of the result is gated on the result FIFO's empty flag, not on any cycle count, so the DOT_LAT delay only makes s1_dr_valid assert later; nothing outside axi_lite_dot observes fp4 timing",
+    "status": "read from the RTL, not yet discharged formally"
+  },
+  "generated": "2026-09-12T18:06:29"
+}

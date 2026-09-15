@@ -1,0 +1,8 @@
+FAIL  div_restoring_32                 TIMEOUT after 900s  [yosys-equiv]  (2700.0s)
+PASS  fp8_adder                        PROVED_EQUIVALENT  [partitioned]  (20.1s)
+FAIL  instruction_decode_stage         UNPROVEN (226 cells) at depth 5  [yosys-equiv]  (221.8s)
+FAIL  l1_i_cache_8kb                   TIMEOUT after 900s  [yosys-equiv]  (1016.3s)
+PASS  pipeline_reg_id_ex               PROVED_EQUIVALENT  [partitioned]  (18.3s)
+FAIL  register_file                    UNPROVEN (64 cells) at depth 5  [yosys-equiv]  (68.2s)
+
+2/6 modules proved equivalent -> artifacts/eqy/shards/anthropic_sonnet-direct_s1.json

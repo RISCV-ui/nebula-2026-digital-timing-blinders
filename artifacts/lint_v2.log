@@ -1,0 +1,11 @@
+golden    bench/rtl: 9 findings over 55 files
+      8  WIDTHTRUNC
+      1  UNUSEDSIGNAL
+candidate bench/rtl_v2: 9 findings over 59 files
+      8  WIDTHTRUNC
+      1  UNUSEDSIGNAL
+introduced by optimisation: 0
+resolved by optimisation:   0
+
+verdict: NO_NEW_WARNINGS
+wrote artifacts/lint_v2

@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{The accepted transform re-measured on a second, independently routed generation: a wider floorplan, its own baseline routed beside it, same recipe for both. Clocks whose slack is unchanged to \SI{0.5}{\pico\second} are omitted.}
+  \label{tab:v3}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{lrrr}
+    \toprule
+    \textbf{Clock} & \textbf{Baseline WNS (ns)} & \textbf{Variant WNS (ns)} & \textbf{$\Delta$ (ns)} \\
+    \midrule
+    clk1 & -1.3397 & -0.2643 & \textbf{+1.0754} \\
+    clk\_s1 & 18.8013 & 18.3353 & \textbf{-0.4660} \\
+    clk\_s1\_gate & 21.7535 & 22.2463 & \textbf{+0.4928} \\
+    clk\_s2 & 11.0776 & 12.5841 & \textbf{+1.5065} \\
+    clk\_s2\_gate & 17.5816 & 17.5654 & \textbf{-0.0162} \\
+    clk\_s3 & -0.1326 & -0.2235 & \textbf{-0.0909} \\
+    clk\_s4 & 32.7251 & 32.4216 & \textbf{-0.3035} \\
+    clk\_s4\_gate & 36.9431 & 36.8685 & \textbf{-0.0746} \\
+    clk\_s5 & -24.0459 & -23.5806 & \textbf{+0.4653} \\
+    clk\_s5\_gate & 10.1981 & 10.3854 & \textbf{+0.1873} \\
+    clk\_s8 & -1.1451 & -0.4347 & \textbf{+0.7104} \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright This table is not comparable row-for-row with Table~\ref{tab:ppa}: the two come from different synthesis and floorplan generations, and no number is carried between them. It is reported because the direction of the effect survives a change of generation, which is a stronger statement than either measurement alone.
+\end{table}

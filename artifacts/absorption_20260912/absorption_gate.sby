@@ -1,0 +1,21 @@
+[options]
+mode prove
+depth 20
+# Two asynchronous clock domains. multiclock lets the solver drive clk_1 and
+# clk_2 independently, so the proof covers every phase relationship between
+# them rather than one arbitrary alignment.
+multiclock on
+
+[engines]
+smtbmc bitwuzla
+
+[script]
+read -formal cuts_gate.v
+read -formal axi_lite_dot_gate.v
+read -formal fp4_dot_stage.v
+prep -top axi_lite_dot
+
+[files]
+artifacts/absorption_20260912/cuts_gate.v
+artifacts/absorption_20260912/axi_lite_dot_gate.v
+artifacts/absorption_20260912/fp4_dot_stage.v

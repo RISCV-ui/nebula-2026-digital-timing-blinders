@@ -1,0 +1,8 @@
+FAIL  execution_stage                  TIMEOUT after 900s  [yosys-equiv]  (957.7s)
+PASS  i_rom_32x256                     PROVED_EQUIVALENT  [yosys-equiv]  (26.5s)
+FAIL  isqrt_restoring_32               TIMEOUT after 900s  [yosys-equiv]  (1836.7s)
+FAIL  mult_array_32                    TIMEOUT after 900s  [yosys-equiv]  (2700.0s)
+FAIL  processor_top                    TIMEOUT after 900s  [yosys-equiv]  (1040.6s)
+FAIL  timer                            UNPROVEN (97 cells) at depth 5  [yosys-equiv]  (931.7s)
+
+1/6 modules proved equivalent -> artifacts/eqy/shards/openrouter_nemotron-ultra_s4.json

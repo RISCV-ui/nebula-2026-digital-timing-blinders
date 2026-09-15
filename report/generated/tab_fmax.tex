@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Per-domain setup WNS and the frequency change it implies. The benchmark has five asynchronous masters and therefore five closure questions; collapsing them into one global number hides every result the run did produce.}
+  \label{tab:fmax}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{lrrrrrr}
+    \toprule
+    \textbf{Clock} & \textbf{Period (ns)} & \textbf{Base WNS} & \textbf{sonnet $\Delta$WNS} & \textbf{$\Delta F_{\max}$} & \textbf{nemotron-ultra $\Delta$WNS} & \textbf{$\Delta F_{\max}$} \\
+    \midrule
+    clk1 & 10.0 & -126.6293 & +2.5133 & +0.14 & -3.4429 & -0.18 \\
+    clk\_s1 & 25.0 & 16.9266 & -0.2288 & -3.41 & -0.1127 & -1.71 \\
+    clk\_s1\_gate & 25.0 & 23.1259 & -0.0174 & \emph{n/q} & +0.6316 & \emph{n/q} \\
+    clk\_s2 & 20.0 & -27.8000 & +1.6039 & +0.73 & +1.6084 & +0.73 \\
+    clk\_s2\_gate & 20.0 & 17.9242 & -0.1017 & \emph{n/q} & +0.3305 & \emph{n/q} \\
+    clk\_s3 & 10.0 & -0.1019 & -0.0622 & -0.61 & -0.0510 & -0.50 \\
+    clk\_s4 & 40.0 & 0.1477 & -0.5585 & -0.35 & +0.0213 & +0.01 \\
+    clk\_s4\_gate & 40.0 & 37.8683 & -0.0551 & \emph{n/q} & +0.3229 & \emph{n/q} \\
+    clk\_s5 & 12.5 & -29.3740 & -0.1006 & -0.06 & -0.1175 & -0.07 \\
+    clk\_s5\_gate & 12.5 & 10.5934 & +0.4531 & \emph{n/q} & +0.1294 & \emph{n/q} \\
+    clk\_s8 & 10.0 & -3.3171 & +1.1740 & +7.26 & +1.3806 & +8.69 \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright $F_{\max}=1/(\text{period}-\text{WNS})$, per domain, holding everything else fixed; it is not the chip frequency, which the slowest domain still governs. \emph{n/q} marks a domain whose slack is nearly a full period: the reciprocal is ill-conditioned there and a hundredth of a nanosecond of placement variance moves it by hundreds of MHz, so the slack delta is reported and the frequency derived from it is withheld.
+\end{table}

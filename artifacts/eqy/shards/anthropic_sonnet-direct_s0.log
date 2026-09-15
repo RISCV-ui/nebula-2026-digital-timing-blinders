@@ -1,0 +1,8 @@
+PASS  fp4_mul                          PROVED_EQUIVALENT  [partitioned]  (15.6s)
+PASS  immediate_generator              PROVED_EQUIVALENT  [partitioned]  (12.9s)
+FAIL  l1_d_cache_8kb                   TIMEOUT after 900s  [yosys-equiv]  (1010.3s)
+PASS  pipeline_reg_ex_mem              PROVED_EQUIVALENT  [partitioned]  (13.6s)
+PASS  read_buffer_i_cache              PROVED_EQUIVALENT  [merged]  (165.6s)
+PASS  write_back_stage                 PROVED_EQUIVALENT  [partitioned]  (12.3s)
+
+5/6 modules proved equivalent -> artifacts/eqy/shards/anthropic_sonnet-direct_s0.json

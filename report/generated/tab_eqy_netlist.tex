@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Deliverable 6, second half: every module of each routed variant proved against its own synthesised netlist. This is a different claim from the loop's gate, and the pair is what covers frozen RTL through to layout.}
+  \label{tab:eqynetlist}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{lrrrr}
+    \toprule
+    \textbf{Variant} & \textbf{Modules checked} & \textbf{Proved equivalent} & \textbf{Unproven at depth} & \textbf{Timed out} \\
+    \midrule
+    sonnet & 36 & \textbf{13} & 10 & 13 \\
+    nemotron-ultra & 58 & \textbf{25} & 16 & 17 \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright \emph{Unproven at depth} and \emph{timed out} are limits of the prover, not counterexamples: no module here was shown inequivalent. They concentrate on the deep combinational blocks and the wide AXI interconnect, which is the same difficulty the optimisation loop exists to attack.
+\end{table}

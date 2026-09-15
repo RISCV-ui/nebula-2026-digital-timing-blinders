@@ -1,0 +1,10 @@
+12 slicer targets -> 9 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk1       slack -147.045  alu
+   clk1       slack -147.045  execution_stage   [instantiates alu]
+   clk1       slack -147.045  processor_top   [instantiates execution_stage]
+   clk_s2     slack  -33.728  gpio_controller
+   clk_s2     slack  -33.728  axi_lite_gpio   [instantiates gpio_controller]
+   clk_s2     slack  -33.728  soc_top   [instantiates axi_lite_gpio]
+   clk_s5     slack  -26.338  fp8_adder
+   clk_s5     slack  -26.338  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -26.338  axi_lite_dot   [instantiates fp4_dot_unit]

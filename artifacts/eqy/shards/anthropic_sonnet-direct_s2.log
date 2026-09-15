@@ -1,0 +1,8 @@
+FAIL  dma_controller                   UNPROVEN (100 cells) at depth 5  [yosys-equiv]  (241.3s)
+FAIL  gpio_controller                  TIMEOUT after 900s  [yosys-equiv]  (1126.9s)
+FAIL  instruction_fetch_stage          TIMEOUT after 900s  [yosys-equiv]  (1005.5s)
+FAIL  mem_axi_slave                    UNPROVEN (36 cells) at depth 5  [yosys-equiv]  (223.9s)
+PASS  pipeline_reg_if_id               PROVED_EQUIVALENT  [partitioned]  (14.4s)
+FAIL  soc_top                          TIMEOUT after 900s  [yosys-equiv]  (1317.1s)
+
+1/6 modules proved equivalent -> artifacts/eqy/shards/anthropic_sonnet-direct_s2.json

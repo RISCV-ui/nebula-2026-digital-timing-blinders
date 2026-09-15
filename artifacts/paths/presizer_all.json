@@ -1,0 +1,3660 @@
+{
+  "top": "soc_top",
+  "path_count": 42,
+  "paths": [
+    {
+      "startpoint": "dot_0/fifo_timer_r/counter_1[0]$_SDFFE_PP0P_",
+      "endpoint": "dot_0/fifo_timer_r/mem[0][6]$_DFFE_PP_",
+      "clock": "clk_s5",
+      "slack_ns": -26.3376,
+      "combinational_delay_ns": 38.3072,
+      "stages": 182,
+      "modules": [
+        {
+          "instance": "dot_0/fp4_dot_0/add6",
+          "module": "fp8_adder",
+          "delay_ns": 11.1114,
+          "share_pct": 29.0
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/add0",
+          "module": "fp8_adder",
+          "delay_ns": 11.0633,
+          "share_pct": 28.9
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/add4",
+          "module": "fp8_adder",
+          "delay_ns": 10.9425,
+          "share_pct": 28.6
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/fp4_0",
+          "module": "fp4_mul",
+          "delay_ns": 2.2341,
+          "share_pct": 5.8
+        },
+        {
+          "instance": "dot_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.2891,
+          "share_pct": 3.4
+        },
+        {
+          "instance": "dot_0/fifo_timer_w2",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.0092,
+          "share_pct": 2.6
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.6576,
+          "share_pct": 1.7
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "fp8_adder",
+          "instances": [
+            "dot_0/fp4_dot_0/add6",
+            "dot_0/fp4_dot_0/add0",
+            "dot_0/fp4_dot_0/add4"
+          ],
+          "delay_ns": 33.1172,
+          "share_pct": 86.5
+        },
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "dot_0/fifo_timer_r",
+            "dot_0/fifo_timer_w2"
+          ],
+          "delay_ns": 2.2983,
+          "share_pct": 6.0
+        },
+        {
+          "module": "fp4_mul",
+          "instances": [
+            "dot_0/fp4_dot_0/fp4_0"
+          ],
+          "delay_ns": 2.2341,
+          "share_pct": 5.8
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.6576,
+          "share_pct": 1.7
+        }
+      ],
+      "target": {
+        "module": "fp8_adder",
+        "instances": [
+          "dot_0/fp4_dot_0/add6",
+          "dot_0/fp4_dot_0/add0",
+          "dot_0/fp4_dot_0/add4"
+        ],
+        "delay_ns": 33.1172,
+        "share_pct": 86.5
+      },
+      "endpoint_count": 32,
+      "id": "P000",
+      "lever": {
+        "gap_ns": 26.3376,
+        "gate_reach_ns": 7.6614,
+        "overrun_ratio": 2.2,
+        "lever": "rtl",
+        "reason": "needs 26.338 ns, 3.4x what the gate-level flow can reach (7.661 ns); 86.5% of the path sits in fp8_adder across 3 instances, so the structure is what has to change"
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v",
+      "target_source_lines": 297
+    },
+    {
+      "startpoint": "dot_0/fifo_timer_r/counter_1[0]$_SDFFE_PP0P_",
+      "endpoint": "dot_0/fifo_timer_r/mem[0][5]$_DFFE_PP_",
+      "clock": "clk_s5",
+      "slack_ns": -26.1516,
+      "combinational_delay_ns": 38.0884,
+      "stages": 183,
+      "modules": [
+        {
+          "instance": "dot_0/fp4_dot_0/add0",
+          "module": "fp8_adder",
+          "delay_ns": 11.0633,
+          "share_pct": 29.0
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/add4",
+          "module": "fp8_adder",
+          "delay_ns": 10.9425,
+          "share_pct": 28.7
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/add6",
+          "module": "fp8_adder",
+          "delay_ns": 10.8926,
+          "share_pct": 28.6
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/fp4_0",
+          "module": "fp4_mul",
+          "delay_ns": 2.2341,
+          "share_pct": 5.9
+        },
+        {
+          "instance": "dot_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.2891,
+          "share_pct": 3.4
+        },
+        {
+          "instance": "dot_0/fifo_timer_w2",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.0092,
+          "share_pct": 2.6
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.6576,
+          "share_pct": 1.7
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "fp8_adder",
+          "instances": [
+            "dot_0/fp4_dot_0/add0",
+            "dot_0/fp4_dot_0/add4",
+            "dot_0/fp4_dot_0/add6"
+          ],
+          "delay_ns": 32.8984,
+          "share_pct": 86.4
+        },
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "dot_0/fifo_timer_r",
+            "dot_0/fifo_timer_w2"
+          ],
+          "delay_ns": 2.2983,
+          "share_pct": 6.0
+        },
+        {
+          "module": "fp4_mul",
+          "instances": [
+            "dot_0/fp4_dot_0/fp4_0"
+          ],
+          "delay_ns": 2.2341,
+          "share_pct": 5.9
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.6576,
+          "share_pct": 1.7
+        }
+      ],
+      "target": {
+        "module": "fp8_adder",
+        "instances": [
+          "dot_0/fp4_dot_0/add0",
+          "dot_0/fp4_dot_0/add4",
+          "dot_0/fp4_dot_0/add6"
+        ],
+        "delay_ns": 32.8984,
+        "share_pct": 86.4
+      },
+      "endpoint_count": 48,
+      "id": "P001",
+      "lever": {
+        "gap_ns": 26.1516,
+        "gate_reach_ns": 7.6177,
+        "overrun_ratio": 2.191,
+        "lever": "rtl",
+        "reason": "needs 26.152 ns, 3.4x what the gate-level flow can reach (7.618 ns); 86.4% of the path sits in fp8_adder across 3 instances, so the structure is what has to change"
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v",
+      "target_source_lines": 297
+    },
+    {
+      "startpoint": "dot_0/fifo_timer_r/counter_1[0]$_SDFFE_PP0P_",
+      "endpoint": "dot_0/fifo_timer_r/mem[0][0]$_DFFE_PP_",
+      "clock": "clk_s5",
+      "slack_ns": -26.0455,
+      "combinational_delay_ns": 38.0163,
+      "stages": 183,
+      "modules": [
+        {
+          "instance": "dot_0/fp4_dot_0/add0",
+          "module": "fp8_adder",
+          "delay_ns": 11.0633,
+          "share_pct": 29.1
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/add4",
+          "module": "fp8_adder",
+          "delay_ns": 10.9425,
+          "share_pct": 28.8
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/add6",
+          "module": "fp8_adder",
+          "delay_ns": 10.8205,
+          "share_pct": 28.5
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/fp4_0",
+          "module": "fp4_mul",
+          "delay_ns": 2.2341,
+          "share_pct": 5.9
+        },
+        {
+          "instance": "dot_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.2891,
+          "share_pct": 3.4
+        },
+        {
+          "instance": "dot_0/fifo_timer_w2",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.0092,
+          "share_pct": 2.7
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.6576,
+          "share_pct": 1.7
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "fp8_adder",
+          "instances": [
+            "dot_0/fp4_dot_0/add0",
+            "dot_0/fp4_dot_0/add4",
+            "dot_0/fp4_dot_0/add6"
+          ],
+          "delay_ns": 32.8263,
+          "share_pct": 86.3
+        },
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "dot_0/fifo_timer_r",
+            "dot_0/fifo_timer_w2"
+          ],
+          "delay_ns": 2.2983,
+          "share_pct": 6.0
+        },
+        {
+          "module": "fp4_mul",
+          "instances": [
+            "dot_0/fp4_dot_0/fp4_0"
+          ],
+          "delay_ns": 2.2341,
+          "share_pct": 5.9
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.6576,
+          "share_pct": 1.7
+        }
+      ],
+      "target": {
+        "module": "fp8_adder",
+        "instances": [
+          "dot_0/fp4_dot_0/add0",
+          "dot_0/fp4_dot_0/add4",
+          "dot_0/fp4_dot_0/add6"
+        ],
+        "delay_ns": 32.8263,
+        "share_pct": 86.3
+      },
+      "endpoint_count": 32,
+      "id": "P002",
+      "lever": {
+        "gap_ns": 26.0455,
+        "gate_reach_ns": 7.6033,
+        "overrun_ratio": 2.176,
+        "lever": "rtl",
+        "reason": "needs 26.046 ns, 3.4x what the gate-level flow can reach (7.603 ns); 86.3% of the path sits in fp8_adder across 3 instances, so the structure is what has to change"
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v",
+      "target_source_lines": 297
+    },
+    {
+      "startpoint": "dot_0/fifo_timer_r/counter_1[0]$_SDFFE_PP0P_",
+      "endpoint": "dot_0/fifo_timer_r/mem[0][7]$_DFFE_PP_",
+      "clock": "clk_s5",
+      "slack_ns": -17.5966,
+      "combinational_delay_ns": 29.5331,
+      "stages": 146,
+      "modules": [
+        {
+          "instance": "dot_0/fp4_dot_0/add2",
+          "module": "fp8_adder",
+          "delay_ns": 11.0633,
+          "share_pct": 37.5
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/add5",
+          "module": "fp8_adder",
+          "delay_ns": 10.7614,
+          "share_pct": 36.4
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/add6",
+          "module": "fp8_adder",
+          "delay_ns": 2.5184,
+          "share_pct": 8.5
+        },
+        {
+          "instance": "dot_0/fp4_dot_0/fp4_4",
+          "module": "fp4_mul",
+          "delay_ns": 2.2341,
+          "share_pct": 7.6
+        },
+        {
+          "instance": "dot_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.2891,
+          "share_pct": 4.4
+        },
+        {
+          "instance": "dot_0/fifo_timer_w2",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.0092,
+          "share_pct": 3.4
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.6576,
+          "share_pct": 2.2
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "fp8_adder",
+          "instances": [
+            "dot_0/fp4_dot_0/add2",
+            "dot_0/fp4_dot_0/add5",
+            "dot_0/fp4_dot_0/add6"
+          ],
+          "delay_ns": 24.3431,
+          "share_pct": 82.4
+        },
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "dot_0/fifo_timer_r",
+            "dot_0/fifo_timer_w2"
+          ],
+          "delay_ns": 2.2983,
+          "share_pct": 7.8
+        },
+        {
+          "module": "fp4_mul",
+          "instances": [
+            "dot_0/fp4_dot_0/fp4_4"
+          ],
+          "delay_ns": 2.2341,
+          "share_pct": 7.6
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.6576,
+          "share_pct": 2.2
+        }
+      ],
+      "target": {
+        "module": "fp8_adder",
+        "instances": [
+          "dot_0/fp4_dot_0/add2",
+          "dot_0/fp4_dot_0/add5",
+          "dot_0/fp4_dot_0/add6"
+        ],
+        "delay_ns": 24.3431,
+        "share_pct": 82.4
+      },
+      "endpoint_count": 16,
+      "id": "P003",
+      "lever": {
+        "gap_ns": 17.5966,
+        "gate_reach_ns": 5.9066,
+        "overrun_ratio": 1.474,
+        "lever": "rtl",
+        "reason": "needs 17.597 ns, 3.0x what the gate-level flow can reach (5.907 ns); 82.4% of the path sits in fp8_adder across 3 instances, so the structure is what has to change"
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/fp8_adder.v",
+      "target_source_lines": 297
+    },
+    {
+      "startpoint": "d_read_buffer_0/pr_state[2]$_DFF_P_",
+      "endpoint": "d_cache_0/i_mem_2/mem[0][0]$_DFFE_PP_",
+      "clock": "clk1",
+      "slack_ns": -14.3111,
+      "combinational_delay_ns": 22.9119,
+      "stages": 29,
+      "modules": [
+        {
+          "instance": "d_cache_0/i_mem_2",
+          "module": "id_memory_256x64_wrap",
+          "delay_ns": 17.4457,
+          "share_pct": 76.1
+        },
+        {
+          "instance": "d_cache_0",
+          "module": "l1_d_cache_8kb",
+          "delay_ns": 3.8547,
+          "share_pct": 16.8
+        },
+        {
+          "instance": "d_read_buffer_0",
+          "module": "read_buffer_d_cache",
+          "delay_ns": 1.6115,
+          "share_pct": 7.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "d_read_buffer_0",
+          "module": "read_buffer_d_cache"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "d_cache_0",
+          "module": "l1_d_cache_8kb"
+        },
+        {
+          "instance": "i_mem_2",
+          "module": "id_memory_256x64_wrap"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "id_memory_256x64_wrap",
+          "instances": [
+            "d_cache_0/i_mem_2"
+          ],
+          "delay_ns": 17.4457,
+          "share_pct": 76.1
+        },
+        {
+          "module": "l1_d_cache_8kb",
+          "instances": [
+            "d_cache_0"
+          ],
+          "delay_ns": 3.8547,
+          "share_pct": 16.8
+        },
+        {
+          "module": "read_buffer_d_cache",
+          "instances": [
+            "d_read_buffer_0"
+          ],
+          "delay_ns": 1.6115,
+          "share_pct": 7.0
+        }
+      ],
+      "target": {
+        "module": "id_memory_256x64_wrap",
+        "instances": [
+          "d_cache_0/i_mem_2"
+        ],
+        "delay_ns": 17.4457,
+        "share_pct": 76.1
+      },
+      "endpoint_count": 200,
+      "id": "P004",
+      "lever": {
+        "gap_ns": 14.3111,
+        "gate_reach_ns": 4.5824,
+        "overrun_ratio": 1.664,
+        "lever": "rtl",
+        "reason": "needs 14.311 ns, 3.1x what the gate-level flow can reach (4.582 ns); 76.1% of the path sits in id_memory_256x64_wrap across 1 instance, so the structure is what has to change"
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/id_memory_256x64_wrap.v",
+      "target_source_lines": 34
+    },
+    {
+      "startpoint": "processor_0/pipeline_ex_mem/alu_out_out[7]$_SDFFE_PP0N_",
+      "endpoint": "main_memory_0/mem[0][0]$_DFFE_PP_",
+      "clock": "clk_s8",
+      "slack_ns": 3.2842,
+      "combinational_delay_ns": 6.0837,
+      "stages": 26,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 1.912,
+          "share_pct": 31.4
+        },
+        {
+          "instance": "main_memory_0",
+          "module": "dmem",
+          "delay_ns": 1.8238,
+          "share_pct": 30.0
+        },
+        {
+          "instance": "soc_top",
+          "module": "soc_top",
+          "delay_ns": 1.7329,
+          "share_pct": 28.5
+        },
+        {
+          "instance": "processor_0/pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem",
+          "delay_ns": 0.4426,
+          "share_pct": 7.3
+        },
+        {
+          "instance": "memory_axi_0",
+          "module": "mem_axi_slave",
+          "delay_ns": 0.1724,
+          "share_pct": 2.8
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "processor_0",
+          "module": "processor_top"
+        },
+        {
+          "instance": "pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "main_memory_0",
+          "module": "dmem"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 1.912,
+          "share_pct": 31.4
+        },
+        {
+          "module": "dmem",
+          "instances": [
+            "main_memory_0"
+          ],
+          "delay_ns": 1.8238,
+          "share_pct": 30.0
+        },
+        {
+          "module": "soc_top",
+          "instances": [
+            "soc_top"
+          ],
+          "delay_ns": 1.7329,
+          "share_pct": 28.5
+        },
+        {
+          "module": "pipeline_reg_ex_mem",
+          "instances": [
+            "processor_0/pipeline_ex_mem"
+          ],
+          "delay_ns": 0.4426,
+          "share_pct": 7.3
+        },
+        {
+          "module": "mem_axi_slave",
+          "instances": [
+            "memory_axi_0"
+          ],
+          "delay_ns": 0.1724,
+          "share_pct": 2.8
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 1.912,
+        "share_pct": 31.4
+      },
+      "endpoint_count": 200,
+      "id": "P005",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +3.284 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "processor_0/pipeline_ex_mem/alu_out_out[7]$_SDFFE_PP0N_",
+      "endpoint": "dma_config_0/dma_0/buffer_dma[9]$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 4.398,
+      "combinational_delay_ns": 5.3082,
+      "stages": 30,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 2.2169,
+          "share_pct": 41.8
+        },
+        {
+          "instance": "soc_top",
+          "module": "soc_top",
+          "delay_ns": 1.5505,
+          "share_pct": 29.2
+        },
+        {
+          "instance": "uart_0/fifo_uart_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 0.7401,
+          "share_pct": 13.9
+        },
+        {
+          "instance": "processor_0/pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem",
+          "delay_ns": 0.4426,
+          "share_pct": 8.3
+        },
+        {
+          "instance": "uart_0",
+          "module": "axi_lite_uart",
+          "delay_ns": 0.208,
+          "share_pct": 3.9
+        },
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 0.1501,
+          "share_pct": 2.8
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "processor_0",
+          "module": "processor_top"
+        },
+        {
+          "instance": "pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 2.2169,
+          "share_pct": 41.8
+        },
+        {
+          "module": "soc_top",
+          "instances": [
+            "soc_top"
+          ],
+          "delay_ns": 1.5505,
+          "share_pct": 29.2
+        },
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "uart_0/fifo_uart_r"
+          ],
+          "delay_ns": 0.7401,
+          "share_pct": 13.9
+        },
+        {
+          "module": "pipeline_reg_ex_mem",
+          "instances": [
+            "processor_0/pipeline_ex_mem"
+          ],
+          "delay_ns": 0.4426,
+          "share_pct": 8.3
+        },
+        {
+          "module": "axi_lite_uart",
+          "instances": [
+            "uart_0"
+          ],
+          "delay_ns": 0.208,
+          "share_pct": 3.9
+        },
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 0.1501,
+          "share_pct": 2.8
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 2.2169,
+        "share_pct": 41.8
+      },
+      "endpoint_count": 30,
+      "id": "P006",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +4.398 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "processor_0/pipeline_ex_mem/alu_out_out[7]$_SDFFE_PP0N_",
+      "endpoint": "dma_config_0/dma_0/buffer_dma[14]$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 4.5671,
+      "combinational_delay_ns": 5.1391,
+      "stages": 29,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 2.2169,
+          "share_pct": 43.1
+        },
+        {
+          "instance": "soc_top",
+          "module": "soc_top",
+          "delay_ns": 1.5505,
+          "share_pct": 30.2
+        },
+        {
+          "instance": "uart_0/fifo_uart_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 0.5717,
+          "share_pct": 11.1
+        },
+        {
+          "instance": "processor_0/pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem",
+          "delay_ns": 0.4426,
+          "share_pct": 8.6
+        },
+        {
+          "instance": "uart_0",
+          "module": "axi_lite_uart",
+          "delay_ns": 0.208,
+          "share_pct": 4.0
+        },
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 0.1494,
+          "share_pct": 2.9
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "processor_0",
+          "module": "processor_top"
+        },
+        {
+          "instance": "pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 2.2169,
+          "share_pct": 43.1
+        },
+        {
+          "module": "soc_top",
+          "instances": [
+            "soc_top"
+          ],
+          "delay_ns": 1.5505,
+          "share_pct": 30.2
+        },
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "uart_0/fifo_uart_r"
+          ],
+          "delay_ns": 0.5717,
+          "share_pct": 11.1
+        },
+        {
+          "module": "pipeline_reg_ex_mem",
+          "instances": [
+            "processor_0/pipeline_ex_mem"
+          ],
+          "delay_ns": 0.4426,
+          "share_pct": 8.6
+        },
+        {
+          "module": "axi_lite_uart",
+          "instances": [
+            "uart_0"
+          ],
+          "delay_ns": 0.208,
+          "share_pct": 4.0
+        },
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 0.1494,
+          "share_pct": 2.9
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 2.2169,
+        "share_pct": 43.1
+      },
+      "endpoint_count": 2,
+      "id": "P007",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +4.567 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "dma_config_0/m2_ar_valid$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/m2_dw_valid$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.2753,
+      "combinational_delay_ns": 3.3822,
+      "stages": 19,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 2.1714,
+          "share_pct": 64.2
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 1.2108,
+          "share_pct": 35.8
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 2.1714,
+          "share_pct": 64.2
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 1.2108,
+          "share_pct": 35.8
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 2.1714,
+        "share_pct": 64.2
+      },
+      "endpoint_count": 30,
+      "id": "P008",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.275 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "processor_0/pipeline_ex_mem/alu_out_out[26]$_SDFFE_PP0N_",
+      "endpoint": "dma_config_0/m2_aw_valid$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.324,
+      "combinational_delay_ns": 3.3335,
+      "stages": 20,
+      "modules": [
+        {
+          "instance": "soc_top",
+          "module": "soc_top",
+          "delay_ns": 1.4382,
+          "share_pct": 43.1
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.5386,
+          "share_pct": 16.2
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.5313,
+          "share_pct": 15.9
+        },
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 0.4345,
+          "share_pct": 13.0
+        },
+        {
+          "instance": "processor_0/pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem",
+          "delay_ns": 0.3909,
+          "share_pct": 11.7
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "processor_0",
+          "module": "processor_top"
+        },
+        {
+          "instance": "pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "soc_top",
+          "instances": [
+            "soc_top"
+          ],
+          "delay_ns": 1.4382,
+          "share_pct": 43.1
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.5386,
+          "share_pct": 16.2
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.5313,
+          "share_pct": 15.9
+        },
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 0.4345,
+          "share_pct": 13.0
+        },
+        {
+          "module": "pipeline_reg_ex_mem",
+          "instances": [
+            "processor_0/pipeline_ex_mem"
+          ],
+          "delay_ns": 0.3909,
+          "share_pct": 11.7
+        }
+      ],
+      "target": {
+        "module": "soc_top",
+        "instances": [
+          "soc_top"
+        ],
+        "delay_ns": 1.4382,
+        "share_pct": 43.1
+      },
+      "endpoint_count": 30,
+      "id": "P009",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.324 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/soc_top.v",
+      "target_source_lines": 1141
+    },
+    {
+      "startpoint": "dma_config_0/m2_ar_valid$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/m2_ar_addr[10]$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.4051,
+      "combinational_delay_ns": 3.2477,
+      "stages": 19,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 2.1773,
+          "share_pct": 67.0
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 1.0704,
+          "share_pct": 33.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 2.1773,
+          "share_pct": 67.0
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 1.0704,
+          "share_pct": 33.0
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 2.1773,
+        "share_pct": 67.0
+      },
+      "endpoint_count": 33,
+      "id": "P010",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.405 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "processor_0/pipeline_ex_mem/alu_out_out[26]$_SDFFE_PP0N_",
+      "endpoint": "dma_config_0/m2_aw_addr[14]$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.6388,
+      "combinational_delay_ns": 3.0256,
+      "stages": 19,
+      "modules": [
+        {
+          "instance": "soc_top",
+          "module": "soc_top",
+          "delay_ns": 1.4382,
+          "share_pct": 47.5
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.5313,
+          "share_pct": 17.6
+        },
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 0.4345,
+          "share_pct": 14.4
+        },
+        {
+          "instance": "processor_0/pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem",
+          "delay_ns": 0.3909,
+          "share_pct": 12.9
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.2307,
+          "share_pct": 7.6
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "processor_0",
+          "module": "processor_top"
+        },
+        {
+          "instance": "pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "soc_top",
+          "instances": [
+            "soc_top"
+          ],
+          "delay_ns": 1.4382,
+          "share_pct": 47.5
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.5313,
+          "share_pct": 17.6
+        },
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 0.4345,
+          "share_pct": 14.4
+        },
+        {
+          "module": "pipeline_reg_ex_mem",
+          "instances": [
+            "processor_0/pipeline_ex_mem"
+          ],
+          "delay_ns": 0.3909,
+          "share_pct": 12.9
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.2307,
+          "share_pct": 7.6
+        }
+      ],
+      "target": {
+        "module": "soc_top",
+        "instances": [
+          "soc_top"
+        ],
+        "delay_ns": 1.4382,
+        "share_pct": 47.5
+      },
+      "endpoint_count": 3,
+      "id": "P011",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.639 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/soc_top.v",
+      "target_source_lines": 1141
+    },
+    {
+      "startpoint": "dma_config_0/m2_ar_valid$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/m2_ar_valid$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.7013,
+      "combinational_delay_ns": 2.9553,
+      "stages": 18,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 2.1773,
+          "share_pct": 73.7
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.778,
+          "share_pct": 26.3
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 2.1773,
+          "share_pct": 73.7
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.778,
+          "share_pct": 26.3
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 2.1773,
+        "share_pct": 73.7
+      },
+      "endpoint_count": 4,
+      "id": "P012",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.701 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "dma_config_0/m2_ar_valid$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/dma_0/pr_state[4]$_DFF_P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.7543,
+      "combinational_delay_ns": 2.9427,
+      "stages": 17,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 2.1214,
+          "share_pct": 72.1
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.5551,
+          "share_pct": 18.9
+        },
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 0.2662,
+          "share_pct": 9.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 2.1214,
+          "share_pct": 72.1
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.5551,
+          "share_pct": 18.9
+        },
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 0.2662,
+          "share_pct": 9.0
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 2.1214,
+        "share_pct": 72.1
+      },
+      "endpoint_count": 3,
+      "id": "P013",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.754 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "dma_config_0/dma_0/size_dma[0]$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/dma_0/status_dma[2]$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.762,
+      "combinational_delay_ns": 2.9398,
+      "stages": 13,
+      "modules": [
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 2.9398,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 2.9398,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "dma_controller",
+        "instances": [
+          "dma_config_0/dma_0"
+        ],
+        "delay_ns": 2.9398,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 3,
+      "id": "P014",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.762 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v",
+      "target_source_lines": 349
+    },
+    {
+      "startpoint": "processor_0/pipeline_ex_mem/alu_out_out[26]$_SDFFE_PP0N_",
+      "endpoint": "dma_config_0/m_addr_w_comp$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.7766,
+      "combinational_delay_ns": 2.931,
+      "stages": 19,
+      "modules": [
+        {
+          "instance": "soc_top",
+          "module": "soc_top",
+          "delay_ns": 1.4382,
+          "share_pct": 49.1
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.5313,
+          "share_pct": 18.1
+        },
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 0.4345,
+          "share_pct": 14.8
+        },
+        {
+          "instance": "processor_0/pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem",
+          "delay_ns": 0.3909,
+          "share_pct": 13.3
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.1361,
+          "share_pct": 4.6
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "processor_0",
+          "module": "processor_top"
+        },
+        {
+          "instance": "pipeline_ex_mem",
+          "module": "pipeline_reg_ex_mem"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "soc_top",
+          "instances": [
+            "soc_top"
+          ],
+          "delay_ns": 1.4382,
+          "share_pct": 49.1
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.5313,
+          "share_pct": 18.1
+        },
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 0.4345,
+          "share_pct": 14.8
+        },
+        {
+          "module": "pipeline_reg_ex_mem",
+          "instances": [
+            "processor_0/pipeline_ex_mem"
+          ],
+          "delay_ns": 0.3909,
+          "share_pct": 13.3
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.1361,
+          "share_pct": 4.6
+        }
+      ],
+      "target": {
+        "module": "soc_top",
+        "instances": [
+          "soc_top"
+        ],
+        "delay_ns": 1.4382,
+        "share_pct": 49.1
+      },
+      "endpoint_count": 1,
+      "id": "P015",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.777 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/soc_top.v",
+      "target_source_lines": 1141
+    },
+    {
+      "startpoint": "dma_config_0/m2_ar_valid$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/m_data_w_comp$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.8609,
+      "combinational_delay_ns": 2.8466,
+      "stages": 17,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 2.1714,
+          "share_pct": 76.3
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.6752,
+          "share_pct": 23.7
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 2.1714,
+          "share_pct": 76.3
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.6752,
+          "share_pct": 23.7
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 2.1714,
+        "share_pct": 76.3
+      },
+      "endpoint_count": 2,
+      "id": "P016",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.861 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "dma_config_0/dma_0/size_dma[0]$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/dma_0/pr_state[0]$_DFF_P_",
+      "clock": "clk_s3",
+      "slack_ns": 6.9298,
+      "combinational_delay_ns": 2.7827,
+      "stages": 13,
+      "modules": [
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 2.7827,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 2.7827,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "dma_controller",
+        "instances": [
+          "dma_config_0/dma_0"
+        ],
+        "delay_ns": 2.7827,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 1,
+      "id": "P017",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +6.930 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v",
+      "target_source_lines": 349
+    },
+    {
+      "startpoint": "dma_config_0/m2_ar_addr[17]$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/m2_b_ready$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 7.1732,
+      "combinational_delay_ns": 2.4306,
+      "stages": 13,
+      "modules": [
+        {
+          "instance": "interconnect_0",
+          "module": "axi_interconnect_2m_8s",
+          "delay_ns": 1.8606,
+          "share_pct": 76.5
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.57,
+          "share_pct": 23.5
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "axi_interconnect_2m_8s",
+          "instances": [
+            "interconnect_0"
+          ],
+          "delay_ns": 1.8606,
+          "share_pct": 76.5
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.57,
+          "share_pct": 23.5
+        }
+      ],
+      "target": {
+        "module": "axi_interconnect_2m_8s",
+        "instances": [
+          "interconnect_0"
+        ],
+        "delay_ns": 1.8606,
+        "share_pct": 76.5
+      },
+      "endpoint_count": 2,
+      "id": "P018",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +7.173 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_interconnect_2m_8s.v",
+      "target_source_lines": 1022
+    },
+    {
+      "startpoint": "dma_config_0/dma_0/size_dma[0]$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/dma_0/pr_state[3]$_DFF_P_",
+      "clock": "clk_s3",
+      "slack_ns": 7.308,
+      "combinational_delay_ns": 2.3466,
+      "stages": 13,
+      "modules": [
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 2.3466,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 2.3466,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "dma_controller",
+        "instances": [
+          "dma_config_0/dma_0"
+        ],
+        "delay_ns": 2.3466,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 1,
+      "id": "P019",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +7.308 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v",
+      "target_source_lines": 349
+    },
+    {
+      "startpoint": "dma_config_0/addr_r_w[7]$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/dma_0/src_address_dma[10]$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 7.4979,
+      "combinational_delay_ns": 2.2033,
+      "stages": 13,
+      "modules": [
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 1.868,
+          "share_pct": 84.8
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.3353,
+          "share_pct": 15.2
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 1.868,
+          "share_pct": 84.8
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.3353,
+          "share_pct": 15.2
+        }
+      ],
+      "target": {
+        "module": "dma_controller",
+        "instances": [
+          "dma_config_0/dma_0"
+        ],
+        "delay_ns": 1.868,
+        "share_pct": 84.8
+      },
+      "endpoint_count": 30,
+      "id": "P020",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +7.498 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v",
+      "target_source_lines": 349
+    },
+    {
+      "startpoint": "dma_config_0/dma_0/pr_state[2]$_DFF_P_",
+      "endpoint": "dma_config_0/dma_0/dest_addr_counter_dma[26]$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 7.5572,
+      "combinational_delay_ns": 2.1295,
+      "stages": 11,
+      "modules": [
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 2.1295,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 2.1295,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "dma_controller",
+        "instances": [
+          "dma_config_0/dma_0"
+        ],
+        "delay_ns": 2.1295,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 13,
+      "id": "P021",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +7.557 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v",
+      "target_source_lines": 349
+    },
+    {
+      "startpoint": "dma_config_0/addr_r_w[7]$_SDFFE_PP0P_",
+      "endpoint": "dma_config_0/dma_0/dest_address_dma[10]$_SDFFE_PP0P_",
+      "clock": "clk_s3",
+      "slack_ns": 7.648,
+      "combinational_delay_ns": 2.0049,
+      "stages": 12,
+      "modules": [
+        {
+          "instance": "dma_config_0/dma_0",
+          "module": "dma_controller",
+          "delay_ns": 1.6696,
+          "share_pct": 83.3
+        },
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config",
+          "delay_ns": 0.3353,
+          "share_pct": 16.7
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dma_config_0",
+          "module": "axi_lite_dma_config"
+        },
+        {
+          "instance": "dma_0",
+          "module": "dma_controller"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "dma_controller",
+          "instances": [
+            "dma_config_0/dma_0"
+          ],
+          "delay_ns": 1.6696,
+          "share_pct": 83.3
+        },
+        {
+          "module": "axi_lite_dma_config",
+          "instances": [
+            "dma_config_0"
+          ],
+          "delay_ns": 0.3353,
+          "share_pct": 16.7
+        }
+      ],
+      "target": {
+        "module": "dma_controller",
+        "instances": [
+          "dma_config_0/dma_0"
+        ],
+        "delay_ns": 1.6696,
+        "share_pct": 83.3
+      },
+      "endpoint_count": 12,
+      "id": "P022",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +7.648 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/dma_controller.v",
+      "target_source_lines": 349
+    },
+    {
+      "startpoint": "dot_0/fifo_timer_r/counter_1[0]$_SDFFE_PP0P_",
+      "endpoint": "dot_0/fifo_timer_r/counter_1[4]$_SDFFE_PP0P_",
+      "clock": "clk_s5",
+      "slack_ns": 8.0012,
+      "combinational_delay_ns": 4.1585,
+      "stages": 12,
+      "modules": [
+        {
+          "instance": "dot_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 3.5009,
+          "share_pct": 84.2
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.6576,
+          "share_pct": 15.8
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "dot_0/fifo_timer_r"
+          ],
+          "delay_ns": 3.5009,
+          "share_pct": 84.2
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.6576,
+          "share_pct": 15.8
+        }
+      ],
+      "target": {
+        "module": "axi_lite_dot",
+        "instances": [
+          "dot_0"
+        ],
+        "delay_ns": 0.6576,
+        "share_pct": 15.8
+      },
+      "endpoint_count": 1,
+      "id": "P023",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +8.001 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dot.v",
+      "target_source_lines": 222
+    },
+    {
+      "startpoint": "dot_0/fifo_timer_r/counter_1[0]$_SDFFE_PP0P_",
+      "endpoint": "dot_0/fifo_timer_r/mem[15][0]$_DFFE_PP_",
+      "clock": "clk_s5",
+      "slack_ns": 8.0851,
+      "combinational_delay_ns": 3.7695,
+      "stages": 11,
+      "modules": [
+        {
+          "instance": "dot_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 3.1119,
+          "share_pct": 82.6
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.6576,
+          "share_pct": 17.4
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "dot_0/fifo_timer_r"
+          ],
+          "delay_ns": 3.1119,
+          "share_pct": 82.6
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.6576,
+          "share_pct": 17.4
+        }
+      ],
+      "target": {
+        "module": "axi_lite_dot",
+        "instances": [
+          "dot_0"
+        ],
+        "delay_ns": 0.6576,
+        "share_pct": 17.4
+      },
+      "endpoint_count": 32,
+      "id": "P024",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +8.085 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dot.v",
+      "target_source_lines": 222
+    },
+    {
+      "startpoint": "dot_0/fifo_timer_r/counter_1[0]$_SDFFE_PP0P_",
+      "endpoint": "dot_0/fifo_timer_r/mem[14][0]$_DFFE_PP_",
+      "clock": "clk_s5",
+      "slack_ns": 8.603,
+      "combinational_delay_ns": 3.2938,
+      "stages": 12,
+      "modules": [
+        {
+          "instance": "dot_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 2.6362,
+          "share_pct": 80.0
+        },
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot",
+          "delay_ns": 0.6576,
+          "share_pct": 20.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_0",
+          "module": "axi_lite_dot"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "dot_0/fifo_timer_r"
+          ],
+          "delay_ns": 2.6362,
+          "share_pct": 80.0
+        },
+        {
+          "module": "axi_lite_dot",
+          "instances": [
+            "dot_0"
+          ],
+          "delay_ns": 0.6576,
+          "share_pct": 20.0
+        }
+      ],
+      "target": {
+        "module": "axi_lite_dot",
+        "instances": [
+          "dot_0"
+        ],
+        "delay_ns": 0.6576,
+        "share_pct": 20.0
+      },
+      "endpoint_count": 39,
+      "id": "P025",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +8.603 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_dot.v",
+      "target_source_lines": 222
+    },
+    {
+      "startpoint": "dot_clk_div/clk_div[0]$_SDFF_PP0_",
+      "endpoint": "dot_clk_div/clk_div[1]$_SDFF_PP0_",
+      "clock": "clk_s5_gate",
+      "slack_ns": 11.3694,
+      "combinational_delay_ns": 0.7342,
+      "stages": 5,
+      "modules": [
+        {
+          "instance": "dot_clk_div",
+          "module": "clk_div_mux",
+          "delay_ns": 0.7342,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "clk_div_mux",
+          "instances": [
+            "dot_clk_div"
+          ],
+          "delay_ns": 0.7342,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "clk_div_mux",
+        "instances": [
+          "dot_clk_div"
+        ],
+        "delay_ns": 0.7342,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 2,
+      "id": "P026",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +11.369 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+      "target_source_lines": 52
+    },
+    {
+      "startpoint": "dot_clk_div/clk_div[0]$_SDFF_PP0_",
+      "endpoint": "dot_clk_div/clk_div[0]$_SDFF_PP0_",
+      "clock": "clk_s5_gate",
+      "slack_ns": 11.6968,
+      "combinational_delay_ns": 0.407,
+      "stages": 4,
+      "modules": [
+        {
+          "instance": "dot_clk_div",
+          "module": "clk_div_mux",
+          "delay_ns": 0.407,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "dot_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "dot_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "clk_div_mux",
+          "instances": [
+            "dot_clk_div"
+          ],
+          "delay_ns": 0.407,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "clk_div_mux",
+        "instances": [
+          "dot_clk_div"
+        ],
+        "delay_ns": 0.407,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 1,
+      "id": "P027",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +11.697 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+      "target_source_lines": 52
+    },
+    {
+      "startpoint": "gpio_0/fifo_timer_w/counter_2[1]$_SDFFE_PP0P_",
+      "endpoint": "gpio_0/fifo_timer_r/counter_1[4]$_SDFFE_PP0P_",
+      "clock": "clk_s2",
+      "slack_ns": 15.2883,
+      "combinational_delay_ns": 4.3715,
+      "stages": 15,
+      "modules": [
+        {
+          "instance": "gpio_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 2.1647,
+          "share_pct": 49.5
+        },
+        {
+          "instance": "gpio_0/fifo_timer_w",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.8705,
+          "share_pct": 42.8
+        },
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio",
+          "delay_ns": 0.3363,
+          "share_pct": 7.7
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio"
+        },
+        {
+          "instance": "fifo_timer_w",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "gpio_0/fifo_timer_r",
+            "gpio_0/fifo_timer_w"
+          ],
+          "delay_ns": 4.0352,
+          "share_pct": 92.3
+        },
+        {
+          "module": "axi_lite_gpio",
+          "instances": [
+            "gpio_0"
+          ],
+          "delay_ns": 0.3363,
+          "share_pct": 7.7
+        }
+      ],
+      "target": {
+        "module": "axi_lite_gpio",
+        "instances": [
+          "gpio_0"
+        ],
+        "delay_ns": 0.3363,
+        "share_pct": 7.7
+      },
+      "endpoint_count": 1,
+      "id": "P028",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +15.288 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v",
+      "target_source_lines": 211
+    },
+    {
+      "startpoint": "gpio_0/fifo_timer_w/counter_2[1]$_SDFFE_PP0P_",
+      "endpoint": "gpio_0/fifo_timer_r/mem[15][0]$_DFFE_PP_",
+      "clock": "clk_s2",
+      "slack_ns": 15.3722,
+      "combinational_delay_ns": 3.9825,
+      "stages": 14,
+      "modules": [
+        {
+          "instance": "gpio_0/fifo_timer_w",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.8705,
+          "share_pct": 47.0
+        },
+        {
+          "instance": "gpio_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.7757,
+          "share_pct": 44.6
+        },
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio",
+          "delay_ns": 0.3363,
+          "share_pct": 8.4
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio"
+        },
+        {
+          "instance": "fifo_timer_w",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "gpio_0/fifo_timer_w",
+            "gpio_0/fifo_timer_r"
+          ],
+          "delay_ns": 3.6462,
+          "share_pct": 91.6
+        },
+        {
+          "module": "axi_lite_gpio",
+          "instances": [
+            "gpio_0"
+          ],
+          "delay_ns": 0.3363,
+          "share_pct": 8.4
+        }
+      ],
+      "target": {
+        "module": "axi_lite_gpio",
+        "instances": [
+          "gpio_0"
+        ],
+        "delay_ns": 0.3363,
+        "share_pct": 8.4
+      },
+      "endpoint_count": 32,
+      "id": "P029",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +15.372 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v",
+      "target_source_lines": 211
+    },
+    {
+      "startpoint": "gpio_0/fifo_timer_w/counter_2[3]$_SDFFE_PP0P_",
+      "endpoint": "gpio_0/fifo_timer_r/mem[0][0]$_DFFE_PP_",
+      "clock": "clk_s2",
+      "slack_ns": 15.8623,
+      "combinational_delay_ns": 3.6069,
+      "stages": 17,
+      "modules": [
+        {
+          "instance": "gpio_0/fifo_timer_w",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 2.0618,
+          "share_pct": 57.2
+        },
+        {
+          "instance": "gpio_0/gpio_0",
+          "module": "gpio_controller",
+          "delay_ns": 1.4199,
+          "share_pct": 39.4
+        },
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio",
+          "delay_ns": 0.1252,
+          "share_pct": 3.5
+        },
+        {
+          "instance": "gpio_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 0.0,
+          "share_pct": 0.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio"
+        },
+        {
+          "instance": "fifo_timer_w",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "gpio_0/fifo_timer_w",
+            "gpio_0/fifo_timer_r"
+          ],
+          "delay_ns": 2.0618,
+          "share_pct": 57.2
+        },
+        {
+          "module": "gpio_controller",
+          "instances": [
+            "gpio_0/gpio_0"
+          ],
+          "delay_ns": 1.4199,
+          "share_pct": 39.4
+        },
+        {
+          "module": "axi_lite_gpio",
+          "instances": [
+            "gpio_0"
+          ],
+          "delay_ns": 0.1252,
+          "share_pct": 3.5
+        }
+      ],
+      "target": {
+        "module": "gpio_controller",
+        "instances": [
+          "gpio_0/gpio_0"
+        ],
+        "delay_ns": 1.4199,
+        "share_pct": 39.4
+      },
+      "endpoint_count": 64,
+      "id": "P030",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +15.862 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/gpio_controller.v",
+      "target_source_lines": 264
+    },
+    {
+      "startpoint": "gpio_0/fifo_timer_w/counter_2[1]$_SDFFE_PP0P_",
+      "endpoint": "gpio_0/fifo_timer_r/mem[0][0]$_DFFE_PP_",
+      "clock": "clk_s2",
+      "slack_ns": 15.9041,
+      "combinational_delay_ns": 3.4928,
+      "stages": 15,
+      "modules": [
+        {
+          "instance": "gpio_0/fifo_timer_w",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.8705,
+          "share_pct": 53.6
+        },
+        {
+          "instance": "gpio_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.286,
+          "share_pct": 36.8
+        },
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio",
+          "delay_ns": 0.3363,
+          "share_pct": 9.6
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio"
+        },
+        {
+          "instance": "fifo_timer_w",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "gpio_0",
+          "module": "axi_lite_gpio"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "gpio_0/fifo_timer_w",
+            "gpio_0/fifo_timer_r"
+          ],
+          "delay_ns": 3.1565,
+          "share_pct": 90.4
+        },
+        {
+          "module": "axi_lite_gpio",
+          "instances": [
+            "gpio_0"
+          ],
+          "delay_ns": 0.3363,
+          "share_pct": 9.6
+        }
+      ],
+      "target": {
+        "module": "axi_lite_gpio",
+        "instances": [
+          "gpio_0"
+        ],
+        "delay_ns": 0.3363,
+        "share_pct": 9.6
+      },
+      "endpoint_count": 103,
+      "id": "P031",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +15.904 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_gpio.v",
+      "target_source_lines": 211
+    },
+    {
+      "startpoint": "gpio_clk_div/clk_div[0]$_SDFF_PP0_",
+      "endpoint": "gpio_clk_div/clk_div[1]$_SDFF_PP0_",
+      "clock": "clk_s2_gate",
+      "slack_ns": 18.8694,
+      "combinational_delay_ns": 0.7342,
+      "stages": 5,
+      "modules": [
+        {
+          "instance": "gpio_clk_div",
+          "module": "clk_div_mux",
+          "delay_ns": 0.7342,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "gpio_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "gpio_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "clk_div_mux",
+          "instances": [
+            "gpio_clk_div"
+          ],
+          "delay_ns": 0.7342,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "clk_div_mux",
+        "instances": [
+          "gpio_clk_div"
+        ],
+        "delay_ns": 0.7342,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 2,
+      "id": "P032",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +18.869 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+      "target_source_lines": 52
+    },
+    {
+      "startpoint": "gpio_clk_div/clk_div[0]$_SDFF_PP0_",
+      "endpoint": "gpio_clk_div/clk_div[0]$_SDFF_PP0_",
+      "clock": "clk_s2_gate",
+      "slack_ns": 19.1968,
+      "combinational_delay_ns": 0.407,
+      "stages": 4,
+      "modules": [
+        {
+          "instance": "gpio_clk_div",
+          "module": "clk_div_mux",
+          "delay_ns": 0.407,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "gpio_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "gpio_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "clk_div_mux",
+          "instances": [
+            "gpio_clk_div"
+          ],
+          "delay_ns": 0.407,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "clk_div_mux",
+        "instances": [
+          "gpio_clk_div"
+        ],
+        "delay_ns": 0.407,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 1,
+      "id": "P033",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +19.197 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+      "target_source_lines": 52
+    },
+    {
+      "startpoint": "timer_0/fifo_timer_w/counter_2[1]$_SDFFE_PP0P_",
+      "endpoint": "timer_0/fifo_timer_r/counter_1[4]$_SDFFE_PP0P_",
+      "clock": "clk_s1",
+      "slack_ns": 20.3046,
+      "combinational_delay_ns": 4.3552,
+      "stages": 15,
+      "modules": [
+        {
+          "instance": "timer_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 2.1647,
+          "share_pct": 49.7
+        },
+        {
+          "instance": "timer_0/fifo_timer_w",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.8661,
+          "share_pct": 42.8
+        },
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer",
+          "delay_ns": 0.3244,
+          "share_pct": 7.4
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer"
+        },
+        {
+          "instance": "fifo_timer_w",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "timer_0/fifo_timer_r",
+            "timer_0/fifo_timer_w"
+          ],
+          "delay_ns": 4.0308,
+          "share_pct": 92.6
+        },
+        {
+          "module": "axi_lite_timer",
+          "instances": [
+            "timer_0"
+          ],
+          "delay_ns": 0.3244,
+          "share_pct": 7.4
+        }
+      ],
+      "target": {
+        "module": "axi_lite_timer",
+        "instances": [
+          "timer_0"
+        ],
+        "delay_ns": 0.3244,
+        "share_pct": 7.4
+      },
+      "endpoint_count": 1,
+      "id": "P034",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +20.305 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_timer.v",
+      "target_source_lines": 200
+    },
+    {
+      "startpoint": "timer_0/fifo_timer_w/counter_2[1]$_SDFFE_PP0P_",
+      "endpoint": "timer_0/fifo_timer_r/mem[15][0]$_DFFE_PP_",
+      "clock": "clk_s1",
+      "slack_ns": 20.3885,
+      "combinational_delay_ns": 3.9662,
+      "stages": 14,
+      "modules": [
+        {
+          "instance": "timer_0/fifo_timer_w",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.8661,
+          "share_pct": 47.1
+        },
+        {
+          "instance": "timer_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.7757,
+          "share_pct": 44.8
+        },
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer",
+          "delay_ns": 0.3244,
+          "share_pct": 8.2
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer"
+        },
+        {
+          "instance": "fifo_timer_w",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "timer_0/fifo_timer_w",
+            "timer_0/fifo_timer_r"
+          ],
+          "delay_ns": 3.6418,
+          "share_pct": 91.8
+        },
+        {
+          "module": "axi_lite_timer",
+          "instances": [
+            "timer_0"
+          ],
+          "delay_ns": 0.3244,
+          "share_pct": 8.2
+        }
+      ],
+      "target": {
+        "module": "axi_lite_timer",
+        "instances": [
+          "timer_0"
+        ],
+        "delay_ns": 0.3244,
+        "share_pct": 8.2
+      },
+      "endpoint_count": 32,
+      "id": "P035",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +20.389 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_timer.v",
+      "target_source_lines": 200
+    },
+    {
+      "startpoint": "timer_0/fifo_timer_w/counter_2[1]$_SDFFE_PP0P_",
+      "endpoint": "timer_0/fifo_timer_r/mem[0][0]$_DFFE_PP_",
+      "clock": "clk_s1",
+      "slack_ns": 20.9204,
+      "combinational_delay_ns": 3.4765,
+      "stages": 15,
+      "modules": [
+        {
+          "instance": "timer_0/fifo_timer_w",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.8661,
+          "share_pct": 53.7
+        },
+        {
+          "instance": "timer_0/fifo_timer_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.286,
+          "share_pct": 37.0
+        },
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer",
+          "delay_ns": 0.3244,
+          "share_pct": 9.3
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer"
+        },
+        {
+          "instance": "fifo_timer_w",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "timer_0",
+          "module": "axi_lite_timer"
+        },
+        {
+          "instance": "fifo_timer_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "timer_0/fifo_timer_w",
+            "timer_0/fifo_timer_r"
+          ],
+          "delay_ns": 3.1521,
+          "share_pct": 90.7
+        },
+        {
+          "module": "axi_lite_timer",
+          "instances": [
+            "timer_0"
+          ],
+          "delay_ns": 0.3244,
+          "share_pct": 9.3
+        }
+      ],
+      "target": {
+        "module": "axi_lite_timer",
+        "instances": [
+          "timer_0"
+        ],
+        "delay_ns": 0.3244,
+        "share_pct": 9.3
+      },
+      "endpoint_count": 167,
+      "id": "P036",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +20.920 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/axi_lite_timer.v",
+      "target_source_lines": 200
+    },
+    {
+      "startpoint": "timer_clk_div/clk_div[0]$_SDFF_PP0_",
+      "endpoint": "timer_clk_div/clk_div[1]$_SDFF_PP0_",
+      "clock": "clk_s1_gate",
+      "slack_ns": 23.8694,
+      "combinational_delay_ns": 0.7342,
+      "stages": 5,
+      "modules": [
+        {
+          "instance": "timer_clk_div",
+          "module": "clk_div_mux",
+          "delay_ns": 0.7342,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "timer_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "timer_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "clk_div_mux",
+          "instances": [
+            "timer_clk_div"
+          ],
+          "delay_ns": 0.7342,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "clk_div_mux",
+        "instances": [
+          "timer_clk_div"
+        ],
+        "delay_ns": 0.7342,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 2,
+      "id": "P037",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +23.869 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+      "target_source_lines": 52
+    },
+    {
+      "startpoint": "timer_clk_div/clk_div[0]$_SDFF_PP0_",
+      "endpoint": "timer_clk_div/clk_div[0]$_SDFF_PP0_",
+      "clock": "clk_s1_gate",
+      "slack_ns": 24.1968,
+      "combinational_delay_ns": 0.407,
+      "stages": 4,
+      "modules": [
+        {
+          "instance": "timer_clk_div",
+          "module": "clk_div_mux",
+          "delay_ns": 0.407,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "timer_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "timer_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "clk_div_mux",
+          "instances": [
+            "timer_clk_div"
+          ],
+          "delay_ns": 0.407,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "clk_div_mux",
+        "instances": [
+          "timer_clk_div"
+        ],
+        "delay_ns": 0.407,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 1,
+      "id": "P038",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +24.197 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+      "target_source_lines": 52
+    },
+    {
+      "startpoint": "uart_0/fifo_uart_w/counter_2[1]$_SDFFE_PP0P_",
+      "endpoint": "uart_0/fifo_uart_r/mem[0][2]$_DFFE_PP_",
+      "clock": "clk_s4",
+      "slack_ns": 35.0784,
+      "combinational_delay_ns": 4.4162,
+      "stages": 18,
+      "modules": [
+        {
+          "instance": "uart_0/uart_0",
+          "module": "uart_controller",
+          "delay_ns": 2.3536,
+          "share_pct": 53.3
+        },
+        {
+          "instance": "uart_0/fifo_uart_w",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 1.9557,
+          "share_pct": 44.3
+        },
+        {
+          "instance": "uart_0",
+          "module": "axi_lite_uart",
+          "delay_ns": 0.1069,
+          "share_pct": 2.4
+        },
+        {
+          "instance": "uart_0/fifo_uart_r",
+          "module": "asynchronous_fifo_gen",
+          "delay_ns": 0.0,
+          "share_pct": 0.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "uart_0",
+          "module": "axi_lite_uart"
+        },
+        {
+          "instance": "fifo_uart_w",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "uart_0",
+          "module": "axi_lite_uart"
+        },
+        {
+          "instance": "fifo_uart_r",
+          "module": "asynchronous_fifo_gen"
+        }
+      ],
+      "cdc_modules_on_path": [
+        "asynchronous_fifo_gen"
+      ],
+      "crosses_cdc": true,
+      "module_totals": [
+        {
+          "module": "uart_controller",
+          "instances": [
+            "uart_0/uart_0"
+          ],
+          "delay_ns": 2.3536,
+          "share_pct": 53.3
+        },
+        {
+          "module": "asynchronous_fifo_gen",
+          "instances": [
+            "uart_0/fifo_uart_w",
+            "uart_0/fifo_uart_r"
+          ],
+          "delay_ns": 1.9557,
+          "share_pct": 44.3
+        },
+        {
+          "module": "axi_lite_uart",
+          "instances": [
+            "uart_0"
+          ],
+          "delay_ns": 0.1069,
+          "share_pct": 2.4
+        }
+      ],
+      "target": {
+        "module": "uart_controller",
+        "instances": [
+          "uart_0/uart_0"
+        ],
+        "delay_ns": 2.3536,
+        "share_pct": 53.3
+      },
+      "endpoint_count": 200,
+      "id": "P039",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +35.078 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/uart_controller.v",
+      "target_source_lines": 230
+    },
+    {
+      "startpoint": "uart_clk_div/clk_div[0]$_SDFF_PP0_",
+      "endpoint": "uart_clk_div/clk_div[1]$_SDFF_PP0_",
+      "clock": "clk_s4_gate",
+      "slack_ns": 38.8694,
+      "combinational_delay_ns": 0.7342,
+      "stages": 5,
+      "modules": [
+        {
+          "instance": "uart_clk_div",
+          "module": "clk_div_mux",
+          "delay_ns": 0.7342,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "uart_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "uart_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "clk_div_mux",
+          "instances": [
+            "uart_clk_div"
+          ],
+          "delay_ns": 0.7342,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "clk_div_mux",
+        "instances": [
+          "uart_clk_div"
+        ],
+        "delay_ns": 0.7342,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 2,
+      "id": "P040",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +38.869 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+      "target_source_lines": 52
+    },
+    {
+      "startpoint": "uart_clk_div/clk_div[0]$_SDFF_PP0_",
+      "endpoint": "uart_clk_div/clk_div[0]$_SDFF_PP0_",
+      "clock": "clk_s4_gate",
+      "slack_ns": 39.1968,
+      "combinational_delay_ns": 0.407,
+      "stages": 4,
+      "modules": [
+        {
+          "instance": "uart_clk_div",
+          "module": "clk_div_mux",
+          "delay_ns": 0.407,
+          "share_pct": 100.0
+        }
+      ],
+      "start_chain": [
+        {
+          "instance": "uart_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "end_chain": [
+        {
+          "instance": "uart_clk_div",
+          "module": "clk_div_mux"
+        }
+      ],
+      "cdc_modules_on_path": [],
+      "crosses_cdc": false,
+      "module_totals": [
+        {
+          "module": "clk_div_mux",
+          "instances": [
+            "uart_clk_div"
+          ],
+          "delay_ns": 0.407,
+          "share_pct": 100.0
+        }
+      ],
+      "target": {
+        "module": "clk_div_mux",
+        "instances": [
+          "uart_clk_div"
+        ],
+        "delay_ns": 0.407,
+        "share_pct": 100.0
+      },
+      "endpoint_count": 1,
+      "id": "P041",
+      "lever": {
+        "lever": "none",
+        "reason": "slack +39.197 ns -- path already meets timing",
+        "gap_ns": 0.0
+      },
+      "target_source_file": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl/clk_div_mux.v",
+      "target_source_lines": 52
+    }
+  ]
+}

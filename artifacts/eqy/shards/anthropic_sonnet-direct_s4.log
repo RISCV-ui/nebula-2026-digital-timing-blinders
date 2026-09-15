@@ -1,0 +1,8 @@
+FAIL  execution_stage                  TIMEOUT after 900s  [yosys-equiv]  (989.0s)
+PASS  i_rom_32x256                     PROVED_EQUIVALENT  [yosys-equiv]  (39.3s)
+FAIL  isqrt_restoring_32               TIMEOUT after 900s  [yosys-equiv]  (1849.0s)
+FAIL  mult_array_32                    TIMEOUT after 900s  [yosys-equiv]  (2700.1s)
+FAIL  processor_top                    TIMEOUT after 900s  [yosys-equiv]  (1139.0s)
+FAIL  timer                            UNPROVEN (97 cells) at depth 5  [yosys-equiv]  (951.9s)
+
+1/6 modules proved equivalent -> artifacts/eqy/shards/anthropic_sonnet-direct_s4.json

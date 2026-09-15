@@ -1,0 +1,39 @@
+{
+  "baseline_rtl": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl_v2",
+  "variants": [
+    {
+      "name": "baseline",
+      "rtl": "/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/baseline/rtl",
+      "accepted": [],
+      "source": "/Users/shubhanshu/Desktop/Nebula/digital/bench/rtl_v2"
+    },
+    {
+      "name": "anthropic_opus-direct",
+      "rtl": "/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/anthropic_opus-direct/rtl",
+      "accepted": [],
+      "source": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/bakeoff_v2/anthropic_opus-direct/rtl"
+    },
+    {
+      "name": "anthropic_sonnet-direct",
+      "rtl": "/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/anthropic_sonnet-direct/rtl",
+      "accepted": [
+        "fp8_adder.v"
+      ],
+      "source": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/bakeoff_v2/anthropic_sonnet-direct/rtl"
+    },
+    {
+      "name": "gemini_gemini-flash",
+      "rtl": "/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/gemini_gemini-flash/rtl",
+      "accepted": [],
+      "source": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/bakeoff_v2/gemini_gemini-flash/rtl"
+    },
+    {
+      "name": "openrouter_nemotron-ultra",
+      "rtl": "/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/openrouter_nemotron-ultra/rtl",
+      "accepted": [
+        "fp8_adder.v"
+      ],
+      "source": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/bakeoff_v2/openrouter_nemotron-ultra/rtl"
+    }
+  ]
+}

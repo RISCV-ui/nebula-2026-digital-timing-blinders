@@ -1,0 +1,16 @@
+  --      anthropic:sonnet-direct            claude-sonnet-5   (not routed via OpenRouter)
+
+=== arm 1/1: anthropic:sonnet-direct ===
+    1/5 accepted in 360.4s -> artifacts/bakeoff/anthropic_sonnet-direct/rtl
+
+| model | proposals | accepted | 1st try | accept rate | wall s | died at |
+|---|---|---|---|---|---|---|
+| `anthropic:sonnet-direct` | 5 | 1 | 1 | 0.2 | 360.4 | propose 1, g1 3 |
+
+Frozen input RTL: `bench/rtl` (never written to).
+
+| model | optimised RTL | files changed | files added |
+|---|---|---|---|
+| `anthropic:sonnet-direct` | `artifacts/bakeoff/anthropic_sonnet-direct/rtl` | `fp8_adder.v` | -- |
+
+wrote artifacts/bakeoff/bakeoff.json and artifacts/bakeoff/bakeoff.md

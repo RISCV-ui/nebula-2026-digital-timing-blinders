@@ -1,0 +1,1 @@
+{"iteration": 0, "attempt": 0, "module": "fp8_adder", "clock": "clk_s5", "slack_ns": -25.2539, "paths_covered": 2, "backend": "mock", "t": 1789071674.1162791, "proposal_module": "fp8_adder", "transform": "logic_restructure", "latency_delta": 0, "reason": "offline guard test", "stage": "validate", "verdict": "REJECTED", "detail": "proposal changes no RTL bytes"}

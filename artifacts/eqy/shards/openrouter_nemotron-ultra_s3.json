@@ -1,0 +1,148 @@
+{
+  "netlist": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v2_20260913_2305/pnr_openrouter_nemotron-ultra/results/sky130hd/nebula_bench_v2/openrouter_nemotron-ultra/1_2_yosys.v",
+  "modules_checked": 6,
+  "modules_equivalent": 4,
+  "all_equivalent": false,
+  "skipped": [],
+  "results": [
+    {
+      "module": "dmem",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (32 cells) at depth 5",
+      "seconds": 53.2,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16269: \\rdata_gold [5] \\rdata_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16268: \\rdata_gold [4] \\rdata_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16267: \\rdata_gold [3] \\rdata_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16266: \\rdata_gold [2] \\rdata_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16265: \\rdata_gold [1] \\rdata_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$16264: \\rdata_gold [0] \\rdata_gate [0]",
+        "Found a total of 32 unproven $equiv cells.",
+        "ERROR: Found 32 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 15.3
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 15.2
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (32 cells) at depth 5",
+          "seconds": 22.7
+        }
+      ]
+    },
+    {
+      "module": "hazard_detection_unit",
+      "pass": "merged",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 22.3,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "NOT_EQUIVALENT",
+          "seconds": 13.1
+        },
+        {
+          "pass": "merged",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 9.2
+        }
+      ]
+    },
+    {
+      "module": "interrupt_control_unit",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 9.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 9.0
+        }
+      ]
+    },
+    {
+      "module": "memory_stage",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 17.1,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 17.1
+        }
+      ]
+    },
+    {
+      "module": "pipeline_reg_mem_wb",
+      "pass": "partitioned",
+      "equivalent": true,
+      "status": "PROVED_EQUIVALENT",
+      "seconds": 10.0,
+      "failed_partitions": [],
+      "log_tail": [],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "PROVED_EQUIVALENT",
+          "seconds": 10.0
+        }
+      ]
+    },
+    {
+      "module": "tag_memory_92x64_wrap",
+      "pass": "yosys-equiv",
+      "equivalent": false,
+      "status": "UNPROVEN (92 cells) at depth 5",
+      "seconds": 36.3,
+      "failed_partitions": [],
+      "log_tail": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13055: \\data_out_gold [5] \\data_out_gate [5]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13054: \\data_out_gold [4] \\data_out_gate [4]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13053: \\data_out_gold [3] \\data_out_gate [3]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13052: \\data_out_gold [2] \\data_out_gate [2]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13051: \\data_out_gold [1] \\data_out_gate [1]",
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$13050: \\data_out_gold [0] \\data_out_gate [0]",
+        "Found a total of 92 unproven $equiv cells.",
+        "ERROR: Found 92 unproven $equiv cells in 'equiv_status -assert'."
+      ],
+      "attempts": [
+        {
+          "pass": "partitioned",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 11.8
+        },
+        {
+          "pass": "merged",
+          "status": "EQY_ERROR: ERROR: A problem occurred during equivalence check.",
+          "seconds": 11.5
+        },
+        {
+          "pass": "yosys-equiv",
+          "status": "UNPROVEN (92 cells) at depth 5",
+          "seconds": 13.0
+        }
+      ]
+    }
+  ]
+}

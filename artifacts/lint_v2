@@ -1,0 +1,32 @@
+{
+  "top": "soc_top",
+  "golden": {
+    "total": 9,
+    "by_code": {
+      "WIDTHTRUNC": 8,
+      "UNUSEDSIGNAL": 1
+    },
+    "by_file": {
+      "l1_i_cache_8kb.v": 4,
+      "l1_d_cache_8kb.v": 4,
+      "dmem.v": 1
+    },
+    "tree": "bench/rtl"
+  },
+  "candidate": {
+    "total": 9,
+    "by_code": {
+      "WIDTHTRUNC": 8,
+      "UNUSEDSIGNAL": 1
+    },
+    "by_file": {
+      "l1_i_cache_8kb.v": 4,
+      "l1_d_cache_8kb.v": 4,
+      "dmem.v": 1
+    },
+    "tree": "bench/rtl_v2"
+  },
+  "introduced": [],
+  "resolved": [],
+  "verdict": "NO_NEW_WARNINGS"
+}

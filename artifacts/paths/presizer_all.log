@@ -1,0 +1,44 @@
+P000 clk_s5       slack   -26.338  182 stages  target fp8_adder                 86.5% x3  covers 1p/32ep CDC  lever rtl
+P001 clk_s5       slack   -26.152  183 stages  target fp8_adder                 86.4% x3  covers 1p/48ep CDC  lever rtl
+P002 clk_s5       slack   -26.046  183 stages  target fp8_adder                 86.3% x3  covers 1p/32ep CDC  lever rtl
+P003 clk_s5       slack   -17.597  146 stages  target fp8_adder                 82.4% x3  covers 1p/16ep CDC  lever rtl
+P004 clk1         slack   -14.311   29 stages  target id_memory_256x64_wrap     76.1% x1  covers 1p/200ep  lever rtl
+P005 clk_s8       slack     3.284   26 stages  target axi_interconnect_2m_8s    31.4% x1  covers 1p/200ep  lever none
+P006 clk_s3       slack     4.398   30 stages  target axi_interconnect_2m_8s    41.8% x1  covers 1p/30ep CDC  lever none
+P007 clk_s3       slack     4.567   29 stages  target axi_interconnect_2m_8s    43.1% x1  covers 1p/2ep CDC  lever none
+P008 clk_s3       slack     6.275   19 stages  target axi_interconnect_2m_8s    64.2% x1  covers 1p/30ep  lever none
+P009 clk_s3       slack     6.324   20 stages  target soc_top                   43.1% x1  covers 1p/30ep  lever none
+P010 clk_s3       slack     6.405   19 stages  target axi_interconnect_2m_8s    67.0% x1  covers 1p/33ep  lever none
+P011 clk_s3       slack     6.639   19 stages  target soc_top                   47.5% x1  covers 1p/3ep  lever none
+P012 clk_s3       slack     6.701   18 stages  target axi_interconnect_2m_8s    73.7% x1  covers 1p/4ep  lever none
+P013 clk_s3       slack     6.754   17 stages  target axi_interconnect_2m_8s    72.1% x1  covers 1p/3ep  lever none
+P014 clk_s3       slack     6.762   13 stages  target dma_controller           100.0% x1  covers 1p/3ep  lever none
+P015 clk_s3       slack     6.777   19 stages  target soc_top                   49.1% x1  covers 1p/1ep  lever none
+P016 clk_s3       slack     6.861   17 stages  target axi_interconnect_2m_8s    76.3% x1  covers 1p/2ep  lever none
+P017 clk_s3       slack     6.930   13 stages  target dma_controller           100.0% x1  covers 1p/1ep  lever none
+P018 clk_s3       slack     7.173   13 stages  target axi_interconnect_2m_8s    76.5% x1  covers 1p/2ep  lever none
+P019 clk_s3       slack     7.308   13 stages  target dma_controller           100.0% x1  covers 1p/1ep  lever none
+P020 clk_s3       slack     7.498   13 stages  target dma_controller            84.8% x1  covers 1p/30ep  lever none
+P021 clk_s3       slack     7.557   11 stages  target dma_controller           100.0% x1  covers 1p/13ep  lever none
+P022 clk_s3       slack     7.648   12 stages  target dma_controller            83.3% x1  covers 1p/12ep  lever none
+P023 clk_s5       slack     8.001   12 stages  target axi_lite_dot              15.8% x1  covers 1p/1ep CDC  lever none
+P024 clk_s5       slack     8.085   11 stages  target axi_lite_dot              17.4% x1  covers 1p/32ep CDC  lever none
+P025 clk_s5       slack     8.603   12 stages  target axi_lite_dot              20.0% x1  covers 1p/39ep CDC  lever none
+P026 clk_s5_gate  slack    11.369    5 stages  target clk_div_mux              100.0% x1  covers 1p/2ep  lever none
+P027 clk_s5_gate  slack    11.697    4 stages  target clk_div_mux              100.0% x1  covers 1p/1ep  lever none
+P028 clk_s2       slack    15.288   15 stages  target axi_lite_gpio              7.7% x1  covers 1p/1ep CDC  lever none
+P029 clk_s2       slack    15.372   14 stages  target axi_lite_gpio              8.4% x1  covers 1p/32ep CDC  lever none
+P030 clk_s2       slack    15.862   17 stages  target gpio_controller           39.4% x1  covers 1p/64ep CDC  lever none
+P031 clk_s2       slack    15.904   15 stages  target axi_lite_gpio              9.6% x1  covers 1p/103ep CDC  lever none
+P032 clk_s2_gate  slack    18.869    5 stages  target clk_div_mux              100.0% x1  covers 1p/2ep  lever none
+P033 clk_s2_gate  slack    19.197    4 stages  target clk_div_mux              100.0% x1  covers 1p/1ep  lever none
+P034 clk_s1       slack    20.305   15 stages  target axi_lite_timer             7.4% x1  covers 1p/1ep CDC  lever none
+P035 clk_s1       slack    20.389   14 stages  target axi_lite_timer             8.2% x1  covers 1p/32ep CDC  lever none
+P036 clk_s1       slack    20.920   15 stages  target axi_lite_timer             9.3% x1  covers 1p/167ep CDC  lever none
+P037 clk_s1_gate  slack    23.869    5 stages  target clk_div_mux              100.0% x1  covers 1p/2ep  lever none
+P038 clk_s1_gate  slack    24.197    4 stages  target clk_div_mux              100.0% x1  covers 1p/1ep  lever none
+P039 clk_s4       slack    35.078   18 stages  target uart_controller           53.3% x1  covers 1p/200ep CDC  lever none
+P040 clk_s4_gate  slack    38.869    5 stages  target clk_div_mux              100.0% x1  covers 1p/2ep  lever none
+P041 clk_s4_gate  slack    39.197    4 stages  target clk_div_mux              100.0% x1  covers 1p/1ep  lever none
+
+wrote artifacts/paths/presizer_all.json

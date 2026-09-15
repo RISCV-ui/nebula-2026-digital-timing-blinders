@@ -1,0 +1,80 @@
+{
+  "antenna_violations": null,
+  "area_um2": 1739692.0,
+  "clocks": {
+    "clk1": {
+      "period_ns": 10.0,
+      "wns_ns": -0.8916
+    },
+    "clk2": {
+      "period_ns": 20.0,
+      "wns_ns": null
+    },
+    "clk3": {
+      "period_ns": 12.5,
+      "wns_ns": null
+    },
+    "clk4": {
+      "period_ns": 25.0,
+      "wns_ns": null
+    },
+    "clk5": {
+      "period_ns": 40.0,
+      "wns_ns": null
+    },
+    "clk_s1": {
+      "period_ns": 25.0,
+      "wns_ns": 18.3161
+    },
+    "clk_s1_gate": {
+      "period_ns": 25.0,
+      "wns_ns": 23.8325
+    },
+    "clk_s2": {
+      "period_ns": 20.0,
+      "wns_ns": 12.1109
+    },
+    "clk_s2_gate": {
+      "period_ns": 20.0,
+      "wns_ns": 18.1197
+    },
+    "clk_s3": {
+      "period_ns": 10.0,
+      "wns_ns": -0.1671
+    },
+    "clk_s4": {
+      "period_ns": 40.0,
+      "wns_ns": 32.8994
+    },
+    "clk_s4_gate": {
+      "period_ns": 40.0,
+      "wns_ns": 37.5744
+    },
+    "clk_s5": {
+      "period_ns": 12.5,
+      "wns_ns": -25.1392
+    },
+    "clk_s5_gate": {
+      "period_ns": 12.5,
+      "wns_ns": 10.6698
+    },
+    "clk_s8": {
+      "period_ns": 10.0,
+      "wns_ns": -0.4804
+    }
+  },
+  "drc_violations": 0,
+  "instances": 476529,
+  "nets": 118432,
+  "odb": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_20260912/pnr_nemotron_ultra/results/sky130hd/nebula_bench/nemotron_ultra/6_final.odb",
+  "power_total_w": null,
+  "sdc": "/Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_20260912/pnr_nemotron_ultra/results/sky130hd/nebula_bench/nemotron_ultra/6_final.sdc",
+  "tag": "nemotron_ultra",
+  "timestamp": "2026-09-12T15:49:52",
+  "tns": -3131.4055,
+  "tns_hold": -0.2733,
+  "utilization_pct": 49.0,
+  "wirelength_um": 6699564,
+  "wns": -25.1392,
+  "wns_hold": -0.1587
+}

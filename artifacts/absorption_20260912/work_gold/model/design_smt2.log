@@ -1,0 +1,132 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `axi_lite_dot'. Setting top module to axi_lite_dot.
+
+2.1. Analyzing design hierarchy..
+Top module:  \axi_lite_dot
+Used module:     $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Used module:     \fp4_dot_unit
+
+2.2. Analyzing design hierarchy..
+Top module:  \axi_lite_dot
+Used module:     $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+Used module:     \fp4_dot_unit
+Removed 0 unused modules.
+Module axi_lite_dot directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       13 wires
+      106 wire bits
+       13 public wires
+      106 public wire bits
+       10 ports
+       72 port bits
+        3 cells
+        3   $anyseq
+
+=== axi_lite_dot ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      144 wires
+     1048 wire bits
+       51 public wires
+      552 public wire bits
+       21 ports
+      150 port bits
+      117 cells
+        2   $and
+        7   $anyinit
+        4   $assert
+        4   $eq
+        1   $eqx
+       17   $ff
+       28   $logic_and
+       16   $logic_not
+        4   $logic_or
+       34   $mux
+        4 submodules
+        3   $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+        1   fp4_dot_unit
+
+=== fp4_dot_unit ===
+
+        +----------Local Count, excluding submodules.
+        | 
+        6 wires
+      130 wire bits
+        6 public wires
+      130 public wire bits
+        5 ports
+       98 port bits
+        1 cells
+        1   $anyseq
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      127 axi_lite_dot
+        3 $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+        1 fp4_dot_unit
+
+        +----------Count including submodules.
+        | 
+      189 wires
+     1496 wire bits
+       96 public wires
+     1000 public wire bits
+       56 ports
+      464 port bits
+        - memories
+        - memory bits
+        - processes
+      127 cells
+        2   $and
+        7   $anyinit
+       10   $anyseq
+        4   $assert
+        4   $eq
+        1   $eqx
+       17   $ff
+       28   $logic_and
+       16   $logic_not
+        4   $logic_or
+       34   $mux
+        4 submodules
+        3   $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen
+        1   fp4_dot_unit
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module fp4_dot_unit.
+Creating SMT-LIBv2 representation of module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen.
+Creating SMT-LIBv2 representation of module axi_lite_dot.
+
+End of script. Logfile hash: 5b775f683f, time: 0.01s, user: 0.02s, system: 0.01s, MEM: 16.92 MB peak
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 77% 2x write_smt2 (0 sec), 11% 2x read_rtlil (0 sec), ...

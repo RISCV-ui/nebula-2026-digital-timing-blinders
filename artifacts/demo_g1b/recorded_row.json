@@ -1,0 +1,59 @@
+{
+  "iteration": 1,
+  "attempt": 0,
+  "module": "fp4_dot_unit",
+  "clock": "clk_s5",
+  "slack_ns": -26.3376,
+  "paths_covered": 4,
+  "backend": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+  "t": 1789321545.23744,
+  "usage": {
+    "tokens_in": 5317,
+    "tokens_out": 5111,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_usd": 0.0
+  },
+  "proposal_module": "fp4_dot_unit",
+  "transform": "pipeline",
+  "latency_delta": 2,
+  "reason": null,
+  "which_path": "The critical path runs from the fifo_timer_r counter register through the fp4_dot_unit's three-level fp8_adder tree (add0 -> add4 -> add6) and back into the fifo_timer_r memory, with the fp8_adder instances contributing 33.1 ns of the 38.3 ns total combinational delay.",
+  "why_cause": "logic_depth",
+  "why_cause_verbatim": null,
+  "why_evidence": "182 combinational stages, 38.3 ns delay, with 86.5% (33.1 ns) in three cascaded fp8_adder instances (add0, add4, add6) inside fp4_dot_unit",
+  "fix_rtl": "Pipeline the fp4_dot_unit by inserting registers after the first and second adder levels, splitting the 3-level adder tree into three single-adder pipeline stages. This reduces the per-stage combinational depth from ~33 ns to ~11 ns (one fp8_adder) plus multiplier delay in the first stage.",
+  "fix_tool": "none -- the path is already 182 logic levels deep after place-and-route; resizing and buffering cannot compress a three-adder FP addition chain into one cycle at this clock period",
+  "g1_scope": [
+    "fp4_dot_unit"
+  ],
+  "g1_scope_reason": "latency change: congruence does not apply",
+  "g1": {
+    "seconds": 18.9,
+    "depth": 4,
+    "latency_delta": 2,
+    "module": "fp4_dot_unit",
+    "engine": "smtbmc",
+    "module_class": "arith",
+    "solver": "bitwuzla",
+    "solver_seconds": 18.2,
+    "verdict": "EQUIVALENT",
+    "complete": true,
+    "proof": "feed-forward"
+  },
+  "g1b": {
+    "verdict": "CONTRACT_BROKEN",
+    "parents": [
+      "axi_lite_dot"
+    ],
+    "checks": [
+      {
+        "parent": "axi_lite_dot",
+        "verdict": "NOT_EQUIVALENT",
+        "seconds": 137.3
+      }
+    ]
+  },
+  "stage": "g1b",
+  "verdict": "REJECTED"
+}

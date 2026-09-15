@@ -1,0 +1,23 @@
+backend anthropic:claude-sonnet-5, 12 calls
+  tokens 107730 in / 160195 out  cost $2.6484  $2.6484 per accepted fix
+accepted 1: fp8_adder/logic_restructure/+0
+  rejected fp4_dot_unit: The 33.1 ns of this path is spent in three sequential fp8_adder instances (add0 -> add4 -> add6), which is the minimum possible depth for combining 8 partial products in a single cycle (ceil(log2 8) = 3 levels); the reduction tree in fp4_dot_unit is already a balanced binary tree, so no re-balancing at that level shortens the path. The remaining depth lives inside fp8_adder itself as one long true data-dependency chain (exponent compare -> alignment barrel-shift -> sticky -> complement -> 10-bit add -> leading-one detect -> normalization barrel-shift -> round -> exponent bump -> output mux); the leading-one detector has already been restructured from a sequential loop into a flat casez by a prior pass, and every other step in that chain genuinely depends on the result of the step before it (the normalization shift amount cannot be known until the sum is computed, and the rounded mantissa cannot be known until the normalization shift is applied), so there is no independent branch left to hoist ahead of a mux the way logic_restructure requires. Shortening it further would mean predicting the normalization shift in parallel with the addition (leading-zero anticipation), which changes the internal arithmetic scheme of the adder rather than re-expressing the same dependency graph in a shallower form, and given the many special-case branches already in this adder (zero, inf-clamp, denormal edge, sign-compare tie-break) a hand-derived LZA cannot be asserted bit-exact with confidence -- exactly the kind of hand-rolled arithmetic rewrite the rules warn against. retime is unavailable because fp4_dot_unit contains no internal register: it is a single unclocked combinational cloud between the multipliers and dot_out, so there is no existing register boundary to move work across. pipeline would shorten the path but adds latency, and the parent axi_lite_dot has already been shown to require the same-cycle result. fsm_encode and duplicate_driver do not apply: there is no state machine here and the path is a logic-depth problem, not a fanout problem. No catalogue transform closes this path without either changing latency or replacing verified arithmetic structure with an unproven one.
+  rejected axi_lite_dot: unparseable reply
+  rejected gpio_controller: unparseable reply
+  rejected axi_lite_gpio: unparseable reply
+  rejected soc_top: unparseable reply
+  rejected alu: unparseable reply
+  rejected execution_stage: unparseable reply
+  rejected processor_top: unparseable reply
+history -> artifacts/bakeoff_v2/anthropic_sonnet-direct/history.jsonl
+candidate RTL -> artifacts/bakeoff_v2/anthropic_sonnet-direct/rtl
+12 slicer targets -> 9 worth a call (slack <= 0.0 ns, lever=rtl, parents included)
+   clk_s5     slack  -26.338  fp8_adder
+   clk_s5     slack  -26.338  fp4_dot_unit   [instantiates fp8_adder]
+   clk_s5     slack  -26.338  axi_lite_dot   [instantiates fp4_dot_unit]
+   clk_s2     slack  -33.728  gpio_controller
+   clk_s2     slack  -33.728  axi_lite_gpio   [instantiates gpio_controller]
+   clk_s2     slack  -33.728  soc_top   [instantiates axi_lite_gpio]
+   clk1       slack -147.045  alu
+   clk1       slack -147.045  execution_stage   [instantiates alu]
+   clk1       slack -147.045  processor_top   [instantiates execution_stage]

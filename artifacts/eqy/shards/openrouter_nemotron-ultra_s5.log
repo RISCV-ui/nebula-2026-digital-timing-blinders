@@ -1,0 +1,8 @@
+FAIL  fp4_dot_unit                     TIMEOUT after 900s  [yosys-equiv]  (927.6s)
+FAIL  id_memory_256x64_wrap            UNPROVEN (256 cells) at depth 5  [yosys-equiv]  (65.5s)
+FAIL  l1_cache_axi_master              UNPROVEN (354 cells) at depth 5  [yosys-equiv]  (1000.0s)
+FAIL  multiplier_pipelined             TIMEOUT after 900s  [yosys-equiv]  (2470.1s)
+FAIL  read_buffer_d_cache              UNPROVEN (294 cells) at depth 5  [yosys-equiv]  (62.0s)
+FAIL  uart_controller                  TIMEOUT after 900s  [yosys-equiv]  (1815.5s)
+
+0/6 modules proved equivalent -> artifacts/eqy/shards/openrouter_nemotron-ultra_s5.json

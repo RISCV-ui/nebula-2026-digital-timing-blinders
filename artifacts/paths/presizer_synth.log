@@ -1,0 +1,10 @@
+P000 clk_s5       slack   -26.338  182 stages  target fp8_adder                 86.5% x3  covers 2p/40ep CDC  lever rtl
+P001 clk1         slack   -14.311   29 stages  target id_memory_256x64_wrap     76.1% x1  covers 1p/40ep  lever rtl
+P002 clk_s8       slack     3.284   26 stages  target axi_interconnect_2m_8s    31.4% x1  covers 4p/80ep  lever none
+P003 clk_s5_gate  slack    11.369    5 stages  target clk_div_mux              100.0% x1  covers 8p/12ep  lever none
+P004 clk_s2       slack    15.288   15 stages  target axi_lite_gpio              7.7% x1  covers 2p/33ep CDC  lever none
+P005 clk_s2       slack    15.862   17 stages  target gpio_controller           39.4% x1  covers 1p/7ep CDC  lever none
+P006 clk_s1       slack    20.305   15 stages  target axi_lite_timer             7.4% x1  covers 3p/40ep CDC  lever none
+P007 clk_s4       slack    35.078   18 stages  target uart_controller           53.3% x1  covers 1p/40ep CDC  lever none
+
+wrote artifacts/paths/presizer_synth.json

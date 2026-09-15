@@ -640,3 +640,64 @@ checks cover both failure modes: a wrong primary module and an exact repeat
 each stop at `validate` with zero accepts. This check belongs before G1 because
 the theorem "unchanged RTL is equivalent" is true but irrelevant to whether
 the model improved the requested path.
+
+
+## The two clock structures got repaired, not just reported (2026-09-14)
+
+D19 built `clockcheck.py` and it found what it was built to find: `clk_gate`
+was a bare `clk_in & clk_en` and `clk_div_mux` selected among four clocks with
+a combinational `case`. Both were left in place at the time and disclosed in
+the report, on the argument that the input RTL is frozen and repairing it
+breaks comparability.
+
+That argument was wrong in one direction and right in the other. It is right
+that the benchmark cannot change *underneath* a measurement. It is not right
+that a known-broken clock structure should ship in a design whose entire claim
+is that nothing unverified gets accepted -- disclosure is what you do about a
+defect you cannot fix, and this one takes an afternoon.
+
+So both were rewritten, with ports unchanged so `soc_top` and the SDC
+instantiate them exactly as before:
+
+- `clk_gate` is now the standard integrated clock gate: the enable passes
+  through a latch transparent only while `clk_in` is low, so it can only
+  change during the low phase and every pulse out is whole or absent.
+- `clk_div_mux` is now a handover rather than a select. Each branch has a
+  two-stage enable chain clocked by that branch's own clock -- first stage on
+  the rising edge, second on the falling -- and a branch may only assert once
+  every other branch's second stage reads low. Two branches are never enabled
+  at once, and the AND in front of the output only changes while that branch's
+  clock is low.
+
+**The checker had to learn the safe shape.** `classify()` called any net
+combinationally driven from two or more clock sources `GLITCHY_MUX`, which the
+new mux still is -- what makes it safe is where the enables come from, not how
+many sources reach the output. It now has a `SAFE_MUX` verdict that checks the
+structure per branch: gated by exactly one clock, enable registered on that
+clock's falling edge, that flop's data registered on the same clock's rising
+edge, and qualified by the negation of every other branch's enable. Any branch
+failing any of those is still `GLITCHY_MUX`.
+
+**A shape recogniser passing is not evidence.** The shapes are ones we wrote
+down, so `scripts/run_clock_sim.py` measures pulse widths instead: it switches
+the divide ratio 2 ns after a rising edge -- the selected clock high, the exact
+moment a combinational mux cuts a pulse -- and toggles the gate enable at odd
+phases. Fixed structures: 0 runts, all five divide ratios correct. The same
+testbench on the originals, run every time as a control: 8 runts. A runt check
+that passes on a design known to produce runts measures nothing, so the pair is
+the result and either half alone is not.
+
+**What it cost in constraints.** The handover flops are clocked by the
+divider's own counter bits, so twelve internal nets became real clocks with
+registers behind them. Undeclared they would be unclocked registers, and an
+unclocked register is not a warning in a timing report -- it is a path that
+stops being analysed. `nebula.sdc` now declares each as a generated clock of
+its domain and adds it to that domain's asynchronous group, via a `div_net`
+helper that errors rather than silently matching nothing (`-hierarchical`
+matches leaf names, so `*timer_clk_div/clk_div2` matches nothing however it is
+spelled -- the helper matches the leaf and selects on full name).
+
+**What it cost in numbers.** Everything measured through the clock tree: every
+PnR run was redone -- baseline and both arms whose edit was accepted -- against
+the same clock RTL and the same SDC. The loop was not re-run; the accepted
+edits are RTL decisions that the clock structures do not touch.
