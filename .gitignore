@@ -75,3 +75,14 @@ __pycache__/
 /artifacts/model_ppa_*/*/
 /artifacts/timing_close_*/*/
 /artifacts/v2_synth/
+
+# ---------------------------------------------------------------------------
+# Evidence kept on purpose, against the rules above (2026-09-15). The
+# submission is this repository, not a zip, so every file a report table or
+# demo_v2.py cites has to survive a fresh clone: the per-candidate proposals
+# under artifacts/bakeoff_v2*/ (the funnel in Table 4) and the v3 PnR reports
+# under artifacts/model_ppa_v3/ (Table 10). They are tracked with `git add -f`
+# and stay tracked -- do not re-ignore them. The multi-gigabyte ODB/SPEF run
+# databases beside them are still excluded.
+# ---------------------------------------------------------------------------
+.claude/

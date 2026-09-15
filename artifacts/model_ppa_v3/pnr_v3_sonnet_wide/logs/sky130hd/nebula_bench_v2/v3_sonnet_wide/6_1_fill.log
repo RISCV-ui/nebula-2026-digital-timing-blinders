@@ -1,0 +1,13 @@
+OpenROAD 7cfb2105c93c35ce73de9cf4f538de1c9bf8115a 
+Features included (+) or not (-): +GPU -GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 12 thread(s).
+read_liberty /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/results/sky130hd/nebula_bench_v2/v3_sonnet_wide/5_route.odb
+read_sdc /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/results/sky130hd/nebula_bench_v2/v3_sonnet_wide/5_route.sdc
+source /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/setRC.tcl
+exec cp /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/results/sky130hd/nebula_bench_v2/v3_sonnet_wide/5_route.odb /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/results/sky130hd/nebula_bench_v2/v3_sonnet_wide/6_1_fill.odb
+Elapsed time: 0:02.67[h:]min:sec. CPU time: user 1.82 sys 0.26 (77%). Peak memory: 654976KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+6_1_fill                  .odb            2            639 dda2dcc511989c8534bf

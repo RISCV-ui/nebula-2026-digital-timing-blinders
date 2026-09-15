@@ -1,0 +1,1677 @@
+OpenROAD 7cfb2105c93c35ce73de9cf4f538de1c9bf8115a 
+Features included (+) or not (-): +GPU -GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 12 thread(s).
+read_liberty /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/results/sky130hd/nebula_bench_v2/v3_sonnet_wide/4_cts.odb
+read_sdc /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/results/sky130hd/nebula_bench_v2/v3_sonnet_wide/4_cts.sdc
+source /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/setRC.tcl
+pin_access
+[INFO DRT-0149] Reading tech and libs.
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer mcon
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via2
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via3
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+[WARNING DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer via4
+
+Units:                1000
+Number of layers:     13
+Number of macros:     441
+Number of vias:       29
+Number of viarulegen: 25
+
+[INFO DRT-0150] Reading design.
+
+Design:                   soc_top
+Die area:                 ( 0 0 ) ( 1900000 1900000 )
+Number of track patterns: 12
+Number of DEF vias:       0
+Number of components:     169482
+Number of terminals:      40
+Number of snets:          2
+Number of nets:           120882
+
+[INFO DRT-0167] List of default vias:
+  Layer via
+    default via: M1M2_PR
+  Layer via2
+    default via: M2M3_PR
+  Layer via3
+    default via: M3M4_PR
+  Layer via4
+    default via: M4M5_PR
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+  Complete 100000 instances.
+[INFO DRT-0164] Number of unique instances = 398.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0018]   Complete 100000 insts.
+[INFO DRT-0024]   Complete FR_MASTERSLICE.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete li1.
+[INFO DRT-0024]   Complete mcon.
+[INFO DRT-0024]   Complete met1.
+[INFO DRT-0024]   Complete via.
+[INFO DRT-0024]   Complete met2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete met3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete met4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete met5.
+[INFO DRT-0033] FR_MASTERSLICE shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] li1 shape region query size = 4856353.
+[INFO DRT-0033] mcon shape region query size = 3125382.
+[INFO DRT-0033] met1 shape region query size = 868823.
+[INFO DRT-0033] via shape region query size = 238395.
+[INFO DRT-0033] met2 shape region query size = 143067.
+[INFO DRT-0033] via2 shape region query size = 190716.
+[INFO DRT-0033] met3 shape region query size = 143045.
+[INFO DRT-0033] via3 shape region query size = 190716.
+[INFO DRT-0033] met4 shape region query size = 57339.
+[INFO DRT-0033] via4 shape region query size = 9522.
+[INFO DRT-0033] met5 shape region query size = 9798.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0076]   Complete 1000 pins.
+[INFO DRT-0076]   Complete 2000 pins.
+[INFO DRT-0076]   Complete 3000 pins.
+[INFO DRT-0078]   Complete 3277 pins.
+[INFO DRT-0079]   Complete 100 unique inst patterns.
+[INFO DRT-0079]   Complete 200 unique inst patterns.
+[INFO DRT-0079]   Complete 300 unique inst patterns.
+[INFO DRT-0081]   Complete 398 unique inst patterns.
+[INFO DRT-0082]   Complete 10000 groups.
+[INFO DRT-0082]   Complete 20000 groups.
+[INFO DRT-0082]   Complete 30000 groups.
+[INFO DRT-0082]   Complete 40000 groups.
+[INFO DRT-0082]   Complete 50000 groups.
+[INFO DRT-0082]   Complete 60000 groups.
+[INFO DRT-0082]   Complete 70000 groups.
+[INFO DRT-0082]   Complete 80000 groups.
+[INFO DRT-0082]   Complete 90000 groups.
+[INFO DRT-0084]   Complete 92358 groups.
+#scanned instances     = 169482
+#unique  instances     = 398
+#stdCellGenAp          = 13489
+#stdCellValidPlanarAp  = 150
+#stdCellValidViaAp     = 9536
+#stdCellPinNoAp        = 10
+#stdCellPinCnt         = 442507
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:44:35, elapsed time = 00:19:02, memory = 219.73 (MB), peak = 1353.44 (MB)
+Took 1156 seconds: pin_access
+global_route -congestion_report_file /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/reports/sky130hd/nebula_bench_v2/v3_sonnet_wide/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 728485
+[INFO GRT-0019] Found 3772 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 74
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal     835512        640013          23.40%
+met2       Vertical       975464        749140          23.20%
+met3       Horizontal     715531        559117          21.86%
+met4       Vertical       482272        348498          27.74%
+met5       Horizontal     106926         76728          28.24%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove congestion.
+[INFO GRT-0102] Start extra iteration 1/30
+[INFO GRT-0102] Start extra iteration 2/30
+[INFO GRT-0102] Start extra iteration 3/30
+[INFO GRT-0102] Start extra iteration 4/30
+[INFO GRT-0102] Start extra iteration 5/30
+[INFO GRT-0102] Start extra iteration 6/30
+[INFO GRT-0102] Start extra iteration 7/30
+[INFO GRT-0102] Start extra iteration 8/30
+[INFO GRT-0102] Start extra iteration 9/30
+[INFO GRT-0102] Start extra iteration 10/30
+[INFO GRT-0197] Via related to pin nodes: 807962
+[INFO GRT-0198] Via related Steiner nodes: 31210
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 1073367
+[INFO GRT-0112] Final usage 3D: 4195062
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Congestion
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1            640013        330134           51.58%             0 /  0 /  0
+met2            749140        415933           55.52%             0 /  0 /  0
+met3            559117        154218           27.58%             0 /  0 /  0
+met4            348498         71757           20.59%             0 /  0 /  0
+met5             76728          2919            3.80%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total          2373496        974961           41.08%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 9357317 um
+[INFO GRT-0014] Routed nets: 120592
+[INFO GRT-0303] Global routing runtime = 00:03:43
+Took 223 seconds: global_route -congestion_report_file /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/reports/sky130hd/nebula_bench_v2/v3_sonnet_wide/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+estimate_parasitics -global_routing
+Took 27 seconds: estimate_parasitics -global_routing
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |    124536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0641_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0642_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0649_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0643_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0639_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0648_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0640_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0646_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0647_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0644_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add6/_0645_ only has one pin. Check if it is intended to be dangling.
+     1000 |     +0.0% |       0 |       0 |             0 |    123536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0642_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0641_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0642_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0641_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0643_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0649_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0649_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0643_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0639_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0639_ only has one pin. Check if it is intended to be dangling.
+     2000 |     +0.0% |       0 |       0 |             0 |    122536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0640_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0648_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0648_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0640_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0646_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0644_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0647_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0646_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0644_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add4/_0645_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0647_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add5/_0645_ only has one pin. Check if it is intended to be dangling.
+     3000 |     +0.0% |       0 |       0 |             0 |    121536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0642_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0641_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0642_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0641_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0642_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0641_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0642_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0641_ only has one pin. Check if it is intended to be dangling.
+     4000 |     +0.0% |       0 |       0 |             0 |    120536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0649_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0643_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0649_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0643_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0639_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0643_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0649_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0643_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0639_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0649_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0639_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0639_ only has one pin. Check if it is intended to be dangling.
+     5000 |     +0.0% |       0 |       0 |             0 |    119536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0640_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0648_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0648_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0640_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0648_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0640_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0648_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0640_ only has one pin. Check if it is intended to be dangling.
+     6000 |     +0.0% |       0 |       0 |             0 |    118536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0647_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0646_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0647_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0646_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0647_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0645_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add3/_0644_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0645_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add2/_0644_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0646_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0645_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0647_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0646_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0645_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add1/_0644_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/add0/_0644_ only has one pin. Check if it is intended to be dangling.
+     7000 |     +0.0% |       0 |       0 |             0 |    117536
+     8000 |     +0.0% |       0 |       0 |             0 |    116536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_4/_37_ only has one pin. Check if it is intended to be dangling.
+     9000 |     +0.0% |       0 |       0 |             0 |    115536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_7/_35_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_7/_34_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_6/_35_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_6/_34_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_5/_35_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_5/_34_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_4/_36_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_4/_35_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_4/_34_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_3/_35_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_3/_34_ only has one pin. Check if it is intended to be dangling.
+    10000 |     +0.0% |       2 |       0 |             2 |    114536
+    11000 |     +0.0% |       2 |       1 |             3 |    113536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_5/_37_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_5/_36_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_3/_37_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_3/_36_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_2/_35_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_2/_34_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_1/_35_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_1/_34_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_0/_35_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_0/_34_ only has one pin. Check if it is intended to be dangling.
+    12000 |     +0.0% |       2 |       1 |             3 |    112536
+    13000 |     +0.0% |       2 |       1 |             3 |    111536
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_7/_37_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_7/_36_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_6/_37_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_6/_36_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_2/_37_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_2/_36_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_1/_37_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_1/_36_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_0/_37_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fp4_dot_0/fp4_0/_36_ only has one pin. Check if it is intended to be dangling.
+    14000 |     +0.0% |       3 |       2 |             5 |    110536
+    15000 |     +0.0% |       3 |       2 |             5 |    109536
+    16000 |     +0.0% |       3 |       2 |             5 |    108536
+    17000 |     +0.0% |       3 |       2 |             5 |    107536
+    18000 |     +0.0% |       3 |       2 |             5 |    106536
+    19000 |     +0.0% |       3 |       2 |             5 |    105536
+    20000 |     +0.0% |       6 |       2 |             6 |    104536
+    21000 |     +0.0% |       6 |       2 |             6 |    103536
+    22000 |     +0.0% |      12 |       5 |            15 |    102536
+    23000 |     +0.0% |      12 |       5 |            15 |    101536
+    24000 |     +0.0% |      12 |       5 |            15 |    100536
+    25000 |     +0.0% |      12 |       6 |            16 |     99536
+    26000 |     +0.0% |      12 |       6 |            16 |     98536
+    27000 |     +0.0% |      12 |       6 |            16 |     97536
+    28000 |     +0.0% |      13 |       6 |            17 |     96536
+    29000 |     +0.0% |      13 |       6 |            17 |     95536
+    30000 |     +0.0% |      13 |       6 |            17 |     94536
+    31000 |     +0.0% |      13 |       6 |            17 |     93536
+    32000 |     +0.0% |      13 |       6 |            17 |     92536
+    33000 |     +0.0% |      13 |       6 |            17 |     91536
+    34000 |     +0.0% |      13 |       6 |            17 |     90536
+    35000 |     +0.0% |      13 |       7 |            18 |     89536
+    36000 |     +0.0% |      14 |       7 |            19 |     88536
+    37000 |     +0.0% |      14 |       7 |            19 |     87536
+    38000 |     +0.0% |      14 |       7 |            19 |     86536
+    39000 |     +0.0% |      14 |       7 |            19 |     85536
+    40000 |     +0.0% |      14 |       7 |            19 |     84536
+[WARNING RSZ-0104] Net dot_0/fifo_timer_r/_361_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_r/_360_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_r/_359_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_r/_358_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/uart_0/_0681_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/uart_0/_0679_ only has one pin. Check if it is intended to be dangling.
+    41000 |     +0.0% |      15 |       8 |            21 |     83536
+[WARNING RSZ-0104] Net uart_0/fifo_uart_r/_361_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_r/_360_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_r/_358_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_r/_357_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_r/_361_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_r/_360_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_r/_358_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_r/_357_ only has one pin. Check if it is intended to be dangling.
+    42000 |     +0.0% |      15 |       8 |            21 |     82536
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1983_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1982_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1981_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1980_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1979_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1978_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1977_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1976_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1975_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1974_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1973_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1972_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1971_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1970_ only has one pin. Check if it is intended to be dangling.
+    43000 |     +0.0% |      16 |       8 |            22 |     81536
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1969_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1968_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1967_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1966_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1965_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1964_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1963_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1962_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1961_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1960_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1959_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1958_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1957_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1956_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1955_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1954_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1953_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1952_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1951_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1949_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1948_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1947_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_r/_361_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_r/_360_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_r/_358_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_r/_357_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_r/_362_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_r/_357_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/uart_0/_0680_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_r/_362_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_r/_359_ only has one pin. Check if it is intended to be dangling.
+    44000 |     +0.0% |      16 |       8 |            22 |     80536
+[WARNING RSZ-0104] Net timer_0/fifo_timer_r/_362_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_r/_359_ only has one pin. Check if it is intended to be dangling.
+    45000 |     +0.0% |      16 |       8 |            22 |     79536
+    46000 |     +0.0% |      16 |       8 |            22 |     78536
+[WARNING RSZ-0104] Net gpio_0/gpio_0/_1950_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_r/_362_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_r/_359_ only has one pin. Check if it is intended to be dangling.
+    47000 |     +0.0% |      16 |       8 |            22 |     77536
+[WARNING RSZ-0104] Net d_cache_0/_04754_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_0/_04752_ only has one pin. Check if it is intended to be dangling.
+    48000 |     +0.0% |      16 |       8 |            22 |     76536
+    49000 |     +0.0% |      16 |       8 |            22 |     75536
+    50000 |     +0.0% |      16 |       8 |            22 |     74536
+    51000 |     +0.0% |      16 |       8 |            22 |     73536
+    52000 |     +0.0% |      16 |       8 |            22 |     72536
+    53000 |     +0.0% |      16 |       8 |            22 |     71536
+    54000 |     +0.0% |      16 |       8 |            22 |     70536
+[WARNING RSZ-0104] Net d_cache_0/_04753_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_0/_04751_ only has one pin. Check if it is intended to be dangling.
+    55000 |     +0.0% |      16 |       8 |            22 |     69536
+    56000 |     +0.0% |      16 |       8 |            22 |     68536
+    57000 |     +0.0% |      16 |       8 |            22 |     67536
+    58000 |     +0.0% |      16 |       8 |            22 |     66536
+    59000 |     +0.0% |      16 |       8 |            22 |     65536
+[WARNING RSZ-0104] Net d_cache_0/_04757_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_0/_04755_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_0/_04749_ only has one pin. Check if it is intended to be dangling.
+    60000 |     +0.0% |      16 |       8 |            22 |     64536
+    61000 |     +0.0% |      16 |       8 |            22 |     63536
+    62000 |     +0.0% |      16 |       8 |            22 |     62536
+    63000 |     +0.0% |      16 |       8 |            22 |     61536
+    64000 |     +0.0% |      16 |       8 |            22 |     60536
+[WARNING RSZ-0104] Net d_cache_0/_04758_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_0/_04756_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_0/_04750_ only has one pin. Check if it is intended to be dangling.
+    65000 |     +0.0% |      16 |       8 |            22 |     59536
+    66000 |     +0.0% |      16 |       8 |            22 |     58536
+    67000 |     +0.0% |      16 |       8 |            22 |     57536
+    68000 |     +0.0% |      16 |       8 |            22 |     56536
+[WARNING RSZ-0104] Net processor_0/if_stage/i_cache_0/_2377_ only has one pin. Check if it is intended to be dangling.
+    69000 |     +0.0% |      17 |       9 |            23 |     55536
+    70000 |     +0.0% |      17 |       9 |            23 |     54536
+    71000 |     +0.0% |      17 |       9 |            23 |     53536
+    72000 |     +0.0% |      17 |       9 |            23 |     52536
+[WARNING RSZ-0104] Net processor_0/if_stage/i_cache_0/_2379_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/if_stage/i_cache_0/_2378_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/if_stage/i_cache_0/_2376_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/if_stage/i_cache_0/_2375_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1536_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1535_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1534_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1531_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1528_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1527_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1516_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1515_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1508_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1507_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1484_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1483_ only has one pin. Check if it is intended to be dangling.
+    73000 |     +0.0% |      17 |      10 |            24 |     51536
+    74000 |     +0.0% |      18 |      10 |            25 |     50536
+    75000 |     +0.0% |      19 |      11 |            27 |     49536
+[WARNING RSZ-0104] Net processor_0/if_stage/i_cache_0/_2380_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/id_stage/csr_regfile_id/_1169_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/id_stage/csr_regfile_id/_1168_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1533_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1532_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1530_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1529_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1526_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1525_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1522_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1521_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1518_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1517_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1513_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1511_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1506_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1505_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1500_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1499_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1497_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1496_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1493_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1492_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1489_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1485_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1482_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1481_ only has one pin. Check if it is intended to be dangling.
+    76000 |     +0.0% |      20 |      11 |            28 |     48536
+    77000 |     +0.0% |      20 |      11 |            28 |     47536
+    78000 |     +0.0% |      20 |      11 |            28 |     46536
+    79000 |     +0.0% |      20 |      11 |            28 |     45536
+    80000 |     +0.0% |      20 |      11 |            28 |     44536
+[WARNING RSZ-0104] Net processor_0/id_stage/csr_regfile_id/_1170_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1524_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1523_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1520_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1519_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1514_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1512_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1510_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1509_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1504_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1503_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1502_ only has one pin. Check if it is intended to be dangling.
+    81000 |     +0.0% |      20 |      11 |            28 |     43536
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1501_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1498_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1495_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1494_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1491_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1490_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1488_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1487_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/alu_ex/_1486_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_axi_0/_2077_ only has one pin. Check if it is intended to be dangling.
+    82000 |     +0.0% |      21 |      12 |            29 |     42536
+    83000 |     +0.0% |      21 |      12 |            29 |     41536
+    84000 |     +0.0% |      21 |      12 |            29 |     40536
+    85000 |     +0.0% |      21 |      12 |            29 |     39536
+    86000 |     +0.0% |      21 |      12 |            29 |     38536
+[WARNING RSZ-0104] Net uart_0/fifo_uart_w/_429_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_w/_428_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_w/_426_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_w/_425_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_w/_429_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_w/_428_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_w/_426_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_w/_425_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/if_stage/branch_pred_if/_4260_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/if_stage/branch_pred_if/_4259_ only has one pin. Check if it is intended to be dangling.
+    87000 |     +0.0% |      21 |      12 |            29 |     37536
+[WARNING RSZ-0104] Net processor_0/ex_stage/data_clip_ex/_08_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/ex_stage/data_clip_ex/_07_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/branch_comp_id/_158_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/branch_comp_id/_157_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_w/_429_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_w/_428_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_w/_426_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_w/_425_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w2/_361_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w2/_360_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w2/_358_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w2/_357_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w1/_361_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w1/_360_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w1/_358_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w1/_357_ only has one pin. Check if it is intended to be dangling.
+    88000 |     +0.0% |      21 |      12 |            29 |     36536
+[WARNING RSZ-0104] Net d_cache_axi_0/_2076_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_axi_0/_2075_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net d_cache_axi_0/_2074_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_w/_430_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net uart_0/fifo_uart_w/_427_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_w/_430_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net timer_0/fifo_timer_w/_427_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/if_stage/branch_pred_if/_4262_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net processor_0/if_stage/branch_pred_if/_4261_ only has one pin. Check if it is intended to be dangling.
+    89000 |     +0.0% |      21 |      12 |            29 |     35536
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_w/_430_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net gpio_0/fifo_timer_w/_427_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w2/_362_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w2/_359_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w1/_362_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net dot_0/fifo_timer_w1/_359_ only has one pin. Check if it is intended to be dangling.
+    90000 |     +0.0% |      21 |      12 |            29 |     34536
+    91000 |     +0.0% |      21 |      12 |            29 |     33536
+    92000 |     +0.0% |      22 |      12 |            30 |     32536
+    93000 |     +0.0% |      22 |      12 |            30 |     31536
+    94000 |     +0.0% |      22 |      12 |            30 |     30536
+    95000 |     +0.0% |      22 |      12 |            30 |     29536
+    96000 |     +0.0% |      22 |      12 |            30 |     28536
+    97000 |     +0.0% |      22 |      12 |            30 |     27536
+    98000 |     +0.0% |      22 |      12 |            30 |     26536
+    99000 |     +0.0% |      22 |      12 |            30 |     25536
+   100000 |     +0.0% |      22 |      12 |            30 |     24536
+   101000 |     +0.0% |      22 |      12 |            30 |     23536
+   102000 |     +0.0% |      22 |      12 |            30 |     22536
+   103000 |     +0.0% |      22 |      12 |            30 |     21536
+   104000 |     +0.0% |      22 |      12 |            30 |     20536
+   105000 |     +0.0% |      22 |      12 |            30 |     19536
+   106000 |     +0.0% |      22 |      12 |            30 |     18536
+   107000 |     +0.0% |      22 |      12 |            30 |     17536
+   108000 |     +0.0% |      22 |      12 |            30 |     16536
+   109000 |     +0.0% |      22 |      12 |            30 |     15536
+   110000 |     +0.0% |      22 |      12 |            30 |     14536
+   111000 |     +0.0% |      22 |      12 |            30 |     13536
+   112000 |     +0.0% |      22 |      12 |            30 |     12536
+   113000 |     +0.0% |      22 |      12 |            30 |     11536
+   114000 |     +0.0% |      22 |      12 |            30 |     10536
+   115000 |     +0.0% |      22 |      12 |            30 |      9536
+   116000 |     +0.0% |      22 |      12 |            30 |      8536
+   117000 |     +0.0% |      22 |      12 |            30 |      7536
+   118000 |     +0.0% |      22 |      12 |            30 |      6536
+   119000 |     +0.0% |      22 |      12 |            30 |      5536
+   120000 |     +0.0% |      22 |      12 |            30 |      4536
+   121000 |     +0.0% |      28 |      15 |            36 |      3536
+   122000 |     +0.0% |      28 |      15 |            36 |      2536
+   123000 |     +0.0% |      28 |      15 |            36 |      1536
+   124000 |     +0.0% |      28 |      15 |            36 |       536
+    final |     +0.0% |      28 |      15 |            36 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 29 slew violations.
+[INFO RSZ-0036] Found 9 capacitance violations.
+[INFO RSZ-0039] Resized 28 instances.
+[INFO RSZ-0038] Inserted 15 buffers in 36 nets.
+[INFO RSZ-0504] Runtime: 58.21s
+Took 58 seconds: repair_design -verbose
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0006] Core area: 3527558.21 um^2
+[INFO DPL-0007] Movable instances area: 1685059.86 um^2
+[INFO DPL-0008] Fixed instances area within core: 58876.47 um^2
+[INFO DPL-0009] Utilization: 49.4%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 169497 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 0.
+[INFO DPL-0500] Runtime: 5.57s
+Placement Analysis
+---------------------------------
+total displacement         81.6 u
+average displacement        0.0 u
+max displacement           13.6 u
+original HPWL         5321962.3 u
+legalized HPWL        5322004.9 u
+delta HPWL                    0 %
+
+Took 6 seconds: detailed_placement
+global_route -end_incremental -congestion_report_file /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/reports/sky130hd/nebula_bench_v2/v3_sonnet_wide/congestion_post_repair_design.rpt
+Repair setup and hold violations...
+estimate_parasitics -global_routing
+Took 25 seconds: estimate_parasitics -global_routing
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 0 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0094] Found 3616 endpoints with setup violations.
+[INFO RSZ-0099] Repairing 1 out of 3616 (0.00%) violating endpoints...
+   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   StTNS    |   EnTNS    |  Viol  |  Worst  
+          | Buffers |  Gates  | Buffers  |  Gates | Swaps |          |          |            |            | Endpts | St/EnPt 
+------------------------------------------------------------------------------------------------------------------------------
+       0* |       0 |       0 |        0 |      0 |     0 |    +0.0% |  -26.654 |     -883.2 |    -4844.9 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      10* |       0 |       2 |        0 |      0 |     7 |    +0.0% |  -26.530 |     -879.4 |    -4830.6 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      20* |       0 |       6 |        1 |      0 |    12 |    +0.0% |  -26.314 |     -873.2 |    -4804.1 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      30* |       0 |      10 |        2 |      0 |    17 |    +0.0% |  -26.223 |     -870.7 |    -4793.0 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      40* |       0 |      13 |        3 |      0 |    23 |    +0.0% |  -26.177 |     -869.2 |    -4787.5 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      50* |       0 |      19 |        4 |      0 |    26 |    +0.0% |  -26.134 |     -867.7 |    -4782.1 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      60* |       0 |      23 |        5 |      0 |    31 |    +0.0% |  -26.139 |     -868.1 |    -4782.7 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      70* |       0 |      29 |        6 |      0 |    34 |    +0.0% |  -26.081 |     -866.5 |    -4775.3 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      80* |       0 |      35 |        6 |      0 |    38 |    +0.0% |  -26.086 |     -866.6 |    -4775.9 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+      90* |       0 |      37 |        9 |      0 |    43 |    +0.0% |  -26.103 |     -867.1 |    -4779.0 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     100* |       0 |      42 |        9 |      0 |    48 |    +0.0% |  -26.000 |     -864.1 |    -4765.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     110* |       0 |      47 |        9 |      0 |    53 |    +0.0% |  -25.994 |     -863.9 |    -4765.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     120* |       0 |      50 |       10 |      0 |    59 |    +0.0% |  -26.045 |     -865.4 |    -4771.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     130* |       0 |      55 |       12 |      0 |    62 |    +0.0% |  -25.898 |     -861.0 |    -4752.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     140* |       0 |      61 |       12 |      0 |    66 |    +0.0% |  -25.865 |     -860.0 |    -4748.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     150* |       0 |      64 |       13 |      0 |    72 |    +0.0% |  -25.934 |     -862.0 |    -4756.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     160* |       0 |      68 |       14 |      0 |    77 |    +0.0% |  -25.861 |     -859.9 |    -4748.3 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     170* |       0 |      72 |       15 |      0 |    82 |    +0.0% |  -25.857 |     -859.7 |    -4747.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     180* |       0 |      79 |       16 |      0 |    84 |    +0.0% |  -25.838 |     -859.1 |    -4747.2 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     190* |       0 |      83 |       17 |      0 |    89 |    +0.0% |  -25.827 |     -859.1 |    -4745.2 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     200* |       0 |      89 |       17 |      0 |    93 |    +0.0% |  -25.806 |     -858.5 |    -4742.5 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     210* |       0 |      93 |       18 |      0 |    98 |    +0.0% |  -25.796 |     -858.2 |    -4740.7 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     220* |       0 |     100 |       18 |      0 |   101 |    +0.0% |  -25.808 |     -857.2 |    -4742.7 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     230* |       0 |     109 |       18 |      0 |   102 |    +0.0% |  -25.764 |     -855.9 |    -4737.2 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     240* |       0 |     118 |       18 |      0 |   103 |    +0.0% |  -25.741 |     -855.2 |    -4734.2 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     250* |       0 |     120 |       19 |      0 |   110 |    +0.0% |  -25.717 |     -854.4 |    -4731.5 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     260* |       0 |     123 |       21 |      0 |   115 |    +0.0% |  -25.627 |     -851.7 |    -4720.4 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     270* |       0 |     129 |       22 |      0 |   118 |    +0.0% |  -25.614 |     -851.3 |    -4718.6 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     280* |       0 |     133 |       23 |      0 |   123 |    +0.0% |  -25.631 |     -851.7 |    -4720.2 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     290* |       0 |     137 |       23 |      0 |   129 |    +0.0% |  -25.593 |     -850.7 |    -4716.0 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     300* |       0 |     144 |       25 |      0 |   130 |    +0.1% |  -25.534 |     -849.0 |    -4708.2 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     310* |       0 |     147 |       27 |      0 |   135 |    +0.1% |  -25.534 |     -849.0 |    -4708.3 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     320* |       0 |     153 |       27 |      0 |   139 |    +0.1% |  -25.515 |     -848.6 |    -4706.1 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     330* |       0 |     156 |       28 |      0 |   145 |    +0.1% |  -25.573 |     -850.1 |    -4713.5 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     340* |       0 |     160 |       31 |      0 |   148 |    +0.1% |  -25.500 |     -848.2 |    -4704.2 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     350* |       0 |     165 |       33 |      0 |   151 |    +0.1% |  -25.498 |     -848.0 |    -4703.9 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     360* |       0 |     171 |       34 |      0 |   154 |    +0.1% |  -25.448 |     -846.7 |    -4698.4 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     370* |       0 |     177 |       35 |      0 |   157 |    +0.1% |  -25.497 |     -847.9 |    -4703.9 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     380* |       0 |     181 |       37 |      0 |   161 |    +0.1% |  -25.579 |     -850.3 |    -4714.4 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     390* |       0 |     187 |       38 |      0 |   164 |    +0.1% |  -25.479 |     -847.4 |    -4701.5 |   3616 | dot_0/fifo_timer_r/mem\[7\]\[6\]$_DFFE_PP_/D
+     400* |       0 |     192 |       39 |      0 |   168 |    +0.1% |  -25.474 |     -847.2 |    -4701.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     410* |       2 |     194 |       41 |      0 |   172 |    +0.1% |  -25.447 |     -846.4 |    -4699.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     420* |       7 |     194 |       46 |      0 |   172 |    +0.1% |  -25.447 |     -846.4 |    -4699.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     430* |      12 |     194 |       51 |      0 |   172 |    +0.1% |  -25.447 |     -846.4 |    -4699.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     440* |      17 |     194 |       56 |      0 |   172 |    +0.1% |  -25.447 |     -846.4 |    -4699.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     450* |      22 |     194 |       61 |      0 |   172 |    +0.1% |  -25.447 |     -846.4 |    -4699.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     458* |       1 |     194 |       40 |      0 |   172 |    +0.1% |  -25.447 |     -846.4 |    -4699.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     458* |       1 |     194 |       40 |      0 |   172 |    +0.1% |  -25.447 |     -846.4 |    -4699.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     460+ |       1 |     195 |       40 |      0 |   172 |    +0.1% |  -25.436 |     -846.0 |    -4698.0 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     461+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     462+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     463+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     464+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     465+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     466+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     467+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     468+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     469+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     470+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     470+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     471+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     472+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     473+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     474+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     475+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     476+ |       1 |     196 |       40 |      0 |   172 |    +0.1% |  -25.421 |     -845.6 |    -4696.2 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     479+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     480+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     480+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     481+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     482+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     483+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     484+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     485+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     486+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     487+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     488+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     489+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     490+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     490+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     491+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     492+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     493+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     494+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     495+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     496+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     497+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     498+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     499+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     500+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     500+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     501+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     502+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     503+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     504+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     505+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     506+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     507+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     508+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     509+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     510+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     510+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     511+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     512+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     513+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     514+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     515+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     516+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     517+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     518+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     519+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     520+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     520+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     521+ |       1 |     197 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4695.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     523+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     524+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     525+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     526+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     527+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     528+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     529+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     530+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     530+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     531+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     532+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     533+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     534+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     535+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     536+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     537+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     538+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     539+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     540+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     540+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     541+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     542+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     543+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     544+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     545+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     546+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     547+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     548+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     549+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     550+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     550+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     551+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     552+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     553+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     554+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     555+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     556+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     557+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     558+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     559+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     560+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     560+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     561+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     562+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     563+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     564+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     565+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     566+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     567+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     568+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     569+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     570+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     570+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     571+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     572+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     573+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     574+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     575+ |       1 |     198 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4694.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     579+ |       1 |     201 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4692.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     580+ |       1 |     201 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4692.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     583+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     584+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     585+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     586+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     587+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     588+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     589+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     590+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     590+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     591+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     592+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     593+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     594+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     595+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     596+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     597+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     598+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     599+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     600+ |       1 |     204 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -845.5 |    -4691.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     607+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     608+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     609+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     610+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     610+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     611+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     612+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     613+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     614+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     615+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     616+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     617+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     618+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     619+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     620+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     620+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     621+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     622+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     623+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     624+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     625+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     626+ |       1 |     211 |       40 |      0 |   173 |    +0.1% |  -25.416 |     -844.4 |    -3355.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     630+ |       1 |     213 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -817.9 |    -3339.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     634+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     635+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     636+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     637+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     638+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     639+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     640+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     640+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     641+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     642+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     643+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     644+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     645+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     646+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     647+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     648+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     649+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     650+ |       1 |     218 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3331.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     650+ |       1 |     219 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3325.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     651+ |       1 |     219 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3325.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     652+ |       1 |     219 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3325.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     653+ |       1 |     219 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3325.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     654+ |       1 |     219 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3325.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     655+ |       1 |     219 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.5 |    -3325.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     656+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     657+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     658+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     659+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     660+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     660+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     661+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     662+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     663+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     664+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     665+ |       1 |     220 |       40 |      0 |   174 |    +0.1% |  -25.416 |     -781.4 |    -3319.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     670+ |       1 |     223 |       40 |      0 |   175 |    +0.1% |  -25.416 |     -780.6 |    -3313.0 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     675+ |       1 |     228 |       40 |      0 |   175 |    +0.1% |  -25.416 |     -779.3 |    -3304.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     680+ |       1 |     231 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -771.4 |    -3153.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     685+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     686+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     687+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     688+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     689+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     690+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     690+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     691+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     692+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     693+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     694+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     695+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     696+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     697+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     698+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     699+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     700+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     700+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     701+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     702+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     703+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     704+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     705+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     706+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     707+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     708+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     709+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     710+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     710+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     711+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     712+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     713+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     714+ |       1 |     237 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3131.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     715+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     716+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     717+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     718+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     719+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     720+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     720+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     721+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     722+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     723+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     724+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     725+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     726+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     727+ |       1 |     238 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     728+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     729+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     730+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     730+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     731+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     732+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     733+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     734+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     735+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     736+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     737+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     738+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     739+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     740+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     740+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     741+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     742+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     743+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     744+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     745+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     746+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     747+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     748+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     749+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     750+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     750+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     751+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     752+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     753+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     754+ |       1 |     239 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.3 |    -3130.5 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     755+ |       1 |     240 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.1 |    -3130.3 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     756+ |       1 |     240 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.1 |    -3130.3 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     757+ |       1 |     240 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.1 |    -3130.3 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     758+ |       1 |     240 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.1 |    -3130.3 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     759+ |       1 |     240 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.1 |    -3130.3 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     760+ |       1 |     240 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.1 |    -3130.3 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     760+ |       1 |     240 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -763.1 |    -3130.3 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     761+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     762+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     763+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     764+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     765+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     766+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     767+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     768+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     769+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     770+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     770+ |       1 |     241 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.8 |    -3130.1 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     771+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     772+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     773+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     774+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     775+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     776+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     777+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     778+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     779+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     780+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     780+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     781+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     782+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     783+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     784+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     785+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     786+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     787+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     788+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     789+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     790+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     790+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     791+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     792+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     793+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     794+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     795+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     796+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     797+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     798+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     799+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     800+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     800+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     801+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     802+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     803+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     804+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     805+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     806+ |       1 |     242 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.9 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     807+ |       1 |     243 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     808+ |       1 |     243 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     809+ |       1 |     243 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     810+ |       1 |     243 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.5 |    -3129.8 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     814+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     815+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     816+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     817+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     818+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     819+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     820+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     820+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     821+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     822+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     823+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     824+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     825+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     826+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     827+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     828+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     829+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     830+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     830+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     831+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     832+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     833+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     834+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     835+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     836+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     837+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     838+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     839+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     840+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     840+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     841+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     842+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     843+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     844+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     845+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     846+ |       1 |     248 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.7 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     847+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     848+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     849+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     850+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     850+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     851+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     852+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     853+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     854+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     855+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     856+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     857+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     858+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     859+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     860+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     860+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     861+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     862+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     863+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     864+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     865+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     866+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     867+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     868+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     869+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     870+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     870+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     871+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     872+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     873+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     874+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     875+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     876+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     877+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     878+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     879+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     880+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     880+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     881+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     882+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     883+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     884+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     885+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     886+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     887+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     888+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     889+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     890+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     890+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     891+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     892+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     893+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     894+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     895+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     896+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     897+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     898+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     899+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     900+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     900+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     901+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     902+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     903+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     904+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     905+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     906+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     907+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     908+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     909+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     910+ |       1 |     249 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.4 |    -3129.6 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     910+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     911+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     912+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     913+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     914+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     915+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     916+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     917+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     918+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     919+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     920+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     920+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     921+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     922+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     923+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     924+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     925+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     926+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     927+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     928+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     929+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     930+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     930+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     931+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     932+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     933+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     934+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     935+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     936+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     937+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     938+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     939+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     940+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     940+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     941+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     942+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     943+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     944+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     945+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     946+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     947+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     948+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     949+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     950+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     950+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     951+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     952+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     953+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     954+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     955+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     956+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     957+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     958+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     959+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     960+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     960+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     961+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     962+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     963+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     964+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     965+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     966+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     967+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     968+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     969+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     970+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     970+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     971+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     972+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     973+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     974+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     975+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     976+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     977+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     978+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     979+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     980+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     980+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     981+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     982+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     983+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     984+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     985+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     986+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     987+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     988+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     989+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     990+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     990+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     991+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     992+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     993+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     994+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     995+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     996+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     997+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     998+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+     999+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1000+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1000+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1001+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1002+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1003+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1004+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1005+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1006+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1007+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1008+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1009+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1010+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1010+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1011+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1012+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1013+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1014+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1015+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1016+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1017+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1018+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1019+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1020+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1020+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1021+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1022+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1023+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1024+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1025+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1026+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1027+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1028+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1029+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1030+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1030+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1031+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1032+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1033+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1034+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1035+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1036+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1037+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1038+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1039+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1040+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1040+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1041+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1042+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1043+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1044+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1045+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1046+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1047+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1048+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1049+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1050+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1050+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1051+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1052+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1053+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1054+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1055+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1056+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1057+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1058+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1059+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1060+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1060+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1061+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1062+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1063+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1064+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1065+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1066+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1067+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1068+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1069+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1070+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1070+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1071+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1072+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1073+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1074+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1075+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1076+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1077+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1078+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1079+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1080+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1080+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1081+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1082+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1083+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1084+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1085+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1086+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1087+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1088+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1089+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1090+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1090+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1091+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1092+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1093+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1094+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1095+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1096+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1097+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1098+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1099+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1100+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1101+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1102+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1103+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1104+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1105+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1106+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1107+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1108+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1109+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1110+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1110+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1111+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1112+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1113+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1114+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1115+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1116+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1117+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1118+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1119+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1120+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1120+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1121+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1122+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1123+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1124+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1125+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1126+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1127+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1128+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1129+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1130+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1130+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1131+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1132+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1133+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1134+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1135+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1136+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1137+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1138+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1139+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1140+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1140+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1141+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1142+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1143+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1144+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1145+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1146+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1147+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1148+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1149+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1150+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1150+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1151+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1152+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1153+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1154+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1155+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1156+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1157+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1158+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1159+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1160+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1160+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1161+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1162+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1163+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1164+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1165+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1166+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1167+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1168+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1169+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1170+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1170+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1171+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1172+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1173+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1174+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1175+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1176+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1177+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1178+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1179+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1180+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1180+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1181+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1182+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1183+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1184+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1185+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1186+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1187+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1188+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1189+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1190+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1190+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1191+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1192+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1193+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1194+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1195+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1196+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1197+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1198+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1199+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    1200+ |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |   3616 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+    final |       1 |     250 |       40 |      0 |   176 |    +0.1% |  -25.416 |     -762.3 |    -3129.4 |    166 | dot_0/fifo_timer_r/mem\[2\]\[2\]$_DFFE_PP_/D
+------------------------------------------------------------------------------------------------------------------------------
+[INFO RSZ-0059] Removed 1 buffers.
+[INFO RSZ-0040] Inserted 40 buffers.
+[INFO RSZ-0051] Resized 250 instances: 247 up, 3 up match, 0 down, 0 VT
+[INFO RSZ-0043] Swapped pins on 176 instances.
+[WARNING RSZ-0062] Unable to repair all setup violations.
+[INFO RSZ-0505] Runtime: 896.66s
+[INFO RSZ-0046] Found 157 endpoints with hold violations.
+Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint
+--------------------------------------------------------------------------------------
+        0 |       0 |       0 |            0 |    +0.0% |  -0.641 | -42.218 | main_memory_0/mem[60][7]$_DFFE_PP_/D
+       10 |       0 |       2 |            0 |    +0.0% |  -0.516 | -23.443 | main_memory_0/mem[22][29]$_DFFE_PP_/D
+       20 |       0 |       3 |            0 |    +0.0% |  -0.400 | -10.480 | main_memory_0/mem[62][11]$_DFFE_PP_/D
+       30 |       0 |       3 |            0 |    +0.0% |  -0.400 | -10.480 | main_memory_0/mem[62][11]$_DFFE_PP_/D
+       40 |       0 |       4 |            0 |    +0.0% |  -0.248 |  -4.139 | memory_axi_0/addr_reg[23]$_SDFFE_PP0P_/D
+       50 |       0 |       4 |            0 |    +0.0% |  -0.248 |  -4.139 | memory_axi_0/addr_reg[23]$_SDFFE_PP0P_/D
+       60 |       0 |       4 |            0 |    +0.0% |  -0.248 |  -4.139 | memory_axi_0/addr_reg[23]$_SDFFE_PP0P_/D
+       70 |       0 |       4 |            0 |    +0.0% |  -0.248 |  -4.139 | memory_axi_0/addr_reg[23]$_SDFFE_PP0P_/D
+       80 |       0 |       4 |            0 |    +0.0% |  -0.248 |  -4.139 | memory_axi_0/addr_reg[23]$_SDFFE_PP0P_/D
+       90 |       0 |       8 |            0 |    +0.0% |  -0.109 |  -0.145 | memory_axi_0/burst_active_w$_SDFF_PP0_/D
+      100 |       0 |       8 |            0 |    +0.0% |  -0.109 |  -0.145 | memory_axi_0/burst_active_w$_SDFF_PP0_/D
+      110 |       0 |       8 |            0 |    +0.0% |  -0.109 |  -0.145 | memory_axi_0/burst_active_w$_SDFF_PP0_/D
+      120 |       0 |       8 |            0 |    +0.0% |  -0.109 |  -0.145 | memory_axi_0/burst_active_w$_SDFF_PP0_/D
+      130 |       0 |      10 |            0 |    +0.0% |  -0.036 |  -0.036 | memory_axi_0/addr_reg[18]$_SDFFE_PP0P_/D
+      140 |       0 |      10 |            0 |    +0.0% |  -0.036 |  -0.036 | memory_axi_0/addr_reg[18]$_SDFFE_PP0P_/D
+      150 |       0 |      10 |            0 |    +0.0% |  -0.036 |  -0.036 | memory_axi_0/addr_reg[18]$_SDFFE_PP0P_/D
+    final |       0 |      11 |            0 |    +0.0% |   0.013 |   0.000 | main_memory_0/mem[62][11]$_DFFE_PP_/D
+--------------------------------------------------------------------------------------
+[INFO RSZ-0032] Inserted 11 hold buffers.
+[INFO RSZ-0506] Runtime: 25.54s
+Took 923 seconds: repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 0 -verbose
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0006] Core area: 3527558.21 um^2
+[INFO DPL-0007] Movable instances area: 1686522.51 um^2
+[INFO DPL-0008] Fixed instances area within core: 58876.47 um^2
+[INFO DPL-0009] Utilization: 49.5%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 169547 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |          6 |         2 |         4
+        1 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 1.
+[INFO DPL-0500] Runtime: 5.51s
+Placement Analysis
+---------------------------------
+total displacement        533.4 u
+average displacement        0.0 u
+max displacement           17.2 u
+original HPWL         5322758.9 u
+legalized HPWL        5323458.1 u
+delta HPWL                    0 %
+
+Took 6 seconds: detailed_placement
+check_placement -verbose
+Took 5 seconds: check_placement -verbose
+global_route -end_incremental -congestion_report_file /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/reports/sky130hd/nebula_bench_v2/v3_sonnet_wide/congestion_post_repair_timing.rpt
+estimate_parasitics -global_routing
+Took 26 seconds: estimate_parasitics -global_routing
+global_route -start_incremental
+global_route -end_incremental -congestion_report_file /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/reports/sky130hd/nebula_bench_v2/v3_sonnet_wide/congestion_post_recover_power.rpt
+Repair antennas...
+[INFO GRT-0012] Found 734 antenna violations.
+[INFO GRT-0302] Inserted 1127 jumpers for 673 nets.
+[INFO GRT-0012] Found 168 antenna violations.
+[WARNING GRT-0243] Unable to repair antennas on net with diodes.
+[INFO DPL-0006] Core area: 3527558.21 um^2
+[INFO DPL-0007] Movable instances area: 1683704.81 um^2
+[INFO DPL-0008] Fixed instances area within core: 63315.72 um^2
+[INFO DPL-0009] Utilization: 49.5%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 170195 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |        182 |        16 |       166
+        1 |         37 |         5 |        32
+        2 |         16 |         2 |        14
+        3 |         21 |         3 |        18
+        4 |         28 |         2 |        26
+        5 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 5.
+[INFO DPL-0500] Runtime: 5.96s
+[INFO GRT-0015] Inserted 648 diodes.
+[WARNING GRT-0297] Disabling NDR for 1 congested nets
+[WARNING GRT-0273] Disabled NDR (to reduce congestion) for net: clknet_0_uart_clk_div\/clk_div8
+[INFO GRT-0012] Found 68 antenna violations.
+[INFO GRT-0302] Inserted 90 jumpers for 52 nets.
+[INFO GRT-0012] Found 27 antenna violations.
+[INFO DPL-0006] Core area: 3527558.21 um^2
+[INFO DPL-0007] Movable instances area: 1687668.61 um^2
+[INFO DPL-0008] Fixed instances area within core: 59632.19 um^2
+[INFO DPL-0009] Utilization: 49.5%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 170307 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 0.
+[INFO DPL-0500] Runtime: 3.97s
+[INFO GRT-0015] Inserted 112 diodes.
+[INFO GRT-0012] Found 19 antenna violations.
+[INFO GRT-0302] Inserted 19 jumpers for 12 nets.
+[INFO GRT-0012] Found 12 antenna violations.
+[INFO DPL-0006] Core area: 3527558.21 um^2
+[INFO DPL-0007] Movable instances area: 1688225.39 um^2
+[INFO DPL-0008] Fixed instances area within core: 59240.57 um^2
+[INFO DPL-0009] Utilization: 49.5%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 170373 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |          9 |         3 |         6
+        1 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 1.
+[INFO DPL-0500] Runtime: 3.19s
+[INFO GRT-0015] Inserted 66 diodes.
+[INFO GRT-0012] Found 5 antenna violations.
+[INFO GRT-0302] Inserted 5 jumpers for 4 nets.
+[INFO GRT-0012] Found 1 antenna violations.
+[INFO DPL-0006] Core area: 3527558.21 um^2
+[INFO DPL-0007] Movable instances area: 1688583.24 um^2
+[INFO DPL-0008] Fixed instances area within core: 58910.25 um^2
+[INFO DPL-0009] Utilization: 49.5%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 170384 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |          6 |         2 |         4
+        1 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 1.
+[INFO DPL-0500] Runtime: 3.79s
+[INFO GRT-0015] Inserted 11 diodes.
+[INFO GRT-0012] Found 1 antenna violations.
+[INFO GRT-0302] Inserted 0 jumpers for 0 nets.
+[INFO GRT-0012] Found 1 antenna violations.
+[INFO DPL-0006] Core area: 3527558.21 um^2
+[INFO DPL-0007] Movable instances area: 1688610.76 um^2
+[INFO DPL-0008] Fixed instances area within core: 58910.25 um^2
+[INFO DPL-0009] Utilization: 49.5%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 170395 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |         46 |        14 |        32
+        1 |          8 |         2 |         6
+        2 |          8 |         2 |         6
+        3 |         18 |         4 |        14
+        4 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 4.
+[INFO DPL-0500] Runtime: 4.16s
+[INFO GRT-0015] Inserted 11 diodes.
+[INFO ANT-0002] Found 1 net violations.
+[INFO ANT-0001] Found 1 pin violations.
+Estimate parasitics...
+estimate_parasitics -global_routing
+Took 20 seconds: estimate_parasitics -global_routing
+Report metrics stage 5, global route...
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 1747521 um^2 50% utilization.
+[INFO FLW-0007] clock clk1 period 10.000000
+[WARNING FLW-0010] more than one clock found. Skipping sdc update.
+[INFO FLW-0011] Path endpoint path count 62022
+write_db /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/results/sky130hd/nebula_bench_v2/v3_sonnet_wide/5_1_grt.odb
+write_sdc -no_timestamp /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_sonnet_wide/results/sky130hd/nebula_bench_v2/v3_sonnet_wide/5_1_grt.sdc
+Elapsed time: 58:13.50[h:]min:sec. CPU time: user 4044.87 sys 91.84 (118%). Peak memory: 1385920KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+5_1_grt                   .odb         3493           1353 fc88fd4ba34da041254e
+5_1_grt                   .sdc                             e71286d9bee2097b473a

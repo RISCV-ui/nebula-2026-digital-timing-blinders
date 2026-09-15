@@ -1,0 +1,24 @@
+OpenROAD 7cfb2105c93c35ce73de9cf4f538de1c9bf8115a 
+Features included (+) or not (-): +GPU -GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 12 thread(s).
+read_liberty /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_baseline/results/sky130hd/nebula_bench_v2/v3_baseline/3_1_place_gp_skip_io.odb
+read_sdc /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_baseline/results/sky130hd/nebula_bench_v2/v3_baseline/2_floorplan.sdc
+source /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/setRC.tcl
+place_pins -hor_layers met3 -ver_layers met2
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0001] Number of available slots 6912
+[INFO PPL-0002] Number of I/O             38
+[INFO PPL-0003] Number of I/O w/sink      38
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 31697.04 um.
+Design area 1510340 um^2 43% utilization.
+write_db /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_baseline/results/sky130hd/nebula_bench_v2/v3_baseline/3_2_place_iop.odb
+Elapsed time: 0:10.59[h:]min:sec. CPU time: user 1.42 sys 0.50 (18%). Peak memory: 255792KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+3_2_place_iop             .odb           10            249 13f46263a1d77e37099c

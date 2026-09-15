@@ -1,0 +1,24 @@
+violation type: Short
+	srcs: net:d_cache_0/data_out_mem_2\[85\] net:VSS
+	bbox = (1373.7500, 1686.1600) - (1373.8900, 1686.6400) on Layer met1
+violation type: Short
+	srcs: net:d_cache_0/data_out_mem_3\[87\] net:d_cache_0/net30891
+	bbox = (1422.1750, 1774.4550) - (1422.4650, 1774.5950) on Layer met1
+violation type: Short
+	srcs: net:d_cache_0/data_out_mem_3\[87\] net:d_cache_0/net30891
+	bbox = (1422.1900, 1774.4550) - (1422.2500, 1774.5950) on Layer met1
+violation type: Short
+	srcs: net:d_cache_0/data_out_mem_3\[87\] net:d_cache_0/net30891
+	bbox = (1422.1900, 1774.4550) - (1422.3300, 1774.5950) on Layer met1
+violation type: Short
+	srcs: net:d_cache_0/net30909 net:d_cache_0/net30891
+	bbox = (1423.1100, 1769.4600) - (1423.2500, 1769.6000) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/net30891
+	bbox = (1418.9450, 1774.3600) - (1419.2350, 1774.4100) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/data_out_mem_3\[87\] net:d_cache_0/net30891
+	bbox = (1422.4650, 1774.4100) - (1422.5550, 1774.6400) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/net30909
+	bbox = (1423.0550, 1769.1200) - (1423.1100, 1769.2800) on Layer met1

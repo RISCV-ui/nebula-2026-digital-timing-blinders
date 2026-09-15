@@ -1,0 +1,12 @@
+violation type: Metal Spacing
+	srcs: net:s8_dr_data\[13\] net:interconnect_0/net30389
+	bbox = (667.9800, 1464.4900) - (668.0800, 1464.5100) on Layer met1
+violation type: Metal Spacing
+	srcs: net:s8_dr_data\[13\] net:interconnect_0/net30389
+	bbox = (668.0550, 1464.4900) - (668.0800, 1464.5100) on Layer met1
+violation type: Metal Spacing
+	srcs: net:s8_dr_data\[13\]
+	bbox = (668.2200, 1464.2800) - (668.2350, 1464.3300) on Layer met1
+violation type: Metal Spacing
+	srcs: net:s8_dr_data\[13\]
+	bbox = (668.2200, 1464.3300) - (668.2350, 1464.5100) on Layer met1

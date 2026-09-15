@@ -1,0 +1,181 @@
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Using ABC speed script.
+Extracting clock period from SDC file: /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_baseline/results/sky130hd/nebula_bench_v2/v3_baseline/clock_period.txt
+1. Executing Liberty frontend: /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+2. Executing Liberty frontend: /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/alu.v
+4. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/alu_src_a_mux.v
+5. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/alu_src_b_mux.v
+6. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/arbiter.v
+7. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/asynchronous_fifo_gen.v
+8. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/axi_interconnect_2m_8s.v
+9. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/axi_lite_dma_config.v
+10. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/axi_lite_dot.v
+11. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/axi_lite_gpio.v
+12. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/axi_lite_master.v
+13. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/axi_lite_timer.v
+14. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/axi_lite_uart.v
+15. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/branch_comp_decoder.v
+16. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/branch_comprator.v
+17. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/branch_predictor.v
+18. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/clk_div_mux.v
+19. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/clk_gate.v
+20. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/control_unit.v
+21. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/csr_regfile.v
+22. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/data_clipper.v
+23. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/data_extender.v
+24. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/data_forwarding_unit.v
+25. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/dma_controller.v
+26. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/dmem.v
+27. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/execution_stage.v
+28. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/fp4_dot_unit.v
+29. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/fp4_mul.v
+30. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/fp8_adder.v
+31. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/gpio_controller.v
+32. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/hazard_detection_unit.v
+33. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v
+34. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/id_memory_256x64_wrap.v
+35. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/immediate_generator.v
+36. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/instruction_decode_stage.v
+37. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/instruction_fetch_stage.v
+38. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/interrupt_control_unit.v
+39. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/l1_cache_axi_master.v
+40. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/l1_d_cache_8kb.v
+41. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/l1_i_cache_8kb.v
+42. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/mem_axi_slave.v
+43. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/memory_stage.v
+44. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/multiplier_pipelined.v
+45. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/pipeline_reg_ex_mem.v
+46. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/pipeline_reg_id_ex.v
+47. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/pipeline_reg_if_id.v
+48. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/pipeline_reg_mem_wb.v
+49. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/processor_top.v
+50. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/read_buffer_d_cache.v
+51. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/read_buffer_i_cache.v
+52. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/register_file.v
+53. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/soc_top.v
+54. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/tag_memory_92x64_wrap.v
+55. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/timer.v
+56. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/uart_controller.v
+57. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/write_back_stage.v
+58. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/cells_clkgate_hd.v
+59. Executing HIERARCHY pass (managing design hierarchy).
+60. Executing AST frontend in derive mode using pre-parsed AST for module `\soc_top'.
+60.1. Analyzing design hierarchy..
+60.2. Executing AST frontend in derive mode using pre-parsed AST for module `\dmem'.
+60.3. Executing AST frontend in derive mode using pre-parsed AST for module `\interrupt_control_unit'.
+60.4. Executing AST frontend in derive mode using pre-parsed AST for module `\clk_gate'.
+60.5. Executing AST frontend in derive mode using pre-parsed AST for module `\clk_div_mux'.
+60.6. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_uart'.
+60.7. Executing AST frontend in derive mode using pre-parsed AST for module `\mem_axi_slave'.
+60.8. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_dot'.
+60.9. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_dma_config'.
+60.10. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_gpio'.
+60.11. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_timer'.
+60.12. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_interconnect_2m_8s'.
+60.13. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_lite_master'.
+60.14. Executing AST frontend in derive mode using pre-parsed AST for module `\l1_cache_axi_master'.
+60.15. Executing AST frontend in derive mode using pre-parsed AST for module `\l1_d_cache_8kb'.
+60.16. Executing AST frontend in derive mode using pre-parsed AST for module `\read_buffer_d_cache'.
+60.17. Executing AST frontend in derive mode using pre-parsed AST for module `\processor_top'.
+60.18. Analyzing design hierarchy..
+60.19. Executing AST frontend in derive mode using pre-parsed AST for module `\hazard_detection_unit'.
+60.20. Executing AST frontend in derive mode using pre-parsed AST for module `\write_back_stage'.
+60.21. Executing AST frontend in derive mode using pre-parsed AST for module `\pipeline_reg_mem_wb'.
+60.22. Executing AST frontend in derive mode using pre-parsed AST for module `\memory_stage'.
+60.23. Executing AST frontend in derive mode using pre-parsed AST for module `\pipeline_reg_ex_mem'.
+60.24. Executing AST frontend in derive mode using pre-parsed AST for module `\branch_comprator'.
+60.25. Executing AST frontend in derive mode using pre-parsed AST for module `\execution_stage'.
+60.26. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_src_b_mux'.
+60.27. Executing AST frontend in derive mode using pre-parsed AST for module `\alu_src_a_mux'.
+60.28. Executing AST frontend in derive mode using pre-parsed AST for module `\pipeline_reg_id_ex'.
+60.29. Executing AST frontend in derive mode using pre-parsed AST for module `\data_forwarding_unit'.
+60.30. Executing AST frontend in derive mode using pre-parsed AST for module `\data_extender'.
+60.31. Executing AST frontend in derive mode using pre-parsed AST for module `\instruction_decode_stage'.
+60.32. Executing AST frontend in derive mode using pre-parsed AST for module `\pipeline_reg_if_id'.
+60.33. Executing AST frontend in derive mode using pre-parsed AST for module `\instruction_fetch_stage'.
+60.34. Executing AST frontend in derive mode using pre-parsed AST for module `\id_memory_256x64_wrap'.
+60.35. Executing AST frontend in derive mode using pre-parsed AST for module `\tag_memory_92x64_wrap'.
+60.36. Executing AST frontend in derive mode using pre-parsed AST for module `\arbiter'.
+60.37. Executing AST frontend in derive mode using pre-parsed AST for module `\timer'.
+60.38. Executing AST frontend in derive mode using pre-parsed AST for module `\asynchronous_fifo_gen'.
+60.39. Executing AST frontend in derive mode using pre-parsed AST for module `\asynchronous_fifo_gen'.
+60.40. Executing AST frontend in derive mode using pre-parsed AST for module `\gpio_controller'.
+60.41. Executing AST frontend in derive mode using pre-parsed AST for module `\dma_controller'.
+60.42. Executing AST frontend in derive mode using pre-parsed AST for module `\fp4_dot_unit'.
+60.43. Executing AST frontend in derive mode using pre-parsed AST for module `\uart_controller'.
+60.44. Analyzing design hierarchy..
+60.45. Executing AST frontend in derive mode using pre-parsed AST for module `\fp8_adder'.
+60.46. Executing AST frontend in derive mode using pre-parsed AST for module `\fp4_mul'.
+60.47. Executing AST frontend in derive mode using pre-parsed AST for module `\branch_predictor'.
+60.48. Executing AST frontend in derive mode using pre-parsed AST for module `\i_rom_32x256'.
+60.49. Executing AST frontend in derive mode using pre-parsed AST for module `\l1_i_cache_8kb'.
+60.50. Executing AST frontend in derive mode using pre-parsed AST for module `\read_buffer_i_cache'.
+Warning: Replacing memory \buf_data with list of registers. See /Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/read_buffer_i_cache.v:87
+60.51. Executing AST frontend in derive mode using pre-parsed AST for module `\branch_comp_decoder'.
+60.52. Executing AST frontend in derive mode using pre-parsed AST for module `\immediate_generator'.
+60.53. Executing AST frontend in derive mode using pre-parsed AST for module `\csr_regfile'.
+60.54. Executing AST frontend in derive mode using pre-parsed AST for module `\register_file'.
+60.55. Executing AST frontend in derive mode using pre-parsed AST for module `\control_unit'.
+60.56. Executing AST frontend in derive mode using pre-parsed AST for module `\data_clipper'.
+60.57. Executing AST frontend in derive mode using pre-parsed AST for module `\multiplier_pipelined'.
+60.58. Executing AST frontend in derive mode using pre-parsed AST for module `\alu'.
+60.59. Analyzing design hierarchy..
+60.60. Analyzing design hierarchy..
+61. Executing OPT_CLEAN pass (remove unused cells and wires).
+Warning: Ignoring module alu because it contains processes (run 'proc' command first).
+Warning: Ignoring module multiplier_pipelined because it contains processes (run 'proc' command first).
+Warning: Ignoring module data_clipper because it contains processes (run 'proc' command first).
+Warning: Ignoring module control_unit because it contains processes (run 'proc' command first).
+Warning: Ignoring module register_file because it contains processes (run 'proc' command first).
+Warning: Ignoring module csr_regfile because it contains processes (run 'proc' command first).
+Warning: Ignoring module immediate_generator because it contains processes (run 'proc' command first).
+Warning: Ignoring module branch_comp_decoder because it contains processes (run 'proc' command first).
+Warning: Ignoring module read_buffer_i_cache because it contains processes (run 'proc' command first).
+Warning: Ignoring module l1_i_cache_8kb because it contains processes (run 'proc' command first).
+Warning: Ignoring module i_rom_32x256 because it contains processes (run 'proc' command first).
+Warning: Ignoring module branch_predictor because it contains processes (run 'proc' command first).
+Warning: Ignoring module fp4_mul because it contains processes (run 'proc' command first).
+Warning: Ignoring module fp8_adder because it contains processes (run 'proc' command first).
+Warning: Ignoring module uart_controller because it contains processes (run 'proc' command first).
+Warning: Ignoring module dma_controller because it contains processes (run 'proc' command first).
+Warning: Ignoring module gpio_controller because it contains processes (run 'proc' command first).
+Warning: Ignoring module $paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen because it contains processes (run 'proc' command first).
+Warning: Ignoring module $paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen because it contains processes (run 'proc' command first).
+Warning: Ignoring module timer because it contains processes (run 'proc' command first).
+Warning: Ignoring module arbiter because it contains processes (run 'proc' command first).
+Warning: Ignoring module tag_memory_92x64_wrap because it contains processes (run 'proc' command first).
+Warning: Ignoring module id_memory_256x64_wrap because it contains processes (run 'proc' command first).
+Warning: Ignoring module instruction_fetch_stage because it contains processes (run 'proc' command first).
+Warning: Ignoring module pipeline_reg_if_id because it contains processes (run 'proc' command first).
+Warning: Ignoring module data_extender because it contains processes (run 'proc' command first).
+Warning: Ignoring module data_forwarding_unit because it contains processes (run 'proc' command first).
+Warning: Ignoring module pipeline_reg_id_ex because it contains processes (run 'proc' command first).
+Warning: Ignoring module alu_src_a_mux because it contains processes (run 'proc' command first).
+Warning: Ignoring module alu_src_b_mux because it contains processes (run 'proc' command first).
+Warning: Ignoring module branch_comprator because it contains processes (run 'proc' command first).
+Warning: Ignoring module pipeline_reg_ex_mem because it contains processes (run 'proc' command first).
+Warning: Ignoring module pipeline_reg_mem_wb because it contains processes (run 'proc' command first).
+Warning: Ignoring module read_buffer_d_cache because it contains processes (run 'proc' command first).
+Warning: Ignoring module l1_d_cache_8kb because it contains processes (run 'proc' command first).
+Warning: Ignoring module l1_cache_axi_master because it contains processes (run 'proc' command first).
+Warning: Ignoring module axi_lite_master because it contains processes (run 'proc' command first).
+Warning: Ignoring module axi_interconnect_2m_8s because it contains processes (run 'proc' command first).
+Warning: Ignoring module axi_lite_timer because it contains processes (run 'proc' command first).
+Warning: Ignoring module axi_lite_gpio because it contains processes (run 'proc' command first).
+Warning: Ignoring module axi_lite_dma_config because it contains processes (run 'proc' command first).
+Warning: Ignoring module axi_lite_dot because it contains processes (run 'proc' command first).
+Warning: Ignoring module mem_axi_slave because it contains processes (run 'proc' command first).
+Warning: Ignoring module axi_lite_uart because it contains processes (run 'proc' command first).
+Warning: Ignoring module clk_div_mux because it contains processes (run 'proc' command first).
+Warning: Ignoring module interrupt_control_unit because it contains processes (run 'proc' command first).
+Warning: Ignoring module dmem because it contains processes (run 'proc' command first).
+Warning: Ignoring module soc_top because it contains processes (run 'proc' command first).
+62. Executing RTLIL backend.
+Warnings: 49 unique messages, 49 total
+End of script. Logfile hash: 9cbb5e84ab, time: 4.53s, user: 0.52s, system: 0.06s, MEM: 79.97 MB peak
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 52% 1x hierarchy (0 sec), 23% 4x read_liberty (0 sec), ...
+Elapsed time: 0:04.56[h:]min:sec. CPU time: user 0.55 sys 0.07 (13%). Peak memory: 83040KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_1_yosys_canonicalize    .rtlil          4             81 6bf0920e28ce06fc0431

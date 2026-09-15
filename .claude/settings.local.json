@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(curl -sL -o \"13-TimingLLM-PreSynthTimingPrediction-2026.pdf\" \"https://arxiv.org/pdf/2604.23602\")"
-    ]
-  }
-}

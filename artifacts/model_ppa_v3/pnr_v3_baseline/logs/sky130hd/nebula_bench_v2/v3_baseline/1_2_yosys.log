@@ -1,0 +1,736 @@
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Using ABC speed script.
+Extracting clock period from SDC file: /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_baseline/results/sky130hd/nebula_bench_v2/v3_baseline/clock_period.txt
+1. Executing RTLIL frontend.
+2. Executing HIERARCHY pass (managing design hierarchy).
+2.1. Analyzing design hierarchy..
+2.2. Analyzing design hierarchy..
+3. Executing SYNTH pass.
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+3.1.1. Analyzing design hierarchy..
+3.1.2. Analyzing design hierarchy..
+3.2. Executing PROC pass (convert processes to netlists).
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+3.2.12. Executing OPT_EXPR pass (perform const folding).
+3.3. Executing OPT_EXPR pass (perform const folding).
+3.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.5. Executing CHECK pass (checking for obvious problems).
+3.6. Executing OPT pass (performing simple optimizations).
+3.6.1. Executing OPT_EXPR pass (perform const folding).
+3.6.2. Executing OPT_MERGE pass (detect identical cells).
+3.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.6.5. Executing OPT_MERGE pass (detect identical cells).
+3.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+3.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.6.8. Executing OPT_EXPR pass (perform const folding).
+3.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+3.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.6.12. Executing OPT_MERGE pass (detect identical cells).
+3.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+3.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.6.15. Executing OPT_EXPR pass (perform const folding).
+3.6.16. Rerunning OPT passes. (Maybe there is more to do..)
+3.6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.6.19. Executing OPT_MERGE pass (detect identical cells).
+3.6.20. Executing OPT_DFF pass (perform DFF optimizations).
+3.6.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.6.22. Executing OPT_EXPR pass (perform const folding).
+3.6.23. Finished fast OPT passes. (There is nothing left to do.)
+3.7. Executing FSM pass (extract and optimize FSM).
+3.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+3.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+3.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+3.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+3.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+3.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+3.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+3.8. Executing OPT pass (performing simple optimizations).
+3.8.1. Executing OPT_EXPR pass (perform const folding).
+3.8.2. Executing OPT_MERGE pass (detect identical cells).
+3.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.8.5. Executing OPT_MERGE pass (detect identical cells).
+3.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+3.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.8.8. Executing OPT_EXPR pass (perform const folding).
+3.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+3.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.8.12. Executing OPT_MERGE pass (detect identical cells).
+3.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+3.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.8.15. Executing OPT_EXPR pass (perform const folding).
+3.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+3.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.8.19. Executing OPT_MERGE pass (detect identical cells).
+3.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+3.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.8.22. Executing OPT_EXPR pass (perform const folding).
+3.8.23. Finished fast OPT passes. (There is nothing left to do.)
+3.9. Executing WREDUCE pass (reducing word size of cells).
+3.10. Executing PEEPOPT pass (run peephole optimizers).
+3.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.12. Executing ALUMACC pass (create $alu and $macc cells).
+3.13. Executing SHARE pass (SAT-based resource sharing).
+3.14. Executing OPT pass (performing simple optimizations).
+3.14.1. Executing OPT_EXPR pass (perform const folding).
+3.14.2. Executing OPT_MERGE pass (detect identical cells).
+3.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.14.5. Executing OPT_MERGE pass (detect identical cells).
+3.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+3.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.14.8. Executing OPT_EXPR pass (perform const folding).
+3.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+3.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+3.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+3.14.12. Executing OPT_MERGE pass (detect identical cells).
+3.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+3.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.14.15. Executing OPT_EXPR pass (perform const folding).
+3.14.16. Finished fast OPT passes. (There is nothing left to do.)
+3.15. Executing MEMORY pass.
+3.15.1. Executing OPT_MEM pass (optimize memories).
+3.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+3.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+3.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+3.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+3.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+3.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+3.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+3.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+3.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Keep modules above estimated size of
+      0 gate equivalents
+4. Executing CELLMATCH pass. (match cells)
+Warning: Ignoring blackbox module sky130_fd_sc_hd__sdlclkp_4.
+Warning: Ignoring blackbox module sky130_fd_sc_hd__sdlclkp_2.
+Warning: Ignoring blackbox module sky130_fd_sc_hd__sdlclkp_1.
+Warning: Ignoring blackbox module sky130_fd_sc_hd__dlclkp_4.
+Warning: Ignoring blackbox module sky130_fd_sc_hd__dlclkp_2.
+Warning: Ignoring blackbox module sky130_fd_sc_hd__dlclkp_1.
+5. Executing KEEP_HIERARCHY pass.
+6. Executing SYNTH pass.
+6.1. Executing PROC pass (convert processes to netlists).
+6.1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+6.1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+6.1.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+6.1.4. Executing PROC_INIT pass (extract init attributes).
+6.1.5. Executing PROC_ARST pass (detect async resets in processes).
+6.1.6. Executing PROC_ROM pass (convert switches to ROMs).
+6.1.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+6.1.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+6.1.9. Executing PROC_DFF pass (convert process syncs to FFs).
+6.1.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+6.1.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+6.1.12. Executing OPT_EXPR pass (perform const folding).
+6.2. Executing CHECK pass (checking for obvious problems).
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [31] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [30] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [29] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [28] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [27] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [26] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [25] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [24] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [23] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [22] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [21] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [20] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [19] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [18] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [17] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [16] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [15] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [14] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [13] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [12] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [11] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [10] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [9] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [8] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [7] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [6] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [5] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [4] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9180_DATA [2] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [31] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [30] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [29] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [28] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [27] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [26] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [25] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [24] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [23] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [22] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [21] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [20] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [19] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [18] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [17] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [16] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [15] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [14] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [13] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [12] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [11] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [10] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [9] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [8] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [7] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [6] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [5] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [4] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:45$9179_DATA [2] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [31] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [30] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [29] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [28] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [27] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [26] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [25] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [24] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [23] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [22] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [21] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [20] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [19] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [18] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [17] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [16] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [15] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [14] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [13] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [12] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [11] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [10] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [9] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [8] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [7] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [6] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [5] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [4] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9178_DATA [2] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [31] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [30] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [29] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [28] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [27] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [26] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [25] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [24] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [23] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [22] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [21] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [20] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [19] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [18] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [17] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [16] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [15] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [14] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [13] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [12] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [11] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [10] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [9] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [8] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [7] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [6] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [5] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [4] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:46$9177_DATA [2] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [31] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [30] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [29] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [28] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [27] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [26] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [25] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [24] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [23] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [22] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [21] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [20] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [19] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [18] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [17] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [16] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [15] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [14] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [13] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [12] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [11] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [10] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [9] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [8] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [7] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [6] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [5] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [4] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9176_DATA [2] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [31] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [30] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [29] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [28] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [27] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [26] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [25] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [24] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [23] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [22] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [21] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [20] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [19] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [18] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [17] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [16] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [15] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [14] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [13] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [12] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [11] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [10] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [9] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [8] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [7] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [6] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [5] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [4] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:47$9175_DATA [2] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [31] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [30] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [29] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [28] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [27] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [26] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [25] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [24] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [23] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [22] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [21] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [20] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [19] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [18] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [17] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [16] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [15] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [14] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [13] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [12] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [11] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [10] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [9] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [8] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [7] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [6] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [5] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [4] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9174_DATA [2] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [31] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [30] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [29] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [28] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [27] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [26] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [25] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [24] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [23] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [22] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [21] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [20] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [19] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [18] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [17] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [16] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [15] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [14] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [13] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [12] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [11] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [10] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [9] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [8] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [7] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [6] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [5] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [4] is used but has no driver.
+Warning: Wire i_rom_32x256.$memrd$\mem$/Users/shubhanshu/Desktop/Nebula/digital/output/rtl_variants_v2/v3_baseline/rtl/i_rom_32x256.v:48$9173_DATA [2] is used but has no driver.
+6.3. Executing FLATTEN pass (flatten design).
+6.4. Executing OPT_EXPR pass (perform const folding).
+6.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.6. Executing CHECK pass (checking for obvious problems).
+6.7. Executing OPT pass (performing simple optimizations).
+6.7.1. Executing OPT_EXPR pass (perform const folding).
+6.7.2. Executing OPT_MERGE pass (detect identical cells).
+6.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+6.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+6.7.5. Executing OPT_MERGE pass (detect identical cells).
+6.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+6.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.7.8. Executing OPT_EXPR pass (perform const folding).
+6.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+6.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+6.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+6.7.12. Executing OPT_MERGE pass (detect identical cells).
+6.7.13. Executing OPT_DFF pass (perform DFF optimizations).
+6.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.7.15. Executing OPT_EXPR pass (perform const folding).
+6.7.16. Finished fast OPT passes. (There is nothing left to do.)
+6.8. Executing OPT pass (performing simple optimizations).
+6.8.1. Executing OPT_EXPR pass (perform const folding).
+6.8.2. Executing OPT_MERGE pass (detect identical cells).
+6.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+6.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+6.8.5. Executing OPT_MERGE pass (detect identical cells).
+6.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+6.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.8.8. Executing OPT_EXPR pass (perform const folding).
+6.8.9. Finished fast OPT passes. (There is nothing left to do.)
+6.9. Executing WREDUCE pass (reducing word size of cells).
+6.10. Executing PEEPOPT pass (run peephole optimizers).
+6.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.12. Executing ALUMACC pass (create $alu and $macc cells).
+6.13. Executing SHARE pass (SAT-based resource sharing).
+6.14. Executing OPT pass (performing simple optimizations).
+6.14.1. Executing OPT_EXPR pass (perform const folding).
+6.14.2. Executing OPT_MERGE pass (detect identical cells).
+6.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+6.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+6.14.5. Executing OPT_MERGE pass (detect identical cells).
+6.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+6.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.14.8. Executing OPT_EXPR pass (perform const folding).
+6.14.9. Finished fast OPT passes. (There is nothing left to do.)
+6.15. Executing MEMORY pass.
+6.15.1. Executing OPT_MEM pass (optimize memories).
+6.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+6.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+6.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+6.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+6.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+6.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+6.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+6.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+7. Executing SYNTH pass.
+7.1. Executing OPT pass (performing simple optimizations).
+7.1.1. Executing OPT_EXPR pass (perform const folding).
+7.1.2. Executing OPT_MERGE pass (detect identical cells).
+7.1.3. Executing OPT_DFF pass (perform DFF optimizations).
+7.1.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.1.5. Rerunning OPT passes. (Removed registers in this run.)
+7.1.6. Executing OPT_EXPR pass (perform const folding).
+7.1.7. Executing OPT_MERGE pass (detect identical cells).
+7.1.8. Executing OPT_DFF pass (perform DFF optimizations).
+7.1.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.1.10. Rerunning OPT passes. (Removed registers in this run.)
+7.1.11. Executing OPT_EXPR pass (perform const folding).
+7.1.12. Executing OPT_MERGE pass (detect identical cells).
+7.1.13. Executing OPT_DFF pass (perform DFF optimizations).
+7.1.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.1.15. Finished fast OPT passes.
+7.2. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+7.3. Executing OPT pass (performing simple optimizations).
+7.3.1. Executing OPT_EXPR pass (perform const folding).
+7.3.2. Executing OPT_MERGE pass (detect identical cells).
+7.3.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+7.3.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+7.3.5. Executing OPT_MERGE pass (detect identical cells).
+7.3.6. Executing OPT_SHARE pass.
+7.3.7. Executing OPT_DFF pass (perform DFF optimizations).
+7.3.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.3.9. Executing OPT_EXPR pass (perform const folding).
+7.3.10. Rerunning OPT passes. (Maybe there is more to do..)
+7.3.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+7.3.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+7.3.13. Executing OPT_MERGE pass (detect identical cells).
+7.3.14. Executing OPT_SHARE pass.
+7.3.15. Executing OPT_DFF pass (perform DFF optimizations).
+7.3.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.3.17. Executing OPT_EXPR pass (perform const folding).
+7.3.18. Rerunning OPT passes. (Maybe there is more to do..)
+7.3.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+7.3.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+7.3.21. Executing OPT_MERGE pass (detect identical cells).
+7.3.22. Executing OPT_SHARE pass.
+7.3.23. Executing OPT_DFF pass (perform DFF optimizations).
+7.3.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.3.25. Executing OPT_EXPR pass (perform const folding).
+7.3.26. Rerunning OPT passes. (Maybe there is more to do..)
+7.3.27. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+7.3.28. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+7.3.29. Executing OPT_MERGE pass (detect identical cells).
+7.3.30. Executing OPT_SHARE pass.
+7.3.31. Executing OPT_DFF pass (perform DFF optimizations).
+7.3.32. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.3.33. Executing OPT_EXPR pass (perform const folding).
+7.3.34. Finished fast OPT passes. (There is nothing left to do.)
+7.4. Executing TECHMAP pass (map to technology primitives).
+7.4.1. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/orfs/tools/install/yosys/bin/../share/yosys/techmap.v
+7.4.2. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/common/lcu_kogge_stone.v
+7.4.3. Continuing TECHMAP pass.
+7.4.82. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+7.4.83. Executing OPT_EXPR pass (perform const folding).
+7.5. Executing OPT pass (performing simple optimizations).
+7.5.1. Executing OPT_EXPR pass (perform const folding).
+7.5.2. Executing OPT_MERGE pass (detect identical cells).
+7.5.3. Executing OPT_DFF pass (perform DFF optimizations).
+7.5.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.5.5. Finished fast OPT passes.
+7.6. Executing HIERARCHY pass (managing design hierarchy).
+7.6.1. Analyzing design hierarchy..
+7.6.2. Analyzing design hierarchy..
+7.7. Printing statistics.
+7.8. Executing CHECK pass (checking for obvious problems).
+8. Executing OPT pass (performing simple optimizations).
+8.1. Executing OPT_EXPR pass (perform const folding).
+8.2. Executing OPT_MERGE pass (detect identical cells).
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+8.5. Executing OPT_MERGE pass (detect identical cells).
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.8. Executing OPT_EXPR pass (perform const folding).
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+8.12. Executing OPT_MERGE pass (detect identical cells).
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.15. Executing OPT_EXPR pass (perform const folding).
+8.16. Finished fast OPT passes. (There is nothing left to do.)
+9. Executing EXTRACT_FA pass (find and extract full/half adders).
+10. Executing TECHMAP pass (map to technology primitives).
+10.1. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/cells_adders_hd.v
+10.2. Continuing TECHMAP pass.
+11. Executing TECHMAP pass (map to technology primitives).
+11.1. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/orfs/tools/install/yosys/bin/../share/yosys/techmap.v
+11.2. Continuing TECHMAP pass.
+12. Executing OPT pass (performing simple optimizations).
+12.1. Executing OPT_EXPR pass (perform const folding).
+12.2. Executing OPT_MERGE pass (detect identical cells).
+12.3. Executing OPT_DFF pass (perform DFF optimizations).
+12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+12.5. Finished fast OPT passes.
+13. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+14. Executing TECHMAP pass (map to technology primitives).
+14.1. Executing Verilog-2005 frontend: /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/cells_latch_hd.v
+14.2. Continuing TECHMAP pass.
+15. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+15.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+16. Executing OPT pass (performing simple optimizations).
+16.1. Executing OPT_EXPR pass (perform const folding).
+16.2. Executing OPT_MERGE pass (detect identical cells).
+16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+16.5. Executing OPT_MERGE pass (detect identical cells).
+16.6. Executing OPT_DFF pass (perform DFF optimizations).
+16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+16.8. Executing OPT_EXPR pass (perform const folding).
+16.9. Finished fast OPT passes. (There is nothing left to do.)
+17. Executing SETUNDEF pass (replace undef values with defined constants).
+abc -script /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/scripts/abc_speed.script -liberty /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -dont_use sky130_fd_sc_hd__probe_p_8 -dont_use sky130_fd_sc_hd__probec_p_8 -dont_use sky130_fd_sc_hd__lpflow_bleeder_1 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_1 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_16 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_2 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_1 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_16 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_2 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_12 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_3 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_6 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_inputiso0n_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso0p_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso1n_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso1p_1 -dont_use sky130_fd_sc_hd__lpflow_inputisolatch_1 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_1 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_16 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_2 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_4 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_8 -dont_use sky130_fd_sc_hd__lpflow_isobufsrckapwr_16 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 -constr /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_baseline/objects/sky130hd/nebula_bench_v2/v3_baseline/abc.constr
+18. Executing ABC pass (technology mapping using ABC).
+18.1. Extracting gate netlist of module `$paramod$72f83d20332db853f52d52010cdb396e42162176\asynchronous_fifo_gen' to `<abc-temp-dir>/input.blif'..
+18.1.1. Executed ABC.
+18.1.2. Re-integrating ABC results.
+18.2. Extracting gate netlist of module `$paramod$e9b0330b32c707496d2ac0891b99a36ab486e931\asynchronous_fifo_gen' to `<abc-temp-dir>/input.blif'..
+18.2.1. Executed ABC.
+18.2.2. Re-integrating ABC results.
+18.3. Extracting gate netlist of module `\alu' to `<abc-temp-dir>/input.blif'..
+18.3.1. Executed ABC.
+18.3.2. Re-integrating ABC results.
+18.4. Extracting gate netlist of module `\alu_src_a_mux' to `<abc-temp-dir>/input.blif'..
+18.4.1. Executed ABC.
+18.4.2. Re-integrating ABC results.
+18.5. Extracting gate netlist of module `\alu_src_b_mux' to `<abc-temp-dir>/input.blif'..
+18.5.1. Executed ABC.
+18.5.2. Re-integrating ABC results.
+18.6. Extracting gate netlist of module `\arbiter' to `<abc-temp-dir>/input.blif'..
+18.6.1. Executed ABC.
+18.6.2. Re-integrating ABC results.
+18.7. Extracting gate netlist of module `\axi_interconnect_2m_8s' to `<abc-temp-dir>/input.blif'..
+18.7.1. Executed ABC.
+18.7.2. Re-integrating ABC results.
+18.8. Extracting gate netlist of module `\axi_lite_dma_config' to `<abc-temp-dir>/input.blif'..
+18.8.1. Executed ABC.
+18.8.2. Re-integrating ABC results.
+18.9. Extracting gate netlist of module `\axi_lite_dot' to `<abc-temp-dir>/input.blif'..
+18.9.1. Executed ABC.
+18.9.2. Re-integrating ABC results.
+18.10. Extracting gate netlist of module `\axi_lite_gpio' to `<abc-temp-dir>/input.blif'..
+18.10.1. Executed ABC.
+18.10.2. Re-integrating ABC results.
+18.11. Extracting gate netlist of module `\axi_lite_master' to `<abc-temp-dir>/input.blif'..
+18.11.1. Executed ABC.
+18.11.2. Re-integrating ABC results.
+18.12. Extracting gate netlist of module `\axi_lite_timer' to `<abc-temp-dir>/input.blif'..
+18.12.1. Executed ABC.
+18.12.2. Re-integrating ABC results.
+18.13. Extracting gate netlist of module `\axi_lite_uart' to `<abc-temp-dir>/input.blif'..
+18.13.1. Executed ABC.
+18.13.2. Re-integrating ABC results.
+18.14. Extracting gate netlist of module `\branch_comp_decoder' to `<abc-temp-dir>/input.blif'..
+18.14.1. Executed ABC.
+18.14.2. Re-integrating ABC results.
+18.15. Extracting gate netlist of module `\branch_comprator' to `<abc-temp-dir>/input.blif'..
+18.15.1. Executed ABC.
+18.15.2. Re-integrating ABC results.
+18.16. Extracting gate netlist of module `\branch_predictor' to `<abc-temp-dir>/input.blif'..
+18.16.1. Executed ABC.
+18.16.2. Re-integrating ABC results.
+18.17. Extracting gate netlist of module `\clk_div_mux' to `<abc-temp-dir>/input.blif'..
+18.17.1. Executed ABC.
+18.17.2. Re-integrating ABC results.
+18.18. Extracting gate netlist of module `\clk_gate' to `<abc-temp-dir>/input.blif'..
+18.18.1. Executed ABC.
+18.18.2. Re-integrating ABC results.
+18.19. Extracting gate netlist of module `\control_unit' to `<abc-temp-dir>/input.blif'..
+18.19.1. Executed ABC.
+18.19.2. Re-integrating ABC results.
+18.20. Extracting gate netlist of module `\csr_regfile' to `<abc-temp-dir>/input.blif'..
+18.20.1. Executed ABC.
+18.20.2. Re-integrating ABC results.
+18.21. Extracting gate netlist of module `\data_clipper' to `<abc-temp-dir>/input.blif'..
+18.21.1. Executed ABC.
+18.21.2. Re-integrating ABC results.
+18.22. Extracting gate netlist of module `\data_extender' to `<abc-temp-dir>/input.blif'..
+18.22.1. Executed ABC.
+18.22.2. Re-integrating ABC results.
+18.23. Extracting gate netlist of module `\data_forwarding_unit' to `<abc-temp-dir>/input.blif'..
+18.23.1. Executed ABC.
+18.23.2. Re-integrating ABC results.
+18.24. Extracting gate netlist of module `\dma_controller' to `<abc-temp-dir>/input.blif'..
+18.24.1. Executed ABC.
+18.24.2. Re-integrating ABC results.
+18.25. Extracting gate netlist of module `\dmem' to `<abc-temp-dir>/input.blif'..
+18.25.1. Executed ABC.
+18.25.2. Re-integrating ABC results.
+18.26. Extracting gate netlist of module `\execution_stage' to `<abc-temp-dir>/input.blif'..
+18.26.1. Executed ABC.
+18.26.2. Re-integrating ABC results.
+18.27. Extracting gate netlist of module `\fp4_dot_unit' to `<abc-temp-dir>/input.blif'..
+18.27.1. Executed ABC.
+18.28. Extracting gate netlist of module `\fp4_mul' to `<abc-temp-dir>/input.blif'..
+18.28.1. Executed ABC.
+18.28.2. Re-integrating ABC results.
+18.29. Extracting gate netlist of module `\fp8_adder' to `<abc-temp-dir>/input.blif'..
+18.29.1. Executed ABC.
+18.29.2. Re-integrating ABC results.
+18.30. Extracting gate netlist of module `\gpio_controller' to `<abc-temp-dir>/input.blif'..
+18.30.1. Executed ABC.
+18.30.2. Re-integrating ABC results.
+18.31. Extracting gate netlist of module `\hazard_detection_unit' to `<abc-temp-dir>/input.blif'..
+18.31.1. Executed ABC.
+18.31.2. Re-integrating ABC results.
+18.32. Extracting gate netlist of module `\i_rom_32x256' to `<abc-temp-dir>/input.blif'..
+18.32.1. Executed ABC.
+18.32.2. Re-integrating ABC results.
+18.33. Extracting gate netlist of module `\id_memory_256x64_wrap' to `<abc-temp-dir>/input.blif'..
+18.33.1. Executed ABC.
+18.33.2. Re-integrating ABC results.
+18.34. Extracting gate netlist of module `\immediate_generator' to `<abc-temp-dir>/input.blif'..
+18.34.1. Executed ABC.
+18.34.2. Re-integrating ABC results.
+18.35. Extracting gate netlist of module `\instruction_decode_stage' to `<abc-temp-dir>/input.blif'..
+18.35.1. Executed ABC.
+18.35.2. Re-integrating ABC results.
+18.36. Extracting gate netlist of module `\instruction_fetch_stage' to `<abc-temp-dir>/input.blif'..
+18.36.1. Executed ABC.
+18.36.2. Re-integrating ABC results.
+18.37. Extracting gate netlist of module `\interrupt_control_unit' to `<abc-temp-dir>/input.blif'..
+18.37.1. Executed ABC.
+18.37.2. Re-integrating ABC results.
+18.38. Extracting gate netlist of module `\l1_cache_axi_master' to `<abc-temp-dir>/input.blif'..
+18.38.1. Executed ABC.
+18.38.2. Re-integrating ABC results.
+18.39. Extracting gate netlist of module `\l1_d_cache_8kb' to `<abc-temp-dir>/input.blif'..
+18.39.1. Executed ABC.
+18.39.2. Re-integrating ABC results.
+18.40. Extracting gate netlist of module `\l1_i_cache_8kb' to `<abc-temp-dir>/input.blif'..
+18.40.1. Executed ABC.
+18.40.2. Re-integrating ABC results.
+18.41. Extracting gate netlist of module `\mem_axi_slave' to `<abc-temp-dir>/input.blif'..
+18.41.1. Executed ABC.
+18.41.2. Re-integrating ABC results.
+18.42. Extracting gate netlist of module `\memory_stage' to `<abc-temp-dir>/input.blif'..
+18.42.1. Executed ABC.
+18.43. Extracting gate netlist of module `\multiplier_pipelined' to `<abc-temp-dir>/input.blif'..
+18.43.1. Executed ABC.
+18.43.2. Re-integrating ABC results.
+18.44. Extracting gate netlist of module `\pipeline_reg_ex_mem' to `<abc-temp-dir>/input.blif'..
+18.44.1. Executed ABC.
+18.44.2. Re-integrating ABC results.
+18.45. Extracting gate netlist of module `\pipeline_reg_id_ex' to `<abc-temp-dir>/input.blif'..
+18.45.1. Executed ABC.
+18.45.2. Re-integrating ABC results.
+18.46. Extracting gate netlist of module `\pipeline_reg_if_id' to `<abc-temp-dir>/input.blif'..
+18.46.1. Executed ABC.
+18.46.2. Re-integrating ABC results.
+18.47. Extracting gate netlist of module `\pipeline_reg_mem_wb' to `<abc-temp-dir>/input.blif'..
+18.47.1. Executed ABC.
+18.47.2. Re-integrating ABC results.
+18.48. Extracting gate netlist of module `\processor_top' to `<abc-temp-dir>/input.blif'..
+18.48.1. Executed ABC.
+18.48.2. Re-integrating ABC results.
+18.49. Extracting gate netlist of module `\read_buffer_d_cache' to `<abc-temp-dir>/input.blif'..
+18.49.1. Executed ABC.
+18.49.2. Re-integrating ABC results.
+18.50. Extracting gate netlist of module `\read_buffer_i_cache' to `<abc-temp-dir>/input.blif'..
+18.50.1. Executed ABC.
+18.50.2. Re-integrating ABC results.
+18.51. Extracting gate netlist of module `\register_file' to `<abc-temp-dir>/input.blif'..
+18.51.1. Executed ABC.
+18.51.2. Re-integrating ABC results.
+18.52. Extracting gate netlist of module `\soc_top' to `<abc-temp-dir>/input.blif'..
+18.52.1. Executed ABC.
+18.52.2. Re-integrating ABC results.
+18.53. Extracting gate netlist of module `\tag_memory_92x64_wrap' to `<abc-temp-dir>/input.blif'..
+18.53.1. Executed ABC.
+18.53.2. Re-integrating ABC results.
+18.54. Extracting gate netlist of module `\timer' to `<abc-temp-dir>/input.blif'..
+18.54.1. Executed ABC.
+18.54.2. Re-integrating ABC results.
+18.55. Extracting gate netlist of module `\uart_controller' to `<abc-temp-dir>/input.blif'..
+18.55.1. Executed ABC.
+18.55.2. Re-integrating ABC results.
+18.56. Extracting gate netlist of module `\write_back_stage' to `<abc-temp-dir>/input.blif'..
+18.56.1. Executed ABC.
+18.56.2. Re-integrating ABC results.
+Took 641 seconds: abc -script /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/scripts/abc_speed.script -liberty /Users/shubhanshu/Desktop/Nebula/digital/orfs/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -dont_use sky130_fd_sc_hd__probe_p_8 -dont_use sky130_fd_sc_hd__probec_p_8 -dont_use sky130_fd_sc_hd__lpflow_bleeder_1 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_1 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_16 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_2 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_clkbufkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_1 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_16 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_2 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_clkinvkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_12 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_3 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_4 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_6 -dont_use sky130_fd_sc_hd__lpflow_decapkapwr_8 -dont_use sky130_fd_sc_hd__lpflow_inputiso0n_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso0p_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso1n_1 -dont_use sky130_fd_sc_hd__lpflow_inputiso1p_1 -dont_use sky130_fd_sc_hd__lpflow_inputisolatch_1 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_1 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_16 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_2 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_4 -dont_use sky130_fd_sc_hd__lpflow_isobufsrc_8 -dont_use sky130_fd_sc_hd__lpflow_isobufsrckapwr_16 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 -dont_use sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4 -constr /Users/shubhanshu/Desktop/Nebula/digital/artifacts/model_ppa_v3/pnr_v3_baseline/objects/sky130hd/nebula_bench_v2/v3_baseline/abc.constr
+19. Executing SPLITNETS pass (splitting up multi-bit signals).
+20. Executing OPT_CLEAN pass (remove unused cells and wires).
+21. Executing HILOMAP pass (mapping to constant drivers).
+22. Executing INSBUF pass (insert buffer cells for connected wires).
+23. Executing CHECK pass (checking for obvious problems).
+24. Printing statistics.
+25. Executing CHECK pass (checking for obvious problems).
+26. Executing Verilog backend.
+26.1. Executing BMUXMAP pass.
+26.2. Executing DEMUXMAP pass.
+Warnings: 238 unique messages, 470 total
+End of script. Logfile hash: e7d147c932, time: 910.24s, user: 36.87s, system: 0.84s, MEM: 291.56 MB peak
+Yosys 0.67+ (git sha1 b88b73a99, Release, AppleClang /usr/bin/c++ 21.0.0.21000101) [github.com/The-OpenROAD-Project/yosys at HEAD]
+Time spent: 71% 1x abc (91 sec), 15% 1x extract_fa (19 sec), ...
+Elapsed time: 15:10.58[h:]min:sec. CPU time: user 122.71 sys 5.90 (14%). Peak memory: 298560KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_2_yosys                 .v            910            291 6d65fff7a4093c2ec6be

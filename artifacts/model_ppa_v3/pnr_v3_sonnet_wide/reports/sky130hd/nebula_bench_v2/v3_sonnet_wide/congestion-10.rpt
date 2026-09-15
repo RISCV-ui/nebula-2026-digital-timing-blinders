@@ -1,0 +1,32 @@
+violation type: Vertical congestion
+	srcs: net:clknet_0_gpio_clk_div\/clk_div8 net:clknet_0_gpio_clk_div\/clk_div2
+	comment: capacity:12 usage:303 congestion:291
+	bbox = (931.5000, 1255.8000) - (938.4000, 1262.7000) on Layer -
+violation type: Vertical congestion
+	srcs: net:clknet_0_timer_clk_div\/clk_div2 net:clknet_0_timer_clk_div\/clk_div4
+	comment: capacity:17 usage:303 congestion:286
+	bbox = (662.4000, 1476.6000) - (669.3000, 1483.5000) on Layer -
+violation type: Vertical congestion
+	srcs: net:clk_s4_gate net:clknet_0_clk_s4_gate_regs
+	comment: capacity:17 usage:303 congestion:286
+	bbox = (883.2000, 1097.1000) - (890.1000, 1104.0000) on Layer -
+violation type: Vertical congestion
+	srcs: net:clknet_0_gpio_clk_div\/clk_div4 net:clknet_0_gpio_clk_div\/clk_div8
+	comment: capacity:12 usage:303 congestion:291
+	bbox = (931.5000, 1283.4000) - (938.4000, 1290.3000) on Layer -
+violation type: Vertical congestion
+	srcs: net:clk_s1_gate net:clknet_0_clk_s1_gate
+	comment: capacity:16 usage:303 congestion:287
+	bbox = (572.7000, 1690.5000) - (579.6000, 1697.4000) on Layer -
+violation type: Vertical congestion
+	srcs: net:clknet_0_gpio_clk_div\/clk_div8 net:clknet_0_gpio_clk_div\/clk_div2
+	comment: capacity:12 usage:303 congestion:291
+	bbox = (931.5000, 1269.6000) - (938.4000, 1276.5000) on Layer -
+violation type: Vertical congestion
+	srcs: net:clknet_0_gpio_clk_div\/clk_div8 net:clknet_0_gpio_clk_div\/clk_div2
+	comment: capacity:12 usage:303 congestion:291
+	bbox = (931.5000, 1262.7000) - (938.4000, 1269.6000) on Layer -
+violation type: Vertical congestion
+	srcs: net:clk_s5_gate net:clknet_0_dot_clk_div\/clk_div8
+	comment: capacity:17 usage:303 congestion:286
+	bbox = (690.0000, 959.1000) - (696.9000, 966.0000) on Layer -

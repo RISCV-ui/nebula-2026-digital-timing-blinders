@@ -1,0 +1,39 @@
+violation type: Short
+	srcs: net:net28574 net:interconnect_0/net30390
+	bbox = (573.2300, 1420.9000) - (573.3050, 1421.1200) on Layer met1
+violation type: Short
+	srcs: net:d_cache_0/data_in_tag_mem_buf\[39\] net:d_cache_0/net29092
+	bbox = (1132.5250, 1665.8100) - (1132.6350, 1665.8750) on Layer met1
+violation type: Short
+	srcs: net:d_cache_0/data_in_tag_mem_buf\[39\] net:d_cache_0/net29092
+	bbox = (1132.5250, 1665.8100) - (1132.6350, 1665.9000) on Layer met1
+violation type: Short
+	srcs: net:d_cache_0/data_in_tag_mem_buf\[39\] net:d_cache_0/net29092
+	bbox = (1132.5250, 1665.8100) - (1132.6350, 1665.9200) on Layer met1
+violation type: Metal Spacing
+	srcs: net:memory_axi_0/net36594
+	bbox = (845.7850, 1361.3600) - (846.0000, 1361.4600) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/data_in_tag_mem_buf\[39\] net:d_cache_0/net29068
+	bbox = (1131.7250, 1665.7150) - (1131.7600, 1665.7900) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/data_in_tag_mem_buf\[39\] net:d_cache_0/net29092
+	bbox = (1132.6350, 1665.7600) - (1132.6800, 1665.7900) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/data_in_tag_mem_buf\[39\] net:d_cache_0/net29092
+	bbox = (1132.6350, 1665.7600) - (1132.6800, 1665.8750) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/data_in_tag_mem_buf\[39\] net:d_cache_0/net29092
+	bbox = (1132.6350, 1665.7600) - (1132.6800, 1665.9000) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/data_in_tag_mem_buf\[39\] net:d_cache_0/net29092
+	bbox = (1132.6350, 1665.7600) - (1132.6800, 1665.9200) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/net29092
+	bbox = (1132.8200, 1665.7600) - (1132.8250, 1665.9200) on Layer met1
+violation type: Metal Spacing
+	srcs: net:d_cache_0/net29092
+	bbox = (1132.8200, 1665.8100) - (1132.8250, 1665.9200) on Layer met1
+violation type: Metal Spacing
+	srcs: net:interconnect_0/net30390
+	bbox = (602.2600, 1350.1350) - (602.3000, 1350.4450) on Layer met2
