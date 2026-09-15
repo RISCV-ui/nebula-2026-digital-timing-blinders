@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.6)  15 SEP 2026 12:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.6)  15 SEP 2026 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,28 +1147,29 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-(./generated/tab_clocks.tex
+(./generated/fig_clocktree.tex
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 22.
+) (./generated/tab_clocks.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 7.
-) [2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3] 
-(./generated/fig_runt.tex)
-(./generated/tab_clockrisk.tex
+) [2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3]
+(./generated/fig_runt.tex) (./generated/tab_clockrisk.tex
 Underfull \hbox (badness 6641) in paragraph at lines 12--13
 []|\T1/lmr/m/n/9 (+20) clk_out = clk_in & latched en-able
  []
 
-) (./generated/tab_scale.tex) [4] [5] (./generated/fig_gates.tex)
-(./generated/tab_funnel.tex) [6] (./generated/tab_accepts.tex)
-(./generated/tab_g1b.tex) (./generated/tab_ppa.tex) [7]
-(./generated/tab_fmax.tex) (./generated/fig_slack.tex) [8]
-(./generated/tab_v3.tex) (./generated/tab_eqy_netlist.tex)
-(./generated/fig_eqy.tex
+) (./generated/tab_scale.tex) [4] [5] [6] (./generated/fig_gates.tex)
+(./generated/tab_funnel.tex) [7] (./generated/tab_accepts.tex)
+(./generated/tab_g1b.tex) (./generated/tab_ppa.tex) (./generated/tab_fmax.tex)
+(./generated/fig_slack.tex) [8] [9] (./generated/tab_v3.tex) [10]
+(./generated/tab_eqy_netlist.tex) (./generated/fig_eqy.tex
 Package pgfplots info on input line 18: Using 'lua backend=false' for axis: sta
 cked plots unsupported (yet).
-) [9] [10] (./generated/tab_bakeoff.tex)
-(./generated/fig_bakeoff.tex) [11] (./generated/tab_deaths.tex) [12] [13]
-(./generated/diff_fp8.tex [14]) [15] (./generated/prompt.tex [16]) [17]
-(./nebula_report.aux)
+) [11]
+(./generated/tab_bakeoff.tex) (./generated/fig_bakeoff.tex) [12]
+(./generated/tab_deaths.tex) [13] [14] (./generated/diff_fp8.tex [15]) [16]
+(./generated/prompt.tex [17]) [18] (./nebula_report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1177,11 +1178,11 @@ Package rerunfilecheck Info: File `nebula_report.out' has not changed.
 (rerunfilecheck)             Checksum: E6099EF606612F8F90F680A2106A7F0D;7041.
  ) 
 Here is how much of TeX's memory you used:
- 43195 strings out of 467525
- 999561 string characters out of 5418983
- 2459721 words of memory out of 5000000
- 70876 multiletter control sequences out of 15000+600000
- 726412 words of font info for 239 fonts, out of 8000000 for 9000
+ 43457 strings out of 467525
+ 1003281 string characters out of 5418983
+ 2464203 words of memory out of 5000000
+ 71123 multiletter control sequences out of 15000+600000
+ 730067 words of font info for 245 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,21n,117p,1010b,2646s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
@@ -1199,14 +1200,15 @@ blic/lm/lmri9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lms
 y10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></u
 sr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/te
 xlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2026/
-texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist
-/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type
-1/public/lm/lmtt9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msam10.pfb>
-Output written on nebula_report.pdf (17 pages, 515944 bytes).
+texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2026/texmf-dist
+/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/typ
+e1/public/lm/lmtt8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/l
+m/lmtt9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb>
+Output written on nebula_report.pdf (18 pages, 546650 bytes).
 PDF statistics:
- 673 PDF objects out of 1000 (max. 8388607)
- 598 compressed objects within 6 object streams
- 287 named destinations out of 1000 (max. 500000)
- 65821 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 689 PDF objects out of 1000 (max. 8388607)
+ 609 compressed objects within 7 object streams
+ 289 named destinations out of 1000 (max. 500000)
+ 68381 words of extra memory for PDF output out of 74296 (max. 10000000)
 
