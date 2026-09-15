@@ -1,0 +1,50 @@
+% Title page. The same shape as the team's analog-track report: logo, rules
+% above and below the title, an information table, and the problem statement
+% quoted in a box rather than paraphrased.
+\begin{titlepage}
+\centering
+\vspace*{0mm}
+\includegraphics[width=30mm]{iitb_logo.png}\\[2mm]
+{\large Indian Institute of Technology Bombay}\\[1mm]
+{\small Department of Electrical Engineering}\\[5mm]
+
+{\color{accent}\rule{\textwidth}{1.2pt}}\\[5mm]
+{\color{accent}\huge\bfseries Constraint Optimisation through RTL\\[2mm]
+Enhancement Using Generative AI}\\[4mm]
+{\color{accent}\Large Formally gated, LLM-driven timing closure\\[2mm]
+on a five-domain SoC benchmark}\\[3mm]
+{\large\itshape \baselineinstances\ instances, \baselineclocks\ declared
+clocks, sky130hd, every accepted edit carrying a proof}\\[5mm]
+{\color{accent}\rule{\textwidth}{1.2pt}}\\[7mm]
+
+{\large\bfseries Astera Labs Nebula 2026 --- Digital Track}\\[6mm]
+
+\begin{tabular}{r@{\hspace{6mm}}p{92mm}}
+\bfseries Team name   & \textbf{Timing Blinders} \\[2pt]
+\bfseries College     & Indian Institute of Technology Bombay \\[2pt]
+\bfseries Members     & Shubhanshu Shivhare \\
+                      & Nagarjun BV \\[2pt]
+\bfseries Topic       & Constraint Optimisation through RTL Enhancement Using Generative AI \\[2pt]
+\bfseries Submitted   & 15 September 2026 \\[2pt]
+\bfseries Code and evidence & {\small\url{\RepoURL}} \\
+\end{tabular}
+
+\vspace{8mm}
+\begin{minipage}{0.86\textwidth}
+\setlength{\fboxsep}{9pt}
+\fcolorbox{accent}{accent!4}{\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule}
+\textbf{Problem statement.} Use generative AI to close timing on RTL:
+read the timing violations a static analysis reports, propose an RTL fix
+drawn from pipelining, logic restructuring, retiming or FSM re-encoding, and
+verify that the fix both improves timing and leaves the design functionally
+identical before accepting it. The benchmark is a subsystem of realistic
+scale with five asynchronous master clock domains, generated clocks, clock
+dividers and domain crossings.
+\end{minipage}}
+\end{minipage}
+
+\vspace{7mm}
+
+{\footnotesize Every measurement in this report is generated from the run artifacts
+by \texttt{scripts/build\_report.py}. None is typed into the source.}
+\end{titlepage}

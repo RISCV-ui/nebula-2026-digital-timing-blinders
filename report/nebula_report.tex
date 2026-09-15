@@ -33,6 +33,7 @@
 % The diff appendix is quoted verbatim out of the run, so it needs a verbatim
 % environment that colours added and removed lines rather than a manual
 % transcription that could drift from what was actually accepted.
+\lstset{upquote=true, literate={-}{{\texttt{-}}}1}
 \lstdefinestyle{plain}{
   basicstyle=\ttfamily\scriptsize,
   breaklines=true, columns=fullflexible, keepspaces=true,
@@ -72,6 +73,8 @@
 \renewcommand{\arraystretch}{1.15}
 
 % A claim box, for the three sentences the whole report has to support.
+\newcommand{\file}[1]{\texttt{\small #1}}
+
 \newcommand{\claim}[1]{%
   \par\smallskip\noindent
   \colorbox{accent!6}{%
@@ -81,18 +84,11 @@
 
 \input{generated/numbers}
 
-\title{\vspace{-12mm}\color{accent}\bfseries
-       Constraint Optimisation through RTL Enhancement\\[2pt]
-       \large\mdseries Formally gated, LLM-driven timing closure on a
-       five-domain SoC benchmark}
-\author{Shubhanshu Shivhare \and Nagarjun BV\\[2pt]
-        \small Team \textbf{Timing Blinders} \textperiodcentered\ Astera Labs
-        Nebula 2026 \textperiodcentered\ Digital Track}
-\date{\small Generated \reportgenerated}
+\newcommand{\RepoURL}{https://github.com/RISCV-ui/nebula-2026-digital-timing-blinders}
 
 \begin{document}
-\maketitle
-\thispagestyle{empty}
+\input{titlepage}
+
 
 % =====================================================================
 \section*{Abstract}
@@ -119,6 +115,63 @@ The more useful finding is a negative one. \numcontractkills{} rewrites passed
 formal equivalence and were still rejected, each by a gate that asks a question
 equivalence does not: whether the parent module's timing contract survived.
 Those rewrites are what an equivalence-only flow ships.
+
+% =====================================================================
+\section{What was asked, and what is delivered}
+
+The problem statement asks for a system in which a generative model reads
+timing violations, rewrites the RTL, and an automated toolchain decides whether
+that rewrite is kept --- on a benchmark of five asynchronous domains and
+SoC-subsystem scale. Table~\ref{tab:deliver} states where each of the seven
+listed deliverables is answered.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}p{56mm}p{92mm}@{}}
+\toprule
+\textbf{Asked for} & \textbf{Delivered} \\
+\midrule
+1. RTL timing analysis framework & OpenSTA driven from TCL, ranked paths as
+JSON, each annotated with its owning module, that module's parents, and whether
+an RTL lever exists --- \file{bench/scripts/sta.py}, Section~\ref{sec:d1} \\
+2. GenAI-based RTL optimisation engine & \file{bench/scripts/loop.py}: propose,
+gate, feed the rejecting gate's finding back, retry. Four models ran through it
+unchanged --- Section~\ref{sec:d2} \\
+3. Critical path and violation analysis & the funnel, per gate and per arm,
+including the losses that were our harness rather than the model ---
+Table~\ref{tab:funnel}, Section~\ref{sec:d3} \\
+4. Optimised RTL implementation & \numaccepted{} accepted rewrites, each named
+with its run, its transform and its proof status --- Table~\ref{tab:accepts},
+Section~\ref{sec:d4} \\
+5. Timing, frequency and PPA comparison & post-route metrics from two
+independent generations, per clock domain, against the same frozen baseline ---
+Section~\ref{sec:d5} \\
+6. Formal equivalence verification report & proved twice: optimised RTL against
+the frozen RTL at accept time, and netlist against optimised RTL after
+synthesis --- Section~\ref{sec:d6} \\
+7. Interactive demo & \file{demo\_v2.py}, eight acts, read-only, no API key and
+no toolchain, about a second end to end --- Section~\ref{sec:d7} \\
+\bottomrule
+\end{tabular}
+\caption{The seven deliverables, and where each is answered.}
+\label{tab:deliver}
+\end{table}
+
+The three criteria the shortlisting names are answered in three separate
+places:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item \textbf{Coverage of all deliverables} --- Table~\ref{tab:deliver}, and
+the results in Section~\ref{sec:d5}, measured on routed layouts rather than on
+a synthesis estimate.
+\item \textbf{Innovation} --- Section~\ref{sec:innovation}. The load-bearing
+idea is that module-level equivalence is not sufficient, and that the parent's
+timing contract is a separate gate --- which is what
+Table~\ref{tab:g1b} is a measurement of.
+\item \textbf{Thought process} --- Section~\ref{sec:journey}: the route the
+work actually took, including the defects we shipped to ourselves and what each
+one changed.
+\end{itemize}
 
 % =====================================================================
 \section{What this had to get right}
@@ -313,6 +366,7 @@ them.
 
 % =====================================================================
 \section{Deliverable 1 --- RTL timing analysis framework}
+\label{sec:d1}
 
 OpenSTA is driven from TCL and returns ranked critical paths as structured
 JSON, which is what the model consumes as context. Paths are sliced from the
@@ -327,6 +381,7 @@ before the annotation existed.
 
 % =====================================================================
 \section{Deliverable 2 --- GenAI-based RTL optimisation engine}
+\label{sec:d2}
 
 The loop is \texttt{run\_sta} $\rightarrow$ \texttt{propose} $\rightarrow$
 \texttt{gate} $\rightarrow$ \texttt{accept or feed back}. What distinguishes it
@@ -380,6 +435,7 @@ than as a closed path.
 
 % =====================================================================
 \section{Deliverable 3 --- Critical path and timing violation analysis}
+\label{sec:d3}
 
 \input{generated/tab_funnel}
 
@@ -399,6 +455,7 @@ under the defective harness.
 
 % =====================================================================
 \section{Deliverable 4 --- Optimised RTL implementation}
+\label{sec:d4}
 
 \input{generated/tab_accepts}
 
@@ -413,6 +470,7 @@ gating it mechanically rather than trusting review to catch it.
 
 % =====================================================================
 \section{Deliverable 5 --- Timing, frequency and PPA comparison}
+\label{sec:d5}
 
 \input{generated/tab_ppa}
 
@@ -465,6 +523,7 @@ size. We report it anyway.
 
 % =====================================================================
 \section{Deliverable 6 --- Formal equivalence verification report}
+\label{sec:d6}
 
 Equivalence is claimed twice, because neither half implies the other:
 
@@ -488,6 +547,7 @@ are the blocks whose timing does not close.
 
 % =====================================================================
 \section{Deliverable 7 --- Interactive demo}
+\label{sec:d7}
 
 \texttt{demo\_v2.py} walks the flow in eight acts, in the order it actually
 runs: the sliced critical paths, the four arms over identical targets, the
@@ -563,7 +623,92 @@ same defect. That is the strongest argument in this report for gating it
 mechanically instead of trusting review.
 
 % =====================================================================
-\section{What is new here}
+\section{Thought process}
+\label{sec:journey}
+
+Every structural decision in this system came from a run that produced a wrong
+answer confidently. That is the failure mode that matters here: a flow that
+crashes costs an afternoon, and a flow that reports closure it did not achieve
+costs the result. The route below is in the order it happened.
+
+\subsection{The benchmark had bugs before any model saw it}
+
+The first benchmark we wrote passed synthesis, passed simulation, and had two
+defects in its clock structures: an enable that reached a clock gate without
+being retimed onto the inactive edge, and a divider output selected by a
+combinational mux. Both produce runt pulses --- a clock edge too narrow to be a
+clock edge --- and neither shows up in a slack number. We found them by
+writing the audit that is now the G1c/G2c gate, and we fixed them in the
+benchmark rather than tuning the audit until the benchmark passed. The control
+in Figure~\ref{fig:runt} is that audit run against the broken version.
+
+The lesson set the rule the rest of the work follows: the frozen input is
+frozen \emph{after} it is audited, and every gate is first demonstrated
+catching something real.
+
+\subsection{The slicer was reading the wrong netlist}
+
+Critical paths were originally sliced from the post-resizer netlist, because
+that is the netlist the timing report comes from. The resizer had already
+absorbed two of the three violating domains into buffering, so the slicer
+reported closure the RTL had not achieved and sent the model nothing to do. The
+slicer now reads the post-synthesis database, where an RTL defect is still an
+RTL defect.
+
+\subsection{Most of the call budget was spent on paths no rewrite can reach}
+
+Early runs spent the majority of their API calls on targets where the critical
+path sits in a macro, a clock network, or an I/O constraint --- places none of
+the four permitted transforms can touch. The model would dutifully return a
+plausible rewrite of the nearest module and the gates would reject it. Targets
+now carry a lever annotation: no lever, no call, still reported and still
+counted as a violation. The same budget then buys proposals against paths a
+rewrite can actually move.
+
+\subsection{Saying you changed something is not changing it}
+
+One arm re-proposed an already-accepted edit under a second module's name. The
+proposal was well-formed, the gates passed --- there was nothing to disprove ---
+and the loop counted a second closed path. Scope is now derived from the
+working tree's diff rather than from the proposal's own claim, and a proposal
+that differs nowhere is recorded as a no-op (Section~\ref{sec:scope}). This is
+the class of defect that inflates a headline number quietly.
+
+\subsection{Pipelining forced the parent into the proof}
+
+Two of the four permitted transforms change latency, and no single-module
+equivalence check can accept a latency change. The first fix was the
+\texttt{submodules} channel: one proposal rewrites the target and every parent
+that must learn to wait, and the set is proved together. That immediately
+produced the opposite failure --- rewrites that were provably equivalent at the
+module and wrong at the parent --- which is where G1b came from, and which
+turned out to be the most interesting measurement in the report
+(Table~\ref{tab:g1b}).
+
+\subsection{The biggest loss in the funnel was ours}
+
+When we first read Table~\ref{tab:funnel}, the largest single cause of death
+was not a gate. It was replies that spent their entire token budget inside
+reasoning and returned no text at all, which our harness scored as a model
+failure. It was a harness defect, and it hit the reasoning-heavy arms hardest,
+which is exactly the direction that would have flattered a cheap-model
+conclusion. It is fixed in the runs that followed; it is left visible in the
+funnel, and the affected arms are marked, because deleting it would make the
+bake-off look cleaner than it was.
+
+\subsection{One global number answered five questions at once}
+
+Global WNS on a five-master design is governed by whichever domain is worst,
+and here that is a path no permitted transform can reach. It also moves more
+between two placements of the same netlist than it does under any edit we
+accepted. Reporting moved to per-domain slack, and the claim was narrowed to
+what two structurally different rewrites from two different models reproduce
+independently. The second routed generation exists for the same reason: a wider
+floorplan, its own baseline, no numbers mixed across generations.
+
+% =====================================================================
+\section{Innovation}
+\label{sec:innovation}
 
 Five things in this system are not in the work we compared against. Each one
 exists because a run failed without it, and each is evidenced by a table in
@@ -672,34 +817,6 @@ this report, which is why the prompt insists they be written about the path in
 front of the model rather than as general timing-closure advice.
 
 \input{generated/prompt}
-
-\section{Reproducing this}
-
-Every number in this document is regenerated from the run artifacts by one
-command; none is typed into the source. The document fails loudly rather than
-silently when an artifact is missing: an unavailable value renders as a
-visible \textcolor{critical}{[pending]} marker, not as a zero.
-
-\begin{lstlisting}[style=diff]
-# 1. the loop, one model, over the sliced targets
-python3 bench/scripts/loop.py --targets artifacts/paths/v2_targets.json \
-    --rtl bench/rtl_v2 --backend anthropic:sonnet-direct \
-    --out artifacts/run --g1-timeout 300 --order closeable
-
-# 2. build the verified RTL variants from the gate decisions
-python3 scripts/prepare_variants_v2.py
-
-# 3. place and route each variant, then compare against the baseline
-bash scripts/run_variant_pnr.sh <variant> <ppa-dir> nebula_bench_v2
-
-# 4. netlist-vs-RTL equivalence, module by module
-python3 scripts/eqy_netlist.py --rtl <variant>/rtl --netlist <1_2_yosys.v> \
-    --liberty sta/sky130hd/sky130_fd_sc_hd__tt_025C_1v80.lib --depth 5
-
-# 5. regenerate every table, figure and number in this report
-python3 scripts/build_report.py && python3 scripts/build_figures.py
-latexmk -pdf report/nebula_report.tex
-\end{lstlisting}
 
 \vfill
 \begin{center}\small\color{accent}
