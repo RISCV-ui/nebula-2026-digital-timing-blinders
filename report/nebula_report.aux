@@ -13,32 +13,32 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3}The benchmark SoC}{2}{section.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The benchmark SoC as its SDC and RTL define it, generated from both rather than drawn by hand. Five mutually asynchronous masters, each peripheral domain built as master $\rightarrow $ gate $\rightarrow $ divider; every peripheral keeps its AXI-Lite side in the core domain and its functional side in its own, so each dashed line is a real clock-domain crossing. Outlined in red are the three blocks that own a violating path, each labelled with the module inside it that carries the delay, the clock it fails on and its baseline slack.}}{2}{figure.caption.2}\protected@file@percent }
 \newlabel{fig:soc}{{1}{2}{The benchmark SoC as its SDC and RTL define it, generated from both rather than drawn by hand. Five mutually asynchronous masters, each peripheral domain built as master $\rightarrow $ gate $\rightarrow $ divider; every peripheral keeps its AXI-Lite side in the core domain and its functional side in its own, so each dashed line is a real clock-domain crossing. Outlined in red are the three blocks that own a violating path, each labelled with the module inside it that carries the delay, the clock it fails on and its baseline slack}{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Why it is shaped this way}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Why it is shaped this way}{3}{subsection.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The clock tree}{3}{subsection.3.2}\protected@file@percent }
 \newlabel{sec:clocktree}{{3.2}{3}{The clock tree}{subsection.3.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The five clock domains, one chain each, read out of \texttt  {nebula.sdc}. Each dashed box is one \texttt  {-asynchronous} group: nothing inside it is timed against anything inside another. The core master drives its generated clocks directly; the four peripheral masters each run through a latch-based clock gate and a handover divider, whose internal clocks are declared and joined to the same group rather than left for the analyser to guess at.}}{3}{figure.caption.3}\protected@file@percent }
 \newlabel{fig:clocktree}{{2}{3}{The five clock domains, one chain each, read out of \texttt {nebula.sdc}. Each dashed box is one \texttt {-asynchronous} group: nothing inside it is timed against anything inside another. The core master drives its generated clocks directly; the four peripheral masters each run through a latch-based clock gate and a handover divider, whose internal clocks are declared and joined to the same group rather than left for the analyser to guess at}{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The clock structures, and the two bugs that were in them}{3}{subsection.3.3}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Every clock the design declares. The five masters are mutually asynchronous; each generated clock names the source it is derived from, so the analyser follows the gate and divider chain instead of treating their outputs as unclocked nets.}}{4}{table.caption.4}\protected@file@percent }
 \newlabel{tab:clocks}{{2}{4}{Every clock the design declares. The five masters are mutually asynchronous; each generated clock names the source it is derived from, so the analyser follows the gate and divider chain instead of treating their outputs as unclocked nets}{table.caption.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Scale}{4}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The clock structures, and the two bugs that were in them}{4}{subsection.3.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The clock-divider mux before and after the repair, with the pulse widths a simulation measured on each. The traces are schematic; the counts beside them are the testbench's, and the upper row is the original RTL run through the identical stimulus.}}{5}{figure.caption.5}\protected@file@percent }
 \newlabel{fig:runt}{{3}{5}{The clock-divider mux before and after the repair, with the pulse widths a simulation measured on each. The traces are schematic; the counts beside them are the testbench's, and the upper row is the original RTL run through the identical stimulus}{figure.caption.5}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The clock-structure audit of the benchmark. Both structures started glitchy -- a bare AND clock gate and a combinational clock mux -- and both were rewritten: the gate into a latch-based ICG, the divider select into a handover mux whose branches are enabled by flops on their own clock. Simulation agrees with the audit: 0 runt pulses on the fixed structures against 8 on the originals under the same stimulus, which switches the divider select while the selected clock is high.}}{5}{table.caption.6}\protected@file@percent }
 \newlabel{tab:clockrisk}{{3}{5}{The clock-structure audit of the benchmark. Both structures started glitchy -- a bare AND clock gate and a combinational clock mux -- and both were rewritten: the gate into a latch-based ICG, the divider select into a handover mux whose branches are enabled by flops on their own clock. Simulation agrees with the audit: 0 runt pulses on the fixed structures against 8 on the originals under the same stimulus, which switches the divider select while the selected clock is high}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Scale}{5}{subsection.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Baselines}{5}{section.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}The frozen input}{5}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}The un-gated model}{5}{subsection.4.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces The benchmark at the scale the competition asks for, measured on the routed baseline rather than estimated from the RTL.}}{6}{table.caption.7}\protected@file@percent }
 \newlabel{tab:scale}{{4}{6}{The benchmark at the scale the competition asks for, measured on the routed baseline rather than estimated from the RTL}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}The un-gated model}{6}{subsection.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}The published systems}{6}{subsection.4.3}\protected@file@percent }
 \newlabel{sec:related}{{4.3}{6}{The published systems}{subsection.4.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Deliverable 1 --- RTL timing analysis framework}{6}{section.5}\protected@file@percent }
 \newlabel{sec:d1}{{5}{6}{Deliverable 1 --- RTL timing analysis framework}{section.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Deliverable 2 --- GenAI-based RTL optimisation engine}{6}{section.6}\protected@file@percent }
 \newlabel{sec:d2}{{6}{6}{Deliverable 2 --- GenAI-based RTL optimisation engine}{section.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}The gates}{6}{subsection.6.1}\protected@file@percent }
-\newlabel{sec:gates}{{6.1}{6}{The gates}{subsection.6.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}The gates}{7}{subsection.6.1}\protected@file@percent }
+\newlabel{sec:gates}{{6.1}{7}{The gates}{subsection.6.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Every gate a rewrite must pass, with the number of candidates each one rejected across all four models. A gate rejects on its own evidence and reports what it found; the model's next attempt answers that, rather than being asked the same question again.}}{7}{figure.caption.8}\protected@file@percent }
 \newlabel{fig:gates}{{4}{7}{Every gate a rewrite must pass, with the number of candidates each one rejected across all four models. A gate rejects on its own evidence and reports what it found; the model's next attempt answers that, rather than being asked the same question again}{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Multi-module edits}{7}{subsection.6.2}\protected@file@percent }
@@ -47,8 +47,8 @@
 \newlabel{sec:scope}{{6.3}{7}{Scope is taken from the tree, not from the proposal}{subsection.6.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Deliverable 3 --- Critical path and timing violation analysis}{7}{section.7}\protected@file@percent }
 \newlabel{sec:d3}{{7}{7}{Deliverable 3 --- Critical path and timing violation analysis}{section.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Where candidates died, summed over all four models. Each row is a rewrite that looked reasonable enough to reach that gate.}}{7}{table.caption.9}\protected@file@percent }
-\newlabel{tab:funnel}{{5}{7}{Where candidates died, summed over all four models. Each row is a rewrite that looked reasonable enough to reach that gate}{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Where candidates died, summed over all four models. Each row is a rewrite that looked reasonable enough to reach that gate.}}{8}{table.caption.9}\protected@file@percent }
+\newlabel{tab:funnel}{{5}{8}{Where candidates died, summed over all four models. Each row is a rewrite that looked reasonable enough to reach that gate}{table.caption.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}Deliverable 4 --- Optimised RTL implementation}{8}{section.8}\protected@file@percent }
 \newlabel{sec:d4}{{8}{8}{Deliverable 4 --- Optimised RTL implementation}{section.8}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Every edit the gate accepted, with the proof that admitted it. A complete proof settles equivalence for all inputs and all time; a bounded one limits only the right to declare equivalence, never the right to reject on a counterexample.}}{8}{table.caption.10}\protected@file@percent }
@@ -58,31 +58,31 @@
 \@writefile{toc}{\contentsline {section}{\numberline {9}Deliverable 5 --- Timing, frequency and PPA comparison}{8}{section.9}\protected@file@percent }
 \newlabel{sec:d5}{{9}{8}{Deliverable 5 --- Timing, frequency and PPA comparison}{section.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Why the global number is not the result}{8}{subsection.9.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}The one figure we stand behind}{8}{subsection.9.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Post-route PPA, frozen input against each formally verified variant. Every variant is routed from the frozen RTL with only gate-accepted edits applied, and every figure is read from the same flow stage.}}{9}{table.caption.12}\protected@file@percent }
 \newlabel{tab:ppa}{{8}{9}{Post-route PPA, frozen input against each formally verified variant. Every variant is routed from the frozen RTL with only gate-accepted edits applied, and every figure is read from the same flow stage}{table.caption.12}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Per-domain setup WNS and the frequency change it implies. The benchmark has five asynchronous masters and therefore five closure questions; collapsing them into one global number hides every result the run did produce.}}{9}{table.caption.13}\protected@file@percent }
 \newlabel{tab:fmax}{{9}{9}{Per-domain setup WNS and the frequency change it implies. The benchmark has five asynchronous masters and therefore five closure questions; collapsing them into one global number hides every result the run did produce}{table.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Slack change per clock domain, both routed variants against the same baseline. The two bars agree closely only where the edit did the work.}}{10}{figure.caption.14}\protected@file@percent }
 \newlabel{fig:slack}{{5}{10}{Slack change per clock domain, both routed variants against the same baseline. The two bars agree closely only where the edit did the work}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}The one figure we stand behind}{10}{subsection.9.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.3}The same claim, on a second routed generation}{10}{subsection.9.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Deliverable 6 --- Formal equivalence verification report}{10}{section.10}\protected@file@percent }
-\newlabel{sec:d6}{{10}{10}{Deliverable 6 --- Formal equivalence verification report}{section.10}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces The accepted transform re-measured on a second, independently routed generation: a wider floorplan, its own baseline routed beside it, same recipe for both. Clocks whose slack is unchanged to \SI {0.5}{\pico \second } are omitted.}}{11}{table.caption.15}\protected@file@percent }
 \newlabel{tab:v3}{{10}{11}{The accepted transform re-measured on a second, independently routed generation: a wider floorplan, its own baseline routed beside it, same recipe for both. Clocks whose slack is unchanged to \SI {0.5}{\pico \second } are omitted}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Deliverable 6 --- Formal equivalence verification report}{11}{section.10}\protected@file@percent }
+\newlabel{sec:d6}{{10}{11}{Deliverable 6 --- Formal equivalence verification report}{section.10}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Deliverable 6, second half: every module of each routed variant proved against its own synthesised netlist. This is a different claim from the loop's gate, and the pair is what covers frozen RTL through to layout.}}{11}{table.caption.16}\protected@file@percent }
 \newlabel{tab:eqynetlist}{{11}{11}{Deliverable 6, second half: every module of each routed variant proved against its own synthesised netlist. This is a different claim from the loop's gate, and the pair is what covers frozen RTL through to layout}{table.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Netlist-against-RTL equivalence per routed variant.}}{11}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:eqy}{{6}{11}{Netlist-against-RTL equivalence per routed variant}{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Deliverable 7 --- Interactive demo}{12}{section.11}\protected@file@percent }
-\newlabel{sec:d7}{{11}{12}{Deliverable 7 --- Interactive demo}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Deliverable 7 --- Interactive demo}{11}{section.11}\protected@file@percent }
+\newlabel{sec:d7}{{11}{11}{Deliverable 7 --- Interactive demo}{section.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Netlist-against-RTL equivalence per routed variant.}}{12}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:eqy}{{6}{12}{Netlist-against-RTL equivalence per routed variant}{figure.caption.17}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {12}Model comparison}{12}{section.12}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Four models over the same three targets, one invocation, identical gate configuration. Acceptance means every gate passed, not that the model produced plausible-looking RTL.}}{12}{table.caption.18}\protected@file@percent }
 \newlabel{tab:bakeoff}{{12}{12}{Four models over the same three targets, one invocation, identical gate configuration. Acceptance means every gate passed, not that the model produced plausible-looking RTL}{table.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Four models, one invocation, the same three targets and the same gates. Spend and survival are not related the way the price list suggests.}}{12}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:bakeoff}{{7}{12}{Four models, one invocation, the same three targets and the same gates. Spend and survival are not related the way the price list suggests}{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.1}What survived}{13}{subsection.12.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}What the spend did not buy}{13}{subsection.12.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1}What survived}{12}{subsection.12.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}What the spend did not buy}{12}{subsection.12.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Four models, one invocation, the same three targets and the same gates. Spend and survival are not related the way the price list suggests.}}{13}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:bakeoff}{{7}{13}{Four models, one invocation, the same three targets and the same gates. Spend and survival are not related the way the price list suggests}{figure.caption.19}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.3}Where each arm's candidates died}{13}{subsection.12.3}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Where each arm's candidates stopped. Same four arms, same targets, same gate configuration as Table~\ref {tab:bakeoff}.}}{13}{table.caption.20}\protected@file@percent }
 \newlabel{tab:deaths}{{13}{13}{Where each arm's candidates stopped. Same four arms, same targets, same gate configuration as Table~\ref {tab:bakeoff}}{table.caption.20}{}}

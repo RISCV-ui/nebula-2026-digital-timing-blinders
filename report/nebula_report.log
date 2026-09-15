@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.6)  15 SEP 2026 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.6)  15 SEP 2026 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1154,7 +1154,7 @@ Underfull \hbox (badness 7595) in paragraph at lines 134--137
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-63.
+70.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1162,32 +1162,32 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.177 \section{What this had to get right}
-                                           [1{/usr/local/texlive/2026/texmf-dis
-t/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/en
-c/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-
-ts1.enc}] (./generated/fig_soc.tex) [2{/usr/local/texlive/2026/texmf-dist/fonts
-/enc/dvips/lm/lm-mathsy.enc}] (./generated/fig_clocktree.tex
+l.178 \item \textbf
+                   {Thought process} --- Section~\ref{sec:journey}: the rout...
+[1{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
+cal/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
+26/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./generated/fig_soc.tex)
+[2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+(./generated/fig_clocktree.tex
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 22.
-)
-(./generated/tab_clocks.tex
+) (./generated/tab_clocks.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 7.
-) [3] (./generated/fig_runt.tex)
-(./generated/tab_clockrisk.tex
+) [3] [4]
+(./generated/fig_runt.tex) (./generated/tab_clockrisk.tex
 Underfull \hbox (badness 6641) in paragraph at lines 12--13
 []|\T1/lmr/m/n/9 (+20) clk_out = clk_in & latched en-able
  []
 
-) [4] (./generated/tab_scale.tex) [5] [6] (./generated/fig_gates.tex)
+) (./generated/tab_scale.tex) [5] [6] (./generated/fig_gates.tex)
 (./generated/tab_funnel.tex) [7] (./generated/tab_accepts.tex)
 (./generated/tab_g1b.tex) (./generated/tab_ppa.tex) (./generated/tab_fmax.tex)
-(./generated/fig_slack.tex) (./generated/tab_v3.tex [8] [9])
+(./generated/fig_slack.tex) [8] [9] (./generated/tab_v3.tex) [10]
 (./generated/tab_eqy_netlist.tex) (./generated/fig_eqy.tex
 Package pgfplots info on input line 18: Using 'lua backend=false' for axis: sta
 cked plots unsupported (yet).
-) [10] [11]
+) [11]
 (./generated/tab_bakeoff.tex) (./generated/fig_bakeoff.tex) [12]
 (./generated/tab_deaths.tex) [13] [14] [15] (./generated/diff_fp8.tex
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
@@ -1215,7 +1215,7 @@ Package rerunfilecheck Info: File `nebula_report.out' has not changed.
 Here is how much of TeX's memory you used:
  43542 strings out of 467525
  1004554 string characters out of 5418983
- 2470196 words of memory out of 5000000
+ 2418980 words of memory out of 5000000
  71192 multiletter control sequences out of 15000+600000
  734251 words of font info for 252 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1241,10 +1241,10 @@ e1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/
 lm/lmtt8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt9.pf
 b></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb>
-Output written on nebula_report.pdf (20 pages, 664852 bytes).
+Output written on nebula_report.pdf (20 pages, 666121 bytes).
 PDF statistics:
- 745 PDF objects out of 1000 (max. 8388607)
- 658 compressed objects within 7 object streams
+ 747 PDF objects out of 1000 (max. 8388607)
+ 660 compressed objects within 7 object streams
  280 named destinations out of 1000 (max. 500000)
  68962 words of extra memory for PDF output out of 74296 (max. 10000000)
 
