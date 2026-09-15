@@ -304,6 +304,47 @@ def build_bakeoff() -> dict:
     return {"total_cost": total_cost, "arms": bk.get("arms", [])}
 
 
+def build_deaths(bake: dict) -> None:
+    """Where each arm's candidates died.
+
+    An accept count alone says which arm won. This says how each one failed,
+    which is the part that transfers: an arm dying at `validate` is proposing
+    edits outside the permitted set, an arm dying at `propose` never returned
+    text at all, and those two call for opposite fixes.
+    """
+    arms = bake.get("arms") or []
+    if not arms:
+        write("tab_deaths.tex", r"\emph{No bake-off record yet.}")
+        return
+    stages = [s for s in GATE_ORDER
+              if any((a.get("died_at") or {}).get(s) for a in arms)]
+    stages += [s for s in sorted({k for a in arms
+                                  for k in (a.get("died_at") or {})})
+               if s not in stages]
+    header = ["Model"] + [latex_escape(s) for s in stages]
+    body = []
+    for a in arms:
+        died = a.get("died_at") or {}
+        row = [latex_escape(short(a.get("arm", "?")))]
+        for s in stages:
+            n = died.get(s, 0)
+            row.append(rf"\textbf{{{n}}}" if s == "accepted" and n
+                       else (str(n) if n else "--"))
+        body.append(row)
+    write("tab_deaths.tex", tabular(
+        "l" + "r" * len(stages), header, body,
+        "Where each arm's candidates stopped. Same four arms, same targets, "
+        "same gate configuration as Table~\\ref{tab:bakeoff}.",
+        "deaths",
+        r"\texttt{propose} counts calls that returned no usable text, which "
+        r"on three of these arms is the harness defect rather than the model "
+        r"refusing. \texttt{validate} counts proposals rejected before any "
+        r"prover ran, for changing an interface or leaving the permitted "
+        r"transform set. \texttt{g1} is a failed or unfinished equivalence "
+        r"proof and \texttt{g1b} a proof that succeeded at the module and "
+        r"failed at its parent."))
+
+
 def harness_losses(arm_dir: Path) -> tuple[int, int]:
     lost = calls = 0
     for r in rows(arm_dir / "history.jsonl"):
@@ -509,6 +550,204 @@ def build_netlist_eqy() -> dict:
     return summary
 
 
+# ------------------------------------------------------------------ charts
+#
+# The charts are drawn from the same dicts the tables are drawn from, in the
+# same run, so a chart cannot show one thing while the table beside it shows
+# another. Nothing here is a hand-placed coordinate.
+
+def _figure(body: str, caption: str, label: str, note: str = "") -> str:
+    tail = (r"\par\smallskip\footnotesize\raggedright " + note) if note else ""
+    return ("\n".join([
+        r"\begin{figure}[htbp]", r"  \centering",
+        r"  \begin{adjustbox}{max width=\textwidth}", body,
+        r"  \end{adjustbox}",
+        rf"  \caption{{{caption}}}", rf"  \label{{fig:{label}}}",
+        "  " + tail if tail else "",
+        r"\end{figure}"]))
+
+
+def build_fig_slack(mets: dict) -> None:
+    """Per-domain slack change, both variants, on one axis.
+
+    The table already carries these numbers. The chart carries the shape of
+    them: two independently generated rewrites landing on the same bar on the
+    domain the report makes its claim on, and disagreeing in sign everywhere
+    the movement is noise.
+    """
+    base = mets.get("baseline")
+    variants = [k for k in sorted(mets) if k != "baseline"]
+    if not base or len(variants) < 1:
+        write("fig_slack.tex", r"\emph{No routed variants yet.}")
+        return
+    clocks = base.get("clocks") or {}
+    names, series = [], {v: [] for v in variants}
+    for clk in sorted(clocks):
+        bw = clocks[clk].get("wns_ns")
+        if bw is None:
+            continue
+        deltas = []
+        for v in variants:
+            vw = ((mets[v].get("clocks") or {}).get(clk) or {}).get("wns_ns")
+            deltas.append(None if vw is None else vw - bw)
+        if any(d is None for d in deltas):
+            continue
+        names.append(clk)
+        for v, d in zip(variants, deltas):
+            series[v].append(d)
+    if not names:
+        write("fig_slack.tex", r"\emph{No routed variants yet.}")
+        return
+
+    colours = ["accent", "accepted", "gpio", "timer"]
+    plots = []
+    for i, v in enumerate(variants):
+        coords = " ".join(f"({d:.4f},{j})" for j, d in enumerate(series[v]))
+        plots.append(
+            rf"    \addplot[xbar, draw={colours[i % len(colours)]}!70, "
+            rf"fill={colours[i % len(colours)]}!35] coordinates {{{coords}}};")
+    legend = ", ".join(latex_escape(short(v)) for v in variants)
+    ticks = ",".join(str(i) for i in range(len(names)))
+    labels = ",".join(r"\texttt{" + latex_escape(n) + "}" for n in names)
+    body = "\n".join([
+        r"  \begin{tikzpicture}",
+        r"  \begin{axis}[",
+        r"    xbar, width=125mm, height=" + f"{14 + 7 * len(names)}mm,",
+        r"    bar width=2.4mm, y=7mm, font=\scriptsize,",
+        r"    xlabel={$\Delta$ worst negative slack (ns), positive is better},",
+        r"    ytick={" + ticks + "}, yticklabels={" + labels + "},",
+        r"    ytick style={draw=none}, y dir=reverse,",
+        r"    axis x line*=bottom, axis y line*=left,",
+        r"    xmajorgrids, grid style={rule!50, very thin},",
+        r"    enlarge y limits={abs=5mm}, enlarge x limits=0.15,",
+        r"    legend style={at={(0.5,-0.14)}, anchor=north, draw=none,",
+        r"                  legend columns=-1, font=\scriptsize},",
+        r"    legend entries={" + legend + "},",
+        r"  ]",
+        *plots,
+        r"  \draw[rule!80, thin] ({axis cs:0,0}|-{rel axis cs:0,0})"
+        r" -- ({axis cs:0,0}|-{rel axis cs:0,1});",
+        r"  \end{axis}",
+        r"  \end{tikzpicture}"])
+    write("fig_slack.tex", _figure(
+        body,
+        "Slack change per clock domain, both routed variants against the "
+        "same baseline. The two bars agree closely only where the edit did "
+        "the work.",
+        "slack",
+        "Bars are the same numbers as Table~\\ref{tab:fmax}, drawn in the "
+        "same pass. Where the two bars point opposite ways the movement is "
+        "placement variance and the report claims nothing from it."))
+
+
+def build_fig_bakeoff(bake: dict) -> None:
+    """What each model attempted, what survived, and what it cost."""
+    arms = bake.get("arms") or []
+    if not arms:
+        write("fig_bakeoff.tex", r"\emph{No bake-off record yet.}")
+        return
+    names = [latex_escape(short(a.get("arm", "?"))) for a in arms]
+    prop = [a.get("proposals", 0) for a in arms]
+    acc = [a.get("accepted", 0) for a in arms]
+    cost = [a.get("cost_usd") or 0.0 for a in arms]
+    ticks = ",".join(str(i) for i in range(len(names)))
+    labels = ",".join(names)
+
+    def axis(title, plots, xlabel, extra=""):
+        return "\n".join([
+            r"  \begin{axis}[",
+            rf"    title={{{title}}},",
+            r"    title style={font=\scriptsize\bfseries, color=accent},",
+            r"    xbar, width=62mm, height=" + f"{16 + 9 * len(names)}mm,",
+            r"    bar width=2.6mm, y=9mm, font=\scriptsize,",
+            rf"    xlabel={{{xlabel}}},",
+            r"    ytick={" + ticks + "}, yticklabels={" + labels + "},",
+            r"    ytick style={draw=none}, y dir=reverse,",
+            r"    axis x line*=bottom, axis y line*=left,",
+            r"    xmajorgrids, grid style={rule!50, very thin},",
+            r"    enlarge y limits={abs=6mm}, enlarge x limits=0.2,",
+            r"    nodes near coords, nodes near coords style={font=\tiny},",
+            extra,
+            r"  ]", *plots, r"  \end{axis}"])
+
+    left = axis("proposals and survivors", [
+        r"    \addplot[xbar, draw=accent!70, fill=accent!25] coordinates {"
+        + " ".join(f"({v},{i})" for i, v in enumerate(prop)) + "};",
+        r"    \addplot[xbar, draw=accepted!80, fill=accepted!45] coordinates {"
+        + " ".join(f"({v},{i})" for i, v in enumerate(acc)) + "};"],
+        "candidate rewrites",
+        r"    legend style={at={(0.5,-0.22)}, anchor=north, draw=none,"
+        r" legend columns=-1, font=\scriptsize},"
+        "\n    legend entries={proposed, accepted after every gate},")
+    right = axis("API spend", [
+        r"    \addplot[xbar, draw=critical!70, fill=critical!25,"
+        r" point meta=explicit symbolic] coordinates {"
+        + " ".join(f"({c:.2f},{i}) [\\${c:.2f}]" for i, c in enumerate(cost))
+        + "};"], "USD for the arm",
+        r"    yticklabels={,,}, ylabel={},")
+    body = "\n".join([
+        r"  \begin{tikzpicture}",
+        left,
+        r"  \begin{scope}[xshift=68mm]", right, r"  \end{scope}",
+        r"  \end{tikzpicture}"])
+    write("fig_bakeoff.tex", _figure(
+        body,
+        "Four models, one invocation, the same three targets and the same "
+        "gates. Spend and survival are not related the way the price list "
+        "suggests.",
+        "bakeoff",
+        "Same run as Table~\\ref{tab:bakeoff}. The accepted bar counts "
+        "rewrites that passed every gate, not replies that looked like "
+        "Verilog."))
+
+
+def build_fig_eqy(eqy: dict) -> None:
+    """Netlist equivalence, per variant, proved against merely unproven."""
+    if not eqy:
+        write("fig_eqy.tex", r"\emph{Netlist equivalence still running.}")
+        return
+    names = [latex_escape(short(v)) for v in sorted(eqy)]
+    ok = [eqy[v]["ok"] for v in sorted(eqy)]
+    un = [eqy[v]["unproven"] for v in sorted(eqy)]
+    to = [eqy[v]["timeout"] for v in sorted(eqy)]
+    ticks = ",".join(str(i) for i in range(len(names)))
+    labels = ",".join(names)
+    def coords(vals):
+        return " ".join(f"({v},{i})" for i, v in enumerate(vals))
+    body = "\n".join([
+        r"  \begin{tikzpicture}",
+        r"  \begin{axis}[",
+        r"    xbar stacked, width=120mm, height=" + f"{20 + 11 * len(names)}mm,",
+        r"    xmin=0,",
+        r"    bar width=5mm, y=11mm, font=\scriptsize,",
+        r"    xlabel={modules},",
+        r"    ytick={" + ticks + "}, yticklabels={" + labels + "},",
+        r"    ytick style={draw=none}, y dir=reverse,",
+        r"    axis x line*=bottom, axis y line*=left,",
+        r"    xmajorgrids, grid style={rule!50, very thin},",
+        r"    enlarge y limits={abs=7mm},",
+        r"    legend style={at={(0.5,-0.3)}, anchor=north, draw=none,",
+        r"                  legend columns=-1, font=\scriptsize},",
+        r"    legend entries={proved equivalent, unproven at depth, timed out},",
+        r"  ]",
+        r"    \addplot[draw=accepted!80, fill=accepted!45] coordinates {"
+        + coords(ok) + "};",
+        r"    \addplot[draw=accent!60, fill=accent!18] coordinates {"
+        + coords(un) + "};",
+        r"    \addplot[draw=critical!60, fill=critical!18] coordinates {"
+        + coords(to) + "};",
+        r"  \end{axis}",
+        r"  \end{tikzpicture}"])
+    write("fig_eqy.tex", _figure(
+        body,
+        "Netlist-against-RTL equivalence per routed variant.",
+        "eqy",
+        "Neither of the two right-hand bands is a counterexample: no module "
+        "in this run was shown inequivalent. They are the prover running out "
+        "of depth or time, and they sit on the blocks whose timing is hard "
+        "for the same reason."))
+
+
 # ------------------------------------------------------------------ macros
 
 def build_numbers(ppa, fmax, bake, acc, funnel, g1b, eqy, mets,
@@ -527,6 +766,38 @@ def build_numbers(ppa, fmax, bake, acc, funnel, g1b, eqy, mets,
     # tries to typeset in the preamble. Spelled out instead.
     macro("numcontractkills", str(g1b.get("n", 0)))
     macro("bakeoffspend", num(bake.get("total_cost"), 2))
+
+    # Model-comparison figures. Derived from the same arm records the
+    # bake-off table is built from, so the prose cannot quote an arm the
+    # table does not show.
+    arms = bake.get("arms") or []
+    survivors = [x for x in arms if (x.get("accepted") or 0) > 0]
+    macro("armstotal", str(len(arms)))
+    macro("armssurviving", str(len(survivors)))
+    if survivors:
+        cheap = min(survivors, key=lambda x: x.get("cost_usd") or 0.0)
+        dear = max(survivors, key=lambda x: x.get("cost_usd") or 0.0)
+        macro("armcheapname", latex_escape(short(cheap.get("arm", "?"))))
+        macro("armcheapcost", num(cheap.get("cost_usd"), 2))
+        macro("armcheaphours", num((cheap.get("wall_seconds") or 0) / 3600, 1))
+        macro("armpaidname", latex_escape(short(dear.get("arm", "?"))))
+        macro("armpaidcost", num(dear.get("cost_usd"), 2))
+        macro("armpaidhours", num((dear.get("wall_seconds") or 0) / 3600, 1))
+    else:
+        for n in ("armcheapname", "armcheapcost", "armcheaphours",
+                  "armpaidname", "armpaidcost", "armpaidhours"):
+            macro(n, TBD)
+    if arms:
+        top = max(arms, key=lambda x: x.get("cost_usd") or 0.0)
+        macro("armtopname", latex_escape(short(top.get("arm", "?"))))
+        macro("armtopcost", num(top.get("cost_usd"), 2))
+        macro("armtopaccepted", str(top.get("accepted") or 0))
+        macro("armtopproposals", str(top.get("proposals") or 0))
+        macro("armtoplost", str((top.get("died_at") or {}).get("propose", 0)))
+    else:
+        for n in ("armtopname", "armtopcost", "armtopaccepted",
+                  "armtopproposals", "armtoplost"):
+            macro(n, TBD)
 
     base = mets.get("baseline") or {}
     macro("baselinewns", num(base.get("wns"), 4))
@@ -921,6 +1192,10 @@ def main() -> None:
     diffs = build_diff()
     build_prompt()
     clk = build_clockrisk()
+    build_deaths(bake)
+    build_fig_slack(mets)
+    build_fig_bakeoff(bake)
+    build_fig_eqy(eqy)
     build_numbers(ppa, fmax, bake, acc, funnel, g1b, eqy, mets, diffs,
                   clk)
     print("done")

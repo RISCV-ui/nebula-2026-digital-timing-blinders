@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Where each arm's candidates stopped. Same four arms, same targets, same gate configuration as Table~\ref{tab:bakeoff}.}
+  \label{tab:deaths}
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tabular}{lrrrrrr}
+    \toprule
+    \textbf{Model} & \textbf{propose} & \textbf{validate} & \textbf{g1} & \textbf{g1b} & \textbf{accepted} & \textbf{backend} \\
+    \midrule
+    gemini:gemini-flash & -- & -- & 1 & -- & -- & 1 \\
+    openrouter:nemotron-ultra & 4 & 10 & 4 & 1 & \textbf{1} & -- \\
+    anthropic:sonnet & 8 & -- & 2 & 1 & \textbf{1} & -- \\
+    anthropic:opus & 9 & -- & 2 & 1 & -- & -- \\
+    \bottomrule
+  \end{tabular}
+  \end{adjustbox}
+  \par\smallskip\footnotesize\raggedright \texttt{propose} counts calls that returned no usable text, which on three of these arms is the harness defect rather than the model refusing. \texttt{validate} counts proposals rejected before any prover ran, for changing an interface or leaving the permitted transform set. \texttt{g1} is a failed or unfinished equivalence proof and \texttt{g1b} a proof that succeeded at the module and failed at its parent.
+\end{table}

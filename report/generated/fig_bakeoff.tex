@@ -1,0 +1,46 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tikzpicture}
+  \begin{axis}[
+    title={proposals and survivors},
+    title style={font=\scriptsize\bfseries, color=accent},
+    xbar, width=62mm, height=52mm,
+    bar width=2.6mm, y=9mm, font=\scriptsize,
+    xlabel={candidate rewrites},
+    ytick={0,1,2,3}, yticklabels={gemini:gemini-flash,openrouter:nemotron-ultra,anthropic:sonnet,anthropic:opus},
+    ytick style={draw=none}, y dir=reverse,
+    axis x line*=bottom, axis y line*=left,
+    xmajorgrids, grid style={rule!50, very thin},
+    enlarge y limits={abs=6mm}, enlarge x limits=0.2,
+    nodes near coords, nodes near coords style={font=\tiny},
+    legend style={at={(0.5,-0.22)}, anchor=north, draw=none, legend columns=-1, font=\scriptsize},
+    legend entries={proposed, accepted after every gate},
+  ]
+    \addplot[xbar, draw=accent!70, fill=accent!25] coordinates {(3,0) (21,1) (13,2) (13,3)};
+    \addplot[xbar, draw=accepted!80, fill=accepted!45] coordinates {(0,0) (1,1) (1,2) (0,3)};
+  \end{axis}
+  \begin{scope}[xshift=68mm]
+  \begin{axis}[
+    title={API spend},
+    title style={font=\scriptsize\bfseries, color=accent},
+    xbar, width=62mm, height=52mm,
+    bar width=2.6mm, y=9mm, font=\scriptsize,
+    xlabel={USD for the arm},
+    ytick={0,1,2,3}, yticklabels={gemini:gemini-flash,openrouter:nemotron-ultra,anthropic:sonnet,anthropic:opus},
+    ytick style={draw=none}, y dir=reverse,
+    axis x line*=bottom, axis y line*=left,
+    xmajorgrids, grid style={rule!50, very thin},
+    enlarge y limits={abs=6mm}, enlarge x limits=0.2,
+    nodes near coords, nodes near coords style={font=\tiny},
+    yticklabels={,,}, ylabel={},
+  ]
+    \addplot[xbar, draw=critical!70, fill=critical!25, point meta=explicit symbolic] coordinates {(0.01,0) [\$0.01] (0.00,1) [\$0.00] (2.65,2) [\$2.65] (13.51,3) [\$13.51]};
+  \end{axis}
+  \end{scope}
+  \end{tikzpicture}
+  \end{adjustbox}
+  \caption{Four models, one invocation, the same three targets and the same gates. Spend and survival are not related the way the price list suggests.}
+  \label{fig:bakeoff}
+  \par\smallskip\footnotesize\raggedright Same run as Table~\ref{tab:bakeoff}. The accepted bar counts rewrites that passed every gate, not replies that looked like Verilog.
+\end{figure}

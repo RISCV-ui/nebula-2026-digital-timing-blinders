@@ -77,8 +77,7 @@ TREES = [
 ]
 
 # Newest-wins globs: the run stamps move, the bundle should follow.
-NEWEST_TREES = ["artifacts/metrics_v2_*", "artifacts/metrics_v3_*",
-                "artifacts/ppa_v3_*"]
+NEWEST_TREES = ["artifacts/metrics_v2_*", "artifacts/metrics_v3_*"]
 
 SINGLE_GLOBS = [
     # The shard *directories* are EQY workdirs -- 9.3 GB of solver scratch.

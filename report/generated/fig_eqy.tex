@@ -1,0 +1,28 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tikzpicture}
+  \begin{axis}[
+    xbar stacked, width=120mm, height=42mm,
+    xmin=0,
+    bar width=5mm, y=11mm, font=\scriptsize,
+    xlabel={modules},
+    ytick={0,1}, yticklabels={sonnet,nemotron-ultra},
+    ytick style={draw=none}, y dir=reverse,
+    axis x line*=bottom, axis y line*=left,
+    xmajorgrids, grid style={rule!50, very thin},
+    enlarge y limits={abs=7mm},
+    legend style={at={(0.5,-0.3)}, anchor=north, draw=none,
+                  legend columns=-1, font=\scriptsize},
+    legend entries={proved equivalent, unproven at depth, timed out},
+  ]
+    \addplot[draw=accepted!80, fill=accepted!45] coordinates {(13,0) (25,1)};
+    \addplot[draw=accent!60, fill=accent!18] coordinates {(10,0) (16,1)};
+    \addplot[draw=critical!60, fill=critical!18] coordinates {(13,0) (17,1)};
+  \end{axis}
+  \end{tikzpicture}
+  \end{adjustbox}
+  \caption{Netlist-against-RTL equivalence per routed variant.}
+  \label{fig:eqy}
+  \par\smallskip\footnotesize\raggedright Neither of the two right-hand bands is a counterexample: no module in this run was shown inequivalent. They are the prover running out of depth or time, and they sit on the blocks whose timing is hard for the same reason.
+\end{figure}

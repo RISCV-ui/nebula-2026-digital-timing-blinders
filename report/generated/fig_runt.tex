@@ -1,0 +1,18 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tikzpicture}[font=\scriptsize]
+  \node[anchor=east, align=right, font=\scriptsize] at (-3mm,4mm) {original\\{\tiny combinational mux}};
+  \draw[critical!80, line width=0.8pt] (0mm,4mm+0mm) -- (8mm,4mm+0mm) -- (8mm,4mm+4mm) -- (8mm,4mm+4mm) -- (16mm,4mm+4mm) -- (16mm,4mm+0mm) -- (16mm,4mm+0mm) -- (24mm,4mm+0mm) -- (24mm,4mm+4mm) -- (24mm,4mm+4mm) -- (27mm,4mm+4mm) -- (27mm,4mm+0mm) -- (27mm,4mm+0mm) -- (32mm,4mm+0mm) -- (32mm,4mm+4mm) -- (32mm,4mm+4mm) -- (40mm,4mm+4mm) -- (40mm,4mm+0mm) -- (40mm,4mm+0mm) -- (48mm,4mm+0mm) -- (48mm,4mm+4mm) -- (48mm,4mm+4mm) -- (56mm,4mm+4mm) -- (56mm,4mm+0mm) -- (56mm,4mm+0mm) -- (64mm,4mm+0mm) -- (64mm,4mm+4mm) -- (64mm,4mm+4mm) -- (72mm,4mm+4mm) -- (72mm,4mm+0mm) -- (72mm,4mm+0mm) -- (80mm,4mm+0mm) -- (80mm,4mm+4mm) -- (80mm,4mm+4mm) -- (88mm,4mm+4mm) -- (88mm,4mm+0mm) -- (88mm,4mm+0mm) -- (96mm,4mm+0mm) -- (96mm,4mm+0mm) -- (96mm,4mm+0mm);
+  \draw[critical, <-, >=stealth, line width=0.5pt] (25.5mm,10mm) -- (34mm,15mm) node[right, font=\tiny, text=critical] {select moves while the clock is high: the pulse is cut};
+  \node[anchor=east, align=right, font=\scriptsize] at (-3mm,-14mm) {repaired\\{\tiny falling-edge handover}};
+  \draw[accepted!80, line width=0.8pt] (0mm,-14mm+0mm) -- (8mm,-14mm+0mm) -- (8mm,-14mm+4mm) -- (8mm,-14mm+4mm) -- (16mm,-14mm+4mm) -- (16mm,-14mm+0mm) -- (16mm,-14mm+0mm) -- (24mm,-14mm+0mm) -- (24mm,-14mm+4mm) -- (24mm,-14mm+4mm) -- (32mm,-14mm+4mm) -- (32mm,-14mm+0mm) -- (32mm,-14mm+0mm) -- (40mm,-14mm+0mm) -- (40mm,-14mm+4mm) -- (40mm,-14mm+4mm) -- (48mm,-14mm+4mm) -- (48mm,-14mm+0mm) -- (48mm,-14mm+0mm) -- (56mm,-14mm+0mm) -- (56mm,-14mm+4mm) -- (56mm,-14mm+4mm) -- (64mm,-14mm+4mm) -- (64mm,-14mm+0mm) -- (64mm,-14mm+0mm) -- (72mm,-14mm+0mm) -- (72mm,-14mm+4mm) -- (72mm,-14mm+4mm) -- (80mm,-14mm+4mm) -- (80mm,-14mm+0mm) -- (80mm,-14mm+0mm) -- (88mm,-14mm+0mm) -- (88mm,-14mm+4mm) -- (88mm,-14mm+4mm) -- (96mm,-14mm+4mm) -- (96mm,-14mm+0mm) -- (96mm,-14mm+0mm);
+  \draw[rule!60, dashed, line width=0.4pt] (27mm,-18mm) -- (27mm,12mm);
+  \node[anchor=west, font=\tiny, text=critical] at (100mm,4mm) {6 runt pulses on the mux, 2 on the gate};
+  \node[anchor=west, font=\tiny, text=accepted] at (100mm,-14mm) {0 and 0, same testbench};
+  \end{tikzpicture}
+  \end{adjustbox}
+  \caption{The clock-divider mux before and after the repair, with the pulse widths a simulation measured on each. The traces are schematic; the counts beside them are the testbench's, and the upper row is the original RTL run through the identical stimulus.}
+  \label{fig:runt}
+  \par\smallskip\footnotesize\raggedright A runt check that passes on a design known to produce runts measures nothing, so the repaired structure is reported against a control that fails rather than on its own.
+\end{figure}

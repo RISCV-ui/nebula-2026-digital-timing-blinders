@@ -1,0 +1,27 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{tikzpicture}
+  \begin{axis}[
+    xbar, width=125mm, height=91mm,
+    bar width=2.4mm, y=7mm, font=\scriptsize,
+    xlabel={$\Delta$ worst negative slack (ns), positive is better},
+    ytick={0,1,2,3,4,5,6,7,8,9,10}, yticklabels={\texttt{clk1},\texttt{clk\_s1},\texttt{clk\_s1\_gate},\texttt{clk\_s2},\texttt{clk\_s2\_gate},\texttt{clk\_s3},\texttt{clk\_s4},\texttt{clk\_s4\_gate},\texttt{clk\_s5},\texttt{clk\_s5\_gate},\texttt{clk\_s8}},
+    ytick style={draw=none}, y dir=reverse,
+    axis x line*=bottom, axis y line*=left,
+    xmajorgrids, grid style={rule!50, very thin},
+    enlarge y limits={abs=5mm}, enlarge x limits=0.15,
+    legend style={at={(0.5,-0.14)}, anchor=north, draw=none,
+                  legend columns=-1, font=\scriptsize},
+    legend entries={sonnet, nemotron-ultra},
+  ]
+    \addplot[xbar, draw=accent!70, fill=accent!35] coordinates {(2.5133,0) (-0.2288,1) (-0.0174,2) (1.6039,3) (-0.1017,4) (-0.0622,5) (-0.5585,6) (-0.0551,7) (-0.1006,8) (0.4531,9) (1.1740,10)};
+    \addplot[xbar, draw=accepted!70, fill=accepted!35] coordinates {(-3.4429,0) (-0.1127,1) (0.6316,2) (1.6084,3) (0.3305,4) (-0.0510,5) (0.0213,6) (0.3229,7) (-0.1175,8) (0.1294,9) (1.3806,10)};
+  \draw[rule!80, thin] ({axis cs:0,0}|-{rel axis cs:0,0}) -- ({axis cs:0,0}|-{rel axis cs:0,1});
+  \end{axis}
+  \end{tikzpicture}
+  \end{adjustbox}
+  \caption{Slack change per clock domain, both routed variants against the same baseline. The two bars agree closely only where the edit did the work.}
+  \label{fig:slack}
+  \par\smallskip\footnotesize\raggedright Bars are the same numbers as Table~\ref{tab:fmax}, drawn in the same pass. Where the two bars point opposite ways the movement is placement variance and the report claims nothing from it.
+\end{figure}

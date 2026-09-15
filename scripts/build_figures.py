@@ -365,10 +365,80 @@ def fig_gates() -> str:
     return "\n".join(out)
 
 
+def fig_runt() -> str:
+    """The two clock structures, before and after, with the measured counts.
+
+    The waveform shapes are schematic: they are what a combinational mux does
+    to a pulse when the select moves mid-cycle, and what a falling-edge
+    handover does instead. The counts under them are not schematic. They come
+    from artifacts/clocksim.json, the same file the report's macros read, and
+    the control row is the original RTL measured on the identical testbench.
+    """
+    sim = json.loads((ROOT / "artifacts" / "clocksim.json").read_text())
+    ctl, fix = sim["control"], sim["fixed"]
+
+    def wave(y: str, edges: list[tuple[float, int]], colour: str) -> list[str]:
+        out, prev_x, prev_v = [], edges[0][0], edges[0][1]
+        pts = []
+        for x, v in edges[1:]:
+            pts.append(f"({prev_x}mm,{y}+{prev_v*4}mm)")
+            pts.append(f"({x}mm,{y}+{prev_v*4}mm)")
+            pts.append(f"({x}mm,{y}+{v*4}mm)")
+            prev_x, prev_v = x, v
+        pts.append(f"({prev_x}mm,{y}+{prev_v*4}mm)")
+        out.append(rf"  \draw[{colour}, line width=0.8pt] "
+                   + " -- ".join(pts) + ";")
+        return out
+
+    # 8 mm per half period; the broken trace loses the second half of the
+    # pulse the select lands in, which is the runt.
+    clean = [(0, 0)]
+    for i in range(6):
+        clean += [(8 * (2 * i + 1), 1), (8 * (2 * i + 2), 0)]
+    broken = [(0, 0), (8, 1), (16, 0), (24, 1), (27, 0), (32, 1), (40, 0),
+              (48, 1), (56, 0), (64, 1), (72, 0), (80, 1), (88, 0), (96, 0)]
+
+    out = [r"\begin{figure}[htbp]", r"  \centering",
+           r"  \begin{adjustbox}{max width=\textwidth}",
+           r"  \begin{tikzpicture}[font=\scriptsize]"]
+    out += [r"  \node[anchor=east, align=right, font=\scriptsize] at "
+            r"(-3mm,4mm) {original\\{\tiny combinational mux}};"]
+    out += wave("4mm", broken, "critical!80")
+    out += [r"  \draw[critical, <-, >=stealth, line width=0.5pt] "
+            r"(25.5mm,10mm) -- (34mm,15mm) node[right, font=\tiny, "
+            r"text=critical] {select moves while the clock is high: "
+            r"the pulse is cut};"]
+    out += [r"  \node[anchor=east, align=right, font=\scriptsize] at "
+            r"(-3mm,-14mm) {repaired\\{\tiny falling-edge handover}};"]
+    out += wave("-14mm", clean, "accepted!80")
+    out += [r"  \draw[rule!60, dashed, line width=0.4pt] "
+            r"(27mm,-18mm) -- (27mm,12mm);"]
+    out += [rf"  \node[anchor=west, font=\tiny, text=critical] at "
+            rf"(100mm,4mm) {{{ctl['mux_runts']} runt pulses on the mux, "
+            rf"{ctl['gate_runts']} on the gate}};",
+            rf"  \node[anchor=west, font=\tiny, text=accepted] at "
+            rf"(100mm,-14mm) {{{fix['mux_runts']} and {fix['gate_runts']}, "
+            rf"same testbench}};"]
+    out += [r"  \end{tikzpicture}", r"  \end{adjustbox}",
+            r"  \caption{The clock-divider mux before and after the repair, "
+            r"with the pulse widths a simulation measured on each. The "
+            r"traces are schematic; the counts beside them are the "
+            r"testbench's, and the upper row is the original RTL run "
+            r"through the identical stimulus.}",
+            r"  \label{fig:runt}",
+            r"  \par\smallskip\footnotesize\raggedright A runt check that "
+            r"passes on a design known to produce runts measures nothing, "
+            r"so the repaired structure is reported against a control that "
+            r"fails rather than on its own.",
+            r"\end{figure}"]
+    return "\n".join(out)
+
+
 def main() -> None:
     GEN.mkdir(parents=True, exist_ok=True)
     for name, body in (("fig_soc.tex", fig_soc()),
-                       ("fig_gates.tex", fig_gates())):
+                       ("fig_gates.tex", fig_gates()),
+                       ("fig_runt.tex", fig_runt())):
         (GEN / name).write_text(body + "\n")
         print(f"  wrote report/generated/{name}")
 
